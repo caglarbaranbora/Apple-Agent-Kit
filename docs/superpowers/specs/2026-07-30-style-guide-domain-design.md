@@ -22,7 +22,11 @@ Follows the existing layering unchanged (../../architecture/dependency-model.md)
 
 **`references/apple/style-guide.md`** (or split into `references/apple/style-guide/<subtopic>.md` if the topic count would push the index past 80 lines — References stay index-only, so this is a capacity decision, not a content one, made at build time once the real topic count from the PDF is known).
 
-**`knowledge/style-guide/*.md`** — one Knowledge Contract per atomic rule-topic (e.g. capitalization, punctuation, terminology-general, numerals, dates-and-times, acronyms — exact list drafted from the PDF's actual table of contents, not decided in advance). Each ≤150 lines, per ../../specifications/knowledge-spec.md required sections (Intent, Rules, Compliant/Non-compliant Examples) plus full metadata block.
+**`knowledge/style-guide/*.md`** — one Knowledge Contract per atomic rule-topic. Two source types, per RFC 0001 decision 9 (../../../rfcs/0001-style-guide-domain-and-domain-roadmap.md, [[0001-style-guide-domain-and-domain-roadmap]]):
+- The 5 thematic back-matter chapters (Writing Inclusively, Units of Measure, Technical Notation, International Style, Copyright/Trademarks) — ingested in full, one or more contracts per chapter.
+- The 1,706-term A–Z glossary — NOT ingested in full. Only a curated subset relevant to app development (product-name capitalization, UI terminology, abbreviations, numbers/units in-app text, avoid-lists), semantically clustered into contracts, not alphabetically. Estimated ~150–300 terms across ~15–25 contracts.
+
+Each contract ≤150 lines, per ../../specifications/knowledge-spec.md required sections (Intent, Rules, Compliant/Non-compliant Examples) plus full metadata block.
 
 **`skills/style-guide/*.md`** — routing skill(s), ≤60 lines each, no embedded knowledge. One skill file unless the topic clusters are broad enough to need separate trigger surfaces (decided at build time), following the `skills/authentication/login.md` pattern.
 
@@ -32,8 +36,8 @@ Follows the existing layering unchanged (../../architecture/dependency-model.md)
 
 ## Data Flow
 
-1. Subagent fetches the PDF, works through it one topic cluster at a time.
-2. Subagent drafts Knowledge Contract candidates for that cluster, respecting the 150-line cap and the required metadata/sections.
+1. Subagent fetches the PDF, works through it one topic cluster at a time — first the 5 thematic back-matter chapters, then curated app-dev-relevant clusters drawn from the A–Z glossary (see Components).
+2. Subagent drafts Knowledge Contract candidates for that cluster, respecting the 150-line cap and the required metadata/sections. For glossary-sourced clusters, the subagent selects only terms relevant to app-dev UI text — not the full 1,706-term glossary.
 3. Author reviews and approves per topic-cluster batch (not per file, not all at once).
 4. Approved contracts are committed; the Reference index is updated to point to them.
 5. Once all clusters are done, the `style-guide` skill is written, routing to the finished contracts.
@@ -52,7 +56,7 @@ Follows the existing layering unchanged (../../architecture/dependency-model.md)
 
 ## Testing / Validation
 
-Standard project validation applies unchanged: Level 1 (structural — includes the new size caps), Level 2 (repository integrity — link resolution, unique IDs, acyclic graph), Level 3 (architectural — layering, routing), Level 4 (domain — atomicity, no duplicated rules, references authoritative). No new validation machinery is introduced by this spec; the size caps are an addition to existing Level 1 checks.
+Standard project validation levels apply unchanged in scope: Level 1 (structural — includes the new size caps), Level 2 (repository integrity — link resolution, unique IDs, acyclic graph), Level 3 (architectural — layering, routing), Level 4 (domain — atomicity, no duplicated rules, references authoritative). No Level 1-4 rules are added or changed beyond the size caps. However, no automated tooling existed anywhere in the repo to actually run these checks — the implementation plan adds a small stdlib-only Python validator (`scripts/validate_artifact.py`) covering Level 1 (line caps, required sections, required metadata fields) for the new artifacts. Level 2 link-checking is done manually for the files this domain touches; full-repo Level 2 automation is out of scope here.
 
 ## Follow-Up Implementation Items (not yet applied)
 

@@ -27,7 +27,7 @@ Within Tier order (1 → 2 → 3), a domain is not started until the previous on
 
 ### 4. Hard size caps on artifacts
 
-No numeric cap existed before this RFC ("Context Budget" was a defined concept in ../docs/glossary.md but not a number). Added to ../docs/specifications/knowledge-spec.md as a Level 1 (Structural) validation rule:
+No numeric cap existed before this RFC ("Context Budget" was a defined concept in ../docs/glossary.md but not a number). Added as a Level 1 (Structural) validation rule (../docs/validation-model.md), with each cap owned by its artifact's own spec (../docs/specifications/knowledge-spec.md, ../docs/specifications/skill-spec.md; Reference has no dedicated spec doc yet, so its cap lives directly in validation-model.md):
 
 - Knowledge Contract: ≤150 lines
 - Skill: ≤60 lines
@@ -51,8 +51,13 @@ The main thread never reads the raw PDF. A subagent fetches and works through th
 
 `grill-with-docs`-style sessions default to `CONTEXT.md` + `docs/adr/`. This project already has equivalent artifacts (../docs/glossary.md for terms, `rfcs/` for architecture proposals — ../docs/architecture.md already requires an RFC for architecture changes). This and future sessions record decisions here instead of introducing a second, parallel documentation system.
 
+### 9. Curated subset, not the full glossary
+
+Research at planning time (see plan doc, ../docs/superpowers/plans/) found the Apple Style Guide PDF is 86% a single alphabetical A–Z glossary of 1,706 terms with no thematic grouping, plus 5 real thematic back-matter chapters (Writing Inclusively, Units of Measure, Technical Notation, International Style, Copyright/Trademarks) that do match the original assumption. Ingesting all 1,706 terms was rejected: this project serves a coding agent writing iOS app UI text, not a full editorial catalog, and mechanical alphabet-batching (e.g. "terms A–C") produces contracts no skill would ever have a reason to route to. Decision: ingest the 5 thematic chapters in full, and a curated subset of the glossary — terms relevant to app-dev (product-name capitalization, UI terminology, abbreviations, numbers/units in-app text, avoid-lists), semantically clustered into contracts, not alphabetically. Estimated ~150–300 terms landing in ~15–25 contracts. The rest of the glossary is out of scope until a real need for it appears.
+
 ## Consequences
 
 - `docs/architecture/domain-map.md` version bumped 0.1.0 → 0.2.0 (structural change, not yet Approved).
 - `docs/specifications/knowledge-spec.md` needs the size-cap addition (follow-up, not yet applied by this RFC).
 - Two existing `authentication` artifacts will change (follow-up implementation work, not yet applied by this RFC).
+- Full 1,706-term Apple Style Guide glossary is explicitly NOT being ingested; only a curated, app-dev-relevant subset is (decision 9).
