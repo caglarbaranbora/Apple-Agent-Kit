@@ -41,6 +41,10 @@ Defines the normative specification for every Skill in Apple Agent Kit.
 - A Skill should load the minimum required artifacts.
 - A Skill should resolve exactly one primary task.
 
+## Size Limit
+
+A Skill MUST NOT exceed 60 lines. If routing logic does not fit, split into multiple Skill files — never raise this limit.
+
 ## Routing Rules
 
 - Routing must be explicit.

@@ -18,6 +18,12 @@ Checks:
 -   Valid lifecycle state
 -   Required fields present
 
+Size limits:
+
+-   Knowledge Contract: 150 lines (see docs/specifications/knowledge-spec.md)
+-   Skill: 60 lines (see docs/specifications/skill-spec.md)
+-   Reference: 80 lines (no dedicated spec doc; limit defined here)
+
 Blocking: Yes
 
 ------------------------------------------------------------------------
