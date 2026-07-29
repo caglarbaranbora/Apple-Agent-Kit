@@ -117,9 +117,10 @@ something to `overcome`.
 
 ### Rule 11
 
-Agents SHOULD avoid instructional phrasing that assumes use of a specific
-sense (e.g., `you see a message`, `you hear an alert`); instead describe
-what happens directly (e.g., `A message appears`, `An alert sounds`).
+In instructional or UI text, agents SHOULD describe what happens directly
+(e.g., `A message appears`, `An alert sounds`) rather than assuming a
+specific sense (`you see a message`, `you hear an alert`). Common idioms in
+general prose (e.g., `I see your point`) are unaffected by this rule.
 
 ## Compliant Example
 
