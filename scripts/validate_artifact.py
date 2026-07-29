@@ -31,7 +31,7 @@ def validate_text(text, artifact_type):
         errors.append(f"exceeds {artifact_type} line cap: {line_count} > {cap}")
 
     for heading in REQUIRED_SECTIONS.get(artifact_type, []):
-        if heading not in text:
+        if not re.search(rf"^{re.escape(heading)}\s*$", text, re.MULTILINE):
             errors.append(f"missing required section: {heading}")
 
     if artifact_type in REQUIRED_METADATA_FIELDS:
