@@ -64,6 +64,14 @@ class TestValidateKnowledge(unittest.TestCase):
         errors = validate_artifact.validate_text(text, "knowledge")
         self.assertTrue(any("domain" in e for e in errors))
 
+    def test_space_before_yaml_fence_is_accepted(self):
+        # Repo convention (see knowledge/authentication/sign-in-terminology.md
+        # and templates/knowledge-contract.md) is "``` yaml" with a space.
+        text = VALID_KNOWLEDGE.replace("```yaml", "``` yaml")
+        errors = validate_artifact.validate_text(text, "knowledge")
+        metadata_errors = [e for e in errors if "metadata" in e]
+        self.assertEqual(metadata_errors, [])
+
 
 if __name__ == "__main__":
     unittest.main()

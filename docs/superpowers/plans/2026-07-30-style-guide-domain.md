@@ -135,6 +135,14 @@ class TestValidateKnowledge(unittest.TestCase):
         errors = validate_artifact.validate_text(text, "knowledge")
         self.assertTrue(any("domain" in e for e in errors))
 
+    def test_space_before_yaml_fence_is_accepted(self):
+        # Repo convention (see knowledge/authentication/sign-in-terminology.md
+        # and templates/knowledge-contract.md) is "``` yaml" with a space.
+        text = VALID_KNOWLEDGE.replace("```yaml", "``` yaml")
+        errors = validate_artifact.validate_text(text, "knowledge")
+        metadata_errors = [e for e in errors if "metadata" in e]
+        self.assertEqual(metadata_errors, [])
+
 
 if __name__ == "__main__":
     unittest.main()
@@ -171,7 +179,7 @@ REQUIRED_METADATA_FIELDS = {
 
 
 def extract_metadata_block(text):
-    match = re.search(r"```ya?ml\n(.*?)```", text, re.DOTALL)
+    match = re.search(r"```\s*ya?ml\n(.*?)```", text, re.DOTALL)
     return match.group(1) if match else ""
 
 
@@ -225,7 +233,7 @@ if __name__ == "__main__":
 - [ ] **Step 4: Run test to verify it passes**
 
 Run: `python3 tests/test_validate_artifact.py -v`
-Expected: `OK` with 4 tests passed
+Expected: `OK` with 5 tests passed
 
 - [ ] **Step 5: Commit**
 

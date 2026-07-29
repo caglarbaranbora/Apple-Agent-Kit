@@ -19,7 +19,7 @@ REQUIRED_METADATA_FIELDS = {
 
 
 def extract_metadata_block(text):
-    match = re.search(r"```ya?ml\n(.*?)```", text, re.DOTALL)
+    match = re.search(r"```\s*ya?ml\n(.*?)```", text, re.DOTALL)
     return match.group(1) if match else ""
 
 
