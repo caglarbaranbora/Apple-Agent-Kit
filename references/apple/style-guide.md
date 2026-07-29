@@ -22,3 +22,5 @@ Reference index for Apple's Style Guide.
 
 - knowledge/authentication/sign-in-terminology.md
 - knowledge/authentication/button-labels.md
+- knowledge/style-guide/writing-inclusively.md
+- [[knowledge/style-guide/writing-inclusively]]
