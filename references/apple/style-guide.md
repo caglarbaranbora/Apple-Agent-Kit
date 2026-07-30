@@ -38,3 +38,8 @@ Reference index for Apple's Style Guide.
 - knowledge/style-guide/input-controls.md ([[knowledge/style-guide/input-controls]])
 - knowledge/style-guide/status-and-progress-indicators.md ([[knowledge/style-guide/status-and-progress-indicators]])
 - knowledge/style-guide/touch-gesture-verbs.md ([[knowledge/style-guide/touch-gesture-verbs]])
+- knowledge/style-guide/pointer-and-click-terminology.md ([[knowledge/style-guide/pointer-and-click-terminology]])
+- knowledge/style-guide/ui-action-verbs.md ([[knowledge/style-guide/ui-action-verbs]])
+- knowledge/style-guide/abbreviations-and-acronyms.md ([[knowledge/style-guide/abbreviations-and-acronyms]])
+- knowledge/style-guide/numeric-terminology-supplement.md ([[knowledge/style-guide/numeric-terminology-supplement]])
+- knowledge/style-guide/app-state-and-error-terminology.md ([[knowledge/style-guide/app-state-and-error-terminology]])

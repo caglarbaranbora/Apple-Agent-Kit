@@ -25,6 +25,8 @@ related:
   - knowledge.style-guide.navigation-controls
   - knowledge.style-guide.input-controls
   - knowledge.style-guide.status-and-progress-indicators
+  - knowledge.style-guide.ui-action-verbs
+  - knowledge.style-guide.app-state-and-error-terminology
 updated: 2026-07-30
 ```
 

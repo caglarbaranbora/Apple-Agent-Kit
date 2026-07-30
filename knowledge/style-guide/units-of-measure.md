@@ -22,6 +22,8 @@ depends_on: []
 related:
   - knowledge.style-guide.international-formatting
   - knowledge.style-guide.international-style
+  - knowledge.style-guide.numeric-terminology-supplement
+  - knowledge.style-guide.abbreviations-and-acronyms
 updated: 2026-07-30
 ```
 

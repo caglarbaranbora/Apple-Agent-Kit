@@ -22,6 +22,7 @@ depends_on: []
 related:
   - knowledge.style-guide.international-formatting
   - knowledge.style-guide.units-of-measure
+  - knowledge.style-guide.numeric-terminology-supplement
 updated: 2026-07-30
 ```
 

@@ -24,6 +24,8 @@ related:
   - knowledge.style-guide.input-controls
   - knowledge.style-guide.navigation-controls
   - knowledge.style-guide.presentation-surfaces
+  - knowledge.style-guide.pointer-and-click-terminology
+  - knowledge.style-guide.ui-action-verbs
 updated: 2026-07-30
 ```
 
