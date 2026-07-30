@@ -28,3 +28,8 @@ Reference index for Apple's Style Guide.
 - knowledge/style-guide/international-style.md ([[knowledge/style-guide/international-style]])
 - knowledge/style-guide/international-formatting.md ([[knowledge/style-guide/international-formatting]])
 - knowledge/style-guide/copyright-and-trademarks.md ([[knowledge/style-guide/copyright-and-trademarks]])
+- knowledge/style-guide/capitalization-of-apple-proper-nouns.md ([[knowledge/style-guide/capitalization-of-apple-proper-nouns]])
+- knowledge/style-guide/capitalization-style-rules.md ([[knowledge/style-guide/capitalization-style-rules]])
+- knowledge/style-guide/general-button-labels.md ([[knowledge/style-guide/general-button-labels]])
+- knowledge/style-guide/sign-in-and-authentication-terminology.md ([[knowledge/style-guide/sign-in-and-authentication-terminology]])
+- knowledge/style-guide/authentication-credentials-and-biometrics.md ([[knowledge/style-guide/authentication-credentials-and-biometrics]])
