@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "description": "Installs the Apple Agent Kit Claude Code plugin via the claude CLI.",
   "bin": {
-    "apple-agent-kit": "./bin/install.js"
+    "apple-agent-kit": "bin/install.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/caglarbaranbora/Apple-Agent-Kit.git"
+    "url": "git+https://github.com/caglarbaranbora/Apple-Agent-Kit.git"
   },
   "engines": {
     "node": ">=18"
