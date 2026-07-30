@@ -1,0 +1,14 @@
+{
+  "name": "apple-agent-kit-marketplace",
+  "description": "Self-hosted marketplace for the Apple Agent Kit Claude Code plugin.",
+  "owner": {
+    "name": "caglarbaranbora"
+  },
+  "plugins": [
+    {
+      "name": "apple-agent-kit",
+      "source": ".",
+      "description": "Spec-first knowledge system for AI coding agents developing Apple platform applications."
+    }
+  ]
+}

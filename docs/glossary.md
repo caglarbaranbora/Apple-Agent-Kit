@@ -62,3 +62,9 @@ Execution dependency. **Is not:** Documentation links.
 
 **Definition:** Maximum useful context loaded for a task. **Is:**
 Optimization target. **Is not:** Token limit.
+
+## Tier
+
+**Definition:** Priority rank (1, 2, or 3) assigned to a domain,
+determining build order across [[domain-map]]. **Is:** Build-order
+priority. **Is not:** Dependency relationship or architectural layer.

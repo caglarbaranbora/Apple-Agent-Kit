@@ -44,6 +44,10 @@ Defines the normative specification for every Knowledge Contract in Apple Agent 
 - Every rule must be traceable to one or more Reference artifacts.
 - Keep contracts concise and normative.
 
+## Size Limit
+
+A Knowledge Contract MUST NOT exceed 150 lines. If a topic does not fit, split it into another atomic contract — never raise this limit.
+
 ## Dependency Rules
 
 - Dependencies must form a directed acyclic graph.
