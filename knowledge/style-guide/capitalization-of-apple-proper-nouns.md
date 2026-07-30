@@ -54,8 +54,9 @@ name; instead rewrite using a generic noun ("iPad devices," not "iPads";
 `Keynote's slides`). Second, agents MUST reproduce the exact official
 capitalization of each name regardless of surrounding sentence case, and
 MUST NOT insert "the" before names that Apple's style forbids it for (e.g.
-iPhone, iPad, AirPods, Control Center, Notification Center, App Store's
-generic form).
+iPhone, iPad, Control Center, Notification Center) — note this is a
+per-term rule, not universal: some names (App Store) specifically require
+an article; check the table below for each term.
 
 | Term | Correct Form | Notes |
 |---|---|---|
@@ -68,7 +69,7 @@ generic form).
 | generation | Hyphenate as compound adjective; use numeral when generation follows name; never shorten to "gen" or "G" | "sixth-generation iPad mini"; "iPad (5th generation)" (Rule 7) |
 | chip | Name alone is OK without "chip" | "A18 Pro chip" or just "A18 Pro" (Rule 8) |
 | beta (n., adj.) | Lowercase generic use; capitalize in a proper name | "a public beta"; "Apple Beta Software Program" (Rule 9) |
-| device | Generic hardware noun; use to avoid pluralizing a trademarked name | "iOS device," "multiple iPad devices" (Rule 10) |
+| device | Generic hardware noun; use to avoid pluralizing a trademarked name | "iOS device," "multiple iPad devices" — derived from the iOS/iPadOS device entries, not an independent glossary term (see Rule 11, Rule 12) |
 | iOS | No article | "iOS is the world's most advanced..." (Rule 11) |
 | iOS device | Generic term for iOS mobile hardware; avoid "mobile device" for this | (Rule 11) |
 | iPadOS / iPadOS device | No article for iPadOS; "iPadOS device" for generic hardware | (Rule 12) |
