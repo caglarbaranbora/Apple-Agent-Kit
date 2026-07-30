@@ -55,8 +55,9 @@ name; instead rewrite using a generic noun ("iPad devices," not "iPads";
 capitalization of each name regardless of surrounding sentence case, and
 MUST NOT insert "the" before names that Apple's style forbids it for (e.g.
 iPhone, iPad, Control Center, Notification Center) — note this is a
-per-term rule, not universal: some names (App Store) specifically require
-an article; check the table below for each term.
+per-term rule, not universal: some names (App Store, Trash, Dynamic
+Island) specifically require an article; check the table below for each
+term.
 
 | Term | Correct Form | Notes |
 |---|---|---|

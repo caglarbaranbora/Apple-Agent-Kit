@@ -1,6 +1,6 @@
 # Style Guide Glossary Curation Proposal
 
-Status: Revised
+Status: Approved
 Version: 0.2.0
 
 Source: https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf (A-Z glossary, 1,706 terms)
@@ -9,8 +9,8 @@ Purpose: propose which terms to ingest into knowledge/style-guide/ and how to cl
 v0.2.0 supersedes v0.1.0's cluster list after an architecture review focused on
 AI routing, atomicity, reuse, and long-term scale rather than human-readable
 grouping. No terms were re-extracted from the PDF; this is a pure
-restructuring of the term lists already gathered. No Knowledge Contracts have
-been written yet — this document is still a proposal awaiting approval.
+restructuring of the term lists already gathered. Approved 2026-07-30 —
+Task 10 drafting is underway against this cluster list.
 
 ---
 
@@ -173,5 +173,4 @@ explicitly routes through Skills, not paths.
 
 No Knowledge Contracts were created, no Apple documentation was
 re-extracted, and no glossary entries were rewritten in this revision — this
-document only restructures the term lists already gathered in v0.1.0. Task
-10 (drafting) should not begin until this revised architecture is approved.
+document only restructures the term lists already gathered in v0.1.0.

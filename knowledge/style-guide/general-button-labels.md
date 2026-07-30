@@ -19,7 +19,8 @@ tags:
 references:
   - https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf
 depends_on: []
-related: []
+related:
+  - knowledge.style-guide.capitalization-style-rules
 updated: 2026-07-30
 ```
 
@@ -45,6 +46,8 @@ copy). It is domain-general and not specific to sign-in flows.
 
 -   Sign-in, sign-out, and authentication-specific button/label wording (see `sign-in-and-authentication-terminology`)
 -   Passkey, password, and biometric terminology (see `authentication-credentials-and-biometrics`)
+-   The definitions of "sentence-style" and "title-style" capitalization used
+    in Rule 1 (see `capitalization-style-rules`)
 
 ## Rules
 
