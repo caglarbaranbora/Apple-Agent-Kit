@@ -25,6 +25,7 @@ related:
   - knowledge.style-guide.touch-gesture-verbs
   - knowledge.style-guide.status-and-progress-indicators
   - knowledge.style-guide.general-button-labels
+  - knowledge.style-guide.presentation-surfaces
 updated: 2026-07-30
 ```
 
