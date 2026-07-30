@@ -1,5 +1,6 @@
 {
   "name": "apple-agent-kit-marketplace",
+  "description": "Self-hosted marketplace for the Apple Agent Kit Claude Code plugin.",
   "owner": {
     "name": "caglarbaranbora"
   },
