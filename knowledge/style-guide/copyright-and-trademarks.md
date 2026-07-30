@@ -73,11 +73,11 @@ attribution when the mark first appears in legal or reference text.
 
 ### Rule 4
 
-When a company or product name appears in text without an explicit
-trademark attribution, agents SHOULD use the generic disclaimer that other
-company and product names mentioned may be trademarks of their respective
-companies, rather than inventing an ownership claim or asserting the name is
-unowned.
+When a company or product name (or logo) appears in text without an
+explicit trademark attribution, agents SHOULD use the source's exact
+disclaimer wording — "Other company and product names and logos mentioned
+herein are trademarks of their respective companies" — rather than a
+hedged paraphrase ("may be trademarks") or an invented ownership claim.
 
 ### Rule 5
 
@@ -88,8 +88,8 @@ may be used for commercial purposes without Apple's prior written consent.
 
 -   ✓ Quoting Apple's copyright and trademark notice in full and unedited, or leaving it out entirely (Rule 1)
 -   ✓ "iPhone is a trademark of Apple Inc., registered in the U.S. and other countries and regions." (Rule 2)
--   ✓ "The Bluetooth® word mark is a registered trademark owned by Bluetooth SIG, Inc., and is used by Apple under license." (Rule 3)
--   ✓ "Other company and product names mentioned herein may be trademarks of their respective companies." (Rule 4)
+-   ✓ "The Bluetooth® word mark and logos are registered trademarks owned by Bluetooth SIG, Inc., and any use of such marks by Apple is under license." (Rule 3)
+-   ✓ "Other company and product names and logos mentioned herein are trademarks of their respective companies." (Rule 4)
 -   ✓ "Commercial use of the keyboard Apple logo requires Apple's prior written consent." (Rule 5)
 
 ## Non-Compliant Example
