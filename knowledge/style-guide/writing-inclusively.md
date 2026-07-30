@@ -55,7 +55,9 @@ Agents MUST use gender-neutral language by default. When phrasing would
 otherwise imply a gender binary (e.g., "men and women"), reword to a neutral
 form (e.g., "people of diverse backgrounds"), unless the content specifically
 requires referring to a gender (e.g., "The percentage of women in the
-workforce has increased").
+workforce has increased"). When a gender-neutral honorific is needed, agents
+SHOULD offer "Mx." alongside "Mr." and "Ms." rather than omitting a
+neutral option.
 
 ### Rule 2
 
@@ -106,16 +108,18 @@ When writing about a person's disability, agents MUST use identity-first
 language (e.g., "a disabled person") or person-first language (e.g., "a
 person with a disability") based on the individual's stated preference; when
 unknown, agents SHOULD default to person-first language and MUST NOT use
-terms such as `handicapped`, `special needs`, `differently abled`, or
-`confined to a wheelchair`.
-
-### Rule 10
-
+terms such as `handicapped`, `special needs`, `differently abled`,
+`confined to a wheelchair`, `wheelchair-bound`, `hearing impaired`,
+`deaf and dumb`, `deaf-mute`, `mute` (for a nonspeaking person), or
+`a person with autism`/`autism spectrum disorder`/`high-functioning`/
+`low-functioning`. When a person identifies with Deaf or Autistic culture as
+an identity rather than a medical condition, agents MUST capitalize the term
+("a Deaf person," "an Autistic person") per that individual's preference.
 Agents MUST NOT describe people with disabilities as `brave`, `courageous`,
 or `inspiring` for having a disability, and MUST NOT frame disability as
 something to `overcome`.
 
-### Rule 11
+### Rule 10
 
 In instructional or UI text, agents SHOULD describe what happens directly
 (e.g., `A message appears`, `An alert sounds`) rather than assuming a
@@ -124,21 +128,17 @@ general prose (e.g., `I see your point`) are unaffected by this rule.
 
 ## Compliant Example
 
-```text
-"A subscriber can post their recipes to your shared folder."
-"Hiring people of diverse backgrounds fosters a culture of innovation."
-"A message appears when the download finishes."
-"Priya and Étienne can share files with each other."
-```
+-   ✓ "A subscriber can post their recipes to your shared folder." (Rule 2)
+-   ✓ "Hiring people of diverse backgrounds fosters a culture of innovation." (Rule 1)
+-   ✓ "A message appears when the download finishes." (Rule 10)
+-   ✓ "Priya and Étienne can share files with each other." (Rule 8)
 
 ## Non-Compliant Example
 
-```text
-"A subscriber can post his or her recipes to your shared folder."
-"Hiring men and women of diverse backgrounds fosters innovation."
-"You'll see a message when the download finishes."
-"Add a user to the blacklist to block them."
-```
+-   ✗ "A subscriber can post his or her recipes to your shared folder." (Rule 2)
+-   ✗ "Hiring men and women of diverse backgrounds fosters innovation." (Rule 1)
+-   ✗ "You'll see a message when the download finishes." (Rule 10)
+-   ✗ "Add a user to the blacklist to block them." (Rule 6)
 
 ## Dependencies
 

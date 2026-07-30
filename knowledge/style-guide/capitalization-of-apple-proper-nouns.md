@@ -105,6 +105,7 @@ term.
 | Writing Tools | Capitalize; takes a plural verb | "Writing Tools are available..." (Rule 34) |
 | library | Lowercase in general references; capitalize only as an interface element label | "your music library" vs. "click Library" (Rule 35) |
 | Trash | Capitalize; use an article | "drag the file to the Trash" (Rule 36) |
+| Login Items | Capitalize both words (macOS Settings feature name) | "Add the app to Login Items" (Rule 37) |
 
 ## Compliant Example
 
@@ -136,3 +137,4 @@ None.
 -   [Apple Style Guide — iOS; iPad; iPadOS; iPhone; iPod (pp. 113–117)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
 -   [Apple Style Guide — plurals; possessives (pp. 161, 163)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
 -   [Apple Style Guide — Wi-Fi; widget; Writing Tools (pp. 219–221)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
+-   [Apple Style Guide — Login Items (p. 130)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)

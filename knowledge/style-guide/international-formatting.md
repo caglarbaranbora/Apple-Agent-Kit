@@ -87,12 +87,22 @@ unit symbols are covered by `knowledge/style-guide/units-of-measure.md`;
 this rule governs only the spacing character used between a numeric
 quantity and its unit symbol in international-formatted text.)
 
+### Rule 4
+
+Agents MUST express quantities using only International System of Units
+(SI) units as the primary value; a non-SI equivalent MAY be added per Rule
+3 but MUST NOT replace the SI value. Agents MUST NOT imply more precision
+than is reasonable when choosing a unit symbol or decimal precision (e.g.,
+prefer "about 1.2 km" over "1.19987 km" when the source value is not
+precise to that many digits).
+
 ## Compliant Example
 
 -   ✓ "Apple Watch Series 11 was introduced on 2025-09-09." (Rule 1)
 -   ✓ "The file will be posted at 18:00Z." / "18:00 PST (UTC–8)" (Rule 1)
 -   ✓ "Apple sold 300 000 iMac computers in the first quarter." / "Apple sold 3.7 million iMac computers in 2 years." (Rule 2)
 -   ✓ "MacBook Neo weighs 1.23 kg" with a nonbreaking space before "kg" / "iPad mini (A17 Pro) Wi-Fi models weigh 293 g (0.65 lb.)." (Rule 3)
+-   ✓ "The trailhead is about 1.2 km away." (Rule 4)
 
 ## Non-Compliant Example
 
@@ -100,6 +110,8 @@ quantity and its unit symbol in international-formatted text.)
 -   ✗ "6:00 PM" instead of 24-hour time / "18:00 GMT" instead of "18:00Z" for UTC (Rule 1)
 -   ✗ "300,000 iMac computers" or "300.000 iMac computers" using a period or comma as a thousands separator (Rule 2)
 -   ✗ "1.23 kg" using a plain breaking space that could split "1.23" from "kg" across a line (Rule 3)
+-   ✗ "The trailhead is 1.19987 km away." implying false precision (Rule 4)
+-   ✗ "MacBook Neo weighs 2.7 lb." given as the only value with no SI equivalent (Rule 4)
 
 ## Dependencies
 
