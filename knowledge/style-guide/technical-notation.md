@@ -135,4 +135,4 @@ names that suggest the kind of item MUST be used instead.
 
 ## References
 
--   Apple Style Guide — "Technical notation" chapter (page 237)
+-   [Apple Style Guide — Technical notation (p. 237–238)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
