@@ -33,3 +33,8 @@ Reference index for Apple's Style Guide.
 - knowledge/style-guide/general-button-labels.md ([[knowledge/style-guide/general-button-labels]])
 - knowledge/style-guide/sign-in-and-authentication-terminology.md ([[knowledge/style-guide/sign-in-and-authentication-terminology]])
 - knowledge/style-guide/authentication-credentials-and-biometrics.md ([[knowledge/style-guide/authentication-credentials-and-biometrics]])
+- knowledge/style-guide/presentation-surfaces.md ([[knowledge/style-guide/presentation-surfaces]])
+- knowledge/style-guide/navigation-controls.md ([[knowledge/style-guide/navigation-controls]])
+- knowledge/style-guide/input-controls.md ([[knowledge/style-guide/input-controls]])
+- knowledge/style-guide/status-and-progress-indicators.md ([[knowledge/style-guide/status-and-progress-indicators]])
+- knowledge/style-guide/touch-gesture-verbs.md ([[knowledge/style-guide/touch-gesture-verbs]])
