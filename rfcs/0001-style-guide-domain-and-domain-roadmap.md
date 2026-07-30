@@ -1,6 +1,6 @@
 # RFC 0001: Style Guide Domain and Domain Roadmap
 
-Status: Proposed (pending author sign-off)
+Status: Implemented — style-guide domain build complete
 Version: 0.1.0
 
 ## Purpose
