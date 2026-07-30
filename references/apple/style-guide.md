@@ -20,8 +20,8 @@ Reference index for Apple's Style Guide.
 
 ## Used By
 
-- knowledge/authentication/sign-in-terminology.md
-- knowledge/authentication/button-labels.md
+- knowledge/authentication/sign-in-terminology.md ([[knowledge/authentication/sign-in-terminology]])
+- knowledge/authentication/button-labels.md ([[knowledge/authentication/button-labels]])
 - knowledge/style-guide/writing-inclusively.md ([[knowledge/style-guide/writing-inclusively]])
 - knowledge/style-guide/units-of-measure.md ([[knowledge/style-guide/units-of-measure]])
 - knowledge/style-guide/technical-notation.md ([[knowledge/style-guide/technical-notation]])
