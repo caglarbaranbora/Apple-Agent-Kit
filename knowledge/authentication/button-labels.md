@@ -21,9 +21,10 @@ references:
   - https://help.apple.com/applestyleguide/
 depends_on:
   - knowledge.authentication.sign-in-terminology
+  - knowledge.style-guide.general-button-labels
 related:
   - knowledge.authentication.accessibility-forms
-updated: 2026-07-29
+updated: 2026-07-30
 ```
 
 ## Intent
@@ -33,17 +34,37 @@ authentication interfaces.
 
 ## Scope
 
-Included: - Primary authentication buttons - Secondary authentication
-actions
+### Included
 
-Excluded: - Visual styling - Layout - Accessibility labels
+-   Primary authentication buttons
+-   Secondary authentication actions
+
+### Excluded
+
+-   Visual styling
+-   Layout
+-   Accessibility labels
+-   General button-quoting, icon-naming, and OK/user-name/allow wording
+    (see knowledge/style-guide/general-button-labels.md,
+    [[knowledge/style-guide/general-button-labels]])
 
 ## Rules
 
-1.  Primary actions MUST use concise verb phrases.
-2.  Labels MUST match Apple terminology.
-3.  Avoid redundant words such as "Click" or "Press".
-4.  Keep labels consistent across the flow.
+### Rule 1
+
+Primary actions MUST use concise verb phrases.
+
+### Rule 2
+
+Labels MUST match Apple terminology.
+
+### Rule 3
+
+Avoid redundant words such as "Click" or "Press".
+
+### Rule 4
+
+Keep labels consistent across the flow.
 
 ## Compliant Example
 
@@ -57,11 +78,15 @@ Excluded: - Visual styling - Layout - Accessibility labels
 -   Login Now
 -   Press to Continue
 
-Violation: - Non-standard terminology - Unnecessary wording
+Violation:
+
+-   Non-standard terminology
+-   Unnecessary wording
 
 ## Dependencies
 
 -   knowledge.authentication.sign-in-terminology
+-   knowledge.style-guide.general-button-labels
 
 ## References
 
