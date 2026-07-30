@@ -21,6 +21,7 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.authentication-credentials-and-biometrics
+  - knowledge.authentication.sign-in-terminology
 updated: 2026-07-30
 ```
 
