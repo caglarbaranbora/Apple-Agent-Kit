@@ -24,3 +24,4 @@ Reference index for Apple's Style Guide.
 - knowledge/authentication/button-labels.md
 - knowledge/style-guide/writing-inclusively.md ([[knowledge/style-guide/writing-inclusively]])
 - knowledge/style-guide/units-of-measure.md ([[knowledge/style-guide/units-of-measure]])
+- knowledge/style-guide/technical-notation.md ([[knowledge/style-guide/technical-notation]])
