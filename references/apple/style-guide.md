@@ -25,3 +25,5 @@ Reference index for Apple's Style Guide.
 - knowledge/style-guide/writing-inclusively.md ([[knowledge/style-guide/writing-inclusively]])
 - knowledge/style-guide/units-of-measure.md ([[knowledge/style-guide/units-of-measure]])
 - knowledge/style-guide/technical-notation.md ([[knowledge/style-guide/technical-notation]])
+- knowledge/style-guide/international-style.md ([[knowledge/style-guide/international-style]])
+- knowledge/style-guide/international-formatting.md ([[knowledge/style-guide/international-formatting]])
