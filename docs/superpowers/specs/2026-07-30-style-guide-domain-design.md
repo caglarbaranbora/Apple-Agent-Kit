@@ -16,7 +16,7 @@ Build the `style-guide` domain end-to-end: References → Knowledge Contracts �
 
 ## Architecture
 
-Follows the existing layering unchanged (../../architecture/dependency-model.md): Reference → Knowledge → Skill → Workflow, one-way, no cycles. Nothing about the layering itself changes for this domain — only its content and the fact that a Reference file may now index a larger number of Knowledge Contracts than the `authentication` slice did.
+Follows the existing layering unchanged (../../architecture/dependency-graph.md): Reference → Knowledge → Skill → Workflow, one-way, no cycles. Nothing about the layering itself changes for this domain — only its content and the fact that a Reference file may now index a larger number of Knowledge Contracts than the `authentication` slice did.
 
 ## Components
 
