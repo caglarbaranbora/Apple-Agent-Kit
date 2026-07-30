@@ -85,7 +85,6 @@ precision matters, per each row's Notes.
 -   ✓ "To use Apple Watch, pair it with iPhone." (Rule 5)
 -   ✓ "You can use Photos to view, edit, and share your photos." (Rule 6)
 -   ✓ "Search for any podcast by name." (Rule 8)
--   ✓ "Every new photo you take appears in My Photo Stream," not "is uploaded" (Rule 10 style, generic reword)
 
 ## Non-Compliant Example
 

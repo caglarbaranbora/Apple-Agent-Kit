@@ -24,6 +24,7 @@ related:
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.instructional-voice-and-phrasing
   - knowledge.style-guide.app-chrome-and-window-terminology
+  - knowledge.style-guide.connectivity-and-media-terminology
 updated: 2026-07-30
 ```
 
