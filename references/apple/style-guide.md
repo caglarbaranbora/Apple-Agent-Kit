@@ -27,3 +27,4 @@ Reference index for Apple's Style Guide.
 - knowledge/style-guide/technical-notation.md ([[knowledge/style-guide/technical-notation]])
 - knowledge/style-guide/international-style.md ([[knowledge/style-guide/international-style]])
 - knowledge/style-guide/international-formatting.md ([[knowledge/style-guide/international-formatting]])
+- knowledge/style-guide/copyright-and-trademarks.md ([[knowledge/style-guide/copyright-and-trademarks]])
