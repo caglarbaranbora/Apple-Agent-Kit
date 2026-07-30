@@ -98,19 +98,19 @@ names that suggest the kind of item MUST be used instead.
 
 ## Compliant Example
 
--   Rule 1: `MainProg.c` file, `StandardCRuntime.o` library.
--   Rule 2: `(height, width: extended; quo: integer); PageSize = 1024`
--   Rule 3: `Read ([file, ] var)` — literals in code font, *file* and *var*
-    as italic placeholders, brackets left as regular text.
--   Rule 4: *sourceFile* used consistently; *commandList* used throughout,
-    never swapped for a different name mid-document.
--   Rule 5: "Run `ls` on both directories."
--   Rule 6: "values of type `integer`" (rewritten to avoid a mixed-font
+-   ✓ Rule 1: `MainProg.c` file, `StandardCRuntime.o` library.
+-   ✓ Rule 2: `(height, width: extended; quo: integer); PageSize = 1024`
+-   ✓ Rule 3: `Read ([file, ] var)` — literals in code font, *file* and
+    *var* as italic placeholders, brackets left as regular text.
+-   ✓ Rule 4: *sourceFile* used consistently; *commandList* used
+    throughout, never swapped for a different name mid-document.
+-   ✓ Rule 5: "Run `ls` on both directories."
+-   ✓ Rule 6: "values of type `integer`" (rewritten to avoid a mixed-font
     plural).
--   Rule 7: "`NAN(004)`, `nan(4)`, and NaN are examples of acceptable
+-   ✓ Rule 7: "`NAN(004)`, `nan(4)`, and NaN are examples of acceptable
     input." — the closing parenthesis is part of the literal, so it stays
     in code font; the following comma is regular text.
--   Rule 8: "Replace *volumeName* with a name of up to 12 characters."
+-   ✓ Rule 8: "Replace *volumeName* with a name of up to 12 characters."
     `TObject.FirstMethod`, `TObject.SecondMethod`.
 
 ## Non-Compliant Example
@@ -131,7 +131,7 @@ names that suggest the kind of item MUST be used instead.
 
 ## Dependencies
 
--   None
+None.
 
 ## References
 

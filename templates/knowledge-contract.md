@@ -46,16 +46,19 @@ to the contract.
 
 ### Compliant Example
 
-Provide a minimal example that follows every rule.
+Provide a minimal example that follows every rule. When a contract has
+multiple numbered rules, use one bullet per rule: `-   ✓ <example> (Rule N)`.
 
 ### Non-Compliant Example
 
 Provide a minimal example that violates one or more rules and explain
-why.
+why. When a contract has multiple numbered rules, use one bullet per rule:
+`-   ✗ <example> (Rule N)`.
 
 ### Dependencies
 
-List only required Knowledge Contracts.
+List only required Knowledge Contracts. If none, write a plain `None.` —
+no bullet.
 
 ### References
 
