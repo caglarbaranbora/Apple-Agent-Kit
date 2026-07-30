@@ -78,7 +78,7 @@ precision matters, per each row's Notes.
 
 ## Compliant Example
 
--   ✓ "Use instead of cell phone or cellular phone." → "mobile phone" (Rule 1)
+-   ✓ "Connect your mobile phone to continue." (Rule 1)
 -   ✓ "You can read your saved articles at any time—even when you're not connected to the internet." (Rule 2)
 -   ✓ "Built-in storage" not "onboard storage" (Rule 3)
 -   ✓ "To use Siri, you must have an internet connection." (Rule 4)

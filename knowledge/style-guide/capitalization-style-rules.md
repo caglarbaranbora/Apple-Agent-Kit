@@ -21,6 +21,7 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.punctuation-and-typography-in-text
+  - knowledge.style-guide.general-button-labels
 updated: 2026-07-30
 ```
 
