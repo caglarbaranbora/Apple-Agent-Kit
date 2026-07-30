@@ -26,6 +26,7 @@ related:
   - knowledge.style-guide.navigation-controls
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.touch-gesture-verbs
+  - knowledge.style-guide.app-chrome-and-window-terminology
 updated: 2026-07-30
 ```
 

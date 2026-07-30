@@ -24,6 +24,8 @@ related:
   - knowledge.style-guide.pointer-and-click-terminology
   - knowledge.style-guide.touch-gesture-verbs
   - knowledge.style-guide.general-button-labels
+  - knowledge.style-guide.instructional-voice-and-phrasing
+  - knowledge.style-guide.connectivity-and-media-terminology
 updated: 2026-07-30
 ```
 
@@ -142,9 +144,7 @@ None.
 -   [Apple Style Guide — turn on, turn off (p. 208); pin (n., v.) (p. 158); post (v.) (p. 164); put (p. 171)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
 -   [Apple Style Guide — connect (p. 56); link (n.), link (v.) (p. 125); lookup (n., adj.), look up (v.) (p. 131)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
 -   [Apple Style Guide — maximize (p. 137); minimize (v.), minimized (adj.) (p. 142); sync, synced, syncing (p. 197)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
--   [Apple Style Guide — upload (p. 211); uninstall (p. 210); abort (p. 12); access (n., v.) (p. 13)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
--   [Apple Style Guide — activate, deactivate (p. 14); appear (p. 21); attach (p. 33); depress (p. 65)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
--   [Apple Style Guide — disable (v.), disabled (adj.) (p. 68); display (v.) (p. 70); eject (trans. v.) (p. 78)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
--   [Apple Style Guide — highlight (v.) (p. 100); hit (v.) (p. 101); input (n., adj.) (p. 110); install (p. 111)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
--   [Apple Style Guide — kill (p. 122); let (p. 124); mount (v.) (p. 144); exit (p. 83); deselect (p. 65)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
+-   [Apple Style Guide — upload (p. 211); uninstall (p. 210); abort (p. 12); access (n., v.) (p. 13); activate, deactivate (p. 14)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
+-   [Apple Style Guide — appear (p. 21); attach (p. 33); depress (p. 65); disable (v.), disabled (adj.) (p. 68); display (v.) (p. 70)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
+-   [Apple Style Guide — eject (trans. v.) (p. 78); highlight (v.) (p. 100); hit (v.) (p. 101); input (n., adj.) (p. 110); install (p. 111); kill (p. 122); let (p. 124); mount (v.) (p. 144); exit (p. 83); deselect (p. 65)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
 -   [Apple Style Guide — uncheck, unclick (p. 209); unhighlight (v.), unselected (adj.) (p. 210); power off (v.), power on (v.) (p. 164); enable (v.), enabled (adj.) (p. 80)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)

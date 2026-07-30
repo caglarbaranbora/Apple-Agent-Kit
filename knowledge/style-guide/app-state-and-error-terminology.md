@@ -22,6 +22,8 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.general-button-labels
+  - knowledge.style-guide.instructional-voice-and-phrasing
+  - knowledge.style-guide.app-chrome-and-window-terminology
 updated: 2026-07-30
 ```
 

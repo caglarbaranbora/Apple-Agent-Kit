@@ -19,7 +19,9 @@ tags:
 references:
   - https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf
 depends_on: []
-related: []
+related:
+  - knowledge.style-guide.connectivity-and-media-terminology
+  - knowledge.style-guide.app-chrome-and-window-terminology
 updated: 2026-07-30
 ```
 

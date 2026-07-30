@@ -27,6 +27,7 @@ related:
   - knowledge.style-guide.status-and-progress-indicators
   - knowledge.style-guide.ui-action-verbs
   - knowledge.style-guide.app-state-and-error-terminology
+  - knowledge.style-guide.instructional-voice-and-phrasing
 updated: 2026-07-30
 ```
 

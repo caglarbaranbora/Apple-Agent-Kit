@@ -43,3 +43,7 @@ Reference index for Apple's Style Guide.
 - knowledge/style-guide/abbreviations-and-acronyms.md ([[knowledge/style-guide/abbreviations-and-acronyms]])
 - knowledge/style-guide/numeric-terminology-supplement.md ([[knowledge/style-guide/numeric-terminology-supplement]])
 - knowledge/style-guide/app-state-and-error-terminology.md ([[knowledge/style-guide/app-state-and-error-terminology]])
+- knowledge/style-guide/instructional-voice-and-phrasing.md ([[knowledge/style-guide/instructional-voice-and-phrasing]])
+- knowledge/style-guide/connectivity-and-media-terminology.md ([[knowledge/style-guide/connectivity-and-media-terminology]])
+- knowledge/style-guide/app-chrome-and-window-terminology.md ([[knowledge/style-guide/app-chrome-and-window-terminology]])
+- knowledge/style-guide/punctuation-and-typography-in-text.md ([[knowledge/style-guide/punctuation-and-typography-in-text]])

@@ -24,6 +24,7 @@ related:
   - knowledge.style-guide.international-style
   - knowledge.style-guide.numeric-terminology-supplement
   - knowledge.style-guide.abbreviations-and-acronyms
+  - knowledge.style-guide.punctuation-and-typography-in-text
 updated: 2026-07-30
 ```
 
