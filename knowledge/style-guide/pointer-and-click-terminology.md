@@ -22,6 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.touch-gesture-verbs
+  - knowledge.style-guide.ui-action-verbs
 updated: 2026-07-30
 ```
 

@@ -38,7 +38,7 @@ text or documentation for Apple platforms.
 -   The general spell-out-on-first-occurrence rule and how to present the pair
 -   Pluralization (no apostrophe) and article (a/an) rules for abbreviations
 -   Punctuation and Latin-abbreviation avoidance
--   Specific entries: e.g., etc., FAQ, GUI, i.e., number ("No."), PDF, UI, user interface, URL, USB, VPN
+-   Specific entries: e.g., etc., FAQ, GUI, i.e., number ("no."), PDF, UI, user interface, URL, USB, VPN
 
 ### Excluded
 
@@ -66,7 +66,7 @@ meaning instead.
 | FAQ | an FAQ (singular); FAQs (plural) | Use title-style capitalization for the full term when it precedes a noun: "the Frequently Asked Questions document" (Rule 3) |
 | GUI | interface (user materials), UI (developer materials) | Don't use GUI itself in text (Rule 4) |
 | i.e. | that is | Don't use i.e. (Rule 5) |
-| number | No. | Abbreviate as "No." only if space is limited; see also number sign (#) (Rule 6) |
+| number | no. | Abbreviate as "no." (lowercase) only if space is limited; see also number sign (#) (Rule 6) |
 | PDF | PDF | Not necessary to spell out on first occurrence; use to refer to a PDF file (Rule 7) |
 | UI | UI (developer materials), interface (user materials) | Abbreviation for user interface (Rule 8) |
 | user interface | interface | Don't use "user interface" in user materials (Rule 9) |
@@ -90,7 +90,7 @@ meaning instead.
 -   ✗ "a FAQ" mispronouncing FAQ as letters instead of a word (intro rule)
 -   ✗ "et al., e.g., i.e., etc." used freely in running text (Rule 1, Rule 2, Rule 5)
 -   ✗ "The GUI lets you drag files." (Rule 4)
--   ✗ "Sign in with your No. or account ID." spelling out "No." unnecessarily when space allows "number" (Rule 6)
+-   ✗ "Sign in with your No. or account ID." capitalized, and abbreviated unnecessarily when space allows "number" (Rule 6)
 -   ✗ "Enter your UI settings." in a user-facing document (Rule 8)
 
 ## Dependencies

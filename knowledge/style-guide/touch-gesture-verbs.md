@@ -70,7 +70,7 @@ replacement in user-facing text.
 | pinch | Placing two fingers on the touchscreen/trackpad and moving them closer together or farther apart | "pinch open"/"pinch closed" for added detail (Rule 7) |
 | rotate | Placing two fingers slightly apart on the touchscreen/trackpad and twisting clockwise/counterclockwise | Don't use for turning the Digital Crown; use "turn" (Rule 8) |
 | zoom, Zoom | Lowercase for the zooming action (zoom in, zoom in on, zoom out, zoom out of) | Capitalize only for the Zoom accessibility feature (Rule 9) |
-| drag | Moving an onscreen item or control, varies by device (pointer+mouse/trackpad on desktop; one-finger move on touchscreen) | Don't use "click and drag," "drag the mouse/pointer," or "place/put/move" for drag (Rule 10) |
+| drag | Moving an onscreen item or control, varies by device (pointer+mouse/trackpad on desktop; one-finger move on touchscreen) | Don't use "drag the mouse/pointer" for drag; see `pointer-and-click-terminology` (click and drag) and `ui-action-verbs` (put) for other avoid-forms (Rule 10) |
 | drag and drop | drag and drop (n., v.), drag-and-drop (adj.) | Don't use as a compound verb taking an object — dragging includes dropping (Rule 11) |
 | jiggle | Use for the movement of app icons being rearranged or deleted | Not "wiggle" (Rule 12) |
 | wiggle | Don't use for icon movement | Use "jiggle" (Rule 13) |
