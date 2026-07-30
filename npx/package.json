@@ -1,6 +1,6 @@
 {
   "name": "apple-agent-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Installs the Apple Agent Kit Claude Code plugin via the claude CLI.",
   "bin": {
     "apple-agent-kit": "bin/install.js"
@@ -9,6 +9,21 @@
     "type": "git",
     "url": "git+https://github.com/caglarbaranbora/Apple-Agent-Kit.git"
   },
+  "homepage": "https://github.com/caglarbaranbora/Apple-Agent-Kit#readme",
+  "bugs": {
+    "url": "https://github.com/caglarbaranbora/Apple-Agent-Kit/issues"
+  },
+  "author": "caglarbaranbora",
+  "license": "PolyForm-Strict-1.0.0",
+  "keywords": [
+    "claude-code",
+    "claude-code-plugin",
+    "apple",
+    "swift",
+    "swiftui",
+    "ios",
+    "ai-agent"
+  ],
   "engines": {
     "node": ">=18"
   }
