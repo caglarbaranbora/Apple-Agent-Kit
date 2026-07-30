@@ -20,7 +20,12 @@ tags:
 references:
   - https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf
 depends_on: []
-related: []
+related:
+  - knowledge.style-guide.input-controls
+  - knowledge.style-guide.status-and-progress-indicators
+  - knowledge.style-guide.navigation-controls
+  - knowledge.style-guide.general-button-labels
+  - knowledge.style-guide.touch-gesture-verbs
 updated: 2026-07-30
 ```
 
@@ -71,7 +76,7 @@ form appropriate to the audience of the document being written.
 | pop-up | Adjective for ads/notices from a browser (pop-up ads, pop-up window); noun form OK only when space-constrained | Never use "pop-up" alone to mean "pop-up menu" (Rule 9) |
 | popover | Don't use in user materials; describe what the user selects or does | Never call it a dialog or window; OK in developer materials (Rule 10) |
 | panel | Don't use in user materials; use dialog, window, or pane | Use in developer materials (e.g., SFChooseIdentityPanel) (Rule 11) |
-| pane | Use pane (not panel) for an area within a window/dialog changed by clicking a button or tab | (Rule 12) |
+| pane | Use pane (not panel) for an area within a window/dialog changed by clicking a button | Don't call the switching control a "tab"; call it a button (Rule 12) |
 | picker | Don't use in user materials to describe selecting a color or date | Describe the task or interface area instead (Rule 13) |
 | color picker | Don't use | See picker (Rule 14) |
 | date picker | Don't use | See picker (Rule 15) |

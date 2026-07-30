@@ -21,6 +21,11 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.capitalization-style-rules
+  - knowledge.style-guide.presentation-surfaces
+  - knowledge.style-guide.navigation-controls
+  - knowledge.style-guide.input-controls
+  - knowledge.style-guide.status-and-progress-indicators
+  - knowledge.style-guide.touch-gesture-verbs
 updated: 2026-07-30
 ```
 

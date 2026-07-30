@@ -22,6 +22,8 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.input-controls
+  - knowledge.style-guide.navigation-controls
+  - knowledge.style-guide.presentation-surfaces
 updated: 2026-07-30
 ```
 
@@ -107,7 +109,7 @@ None.
 ## References
 
 -   [Apple Style Guide — gestures (pp. 93–94)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
--   [Apple Style Guide — tap (n., v.); tap and hold (pp. 201–202)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
+-   [Apple Style Guide — tap (n., v.); tap and hold (p. 201)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
 -   [Apple Style Guide — touch and hold (p. 206)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
 -   [Apple Style Guide — double tap (n.) (p. 73)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
 -   [Apple Style Guide — swipe (n., v.) (p. 195); pinch (v.) (p. 159); rotate (p. 177)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)

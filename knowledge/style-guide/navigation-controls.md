@@ -22,6 +22,8 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.input-controls
+  - knowledge.style-guide.presentation-surfaces
+  - knowledge.style-guide.general-button-labels
 updated: 2026-07-30
 ```
 
@@ -116,7 +118,7 @@ None.
 ## References
 
 -   [Apple Style Guide — Back button (p. 36)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
--   [Apple Style Guide — More button, More menu (p. 143)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
+-   [Apple Style Guide — More button, More menu (pp. 143–144)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
 -   [Apple Style Guide — question-mark button (p. 172); Help button (p. 100)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
 -   [Apple Style Guide — disclosure arrow; disclosure button (p. 69)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)
 -   [Apple Style Guide — up arrow (p. 211)](https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf)

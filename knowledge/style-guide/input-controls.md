@@ -23,6 +23,8 @@ depends_on: []
 related:
   - knowledge.style-guide.navigation-controls
   - knowledge.style-guide.touch-gesture-verbs
+  - knowledge.style-guide.status-and-progress-indicators
+  - knowledge.style-guide.general-button-labels
 updated: 2026-07-30
 ```
 
