@@ -1,87 +1,177 @@
 # Style Guide Glossary Curation Proposal
 
-Status: Draft
-Version: 0.1.0
+Status: Revised
+Version: 0.2.0
 
 Source: https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf (A-Z glossary, 1,706 terms)
 Purpose: propose which terms to ingest into knowledge/style-guide/ and how to cluster them, per [[0001-style-guide-domain-and-domain-roadmap]] (../../../rfcs/0001-style-guide-domain-and-domain-roadmap.md) decision 9.
 
+v0.2.0 supersedes v0.1.0's cluster list after an architecture review focused on
+AI routing, atomicity, reuse, and long-term scale rather than human-readable
+grouping. No terms were re-extracted from the PDF; this is a pure
+restructuring of the term lists already gathered. No Knowledge Contracts have
+been written yet — this document is still a proposal awaiting approval.
+
 ---
 
-## Proposed Clusters
+# Revised Cluster Architecture
 
-### capitalization-of-product-names
-Terms: product names, app names, app/application/program, plurals, possessives, code names, generation, chip, beta, device, iOS, iOS device, iPadOS, iPadOS device, iPhone, iPad, iPod, internet/Internet, in-app purchase
-Rationale: These are the mechanical rules (no verbing, no plurals/possessives of trademarked names, article usage, "device" vs. specific model names) an agent needs every time it writes copy that names the OS, the hardware, or the app itself.
+Flat directory (`knowledge/style-guide/*.md`, no subfolders — see "Why the
+hierarchy stays flat" below), 19 clusters:
 
-### capitalization-of-system-features-and-services
-Terms: App Store, Apple ID, Apple Account, Sign in with Apple, Apple Pay, AirDrop, AirPlay, Wi-Fi, Bluetooth, Dark Mode, Home Screen, Lock Screen, Control Center, Notification Center, Dock, Widget, Live Activities, Live Photos, Dynamic Island, Multi-Touch, Do Not Disturb, voiceover/VoiceOver, Writing Tools
-Rationale: These are the first-party system features and services a typical iOS app actually integrates with or references (share sheets, sign-in, connectivity, widgets, system UI chrome), each with its own required capitalization pattern.
+| # | Cluster | ~Terms | Reused by (beyond style-guide) |
+|---|---|---|---|
+| 1 | `capitalization-of-apple-proper-nouns` | 41 | every domain (product/feature names) |
+| 2 | `capitalization-style-rules` | 4 | every domain (sentence-vs-title case) |
+| 3 | `general-button-labels` | 4 | every domain with buttons |
+| 4 | `sign-in-and-authentication-terminology` | 9 | Authentication, AuthenticationServices |
+| 5 | `authentication-credentials-and-biometrics` | 9 | Authentication, Security |
+| 6 | `presentation-surfaces` | 20 | every domain (alerts/sheets/pickers) |
+| 7 | `navigation-controls` | 6 | every domain |
+| 8 | `input-controls` | 7 | every domain, esp. Settings/Widgets |
+| 9 | `status-and-progress-indicators` | 4 | every domain |
+| 10 | `touch-gesture-verbs` | 19 | every domain |
+| 11 | `pointer-and-click-terminology` | 10 | iPad/Mac Catalyst domains |
+| 12 | `ui-action-verbs` | 50 | every domain (highest-reuse cluster) |
+| 13 | `abbreviations-and-acronyms` | 12 | every domain |
+| 14 | `numeric-terminology-supplement` | 6 | narrow — numbers not already covered |
+| 15 | `app-state-and-error-terminology` | 14 | every domain |
+| 16 | `instructional-voice-and-phrasing` | 16 | every domain (tone/POV) |
+| 17 | `connectivity-and-media-terminology` | 14 | Notifications, Widgets (future) |
+| 18 | `app-chrome-and-window-terminology` | 10 | Settings, Mac Catalyst |
+| 19 | `punctuation-and-typography-in-text` | 7 | every domain |
 
-### capitalization-styles-sentence-vs-title
-Terms: capitalization, command names, title-style capitalization, sentence-style capitalization
-Rationale: The foundational mechanic (when to use sentence-style vs. title-style caps) that every button, menu, and header label in an app depends on, so it deserves its own compact, frequently-referenced contract.
+**Content-format note for Task 10:** clusters with 20+ terms (1, 6, 10, 12)
+cannot fit the chapter-contract prose format (`### Rule N` + paragraph +
+dedicated example pair) under the 150-line cap — 40+ terms at ~3 lines each
+already exceeds it before metadata and examples are counted. These clusters
+MUST use a compact table-style `## Rules` section (one line per
+term: correct form → avoid form → one-clause reason), with example pairs
+grouped by sub-theme rather than one pair per term. This is a second,
+legitimate content shape for glossary-sourced terminology contracts,
+distinct from the prose-rule shape used for the 6 chapter contracts already
+built — both are valid `type: knowledge` contracts, they just fit different
+source material. If a table-format cluster still can't fit 150 lines once
+drafted, split it by sub-theme at that point (e.g. `ui-action-verbs` into
+`ui-action-verbs-core` / `ui-action-verbs-avoid`) rather than raising the cap.
 
-### sign-in-and-general-buttons
-Terms: button, sign-in (n., adj.)/sign in (v.), sign out, sign-on (n., adj.)/sign on (v.), single sign-on, login/log in (v.), log on/log off, into/in to, OK, user name, allow
-Rationale: Required cluster — the general Sign In/Sign Out/Log In terminology and general button-label wording rules that `sign-in-terminology.md` and `button-labels.md` will later depend on.
+---
 
-### authentication-credentials-and-biometrics
-Terms: passkey, passphrase, password, PIN, code/passcode, Touch ID, Face ID, two-factor authentication, two-step verification
-Rationale: Distinct from general sign-in wording, these are the precise, easily-confused nouns for credential types and biometric methods an agent must not swap when writing auth flows.
+# Change Log
 
-### dialogs-menus-and-popups
-Terms: dialog, dialog box, dialog message, box, sheet, share sheet, contextual menu, drop-down menu, pop-up, popover, panel, pane, picker, color picker, date picker, action sheet, alert
-Rationale: A cluster of overlapping/easily-confused container-UI nouns (dialog vs. sheet vs. popover vs. alert) with a strong avoid-list character ("don't say dialog box," "don't name the popover").
+**Merge: `capitalization-of-product-names` + `capitalization-of-system-features-and-services` → `capitalization-of-apple-proper-nouns`**
+Reason: same rule shape (capitalize this Apple noun exactly as styled, don't pluralize/verb/possessive it), different noun lists only. An agent writing "the App Store" vs "iPhone" is asking the identical question — splitting by product-vs-feature is an arbitrary boundary with no natural routing signal (fails the Routing criterion's "obvious ownership" test). Merging also maximizes reuse: this is the one cluster nearly every future domain (StoreKit → "App Store", WidgetKit → "Widget", UserNotifications → "Notification Center") will `related:` against.
 
-### buttons-and-controls-naming
-Terms: option names, Back button, More button/More menu, question-mark button, radio button, disclosure arrow, disclosure button, up arrow, checkbox, check, checkmark, slider, stepper, switch (n.), symbol, adjuster, incrementer, badge, index, alphabet column, progress indicator, determinate progress bar, indeterminate progress bar, asynchronous progress indicator, preset, library, Trash
-Rationale: Names for the individual controls an agent will label or describe in instructional/help copy (steppers, sliders, switches, progress indicators, badges), most with an explicit "call it X, not Y" rule.
+**Kept separate: `capitalization-styles-sentence-vs-title` → renamed `capitalization-style-rules`**
+Reason: this is not a proper-noun list, it's a generic mechanical rule (when to use sentence-style vs. title-style case) that applies to every button/header an agent writes, Apple-noun or not. Different query shape from #1 ("how do I capitalize *this specific term*" vs "what casing style does *this kind of label* use") — merging would blur two genuinely different routing questions into one file.
 
-### touch-gesture-verbs
-Terms: tap, tap and hold, touch and hold, double tap, swipe, pinch, rotate, zoom, drag, drag and drop, jiggle, wiggle, long press, press and hold, hold down, scroll, slide, flick, gestures, haptic/haptics
-Rationale: The core touchscreen vocabulary for an iOS app — which verb goes with which gesture, and which informal synonyms (wiggle, long press, hold down, flick) to avoid in user-facing text.
+**Split: `sign-in-and-general-buttons` → `general-button-labels` + `sign-in-and-authentication-terminology`**
+Reason: two distinct reuse profiles. "Button", "OK", "allow", "user name" are needed by every domain with a button (Widgets, StoreKit, Notifications) — a Widget-writing agent shouldn't have to load sign-in vocabulary to get "OK" conventions. Splitting also gives an exact 1:1 target for the plan's Task 11/12 refactor: `knowledge/authentication/button-labels.md` → `depends_on: general-button-labels`, `knowledge/authentication/sign-in-terminology.md` → `depends_on: sign-in-and-authentication-terminology`. The single merged cluster from the original proposal would have forced both auth files to depend on the same over-broad contract.
 
-### pointer-and-click-terminology
-Terms: click, click on, click and drag, click and hold, click in, double click, double press, right-click, mouse, cursor
-Rationale: Smaller, secondary cluster for iPad/Mac Catalyst pointer support, where an agent must not default to "click on" or "right-click" phrasing borrowed from desktop conventions.
+**Rename + absorb: `dialogs-menus-and-popups` → `presentation-surfaces`, gains `picker`/`color picker`/`date picker` (moved out of the old controls cluster)**
+Reason: renamed to match Apple HIG's own vocabulary for this concept (generic "presentation," not just "dialog") since other domains will `related:` against it and should recognize the name. Pickers moved in because a picker is a presentation surface (usually appears in a sheet), not an interactive control in the same sense as a checkbox or slider — grouping it with sheets/popovers/menus gives cleaner ownership than leaving it in a controls grab-bag.
 
-### core-ui-action-verbs
-Terms: enter, type, press, choose, select, open, close, quit, start, stop, run/running, switch (v.), toggle, turn on/turn off, pin, post, put, connect, link (n.), link (v.), lookup (n.)/look up (v.), maximize, minimize, sync/synced/syncing, upload, uninstall
-Rationale: The everyday, correct-usage verbs for actions and app lifecycle events that appear constantly in button labels, empty states, and instructional copy.
+**Split: `buttons-and-controls-naming` (28 terms) → `navigation-controls` + `input-controls` + `status-and-progress-indicators`**
+Reason: this was a heterogeneous catch-all (navigation chrome, form inputs, progress UI, plus stray terms) — fails atomicity (an agent building a settings toggle would load Back-button and progress-bar vocabulary it doesn't need) and fails Domain Ownership (no single coherent "when do I load this" story). Split by actual UI role: navigation (`Back button`, `More button`, disclosure arrow/button, up arrow), input (`checkbox`, `radio button`, `slider`, `stepper`, `switch`, adjuster, incrementer), status (progress-indicator variants, badge, index/alphabet column). `library` and `Trash` are reassigned to `capitalization-of-apple-proper-nouns` — they're proper-noun capitalization concerns (Apple system feature names), not control-naming concerns; they were misfiled in the original proposal.
 
-### action-verbs-avoid-list
-Terms: abort, access, activate/deactivate, appear, attach, depress, disable/disabled, display (v.), eject, highlight, hit (v.), input (n., adj.), install, kill, let, mount (v.)/mounted (adj.), exit, uncheck, unclick, unhighlight (v.)/unhighlighted (adj.), unselected (adj.), deselect
-Rationale: A companion "don't use X verb, use Y verb" list too large to fit in the core-verbs cluster, covering the informal/legacy verbs (kill, hit, hold down's cousins, disable, activate) an agent must not reach for.
+**Merge: `core-ui-action-verbs` + `action-verbs-avoid-list` + `power-and-toggle-state-terminology` → `ui-action-verbs`**
+Reason: correct-verb and avoid-verb are two sides of one lookup — every existing contract in this domain already pairs "use X" with "not Y" inside one file's Compliant/Non-Compliant sections (that's the established template shape), so a *separate cluster* for the avoid-list duplicates that pattern at the wrong granularity. `power-and-toggle-state-terminology` (6 terms, all "turn on/off" vs "power on/off"/"enable") is itself just one more verb-pair family — keeping it as a standalone 6-term file violates the Token Efficiency criterion ("prefer one concise contract over three tiny ones when almost always loaded together"). This is now the domain's single highest-reuse cluster (every UI-text-writing task touches action verbs) and, per the content-format note above, must use the compact table format to fit.
 
-### abbreviations-and-acronyms
-Terms: abbreviations and acronyms (master rule), e.g., etc., FAQ, GUI, i.e., number, PDF, UI, user interface, URL, USB, VPN
-Rationale: The general spell-out/pluralize/article rules for abbreviations plus the specific ones (UI, URL, USB, GUI) that actually show up in app copy and developer-facing strings.
+**Shrink + rename: `numbers-and-time-in-text` → `numeric-terminology-supplement`, most terms dropped**
+Reason: the original 20-term list duplicated three already-built contracts — `GB`, `inch`, `mm`, `percent`, `degrees` duplicate `units-of-measure.md`; `dates`, `time of day`, `time zone`, `a.m./p.m.` duplicate `international-formatting.md` Rule 1; `phone numbers` duplicates `international-style.md` Rule 4. Ingesting them again would violate the "no duplicated rules" rule that Task 6's own review already had to fix once for a similar overlap. Kept only the genuinely uncovered terms: `aspect ratio`, `fractions`, `version number`, `x` (resolution notation), `step` (as in step-by-step instructions), `zip code`. `related:` must point at all three existing numeric contracts so the gap is visibly intentional, not an oversight.
 
-### numbers-and-time-in-text
-Terms: a.m./p.m., aspect ratio, battery level/battery life, fractions, GB, inch, millimeter (mm), percent, phone numbers, pixel, degrees, dates, dimensions, temperatures, time of day, time zone, version number, x (resolution notation), step, zip code
-Rationale: Individual glossary entries about numeral formatting that are distinct from the already-ingested international-formatting/units-of-measure chapters (e.g., how to write "8:30 a.m.," "4:3," "step 1," "94103") — flagged for a human editor to confirm no overlap with those contracts before drafting.
+**Split: `general-word-choice-avoid-list` (29 terms) → `app-chrome-and-window-terminology` + `punctuation-and-typography-in-text`, remainder dropped**
+Reason: this was the original proposal's junk-drawer cluster — legal/business words, UI chrome, typography, file/window concepts, and symbols had no shared routing story. Split into two coherent clusters: chrome/window (`window`, `document`, `homepage`, `launch`, `Launchpad`, `default`, `mode`, `system`, `tooltip`, `parental controls`) and punctuation/typography (`ampersand`, `exclamation points`, `ellipsis`, `typeface`/`type size`/`type style`). Dropped entirely as low-value for an app-UI-text-writing agent: `grandfathered`, `free`, `professional`, `third-party`, `support`, `resize`, `over`, `new`, `latest`, `localizable`, `one-click` — these are either generic English (no Apple-specific rule) or legal/marketing terms outside this project's stated scope (app UI text, not marketing copy or legal boilerplate).
 
-### app-state-and-error-terminology
-Terms: bug, crash, freeze, hang, corrupted, error message, problem, restart, restore, splash screen, opening display, grayed, unavailable, functionality
-Rationale: The vocabulary for describing something going wrong or an app's lifecycle state, almost entirely avoid-list-driven ("crash" → "quits unexpectedly," "splash screen" → "opening display").
+**Unchanged:** `authentication-credentials-and-biometrics`, `touch-gesture-verbs`, `pointer-and-click-terminology`, `abbreviations-and-acronyms`, `app-state-and-error-terminology`, `instructional-voice-and-phrasing`, `connectivity-and-media-terminology` — each already had a single coherent theme, an obvious routing story, and no overlap with any other cluster or existing contract.
 
-### instructional-voice-and-phrasing
-Terms: and/or, can/might/may, desire/desired, end user, first person, if necessary, jargon, once, optionally, please, prompt, shows up, under, we, user, capability
-Rationale: Sentence-level phrasing and point-of-view rules (avoid first person, avoid "please," address the reader as "you" not "the user") that shape the tone of onboarding and error copy.
+---
 
-### connectivity-and-media-terminology
-Terms: cell phone/cellular phone, pair/paired, online, offline, onboard, podcast, photo, picture, preinstalled/preloaded, redownload, telephone number, text message, predictive text, push notification
-Rationale: Terminology for describing connectivity/media state and device pairing that recurs in onboarding, settings, and messaging-adjacent UI text.
+# Routing Analysis
 
-### general-word-choice-avoid-list
-Terms: ampersand, exclamation points, free, grandfathered/grandfathered in, homepage, edit menu/Edit menu, ellipsis, latest, localizable, mode, new, one-click, over, print (v.), professional, resize, support, system, thumb, throw away, third party/third-party, tooltip, typeface/type size/type style, launch, Launchpad, default, document, window, parental controls
-Rationale: A catch-all of miscellaneous nouns/adjectives with explicit "don't use X, use Y" rules that didn't fit a narrower theme but recur often enough in general app copy to be worth keeping.
+**Routing.** Every remaining cluster now answers one unambiguous question. The
+biggest prior failure was `buttons-and-controls-naming` and
+`general-word-choice-avoid-list` — both required an agent (or the human
+routing table in `skills/style-guide/writing.md`) to already know which
+grab-bag a term landed in before it could route there. Post-split, "what do I
+call this toggle" → `input-controls`, "what do I call this modal" →
+`presentation-surfaces`, with no cluster whose name doesn't predict its
+contents.
 
-### power-and-toggle-state-terminology
-Terms: enable/enabled, power-down, power off, power on, power-up, switch on/switch off
-Rationale: A small, tightly-scoped cluster on the single recurring mistake of using "power on/off" or "enable" instead of Apple's preferred "turn on/off," relevant to any settings screen.
+**Token efficiency.** Net effect is roughly cluster-count-neutral (18 → 19)
+but that number is misleading: three genuine merges removed real duplication
+and consolidated near-certain co-loads (proper-noun capitalization; verbs
+correct+avoid+toggle), while the count only grew because two incoherent
+grab-bags were split into clusters an agent will *actually load selectively*
+instead of always pulling the whole grab-bag. Net token cost per real task
+goes down even though file count is flat, because agents now load 1-2
+precisely-scoped contracts instead of 1 oversized one.
 
-## Excluded
+**Reuse.** Explicitly tagged reuse potential in the architecture table above.
+`ui-action-verbs`, `capitalization-of-apple-proper-nouns`,
+`capitalization-style-rules`, `presentation-surfaces`, and the three controls
+clusters are structured so that Tier 1/2 domains (SwiftUI, UIKit, WidgetKit,
+App Intents, UserNotifications) can `related:` against them directly instead
+of each domain re-deriving its own terminology rules — this is the payoff of
+merging by *rule shape* rather than by *source glossary section*.
 
-Excluded the roughly 1,400+ remaining glossary terms covering: retail/Apple Store and enterprise/education administration terminology; legal, licensing, and corporate boilerplate; hardware and product-line naming trivia not touched by typical app UI (Vision Pro components like Light Seal, Apple Watch health features like Crash Detection/Fall Detection, Apple Card specifics, CarPlay/Mac-only system-administration terms, chip/M-series naming details, connector and port types); print/publishing production and typography-mechanics entries; niche developer-only or networking abbreviations (RAID, SDRAM, POP, DIMM, etc.) unlikely to appear in end-user copy; and generic English grammar entries (that/which, who/whom) with no Apple-specific rule. Also excluded entries already covered by separate contracts: inclusive/gender-neutral/disability language (`writing-inclusively.md`), code-font and placeholder-naming rules (`technical-notation.md`), and trademark/copyright attribution wording (`copyright-and-trademarks.md`).
+**Maintainability.** The two 1:1 splits (`general-button-labels` /
+`sign-in-and-authentication-terminology`) remove a future footgun: had the
+original merged cluster shipped, both `depends_on` refactors in Task 11/12
+would have pointed at the same over-broad file, and any future edit to
+sign-in wording would have force-reviewed every button-label consumer too.
+
+---
+
+# Future Impact
+
+**At 40+ contracts** (roughly where `style-guide` lands once these 19
+clusters plus the 6 chapter contracts are drafted): the flat directory is
+still trivially browsable, and `skills/style-guide/writing.md` (currently
+routing to 6 files) will need to grow — but the 60-line Skill cap
+(`docs/specifications/skill-spec.md`) will force that growth into multiple
+Skill files by itself, e.g. `skills/style-guide/terminology.md`,
+`skills/style-guide/controls-and-surfaces.md`,
+`skills/style-guide/voice-and-formatting.md`. This is the architecture's
+existing, designed scaling mechanism — no new mechanism needs inventing.
+
+**At 80+ contracts** (style-guide fully saturated, plus other domains'
+`related:` links pointing back into it): still comfortable per-domain, since
+no single domain is likely to individually exceed ~40-50 files even at full
+build-out. The place to watch is `skills/index.md`, which is currently one
+flat discovery table — at this scale it may need per-domain index files
+rather than one growing table, but that's a `skills/index.md` concern, not a
+`knowledge/style-guide/` one, and is out of scope for this review.
+
+**At 150+ contracts** (project-wide, across all 27 roadmapped domains): this
+scales by design because directory browsing was never the routing mechanism
+— `AGENTS.md` already mandates deterministic routing through Skills and
+References, never repository-wide search or folder traversal. A domain's
+internal file count is irrelevant to how an agent finds a contract; only the
+Skill's routing table and the `references/apple/<domain>/` index matter, and
+both stay small by construction (60-line and 80-line caps respectively).
+
+**Why the hierarchy stays flat (no `00-foundations`/`10-writing`/etc.
+numbered folders):** numbered category folders would improve nothing for AI
+routing — agents never browse `knowledge/style-guide/`, they follow the
+Skill's explicit file-path table, so folder position carries zero routing
+signal. What they *would* cost: every `id:`/`depends_on:`/`related:`
+reference and every relative-path + wikilink pair is already tied to a file
+path; introducing numbered folders means moving files, breaking every
+existing link, and — worse — a renumbering problem the moment a new category
+needs to be inserted between two existing numbers (e.g. discovering a
+"gestures" category belongs between `20-terminology` and `30-controls` after
+`30` is already taken). A flat directory with consistent thematic slug
+prefixes (`capitalization-*`, `ui-action-verbs`, `presentation-surfaces`)
+already gives humans alphabetical clustering in Obsidian for free, with none
+of the churn risk. If per-domain file count ever genuinely becomes
+unmanageable, the correct lever is more Skill files (already designed for
+this), not a folder taxonomy layered on top of an architecture that
+explicitly routes through Skills, not paths.
+
+---
+
+No Knowledge Contracts were created, no Apple documentation was
+re-extracted, and no glossary entries were rewritten in this revision — this
+document only restructures the term lists already gathered in v0.1.0. Task
+10 (drafting) should not begin until this revised architecture is approved.
