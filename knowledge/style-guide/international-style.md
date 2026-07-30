@@ -21,6 +21,7 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.international-formatting
+  - knowledge.style-guide.units-of-measure
 updated: 2026-07-30
 ```
 

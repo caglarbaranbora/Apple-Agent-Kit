@@ -44,8 +44,7 @@ truly compelling advantage to a proprietary or customary style.
 -   Date format order and separators (ISO 8601)
 -   Time format, 24-hour clock notation, and UTC/time-zone offsets
 -   Decimal separator conventions and grouping of large numbers
--   Formatting of SI unit symbols and quantities: spacing, pluralization,
-    hyphenation, and trailing periods
+-   Nonbreaking-space usage between a quantity and its unit symbol
 -   Presenting equivalent non-SI values alongside SI values
 
 ### Excluded
@@ -79,26 +78,27 @@ form (e.g. "3.7 million" rather than "3700000").
 
 ### Rule 3
 
-Agents MUST express quantities with a unit symbol, using a nonbreaking
-space (Option-Space bar) between the quantity and its symbol. Unit symbols
-MUST remain unaltered in the plural and MUST NOT be hyphenated even when
-used as an adjective. Agents MUST NOT add a period after an SI unit symbol
-unless it falls at the end of a sentence. Agents MAY give an equivalent
-non-SI value in parentheses following an SI value.
+Agents MUST use a nonbreaking space (Option-Space bar), not a plain space,
+between a quantity and its unit symbol, so the pair never breaks across a
+line. Agents MAY give an equivalent non-SI value in parentheses following
+an SI value. (Pluralization, hyphenation, and trailing-period rules for
+unit symbols are covered by `knowledge/style-guide/units-of-measure.md`;
+this rule governs only the spacing character used between a numeric
+quantity and its unit symbol in international-formatted text.)
 
 ## Compliant Example
 
 -   ✓ "Apple Watch Series 11 was introduced on 2025-09-09." (Rule 1)
 -   ✓ "The file will be posted at 18:00Z." / "18:00 PST (UTC–8)" (Rule 1)
 -   ✓ "Apple sold 300 000 iMac computers in the first quarter." / "Apple sold 3.7 million iMac computers in 2 years." (Rule 2)
--   ✓ "MacBook Neo weighs 1.23 kg." / "iPad mini (A17 Pro) Wi-Fi models weigh 293 g (0.65 lb.)." (Rule 3)
+-   ✓ "MacBook Neo weighs 1.23 kg" with a nonbreaking space before "kg" / "iPad mini (A17 Pro) Wi-Fi models weigh 293 g (0.65 lb.)." (Rule 3)
 
 ## Non-Compliant Example
 
 -   ✗ "09/09/2025" for a date, ambiguous between month-day and day-month order (Rule 1)
 -   ✗ "6:00 PM" instead of 24-hour time / "18:00 GMT" instead of "18:00Z" for UTC (Rule 1)
 -   ✗ "300,000 iMac computers" or "300.000 iMac computers" using a period or comma as a thousands separator (Rule 2)
--   ✗ "1.23kg" with no space between quantity and symbol / "1.23 kg." mid-sentence with a trailing period (Rule 3)
+-   ✗ "1.23 kg" using a plain breaking space that could split "1.23" from "kg" across a line (Rule 3)
 
 ## Dependencies
 
