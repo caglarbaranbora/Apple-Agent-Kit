@@ -115,7 +115,7 @@ tags:
   - labels
 references:
   - https://developer.apple.com/documentation/swiftui/view/accessibilitylabel(_:)
-  - https://developer.apple.com/documentation/uikit/uiaccessibility/accessibilitylabel
+  - https://developer.apple.com/documentation/uikit/uiaccessibilityelement/accessibilitylabel
 depends_on: []
 related:
   - knowledge.human-interface-guidelines.accessibility
@@ -213,7 +213,7 @@ None.
 ## References
 
 -   [Apple Developer — accessibilityLabel(_:)](https://developer.apple.com/documentation/swiftui/view/accessibilitylabel(_:))
--   [Apple Developer — UIAccessibility accessibilityLabel](https://developer.apple.com/documentation/uikit/uiaccessibility/accessibilitylabel)
+-   [Apple Developer — UIAccessibility accessibilityLabel](https://developer.apple.com/documentation/uikit/uiaccessibilityelement/accessibilitylabel)
 ```
 
 - [ ] **Step 2: Validate**
@@ -671,7 +671,7 @@ tags:
   - grouping
 references:
   - https://developer.apple.com/documentation/swiftui/view/accessibilityelement(children:)
-  - https://developer.apple.com/documentation/uikit/uiaccessibility/isaccessibilityelement
+  - https://developer.apple.com/documentation/uikit/uiaccessibilityelement/isaccessibilityelement
 depends_on: []
 related:
   - knowledge.accessibility.voiceover-navigation-order
@@ -765,7 +765,7 @@ None.
 ## References
 
 -   [Apple Developer — accessibilityElement(children:)](https://developer.apple.com/documentation/swiftui/view/accessibilityelement(children:))
--   [Apple Developer — UIAccessibility isAccessibilityElement](https://developer.apple.com/documentation/uikit/uiaccessibility/isaccessibilityelement)
+-   [Apple Developer — UIAccessibility isAccessibilityElement](https://developer.apple.com/documentation/uikit/uiaccessibilityelement/isaccessibilityelement)
 ```
 
 - [ ] **Step 2: Validate**
@@ -811,7 +811,7 @@ tags:
   - navigation-order
 references:
   - https://developer.apple.com/documentation/swiftui/view/accessibilitysortpriority(_:)
-  - https://developer.apple.com/documentation/uikit/uiaccessibility/accessibilityelements
+  - https://developer.apple.com/documentation/uikit/uiaccessibilitycontainer
 depends_on: []
 related:
   - knowledge.accessibility.accessibility-element-grouping
@@ -896,7 +896,7 @@ None.
 ## References
 
 -   [Apple Developer — accessibilitySortPriority(_:)](https://developer.apple.com/documentation/swiftui/view/accessibilitysortpriority(_:))
--   [Apple Developer — UIAccessibility accessibilityElements](https://developer.apple.com/documentation/uikit/uiaccessibility/accessibilityelements)
+-   [Apple Developer — UIAccessibilityContainer](https://developer.apple.com/documentation/uikit/uiaccessibilitycontainer)
 ```
 
 - [ ] **Step 2: Validate**
@@ -1494,7 +1494,7 @@ tags:
   - decorative
 references:
   - https://developer.apple.com/documentation/swiftui/view/accessibilityhidden(_:)
-  - https://developer.apple.com/documentation/uikit/uiaccessibility/isaccessibilityelement
+  - https://developer.apple.com/documentation/uikit/uiaccessibilityelement/isaccessibilityelement
 depends_on: []
 related:
   - knowledge.human-interface-guidelines.accessibility
@@ -1585,7 +1585,7 @@ None.
 ## References
 
 -   [Apple Developer — accessibilityHidden(_:)](https://developer.apple.com/documentation/swiftui/view/accessibilityhidden(_:))
--   [Apple Developer — UIAccessibility isAccessibilityElement](https://developer.apple.com/documentation/uikit/uiaccessibility/isaccessibilityelement)
+-   [Apple Developer — UIAccessibility isAccessibilityElement](https://developer.apple.com/documentation/uikit/uiaccessibilityelement/isaccessibilityelement)
 ```
 
 - [ ] **Step 2: Validate**

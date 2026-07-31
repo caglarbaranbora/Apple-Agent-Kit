@@ -19,7 +19,7 @@ tags:
   - labels
 references:
   - https://developer.apple.com/documentation/swiftui/view/accessibilitylabel(_:)
-  - https://developer.apple.com/documentation/uikit/uiaccessibility/accessibilitylabel
+  - https://developer.apple.com/documentation/uikit/uiaccessibilityelement/accessibilitylabel
 depends_on: []
 related:
   - knowledge.human-interface-guidelines.accessibility
@@ -117,4 +117,4 @@ None.
 ## References
 
 -   [Apple Developer — accessibilityLabel(_:)](https://developer.apple.com/documentation/swiftui/view/accessibilitylabel(_:))
--   [Apple Developer — UIAccessibility accessibilityLabel](https://developer.apple.com/documentation/uikit/uiaccessibility/accessibilitylabel)
+-   [Apple Developer — UIAccessibility accessibilityLabel](https://developer.apple.com/documentation/uikit/uiaccessibilityelement/accessibilitylabel)
