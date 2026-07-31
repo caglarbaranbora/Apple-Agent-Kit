@@ -14,6 +14,7 @@ Maps implementation tasks to the correct Skill.
 | writing, terminology, capitalization, button label wording, inclusive writing, date/number formatting in UI | skills/style-guide/SKILL.md |
 | layout, color, typography, dark mode, materials, motion, app icon, interface icon, SF Symbols, branding, accessibility design, RTL, permission prompt design, images, inclusive design | skills/human-interface-guidelines/SKILL.md |
 | App Store submission, App Review rejection, in-app purchase, IAP, restore purchases, demo account, screenshot requirements, app description accuracy, privacy manifest, PrivacyInfo.xcprivacy, privacy nutrition label, spam app, duplicate app, minimum functionality, permission usage string | skills/app-store-review-guidelines/SKILL.md |
+| SwiftUI, NavigationStack, NavigationSplitView, @State, @Binding, @Observable, ObservableObject, @Environment, GeometryReader, LazyVGrid, LazyVStack, ForEach identity, view composition, ViewBuilder, modifier order, safeAreaInset, ignoresSafeArea | skills/swiftui/SKILL.md |
 
 ## Resolution Rules
 
