@@ -71,7 +71,8 @@ adjacent text.
 ### Rule 4
 
 Agents MUST provide an accessibility label for every custom interface
-icon so VoiceOver can announce its purpose.
+icon so VoiceOver can announce its purpose (see also `accessibility`
+Rule 4).
 
 ### Rule 5
 

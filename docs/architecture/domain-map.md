@@ -23,7 +23,7 @@ Completed: `style-guide` (Tier 1), `authentication` (Existing/Unscheduled — cr
 | Domain | Slug | Initial Scope | Owns |
 |---|---|---|---|
 | Apple Style Guide | style-guide | Terminology, capitalization, punctuation, writing style | UI copy wording, capitalization rules, punctuation, inclusive writing |
-| Human Interface Guidelines | human-interface-guidelines | Foundations (iOS/iPadOS): layout, color, typography, accessibility-design, dark mode, materials, motion, icons, branding, privacy-design, SF Symbols usage, RTL. Patterns/Components/Inputs deferred — see Cross-Domain Notes. | Foundations-layer visual/UX design guidance for iOS/iPadOS (layout, color, typography, materials, motion, iconography, branding, accessibility-design, privacy-design, RTL) |
+| Human Interface Guidelines | human-interface-guidelines | Foundations (iOS/iPadOS): layout, color, typography, app icons, images, inclusion, accessibility-design, dark mode, materials, motion, icons, branding, privacy-design, SF Symbols usage, RTL. Patterns/Components/Inputs deferred — see Cross-Domain Notes. | Foundations-layer visual/UX design guidance for iOS/iPadOS (layout, color, typography, app icons, images, inclusive-design content, materials, motion, iconography, branding, accessibility-design, privacy-design, RTL) |
 | App Store Review Guidelines | app-store-review-guidelines | Review, metadata, distribution rules | App Store submission, metadata, and distribution compliance rules |
 | SwiftUI | swiftui | Views, navigation, layout | SwiftUI view/navigation/layout implementation conventions |
 | UIKit | uikit | UIKit components | UIKit component implementation conventions |

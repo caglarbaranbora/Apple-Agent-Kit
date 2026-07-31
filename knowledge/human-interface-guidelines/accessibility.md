@@ -59,14 +59,17 @@ docs/architecture/domain-map.md Cross-Domain Notes).
 
 ### Rule 1
 
-Agents MUST design layouts that support Dynamic Type / text scaling to
-at least 200% without truncating or breaking primary content.
+Agents MUST ensure text can scale via Dynamic Type to at least 200%
+without loss of critical content. Ensuring the surrounding layout
+doesn't break or truncate at those larger sizes is covered by
+`layout` Rule 2.
 
 ### Rule 2
 
 Agents MUST ensure a minimum 4.5:1 contrast ratio between foreground
 text/icons and their background; prefer system-defined colors, which
-provide accessible variants automatically.
+provide accessible variants automatically (see also `dark-mode` Rule
+3 for appearance-specific and small-text contrast targets).
 
 ### Rule 3
 
@@ -76,7 +79,8 @@ alone — pair color with a text label, icon, or shape.
 ### Rule 4
 
 Agents MUST provide a meaningful accessibility label for every
-custom icon-only control so VoiceOver can announce its purpose.
+custom icon-only control so VoiceOver can announce its purpose (see
+also `icons` Rule 4 for interface-icon-specific guidance).
 
 ### Rule 5
 

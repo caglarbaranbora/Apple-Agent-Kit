@@ -64,8 +64,9 @@ buttons, and text.
 
 ### Rule 3
 
-If a custom font is used, agents MUST ensure it remains legible at all
-sizes and supports Bold Text / Dynamic Type accessibility features.
+If a custom font is used, agents MUST follow the Dynamic Type / Bold
+Text accessibility requirements defined in `typography` Rule 5 —
+branding does not define separate font-accessibility rules.
 
 ### Rule 4
 
