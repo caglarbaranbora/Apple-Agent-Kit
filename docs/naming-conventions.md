@@ -23,7 +23,7 @@ docs/ - architecture.md - routing-model.md
 
 knowledge/ - authentication/ - sign-in.md - button-labels.md
 
-skills/ - login.md - app-store-review.md
+skills/ - authentication/SKILL.md - style-guide/SKILL.md
 
 workflows/ - release-ios-app.md
 
