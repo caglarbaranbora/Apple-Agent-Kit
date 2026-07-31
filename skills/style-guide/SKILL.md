@@ -1,6 +1,6 @@
 ---
 name: style-guide
-description: Route writing and terminology implementation tasks to the minimum required style-guide Knowledge Contracts — capitalization, punctuation, button labels, inclusive writing, date and number formatting. Use when writing or reviewing app UI text, labels, buttons, errors, or onboarding copy. Triggers on writing, terminology, capitalization, punctuation, button label wording, inclusive writing, date and number formatting, style guide, UI copy.
+description: Route writing and terminology implementation tasks to the minimum required style-guide Knowledge Contracts — capitalization, punctuation, button labels, inclusive writing, date and number formatting, code font and placeholder-name conventions. Use when writing or reviewing app UI text, labels, buttons, errors, onboarding copy, or the wording of sign-in and credential screens (not their implementation). Triggers on writing, terminology, capitalization, punctuation, button label wording, inclusive writing, date and number formatting, code font conventions, placeholder-name text, sign-in wording, credentials wording, style guide, UI copy.
 id: skill.style-guide.writing
 title: Style Guide Writing
 version: 0.2.0
