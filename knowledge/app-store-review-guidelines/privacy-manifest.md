@@ -66,9 +66,11 @@ history, user IDs) in `NSPrivacyCollectedDataTypes`.
 ### Rule 3
 
 Agents MUST declare an approved `NSPrivacyAccessedAPITypeReasons`
-justification code for every use of a required-reason API (e.g.
-`NSUserDefaults`, `FileProvider`, `URLSessionConfiguration`,
-`NSFileManager`) — custom or unlisted justifications are rejected.
+justification code for every use of a required-reason API — the five
+official categories are File Timestamp, System Boot Time, Disk Space,
+Active Keyboard, and User Defaults APIs (e.g.
+`NSPrivacyAccessedAPICategoryUserDefaults`) — custom or unlisted
+justification codes are rejected.
 
 ### Rule 4
 
