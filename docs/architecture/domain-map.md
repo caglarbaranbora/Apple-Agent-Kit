@@ -1,7 +1,7 @@
 # Domain Map
 
 Status: Draft
-Version: 0.4.0
+Version: 0.5.0
 
 See: ../glossary.md
 [[glossary]]
@@ -16,14 +16,14 @@ One domain is fully finished (Reference → Knowledge → Skill → Validation) 
 
 Tiers ranked by real-world usage frequency (2026-07-31 re-rank, cross-checked against the full Apple Developer Documentation technology index): Tier 1 = needed by nearly every iOS app, Tier 2 = common but not universal, Tier 3 = vertical/niche.
 
-Completed: `style-guide` (Tier 1), `authentication` (Existing/Unscheduled — cross-cutting, built ahead of tier order per Phase 5 decision).
+Completed: `style-guide` (Tier 1), `authentication` (Existing/Unscheduled — cross-cutting, built ahead of tier order per Phase 5 decision), `human-interface-guidelines` (Tier 1 — Foundations subset only; Patterns/Components/Inputs remain unbuilt).
 
 ## Tier 1 — Must-Have
 
 | Domain | Slug | Initial Scope | Owns |
 |---|---|---|---|
 | Apple Style Guide | style-guide | Terminology, capitalization, punctuation, writing style | UI copy wording, capitalization rules, punctuation, inclusive writing |
-| Human Interface Guidelines | human-interface-guidelines | Visual/UX design patterns, layout, interaction | Layout patterns, interaction conventions, visual design guidance |
+| Human Interface Guidelines | human-interface-guidelines | Foundations (iOS/iPadOS): layout, color, typography, accessibility-design, dark mode, materials, motion, icons, branding, privacy-design, SF Symbols usage, RTL. Patterns/Components/Inputs deferred — see Cross-Domain Notes. | Foundations-layer visual/UX design guidance for iOS/iPadOS (layout, color, typography, materials, motion, iconography, branding, accessibility-design, privacy-design, RTL) |
 | App Store Review Guidelines | app-store-review-guidelines | Review, metadata, distribution rules | App Store submission, metadata, and distribution compliance rules |
 | SwiftUI | swiftui | Views, navigation, layout | SwiftUI view/navigation/layout implementation conventions |
 | UIKit | uikit | UIKit components | UIKit component implementation conventions |
@@ -96,6 +96,9 @@ Mapped before this Tier list existed. No Tier assigned yet — resolve when reac
 - `core-data` and `swiftdata` overlap (both persistence). Boundary not yet resolved — decide when either is reached; likely resolution is a shared "which framework to recommend" note rather than merging the domains, since `core-data` and `swiftdata` remain separate frameworks with separate APIs.
 - `arkit` and `realitykit` overlap (AR/3D rendering, RealityKit often layers on ARKit sessions). Boundary not yet resolved — decide when either is reached.
 - `app-intents` owns Siri integration; legacy `SiriKit` (donation-based intents) is superseded by App Intents on current OS versions and is not planned as a separate domain unless a legacy-support need is identified.
+- `human-interface-guidelines` (`accessibility` Foundations topic) and the future `accessibility` domain (Tier 1, unbuilt) overlap: HIG's angle is design guidance (Dynamic Type, contrast, VoiceOver-friendly layout), the dedicated domain's angle is API implementation. Boundary not yet resolved — decide when `accessibility` is built.
+- `human-interface-guidelines` (`privacy` Foundations topic) and the future `privacy` domain (Tier 2, unbuilt) overlap: HIG's angle is permission-request UI/consent-flow design, the dedicated domain's angle is Privacy Manifest / data-use disclosure implementation. Boundary not yet resolved — decide when `privacy` is built.
+- `human-interface-guidelines` (`sf-symbols` Foundations topic) and the future `sf-symbols` domain (Tier 1, unbuilt) overlap: HIG's angle is symbol selection/composition in a design, the dedicated domain's angle is API usage and rendering modes. Boundary not yet resolved — decide when `sf-symbols` is built.
 
 ## Artifact Layout
 
