@@ -1641,15 +1641,15 @@ title: Accessibility Audits and Testing
 version: 0.1.0
 status: Draft
 owner: Apple Agent Kit
-summary: Defines use of Xcode's Accessibility Inspector and XCTest's performAccessibilityAudit() to catch missing labels, low contrast, and undersized hit targets automatically, alongside required manual VoiceOver verification.
+summary: Defines use of Xcode's Accessibility Inspector and XCUIApplication's performAccessibilityAudit() to catch missing labels, low contrast, and undersized hit targets automatically, alongside required manual VoiceOver verification.
 domain: Accessibility
 tags:
   - accessibility
   - testing
   - audits
 references:
-  - https://developer.apple.com/documentation/xctest/xcuiapplication/performaccessibilityaudit(_:issuehandler:)
-  - https://developer.apple.com/documentation/xctest/xctaccessibilityaudittype
+  - https://developer.apple.com/documentation/xcuiautomation/xcuiapplication/performaccessibilityaudit(for:_:)
+  - https://developer.apple.com/documentation/xcuiautomation/xcuiaccessibilityaudittype
 depends_on: []
 related: []
 updated: 2026-08-01
@@ -1658,17 +1658,19 @@ updated: 2026-08-01
 ## Intent
 
 This contract defines how an AI coding agent verifies accessibility
-implementation using Xcode's Accessibility Inspector and XCTest's
-`performAccessibilityAudit()`, and why automated audits alone are
-insufficient — reading order and gesture-alternative correctness still
-require a manual VoiceOver walkthrough.
+implementation using Xcode's Accessibility Inspector and
+`XCUIApplication`'s `performAccessibilityAudit()` (from the
+`XCUIAutomation` module, used inside XCTest UI test targets), and why
+automated audits alone are insufficient — reading order and
+gesture-alternative correctness still require a manual VoiceOver
+walkthrough.
 
 ## Scope
 
 ### Included
 
 -   `XCUIApplication().performAccessibilityAudit()` in UI tests
--   `XCTAccessibilityAuditType` scoping
+-   `XCUIAccessibilityAuditType` scoping
 -   Xcode's Accessibility Inspector for manual inspection
 -   Limits of automated audits
 
@@ -1693,7 +1695,7 @@ exactly which element and property triggered the issue.
 
 ### Rule 3
 
-Agents SHOULD scope audits with `XCTAccessibilityAuditType` (e.g.
+Agents SHOULD scope audits with `XCUIAccessibilityAuditType` (e.g.
 excluding a specific category that's a known, accepted exception for one
 screen) rather than disabling `performAccessibilityAudit()` entirely
 when one category proves noisy for that screen.
@@ -1738,8 +1740,8 @@ None.
 
 ## References
 
--   [Apple Developer — performAccessibilityAudit(_:issuehandler:)](https://developer.apple.com/documentation/xctest/xcuiapplication/performaccessibilityaudit(_:issuehandler:))
--   [Apple Developer — XCTAccessibilityAuditType](https://developer.apple.com/documentation/xctest/xctaccessibilityaudittype)
+-   [Apple Developer — performAccessibilityAudit(for:_:)](https://developer.apple.com/documentation/xcuiautomation/xcuiapplication/performaccessibilityaudit(for:_:))
+-   [Apple Developer — XCUIAccessibilityAuditType](https://developer.apple.com/documentation/xcuiautomation/xcuiaccessibilityaudittype)
 ```
 
 - [ ] **Step 2: Validate**
