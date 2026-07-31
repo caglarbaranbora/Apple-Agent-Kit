@@ -79,6 +79,15 @@ Agents MUST set `isAccessibilityElement = false` on a UIKit container
 VoiceOver does not create a duplicate, uninformative stop for the empty
 container itself.
 
+### Rule 5
+
+Agents SHOULD populate a UIKit container's `accessibilityElements` array
+to scope a composite view to exactly the children that should be
+individually exposed — any subview not listed in the array is excluded
+from VoiceOver entirely, which is UIKit's equivalent of SwiftUI's
+`.combine`/`.contain` grouping choice. Setting the array's *order* (as
+opposed to its membership) is covered by `voiceover-navigation-order`.
+
 ## Compliant Example
 
 ```swift
