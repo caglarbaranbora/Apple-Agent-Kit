@@ -40,6 +40,13 @@ claude plugin validate .
 
 Run this after any change to `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, or `skills/apple-agent-kit/SKILL.md`.
 
+## Codex support (future)
+
+Not built yet. When added, Codex-specific behavior for a domain skill goes
+at `skills/<domain>/agents/openai.yaml`, matching the per-domain skill
+layout already in place — no directory restructuring needed when that work
+starts.
+
 ## Commit conventions
 
 - One vertical slice or one fix per commit where practical.

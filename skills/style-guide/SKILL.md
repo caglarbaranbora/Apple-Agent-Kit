@@ -1,38 +1,24 @@
-# Style Guide Writing Skill
-
-Status: Draft Version: 0.1.0
-
-## Metadata
-
-``` yaml
+---
+name: style-guide
+description: Route writing and terminology implementation tasks to the minimum required style-guide Knowledge Contracts — capitalization, punctuation, button labels, inclusive writing, date and number formatting, code font and placeholder-name conventions. Use when writing or reviewing app UI text, labels, buttons, errors, onboarding copy, or the wording of sign-in and credential screens (not their implementation). Triggers on writing, terminology, capitalization, punctuation, button label wording, inclusive writing, date and number formatting, code font conventions, placeholder-name text, sign-in wording, credentials wording, style guide, UI copy.
 id: skill.style-guide.writing
-type: skill
 title: Style Guide Writing
-version: 0.1.0
+version: 0.2.0
 status: Draft
 artifact_type: skill
 domain: Style Guide
 routes: [knowledge.style-guide.ui-action-verbs, knowledge.style-guide.pointer-and-click-terminology, knowledge.style-guide.touch-gesture-verbs, knowledge.style-guide.general-button-labels, knowledge.style-guide.navigation-controls, knowledge.style-guide.presentation-surfaces, knowledge.style-guide.input-controls, knowledge.style-guide.status-and-progress-indicators, knowledge.style-guide.app-chrome-and-window-terminology, knowledge.style-guide.app-state-and-error-terminology, knowledge.style-guide.connectivity-and-media-terminology, knowledge.style-guide.instructional-voice-and-phrasing, knowledge.style-guide.capitalization-style-rules, knowledge.style-guide.capitalization-of-apple-proper-nouns, knowledge.style-guide.punctuation-and-typography-in-text, knowledge.style-guide.abbreviations-and-acronyms, knowledge.style-guide.units-of-measure, knowledge.style-guide.numeric-terminology-supplement, knowledge.style-guide.international-formatting, knowledge.style-guide.international-style, knowledge.style-guide.writing-inclusively, knowledge.style-guide.technical-notation, knowledge.style-guide.copyright-and-trademarks, knowledge.style-guide.sign-in-and-authentication-terminology, knowledge.style-guide.authentication-credentials-and-biometrics]
 related:
   - skill.authentication.login
-last_updated: 2026-07-30
-```
+last_updated: 2026-07-31
+---
+
+# Style Guide Writing Skill
 
 ## Purpose
 
 Route writing/terminology implementation tasks to the minimum required
 style-guide Knowledge Contracts.
-
-## Triggers
-
-Use this skill when the task involves:
-
--   Writing or reviewing app UI text (labels, buttons, errors, onboarding)
--   Capitalization, punctuation, or terminology questions
--   Formatting dates, numbers, currency, or units in-app
--   Inclusive-writing questions
--   Code font / placeholder-name conventions in text
--   Sign-in, authentication, or credentials wording (style only)
 
 ## Routing
 
