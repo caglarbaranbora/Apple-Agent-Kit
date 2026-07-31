@@ -16,7 +16,7 @@ One domain is fully finished (Reference → Knowledge → Skill → Validation) 
 
 Tiers ranked by real-world usage frequency (2026-07-31 re-rank, cross-checked against the full Apple Developer Documentation technology index): Tier 1 = needed by nearly every iOS app, Tier 2 = common but not universal, Tier 3 = vertical/niche.
 
-Completed: `style-guide` (Tier 1), `authentication` (Existing/Unscheduled — cross-cutting, built ahead of tier order per Phase 5 decision), `human-interface-guidelines` (Tier 1 — Foundations subset only; Patterns/Components/Inputs remain unbuilt).
+Completed: `style-guide` (Tier 1), `authentication` (Existing/Unscheduled — cross-cutting, built ahead of tier order per Phase 5 decision), `human-interface-guidelines` (Tier 1 — Foundations subset only; Patterns/Components/Inputs remain unbuilt), `app-store-review-guidelines` (Tier 1 — critical-subset v1: 2.1, 2.3, 3.1.1, 4.2, 4.3, 5.1.1, 5.1.2; Safety, most of Legal, Design 4.0, and Guideline 4.8 remain unbuilt).
 
 ## Tier 1 — Must-Have
 
@@ -24,7 +24,7 @@ Completed: `style-guide` (Tier 1), `authentication` (Existing/Unscheduled — cr
 |---|---|---|---|
 | Apple Style Guide | style-guide | Terminology, capitalization, punctuation, writing style | UI copy wording, capitalization rules, punctuation, inclusive writing |
 | Human Interface Guidelines | human-interface-guidelines | Foundations (iOS/iPadOS): layout, color, typography, app icons, images, inclusion, accessibility-design, dark mode, materials, motion, icons, branding, privacy-design, SF Symbols usage, RTL. Patterns/Components/Inputs deferred — see Cross-Domain Notes. | Foundations-layer visual/UX design guidance for iOS/iPadOS (layout, color, typography, app icons, images, inclusive-design content, materials, motion, iconography, branding, accessibility-design, privacy-design, RTL) |
-| App Store Review Guidelines | app-store-review-guidelines | Review, metadata, distribution rules | App Store submission, metadata, and distribution compliance rules |
+| App Store Review Guidelines | app-store-review-guidelines | 2.1 App Completeness, 2.3 Accurate Metadata, 3.1.1 In-App Purchase, 4.2 Minimum Functionality, 4.3 Spam/Duplicate, 5.1.1/5.1.2 Privacy (data collection & sharing). Safety, most of Legal, and Design 4.0 (owned by human-interface-guidelines) out of scope — see Cross-Domain Notes. | App Store submission, metadata, and distribution compliance rules |
 | SwiftUI | swiftui | Views, navigation, layout | SwiftUI view/navigation/layout implementation conventions |
 | UIKit | uikit | UIKit components | UIKit component implementation conventions |
 | Accessibility | accessibility | Accessibility APIs and UX | Accessibility API usage and accessible UX requirements |
@@ -99,6 +99,7 @@ Mapped before this Tier list existed. No Tier assigned yet — resolve when reac
 - `human-interface-guidelines` (`accessibility` Foundations topic) and the future `accessibility` domain (Tier 1, unbuilt) overlap: HIG's angle is design guidance (Dynamic Type, contrast, VoiceOver-friendly layout), the dedicated domain's angle is API implementation. Boundary not yet resolved — decide when `accessibility` is built.
 - `human-interface-guidelines` (`privacy` Foundations topic) and the future `privacy` domain (Tier 2, unbuilt) overlap: HIG's angle is permission-request UI/consent-flow design, the dedicated domain's angle is Privacy Manifest / data-use disclosure implementation. Boundary not yet resolved — decide when `privacy` is built.
 - `human-interface-guidelines` (`sf-symbols` Foundations topic) and the future `sf-symbols` domain (Tier 1, unbuilt) overlap: HIG's angle is symbol selection/composition in a design, the dedicated domain's angle is API usage and rendering modes. Boundary not yet resolved — decide when `sf-symbols` is built.
+- `app-store-review-guidelines` (`privacy-manifest`/`privacy-nutrition-label` topics) and the future `privacy` domain (Tier 2, unbuilt) overlap: this domain's angle is review consequence (submission gets rejected if the manifest/label is missing or inaccurate), the future `privacy` domain's angle is correct implementation (how to write the manifest and disclosures correctly). Boundary not yet resolved — decide when `privacy` is built.
 
 ## Artifact Layout
 
