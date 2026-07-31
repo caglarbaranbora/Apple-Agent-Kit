@@ -1556,15 +1556,18 @@ give it a label per `accessibility-labels` instead of hiding it.
 
 Agents MUST hide only the decorative sublayer of a control, not the
 interactive control itself, when a button's background image or icon is
-decorative but the button as a whole must remain accessible — hide the
-image, not its tappable parent.
+decorative but the button as a whole must remain accessible — apply
+`.accessibilityHidden(true)` (SwiftUI) or `isAccessibilityElement = false`
+(UIKit) to the decorative image/icon subview, never to its tappable
+parent (`Button`/`UIButton`/`UIControl`).
 
 ### Rule 4
 
 Agents SHOULD hide a decorative element that visually duplicates
-information already announced elsewhere (a disclosure chevron next to a
-row that already carries the `.isButton`/navigation trait) to avoid a
-redundant, uninformative stop.
+information already announced elsewhere — via `.accessibilityHidden(true)`
+(SwiftUI) or `isAccessibilityElement = false` (UIKit) — such as a
+disclosure chevron next to a row that already carries the
+`.isButton`/navigation trait, to avoid a redundant, uninformative stop.
 
 ## Compliant Example
 
