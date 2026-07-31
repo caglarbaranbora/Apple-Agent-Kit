@@ -59,33 +59,6 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
 
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
-## Repository Structure
-
-- docs/
-- references/
-- knowledge/
-- skills/
-- workflows/
-- templates/
-- schemas/
-- validation/
-- tests/
-- scripts/
-
-## Quick Start
-
-1. Read AGENTS.md.
-2. Resolve the appropriate Skill.
-3. Load only routed Knowledge Contracts.
-4. Follow contract rules.
-5. Never bypass routing.
-
-## Current Status
-
-- Phase 0 — Complete
-- Phase 1 — Complete
-- Phase 1.5 — Validation In Progress
-
 ## What's New
 
 - 2026-07-31 — Added `human-interface-guidelines` Skill (Foundations: layout, color, typography, app icons, images, inclusion, accessibility-design, dark mode, materials, motion, icons, branding, privacy-design, SF Symbols usage, RTL) — 15 Knowledge Contracts.
