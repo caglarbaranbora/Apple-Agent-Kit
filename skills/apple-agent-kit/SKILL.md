@@ -1,4 +1,5 @@
 ---
+name: apple-agent-kit
 description: Apple platform app development — UI terminology, style guide rules, authentication flows, and other Apple Agent Kit domains. Use for any task involving Apple platform UI text, capitalization, or implementation conventions.
 ---
 
