@@ -45,7 +45,7 @@ interruptible, and gesture-consistent.
 
 ### Excluded
 
--   SF Symbol-specific animation types — see `sf-symbols`
+-   SF Symbol animation implementation — deferred to a future dedicated `sf-symbols` API domain, not covered by any current contract
 -   General accessibility rules unrelated to motion — see `accessibility`
 
 ## Rules

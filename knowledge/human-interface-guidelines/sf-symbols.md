@@ -80,9 +80,10 @@ the symbol appears alongside text in lists or toolbars.
 
 ### Rule 5
 
-Agents MUST NOT design a custom symbol that replicates an Apple
-product, or customize a symbol SF Symbols already marks as
-representing an Apple feature.
+Agents MUST NOT customize or modify a symbol that SF Symbols already
+marks as representing an Apple product or feature. The general
+prohibition on replicating Apple hardware in custom icons is covered
+by `icons` Rule 6.
 
 ### Rule 6
 
@@ -96,7 +97,7 @@ as for a custom interface icon (see `icons` Rule 4).
 ## Non-Compliant Example
 
 -   ✗ A custom symbol hard-codes a non-adaptive color that doesn't respond to Dark Mode. (Rule 2)
--   ✗ Two icons in the same toolbar use mismatched stroke weights because one is a raster import instead of an SF Symbol. (Rule 3)
+-   ✗ A toolbar's SF Symbol uses a Bold weight next to adjacent text set in Regular weight, breaking the intended weight match. (Rule 3)
 
 ## Dependencies
 

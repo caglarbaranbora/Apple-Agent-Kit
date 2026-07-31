@@ -54,8 +54,8 @@ system vs. custom fonts, and Dynamic Type support.
 ### Rule 1
 
 Agents MUST support Dynamic Type so people can scale visible text via
-system text-size settings; layout MUST remain legible at the largest
-accessibility sizes.
+system text-size settings. Ensuring the surrounding layout doesn't
+break or truncate at those larger sizes is covered by `layout` Rule 2.
 
 ### Rule 2
 
