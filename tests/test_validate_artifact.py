@@ -97,7 +97,38 @@ class TestValidateKnowledge(unittest.TestCase):
         self.assertIn("missing metadata YAML block", errors)
 
 
-VALID_SKILL = """# Example Skill
+VALID_SKILL = """---
+name: example
+description: Example skill description. Use when the task involves example things. Triggers on example, sample, demo.
+id: skill.style-guide.example
+title: Example Skill
+version: 0.1.0
+status: Draft
+artifact_type: skill
+domain: Style Guide
+routes:
+  - example
+related:
+  - knowledge.style-guide.example
+last_updated: 2026-07-30
+---
+
+# Example Skill
+
+## Purpose
+
+Example purpose.
+
+## Routing
+
+Example routing.
+
+## Stop Conditions
+
+Example stop conditions.
+"""
+
+OLD_FORMAT_SKILL = """# Example Skill
 
 ## Metadata
 
@@ -137,6 +168,47 @@ class TestValidateSkill(unittest.TestCase):
     def test_valid_skill_has_no_errors(self):
         errors = validate_artifact.validate_text(VALID_SKILL, "skill")
         self.assertEqual(errors, [])
+
+    def test_missing_name_field(self):
+        text = VALID_SKILL.replace("name: example\n", "")
+        errors = validate_artifact.validate_text(text, "skill")
+        self.assertTrue(any("name" in e for e in errors))
+
+    def test_missing_description_field(self):
+        text = VALID_SKILL.replace(
+            "description: Example skill description. Use when the task involves example things. Triggers on example, sample, demo.\n",
+            "",
+        )
+        errors = validate_artifact.validate_text(text, "skill")
+        self.assertTrue(any("description" in e for e in errors))
+
+    def test_old_fenced_metadata_format_is_rejected(self):
+        # Real Claude Code skill discovery requires frontmatter at byte
+        # offset 0. A fenced ```yaml block under a "## Metadata" heading
+        # (the old repo convention) must no longer satisfy a skill artifact,
+        # even though it still satisfies knowledge/reference artifacts.
+        errors = validate_artifact.validate_text(OLD_FORMAT_SKILL, "skill")
+        self.assertIn("missing metadata YAML block", errors)
+
+    def test_triggers_section_not_required(self):
+        # VALID_SKILL has no "## Triggers" section and must still pass --
+        # trigger content now lives in the frontmatter `description`.
+        self.assertNotIn("## Triggers", VALID_SKILL)
+        errors = validate_artifact.validate_text(VALID_SKILL, "skill")
+        self.assertEqual(errors, [])
+
+    def test_line_cap_is_80(self):
+        text = VALID_SKILL + ("\nextra line\n" * 70)
+        errors = validate_artifact.validate_text(text, "skill")
+        self.assertTrue(any("line cap" in e for e in errors))
+
+    def test_line_cap_not_exceeded_at_79_lines(self):
+        line_count = len(VALID_SKILL.splitlines())
+        padding = 79 - line_count
+        self.assertGreater(padding, 0)
+        text = VALID_SKILL + ("\nx\n" * (padding // 2))
+        errors = validate_artifact.validate_text(text, "skill")
+        self.assertFalse(any("line cap" in e for e in errors))
 
 
 class TestValidateArtifactCLI(unittest.TestCase):

@@ -5,20 +5,26 @@ import re
 import sys
 from pathlib import Path
 
-LINE_CAPS = {"knowledge": 150, "skill": 60, "reference": 80}
+LINE_CAPS = {"knowledge": 150, "skill": 80, "reference": 80}
 
 REQUIRED_SECTIONS = {
     "knowledge": ["## Intent", "## Rules", "## Compliant Example", "## Non-Compliant Example"],
-    "skill": ["## Purpose", "## Triggers", "## Routing", "## Stop Conditions"],
+    "skill": ["## Purpose", "## Routing", "## Stop Conditions"],
 }
 
 REQUIRED_METADATA_FIELDS = {
     "knowledge": ["id", "type", "title", "version", "status", "owner", "summary", "domain", "tags", "updated"],
-    "skill": ["id", "title", "version", "status", "artifact_type", "domain", "routes", "related", "last_updated"],
+    "skill": ["name", "description", "id", "title", "version", "status", "artifact_type", "domain", "routes", "related", "last_updated"],
 }
 
 
-def extract_metadata_block(text):
+def extract_metadata_block(text, artifact_type=None):
+    if artifact_type == "skill":
+        # Real Claude Code skills need frontmatter at byte offset 0 -- a
+        # fenced ```yaml block anywhere in the body (the knowledge/reference
+        # convention) is not something the skill loader parses.
+        match = re.match(r"---\n(.*?)\n---", text, re.DOTALL)
+        return match.group(1) if match else ""
     match = re.search(r"```\s*ya?ml\n(.*?)```", text, re.DOTALL)
     return match.group(1) if match else ""
 
@@ -35,7 +41,7 @@ def validate_text(text, artifact_type):
             errors.append(f"missing required section: {heading}")
 
     if artifact_type in REQUIRED_METADATA_FIELDS:
-        block = extract_metadata_block(text)
+        block = extract_metadata_block(text, artifact_type)
         if not block:
             errors.append("missing metadata YAML block")
         else:
