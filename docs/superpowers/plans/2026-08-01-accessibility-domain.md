@@ -406,6 +406,8 @@ tags:
 references:
   - https://developer.apple.com/documentation/swiftui/view/accessibilityvalue(_:)
   - https://developer.apple.com/documentation/swiftui/view/accessibilityhint(_:)
+  - https://developer.apple.com/documentation/uikit/uiaccessibilityelement/accessibilityvalue
+  - https://developer.apple.com/documentation/uikit/uiaccessibilityelement/accessibilityhint
 depends_on: []
 related:
   - knowledge.accessibility.accessibility-labels
@@ -438,10 +440,11 @@ same state and outcome information sighted users get visually.
 
 ### Rule 1
 
-Agents MUST set `accessibilityValue` on any custom control that carries a
-value not conveyed by its label — a custom slider, star rating, or
-segmented control needs its current selection/level spoken separately
-from its name.
+Agents MUST set `accessibilityValue` (SwiftUI `.accessibilityValue()`,
+UIKit `accessibilityValue`) on any custom control that carries a value
+not conveyed by its label — a custom slider, star rating, or segmented
+control needs its current selection/level spoken separately from its
+name.
 
 ### Rule 2
 
@@ -451,9 +454,10 @@ value announces the wrong state after the control changes.
 
 ### Rule 3
 
-Agents SHOULD add `accessibilityHint` only when the result of activating
-the element isn't obvious from its label and trait alone (e.g. "Deletes
-this message" on a swipe-triggered action with no visible confirmation).
+Agents SHOULD add `accessibilityHint` (SwiftUI `.accessibilityHint()`,
+UIKit `accessibilityHint`) only when the result of activating the
+element isn't obvious from its label and trait alone (e.g. "Deletes this
+message" on a swipe-triggered action with no visible confirmation).
 
 ### Rule 4
 
@@ -492,6 +496,8 @@ None.
 
 -   [Apple Developer — accessibilityValue(_:)](https://developer.apple.com/documentation/swiftui/view/accessibilityvalue(_:))
 -   [Apple Developer — accessibilityHint(_:)](https://developer.apple.com/documentation/swiftui/view/accessibilityhint(_:))
+-   [Apple Developer — UIAccessibilityElement accessibilityValue](https://developer.apple.com/documentation/uikit/uiaccessibilityelement/accessibilityvalue)
+-   [Apple Developer — UIAccessibilityElement accessibilityHint](https://developer.apple.com/documentation/uikit/uiaccessibilityelement/accessibilityhint)
 ```
 
 - [ ] **Step 2: Validate**
