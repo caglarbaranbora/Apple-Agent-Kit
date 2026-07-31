@@ -43,6 +43,22 @@ Skills
 ↓
 Workflows
 
+## Skills
+
+Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke them with a specific task, not a broad topic request — name the concrete thing you're doing (e.g. "check this screen's layout against HIG"), not "tell me about HIG."
+
+- **`authentication`** — Routes sign-in, sign-up, credential, and biometric implementation tasks to Authentication Knowledge Contracts.
+  Example: `"add a Face ID unlock option to my login screen"` → `knowledge.authentication.authentication`, `knowledge.authentication.accessibility-forms`
+
+- **`style-guide`** — Routes UI copy and wording tasks (button labels, error text, capitalization, punctuation, inclusive writing, formatting) to Style Guide Knowledge Contracts.
+  Example: `"what's the correct label for a destructive delete button"` → `general-button-labels.md`
+
+- **`human-interface-guidelines`** — Routes iOS/iPadOS visual design tasks (layout, color, typography, dark mode, materials, motion, icons, branding, accessibility-design, privacy UI, RTL) to HIG Foundations Knowledge Contracts.
+  Example: `"check this screen's layout against HIG"` → `layout.md` (+ `right-to-left.md` if relevant)
+  Example: `"does my dark mode palette meet contrast guidance"` → `dark-mode.md`, `color.md`
+
+Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
+
 ## Repository Structure
 
 - docs/
@@ -69,6 +85,13 @@ Workflows
 - Phase 0 — Complete
 - Phase 1 — Complete
 - Phase 1.5 — Validation In Progress
+
+## What's New
+
+- 2026-07-31 — Added `human-interface-guidelines` Skill (Foundations: layout, color, typography, app icons, images, inclusion, accessibility-design, dark mode, materials, motion, icons, branding, privacy-design, SF Symbols usage, RTL) — 15 Knowledge Contracts.
+- 2026-07-31 — Hardened native Skill format (real YAML frontmatter, deterministic keyword routing, Stop Conditions) across all Skills.
+- 2026-07-31 — Added `authentication` Skill (sign-in, sign-up, credentials, biometrics).
+- 2026-07-31 — Added `style-guide` Skill (terminology, capitalization, punctuation, inclusive writing).
 
 ## Contributing
 

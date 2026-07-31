@@ -47,6 +47,15 @@ at `skills/<domain>/agents/openai.yaml`, matching the per-domain skill
 layout already in place — no directory restructuring needed when that work
 starts.
 
+## Updating README.md for a new/changed domain or Skill
+
+Every new domain or Skill (and any material change to an existing one) must update `README.md`:
+
+- `## Skills` section: one bullet per Skill — name, one-line description of what it routes, and at least one concrete example invocation with its routing target (e.g. `"check this screen's layout against HIG" → layout.md`). Keep examples as *specific tasks*, not broad topic requests.
+- `## What's New`: one line at the top describing what shipped and when (`YYYY-MM-DD — <what shipped>`).
+
+Do this in the same PR/commit that ships the domain or Skill — not as a follow-up.
+
 ## Commit conventions
 
 - One vertical slice or one fix per commit where practical.
