@@ -12,6 +12,7 @@ Maps implementation tasks to the correct Skill.
 |---|---|
 | login, sign in, authentication | skills/authentication/SKILL.md |
 | writing, terminology, capitalization, button label wording, inclusive writing, date/number formatting in UI | skills/style-guide/SKILL.md |
+| layout, color, typography, dark mode, materials, motion, app icon, interface icon, SF Symbols, branding, accessibility design, RTL, permission prompt design | skills/human-interface-guidelines/SKILL.md |
 
 ## Resolution Rules
 
