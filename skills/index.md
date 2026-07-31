@@ -10,8 +10,8 @@ Maps implementation tasks to the correct Skill.
 
 | Task Keywords | Load Skill |
 |---|---|
-| login, sign in, authentication | skills/authentication/login.md |
-| writing, terminology, capitalization, button label wording, inclusive writing, date/number formatting in UI | skills/style-guide/writing.md |
+| login, sign in, authentication | skills/authentication/SKILL.md |
+| writing, terminology, capitalization, button label wording, inclusive writing, date/number formatting in UI | skills/style-guide/SKILL.md |
 
 ## Resolution Rules
 
