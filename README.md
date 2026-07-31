@@ -57,10 +57,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"check this screen's layout against HIG"` → `layout.md` (+ `right-to-left.md` if relevant)
   Example: `"does my dark mode palette meet contrast guidance"` → `dark-mode.md`, `color.md`
 
+- **`app-store-review-guidelines`** — Routes App Store submission-compliance tasks (app completeness, metadata accuracy, in-app purchase, spam/duplicate-app avoidance, privacy manifest and nutrition label accuracy) to App Store Review Guidelines Knowledge Contracts.
+  Example: `"why would this in-app subscription get rejected"` → `digital-goods-iap.md`, `restore-purchases.md`
+  Example: `"what needs to go in my PrivacyInfo.xcprivacy"` → `privacy-manifest.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-07-31 — Added `app-store-review-guidelines` Skill (App Completeness, Accurate Metadata, In-App Purchase, Minimum Functionality, Spam/Duplicate, Privacy manifest & nutrition label) — 12 Knowledge Contracts.
 - 2026-07-31 — Added `human-interface-guidelines` Skill (Foundations: layout, color, typography, app icons, images, inclusion, accessibility-design, dark mode, materials, motion, icons, branding, privacy-design, SF Symbols usage, RTL) — 15 Knowledge Contracts.
 - 2026-07-31 — Hardened native Skill format (real YAML frontmatter, deterministic keyword routing, Stop Conditions) across all Skills.
 - 2026-07-31 — Added `authentication` Skill (sign-in, sign-up, credentials, biometrics).

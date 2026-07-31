@@ -56,6 +56,12 @@ Every new domain or Skill (and any material change to an existing one) must upda
 
 Do this in the same PR/commit that ships the domain or Skill — not as a follow-up.
 
+## npm package publishing
+
+`npx apple-agent-kit` (`npx/`) is a thin installer — it runs `claude plugin marketplace add <repo>` and `claude plugin install`, pointing at this GitHub repo directly. It does not bundle References/Knowledge/Skills content. **Shipping a new domain or Skill does NOT require an npm publish** — content lands for users as soon as it's on `main`.
+
+Only bump `npx/package.json` version and `npm publish` when `npx/package.json` or `npx/bin/install.js` itself changes.
+
 ## Commit conventions
 
 - One vertical slice or one fix per commit where practical.
