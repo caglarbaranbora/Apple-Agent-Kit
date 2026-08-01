@@ -18,6 +18,7 @@ Maps implementation tasks to the correct Skill.
 | VoiceOver, accessibilityLabel, accessibilityTraits, accessibilityValue, accessibilityHint, accessibilityAction, UIAccessibilityCustomAction, accessibilityElement, isAccessibilityElement, accessibilitySortPriority, Dynamic Type, ScaledMetric, UIFontMetrics, Reduce Motion, Reduce Transparency, Increase Contrast, Full Keyboard Access, AccessibilityFocusState, accessibilityHidden, performAccessibilityAudit, Accessibility Inspector | skills/accessibility/SKILL.md |
 | UIKit, UIViewController, viewDidLoad, viewWillAppear, addChild, NSLayoutConstraint, layout anchors, UIStackView, safeAreaLayoutGuide, UINavigationController, UITabBarController, UITableViewDiffableDataSource, UICollectionViewCompositionalLayout, UICollectionViewDiffableDataSource, CellRegistration, prepareForReuse, present, dismiss, UIModalPresentationStyle | skills/uikit/SKILL.md |
 | SF Symbols, Image(systemName:), UIImage(systemName:), symbolRenderingMode, SymbolVariants, variableValue, imageScale, SymbolConfiguration, preferredSymbolConfiguration, hierarchical rendering, palette rendering, multicolor rendering, symbol variant | skills/sf-symbols/SKILL.md |
+| URLSession, URLRequest, URLComponents, async await network call, data(for:), JSONDecoder, Codable decoding, DecodingError, HTTPURLResponse, URLError, Task cancellation, URLSessionConfiguration, App Transport Security, ATS, NSAppTransportSecurity, Authorization header, Bearer token, 401 refresh | skills/networking/SKILL.md |
 
 ## Resolution Rules
 
