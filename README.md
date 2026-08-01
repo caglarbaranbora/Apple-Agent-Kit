@@ -1,7 +1,7 @@
 # Apple Agent Kit
 
-![npm version](https://img.shields.io/npm/v/apple-agent-kit)
-![License](https://img.shields.io/badge/license-PolyForm%20Strict-blue)
+[![npm version](https://img.shields.io/npm/v/apple-agent-kit)](https://www.npmjs.com/package/apple-agent-kit)
+[![License](https://img.shields.io/badge/license-PolyForm%20Strict-blue)](LICENSE)
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Draft
