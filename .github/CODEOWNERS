@@ -1,0 +1,6 @@
+# Varsayılan olarak tüm dosyalar için repo sahibi review istenir
+* @caglarbaranbora
+
+# Örnek: belirli klasörler için farklı sahip atamak isterseniz
+# /skills/ @caglarbaranbora
+# /docs/architecture/ @caglarbaranbora
