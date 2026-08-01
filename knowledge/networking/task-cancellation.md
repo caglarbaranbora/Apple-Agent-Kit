@@ -95,6 +95,9 @@ final class SearchController {
                 await MainActor.run { self.display(results) }
             } catch is CancellationError {
                 // Expected: a newer search superseded this one.
+            } catch let urlError as URLError where urlError.code == .cancelled {
+                // URLSession.data(for:) throws URLError(.cancelled), not
+                // CancellationError, when its containing Task is cancelled.
             } catch {
                 await MainActor.run { self.showError(error) }
             }
@@ -102,7 +105,7 @@ final class SearchController {
     }
 }
 ```
-The previous task is explicitly cancelled before starting a new one, and `CancellationError` is caught separately and silently ignored rather than shown as a failure. (Rules 3, 4)
+The previous task is explicitly cancelled before starting a new one, and both forms cancellation can actually take — `CancellationError` and `URLError(.cancelled)` (the one `URLSession.data(for:)` actually throws) — are caught separately and silently ignored rather than shown as a failure. (Rules 3, 4)
 
 ## Non-Compliant Example
 
