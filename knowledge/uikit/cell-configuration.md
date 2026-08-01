@@ -19,7 +19,7 @@ tags:
   - reuse
 references:
   - https://developer.apple.com/documentation/uikit/uicollectionview/cellregistration
-  - https://developer.apple.com/documentation/uikit/uitableview/register(_:forcellreuseidentifier:)
+  - https://developer.apple.com/documentation/uikit/uitableview/register(_:forcellreuseidentifier:)-3l3ct
   - https://developer.apple.com/documentation/uikit/uitableviewcell/prepareforreuse()
 depends_on: []
 related:
@@ -138,5 +138,5 @@ None.
 ## References
 
 -   [Apple Developer — UICollectionView.CellRegistration](https://developer.apple.com/documentation/uikit/uicollectionview/cellregistration)
--   [Apple Developer — register(_:forCellReuseIdentifier:)](https://developer.apple.com/documentation/uikit/uitableview/register(_:forcellreuseidentifier:))
+-   [Apple Developer — register(_:forCellReuseIdentifier:)](https://developer.apple.com/documentation/uikit/uitableview/register(_:forcellreuseidentifier:)-3l3ct)
 -   [Apple Developer — prepareForReuse()](https://developer.apple.com/documentation/uikit/uitableviewcell/prepareforreuse())
