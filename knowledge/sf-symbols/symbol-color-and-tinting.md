@@ -41,7 +41,8 @@ by an incompatible mode.
 
 -   `.foregroundStyle(_:_:_:)` argument count matched to rendering mode
 -   `UIImageView.tintColor` inheritance and system color usage
--   Why `.multicolor` rendering ignores foreground color overrides
+-   Why `.multicolor` rendering may ignore foreground color overrides,
+    and why that behavior is symbol-dependent
 
 ### Excluded
 
@@ -69,10 +70,13 @@ automatically.
 
 ### Rule 3
 
-Agents MUST NOT set `.foregroundStyle` or `tintColor` expecting it to
-recolor a `.multicolor`-rendered symbol's built-in colors — multicolor
-rendering uses the symbol's authored palette and ignores foreground color
-overrides for its multicolor layers.
+Agents MUST NOT assume `.foregroundStyle` or `tintColor` will recolor a
+`.multicolor`-rendered symbol's built-in layers — most multicolor
+symbols use fully fixed authored colors that ignore overrides entirely,
+but some are authored with a dynamic layer that does pick up the current
+foreground/tint color. Verify a specific symbol's actual behavior (SF
+Symbols app or an empirical check) rather than assuming either outcome
+universally.
 
 ### Rule 4
 
@@ -97,7 +101,7 @@ Two colors supplied for a two-layer palette symbol, matching the rendering mode'
 let imageView = UIImageView(image: multicolorFlagSymbol)
 imageView.tintColor = .red
 ```
-`tintColor` set on a `.multicolor`-rendered symbol — has no visible effect because multicolor rendering ignores tint/foreground overrides for its authored layer colors. (Rule 3)
+`tintColor` set on a `.multicolor`-rendered symbol without first checking whether that symbol's layers are fixed or dynamic — for a fully fixed-color multicolor symbol this has no visible effect, and assuming that universally risks missing symbols authored with a dynamic layer that would actually respond. (Rule 3)
 
 ## Dependencies
 
