@@ -22,7 +22,8 @@ references:
   - https://developer.apple.com/documentation/uikit/uiimage/init(systemname:variablevalue:configuration:)
 depends_on:
   - knowledge.sf-symbols.symbol-basics
-related: []
+related:
+  - knowledge.human-interface-guidelines.sf-symbols
 updated: 2026-08-01
 ```
 
