@@ -1,30 +1,30 @@
 ---
 name: Bug report
-about: Bir hata bildirin
+about: Report a bug
 title: "[BUG] "
 labels: bug
 assignees: ''
 ---
 
-**Hatanın tanımı**
-Hatanın ne olduğunu net bir şekilde açıklayın.
+**Describe the bug**
+A clear description of what the bug is.
 
-**Tekrar üretme adımları**
-1. '...' komutunu çalıştır
-2. '...' Skill'ini tetikle
-3. Hatayı gözlemle
+**Steps to reproduce**
+1. Run '...'
+2. Trigger the '...' Skill
+3. Observe the error
 
-**Beklenen davranış**
-Ne olmasını bekliyordunuz?
+**Expected behavior**
+What did you expect to happen?
 
-**Gerçekleşen davranış**
-Ne oldu?
+**Actual behavior**
+What actually happened?
 
-**Ortam**
-- Claude Code sürümü:
-- Node.js sürümü:
-- İşletim sistemi:
-- `apple-agent-kit` sürümü:
+**Environment**
+- Claude Code version:
+- Node.js version:
+- Operating system:
+- `apple-agent-kit` version:
 
-**Ek bağlam / loglar**
-Varsa hata logları, ekran görüntüleri.
+**Additional context / logs**
+Error logs, screenshots, if any.

@@ -1,37 +1,37 @@
 # Security Policy
 
-## Desteklenen Sürümler
+## Supported Versions
 
-Apple Agent Kit şu an 0.x geliştirme aşamasındadır. Güvenlik yamaları en son yayınlanan sürüme uygulanır.
+Apple Agent Kit is currently in 0.x development. Security patches are applied to the most recently published version.
 
-| Sürüm   | Destekleniyor mu |
-| ------- | ----------------- |
-| 0.1.x   | ✅                 |
-| < 0.1   | ❌                 |
+| Version | Supported |
+| ------- | --------- |
+| 0.1.x   | ✅        |
+| < 0.1   | ❌        |
 
-## Güvenlik Açığı Bildirme
+## Reporting a Vulnerability
 
-Bir güvenlik açığı bulduysanız **lütfen public bir issue açmayın.**
+If you find a security vulnerability, **please do not open a public issue.**
 
-Bunun yerine:
+Instead:
 
-1. GitHub'ın [Private Vulnerability Reporting](https://github.com/caglarbaranbora/Apple-Agent-Kit/security/advisories/new) özelliğini kullanarak bildirin, **veya**
-2. [maintainer e-postası buraya] adresine detaylı bir açıklama gönderin.
+1. Report it using GitHub's [Private Vulnerability Reporting](https://github.com/caglarbaranbora/Apple-Agent-Kit/security/advisories/new) feature, **or**
+2. Send a detailed report to [maintainer email here].
 
-Bildiriminizde şunları içermeye çalışın:
-- Açığın kısa açıklaması
-- Etkilenen dosya/Skill/Knowledge Contract
-- Tekrar üretme adımları (mümkünse)
-- Potansiyel etki
+Please try to include:
+- A short description of the vulnerability
+- The affected file/Skill/Knowledge Contract
+- Steps to reproduce (if possible)
+- Potential impact
 
-## Yanıt Süreci
+## Response Process
 
-- 48 saat içinde bildiriminizi aldığımızı teyit etmeye çalışıyoruz.
-- Doğrulanan açıklar için bir düzeltme takvimi paylaşılır.
-- Açık, düzeltme yayınlandıktan sonra kamuya duyurulur (istenirse bildiren kişiye kredi verilir).
+- We aim to acknowledge your report within 48 hours.
+- For confirmed vulnerabilities, a remediation timeline will be shared.
+- The vulnerability will be publicly disclosed after a fix is released (credit given to the reporter if desired).
 
-## Kapsam
+## Scope
 
-Bu repo bir npm installer (`npx apple-agent-kit`) ve Claude Code plugin marketplace'i içerir. Özellikle şu noktalara dikkat edin:
-- `bin/install.js` içindeki komut çalıştırma / dosya yazma davranışı
-- Marketplace/plugin manifest'inin kötü amaçlı Skill/Knowledge Contract enjekte edilmesine karşı bütünlüğü
+This repo contains an npm installer (`npx apple-agent-kit`) and a Claude Code plugin marketplace. Pay particular attention to:
+- Command execution / file-writing behavior inside `bin/install.js`
+- Integrity of the marketplace/plugin manifest against malicious Skill/Knowledge Contract injection

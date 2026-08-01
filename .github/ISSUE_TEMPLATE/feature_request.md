@@ -1,22 +1,22 @@
 ---
 name: Feature request
-about: Yeni bir Skill, Knowledge Contract veya iyileştirme önerin
+about: Propose a new Skill, Knowledge Contract, or improvement
 title: "[FEATURE] "
 labels: enhancement
 assignees: ''
 ---
 
-**Bu istek hangi soruna/eksikliğe çözüm getiriyor?**
-Örn: "Şu anda CoreData ile ilgili bir Skill yok, bu yüzden agent CoreData migration konusunda hallüsinasyon yapıyor."
+**What problem/gap does this request address?**
+E.g. "There's currently no Skill for CoreData, so the agent hallucinates on CoreData migration questions."
 
-**Önerilen çözüm**
-Yeni bir Skill mi, mevcut bir Skill'e Knowledge Contract eklemek mi, yoksa routing değişikliği mi?
+**Proposed solution**
+Is this a new Skill, a Knowledge Contract added to an existing Skill, or a routing change?
 
-**Kapsam (varsa)**
-Hangi Knowledge Contract'lar dahil olmalı? domain-map.md'deki yeri ne olur?
+**Scope (if known)**
+Which Knowledge Contracts should be included? Where does it fit in domain-map.md?
 
-**Alternatifler**
-Düşündüğünüz başka yaklaşımlar var mı?
+**Alternatives considered**
+Any other approaches you considered?
 
-**Ek bağlam**
-İlgili Apple dokümantasyon linkleri, örnekler.
+**Additional context**
+Relevant Apple documentation links, examples.
