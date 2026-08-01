@@ -69,10 +69,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"this icon-only button has no VoiceOver label"` → `accessibility-labels.md`
   Example: `"swipe-to-delete row needs a VoiceOver alternative"` → `custom-accessibility-actions.md`
 
+- **`uikit`** — Routes UIKit screen-scaffolding implementation tasks (view controller lifecycle/composition, programmatic Auto Layout, navigation, diffable table/collection views, modal presentation) to UIKit Knowledge Contracts.
+  Example: `"my child view controller's view isn't showing up correctly"` → `view-controller-composition.md`
+  Example: `"how do I animate row insertion in a UITableView"` → `table-view-diffable.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-01 — Added `uikit` Skill (view controller lifecycle/composition, Auto Layout, navigation, diffable table/collection views, cell configuration, modal presentation; programmatic UI v1) — 12 Knowledge Contracts. Replaces the prior placeholder scope in domain-map.md.
 - 2026-08-01 — Added `accessibility` Skill (labels/traits/value/hint, custom actions, element grouping, VoiceOver navigation order, Dynamic Type API, reduce-motion/transparency/increase-contrast, keyboard access & focus, hidden/decorative elements, accessibility audits; SwiftUI + UIKit) — 12 Knowledge Contracts. Resolves the human-interface-guidelines and swiftui accessibility forward-references.
 - 2026-08-01 — Added `swiftui` Skill (Views: composition/identity/modifier order; Navigation: NavigationStack/NavigationSplitView; Layout: stacks/safe-area/lazy-grids/GeometryReader; State: @State/@Binding/@Observable/@Environment) — 12 Knowledge Contracts.
 - 2026-07-31 — Added `app-store-review-guidelines` Skill (App Completeness, Accurate Metadata, In-App Purchase, Minimum Functionality, Spam/Duplicate, Privacy manifest & nutrition label) — 12 Knowledge Contracts.
