@@ -21,7 +21,8 @@ references:
   - https://developer.apple.com/documentation/swiftui/symbolvariants
 depends_on:
   - knowledge.sf-symbols.symbol-basics
-related: []
+related:
+  - knowledge.human-interface-guidelines.sf-symbols
 updated: 2026-08-01
 ```
 
@@ -59,16 +60,22 @@ source of truth instead of scattering the same suffix logic everywhere.
 ### Rule 2
 
 Agents MUST verify a requested variant suffix actually exists for a
-given base symbol name before use — not every SF Symbol ships every
-variant; a nonexistent suffixed name resolves to `nil` the same as any
-other invalid name (see `symbol-basics` Rule 2).
+given base symbol name before manually building it into a `systemName`
+string (e.g. `"heart.fill"`) — not every SF Symbol ships every variant;
+a nonexistent suffixed name resolves to `nil` the same as any other
+invalid name (see `symbol-basics` Rule 2). This applies to string
+suffixes specifically; `.symbolVariant(_:)` behaves differently — it
+falls back to the symbol's base rendering rather than producing `nil`
+when the requested variant isn't available.
 
 ### Rule 3
 
 Agents SHOULD use the `.fill` variant for selected/active/emphasized
 states and the unsuffixed (outline) form for default/unselected states,
 matching the convention used throughout system UI (e.g. tab bar
-selection).
+selection) — which variant best expresses a given state remains a
+design decision owned by `human-interface-guidelines`'s `sf-symbols.md`;
+this is a fallback convention, not a design mandate.
 
 ### Rule 4
 
