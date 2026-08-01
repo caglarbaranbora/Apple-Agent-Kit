@@ -1,25 +1,25 @@
-# Katkıda Bulunan Davranış Kuralları
+# Contributor Covenant Code of Conduct
 
-## Taahhüdümüz
+## Our Pledge
 
-Katılımcılar ve katkıda bulunanlar olarak, projemize ve topluluğumuza katılımı; yaş, beden ölçüsü, engellilik, etnik köken, cinsiyet kimliği ve ifadesi, deneyim seviyesi, milliyet, kişisel görünüm, ırk, din veya cinsel kimlik ve yönelim fark etmeksizin herkes için tacizden uzak bir deneyim haline getirmeyi taahhüt ederiz.
+As participants and contributors, we pledge to make participation in our project and community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
 
-## Standartlarımız
+## Our Standards
 
-Olumlu bir ortama katkıda bulunan davranış örnekleri:
-- Empatik ve nazik bir dil kullanmak
-- Farklı görüş ve deneyimlere saygı göstermek
-- Yapıcı eleştiriyi nezaketle kabul etmek
-- Topluluk için en iyisine odaklanmak
+Examples of behavior that contributes to a positive environment:
+- Using empathetic and kind language
+- Respecting differing viewpoints and experiences
+- Gracefully accepting constructive criticism
+- Focusing on what is best for the community
 
-Kabul edilemez davranış örnekleri:
-- Cinselleştirilmiş dil veya görsel kullanımı, istenmeyen ilgi
-- Trolleme, aşağılayıcı yorumlar, kişisel veya siyasi saldırılar
-- Kamuya açık veya özel taciz
-- İzin olmadan başkalarının özel bilgilerini yayınlamak
+Examples of unacceptable behavior:
+- The use of sexualized language or imagery, and unwelcome attention
+- Trolling, insulting comments, personal or political attacks
+- Public or private harassment
+- Publishing others' private information without permission
 
-## Uygulama
+## Enforcement
 
-Kabul edilemez davranışlar [maintainer e-postası buraya] adresine bildirilebilir. Tüm şikayetler incelenecek ve araştırılacaktır.
+Unacceptable behavior may be reported to [maintainer email here]. All complaints will be reviewed and investigated.
 
-Bu Davranış Kuralları [Contributor Covenant](https://www.contributor-covenant.org) 2.1 sürümünden uyarlanmıştır.
+This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1.
