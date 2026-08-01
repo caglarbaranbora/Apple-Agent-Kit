@@ -24,7 +24,8 @@ related:
   - knowledge.human-interface-guidelines.icons
   - knowledge.human-interface-guidelines.color
   - knowledge.human-interface-guidelines.accessibility
-updated: 2026-07-31
+  - knowledge.sf-symbols.rendering-modes
+updated: 2026-08-01
 ```
 
 ## Intent
@@ -33,7 +34,7 @@ This contract defines how an AI coding agent selects and styles SF
 Symbols within an iOS/iPadOS design — rendering mode, weight/scale
 matching, and fill vs. outline variant choice. It covers the design
 angle; API-level rendering/animation implementation belongs to the
-future dedicated `sf-symbols` domain (see docs/architecture/domain-map.md
+dedicated `sf-symbols` domain (see docs/architecture/domain-map.md
 Cross-Domain Notes).
 
 ## Scope
@@ -49,7 +50,7 @@ Cross-Domain Notes).
 
 ### Excluded
 
--   API-level rendering/animation implementation — future `sf-symbols` domain
+-   API-level rendering/animation implementation — see the `sf-symbols` domain
 -   General interface-icon consistency rules unrelated to SF Symbols specifically — see `icons`
 
 ## Rules
