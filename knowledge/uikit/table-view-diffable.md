@@ -87,11 +87,19 @@ visible to the user.
 enum Section { case main }
 
 final class InboxViewController: UIViewController {
-    @IBOutlet private var tableView: UITableView!
+    private let tableView = UITableView()
     private var dataSource: UITableViewDiffableDataSource<Section, Message>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
         dataSource = UITableViewDiffableDataSource<Section, Message>(tableView: tableView) { tableView, indexPath, message in
             let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath)
             cell.textLabel?.text = message.subject
@@ -114,7 +122,7 @@ Diffable data source retained as a stored property, snapshot built and applied, 
 
 ```swift
 final class InboxViewController: UIViewController, UITableViewDataSource {
-    @IBOutlet private var tableView: UITableView!
+    private let tableView = UITableView()
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         messages.count
