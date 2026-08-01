@@ -139,9 +139,12 @@ string safely — so a request is well-formed before it's ever sent.
 
 Agents MUST build a URL's query string with `URLComponents` and
 `URLQueryItem`, not by interpolating raw values into a URL string —
-`URLComponents` percent-encodes each value correctly; manual
-interpolation produces a malformed or unsafely-encoded URL for any value
-containing spaces, `&`, `=`, or other reserved characters.
+`URLComponents` percent-encodes each value deterministically and
+guarantees it stays scoped to its own parameter. Manual interpolation is
+unsafe: a value containing `&` gets silently split into extra,
+unintended query parameters instead of staying part of the original
+value's contents, and other reserved characters depend on the URL
+parser's undocumented leniency rather than a guaranteed encoding.
 
 ### Rule 2
 
@@ -190,7 +193,7 @@ func makeSearchRequest(query: String, baseURL: URL) -> URLRequest {
     return URLRequest(url: url)
 }
 ```
-Query value interpolated directly into the URL string — a query containing `&` or a space produces a malformed or incorrectly-scoped URL, and `httpMethod` is left at the default `"GET"` with no explicit statement of intent. (Rules 1, 2)
+Query value interpolated directly into the URL string — a query value containing `&` gets split into extra, unintended query parameters instead of staying part of the original value, and `httpMethod` is left at the default `"GET"` with no explicit statement of intent. (Rules 1, 2)
 
 ## Dependencies
 
