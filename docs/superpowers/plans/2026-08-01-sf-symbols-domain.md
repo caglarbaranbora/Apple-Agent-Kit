@@ -663,7 +663,7 @@ tags:
   - scale
 references:
   - https://developer.apple.com/documentation/swiftui/view/imagescale(_:)
-  - https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration/init(pointsize:weight:scale:)
+  - https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class/init(pointsize:weight:scale:)
 depends_on:
   - knowledge.sf-symbols.symbol-basics
 related: []
@@ -754,7 +754,7 @@ Resizing the image view's frame directly instead of using a scale configuration 
 ## References
 
 -   [Apple Developer — imageScale(_:)](https://developer.apple.com/documentation/swiftui/view/imagescale(_:))
--   [Apple Developer — SymbolConfiguration(pointSize:weight:scale:)](https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration/init(pointsize:weight:scale:))
+-   [Apple Developer — SymbolConfiguration(pointSize:weight:scale:)](https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class/init(pointsize:weight:scale:))
 ```
 
 - [ ] **Step 2: Validate**
