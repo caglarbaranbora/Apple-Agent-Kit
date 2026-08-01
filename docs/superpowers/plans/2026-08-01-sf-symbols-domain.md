@@ -25,7 +25,7 @@ Version: 0.1.0
 
 ## Source
 
-https://developer.apple.com/documentation/uikit/configuring-your-app-to-use-sf-symbols
+https://developer.apple.com/documentation/uikit/configuring-and-displaying-symbol-images-in-your-ui
 
 ## Purpose
 
