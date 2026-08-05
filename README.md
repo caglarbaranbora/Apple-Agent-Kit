@@ -85,13 +85,17 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"my JSON response isn't decoding, dates are failing"` → `codable-decoding.md`
   Example: `"how do I retry a request after a 401 without an infinite loop"` → `authenticated-requests.md`
 
+- **`xcode`** — Routes Xcode project-configuration implementation tasks (build configurations, xcconfig files, schemes/targets, automatic and manual code signing, entitlements/capabilities, archive process, export options) to Xcode Knowledge Contracts.
+  Example: `"my archive won't export, wrong provisioning profile"` → `manual-signing-provisioning-profiles.md`
+  Example: `"Product > Archive is greyed out"` → `archive-process.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
-- 2026-08-01 — Added `networking` Skill (URL request construction, async data fetching, Codable decoding, HTTP error handling, task cancellation, session configuration, App Transport Security, authenticated requests; async/await URLSession v1) — 8 Knowledge Contracts. Fills the "Authentication networking" gap authentication.md explicitly excludes, and replaces the prior placeholder scope in domain-map.md.
-- 2026-08-01 — Added `sf-symbols` Skill (symbol basics, rendering modes, symbol variants, variable value, weight/scale, color/tinting, custom symbol usage, UIKit SymbolConfiguration; SwiftUI + UIKit) — 8 Knowledge Contracts. Resolves the human-interface-guidelines sf-symbols forward-reference and replaces the prior placeholder scope in domain-map.md.
-- 2026-08-01 — Added `uikit` Skill (view controller lifecycle/composition, Auto Layout, navigation, diffable table/collection views, cell configuration, modal presentation; programmatic UI v1) — 12 Knowledge Contracts. Replaces the prior placeholder scope in domain-map.md.
+- 2026-08-01 — Added `xcode` Skill (build configurations, xcconfig files, schemes/targets, automatic and manual code signing, entitlements/capabilities, archive process, export options; Xcode GUI/project-file v1) — 8 Knowledge Contracts. Replaces the prior placeholder scope in domain-map.md.
+- 2026-08-01 — Added `networking` Skill (URL request construction, async data fetching, Codable decoding, HTTP error handling, task cancellation, session configuration, App Transport Security, authenticated requests; async/await URLSession v1) — 8 Knowledge Contracts. Fills the "Authentication networking" gap authentication.md explicitly excludes, and replaces the prior placeholder scope in domain-map.md.
+- 2026-08-01 — Added `sf-symbols` Skill (symbol basics, rendering modes, symbol variants, variable value, weight/scale, color/tinting, custom symbol usage, UIKit SymbolConfiguration; SwiftUI + UIKit) — 8 Knowledge Contracts. Resolves the human-interface-guidelines sf-symbols forward-reference and replaces the prior placeholder scope in domain-map.md.
 - See [CHANGELOG.md](CHANGELOG.md) for the full release history.
 
 ## Contributing

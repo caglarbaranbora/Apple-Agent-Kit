@@ -385,7 +385,7 @@ developer's local user data.
 
 ### Included
 
--   Scheme action → build configuration mapping (Run/Test/Profile/Analyze default to Debug; Archive defaults to Release)
+-   Scheme action → build configuration mapping (Run/Test/Analyze default to Debug; Profile/Archive default to Release)
 -   Shared vs. user schemes: the "Shared" checkbox, `xcshareddata` vs. `xcuserdata` storage location
 -   Wiring a target into the correct scheme action (Build, Run, Test, Archive)
 
@@ -1110,7 +1110,7 @@ git commit -m "feat: add export-options knowledge contract"
 ```markdown
 ---
 name: xcode
-description: Route Xcode project-configuration implementation tasks to the correct Knowledge Contracts — build configurations, .xcconfig files, schemes/targets, automatic and manual code signing, entitlements/capabilities, archiving, and export. Use when configuring build settings, authoring an xcconfig file, editing a scheme, setting up code signing, adding a capability, or archiving/exporting an app in Xcode. v1 is Xcode GUI / project-file configuration only — no xcodebuild CLI, no CI signing automation (fastlane/match), no Swift Package Manager build configuration. Triggers on build configuration, Debug, Release, .xcconfig, Build Settings, scheme, target, Signing & Capabilities, automatic signing, manual signing, provisioning profile, certificate, entitlements, capability, Product > Archive, Organizer, ExportOptions, distribution method, Ad Hoc, Enterprise, App Store Connect distribution, IPA export.
+description: Route Xcode project-configuration implementation tasks to the correct Knowledge Contracts — build configurations, .xcconfig files, schemes/targets, automatic and manual code signing, entitlements/capabilities, archiving, and export. Use when configuring build settings, authoring an xcconfig file, editing a scheme, setting up code signing, adding a capability, or archiving/exporting an app in Xcode. v1 is Xcode GUI / project-file configuration only — no xcodebuild CLI, no CI signing automation (fastlane/match), no Swift Package Manager build configuration. Triggers on build configuration, Debug configuration, Release configuration, .xcconfig, Build Settings, Xcode scheme, Xcode target, Signing & Capabilities, automatic signing, manual signing, provisioning profile, signing certificate, entitlements, Xcode capability, Product > Archive, Organizer, ExportOptions, distribution method, Ad Hoc, Enterprise, App Store Connect distribution, IPA export.
 id: skill.xcode.foundations
 title: Xcode — Foundations
 version: 0.1.0
@@ -1177,7 +1177,7 @@ In the `## Discovery Rules` table, add this row immediately after the
 `networking` row (the row containing `skills/networking/SKILL.md`):
 
 ```markdown
-| build configuration, Debug, Release, .xcconfig, Build Settings, scheme, target, Signing & Capabilities, automatic signing, manual signing, provisioning profile, certificate, entitlements, capability, Product > Archive, Organizer, ExportOptions, distribution method, Ad Hoc, Enterprise, App Store Connect distribution, IPA export | skills/xcode/SKILL.md |
+| build configuration, Debug configuration, Release configuration, .xcconfig, Build Settings, Xcode scheme, Xcode target, Signing & Capabilities, automatic signing, manual signing, provisioning profile, signing certificate, entitlements, Xcode capability, Product > Archive, Organizer, ExportOptions, distribution method, Ad Hoc, Enterprise, App Store Connect distribution, IPA export | skills/xcode/SKILL.md |
 ```
 
 - [ ] **Step 2: Validate manually**
