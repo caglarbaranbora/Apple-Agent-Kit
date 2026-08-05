@@ -39,7 +39,7 @@ developer's local user data.
 
 ### Included
 
--   Scheme action → build configuration mapping (Run/Test/Profile/Analyze default to Debug; Archive defaults to Release)
+-   Scheme action → build configuration mapping (Run/Test/Analyze default to Debug; Profile/Archive default to Release)
 -   Shared vs. user schemes: the "Shared" checkbox, `xcshareddata` vs. `xcuserdata` storage location
 -   Wiring a target into the correct scheme action (Build, Run, Test, Archive)
 
