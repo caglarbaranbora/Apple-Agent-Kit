@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 1.0.1
+Version: 1.0.2
 
 ## Overview
 
