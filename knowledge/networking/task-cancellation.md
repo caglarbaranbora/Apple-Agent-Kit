@@ -22,7 +22,8 @@ references:
   - https://developer.apple.com/documentation/swift/task/checkcancellation()
 depends_on:
   - knowledge.networking.async-data-fetching
-related: []
+related:
+  - knowledge.networking.async-data-fetching
 updated: 2026-08-01
 ```
 

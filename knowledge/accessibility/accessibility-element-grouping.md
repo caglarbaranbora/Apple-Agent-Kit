@@ -22,6 +22,7 @@ references:
   - https://developer.apple.com/documentation/uikit/uiaccessibilityelement/isaccessibilityelement
 depends_on: []
 related:
+  - knowledge.accessibility.accessibility-hidden-decorative
   - knowledge.accessibility.voiceover-navigation-order
 updated: 2026-08-01
 ```

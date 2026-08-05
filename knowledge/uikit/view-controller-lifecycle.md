@@ -25,6 +25,7 @@ references:
   - https://developer.apple.com/documentation/uikit/uiviewcontroller/viewdiddisappear(_:)
 depends_on: []
 related:
+  - knowledge.uikit.auto-layout-constraints
   - knowledge.uikit.view-controller-composition
 updated: 2026-08-01
 ```

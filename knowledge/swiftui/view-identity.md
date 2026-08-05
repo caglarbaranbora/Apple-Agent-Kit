@@ -22,6 +22,7 @@ references:
   - https://developer.apple.com/documentation/swift/identifiable
 depends_on: []
 related:
+  - knowledge.swiftui.state-and-binding
   - knowledge.swiftui.view-composition
 updated: 2026-08-01
 ```

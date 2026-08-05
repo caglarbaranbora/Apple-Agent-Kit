@@ -22,8 +22,10 @@ references:
   - https://developer.apple.com/documentation/xcode/build-system
 depends_on: []
 related:
-  - knowledge.xcode.build-configurations
   - knowledge.xcode.archive-process
+  - knowledge.xcode.automatic-signing
+  - knowledge.xcode.build-configurations
+  - knowledge.xcode.manual-signing-provisioning-profiles
 updated: 2026-08-01
 ```
 

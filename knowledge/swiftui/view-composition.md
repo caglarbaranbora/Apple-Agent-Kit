@@ -21,6 +21,7 @@ references:
   - https://developer.apple.com/documentation/swiftui/view
 depends_on: []
 related:
+  - knowledge.swiftui.modifier-order
   - knowledge.swiftui.view-identity
 updated: 2026-08-01
 ```

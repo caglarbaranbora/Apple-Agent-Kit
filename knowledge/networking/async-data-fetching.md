@@ -24,6 +24,7 @@ depends_on:
   - knowledge.networking.url-request-construction
 related:
   - knowledge.networking.http-error-handling
+  - knowledge.networking.url-request-construction
 updated: 2026-08-01
 ```
 

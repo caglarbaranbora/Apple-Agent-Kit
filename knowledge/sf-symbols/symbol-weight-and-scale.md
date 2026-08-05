@@ -22,7 +22,9 @@ references:
   - https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class/init(pointsize:weight:scale:)
 depends_on:
   - knowledge.sf-symbols.symbol-basics
-related: []
+related:
+  - knowledge.sf-symbols.rendering-modes
+  - knowledge.sf-symbols.symbol-color-and-tinting
 updated: 2026-08-01
 ```
 

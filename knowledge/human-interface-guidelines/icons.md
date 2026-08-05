@@ -21,9 +21,10 @@ references:
   - https://developer.apple.com/design/human-interface-guidelines/icons
 depends_on: []
 related:
-  - knowledge.human-interface-guidelines.sf-symbols
   - knowledge.human-interface-guidelines.accessibility
+  - knowledge.human-interface-guidelines.app-icons
   - knowledge.human-interface-guidelines.right-to-left
+  - knowledge.human-interface-guidelines.sf-symbols
 updated: 2026-07-31
 ```
 

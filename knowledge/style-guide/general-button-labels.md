@@ -20,15 +20,17 @@ references:
   - https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf
 depends_on: []
 related:
+  - knowledge.authentication.button-labels
+  - knowledge.style-guide.app-state-and-error-terminology
+  - knowledge.style-guide.authentication-credentials-and-biometrics
   - knowledge.style-guide.capitalization-style-rules
-  - knowledge.style-guide.presentation-surfaces
-  - knowledge.style-guide.navigation-controls
   - knowledge.style-guide.input-controls
+  - knowledge.style-guide.instructional-voice-and-phrasing
+  - knowledge.style-guide.navigation-controls
+  - knowledge.style-guide.presentation-surfaces
+  - knowledge.style-guide.sign-in-and-authentication-terminology
   - knowledge.style-guide.status-and-progress-indicators
   - knowledge.style-guide.ui-action-verbs
-  - knowledge.style-guide.app-state-and-error-terminology
-  - knowledge.style-guide.instructional-voice-and-phrasing
-  - knowledge.authentication.button-labels
 updated: 2026-07-30
 ```
 

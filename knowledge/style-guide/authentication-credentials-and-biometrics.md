@@ -20,6 +20,7 @@ references:
   - https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf
 depends_on: []
 related:
+  - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.sign-in-and-authentication-terminology
 updated: 2026-07-30
 ```

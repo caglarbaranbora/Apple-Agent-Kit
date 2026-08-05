@@ -21,11 +21,13 @@ references:
   - https://developer.apple.com/design/human-interface-guidelines/accessibility
 depends_on: []
 related:
-  - knowledge.style-guide.writing-inclusively
-  - knowledge.human-interface-guidelines.inclusion
+  - knowledge.accessibility.accessibility-labels
+  - knowledge.accessibility.dynamic-type-api
   - knowledge.human-interface-guidelines.color
+  - knowledge.human-interface-guidelines.inclusion
   - knowledge.human-interface-guidelines.typography
-updated: 2026-07-31
+  - knowledge.style-guide.writing-inclusively
+updated: 2026-08-05
 ```
 
 ## Intent
@@ -35,7 +37,7 @@ agent must apply when laying out or reviewing an iOS/iPadOS interface —
 text scaling, contrast, labeling, and non-visual/non-gesture
 alternatives. It covers design decisions, not Accessibility API
 implementation (VoiceOver traits, UIAccessibility properties), which
-belongs to the future dedicated `accessibility` domain (see
+belongs to the `accessibility` domain (see
 docs/architecture/domain-map.md Cross-Domain Notes).
 
 ## Scope
@@ -51,7 +53,7 @@ docs/architecture/domain-map.md Cross-Domain Notes).
 
 ### Excluded
 
--   Accessibility API implementation details (VoiceOver traits, UIAccessibility) — future `accessibility` domain
+-   Accessibility API implementation details (VoiceOver traits, UIAccessibility, Dynamic Type API) — see `knowledge.accessibility.accessibility-labels`, `knowledge.accessibility.dynamic-type-api`
 -   Inclusive language/imagery — see `inclusion`
 -   Color palette definition — see `color`
 

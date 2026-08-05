@@ -24,6 +24,8 @@ references:
   - https://developer.apple.com/documentation/uikit/uiviewcontroller/removefromparent()
 depends_on: []
 related:
+  - knowledge.uikit.navigation-controller
+  - knowledge.uikit.tab-bar-controller
   - knowledge.uikit.view-controller-lifecycle
 updated: 2026-08-01
 ```

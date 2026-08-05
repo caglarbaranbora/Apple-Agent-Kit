@@ -108,7 +108,7 @@ view.addSubview(avatarImageView)
 avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16).isActive = true
 avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
 ```
-`translatesAutoresizingMaskIntoConstraints` left `true` (conflicts with the explicit constraints) and no width/height, leaving the image view's size ambiguous. (Rules 1, 4)
+`translatesAutoresizingMaskIntoConstraints` left `true` (conflicts with the explicit constraints), constraints activated individually via `.isActive = true` instead of batched, and no width/height, leaving the image view's size ambiguous. (Rules 1, 3, 4)
 
 ## Dependencies
 

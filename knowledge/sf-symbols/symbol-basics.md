@@ -23,6 +23,11 @@ references:
 depends_on: []
 related:
   - knowledge.human-interface-guidelines.sf-symbols
+  - knowledge.sf-symbols.custom-symbol-usage
+  - knowledge.sf-symbols.rendering-modes
+  - knowledge.sf-symbols.symbol-color-and-tinting
+  - knowledge.sf-symbols.symbol-variants
+  - knowledge.sf-symbols.symbol-weight-and-scale
 updated: 2026-08-01
 ```
 

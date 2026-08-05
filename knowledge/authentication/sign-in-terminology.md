@@ -25,6 +25,7 @@ depends_on:
   - knowledge.style-guide.sign-in-and-authentication-terminology
 related:
   - knowledge.authentication.button-labels
+  - knowledge.style-guide.sign-in-and-authentication-terminology
 updated: 2026-07-30
 ```
 
@@ -48,9 +49,8 @@ implementing authentication interfaces for Apple platforms.
 -   Authentication implementation
 -   Backend authentication
 -   General sign-in/sign-out hyphenation, part-of-speech forms, and
-    preposition usage (see
-    knowledge/style-guide/sign-in-and-authentication-terminology.md,
-    [[knowledge/style-guide/sign-in-and-authentication-terminology]])
+    preposition usage — see
+    `knowledge.style-guide.sign-in-and-authentication-terminology`
 
 ## Rules
 
