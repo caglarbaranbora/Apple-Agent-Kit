@@ -1,7 +1,11 @@
 # Apple Agent Kit
 
-Status: Draft
-Version: 0.1.0
+[![npm version](https://img.shields.io/npm/v/apple-agent-kit)](https://www.npmjs.com/package/apple-agent-kit)
+[![License](https://img.shields.io/badge/license-PolyForm%20Strict-blue)](LICENSE)
+[![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
+
+Status: Stable
+Version: 1.0.0
 
 ## Overview
 
@@ -81,20 +85,26 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"my JSON response isn't decoding, dates are failing"` → `codable-decoding.md`
   Example: `"how do I retry a request after a 401 without an infinite loop"` → `authenticated-requests.md`
 
+- **`xcode`** — Routes Xcode project-configuration implementation tasks (build configurations, xcconfig files, schemes/targets, automatic and manual code signing, entitlements/capabilities, archive process, export options) to Xcode Knowledge Contracts.
+  Example: `"my archive won't export, wrong provisioning profile"` → `manual-signing-provisioning-profiles.md`
+  Example: `"Product > Archive is greyed out"` → `archive-process.md`
+
+- **`local-authentication`** — Routes Face ID/Touch ID/device-passcode implementation tasks (availability and biometry-type detection, policy evaluation, reason strings and Info.plist, error handling, LAContext lifecycle, Keychain-biometric binding, fallback UX) to Local Authentication Knowledge Contracts.
+  Example: `"Face ID prompt shows the wrong icon"` → `availability-and-biometry-type.md`
+  Example: `"user is locked out of Face ID after too many failed attempts"` → `error-handling.md`
+
+- **`app-tracking-transparency`** — Routes App Tracking Transparency / IDFA implementation tasks (authorization-request mechanics, authorization status handling, IDFA access, NSUserTrackingUsageDescription) to App Tracking Transparency Knowledge Contracts.
+  Example: `"how do I ask for tracking permission without re-prompting every launch"` → `authorization-request.md`
+  Example: `"advertisingIdentifier is returning all zeros"` → `status-and-idfa-access.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
-- 2026-08-01 — Added `networking` Skill (URL request construction, async data fetching, Codable decoding, HTTP error handling, task cancellation, session configuration, App Transport Security, authenticated requests; async/await URLSession v1) — 8 Knowledge Contracts. Fills the "Authentication networking" gap authentication.md explicitly excludes, and replaces the prior placeholder scope in domain-map.md.
-- 2026-08-01 — Added `sf-symbols` Skill (symbol basics, rendering modes, symbol variants, variable value, weight/scale, color/tinting, custom symbol usage, UIKit SymbolConfiguration; SwiftUI + UIKit) — 8 Knowledge Contracts. Resolves the human-interface-guidelines sf-symbols forward-reference and replaces the prior placeholder scope in domain-map.md.
-- 2026-08-01 — Added `uikit` Skill (view controller lifecycle/composition, Auto Layout, navigation, diffable table/collection views, cell configuration, modal presentation; programmatic UI v1) — 12 Knowledge Contracts. Replaces the prior placeholder scope in domain-map.md.
-- 2026-08-01 — Added `accessibility` Skill (labels/traits/value/hint, custom actions, element grouping, VoiceOver navigation order, Dynamic Type API, reduce-motion/transparency/increase-contrast, keyboard access & focus, hidden/decorative elements, accessibility audits; SwiftUI + UIKit) — 12 Knowledge Contracts. Resolves the human-interface-guidelines and swiftui accessibility forward-references.
-- 2026-08-01 — Added `swiftui` Skill (Views: composition/identity/modifier order; Navigation: NavigationStack/NavigationSplitView; Layout: stacks/safe-area/lazy-grids/GeometryReader; State: @State/@Binding/@Observable/@Environment) — 12 Knowledge Contracts.
-- 2026-07-31 — Added `app-store-review-guidelines` Skill (App Completeness, Accurate Metadata, In-App Purchase, Minimum Functionality, Spam/Duplicate, Privacy manifest & nutrition label) — 12 Knowledge Contracts.
-- 2026-07-31 — Added `human-interface-guidelines` Skill (Foundations: layout, color, typography, app icons, images, inclusion, accessibility-design, dark mode, materials, motion, icons, branding, privacy-design, SF Symbols usage, RTL) — 15 Knowledge Contracts.
-- 2026-07-31 — Hardened native Skill format (real YAML frontmatter, deterministic keyword routing, Stop Conditions) across all Skills.
-- 2026-07-31 — Added `authentication` Skill (sign-in, sign-up, credentials, biometrics).
-- 2026-07-31 — Added `style-guide` Skill (terminology, capitalization, punctuation, inclusive writing).
+- 2026-08-05 — Added `app-tracking-transparency` Skill (authorization-request mechanics, authorization status handling, IDFA access, NSUserTrackingUsageDescription; iOS/iPadOS AppTrackingTransparency + AdSupport framework API v1) — 3 Knowledge Contracts. Closes out all 11 Tier 1 domains. Angle-split with `human-interface-guidelines` on tracking-alert UX, clean handoff with `app-store-review-guidelines` on privacy-label/permission-string topics, replaces the prior placeholder scope in domain-map.md.
+- 2026-08-05 — Added `local-authentication` Skill (availability and biometry-type detection, policy evaluation, reason strings & Info.plist, error handling, LAContext lifecycle, Keychain-biometric binding, fallback UX; iOS/iPadOS LocalAuthentication framework API v1) — 7 Knowledge Contracts. Clean handoff from `authentication` (which excludes biometrics entirely), replaces the prior placeholder scope in domain-map.md.
+- 2026-08-01 — Added `xcode` Skill (build configurations, xcconfig files, schemes/targets, automatic and manual code signing, entitlements/capabilities, archive process, export options; Xcode GUI/project-file v1) — 8 Knowledge Contracts. Replaces the prior placeholder scope in domain-map.md.
+- See [CHANGELOG.md](CHANGELOG.md) for the full release history.
 
 ## Contributing
 
