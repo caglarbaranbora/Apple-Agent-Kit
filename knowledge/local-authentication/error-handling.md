@@ -53,12 +53,12 @@ retrying, or simply reporting cancellation — instead of a single generic
 ### Rule 1
 
 Agents MUST branch on the specific `LAError.Code` rather than treating
-every non-success result as one generic failure — `.userCancel` and
-`.userFallback` mean the user deliberately declined or chose an
-alternative (no error UI needed beyond returning to the prior screen),
-while `.biometryLockout` means the user is now locked out of biometrics
-until they enter their device passcode once elsewhere, a state a generic
-"try again" retry cannot resolve.
+every non-success result as one generic failure — `.userCancel` means the
+user deliberately declined and needs no error UI at all, `.userFallback`
+means the user tapped the fallback button and the app must now take over
+authentication itself (see Rule 4), and `.biometryLockout` means the user
+is locked out of biometrics until a device passcode entry clears it — a
+generic "try again" retry resolves none of these three.
 
 ### Rule 2
 
@@ -82,42 +82,54 @@ bypass.
 Agents MUST NOT surface `.userCancel` or `.appCancel` as an error message
 to the user — both represent an intentional cancellation (the user
 tapped Cancel, or the app itself canceled the request, e.g. by
-backgrounding), and displaying an alert for a cancellation the user
-caused is confusing, redundant UI.
+backgrounding) and need no UI response. `.userFallback` is different and
+MUST be handled by the app taking over authentication itself — Apple's
+documentation defines this code as "the user tapped the fallback button
+in the authentication dialog, but no fallback is available for the
+authentication policy," which occurs under
+`.deviceOwnerAuthenticationWithBiometrics` (no automatic system
+fallback); the correct recovery is either re-invoking `evaluatePolicy`
+with `.deviceOwnerAuthentication` (system passcode) or presenting an
+app-specific fallback (e.g. an account password field) — treating
+`.userFallback` like `.userCancel` silently drops the user with no path
+forward, since nothing else in the system prompts them again.
 
 ## Compliant Example
 
 ```swift
 do {
-    let success = try await context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason)
+    let success = try await context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason)
     if success { onSuccess() }
 } catch let error as LAError {
     switch error.code {
     case .userCancel, .appCancel:
         break // No error UI -- intentional cancellation.
+    case .userFallback:
+        // No built-in fallback under biometrics-only -- the app takes over.
+        try await presentPasscodeFallback(reason: reason)
     case .biometryNotEnrolled:
         offerToOpenSettings()
     case .biometryLockout:
-        // .deviceOwnerAuthentication already offers passcode entry to clear the lockout.
-        showMessage("Enter your device passcode to re-enable Face ID.")
+        // .deviceOwnerAuthentication triggers system passcode entry to clear the lockout.
+        _ = try? await LAContext().evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason)
     default:
         showMessage("Authentication failed. Please try again.")
     }
 }
 ```
-Branches on the specific `LAError.Code`, with `.userCancel`/`.appCancel` producing no user-facing error and `.biometryNotEnrolled` routed to Settings. (Rules 1, 2, 4)
+Branches on the specific `LAError.Code`: `.userCancel`/`.appCancel` produce no user-facing error, `.userFallback` is handed off to an app-level fallback instead of being dropped, and `.biometryNotEnrolled` is routed to Settings. (Rules 1, 2, 4)
 
 ## Non-Compliant Example
 
 ```swift
 do {
-    let success = try await context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason)
+    let success = try await context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason)
     if success { onSuccess() }
 } catch {
     showMessage("Authentication failed. Please try again.")
 }
 ```
-Shows the same generic error for every failure, including a user-initiated cancel and a lockout that "try again" cannot fix. (Rules 1, 4)
+Shows the same generic error for every failure, including a user-initiated cancel, a `.userFallback` the app never acts on (leaving the user stuck with no fallback path), and a lockout that "try again" cannot fix. (Rules 1, 4)
 
 ## Dependencies
 
