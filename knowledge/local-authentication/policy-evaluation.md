@@ -23,6 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.local-authentication.availability-and-biometry-type
+  - knowledge.local-authentication.reason-strings-and-info-plist
   - knowledge.local-authentication.fallback-ux-and-passcode
   - knowledge.local-authentication.context-lifecycle
 updated: 2026-08-05
@@ -64,11 +65,19 @@ unenrolled, or fail repeatedly.
 
 ### Rule 2
 
-Agents MUST NOT call `evaluatePolicy` again on the same `LAContext`
-instance after a completed evaluation (success or failure) without first
-creating a new `LAContext` — reusing a context for a second evaluation
-produces undefined/inconsistent behavior; see `context-lifecycle` for the
-correct one-context-per-attempt pattern.
+Agents MUST create a new `LAContext` for each independent authentication
+attempt rather than reusing one after a completed evaluation, unless
+deliberately opting into reuse — `LAContext.touchIDAuthenticationAllowableReuseDuration`
+defaults to `0` (no reuse: each `evaluatePolicy` call re-prompts), but
+setting it to a nonzero value (up to
+`LATouchIDAuthenticationMaximumAllowableReuseDuration`) makes a
+subsequent `evaluatePolicy` call on that *same* context succeed
+automatically, without re-prompting, if the prior success occurred within
+that window. Reusing a context without understanding this property means
+either an unnecessary re-prompt (property left at its default) or a
+silent, unintended auto-success (property set nonzero without realizing
+it applies) — see `context-lifecycle` for the correct
+one-context-per-attempt pattern.
 
 ### Rule 3
 
@@ -109,16 +118,22 @@ Uses `.deviceOwnerAuthentication` for a general app-unlock case (graceful passco
 ## Non-Compliant Example
 
 ```swift
-let context = LAContext()
-context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Unlock your account") { success, error in
-    if success { unlockApp() }
-}
-// Later, reusing the same context:
-context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Confirm again") { success, error in
-    // Undefined/inconsistent behavior — same context reused for a second evaluation.
-}
+let context = LAContext() // touchIDAuthenticationAllowableReuseDuration left at its default (0).
+let firstSuccess = try await context.evaluatePolicy(
+    .deviceOwnerAuthenticationWithBiometrics,
+    localizedReason: "Unlock your account"
+)
+guard firstSuccess else { return }
+unlockApp()
+
+// Later, after the first evaluation has already completed, this feature
+// reuses the same context to confirm a second, separate sensitive action:
+let secondSuccess = try await context.evaluatePolicy(
+    .deviceOwnerAuthenticationWithBiometrics,
+    localizedReason: "Confirm this payment"
+)
 ```
-Uses biometrics-only for a general unlock flow (users without enrolled biometrics get no fallback at all), and reuses the same `LAContext` for a second `evaluatePolicy` call. (Rules 1, 2)
+Uses biometrics-only for a general unlock flow (users without enrolled biometrics get no fallback at all), and reuses the same `LAContext` for a second, unrelated `evaluatePolicy` call after the first has already completed, instead of creating a fresh context per attempt. (Rules 1, 2)
 
 ## Dependencies
 
