@@ -1,6 +1,6 @@
-# Varsayılan olarak tüm dosyalar için repo sahibi review istenir
+# By default, all files require review from the repo owner
 * @caglarbaranbora
 
-# Örnek: belirli klasörler için farklı sahip atamak isterseniz
+# Example: assign different owners to specific folders if needed
 # /skills/ @caglarbaranbora
 # /docs/architecture/ @caglarbaranbora
