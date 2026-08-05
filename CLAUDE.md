@@ -58,15 +58,16 @@ Do this in the same PR/commit that ships the domain or Skill — not as a follow
 
 ## Release version consistency
 
-The project has one release version number, shared by exactly these four files:
+The project has one release version number, shared by exactly these five files:
 
 - `README.md` (the `Version:` line near the top)
+- `npx/README.md` (the `Version:` line near the top)
 - `npx/package.json` (`version` field)
 - `.claude-plugin/plugin.json` (`version` field)
 - `CHANGELOG.md` (its newest non-`[Unreleased]` release header, e.g. `## [1.0.0] - YYYY-MM-DD`)
 
-These four MUST always match exactly. Before any commit that bumps the
-release version, or as part of any final/holistic review, check all four —
+These five MUST always match exactly. Before any commit that bumps the
+release version, or as part of any final/holistic review, check all five —
 a mismatch between them is a release-blocking defect, not a nitpick.
 Per-artifact `version:` fields inside individual Knowledge Contracts,
 Skills, and References are a separate, independent versioning scheme
