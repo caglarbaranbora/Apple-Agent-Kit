@@ -89,13 +89,17 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"my archive won't export, wrong provisioning profile"` → `manual-signing-provisioning-profiles.md`
   Example: `"Product > Archive is greyed out"` → `archive-process.md`
 
+- **`local-authentication`** — Routes Face ID/Touch ID/device-passcode implementation tasks (availability and biometry-type detection, policy evaluation, reason strings and Info.plist, error handling, LAContext lifecycle, Keychain-biometric binding, fallback UX) to Local Authentication Knowledge Contracts.
+  Example: `"Face ID prompt shows the wrong icon"` → `availability-and-biometry-type.md`
+  Example: `"user is locked out of Face ID after too many failed attempts"` → `error-handling.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-05 — Added `local-authentication` Skill (availability and biometry-type detection, policy evaluation, reason strings & Info.plist, error handling, LAContext lifecycle, Keychain-biometric binding, fallback UX; iOS/iPadOS LocalAuthentication framework API v1) — 7 Knowledge Contracts. Clean handoff from `authentication` (which excludes biometrics entirely), replaces the prior placeholder scope in domain-map.md.
 - 2026-08-01 — Added `xcode` Skill (build configurations, xcconfig files, schemes/targets, automatic and manual code signing, entitlements/capabilities, archive process, export options; Xcode GUI/project-file v1) — 8 Knowledge Contracts. Replaces the prior placeholder scope in domain-map.md.
 - 2026-08-01 — Added `networking` Skill (URL request construction, async data fetching, Codable decoding, HTTP error handling, task cancellation, session configuration, App Transport Security, authenticated requests; async/await URLSession v1) — 8 Knowledge Contracts. Fills the "Authentication networking" gap authentication.md explicitly excludes, and replaces the prior placeholder scope in domain-map.md.
-- 2026-08-01 — Added `sf-symbols` Skill (symbol basics, rendering modes, symbol variants, variable value, weight/scale, color/tinting, custom symbol usage, UIKit SymbolConfiguration; SwiftUI + UIKit) — 8 Knowledge Contracts. Resolves the human-interface-guidelines sf-symbols forward-reference and replaces the prior placeholder scope in domain-map.md.
 - See [CHANGELOG.md](CHANGELOG.md) for the full release history.
 
 ## Contributing
