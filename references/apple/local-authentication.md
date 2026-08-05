@@ -14,8 +14,10 @@ scoped to this domain's v1: biometry availability and type detection,
 policy evaluation, reason-string/Info.plist requirements, error handling,
 context lifecycle, Keychain-biometric binding, and fallback UX.
 macOS/watchOS-specific behavior, general Keychain storage APIs (owned by
-the future `security` domain), and Sign in with Apple/passkeys (owned by
-`authentication`) are out of scope.
+the future `security` domain), and Sign in with Apple/passkeys (boundary
+unresolved between `authentication`/`authenticationservices`/
+`sign-in-with-apple` — see domain-map.md Cross-Domain Notes) are out of
+scope.
 
 ## Primary Topics
 

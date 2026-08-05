@@ -1,6 +1,6 @@
 ---
 name: authentication
-description: Route authentication-related Apple platform implementation tasks to the correct Knowledge Contracts — sign-in, sign-up, credentials, biometrics. Use when the task involves login screens, sign-in terminology, or authentication accessibility. Triggers on sign in, sign up, login, authentication, Apple Account, credentials, biometrics, Face ID, Touch ID, passkeys.
+description: Route authentication-related Apple platform implementation tasks to the correct Knowledge Contracts — sign-in, sign-up, credentials. Use when the task involves login screens, sign-in terminology, or authentication accessibility. Triggers on sign in, sign up, login, authentication, Apple Account, credentials. For Face ID/Touch ID/biometric implementation, see the `local-authentication` Skill instead.
 id: skill.authentication.login
 title: Login Skill
 version: 0.2.0
