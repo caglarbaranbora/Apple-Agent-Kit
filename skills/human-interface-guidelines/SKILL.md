@@ -10,6 +10,8 @@ domain: Human Interface Guidelines
 routes: [knowledge.human-interface-guidelines.accessibility, knowledge.human-interface-guidelines.app-icons, knowledge.human-interface-guidelines.branding, knowledge.human-interface-guidelines.color, knowledge.human-interface-guidelines.dark-mode, knowledge.human-interface-guidelines.icons, knowledge.human-interface-guidelines.images, knowledge.human-interface-guidelines.inclusion, knowledge.human-interface-guidelines.layout, knowledge.human-interface-guidelines.materials, knowledge.human-interface-guidelines.motion, knowledge.human-interface-guidelines.privacy, knowledge.human-interface-guidelines.right-to-left, knowledge.human-interface-guidelines.sf-symbols, knowledge.human-interface-guidelines.typography]
 related:
   - skill.style-guide.writing
+  - skill.human-interface-guidelines.components
+  - skill.human-interface-guidelines.patterns
 last_updated: 2026-07-31
 ---
 
@@ -42,7 +44,13 @@ For UI copy wording (not visual design), route to
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/human-interface-guidelines/ — do not guess or
-fall back to general knowledge. HIG Patterns, Components, and Inputs
-sections are out of scope for this skill (see
+fall back to general knowledge. For Components/Inputs topics (lists,
+buttons, sheets, alerts, action sheets, navigation, tab bars, pickers,
+toggles, text fields, menus, gestures), route to
+`skill.human-interface-guidelines.components` instead. For Patterns
+topics (onboarding, searching, settings, notifications, feedback,
+undo/redo), route to `skill.human-interface-guidelines.patterns`
+instead. Any other HIG Patterns, Components, or Inputs topic not
+covered by those two sibling skills remains out of scope (see
 docs/architecture/domain-map.md) — report that explicitly rather than
 answering from general knowledge.
