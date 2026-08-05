@@ -4,7 +4,7 @@ Status: Draft Version: 0.1.0
 
 ## Metadata
 
-```yaml
+``` yaml
 id: knowledge.local-authentication.reason-strings-and-info-plist
 type: knowledge
 title: Reason Strings and Info.plist
