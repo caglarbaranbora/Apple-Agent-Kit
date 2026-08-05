@@ -60,11 +60,15 @@ biometrics disabled, still returns a failure, but only after presenting
 
 ### Rule 2
 
-Agents MUST check `biometryType` only after a successful
-`canEvaluatePolicy` call, not before — `biometryType` is populated as a
-side effect of `canEvaluatePolicy` evaluating the policy; reading it
-beforehand (e.g. immediately after `LAContext()` init) returns `.none`
-regardless of the device's actual hardware.
+Agents MUST check `biometryType` only after calling `canEvaluatePolicy`
+at least once, not before — Apple's documentation states the property
+"is set only after you call the `canEvaluatePolicy(_:error:)` method, and
+is set no matter what the call returns," so it is populated whether that
+call succeeds or fails; reading it beforehand (e.g. immediately after
+`LAContext()` init) returns `.none` regardless of the device's actual
+hardware. This is what makes it possible to read `biometryType` from the
+*failure* path too (see Rule 4) — the hardware type is known even when
+biometrics aren't enrolled.
 
 ### Rule 3
 
@@ -90,7 +94,12 @@ let context = LAContext()
 var error: NSError?
 
 guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
-    // Inspect `error` (see error-handling.md) and fall back accordingly.
+    // biometryType is populated even on failure, so hardware type is
+    // still knowable here -- e.g. to say "Face ID" instead of "biometrics"
+    // when guiding the user to Settings for a biometryNotEnrolled error.
+    if let laError = error as? LAError, laError.code == .biometryNotEnrolled {
+        offerToOpenSettings(for: context.biometryType) // See error-handling.md.
+    }
     return
 }
 
@@ -105,7 +114,7 @@ default:
     promptIcon = nil
 }
 ```
-Checks availability before evaluating, and reads `biometryType` only after `canEvaluatePolicy` succeeds. (Rules 1, 2, 3)
+Checks availability before evaluating, reads `biometryType` only after `canEvaluatePolicy` has been called (success or failure), and distinguishes `biometryNotEnrolled` from other failures on the error path. (Rules 1, 2, 3, 4)
 
 ## Non-Compliant Example
 
