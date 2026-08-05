@@ -56,6 +56,24 @@ Every new domain or Skill (and any material change to an existing one) must upda
 
 Do this in the same PR/commit that ships the domain or Skill — not as a follow-up.
 
+## Release version consistency
+
+The project has one release version number, shared by exactly these four files:
+
+- `README.md` (the `Version:` line near the top)
+- `npx/package.json` (`version` field)
+- `.claude-plugin/plugin.json` (`version` field)
+- `CHANGELOG.md` (its newest non-`[Unreleased]` release header, e.g. `## [1.0.0] - YYYY-MM-DD`)
+
+These four MUST always match exactly. Before any commit that bumps the
+release version, or as part of any final/holistic review, check all four —
+a mismatch between them is a release-blocking defect, not a nitpick.
+Per-artifact `version:` fields inside individual Knowledge Contracts,
+Skills, and References are a separate, independent versioning scheme
+(component-level, starts at `0.1.0`, bumped per-artifact as that artifact
+changes) — they are NOT part of this four-file release-version check and
+do not need to match the release version.
+
 ## npm package publishing
 
 `npx apple-agent-kit` (`npx/`) is a thin installer — it runs `claude plugin marketplace add <repo>` and `claude plugin install`, pointing at this GitHub repo directly. It does not bundle References/Knowledge/Skills content. **Shipping a new domain or Skill does NOT require an npm publish** — content lands for users as soon as it's on `main`.

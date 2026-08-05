@@ -4,8 +4,8 @@
 [![License](https://img.shields.io/badge/license-PolyForm%20Strict-blue)](LICENSE)
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
-Status: Draft
-Version: 0.1.2
+Status: Stable
+Version: 1.0.0
 
 ## Overview
 
