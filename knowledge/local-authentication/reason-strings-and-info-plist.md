@@ -24,6 +24,7 @@ depends_on: []
 related:
   - knowledge.local-authentication.policy-evaluation
   - knowledge.local-authentication.error-handling
+  - knowledge.local-authentication.fallback-ux-and-passcode
 updated: 2026-08-05
 ```
 
