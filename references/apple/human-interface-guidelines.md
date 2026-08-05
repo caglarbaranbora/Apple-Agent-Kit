@@ -10,8 +10,12 @@ https://developer.apple.com/design/human-interface-guidelines/foundations
 ## Purpose
 
 Reference index for Apple's Human Interface Guidelines — Foundations
-section, iOS/iPadOS scope. Patterns, Components, and Inputs sections
-are out of scope for this pass — see docs/architecture/domain-map.md.
+section, iOS/iPadOS scope. A curated subset of Patterns and Components
+(plus one Inputs topic) is covered separately by
+`references/apple/human-interface-guidelines-patterns.md` and
+`references/apple/human-interface-guidelines-components.md` — see
+docs/architecture/domain-map.md for full scope and what remains
+unbuilt.
 
 ## Primary Topics
 
