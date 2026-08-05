@@ -93,13 +93,17 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"Face ID prompt shows the wrong icon"` → `availability-and-biometry-type.md`
   Example: `"user is locked out of Face ID after too many failed attempts"` → `error-handling.md`
 
+- **`app-tracking-transparency`** — Routes App Tracking Transparency / IDFA implementation tasks (authorization-request mechanics, authorization status handling, IDFA access, NSUserTrackingUsageDescription) to App Tracking Transparency Knowledge Contracts.
+  Example: `"how do I ask for tracking permission without re-prompting every launch"` → `authorization-request.md`
+  Example: `"advertisingIdentifier is returning all zeros"` → `status-and-idfa-access.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-05 — Added `app-tracking-transparency` Skill (authorization-request mechanics, authorization status handling, IDFA access, NSUserTrackingUsageDescription; iOS/iPadOS AppTrackingTransparency + AdSupport framework API v1) — 3 Knowledge Contracts. Closes out all 11 Tier 1 domains. Angle-split with `human-interface-guidelines` on tracking-alert UX, clean handoff with `app-store-review-guidelines` on privacy-label/permission-string topics, replaces the prior placeholder scope in domain-map.md.
 - 2026-08-05 — Added `local-authentication` Skill (availability and biometry-type detection, policy evaluation, reason strings & Info.plist, error handling, LAContext lifecycle, Keychain-biometric binding, fallback UX; iOS/iPadOS LocalAuthentication framework API v1) — 7 Knowledge Contracts. Clean handoff from `authentication` (which excludes biometrics entirely), replaces the prior placeholder scope in domain-map.md.
 - 2026-08-01 — Added `xcode` Skill (build configurations, xcconfig files, schemes/targets, automatic and manual code signing, entitlements/capabilities, archive process, export options; Xcode GUI/project-file v1) — 8 Knowledge Contracts. Replaces the prior placeholder scope in domain-map.md.
-- 2026-08-01 — Added `networking` Skill (URL request construction, async data fetching, Codable decoding, HTTP error handling, task cancellation, session configuration, App Transport Security, authenticated requests; async/await URLSession v1) — 8 Knowledge Contracts. Fills the "Authentication networking" gap authentication.md explicitly excludes, and replaces the prior placeholder scope in domain-map.md.
 - See [CHANGELOG.md](CHANGELOG.md) for the full release history.
 
 ## Contributing
