@@ -24,6 +24,7 @@ depends_on:
   - knowledge.style-guide.general-button-labels
 related:
   - knowledge.authentication.accessibility-forms
+  - knowledge.style-guide.general-button-labels
 updated: 2026-07-30
 ```
 
@@ -45,8 +46,7 @@ authentication interfaces.
 -   Layout
 -   Accessibility labels
 -   General button-quoting, icon-naming, and OK/user-name/allow wording
-    (see knowledge/style-guide/general-button-labels.md,
-    [[knowledge/style-guide/general-button-labels]])
+    — see `knowledge.style-guide.general-button-labels`
 
 ## Rules
 
@@ -68,15 +68,15 @@ Keep labels consistent across the flow.
 
 ## Compliant Example
 
--   Sign In
--   Continue
--   Create Account
+-   Sign In (Rules 1, 2)
+-   Continue (Rule 1)
+-   Create Account (Rules 1, 2)
 
 ## Non-Compliant Example
 
--   Click Here
--   Login Now
--   Press to Continue
+-   Click Here (Rule 3 — redundant "Click")
+-   Login Now (Rule 2 — non-standard terminology; Apple's term is "Log In"/"Sign In")
+-   Press to Continue (Rule 3 — redundant "Press")
 
 Violation:
 

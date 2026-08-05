@@ -22,7 +22,10 @@ references:
   - https://developer.apple.com/documentation/foundation/urlerror
 depends_on:
   - knowledge.networking.async-data-fetching
-related: []
+related:
+  - knowledge.networking.async-data-fetching
+  - knowledge.networking.authenticated-requests
+  - knowledge.networking.codable-decoding
 updated: 2026-08-01
 ```
 

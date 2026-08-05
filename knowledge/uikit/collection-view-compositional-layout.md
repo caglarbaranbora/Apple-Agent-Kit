@@ -24,6 +24,7 @@ references:
   - https://developer.apple.com/documentation/uikit/nscollectionlayoutitem
 depends_on: []
 related:
+  - knowledge.uikit.cell-configuration
   - knowledge.uikit.collection-view-diffable
 updated: 2026-08-01
 ```

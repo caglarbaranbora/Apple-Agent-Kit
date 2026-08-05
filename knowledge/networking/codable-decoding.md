@@ -22,7 +22,9 @@ references:
   - https://developer.apple.com/documentation/swift/decodingerror
 depends_on:
   - knowledge.networking.async-data-fetching
-related: []
+related:
+  - knowledge.networking.async-data-fetching
+  - knowledge.networking.url-request-construction
 updated: 2026-08-01
 ```
 

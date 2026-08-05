@@ -24,6 +24,7 @@ depends_on:
   - knowledge.sf-symbols.rendering-modes
 related:
   - knowledge.human-interface-guidelines.sf-symbols
+  - knowledge.sf-symbols.rendering-modes
 updated: 2026-08-01
 ```
 

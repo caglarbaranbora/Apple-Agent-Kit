@@ -21,6 +21,7 @@ references:
   - https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf
 depends_on: []
 related:
+  - knowledge.authentication.button-labels
   - knowledge.style-guide.input-controls
   - knowledge.style-guide.presentation-surfaces
   - knowledge.style-guide.general-button-labels
@@ -50,7 +51,7 @@ Apple platforms.
 -   Stepper and other input controls the up arrow can accompany (see `input-controls`)
 -   General rules for referring to and quoting button names (see `general-button-labels`)
 -   Presentation surfaces such as menus and sheets (see `presentation-surfaces`)
--   Authentication-specific button labels (see `knowledge/authentication/button-labels`, a different domain — not the same file as `general-button-labels` above)
+-   Authentication-specific button labels — see `knowledge.authentication.button-labels`, a different domain (not the same file as `general-button-labels` above)
 
 ## Rules
 

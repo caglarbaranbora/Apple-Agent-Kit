@@ -22,6 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.app-store-review-guidelines.demo-account
+  - knowledge.app-store-review-guidelines.digital-goods-iap
 updated: 2026-07-31
 ```
 

@@ -22,8 +22,9 @@ references:
   - https://developer.apple.com/documentation/uikit/uiaccessibilityelement/accessibilitylabel
 depends_on: []
 related:
-  - knowledge.human-interface-guidelines.accessibility
   - knowledge.accessibility.accessibility-traits
+  - knowledge.accessibility.accessibility-value-and-hint
+  - knowledge.human-interface-guidelines.accessibility
 updated: 2026-08-01
 ```
 

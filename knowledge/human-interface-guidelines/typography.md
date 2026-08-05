@@ -21,8 +21,9 @@ references:
   - https://developer.apple.com/design/human-interface-guidelines/typography
 depends_on: []
 related:
-  - knowledge.human-interface-guidelines.layout
   - knowledge.human-interface-guidelines.accessibility
+  - knowledge.human-interface-guidelines.color
+  - knowledge.human-interface-guidelines.layout
 updated: 2026-07-31
 ```
 

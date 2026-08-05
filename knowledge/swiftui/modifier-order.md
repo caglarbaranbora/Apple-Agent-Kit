@@ -21,6 +21,7 @@ references:
   - https://developer.apple.com/documentation/swiftui/viewmodifier
 depends_on: []
 related:
+  - knowledge.swiftui.stacks-and-spacing
   - knowledge.swiftui.view-composition
 updated: 2026-08-01
 ```

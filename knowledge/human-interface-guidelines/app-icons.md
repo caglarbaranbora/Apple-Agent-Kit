@@ -21,9 +21,10 @@ references:
   - https://developer.apple.com/design/human-interface-guidelines/app-icons
 depends_on: []
 related:
-  - knowledge.human-interface-guidelines.icons
   - knowledge.human-interface-guidelines.branding
   - knowledge.human-interface-guidelines.color
+  - knowledge.human-interface-guidelines.icons
+  - knowledge.human-interface-guidelines.sf-symbols
 updated: 2026-07-31
 ```
 

@@ -24,8 +24,9 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.layout
   - knowledge.human-interface-guidelines.sf-symbols
+  - knowledge.style-guide.international-formatting
   - knowledge.style-guide.international-style
-updated: 2026-07-31
+updated: 2026-08-05
 ```
 
 ## Intent
@@ -48,7 +49,7 @@ ordering, and which icons/images flip versus stay fixed.
 ### Excluded
 
 -   General layout/hierarchy rules unrelated to direction — see `layout`
--   SF Symbols' built-in RTL variant mechanics — not covered by any current contract
+-   General SF Symbols usage (rendering, variants, weight/scale) — see `sf-symbols`; SF Symbols' built-in RTL-variant mechanics specifically is not yet covered by any current contract
 -   Locale-specific number/date formatting text rules — see style-guide `international-style`/`international-formatting`
 
 ## Rules

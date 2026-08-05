@@ -23,6 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.networking.async-data-fetching
+  - knowledge.networking.authenticated-requests
 updated: 2026-08-01
 ```
 
