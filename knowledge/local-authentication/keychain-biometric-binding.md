@@ -23,8 +23,8 @@ references:
   - https://developer.apple.com/documentation/security/restricting-keychain-item-accessibility
 depends_on: []
 related:
+  - knowledge.local-authentication.policy-evaluation
   - knowledge.local-authentication.context-lifecycle
-  - knowledge.local-authentication.error-handling
 updated: 2026-08-05
 ```
 
