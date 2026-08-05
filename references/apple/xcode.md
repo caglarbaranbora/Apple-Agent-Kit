@@ -20,7 +20,7 @@ signing/notarization, and Xcode Cloud are deferred to a future pass.
 ## Primary Topics
 
 - Build configurations
-- xcconfig files
+- `.xcconfig` files
 - Schemes and targets
 - Automatic signing
 - Manual signing & provisioning profiles
