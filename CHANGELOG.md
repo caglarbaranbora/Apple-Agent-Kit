@@ -5,7 +5,10 @@ All notable changes to this project are documented in this file. The format is b
 The project uses a single version number (`README.md` and `npx/package.json` share the same version).
 
 ## [Unreleased]
+
+## [1.0.0] - 2026-08-05
 ### Added
+- v1.0.0 release: all 11 Tier 1 domains complete (`style-guide`, `human-interface-guidelines`, `app-store-review-guidelines`, `swiftui`, `accessibility`, `uikit`, `sf-symbols`, `networking`, `xcode`, `local-authentication`, `app-tracking-transparency`), plus `authentication` (cross-cutting, built ahead of tier order). See `docs/architecture/domain-map.md` for full per-domain scope and the Cross-Domain Notes documenting every resolved boundary.
 - `app-tracking-transparency` Skill (authorization-request mechanics, authorization status handling, IDFA access, NSUserTrackingUsageDescription; iOS/iPadOS AppTrackingTransparency + AdSupport framework API v1) — 3 Knowledge Contracts. Closes out all 11 Tier 1 domains, replaces the prior placeholder scope in domain-map.md.
 - `local-authentication` Skill (availability and biometry-type detection, policy evaluation, reason strings & NSFaceIDUsageDescription, LAError handling, LAContext lifecycle, Keychain-biometric binding, fallback UX; iOS/iPadOS LocalAuthentication framework API v1) — 7 Knowledge Contracts. Clean handoff from `authentication`, replaces the prior placeholder scope in domain-map.md.
 - `xcode` Skill (build configurations, xcconfig files, schemes/targets, automatic and manual code signing, entitlements/capabilities, archive process, export options; Xcode GUI/project-file v1) — 8 Knowledge Contracts. Replaces the prior placeholder scope in domain-map.md.
