@@ -18,7 +18,7 @@ tags:
   - idfa
   - authorization-status
 references:
-  - https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus-swift.enum
+  - https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus
   - https://developer.apple.com/documentation/adsupport/asidentifiermanager/advertisingidentifier
 depends_on: []
 related:
@@ -125,5 +125,5 @@ None.
 
 ## References
 
--   [Apple Developer — ATTrackingManager.AuthorizationStatus](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus-swift.enum)
+-   [Apple Developer — ATTrackingManager.AuthorizationStatus](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus)
 -   [Apple Developer — advertisingIdentifier](https://developer.apple.com/documentation/adsupport/asidentifiermanager/advertisingidentifier)
