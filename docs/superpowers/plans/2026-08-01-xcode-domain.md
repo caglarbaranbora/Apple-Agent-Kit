@@ -1177,7 +1177,7 @@ In the `## Discovery Rules` table, add this row immediately after the
 `networking` row (the row containing `skills/networking/SKILL.md`):
 
 ```markdown
-| build configuration, Debug, Release, .xcconfig, Build Settings, scheme, target, Signing & Capabilities, automatic signing, manual signing, provisioning profile, certificate, entitlements, capability, Product > Archive, Organizer, ExportOptions, distribution method, Ad Hoc, Enterprise, App Store Connect distribution, IPA export | skills/xcode/SKILL.md |
+| build configuration, Debug configuration, Release configuration, .xcconfig, Build Settings, Xcode scheme, Xcode target, Signing & Capabilities, automatic signing, manual signing, provisioning profile, signing certificate, entitlements, Xcode capability, Product > Archive, Organizer, ExportOptions, distribution method, Ad Hoc, Enterprise, App Store Connect distribution, IPA export | skills/xcode/SKILL.md |
 ```
 
 - [ ] **Step 2: Validate manually**
