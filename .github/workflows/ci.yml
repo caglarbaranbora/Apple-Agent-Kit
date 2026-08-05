@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  verify-npm-package:
+    name: Verify npm package (npx/)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: npx
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Verify package installs cleanly
+        run: npm pack --dry-run
+
+      - name: Sanity-check installer entrypoint exists
+        run: test -f bin/install.js
+
+  validate-artifacts:
+    name: Run Level 1 structural validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate Knowledge Contracts
+        run: |
+          fail=0
+          while IFS= read -r -d '' f; do
+            echo "::group::$f"
+            python3 scripts/validate_artifact.py "$f" --type knowledge || fail=1
+            echo "::endgroup::"
+          done < <(find knowledge -type f -iname "*.md" -print0)
+          exit $fail
+
+      - name: Validate Skills
+        run: |
+          # skills/apple-agent-kit/SKILL.md is Claude Code's native plugin entrypoint
+          # format, not this repo's custom Skill spec -- excluded by design.
+          fail=0
+          while IFS= read -r -d '' f; do
+            echo "::group::$f"
+            python3 scripts/validate_artifact.py "$f" --type skill || fail=1
+            echo "::endgroup::"
+          done < <(find skills -type f -iname "SKILL.md" ! -path "skills/apple-agent-kit/SKILL.md" -print0)
+          exit $fail
+
+      - name: Validate References
+        run: |
+          fail=0
+          while IFS= read -r -d '' f; do
+            echo "::group::$f"
+            python3 scripts/validate_artifact.py "$f" --type reference || fail=1
+            echo "::endgroup::"
+          done < <(find references -type f -iname "*.md" ! -iname "README.md" -print0)
+          exit $fail

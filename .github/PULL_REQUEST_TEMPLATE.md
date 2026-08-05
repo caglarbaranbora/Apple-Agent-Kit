@@ -1,21 +1,21 @@
-## Ne değişti?
+## What changed?
 
-<!-- Kısaca açıklayın: yeni Skill mi, Knowledge Contract güncellemesi mi, routing düzeltmesi mi? -->
+<!-- Briefly describe: a new Skill, a Knowledge Contract update, a routing fix? -->
 
-## Neden?
+## Why?
 
-<!-- Hangi soruna/eksikliğe çözüm. İlgili issue varsa: Closes #... -->
+<!-- What problem/gap does this solve? If there's a related issue: Closes #... -->
 
-## Kontrol listesi
+## Checklist
 
-- [ ] Değişiklik [CONTRIBUTING.md](../CONTRIBUTING.md) kurallarına uyuyor
-- [ ] Knowledge Contract formatı [CLAUDE.md](../CLAUDE.md)'deki layer order'a uygun
-- [ ] Yeni/değişen Knowledge Contract'lar resmi Apple dokümantasyonuna referans veriyor
-- [ ] Validation script'leri lokal olarak çalıştırıldı ve geçti
-- [ ] İlgiliyse `domain-map.md` güncellendi
-- [ ] İlgiliyse README.md "What's New" bölümüne eklendi
-- [ ] Yeni bir Skill ise `skills/index.md` routing tablosuna eklendi
+- [ ] Change follows the guidelines in [CONTRIBUTING.md](../CONTRIBUTING.md)
+- [ ] Knowledge Contract format follows the layer order in [CLAUDE.md](../CLAUDE.md)
+- [ ] New/changed Knowledge Contracts reference official Apple documentation
+- [ ] Validation scripts were run locally and passed
+- [ ] `domain-map.md` was updated, if relevant
+- [ ] README.md "What's New" section was updated, if relevant
+- [ ] If this is a new Skill, it was added to the `skills/index.md` routing table
 
-## Test edildi mi?
+## How was this tested?
 
-<!-- Hangi görevle/promptla test ettiniz, agent doğru Knowledge Contract'a yönlendi mi? -->
+<!-- What task/prompt did you test with — did the agent route to the correct Skill/Knowledge Contract? -->
