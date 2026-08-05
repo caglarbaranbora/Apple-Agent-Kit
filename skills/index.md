@@ -20,6 +20,7 @@ Maps implementation tasks to the correct Skill.
 | SF Symbols, Image(systemName:), UIImage(systemName:), symbolRenderingMode, SymbolVariants, variableValue, imageScale, SymbolConfiguration, preferredSymbolConfiguration, hierarchical rendering, palette rendering, multicolor rendering, symbol variant | skills/sf-symbols/SKILL.md |
 | URLSession, URLRequest, URLComponents, async await network call, data(for:), JSONDecoder, Codable decoding, DecodingError, HTTPURLResponse, URLError, Task cancellation, URLSessionConfiguration, App Transport Security, ATS, NSAppTransportSecurity, Authorization header, Bearer token, 401 refresh | skills/networking/SKILL.md |
 | build configuration, Debug configuration, Release configuration, .xcconfig, Build Settings, Xcode scheme, Xcode target, Signing & Capabilities, automatic signing, manual signing, provisioning profile, signing certificate, entitlements, Xcode capability, Product > Archive, Organizer, ExportOptions, distribution method, Ad Hoc, Enterprise, App Store Connect distribution, IPA export | skills/xcode/SKILL.md |
+| Face ID, Touch ID, LAContext, LABiometryType, canEvaluatePolicy, evaluatePolicy, deviceOwnerAuthentication, deviceOwnerAuthenticationWithBiometrics, LAPolicy, LAError, biometryNotEnrolled, biometryLockout, NSFaceIDUsageDescription, localizedReason, localizedFallbackTitle, SecAccessControl, biometryCurrentSet, biometryAny, biometric Keychain, Enter Passcode fallback, biometric authentication | skills/local-authentication/SKILL.md |
 
 ## Resolution Rules
 
