@@ -36,7 +36,7 @@ This contract defines how an AI coding agent builds shared-element ("hero") tran
 - `matchedGeometryEffect(id:in:properties:anchor:isSource:)` signature and usage
 - `@Namespace` / `Namespace.ID` requirement
 - Exactly-one-`isSource: true`-per-id rule
-- Co-presence requirement (both linked views present during transaction)
+- Matched-view update patterns (overlay co-presence with explicit `isSource`, or conditional if/else swap)
 
 ### Excluded
 
