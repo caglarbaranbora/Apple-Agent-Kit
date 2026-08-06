@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 1.0.3
+Version: 1.0.4
 
 ## Overview
 
@@ -109,10 +109,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"how do I ask for tracking permission without re-prompting every launch"` → `authorization-request.md`
   Example: `"advertisingIdentifier is returning all zeros"` → `status-and-idfa-access.md`
 
+- **`usernotifications`** — Routes UserNotifications framework implementation tasks (authorization, local notification scheduling, remote push registration, delegate handling, actions/categories, managing pending/delivered requests and badge count) to UserNotifications Knowledge Contracts.
+  Example: `"schedule a local reminder notification that repeats weekly"` → `local-notification-scheduling.md`
+  Example: `"my notification actions aren't showing up"` → `notification-actions-and-categories.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-06 — Added `usernotifications` Skill (authorization, local notification scheduling, remote push registration, delegate handling, actions/categories, managing pending/delivered requests and badge count; client-side UserNotifications + UIKit push-registration API v1) — 6 Knowledge Contracts. First Tier 2 domain, picked as the tier's highest real-world-usage domain. Angle-split with `human-interface-guidelines`'s `notifications.md` on notification design vs. API implementation, resolving the boundary that domain-map.md had flagged proactively.
 - 2026-08-06 — Expanded `swiftui` with a new Skill, `swiftui-interaction` (implicit/explicit animation, timing curves, transitions, matchedGeometryEffect, the Animatable protocol, PhaseAnimator/KeyframeAnimator, tap/long-press gestures, drag gesture, magnification/rotation gestures, gesture composition, GestureState) — 10 Knowledge Contracts. Closes the second of the two named Tier 1 priority gaps (after HIG Patterns/Components). Second domain with more than one Skill, split to stay under the project's Skill size cap.
 - 2026-08-06 — Expanded `human-interface-guidelines` with two new Skills, `human-interface-guidelines-components` and `human-interface-guidelines-patterns` (lists and tables, buttons, sheets, alerts, action sheets, navigation bars, tab bars, pickers, toggles, text fields, menus, touchscreen gestures; onboarding, searching, settings, notifications, feedback, undo/redo) — 18 Knowledge Contracts. Closes the highest-priority named Tier 1 gap (Foundations-only HIG coverage). First domain with more than one Skill, split by Apple's own information architecture to stay under the project's Reference/Skill size caps. Flags a new `usernotifications` (Tier 2) cross-domain boundary in domain-map.md.
 - 2026-08-05 — Added `app-tracking-transparency` Skill (authorization-request mechanics, authorization status handling, IDFA access, NSUserTrackingUsageDescription; iOS/iPadOS AppTrackingTransparency + AdSupport framework API v1) — 3 Knowledge Contracts. Closes out all 11 Tier 1 domains. Angle-split with `human-interface-guidelines` on tracking-alert UX, clean handoff with `app-store-review-guidelines` on privacy-label/permission-string topics, replaces the prior placeholder scope in domain-map.md.
