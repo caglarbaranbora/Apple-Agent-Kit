@@ -39,6 +39,7 @@ Maps implementation tasks to the correct Skill.
 | PassKit, PKPassLibrary, PKPass, pass.json, Wallet pass, PKAddPassesViewController, PKAddPassButton, webServiceURL, authenticationToken, PKPaymentRequest, PKPaymentAuthorizationController, PKPaymentAuthorizationViewController, PayWithApplePayButton, PKPaymentButton, PKPayment, PKPaymentToken, Apple Pay | skills/passkit/SKILL.md |
 | SwiftData, @Model, @Attribute, @Relationship, @Transient, ModelContainer, ModelConfiguration, ModelContext, modelContainer, modelContext, @Query, FetchDescriptor, #Predicate, deleteRule, cascade delete | skills/swiftdata/SKILL.md |
 | Core Data, NSManagedObject, NSManagedObjectContext, NSPersistentContainer, NSPersistentStoreDescription, NSEntityDescription, NSFetchRequest, NSPredicate, NSSortDescriptor, @FetchRequest, FetchedResults, NSRelationshipDescription, NSDeleteRule, viewContext, xcdatamodeld, Codegen, @NSManaged | skills/core-data/SKILL.md |
+| Combine, Publisher, Subscriber, AnyCancellable, @Published, ObservableObject, objectWillChange, PassthroughSubject, CurrentValueSubject, sink, assign, store(in:), combineLatest, debounce, removeDuplicates | skills/combine/SKILL.md |
 
 ## Resolution Rules
 
