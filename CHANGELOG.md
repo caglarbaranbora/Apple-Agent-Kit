@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.9.0] - 2026-08-07
+### Added
+- v1.9.0 release: fifteenth Tier 2 domain, `combine`.
+- `combine` Skill (publishers and subscribers, `@Published`/`ObservableObject`, subjects, transforming/combining operators, assign and memory management; Combine framework API v1) — 5 Knowledge Contracts. Covers the `Publisher`/`Subscriber` subscription contract (`sink(receiveCompletion:receiveValue:)`/the `Failure == Never` `sink(receiveValue:)` overload, retaining the returned `AnyCancellable`), `@Published`/`ObservableObject` (the `$name` projected-value publisher, synthesized `objectWillChange`, and the `willSet`-timing detail — a subscriber sees the new value before the property itself has changed), `PassthroughSubject`/`CurrentValueSubject` (`send(_:)`/`send(completion:)`), the transforming/combining operators `map`/`filter`/`removeDuplicates`/`debounce(for:scheduler:options:)`/`combineLatest`/`merge`/`zip` (including the tuple-vs-flat-stream distinction between `combineLatest`/`zip` and `merge`), and `assign(to:on:)`/`assign(to:)` with `assign(to:on:)`'s documented same-object retain-cycle risk plus `.store(in:)` for cancellable lifetime management. Resolves the `swiftui`/`combine` state-management boundary this repo had left open pending `combine`'s build (see domain-map.md Cross-Domain Notes) — a clean angle-split, not overlapping content: `swiftui` owns `@Observable` as the modern replacement, `combine` owns `@Published`/`ObservableObject` for code that still uses or interoperates with it. No corrections to the approved scope beyond citation-precision notes: citing the full `debounce(for:scheduler:options:)` three-parameter signature, and citing `Publishers.Merge`'s type page for `merge(with:)` since no distinct single-overload doc page exists. Combine-to-async/await interop (`Publisher.values`/`AsyncPublisher`), custom `Publisher`/`Subscriber` conformances, backpressure/`Subscribers.Demand`, and SwiftData/Core Data interop remain out of scope.
+
 ## [1.8.0] - 2026-08-06
 ### Added
 - v1.8.0 release: fourteenth Tier 2 domain, `core-data`.
