@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 1.0.9
+Version: 1.1.0
 
 ## Overview
 
@@ -133,10 +133,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"add Sign in with Apple to my login screen"` → `sign-in-with-apple-request-and-credential.md`
   Example: `"check if the user revoked Sign in with Apple access"` → `credential-state-and-revocation.md`
 
+- **`widgetkit`** — Routes WidgetKit implementation tasks (widget declaration and families, timeline provider and entries, widget interactivity and deep links, timeline reloading and refresh budget) to WidgetKit Knowledge Contracts. v1 is home-screen/Lock-Screen widgets only — no Live Activities/ActivityKit, no watchOS complications, no Control Widgets.
+  Example: `"build a home screen widget that shows today's stats"` → `widget-declaration-and-families.md`, `timeline-provider-and-entries.md`
+  Example: `"widget still shows stale data after I updated it in the app"` → `timeline-reloading-and-refresh-budget.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-06 — Added `widgetkit` Skill (widget declaration and families, timeline provider and entries, widget interactivity and deep links, timeline reloading and refresh budget; WidgetKit framework API v1) — 4 Knowledge Contracts. Seventh Tier 2 domain. No existing cross-domain content to overlap with; proactively defers `AppIntent` authoring to the future `app-intents` domain and background-refresh scheduling to the future `backgroundtasks` domain.
 - 2026-08-06 — Added `authenticationservices` Skill (Sign in with Apple request-and-credential handling, nonce and identity-token verification, credential-state checks and revocation, session persistence and sign-out; AuthenticationServices framework API v1) — 4 Knowledge Contracts. Sixth Tier 2 domain. Resolves the `authentication`/`authenticationservices`/`sign-in-with-apple` three-way boundary domain-map.md had left unresolved, absorbing the former `sign-in-with-apple` placeholder outright; clean handoffs with `authentication` (sign-in UX/terminology) and `security` (Keychain storage).
 - 2026-08-06 — Added `storekit` Skill (product loading and purchase, transaction verification and entitlements, transaction updates and restoring purchases, subscription status and renewal info; StoreKit 2 async/await API v1) — 4 Knowledge Contracts. Fifth Tier 2 domain. Clean handoff with `app-store-review-guidelines`'s `digital-goods-iap.md`/`restore-purchases.md` (API implementation vs. review compliance), resolving the boundary domain-map.md had flagged proactively.
 - 2026-08-06 — Added `security` Skill (Keychain item CRUD, accessibility levels, access groups and sharing, storing structured/Codable data; general non-biometric-bound Keychain Services API v1) — 4 Knowledge Contracts. Fourth Tier 2 domain. Clean handoff with `local-authentication`'s `keychain-biometric-binding.md` (biometric-bound access control vs. general Keychain CRUD), resolving the boundary domain-map.md had flagged proactively.
