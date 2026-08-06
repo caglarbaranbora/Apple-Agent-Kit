@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 1.7.0
+Version: 1.8.0
 
 ## Overview
 
@@ -161,10 +161,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"add a Trip model with a list of Accommodation relationships"` → `model-definition.md`, `relationships-and-cascade-delete.md`
   Example: `"filter and sort a SwiftUI list backed by SwiftData"` → `querying-with-query-and-fetchdescriptor.md`
 
+- **`core-data`** — Routes Core Data implementation tasks (model definition, persistent container setup, managed object context CRUD, fetching with `NSFetchRequest`, relationships and delete rules) to Core Data Knowledge Contracts. v1 is Core Data only — no `NSPersistentCloudKitContainer`/CloudKit sync, no lightweight/mapping-model migration, no `NSFetchedResultsController`, no multi-context concurrency beyond a basic parent-child relationship, no SwiftData interop (a separate domain).
+  Example: `"subclass NSManagedObject for a Task entity and choose a Codegen mode"` → `model-definition.md`
+  Example: `"delete a Department and cascade-delete its Employees"` → `relationships-and-delete-rules.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-06 — Added `core-data` Skill (model definition, persistent container setup, managed object context CRUD, fetching with `NSFetchRequest`, relationships and delete rules; Core Data framework API v1) — 5 Knowledge Contracts. Fourteenth Tier 2 domain, closing the persistence seam left open by `swiftdata`. Corrects a natural-but-wrong assumption: `NSDeleteRule`'s case names carry a `DeleteRule` suffix (`.cascadeDeleteRule`/`.nullifyDeleteRule`/`.denyDeleteRule`/`.noActionDeleteRule`), distinct from SwiftData's shorter `.cascade`/`.nullify`/`.deny`/`.noAction` spellings for the same four concepts. CloudKit sync, migration, `NSFetchedResultsController`, and SwiftData interop remain out of scope.
 - 2026-08-06 — Added `swiftdata` Skill (model definition, model container setup, model context CRUD, querying with `@Query`/`FetchDescriptor`, relationships and cascade delete; SwiftData framework API v1) — 5 Knowledge Contracts. Thirteenth Tier 2 domain. No cross-domain seam to resolve yet (Core Data remains a separate, unbuilt domain). Corrects two natural-but-wrong assumptions: `@Model` never synthesizes `Codable` (only `PersistentModel`/`Observable`, which cover `Hashable`/`Identifiable`), and the SwiftUI modifier's `inMemory:` parameter is a distinct name from `ModelConfiguration`'s `isStoredInMemoryOnly` — not the same symbol at two layers.
 - 2026-08-06 — Added `passkit` Skill (pass library and authorization, pass content and required fields, adding-passes UI, pass updates and push registration, Apple Pay payment request, Apple Pay authorization and result handling; PassKit framework API v1, Wallet passes and Apple Pay both included) — 6 Knowledge Contracts. Twelfth Tier 2 domain. No cross-domain seam to resolve; corrects a natural-but-wrong assumption that a PassKit-specific `PKPushType` exists for pass updates (it doesn't — the system Wallet component handles push tokens, not the app).
 - 2026-08-06 — Added `tipkit` Skill (tip declaration and content, display rules and event triggers, tip options and app configuration, presenting tips and tip groups; TipKit framework API v1) — 4 Knowledge Contracts. Eleventh Tier 2 domain. No cross-domain seam to resolve; `cloudKitContainer(_:)` cross-device sync noted as a real, deliberately excluded capability.
