@@ -40,6 +40,7 @@ Maps implementation tasks to the correct Skill.
 | SwiftData, @Model, @Attribute, @Relationship, @Transient, ModelContainer, ModelConfiguration, ModelContext, modelContainer, modelContext, @Query, FetchDescriptor, #Predicate, deleteRule, cascade delete | skills/swiftdata/SKILL.md |
 | Core Data, NSManagedObject, NSManagedObjectContext, NSPersistentContainer, NSPersistentStoreDescription, NSEntityDescription, NSFetchRequest, NSPredicate, NSSortDescriptor, @FetchRequest, FetchedResults, NSRelationshipDescription, NSDeleteRule, viewContext, xcdatamodeld, Codegen, @NSManaged | skills/core-data/SKILL.md |
 | Combine, Publisher, Subscriber, AnyCancellable, @Published, ObservableObject, objectWillChange, PassthroughSubject, CurrentValueSubject, sink, assign, store(in:), combineLatest, debounce, removeDuplicates | skills/combine/SKILL.md |
+| XCTest, XCTestCase, XCTAssert, XCTSkip, Swift Testing, @Test, #expect, #require, @Suite, Tag, parameterized test, XCUITest, XCUIApplication, XCUIElement, accessibilityIdentifier, XCTestExpectation, fulfillment | skills/testing/SKILL.md |
 
 ## Resolution Rules
 
