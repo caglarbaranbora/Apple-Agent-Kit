@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-08-06
+### Added
+- v1.4.0 release: tenth Tier 2 domain, `eventkit`.
+- `eventkit` Skill (authorization and access levels, event CRUD and fetch predicates, reminder CRUD and fetch, recurrence rules and EventKitUI hand-off; EventKit framework API v1) — 4 Knowledge Contracts. Covers `EKEventStore` authorization (`EKAuthorizationStatus`, iOS 17+ `requestFullAccessToEvents(completion:)`/`requestWriteOnlyAccessToEvents(completion:)`/`requestFullAccessToReminders(completion:)` vs. legacy `requestAccess(to:completion:)`), `EKEvent`/`EKReminder` CRUD and fetch predicates, and `EKRecurrenceRule`/`EKRecurrenceEnd` with the decision to hand off to EventKitUI's `EKEventEditViewController`/`EKEventViewController` instead of custom UI. No existing cross-domain seam to resolve. `EKSource`/multi-account calendar-source management, CalDAV/Exchange specifics, `EKEventStoreChanged` live-sync, and EventKit inside a widget extension (owned by `widgetkit`) remain out of scope.
+
 ## [1.3.0] - 2026-08-06
 ### Added
 - v1.3.0 release: ninth Tier 2 domain, `backgroundtasks`.
