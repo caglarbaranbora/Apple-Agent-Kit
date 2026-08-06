@@ -37,6 +37,7 @@ Maps implementation tasks to the correct Skill.
 | EventKit, EventKitUI, EKEventStore, EKEvent, EKReminder, EKCalendar, EKCalendarItem, EKAuthorizationStatus, EKRecurrenceRule, EKRecurrenceEnd, EKEventEditViewController, EKEventViewController, requestFullAccessToEvents, requestWriteOnlyAccessToEvents, requestFullAccessToReminders, predicateForEvents, predicateForReminders, fetchReminders | skills/eventkit/SKILL.md |
 | TipKit, Tip protocol, TipView, TipUIView, TipUIPopoverViewController, TipGroup, Tips.configure, #Rule, Tips.Parameter, Tips.Event, Tip.Action, Tip.Option, MaxDisplayCount, MaxDisplayDuration, IgnoresDisplayFrequency, invalidate(reason:), InvalidationReason, popoverTip | skills/tipkit/SKILL.md |
 | PassKit, PKPassLibrary, PKPass, pass.json, Wallet pass, PKAddPassesViewController, PKAddPassButton, webServiceURL, authenticationToken, PKPaymentRequest, PKPaymentAuthorizationController, PKPaymentAuthorizationViewController, PayWithApplePayButton, PKPaymentButton, PKPayment, PKPaymentToken, Apple Pay | skills/passkit/SKILL.md |
+| SwiftData, @Model, @Attribute, @Relationship, @Transient, ModelContainer, ModelConfiguration, ModelContext, modelContainer, modelContext, @Query, FetchDescriptor, #Predicate, deleteRule, cascade delete | skills/swiftdata/SKILL.md |
 
 ## Resolution Rules
 
