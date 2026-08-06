@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.0.8] - 2026-08-06
+### Added
+- v1.0.8 release: fifth Tier 2 domain, `storekit`.
+- `storekit` Skill (product loading and purchase, transaction verification and entitlements, transaction updates and restoring purchases, subscription status and renewal info; StoreKit 2 async/await API v1) — 4 Knowledge Contracts. Clean handoff with `app-store-review-guidelines`'s `digital-goods-iap.md`/`restore-purchases.md` (API implementation vs. review compliance), resolving the boundary domain-map.md had flagged proactively.
+
 ## [1.0.7] - 2026-08-06
 ### Added
 - v1.0.7 release: fourth Tier 2 domain, `security`.
