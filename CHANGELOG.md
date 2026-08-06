@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-08-06
+### Added
+- v1.5.0 release: eleventh Tier 2 domain, `tipkit`.
+- `tipkit` Skill (tip declaration and content, display rules and event triggers, tip options and app configuration, presenting tips and tip groups; TipKit framework API v1) — 4 Knowledge Contracts. Covers `Tip` protocol conformance on a `struct` (`title`, optional `message`/`image`, `actions`), the `#Rule(_:)` macro over `Tips.Parameter`/`Tips.Event` (AND-combined), `Tips.configure(_:)` app-launch setup plus per-tip `MaxDisplayCount`/`MaxDisplayDuration`/`IgnoresDisplayFrequency`, and presenting with `TipView`/`TipUIView`/`TipUIPopoverViewController`/`TipGroup` plus `invalidate(reason:)`. No existing cross-domain seam to resolve. Custom `TipViewStyle` authoring, watchOS-specific presentation differences, and `Tips.ConfigurationOption.cloudKitContainer(_:)` cross-device datastore sync (a real, documented TipKit capability, deliberately excluded rather than assumed nonexistent) remain out of scope.
+
 ## [1.4.0] - 2026-08-06
 ### Added
 - v1.4.0 release: tenth Tier 2 domain, `eventkit`.
