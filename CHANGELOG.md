@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-08-06
+### Added
+- v1.1.0 release: seventh Tier 2 domain, `widgetkit`.
+- `widgetkit` Skill (widget declaration and families, timeline provider and entries, widget interactivity and deep links, timeline reloading and refresh budget; WidgetKit framework API v1) — 4 Knowledge Contracts. No existing cross-domain content to overlap with (no prior widget-design content in `swiftui`/`human-interface-guidelines`); proactively defers `AppIntent` authoring to the future `app-intents` domain and background-refresh scheduling mechanics to the future `backgroundtasks` domain.
+
 ## [1.0.9] - 2026-08-06
 ### Added
 - v1.0.9 release: sixth Tier 2 domain, `authenticationservices`.
