@@ -8,7 +8,7 @@ status: Draft
 artifact_type: skill
 domain: WidgetKit
 routes: [knowledge.widgetkit.widget-declaration-and-families, knowledge.widgetkit.timeline-provider-and-entries, knowledge.widgetkit.widget-interactivity-and-deep-links, knowledge.widgetkit.timeline-reloading-and-refresh-budget]
-related: [knowledge.app-intents.intent-results-and-widget-hookup]
+related: [knowledge.app-intents.intent-results-and-widget-hookup, knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup]
 last_updated: 2026-08-06
 ---
 
@@ -47,7 +47,7 @@ its parameters, `perform()` body, and any entities it exposes — is
 owned by `app-intents` (`knowledge.app-intents.intent-results-and-widget-hookup`),
 not this one; this Skill only routes to wiring an already-authored
 intent into a widget's tap target. Scheduling the background work that produces new
-widget data (e.g. a `BGAppRefreshTask`) is owned by the future
-`backgroundtasks` domain, not this one; this Skill only routes to the
-`reloadTimelines`/`reloadAllTimelines` call site once new data has
-already landed.
+widget data (e.g. a `BGAppRefreshTask`) is owned by `backgroundtasks`
+(`knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup`),
+not this one; this Skill only routes to the `reloadTimelines`/`reloadAllTimelines`
+call site once new data has already landed.

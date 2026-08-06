@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-08-06
+### Added
+- v1.3.0 release: ninth Tier 2 domain, `backgroundtasks`.
+- `backgroundtasks` Skill (background task registration and scheduling, task execution and expiration handling, processing task constraints and conditions, background refresh and widget timeline hookup; BackgroundTasks framework API v1) — 4 Knowledge Contracts. Resolves the second seam `widgetkit` had proactively deferred (background-refresh scheduling mechanics): `backgroundtasks` owns registering, submitting, and running the `BGAppRefreshTaskRequest` that produces fresh widget data; `widgetkit` continues to own the `WidgetCenter.reloadTimelines`/`reloadAllTimelines` call site and its refresh-budget reasoning once that data has landed — a clean handoff, not an angle-split. `BGContinuedProcessingTask`, legacy Background Fetch, unrelated background modes (audio/location/VoIP), and `URLSession` background transfer (owned by `networking`) remain out of scope.
+
 ## [1.2.0] - 2026-08-06
 ### Added
 - v1.2.0 release: eighth Tier 2 domain, `app-intents`.

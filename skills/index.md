@@ -33,6 +33,7 @@ Maps implementation tasks to the correct Skill.
 | Sign in with Apple, AuthenticationServices, ASAuthorizationAppleIDProvider, ASAuthorizationAppleIDRequest, ASAuthorizationController, ASAuthorizationAppleIDCredential, identityToken, authorizationCode, nonce, getCredentialState, CredentialState, credentialRevokedNotification | skills/authenticationservices/SKILL.md |
 | WidgetKit, Widget, WidgetBundle, WidgetConfiguration, StaticConfiguration, AppIntentConfiguration, supportedFamilies, widgetFamily, containerBackground, TimelineProvider, TimelineEntry, Timeline, TimelineReloadPolicy, placeholder, getSnapshot, getTimeline, widgetURL, Link, Button(intent:), WidgetCenter, reloadTimelines, reloadAllTimelines | skills/widgetkit/SKILL.md |
 | AppIntent, @Parameter, IntentParameter, AppEnum, ParameterSummary, AppEntity, EntityQuery, EntityStringQuery, DisplayRepresentation, AppShortcutsProvider, AppShortcut, applicationName, IntentResult, ReturnsValue, ProvidesDialog, OpensIntent, perform() | skills/app-intents/SKILL.md |
+| BackgroundTasks, BGTaskScheduler, BGTask, BGTaskRequest, BGAppRefreshTaskRequest, BGProcessingTaskRequest, BGAppRefreshTask, BGProcessingTask, launchHandler, expirationHandler, setTaskCompleted, requiresNetworkConnectivity, requiresExternalPower, earliestBeginDate, BGTaskSchedulerPermittedIdentifiers | skills/backgroundtasks/SKILL.md |
 
 ## Resolution Rules
 
