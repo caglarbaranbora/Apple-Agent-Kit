@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.0.9] - 2026-08-06
+### Added
+- v1.0.9 release: sixth Tier 2 domain, `authenticationservices`.
+- `authenticationservices` Skill (Sign in with Apple request-and-credential handling, nonce and identity-token verification, credential-state checks and revocation, session persistence and sign-out; AuthenticationServices framework API v1) — 4 Knowledge Contracts. Resolves the `authentication`/`authenticationservices`/`sign-in-with-apple` three-way boundary domain-map.md had left unresolved, absorbing the former `sign-in-with-apple` placeholder outright (same framework, no distinct content). Clean handoffs with `authentication` (sign-in UX/terminology) and `security` (Keychain storage), resolving two boundaries domain-map.md had flagged proactively.
+
 ## [1.0.8] - 2026-08-06
 ### Added
 - v1.0.8 release: fifth Tier 2 domain, `storekit`.

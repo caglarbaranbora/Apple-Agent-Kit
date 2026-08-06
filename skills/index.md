@@ -30,6 +30,7 @@ Maps implementation tasks to the correct Skill.
 | DateFormatter, ISO8601DateFormatter, Date.FormatStyle, RelativeDateTimeFormatter, Measurement, MeasurementFormatter, unitStyle, unitOptions, JSONEncoder, encode(to:), init(from:), CodingKeys, FileManager, Documents directory, Caches directory, Application Support directory, isExcludedFromBackup | skills/foundation/SKILL.md |
 | SecItemAdd, SecItemCopyMatching, SecItemUpdate, SecItemDelete, kSecClassGenericPassword, kSecClassInternetPassword, OSStatus, errSecSuccess, errSecItemNotFound, errSecDuplicateItem, kSecAttrAccessible, kSecAttrAccessGroup, Keychain Sharing, Keychain access group, kSecValueData, Keychain, credential storage | skills/security/SKILL.md |
 | StoreKit, Product.products, product.purchase, PurchaseResult, VerificationResult, currentEntitlements, transaction.finish, Transaction.updates, AppStore.sync, restore purchases, SubscriptionInfo.Status, RenewalInfo, renewalState, subscription group, in-app purchase, IAP | skills/storekit/SKILL.md |
+| Sign in with Apple, AuthenticationServices, ASAuthorizationAppleIDProvider, ASAuthorizationAppleIDRequest, ASAuthorizationController, ASAuthorizationAppleIDCredential, identityToken, authorizationCode, nonce, getCredentialState, CredentialState, credentialRevokedNotification | skills/authenticationservices/SKILL.md |
 
 ## Resolution Rules
 
