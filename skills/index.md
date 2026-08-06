@@ -29,6 +29,7 @@ Maps implementation tasks to the correct Skill.
 | PrivacyInfo.xcprivacy, privacy manifest, NSPrivacyTracking, NSPrivacyTrackingDomains, NSPrivacyCollectedDataTypes, NSPrivacyAccessedAPITypes, NSPrivacyAccessedAPITypeReasons, required reason API, App Privacy Configuration, third-party SDK signature | skills/privacy/SKILL.md |
 | DateFormatter, ISO8601DateFormatter, Date.FormatStyle, RelativeDateTimeFormatter, Measurement, MeasurementFormatter, unitStyle, unitOptions, JSONEncoder, encode(to:), init(from:), CodingKeys, FileManager, Documents directory, Caches directory, Application Support directory, isExcludedFromBackup | skills/foundation/SKILL.md |
 | SecItemAdd, SecItemCopyMatching, SecItemUpdate, SecItemDelete, kSecClassGenericPassword, kSecClassInternetPassword, OSStatus, errSecSuccess, errSecItemNotFound, errSecDuplicateItem, kSecAttrAccessible, kSecAttrAccessGroup, Keychain Sharing, Keychain access group, kSecValueData, Keychain, credential storage | skills/security/SKILL.md |
+| StoreKit, Product.products, product.purchase, PurchaseResult, VerificationResult, currentEntitlements, transaction.finish, Transaction.updates, AppStore.sync, restore purchases, SubscriptionInfo.Status, RenewalInfo, renewalState, subscription group, in-app purchase, IAP | skills/storekit/SKILL.md |
 
 ## Resolution Rules
 

@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 1.0.7
+Version: 1.0.8
 
 ## Overview
 
@@ -125,10 +125,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"save a session token to the Keychain so it survives app relaunch"` → `keychain-item-crud.md`, `keychain-accessibility-levels.md`
   Example: `"share a login between my app and its share extension"` → `keychain-access-groups-and-sharing.md`
 
+- **`storekit`** — Routes StoreKit 2 in-app purchase implementation tasks (product loading and purchase, transaction verification and entitlements, transaction updates and restoring purchases, subscription status and renewal info) to StoreKit Knowledge Contracts. v1 is the modern StoreKit 2 async/await API only — no legacy StoreKit 1, no server-side receipt validation.
+  Example: `"unlock premium content after a StoreKit purchase"` → `product-loading-and-purchase.md`, `transaction-verification-and-entitlements.md`
+  Example: `"why is my subscriber still getting access after a refund"` → `subscription-status-and-renewal-info.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-06 — Added `storekit` Skill (product loading and purchase, transaction verification and entitlements, transaction updates and restoring purchases, subscription status and renewal info; StoreKit 2 async/await API v1) — 4 Knowledge Contracts. Fifth Tier 2 domain. Clean handoff with `app-store-review-guidelines`'s `digital-goods-iap.md`/`restore-purchases.md` (API implementation vs. review compliance), resolving the boundary domain-map.md had flagged proactively.
 - 2026-08-06 — Added `security` Skill (Keychain item CRUD, accessibility levels, access groups and sharing, storing structured/Codable data; general non-biometric-bound Keychain Services API v1) — 4 Knowledge Contracts. Fourth Tier 2 domain. Clean handoff with `local-authentication`'s `keychain-biometric-binding.md` (biometric-bound access control vs. general Keychain CRUD), resolving the boundary domain-map.md had flagged proactively.
 - 2026-08-06 — Added `foundation` Skill (date/time formatting, measurement and unit formatting, Codable encoding and custom conformance, FileManager app sandbox directories; curated highest-usage v1 subset, not exhaustive) — 4 Knowledge Contracts. Third Tier 2 domain. Angle-split with `style-guide`'s `units-of-measure.md` (unit-value production vs. copy wording) and clean handoff with `networking`'s `codable-decoding.md` (encoding vs. network-response decoding).
 - 2026-08-06 — Added `privacy` Skill (manifest file structure/bundling, required-reason API declarations, collected data type declarations, tracking domains and third-party SDK signature requirement; `PrivacyInfo.xcprivacy` implementation/schema v1) — 4 Knowledge Contracts. Second Tier 2 domain. Angle-split with `human-interface-guidelines`'s `privacy.md` (design vs. implementation) and `app-store-review-guidelines`'s `privacy-manifest.md`/`privacy-nutrition-label.md` (implementation vs. review consequence), resolving two boundaries domain-map.md had flagged proactively.
