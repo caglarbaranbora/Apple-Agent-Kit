@@ -77,6 +77,10 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"why did my list row selection reset after reordering the array"` → `view-identity.md`
   Example: `"should I use @State or @Binding here"` → `state-and-binding.md`
 
+- **`swiftui-interaction`** — Routes SwiftUI Animation and Gesture implementation tasks (implicit/explicit animation, transitions, matchedGeometryEffect, Animatable, PhaseAnimator/KeyframeAnimator, tap/long-press, drag, magnification/rotation, gesture composition, GestureState) to SwiftUI Interaction Knowledge Contracts.
+  Example: `"why isn't my view fading in smoothly"` → `animation-modifiers.md`
+  Example: `"how do I make a card draggable and snap back if released early"` → `drag-gesture.md`
+
 - **`accessibility`** — Routes Accessibility API implementation tasks (labels, traits, value/hint, custom actions, element grouping, VoiceOver navigation order, Dynamic Type API, Reduce Motion/Transparency/Increase Contrast, Full Keyboard Access, hidden/decorative elements, accessibility audits) to Accessibility Knowledge Contracts, across SwiftUI and UIKit.
   Example: `"this icon-only button has no VoiceOver label"` → `accessibility-labels.md`
   Example: `"swipe-to-delete row needs a VoiceOver alternative"` → `custom-accessibility-actions.md`
@@ -109,9 +113,9 @@ Full routing tables: [skills/index.md](skills/index.md). Domain build order and 
 
 ## What's New
 
+- 2026-08-06 — Expanded `swiftui` with a new Skill, `swiftui-interaction` (implicit/explicit animation, timing curves, transitions, matchedGeometryEffect, the Animatable protocol, PhaseAnimator/KeyframeAnimator, tap/long-press gestures, drag gesture, magnification/rotation gestures, gesture composition, GestureState) — 10 Knowledge Contracts. Closes the second of the two named Tier 1 priority gaps (after HIG Patterns/Components). Second domain with more than one Skill, split to stay under the project's Skill size cap.
 - 2026-08-06 — Expanded `human-interface-guidelines` with two new Skills, `human-interface-guidelines-components` and `human-interface-guidelines-patterns` (lists and tables, buttons, sheets, alerts, action sheets, navigation bars, tab bars, pickers, toggles, text fields, menus, touchscreen gestures; onboarding, searching, settings, notifications, feedback, undo/redo) — 18 Knowledge Contracts. Closes the highest-priority named Tier 1 gap (Foundations-only HIG coverage). First domain with more than one Skill, split by Apple's own information architecture to stay under the project's Reference/Skill size caps. Flags a new `usernotifications` (Tier 2) cross-domain boundary in domain-map.md.
 - 2026-08-05 — Added `app-tracking-transparency` Skill (authorization-request mechanics, authorization status handling, IDFA access, NSUserTrackingUsageDescription; iOS/iPadOS AppTrackingTransparency + AdSupport framework API v1) — 3 Knowledge Contracts. Closes out all 11 Tier 1 domains. Angle-split with `human-interface-guidelines` on tracking-alert UX, clean handoff with `app-store-review-guidelines` on privacy-label/permission-string topics, replaces the prior placeholder scope in domain-map.md.
-- 2026-08-05 — Added `local-authentication` Skill (availability and biometry-type detection, policy evaluation, reason strings & Info.plist, error handling, LAContext lifecycle, Keychain-biometric binding, fallback UX; iOS/iPadOS LocalAuthentication framework API v1) — 7 Knowledge Contracts. Clean handoff from `authentication` (which excludes biometrics entirely), replaces the prior placeholder scope in domain-map.md.
 - See [CHANGELOG.md](CHANGELOG.md) for the full release history.
 
 ## Contributing
