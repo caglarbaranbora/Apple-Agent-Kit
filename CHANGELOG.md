@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.8.0] - 2026-08-06
+### Added
+- v1.8.0 release: fourteenth Tier 2 domain, `core-data`.
+- `core-data` Skill (model definition, persistent container setup, managed object context CRUD, fetching with `NSFetchRequest`, relationships and delete rules; Core Data framework API v1) — 5 Knowledge Contracts. Covers `NSManagedObject` subclassing and `.xcdatamodeld` Codegen modes (Class Definition/Category+Extension/Manual-None) with `@NSManaged` properties, `NSPersistentContainer(name:)`/`loadPersistentStores(completionHandler:)`/`viewContext`/`NSPersistentStoreDescription` stack setup, `NSManagedObjectContext` CRUD (`insertNewObject(forEntityName:into:)`/`init(context:)`, `delete(_:)`, `save()`, `perform(_:)`/`performAndWait(_:)`, basic parent-child `parent` context), `NSFetchRequest<T>`/`NSPredicate`/`NSSortDescriptor`/`context.fetch(_:)`/`@FetchRequest` fetching, and `NSDeleteRule`'s four cases plus the required `inverseRelationship` for referential integrity. Closes the persistence seam left open by `swiftdata` (see domain-map.md Cross-Domain Notes) — the two frameworks are documented as a clean split, not an angle-split, since they solve the same problem with entirely distinct API surfaces and neither domain's KCs reference the other. Corrects a natural-but-wrong assumption from the drafting brief: `NSDeleteRule`'s case names carry a `DeleteRule` suffix (`.cascadeDeleteRule`/`.nullifyDeleteRule`/`.denyDeleteRule`/`.noActionDeleteRule`), distinct from SwiftData's shorter `.cascade`/`.nullify`/`.deny`/`.noAction` spellings for the same four concepts. `NSPersistentCloudKitContainer`/CloudKit sync, lightweight/mapping-model migration, `NSFetchedResultsController`, multi-context concurrency beyond a basic parent-child relationship, and Core Data↔SwiftData interop remain out of scope.
+
 ## [1.7.0] - 2026-08-06
 ### Added
 - v1.7.0 release: thirteenth Tier 2 domain, `swiftdata`.

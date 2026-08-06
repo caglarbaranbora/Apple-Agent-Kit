@@ -38,6 +38,7 @@ Maps implementation tasks to the correct Skill.
 | TipKit, Tip protocol, TipView, TipUIView, TipUIPopoverViewController, TipGroup, Tips.configure, #Rule, Tips.Parameter, Tips.Event, Tip.Action, Tip.Option, MaxDisplayCount, MaxDisplayDuration, IgnoresDisplayFrequency, invalidate(reason:), InvalidationReason, popoverTip | skills/tipkit/SKILL.md |
 | PassKit, PKPassLibrary, PKPass, pass.json, Wallet pass, PKAddPassesViewController, PKAddPassButton, webServiceURL, authenticationToken, PKPaymentRequest, PKPaymentAuthorizationController, PKPaymentAuthorizationViewController, PayWithApplePayButton, PKPaymentButton, PKPayment, PKPaymentToken, Apple Pay | skills/passkit/SKILL.md |
 | SwiftData, @Model, @Attribute, @Relationship, @Transient, ModelContainer, ModelConfiguration, ModelContext, modelContainer, modelContext, @Query, FetchDescriptor, #Predicate, deleteRule, cascade delete | skills/swiftdata/SKILL.md |
+| Core Data, NSManagedObject, NSManagedObjectContext, NSPersistentContainer, NSPersistentStoreDescription, NSEntityDescription, NSFetchRequest, NSPredicate, NSSortDescriptor, @FetchRequest, FetchedResults, NSRelationshipDescription, NSDeleteRule, viewContext, xcdatamodeld, Codegen, @NSManaged | skills/core-data/SKILL.md |
 
 ## Resolution Rules
 
