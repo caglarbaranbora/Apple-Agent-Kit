@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.0.4] - 2026-08-06
+### Added
+- v1.0.4 release: first Tier 2 domain, `usernotifications`.
+- `usernotifications` Skill (authorization, local notification scheduling, remote push registration, delegate handling, actions/categories, managing pending/delivered requests and badge count; client-side UserNotifications + UIKit push-registration API v1) — 6 Knowledge Contracts. Picked as the tier's highest real-world-usage domain. Angle-split with `human-interface-guidelines`'s `notifications.md` on notification design vs. API implementation, resolving the boundary domain-map.md had flagged proactively.
+
 ## [1.0.3] - 2026-08-06
 ### Added
 - v1.0.3 release: both named Tier 1 priority gaps closed — `human-interface-guidelines` Patterns/Components/Inputs and `swiftui` Animation/Gestures.
