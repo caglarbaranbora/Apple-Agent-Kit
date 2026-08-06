@@ -28,7 +28,8 @@ references:
   - https://developer.apple.com/documentation/widgetkit/adding-interactivity-to-widgets-and-live-activities
 depends_on:
   - knowledge.widgetkit.widget-declaration-and-families
-related: []
+related:
+  - knowledge.app-intents.intent-results-and-widget-hookup
 updated: 2026-08-06
 ```
 
@@ -47,7 +48,7 @@ This contract defines how an AI coding agent wires navigation and interaction in
 
 ### Excluded
 
--   Authoring the `AppIntent` itself — its parameters, `perform()` body, entities — deferred to the future `app-intents` domain; this contract only covers wiring an already-authored intent into a widget's tap target
+-   Authoring the `AppIntent` itself — its parameters, `perform()` body, entities, result — owned by `app-intents` (see `knowledge.app-intents.intent-results-and-widget-hookup`); this contract only covers wiring an already-authored intent into a widget's tap target
 -   Declaring the `Widget`/families the interactive view belongs to — see `widget-declaration-and-families`
 -   `TimelineProvider`/`TimelineEntry` — see `timeline-provider-and-entries`
 -   Handling the deep-link URL inside the app's `onOpenURL`/scene delegate once received — app-side, not this domain

@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-08-06
+### Added
+- v1.2.0 release: eighth Tier 2 domain, `app-intents`.
+- `app-intents` Skill (app intent declaration and parameters, app entities and queries, App Shortcuts and Siri phrases, intent results and widget hookup; App Intents framework API v1) — 4 Knowledge Contracts. Resolves the seam `widgetkit` had proactively deferred (`AppIntent` authoring itself): `app-intents` owns declaring the intent (`perform()`, parameters, entities, result), `widgetkit` continues to own wiring an already-authored intent into a widget's `Button(intent:)`/`Toggle(_:isOn:intent:)` — a clean handoff, not an angle-split. Supersedes legacy SiriKit (donation-based intents) on current OS versions; no separate SiriKit domain planned.
+
 ## [1.1.0] - 2026-08-06
 ### Added
 - v1.1.0 release: seventh Tier 2 domain, `widgetkit`.
