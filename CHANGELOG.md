@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.0.7] - 2026-08-06
+### Added
+- v1.0.7 release: fourth Tier 2 domain, `security`.
+- `security` Skill (Keychain item CRUD, accessibility levels, access groups and sharing, storing structured/Codable data; general non-biometric-bound Keychain Services API v1) — 4 Knowledge Contracts. Clean handoff with `local-authentication`'s `keychain-biometric-binding.md` (biometric-bound access control vs. general Keychain CRUD), resolving the boundary domain-map.md had flagged proactively.
+
 ## [1.0.6] - 2026-08-06
 ### Added
 - v1.0.6 release: third Tier 2 domain, `foundation`.
