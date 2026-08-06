@@ -1,6 +1,6 @@
 {
   "name": "apple-agent-kit",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Installs the Apple Agent Kit Claude Code plugin via the claude CLI.",
   "bin": {
     "apple-agent-kit": "bin/install.js"

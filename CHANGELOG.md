@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.0.6] - 2026-08-06
+### Added
+- v1.0.6 release: third Tier 2 domain, `foundation`.
+- `foundation` Skill (date/time formatting, measurement and unit formatting, Codable encoding and custom conformance, FileManager app sandbox directories; curated highest-usage v1 subset, not exhaustive) — 4 Knowledge Contracts. Angle-split with `style-guide`'s `units-of-measure.md` (unit-value production vs. copy wording) and clean handoff with `networking`'s `codable-decoding.md` (encoding vs. network-response decoding).
+
 ## [1.0.5] - 2026-08-06
 ### Added
 - v1.0.5 release: second Tier 2 domain, `privacy`.
