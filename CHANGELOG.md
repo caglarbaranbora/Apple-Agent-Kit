@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.7.0] - 2026-08-06
+### Added
+- v1.7.0 release: thirteenth Tier 2 domain, `swiftdata`.
+- `swiftdata` Skill (model definition, model container setup, model context CRUD, querying with `@Query`/`FetchDescriptor`, relationships and cascade delete; SwiftData framework API v1) — 5 Knowledge Contracts. Covers `@Model`/`@Attribute`/`@Relationship`/`@Transient` model declaration, `.modelContainer(for:)`/`.modelContainer(_:)`/`ModelConfiguration`/`ModelContainer(for:configurations:)` container setup, `insert(_:)`/`delete(_:)`/`save()`/`autosaveEnabled`/`undoManager` context CRUD, `@Query`/`#Predicate` vs. `FetchDescriptor`/`context.fetch(_:)` fetching, and `@Relationship(deleteRule:)`'s four cases plus the `inverse:` requirement for referential integrity. No cross-domain seam to resolve yet — Core Data remains a separate, unbuilt domain (see domain-map.md Cross-Domain Notes). Corrects two natural-but-wrong assumptions from the drafting brief: `@Model` synthesizes `PersistentModel`/`Observable` (which cover `Hashable`/`Identifiable`) but never `Codable`; and the SwiftUI `.modelContainer(for:)` modifier's `inMemory:` parameter is a distinct name from `ModelConfiguration`'s `isStoredInMemoryOnly` property, not the same symbol at two layers. CloudKit sync, schema migration, Core Data interop, `#Index`/`#Unique` beyond basic `@Attribute(.unique)`, and widget/App-Group container sharing remain out of scope.
+
 ## [1.6.0] - 2026-08-06
 ### Added
 - v1.6.0 release: twelfth Tier 2 domain, `passkit`.

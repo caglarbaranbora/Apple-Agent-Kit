@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 1.6.0
+Version: 1.7.0
 
 ## Overview
 
@@ -157,10 +157,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"let someone add a loyalty card I already built to Apple Wallet"` → `pass-library-and-authorization.md`, `adding-passes-ui.md`
   Example: `"add an Apple Pay checkout button and handle the result"` → `apple-pay-payment-request.md`, `apple-pay-authorization-and-result-handling.md`
 
+- **`swiftdata`** — Routes SwiftData implementation tasks (model definition, model container setup, model context CRUD, querying with `@Query`/`FetchDescriptor`, relationships and cascade delete) to SwiftData Knowledge Contracts. v1 is SwiftData only — no CloudKit sync, no `SchemaMigrationPlan`/`VersionedSchema` migration, no Core Data interop (a separate, not-yet-built domain).
+  Example: `"add a Trip model with a list of Accommodation relationships"` → `model-definition.md`, `relationships-and-cascade-delete.md`
+  Example: `"filter and sort a SwiftUI list backed by SwiftData"` → `querying-with-query-and-fetchdescriptor.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-06 — Added `swiftdata` Skill (model definition, model container setup, model context CRUD, querying with `@Query`/`FetchDescriptor`, relationships and cascade delete; SwiftData framework API v1) — 5 Knowledge Contracts. Thirteenth Tier 2 domain. No cross-domain seam to resolve yet (Core Data remains a separate, unbuilt domain). Corrects two natural-but-wrong assumptions: `@Model` never synthesizes `Codable` (only `PersistentModel`/`Observable`, which cover `Hashable`/`Identifiable`), and the SwiftUI modifier's `inMemory:` parameter is a distinct name from `ModelConfiguration`'s `isStoredInMemoryOnly` — not the same symbol at two layers.
 - 2026-08-06 — Added `passkit` Skill (pass library and authorization, pass content and required fields, adding-passes UI, pass updates and push registration, Apple Pay payment request, Apple Pay authorization and result handling; PassKit framework API v1, Wallet passes and Apple Pay both included) — 6 Knowledge Contracts. Twelfth Tier 2 domain. No cross-domain seam to resolve; corrects a natural-but-wrong assumption that a PassKit-specific `PKPushType` exists for pass updates (it doesn't — the system Wallet component handles push tokens, not the app).
 - 2026-08-06 — Added `tipkit` Skill (tip declaration and content, display rules and event triggers, tip options and app configuration, presenting tips and tip groups; TipKit framework API v1) — 4 Knowledge Contracts. Eleventh Tier 2 domain. No cross-domain seam to resolve; `cloudKitContainer(_:)` cross-device sync noted as a real, deliberately excluded capability.
 - 2026-08-06 — Added `eventkit` Skill (authorization and access levels, event CRUD and fetch predicates, reminder CRUD and fetch, recurrence rules and EventKitUI hand-off; EventKit framework API v1) — 4 Knowledge Contracts. Tenth Tier 2 domain. No cross-domain seam to resolve; EventKit inside a widget extension remains `widgetkit`'s job.
