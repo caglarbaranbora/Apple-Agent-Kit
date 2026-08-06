@@ -57,8 +57,9 @@ which `Value` properties to read, and `.updating` vs.
 Agents MUST use the current `DragGesture(minimumDistance:coordinateSpace:)`
 overload (`CoordinateSpaceProtocol`: `.local`, `.global`, `.named(_:)`)
 for iOS 17+ targets. The older overload taking a `CoordinateSpace` enum
-is deprecated — "Use overload that accepts a CoordinateSpaceProtocol
-instead." Only use the deprecated overload below iOS 17.
+is deprecated — Apple's note reads "Use overload that accepts a
+CoordinateSpaceProtocol instead." Only use the deprecated overload
+below iOS 17.
 
 ### Rule 2
 
@@ -81,7 +82,7 @@ value must persist after the gesture ends (e.g., a committed offset).
 ### Rule 5
 
 Agents SHOULD set `minimumDistance` above `0` on a view that also
-recognizes a tap gesture, to avoid the drag gesture eating taps.
+recognizes a tap gesture, to avoid eating taps.
 
 ## Compliant Example
 
@@ -135,9 +136,8 @@ struct DraggableCard: View {
     }
 }
 ```
-Reads `dragTranslation` inside `.onEnded` expecting the in-progress
-value, but `@GestureState` has already reset to its initial value —
-the card snaps back instead of staying where it was dropped. (Rule 4)
+Reads `dragTranslation` in `.onEnded` expecting the in-progress value,
+but it has already reset — the card snaps back. (Rule 4)
 
 ## Dependencies
 

@@ -104,29 +104,30 @@ manual reset code. (Rules 1, 4)
 ## Non-Compliant Example
 
 ```swift
-struct DraggableCard: View {
-    @GestureState private var dragOffset: CGSize = .zero
+struct PressCounterButton: View {
+    @GestureState private var isPressing = false
+    @State private var pressCount = 0
 
     var body: some View {
-        Color.blue
-            .frame(width: 100, height: 100)
-            .offset(dragOffset)
+        Text("Presses: \(pressCount)")
             .gesture(
-                DragGesture()
-                    .updating($dragOffset) { value, state, _ in
-                        state = value.translation
+                LongPressGesture(minimumDuration: 0.5)
+                    .updating($isPressing) { _, state, _ in
+                        state = true
                     }
                     .onEnded { _ in
-                        // dragOffset already reset to .zero here — this print
-                        // never shows the dropped position
-                        print("dropped at \(dragOffset)")
+                        // isPressing already reset to false here
+                        if isPressing {
+                            pressCount += 1
+                        }
                     }
             )
     }
 }
 ```
-Reads `dragOffset` inside `.onEnded`, but `@GestureState` has already
-reset it to `.zero` by the time the closure runs. (Rule 3)
+Checks `isPressing` inside `.onEnded` expecting the in-progress value,
+but `@GestureState` has already reset it to `false` — `pressCount`
+never increments. (Rule 3)
 
 ## Dependencies
 
