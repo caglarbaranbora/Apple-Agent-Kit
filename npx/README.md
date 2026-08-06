@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 1.3.0
+Version: 1.4.0
 
 ## Overview
 
@@ -145,10 +145,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"refresh my widget's data every morning in the background"` → `background-task-registration-and-scheduling.md`, `background-refresh-and-widget-timeline-hookup.md`
   Example: `"run a heavy database cleanup overnight while the phone charges"` → `processing-task-constraints-and-conditions.md`
 
+- **`eventkit`** — Routes EventKit implementation tasks (authorization and access levels, event CRUD and fetch predicates, reminder CRUD and fetch, recurrence rules and EventKitUI hand-off) to EventKit Knowledge Contracts. v1 is calendar/reminder access through `EKEventStore` only — no `EKSource`/multi-account calendar-source management, no CalDAV/Exchange specifics, no `EKEventStoreChanged` live-sync; EventKit inside a widget extension is `widgetkit`'s job.
+  Example: `"let the user add a birthday to their calendar from my app"` → `authorization-and-access-levels.md`, `event-crud-and-fetch-predicates.md`
+  Example: `"add a repeating weekly reminder with a due date"` → `reminder-crud-and-fetch.md`, `recurrence-rules-and-eventkitui-handoff.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-06 — Added `eventkit` Skill (authorization and access levels, event CRUD and fetch predicates, reminder CRUD and fetch, recurrence rules and EventKitUI hand-off; EventKit framework API v1) — 4 Knowledge Contracts. Tenth Tier 2 domain. No cross-domain seam to resolve; EventKit inside a widget extension remains `widgetkit`'s job.
 - 2026-08-06 — Added `backgroundtasks` Skill (background task registration and scheduling, task execution and expiration handling, processing task constraints and conditions, background refresh and widget timeline hookup; BackgroundTasks framework API v1) — 4 Knowledge Contracts. Ninth Tier 2 domain. Resolves the second seam `widgetkit` had proactively deferred (background-refresh scheduling mechanics); clean handoff with `widgetkit` (scheduling/running the refresh vs. calling `reloadTimelines`).
 - 2026-08-06 — Added `app-intents` Skill (app intent declaration and parameters, app entities and queries, App Shortcuts and Siri phrases, intent results and widget hookup; App Intents framework API v1) — 4 Knowledge Contracts. Eighth Tier 2 domain. Resolves the seam `widgetkit` had proactively deferred (`AppIntent` authoring itself); clean handoff with `widgetkit` (intent authoring vs. widget-side wiring). Supersedes legacy SiriKit.
 - 2026-08-06 — Added `widgetkit` Skill (widget declaration and families, timeline provider and entries, widget interactivity and deep links, timeline reloading and refresh budget; WidgetKit framework API v1) — 4 Knowledge Contracts. Seventh Tier 2 domain. No existing cross-domain content to overlap with; proactively defers `AppIntent` authoring to the future `app-intents` domain and background-refresh scheduling to the future `backgroundtasks` domain.

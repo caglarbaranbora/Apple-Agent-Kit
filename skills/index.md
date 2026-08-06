@@ -34,6 +34,7 @@ Maps implementation tasks to the correct Skill.
 | WidgetKit, Widget, WidgetBundle, WidgetConfiguration, StaticConfiguration, AppIntentConfiguration, supportedFamilies, widgetFamily, containerBackground, TimelineProvider, TimelineEntry, Timeline, TimelineReloadPolicy, placeholder, getSnapshot, getTimeline, widgetURL, Link, Button(intent:), WidgetCenter, reloadTimelines, reloadAllTimelines | skills/widgetkit/SKILL.md |
 | AppIntent, @Parameter, IntentParameter, AppEnum, ParameterSummary, AppEntity, EntityQuery, EntityStringQuery, DisplayRepresentation, AppShortcutsProvider, AppShortcut, applicationName, IntentResult, ReturnsValue, ProvidesDialog, OpensIntent, perform() | skills/app-intents/SKILL.md |
 | BackgroundTasks, BGTaskScheduler, BGTask, BGTaskRequest, BGAppRefreshTaskRequest, BGProcessingTaskRequest, BGAppRefreshTask, BGProcessingTask, launchHandler, expirationHandler, setTaskCompleted, requiresNetworkConnectivity, requiresExternalPower, earliestBeginDate, BGTaskSchedulerPermittedIdentifiers | skills/backgroundtasks/SKILL.md |
+| EventKit, EventKitUI, EKEventStore, EKEvent, EKReminder, EKCalendar, EKCalendarItem, EKAuthorizationStatus, EKRecurrenceRule, EKRecurrenceEnd, EKEventEditViewController, EKEventViewController, requestFullAccessToEvents, requestWriteOnlyAccessToEvents, requestFullAccessToReminders, predicateForEvents, predicateForReminders, fetchReminders | skills/eventkit/SKILL.md |
 
 ## Resolution Rules
 
