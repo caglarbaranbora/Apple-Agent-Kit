@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 1.0.6
+Version: 1.0.7
 
 ## Overview
 
@@ -121,10 +121,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"my table view is janky, I'm creating a DateFormatter in cellForRow"` → `date-time-formatting.md`
   Example: `"where should I cache thumbnails without bloating iCloud backup"` → `filemanager-app-sandbox-directories.md`
 
+- **`security`** — Routes Keychain Services implementation tasks (item CRUD, accessibility levels, access groups and sharing, storing structured/Codable data) to Security Knowledge Contracts. v1 is general (non-biometric-bound) Keychain item CRUD for generic/internet password items.
+  Example: `"save a session token to the Keychain so it survives app relaunch"` → `keychain-item-crud.md`, `keychain-accessibility-levels.md`
+  Example: `"share a login between my app and its share extension"` → `keychain-access-groups-and-sharing.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-06 — Added `security` Skill (Keychain item CRUD, accessibility levels, access groups and sharing, storing structured/Codable data; general non-biometric-bound Keychain Services API v1) — 4 Knowledge Contracts. Fourth Tier 2 domain. Clean handoff with `local-authentication`'s `keychain-biometric-binding.md` (biometric-bound access control vs. general Keychain CRUD), resolving the boundary domain-map.md had flagged proactively.
 - 2026-08-06 — Added `foundation` Skill (date/time formatting, measurement and unit formatting, Codable encoding and custom conformance, FileManager app sandbox directories; curated highest-usage v1 subset, not exhaustive) — 4 Knowledge Contracts. Third Tier 2 domain. Angle-split with `style-guide`'s `units-of-measure.md` (unit-value production vs. copy wording) and clean handoff with `networking`'s `codable-decoding.md` (encoding vs. network-response decoding).
 - 2026-08-06 — Added `privacy` Skill (manifest file structure/bundling, required-reason API declarations, collected data type declarations, tracking domains and third-party SDK signature requirement; `PrivacyInfo.xcprivacy` implementation/schema v1) — 4 Knowledge Contracts. Second Tier 2 domain. Angle-split with `human-interface-guidelines`'s `privacy.md` (design vs. implementation) and `app-store-review-guidelines`'s `privacy-manifest.md`/`privacy-nutrition-label.md` (implementation vs. review consequence), resolving two boundaries domain-map.md had flagged proactively.
 - 2026-08-06 — Added `usernotifications` Skill (authorization, local notification scheduling, remote push registration, delegate handling, actions/categories, managing pending/delivered requests and badge count; client-side UserNotifications + UIKit push-registration API v1) — 6 Knowledge Contracts. First Tier 2 domain, picked as the tier's highest real-world-usage domain. Angle-split with `human-interface-guidelines`'s `notifications.md` on notification design vs. API implementation, resolving the boundary that domain-map.md had flagged proactively.
