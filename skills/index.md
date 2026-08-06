@@ -27,6 +27,7 @@ Maps implementation tasks to the correct Skill.
 | ATTrackingManager, requestTrackingAuthorization, trackingAuthorizationStatus, ATTrackingManagerAuthorizationStatus, ASIdentifierManager, advertisingIdentifier, IDFA, NSUserTrackingUsageDescription, App Tracking Transparency, tracking authorization | skills/app-tracking-transparency/SKILL.md |
 | UNUserNotificationCenter, requestAuthorization, UNAuthorizationOptions, getNotificationSettings, UNMutableNotificationContent, UNNotificationRequest, UNTimeIntervalNotificationTrigger, UNCalendarNotificationTrigger, registerForRemoteNotifications, didRegisterForRemoteNotificationsWithDeviceToken, UNUserNotificationCenterDelegate, willPresent, didReceive, UNNotificationAction, UNTextInputNotificationAction, UNNotificationCategory, setNotificationCategories, removePendingNotificationRequests, removeDeliveredNotifications, badge count, setBadgeCount | skills/usernotifications/SKILL.md |
 | PrivacyInfo.xcprivacy, privacy manifest, NSPrivacyTracking, NSPrivacyTrackingDomains, NSPrivacyCollectedDataTypes, NSPrivacyAccessedAPITypes, NSPrivacyAccessedAPITypeReasons, required reason API, App Privacy Configuration, third-party SDK signature | skills/privacy/SKILL.md |
+| DateFormatter, ISO8601DateFormatter, Date.FormatStyle, RelativeDateTimeFormatter, Measurement, MeasurementFormatter, unitStyle, unitOptions, JSONEncoder, encode(to:), init(from:), CodingKeys, FileManager, Documents directory, Caches directory, Application Support directory, isExcludedFromBackup | skills/foundation/SKILL.md |
 
 ## Resolution Rules
 
