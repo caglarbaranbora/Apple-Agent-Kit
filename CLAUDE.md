@@ -51,8 +51,8 @@ starts.
 
 Every new domain or Skill (and any material change to an existing one) must update `README.md`:
 
-- `## Skills` section: one bullet per Skill — name, one-line description of what it routes, and at least one concrete example invocation with its routing target (e.g. `"check this screen's layout against HIG" → layout.md`). Keep examples as *specific tasks*, not broad topic requests.
-- `## What's New`: one line at the top describing what shipped and when (`YYYY-MM-DD — <what shipped>`).
+- `## Skills` section: one bullet per Skill, name + one-line description only — no examples, no routing tables, no v1-scope caveats. Format: `- **`name`** — one-line description. → [SKILL.md](skills/name/SKILL.md)`. Routing tables and example invocations belong in the Skill's own `SKILL.md` (and `skills/index.md`), not in `README.md` — this section is a table of contents, not documentation.
+- `## What's New`: add one line at the top describing what shipped and when (`YYYY-MM-DD — <what shipped>`), **then trim the section to its 3 most recent bullets** — drop the oldest bullet(s) past 3 regardless of date. The full history already lives in `CHANGELOG.md`; `README.md`'s What's New is a preview, not an archive.
 
 Do this in the same PR/commit that ships the domain or Skill — not as a follow-up.
 
