@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 1.5.0
+Version: 1.6.0
 
 ## Overview
 
@@ -153,10 +153,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"show a one-time tip pointing at the favorite button after someone views 3 items"` → `tip-declaration-and-content.md`, `display-rules-and-event-triggers.md`
   Example: `"only show one onboarding tip at a time, prioritized in order"` → `presenting-tips-and-tip-groups.md`, `tip-options-and-app-configuration.md`
 
+- **`passkit`** — Routes PassKit implementation tasks (pass library querying/adding, `.pkpass`/`pass.json` content and required fields, the add-to-Wallet UI flow, pass updates and the app-vs-server push boundary, Apple Pay payment requests, Apple Pay authorization and result handling) to PassKit Knowledge Contracts. v1 is app-side Wallet-pass and Apple Pay Swift API only — no server-side pass signing/certificate/Pass Type ID setup, no `PKAddSecureElementPassViewController`/NFC/secure-element passes, no `PKPassPersonalization`, no Apple Pay server-side merchant validation/token decryption/payment-processor integration.
+  Example: `"let someone add a loyalty card I already built to Apple Wallet"` → `pass-library-and-authorization.md`, `adding-passes-ui.md`
+  Example: `"add an Apple Pay checkout button and handle the result"` → `apple-pay-payment-request.md`, `apple-pay-authorization-and-result-handling.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-06 — Added `passkit` Skill (pass library and authorization, pass content and required fields, adding-passes UI, pass updates and push registration, Apple Pay payment request, Apple Pay authorization and result handling; PassKit framework API v1, Wallet passes and Apple Pay both included) — 6 Knowledge Contracts. Twelfth Tier 2 domain. No cross-domain seam to resolve; corrects a natural-but-wrong assumption that a PassKit-specific `PKPushType` exists for pass updates (it doesn't — the system Wallet component handles push tokens, not the app).
 - 2026-08-06 — Added `tipkit` Skill (tip declaration and content, display rules and event triggers, tip options and app configuration, presenting tips and tip groups; TipKit framework API v1) — 4 Knowledge Contracts. Eleventh Tier 2 domain. No cross-domain seam to resolve; `cloudKitContainer(_:)` cross-device sync noted as a real, deliberately excluded capability.
 - 2026-08-06 — Added `eventkit` Skill (authorization and access levels, event CRUD and fetch predicates, reminder CRUD and fetch, recurrence rules and EventKitUI hand-off; EventKit framework API v1) — 4 Knowledge Contracts. Tenth Tier 2 domain. No cross-domain seam to resolve; EventKit inside a widget extension remains `widgetkit`'s job.
 - 2026-08-06 — Added `backgroundtasks` Skill (background task registration and scheduling, task execution and expiration handling, processing task constraints and conditions, background refresh and widget timeline hookup; BackgroundTasks framework API v1) — 4 Knowledge Contracts. Ninth Tier 2 domain. Resolves the second seam `widgetkit` had proactively deferred (background-refresh scheduling mechanics); clean handoff with `widgetkit` (scheduling/running the refresh vs. calling `reloadTimelines`).

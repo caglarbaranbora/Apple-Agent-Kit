@@ -6,6 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-08-06
+### Added
+- v1.6.0 release: twelfth Tier 2 domain, `passkit`.
+- `passkit` Skill (pass library and authorization, pass content and required fields, adding-passes UI, pass updates and push registration, Apple Pay payment request, Apple Pay authorization and result handling; PassKit framework API v1) — 6 Knowledge Contracts. Covers `PKPassLibrary` querying/adding (`isPassLibraryAvailable()`/`containsPass(_:)`/`passes()`/`passes(of:)`/`addPasses(_:withCompletionHandler:)`), `.pkpass`/`pass.json` structure (required keys, style keys, `PassFields`, current `barcodes`/`relevantDates` vs. deprecated singular forms), the `PKAddPassesViewController`/`PKAddPassButton` add-to-Wallet flow, the `webServiceURL`/`authenticationToken` update protocol, and Apple Pay via `PKPaymentRequest`/`PKPaymentAuthorizationController`/`PayWithApplePayButton` through to `PKPaymentAuthorizationControllerDelegate`/`PKPaymentAuthorizationResult`. No existing cross-domain seam to resolve. Corrects a natural-but-wrong assumption that a PassKit-specific `PKPushType` exists for pass-update push registration — it doesn't; the system Wallet component handles push tokens, not the app. Server-side pass signing/certificate management, `PKAddSecureElementPassViewController`/NFC/secure-element passes, `PKPassPersonalization`, and Apple Pay server-side merchant validation/token decryption remain out of scope.
+
 ## [1.5.0] - 2026-08-06
 ### Added
 - v1.5.0 release: eleventh Tier 2 domain, `tipkit`.
