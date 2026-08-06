@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 1.4.0
+Version: 1.5.0
 
 ## Overview
 
@@ -149,10 +149,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"let the user add a birthday to their calendar from my app"` → `authorization-and-access-levels.md`, `event-crud-and-fetch-predicates.md`
   Example: `"add a repeating weekly reminder with a due date"` → `reminder-crud-and-fetch.md`, `recurrence-rules-and-eventkitui-handoff.md`
 
+- **`tipkit`** — Routes TipKit implementation tasks (tip declaration and content, display rules and event triggers, tip options and app configuration, presenting tips and tip groups) to TipKit Knowledge Contracts. v1 is in-app feature tips/onboarding hints on iOS 17+ only — no custom `TipViewStyle` authoring, no watchOS-specific presentation differences, no `cloudKitContainer(_:)` cross-device datastore sync (a real, documented capability, deliberately excluded).
+  Example: `"show a one-time tip pointing at the favorite button after someone views 3 items"` → `tip-declaration-and-content.md`, `display-rules-and-event-triggers.md`
+  Example: `"only show one onboarding tip at a time, prioritized in order"` → `presenting-tips-and-tip-groups.md`, `tip-options-and-app-configuration.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-06 — Added `tipkit` Skill (tip declaration and content, display rules and event triggers, tip options and app configuration, presenting tips and tip groups; TipKit framework API v1) — 4 Knowledge Contracts. Eleventh Tier 2 domain. No cross-domain seam to resolve; `cloudKitContainer(_:)` cross-device sync noted as a real, deliberately excluded capability.
 - 2026-08-06 — Added `eventkit` Skill (authorization and access levels, event CRUD and fetch predicates, reminder CRUD and fetch, recurrence rules and EventKitUI hand-off; EventKit framework API v1) — 4 Knowledge Contracts. Tenth Tier 2 domain. No cross-domain seam to resolve; EventKit inside a widget extension remains `widgetkit`'s job.
 - 2026-08-06 — Added `backgroundtasks` Skill (background task registration and scheduling, task execution and expiration handling, processing task constraints and conditions, background refresh and widget timeline hookup; BackgroundTasks framework API v1) — 4 Knowledge Contracts. Ninth Tier 2 domain. Resolves the second seam `widgetkit` had proactively deferred (background-refresh scheduling mechanics); clean handoff with `widgetkit` (scheduling/running the refresh vs. calling `reloadTimelines`).
 - 2026-08-06 — Added `app-intents` Skill (app intent declaration and parameters, app entities and queries, App Shortcuts and Siri phrases, intent results and widget hookup; App Intents framework API v1) — 4 Knowledge Contracts. Eighth Tier 2 domain. Resolves the seam `widgetkit` had proactively deferred (`AppIntent` authoring itself); clean handoff with `widgetkit` (intent authoring vs. widget-side wiring). Supersedes legacy SiriKit.
