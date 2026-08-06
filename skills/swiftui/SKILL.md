@@ -10,7 +10,8 @@ domain: SwiftUI
 routes: [knowledge.swiftui.view-composition, knowledge.swiftui.view-identity, knowledge.swiftui.modifier-order, knowledge.swiftui.navigation-stack, knowledge.swiftui.navigation-split-view, knowledge.swiftui.stacks-and-spacing, knowledge.swiftui.safe-area, knowledge.swiftui.lazy-grids, knowledge.swiftui.geometry-reader-anti-pattern, knowledge.swiftui.state-and-binding, knowledge.swiftui.observable-macro, knowledge.swiftui.environment-values]
 related:
   - skill.human-interface-guidelines.foundations
-last_updated: 2026-08-01
+  - skill.swiftui.interaction
+last_updated: 2026-08-06
 ---
 
 # SwiftUI — Foundations Skill
@@ -39,9 +40,10 @@ instead.
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/swiftui/ — do not guess or fall back to general
-knowledge. Animation, gestures, previews, custom `Layout` protocol
-conformances, legacy `ObservableObject`/`NavigationView` migration
-guidance, and accessibility APIs (owned by a future `accessibility`
-domain) are out of scope for this skill (see
-docs/architecture/domain-map.md) — report that explicitly rather than
-answering from general knowledge.
+knowledge. Animation and gesture questions route to
+`skill.swiftui.interaction` instead of being reported as a gap.
+Previews, custom `Layout` protocol conformances, legacy
+`ObservableObject`/`NavigationView` migration guidance, and
+accessibility APIs (owned by `accessibility`) are out of scope for
+this skill (see docs/architecture/domain-map.md) — report that
+explicitly rather than answering from general knowledge.

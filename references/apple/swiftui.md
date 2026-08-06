@@ -11,11 +11,11 @@ https://developer.apple.com/documentation/swiftui
 
 Reference index for Apple's SwiftUI framework documentation,
 implementation-conventions scope (Views, Navigation, Layout, State
-management), targeting iOS 17+ APIs. Visual/UX design guidance for what
-a screen should look like is owned by `human-interface-guidelines`, not
-this domain — see docs/architecture/domain-map.md Cross-Domain Notes.
-Animation, gestures, previews, and custom `Layout` protocol
-conformances are out of scope for this pass.
+management, Animation, Gestures), targeting iOS 17+ APIs. Visual/UX
+design guidance for what a screen should look like is owned by
+`human-interface-guidelines`, not this domain — see
+docs/architecture/domain-map.md Cross-Domain Notes. Previews and custom
+`Layout` protocol conformances are out of scope for this pass.
 
 ## Primary Topics
 
@@ -31,6 +31,16 @@ conformances are out of scope for this pass.
 - State and Binding
 - The Observable macro
 - Environment values
+- Implicit/explicit animation and timing curves
+- View transitions
+- matchedGeometryEffect
+- The Animatable protocol
+- PhaseAnimator and KeyframeAnimator
+- Tap and long-press gestures
+- Drag gesture
+- Magnification and rotation gestures
+- Gesture composition
+- GestureState
 
 ## Used By
 
@@ -46,3 +56,13 @@ conformances are out of scope for this pass.
 - knowledge/swiftui/state-and-binding.md ([[knowledge/swiftui/state-and-binding]])
 - knowledge/swiftui/observable-macro.md ([[knowledge/swiftui/observable-macro]])
 - knowledge/swiftui/environment-values.md ([[knowledge/swiftui/environment-values]])
+- knowledge/swiftui/animation-modifiers.md ([[knowledge/swiftui/animation-modifiers]])
+- knowledge/swiftui/transitions.md ([[knowledge/swiftui/transitions]])
+- knowledge/swiftui/matched-geometry-effect.md ([[knowledge/swiftui/matched-geometry-effect]])
+- knowledge/swiftui/animatable-values.md ([[knowledge/swiftui/animatable-values]])
+- knowledge/swiftui/phase-and-keyframe-animators.md ([[knowledge/swiftui/phase-and-keyframe-animators]])
+- knowledge/swiftui/tap-and-long-press-gestures.md ([[knowledge/swiftui/tap-and-long-press-gestures]])
+- knowledge/swiftui/drag-gesture.md ([[knowledge/swiftui/drag-gesture]])
+- knowledge/swiftui/magnification-and-rotation-gestures.md ([[knowledge/swiftui/magnification-and-rotation-gestures]])
+- knowledge/swiftui/gesture-composition.md ([[knowledge/swiftui/gesture-composition]])
+- knowledge/swiftui/gesture-state.md ([[knowledge/swiftui/gesture-state]])
