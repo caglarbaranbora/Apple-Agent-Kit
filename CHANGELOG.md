@@ -6,6 +6,13 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-08-07
+### Changed
+- Major version bump marking a repo structure/documentation milestone (16 of 18 Tier 2 domains complete; no new domain content in this release).
+- `README.md`'s `## Skills` section condensed from 31 multi-line entries (routing examples, v1-scope caveats) to one bullet per Skill — name, one-line description, link to that Skill's own `SKILL.md`. Routing tables and examples remain the responsibility of each `SKILL.md` and `skills/index.md`.
+- `README.md`'s `## What's New` capped at its 3 most recent entries going forward; full history stays exclusively in this file. Both rules codified in `CLAUDE.md`.
+- `npx/README.md` re-synced as a byte-identical mirror of `README.md`.
+
 ## [1.10.0] - 2026-08-07
 ### Added
 - v1.10.0 release: sixteenth Tier 2 domain, `testing`.
