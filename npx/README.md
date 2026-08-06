@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 1.9.0
+Version: 1.10.0
 
 ## Overview
 
@@ -169,10 +169,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"subscribe to a publisher with sink and store the AnyCancellable"` → `publishers-and-subscribers.md`
   Example: `"debounce a search text field and combine it with a filter publisher"` → `operators-transforming-and-combining.md`
 
+- **`testing`** — Routes Apple-platform testing implementation tasks (`XCTestCase` structure/assertions, Swift Testing fundamentals, parameterized/async tests, XCUITest UI testing, `XCTestExpectation` for callback-based async code) to Testing Knowledge Contracts. v1 is a curated subset of XCTest, Swift Testing, and XCUITest — no performance testing, no Test Plans/code coverage config (owned by `xcode`), no snapshot testing, no mocking/DI patterns, no accessibility audits (owned by `accessibility`).
+  Example: `"write a Swift Testing test that checks a discount is applied for every order size"` → `swift-testing-fundamentals.md`, `parameterized-and-async-tests.md`
+  Example: `"tap the login button in a UI test and wait for the welcome label"` → `ui-testing-with-xcuiapplication.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-07 — Added `testing` Skill (`XCTestCase` structure and assertions, Swift Testing fundamentals, parameterized and async tests, UI testing with `XCUIApplication`, expectations for asynchronous code; curated v1 subset of XCTest/Swift Testing/XCUITest, not exhaustive) — 5 Knowledge Contracts. Sixteenth Tier 2 domain. Two clean, proactively-scoped handoffs rather than discovered conflicts: Xcode Test Plans/code coverage config remain `xcode`'s territory, and `performAccessibilityAudit()` remains `accessibility`'s territory. Corrects several natural-but-wrong assumptions: `setUp()`/`tearDown()` has a same-named once-per-class `class func` overload distinct from the per-test instance methods; `XCUIApplication`/`XCUIElement` are now documented under the XCUIAutomation framework, not XCTest; the `app.buttons["x"]`-style subscript matches any of an element's identifying properties, not only `accessibilityIdentifier`; `@Test(arguments:)` over two bare collections produces a Cartesian product while a `zip`-wrapped single argument produces paired invocations; and `wait(for:timeout:)` is guided-away-from in favor of `await fulfillment(of:timeout:)`, not deprecated. Performance testing, snapshot testing, UI test recording, and mocking/DI patterns remain out of scope.
 - 2026-08-07 — Added `combine` Skill (publishers and subscribers, `@Published`/`ObservableObject`, subjects, transforming/combining operators, assign and memory management; Combine framework API v1) — 5 Knowledge Contracts. Fifteenth Tier 2 domain, resolving the `swiftui`/`combine` state-management boundary this repo had left open pending `combine`'s build. No corrections to the approved scope beyond citation-precision notes (the full `debounce(for:scheduler:options:)` signature, and citing `Publishers.Merge`'s type page for `merge(with:)`). Async/await interop, custom `Publisher`/`Subscriber` conformances, backpressure, and SwiftData/Core Data interop remain out of scope.
 - 2026-08-06 — Added `core-data` Skill (model definition, persistent container setup, managed object context CRUD, fetching with `NSFetchRequest`, relationships and delete rules; Core Data framework API v1) — 5 Knowledge Contracts. Fourteenth Tier 2 domain, closing the persistence seam left open by `swiftdata`. Corrects a natural-but-wrong assumption: `NSDeleteRule`'s case names carry a `DeleteRule` suffix (`.cascadeDeleteRule`/`.nullifyDeleteRule`/`.denyDeleteRule`/`.noActionDeleteRule`), distinct from SwiftData's shorter `.cascade`/`.nullify`/`.deny`/`.noAction` spellings for the same four concepts. CloudKit sync, migration, `NSFetchedResultsController`, and SwiftData interop remain out of scope.
 - 2026-08-06 — Added `swiftdata` Skill (model definition, model container setup, model context CRUD, querying with `@Query`/`FetchDescriptor`, relationships and cascade delete; SwiftData framework API v1) — 5 Knowledge Contracts. Thirteenth Tier 2 domain. No cross-domain seam to resolve yet (Core Data remains a separate, unbuilt domain). Corrects two natural-but-wrong assumptions: `@Model` never synthesizes `Codable` (only `PersistentModel`/`Observable`, which cover `Hashable`/`Identifiable`), and the SwiftUI modifier's `inMemory:` parameter is a distinct name from `ModelConfiguration`'s `isStoredInMemoryOnly` — not the same symbol at two layers.
