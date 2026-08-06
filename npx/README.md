@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 1.1.0
+Version: 1.2.0
 
 ## Overview
 
@@ -137,10 +137,15 @@ Skills route a task to the minimum set of Knowledge Contracts it needs. Invoke t
   Example: `"build a home screen widget that shows today's stats"` → `widget-declaration-and-families.md`, `timeline-provider-and-entries.md`
   Example: `"widget still shows stale data after I updated it in the app"` → `timeline-reloading-and-refresh-budget.md`
 
+- **`app-intents`** — Routes App Intents implementation tasks (app intent declaration and parameters, app entities and queries, App Shortcuts and Siri phrases, intent results) to App Intents Knowledge Contracts. v1 is intent authoring only — no legacy SiriKit, no Interactive Snippets, no Spotlight indexing of entities; wiring an already-authored intent into a widget is `widgetkit`'s job.
+  Example: `"add a Siri Shortcut that marks today's habit as done"` → `app-intent-declaration-and-parameters.md`, `app-shortcuts-and-siri-phrases.md`
+  Example: `"expose my app's playlists as an entity Siri can search"` → `app-entities-and-queries.md`
+
 Full routing tables: [skills/index.md](skills/index.md). Domain build order and scope: [docs/architecture/domain-map.md](docs/architecture/domain-map.md).
 
 ## What's New
 
+- 2026-08-06 — Added `app-intents` Skill (app intent declaration and parameters, app entities and queries, App Shortcuts and Siri phrases, intent results and widget hookup; App Intents framework API v1) — 4 Knowledge Contracts. Eighth Tier 2 domain. Resolves the seam `widgetkit` had proactively deferred (`AppIntent` authoring itself); clean handoff with `widgetkit` (intent authoring vs. widget-side wiring). Supersedes legacy SiriKit.
 - 2026-08-06 — Added `widgetkit` Skill (widget declaration and families, timeline provider and entries, widget interactivity and deep links, timeline reloading and refresh budget; WidgetKit framework API v1) — 4 Knowledge Contracts. Seventh Tier 2 domain. No existing cross-domain content to overlap with; proactively defers `AppIntent` authoring to the future `app-intents` domain and background-refresh scheduling to the future `backgroundtasks` domain.
 - 2026-08-06 — Added `authenticationservices` Skill (Sign in with Apple request-and-credential handling, nonce and identity-token verification, credential-state checks and revocation, session persistence and sign-out; AuthenticationServices framework API v1) — 4 Knowledge Contracts. Sixth Tier 2 domain. Resolves the `authentication`/`authenticationservices`/`sign-in-with-apple` three-way boundary domain-map.md had left unresolved, absorbing the former `sign-in-with-apple` placeholder outright; clean handoffs with `authentication` (sign-in UX/terminology) and `security` (Keychain storage).
 - 2026-08-06 — Added `storekit` Skill (product loading and purchase, transaction verification and entitlements, transaction updates and restoring purchases, subscription status and renewal info; StoreKit 2 async/await API v1) — 4 Knowledge Contracts. Fifth Tier 2 domain. Clean handoff with `app-store-review-guidelines`'s `digital-goods-iap.md`/`restore-purchases.md` (API implementation vs. review compliance), resolving the boundary domain-map.md had flagged proactively.
