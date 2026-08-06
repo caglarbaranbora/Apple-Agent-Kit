@@ -25,7 +25,8 @@ references:
   - https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date
 depends_on:
   - knowledge.widgetkit.timeline-provider-and-entries
-related: []
+related:
+  - knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup
 updated: 2026-08-06
 ```
 
@@ -47,7 +48,7 @@ This contract defines how an AI coding agent tells WidgetKit that a widget's und
 
 -   Building the `Timeline`/`TimelineEntry` values themselves — see `timeline-provider-and-entries`
 -   Declaring the `Widget`/`kind` being reloaded — see `widget-declaration-and-families`
--   Scheduling the background work that produces new data (e.g. `BGAppRefreshTask`) — deferred to the future `backgroundtasks` domain; this contract only covers the `reloadTimelines`/`reloadAllTimelines` call site once new data has already landed
+-   Scheduling the background work that produces new data (e.g. `BGAppRefreshTask`) — owned by `backgroundtasks` (see `knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup`); this contract only covers the `reloadTimelines`/`reloadAllTimelines` call site once new data has already landed
 
 ## Rules
 
@@ -65,7 +66,7 @@ Agents MUST treat every `reloadTimelines(ofKind:)`/`reloadAllTimelines()` call a
 
 ### Rule 4
 
-Agents MUST prefer scheduling a `Timeline` with several future-dated entries (see `timeline-provider-and-entries`) over issuing frequent `reloadTimelines()` calls when future content is predictable, since entries already inside a delivered timeline render on their scheduled dates without consuming the reload budget at all. Reserve `reloadTimelines`/`reloadAllTimelines` for changes the provider could not have predicted in advance. When the new data driving a reload arrives from background work (e.g. a `BGAppRefreshTask` or a push payload), call `reloadTimelines` at the point that data lands — the scheduling of that background work itself is deferred to the future `backgroundtasks` domain.
+Agents MUST prefer scheduling a `Timeline` with several future-dated entries (see `timeline-provider-and-entries`) over issuing frequent `reloadTimelines()` calls when future content is predictable, since entries already inside a delivered timeline render on their scheduled dates without consuming the reload budget at all. Reserve `reloadTimelines`/`reloadAllTimelines` for changes the provider could not have predicted in advance. When the new data driving a reload arrives from background work (e.g. a `BGAppRefreshTask` or a push payload), call `reloadTimelines` at the point that data lands — the scheduling of that background work itself is owned by `backgroundtasks` (`knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup`).
 
 ## Compliant Example
 
