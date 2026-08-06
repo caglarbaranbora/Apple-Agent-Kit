@@ -109,7 +109,9 @@ struct ToastView: View {
 }
 ```
 
-Transition declared but state change unannimated — toast appears instantly instead of fading in. (Rule 1)
+Transition declared but the state change isn't wrapped in
+`withAnimation`, so the toast appears instantly instead of fading in.
+(Rule 1)
 
 ## Dependencies
 

@@ -116,7 +116,7 @@ struct SuccessCheckmark: View {
 }
 ```
 
-Manually chained `withAnimation` calls glued together with guessed `DispatchQueue.asyncAfter` delay instead of `PhaseAnimator`. (Rule 1)
+Manually chained `withAnimation` calls glued together with guessed `DispatchQueue.asyncAfter` delay instead of `PhaseAnimator`. (Rules 1, 4)
 
 ## Dependencies
 

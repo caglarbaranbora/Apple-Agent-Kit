@@ -54,7 +54,15 @@ Agents MUST ensure exactly one view with a given `id` has `isSource: true` at an
 
 ### Rule 3
 
-Agents MUST keep both the source view (`isSource: true`) and non-source view (`isSource: false`) co-present in the hierarchy during the animated transaction — `matchedGeometryEffect` interpolates between two views' frames, it doesn't move a single view.
+Agents MUST ensure the matched views are part of the same view
+hierarchy update — either both present simultaneously (e.g., an
+overlay swap where one is `isSource: true` and the other
+`isSource: false`), or swapped via a conditional (`if`/`else`) where
+each branch's view is only ever inserted as the transaction's single
+active view. Agents MUST NOT place the linked views in hierarchies
+that update in unrelated transactions — `matchedGeometryEffect`
+interpolates between the previous and next frame of the same
+transaction, not across independent state changes.
 
 ### Rule 4
 
@@ -92,7 +100,7 @@ struct HeroTransition: View {
 }
 ```
 
-Single namespace, one matched id, exactly one view per state, wrapped in `withAnimation`. (Rules 1, 2, 4)
+Single namespace, one matched id, exactly one view per state, wrapped in `withAnimation`. (Rules 1, 2, 3, 4)
 
 ## Non-Compliant Example
 
