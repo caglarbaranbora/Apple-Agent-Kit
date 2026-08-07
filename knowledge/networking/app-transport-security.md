@@ -1,6 +1,6 @@
 # App Transport Security
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.app-transport-security
 artifact_type: knowledge
 title: App Transport Security
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines App Transport Security's HTTPS/TLS requirements and how to declare a narrowly-scoped Info.plist exception when genuinely required, rather than a blanket allow-arbitrary-loads exception.
@@ -21,7 +21,7 @@ references:
   - https://developer.apple.com/documentation/security/preventing-insecure-network-connections
 depends_on: []
 related: []
-last_updated: 2026-08-01
+last_updated: 2026-08-07
 ```
 
 ## Intent
@@ -42,7 +42,8 @@ disabling ATS protection app-wide.
 
 ### Excluded
 
--   `URLSessionDelegate` certificate/challenge handling implementation — out of v1 scope
+-   `URLSessionDelegate` certificate/challenge handling — see
+    `server-trust-evaluation` and `authentication-challenges`
 -   App Store Review's evaluation of ATS exceptions — that's a submission-review concern, not an implementation one
 
 ## Rules
