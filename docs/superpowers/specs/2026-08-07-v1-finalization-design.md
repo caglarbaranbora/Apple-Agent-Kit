@@ -206,14 +206,28 @@ Phases 1-3 ship as one pull request. Phase 3 is what makes Phases 1 and 2
 checkable, so reviewing them apart would mean reviewing rules with nothing
 enforcing them. Phases 4-6 are separate pull requests.
 
-### Carried into Phase 4
+### Carried into Phase 4 — resolved
 
-`scripts/validate_repo.py` reports exactly one finding against the repository:
-`knowledge/authentication/accessibility-forms.md` declares `domain: Accessibility`
-while sitting in `knowledge/authentication/`. The move is already listed as Phase 4
-work and is entangled with the `authentication` Skill retirement, since moving the
-Contract changes its id and therefore which Skill routes to it. It is left open
-rather than suppressed: an allowlist in the validator is how a gate stops being one.
+`scripts/validate_repo.py` reported exactly one finding against the repository:
+`knowledge/authentication/accessibility-forms.md` declared `domain: Accessibility`
+while sitting in `knowledge/authentication/`. It was left open rather than suppressed,
+on the grounds that an allowlist in the validator is how a gate stops being one.
+
+Phase 4 closed it, but not by the move E1b assumed. Three of the Contract's four rules
+were already owned in `knowledge/accessibility/` in far more depth, and all four named
+no API, which every Contract in that directory does — moving it as written would have
+planted a quality outlier in the repository's strongest domain. The Contract was
+retired with the rest of the domain, and its one genuinely uncovered rule (announcing
+form validation errors to assistive technologies) is recorded in `domain-map.md` as a
+Tier 1 `accessibility` gap for Phase 5. The validator now passes with zero findings.
+
+### Deviations taken in Phase 4
+
+E1b sketched `app-store-submission` as `xcode → app-store-review-guidelines → privacy`.
+Built order is `app-store-review-guidelines → privacy → xcode`. A gated Workflow must
+put the cheap checks first: the sketched order has an agent produce a signed archive and
+only then discover that the privacy manifest shipped inside it is wrong, which costs a
+rebuild per finding. The Workflow states the reordering and its reason inline.
 
 ## Phase 5 — Tier 1 content completion
 

@@ -25,7 +25,7 @@ depends_on:
   - knowledge.authenticationservices.sign-in-with-apple-request-and-credential
 related:
   - knowledge.security.keychain-item-crud
-  - knowledge.authentication.sign-in-terminology
+  - knowledge.style-guide.sign-in-and-authentication-terminology
 last_updated: 2026-08-06
 ```
 
@@ -51,7 +51,7 @@ relationship at Apple's end.
 ### Excluded
 
 -   Keychain CRUD mechanics (`SecItemAdd`/`SecItemCopyMatching`/`SecItemUpdate`/`SecItemDelete`, query construction, `OSStatus` handling) — see `knowledge.security.keychain-item-crud`
--   Sign-in/sign-out UX terminology and wording — see `knowledge.authentication.sign-in-terminology`
+-   Sign-in/sign-out UX terminology and wording — see `knowledge.style-guide.sign-in-and-authentication-terminology`
 -   Checking whether a persisted `user` identifier is still valid — see `credential-state-and-revocation`
 -   Nonce generation and identity-token forwarding — see `nonce-and-identity-token-verification`
 
