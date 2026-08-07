@@ -23,7 +23,6 @@ depends_on:
   - knowledge.networking.url-request-construction
   - knowledge.networking.http-error-handling
 related:
-  - knowledge.authentication.authentication
   - knowledge.networking.http-error-handling
   - knowledge.networking.url-request-construction
 last_updated: 2026-08-01
@@ -33,10 +32,10 @@ last_updated: 2026-08-01
 
 This contract defines how an AI coding agent attaches credentials to a
 network request and reacts to an authentication-related HTTP failure —
-the networking-mechanics half of authenticated API calls. Sign-in UX,
-terminology, and flow are owned by the `authentication` domain; this
-contract fills the "Authentication networking" gap that domain's own
-Knowledge Contract explicitly excludes.
+the networking-mechanics half of authenticated API calls. The sign-in
+mechanism and session lifecycle are owned by `authenticationservices`,
+and the wording by `style-guide`; this contract owns only what happens
+to a credential once it is attached to a request.
 
 ## Scope
 
@@ -49,7 +48,8 @@ Knowledge Contract explicitly excludes.
 
 ### Excluded
 
--   Sign-in UX, terminology, and flow — see `knowledge.authentication.authentication`
+-   Sign-in mechanism and session lifecycle — see the `authenticationservices` domain
+-   Sign-in wording — see `knowledge.style-guide.sign-in-and-authentication-terminology`
 -   Building the rest of the request — see `url-request-construction`
 -   General (non-auth) HTTP status handling — see `http-error-handling`
 

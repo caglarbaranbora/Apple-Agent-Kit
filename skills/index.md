@@ -1,16 +1,31 @@
-# Skills Index
+# Routing Index
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Purpose
-Maps implementation tasks to the correct Skill.
 
-## Discovery Rules
+Maps an implementation task to the one artifact that should be loaded for it: a
+Workflow when the task spans domains, otherwise a single Skill.
+
+This is the repository's only entry point for routing. A Skill or Workflow that is not
+listed here is unreachable.
+
+## Workflows
+
+Matched first. A Workflow applies only when the task spans more than one of the Skills
+it names — a task confined to one domain loads that Skill directly from the table below.
+
+| Task Keywords | Load Workflow |
+|---|---|
+| build a sign-in feature, login screen, sign-up flow, sign out, account session, credentials end to end | workflows/authentication/WORKFLOW.md |
+| submit to the App Store, ship the app, release build, prepare for review, App Review rejection triage | workflows/app-store-submission/WORKFLOW.md |
+| add a widget, configurable widget, interactive widget, keep a widget up to date | workflows/add-widget/WORKFLOW.md |
+
+## Skills
 
 | Task Keywords | Load Skill |
 |---|---|
-| login, sign in, authentication | skills/authentication/SKILL.md |
 | writing, terminology, capitalization, button label wording, inclusive writing, date/number formatting in UI | skills/style-guide/SKILL.md |
 | layout, color, typography, dark mode, materials, motion, app icon, interface icon, SF Symbols, branding, accessibility design, RTL, permission prompt design, images, inclusive design | skills/human-interface-guidelines/SKILL.md |
 | lists and tables, buttons, sheets, alerts, action sheet, navigation bar, tab bar, pickers, toggles, text fields, menus, touchscreen gestures, HIG components | skills/human-interface-guidelines-components/SKILL.md |
@@ -45,7 +60,12 @@ Maps implementation tasks to the correct Skill.
 
 ## Resolution Rules
 
-1. Match the most specific task.
-2. Load exactly one primary Skill.
-3. The Skill routes Knowledge Contracts.
-4. If no Skill matches, stop and report a missing Skill.
+1. Match the Workflows table first. A Workflow wins only when the task genuinely spans
+   more than one of the Skills it names.
+2. If a Workflow matches, load it. It names its Skills in order, and it is the only
+   artifact permitted to compose them — a Skill never routes to another Skill.
+3. Otherwise match the Skills table and load exactly one Skill.
+4. Match the most specific task. "Sign in with Apple" is more specific than "sign in".
+5. The Skill routes Knowledge Contracts. A Workflow never routes Knowledge directly.
+6. If nothing matches, stop and report the missing Skill or Workflow. Do not fall back
+   to general knowledge.
