@@ -42,8 +42,8 @@ Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/swiftui/ — do not guess or fall back to general
 knowledge. Animation and gesture questions route to
 `skill.swiftui.interaction` instead of being reported as a gap.
-Previews, custom `Layout` protocol conformances, legacy
-`ObservableObject`/`NavigationView` migration guidance, and
-accessibility APIs (owned by `accessibility`) are out of scope for
-this skill (see docs/architecture/domain-map.md) — report that
-explicitly rather than answering from general knowledge.
+
+-   Previews — Excluded
+-   Custom `Layout` protocol conformances — Excluded
+-   Legacy `ObservableObject`/`NavigationView` migration — Deferred
+-   Accessibility APIs — owned by `accessibility`

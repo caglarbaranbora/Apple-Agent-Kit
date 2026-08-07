@@ -43,9 +43,8 @@ route to `skill.swiftui.foundations` instead.
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/accessibility/ — do not guess or fall back to
-general knowledge. Design-level accessibility guidance (owned by
-`human-interface-guidelines`) and general XCTest/Swift Testing/UI-testing
-conventions beyond accessibility audits (owned by a future `testing`
-domain) are out of scope for this skill (see
-docs/architecture/domain-map.md) — report that explicitly rather than
-answering from general knowledge.
+general knowledge.
+
+-   Design-level accessibility guidance — owned by `human-interface-guidelines`
+-   XCTest/Swift Testing conventions beyond accessibility audits — owned by `testing`
+-   Announcing form validation errors to assistive technologies — Deferred

@@ -39,11 +39,11 @@ Never load more than the contracts relevant to the specific question.
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/privacy/ — do not guess or fall back to general
 knowledge, especially for specific enum values or reason codes, since
-Apple has changed this list before. The following are explicitly out
-of scope for this Skill and owned elsewhere — route to or name the
-owning Skill rather than answering from general knowledge:
+Apple has changed this list before.
 
--   App Store Connect "App Privacy" nutrition-label questionnaire -> `app-store-review-guidelines` Skill
--   Permission-request UI/consent-flow design, purpose-string wording -> `human-interface-guidelines` Skill
--   `Info.plist` runtime usage-string keys -> `app-store-review-guidelines` Skill
--   Keychain/credential storage -> future `security` domain (unbuilt; not yet routable)
+-   App Store Connect "App Privacy" nutrition-label questionnaire — owned by
+    `app-store-review-guidelines`
+-   Permission-request UI/consent-flow design, purpose-string wording — owned by
+    `human-interface-guidelines`
+-   `Info.plist` runtime usage-string keys — owned by `app-store-review-guidelines`
+-   Keychain/credential storage — owned by `security`

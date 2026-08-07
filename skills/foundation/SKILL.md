@@ -45,16 +45,12 @@ Stop and report if the requested topic has no matching Knowledge Contract
 in knowledge/foundation/ — do not guess or fall back to general knowledge.
 
 -   Unit-of-measure copy wording (spelling out vs. abbreviating, spacing,
-    capitalization once a value is already display text) is owned by the
-    `style-guide` Skill, not this one.
+    capitalization once a value is already display text) — owned by
+    `style-guide`.
 -   Network-response `Codable` decoding (`JSONDecoder`, `DecodingError`
-    handling for fetched data) is owned by the `networking` Skill, not
-    this one.
+    handling for fetched data) — owned by `networking`.
 -   General String/Unicode text processing, `NotificationCenter`, the
-    `Result` type, and GCD/`DispatchQueue` are deferred to a future
-    concurrency-focused domain, not yet built — report that explicitly.
--   Locale/Bundle localization and translation workflow mechanics are
-    deferred to the future `localization` domain (Tier 2, unbuilt) — report
-    that explicitly.
--   Combine is deferred to the future `combine` domain (Tier 2, unbuilt) —
-    report that explicitly.
+    `Result` type, and GCD/`DispatchQueue` — Deferred; no domain owns them yet.
+-   Locale/Bundle localization and translation workflow mechanics — owned by
+    `localization`.
+-   Combine — owned by `combine`.

@@ -91,6 +91,10 @@ Checks:
 - Routing rules respected — every routed id appears in the Skill's `## Routing`; no
   Skill routes to a Skill; every Workflow has a Routing Index row
 - Every Workflow names at least two Skills — composing Skills is what a Workflow is for
+- Scope statements use the vocabulary specifications/skill-spec.md [[skill-spec]]
+  defines, and describe reality: a Skill may not call a domain that exists `future`
+  or `unbuilt`, which would send an agent to general knowledge past Contracts that
+  answer the question
 - No forbidden cross-layer references
 
 Enforced by: `scripts/validate_repo.py`

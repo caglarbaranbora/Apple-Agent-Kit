@@ -46,9 +46,9 @@ to `skill.human-interface-guidelines.foundations` instead.
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/uikit/ — do not guess or fall back to general
-knowledge. Storyboard/XIB and `IBOutlet`/`IBAction` workflow are
-permanently out of scope for this domain. Gesture recognizers, Core
-Animation/CALayer, custom transitions, and UIKit-SwiftUI interop
-(`UIHostingController`/`UIViewRepresentable`) are deferred to future
-scope, not yet built — report that explicitly rather than answering from
-general knowledge (see docs/architecture/domain-map.md).
+knowledge.
+
+-   Storyboard/XIB and the `IBOutlet`/`IBAction` workflow — Excluded
+-   Gesture recognizers — Deferred
+-   Core Animation/`CALayer` and custom transitions — Deferred
+-   UIKit-SwiftUI interop (`UIHostingController`/`UIViewRepresentable`) — Deferred

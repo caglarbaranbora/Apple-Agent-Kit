@@ -62,13 +62,13 @@ Never load more than the contracts relevant to the specific question.
 
 Stop and report if the requested topic has no matching Knowledge Contract
 in knowledge/core-data/ — do not guess or fall back to general knowledge.
-`NSPersistentCloudKitContainer`/CloudKit sync is out of scope entirely --
-not built as a contract here. Lightweight and mapping-model migration
-(`NSMigrationManager`, versioned/mapping models) is out of scope entirely
--- not yet built. `NSFetchedResultsController` is UIKit-specific and
-deferred to a future increment -- do not fabricate its behavior from
-`fetching-with-nsfetchrequest`. Multi-context concurrency patterns beyond
-one basic parent-child relationship are out of scope entirely. SwiftData
-interop or migration (`@Model`, `ModelContainer`, `ModelContext`) belongs
-to the separate SwiftData domain, not this one -- do not answer SwiftData
-questions from Core Data contracts or fabricate a shared API surface.
+
+-   `NSPersistentCloudKitContainer`/CloudKit sync — Deferred
+-   Lightweight and mapping-model migration (`NSMigrationManager`,
+    versioned/mapping models) — Deferred
+-   `NSFetchedResultsController` — Deferred; do not fabricate its behavior
+    from `fetching-with-nsfetchrequest`
+-   Multi-context concurrency beyond one parent-child relationship — Deferred
+-   SwiftData interop or migration (`@Model`, `ModelContainer`,
+    `ModelContext`) — owned by `swiftdata`; do not answer SwiftData questions
+    from Core Data contracts or fabricate a shared API surface

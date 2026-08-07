@@ -46,9 +46,9 @@ For Foundations topics (view/navigation/layout/state), route to
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/swiftui/ — do not guess or fall back to general
-knowledge. Previews, custom `Layout` protocol conformances, legacy
-`ObservableObject`/`NavigationView` migration guidance,
-`UIGestureRecognizer`/Core Animation (UIKit), and accessibility APIs
-(owned by `accessibility`) are out of scope for this skill (see
-docs/architecture/domain-map.md) — report that explicitly rather than
-answering from general knowledge.
+knowledge.
+
+-   Previews and custom `Layout` protocol conformances — Excluded
+-   Legacy `ObservableObject`/`NavigationView` migration — Deferred
+-   `UIGestureRecognizer` and Core Animation — owned by `uikit`
+-   Accessibility APIs — owned by `accessibility`

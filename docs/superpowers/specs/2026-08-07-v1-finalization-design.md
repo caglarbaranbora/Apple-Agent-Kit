@@ -324,6 +324,19 @@ here: whether Guideline 4.4 (extensions) satisfies clause (i) via `widgetkit`; w
 1.1 belongs in Tier 1 once 1.2 covers its actionable half; and the classification of
 4.5, 4.6, 4.7 and 5.6.
 
+### Deviation taken in PR 1
+
+The grilling round settled on two terms, `Excluded (permanent)` and `Deferred
+(planned)`. The Skills turned out to state a third fact as often as either: that
+another domain owns the topic outright. Marking a hand-off `Excluded` would be false —
+the kit does cover it — and marking it `Deferred` falser still.
+
+So the vocabulary has three markers, of which two are the agreed pair. A hand-off is
+not an exclusion; it is routing, and `prose-domain-resolves` was already enforcing it
+from PR 0. Naming it alongside the other two is what stops the next author from
+reaching for the wrong one, which is the entire failure this vocabulary exists to
+prevent.
+
 ### Phase 5b — removal
 
 The second question — what should be **removed** from each Skill — is answered in its

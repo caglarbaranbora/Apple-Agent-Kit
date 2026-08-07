@@ -65,6 +65,36 @@ An optional `Review Output Format` section (severity table plus verdict) may be 
 by any Skill whose task includes auditing existing text or code against the domain's
 rules, rather than only routing implementation guidance.
 
+## Scope Statements
+
+`## Stop Conditions` tells an agent what this Skill will not answer. That is three
+different facts wearing one phrase, and collapsing them is how a Skill comes to say
+"not yet built" about a domain with six Knowledge Contracts in it.
+
+Every statement of what a Skill does not cover MUST be exactly one of:
+
+| Kind | Marker | Means |
+|---|---|---|
+| Hand-off | ``owned by `<domain>` `` | Another domain owns it, and that domain exists |
+| Deferred | `Deferred` | This domain will own it; it is not built yet |
+| Excluded | `Excluded` | No domain will own it; this is a decision, not a backlog |
+
+Rules:
+
+- A hand-off MUST name a domain that exists. Enforced by `prose-domain-resolves`.
+- A Skill MUST NOT describe an existing domain as `future`, `unbuilt`, or `not yet
+  built`. Suppressing a domain that exists is worse than pointing at one that does
+  not: the agent falls back to general knowledge while the answer sits on disk.
+- A `Deferred` topic MUST appear as a gap against that domain in
+  ../architecture/domain-map.md [[domain-map]].
+- An `Excluded` topic MUST NOT appear there as a gap. A permanent decision recorded as
+  an unbuilt gap is how the map came to list `uikit`'s Storyboard/XIB support as
+  outstanding work three months after it was ruled out.
+
+The marker's presence is checked mechanically. Whether the marker is the *right* one
+is a Level 4 judgment, like every other question about whether prose means what it
+says — see ../validation-model.md [[validation-model]].
+
 ## Rules
 
 - A Skill MUST NOT contain implementation guidance.

@@ -36,7 +36,11 @@ Never load more than the contracts relevant to the specific question.
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/xcode/ — do not guess or fall back to general
-knowledge. `xcodebuild` CLI usage, CI signing automation (fastlane,
-`match`), and Swift Package Manager build configuration are deferred to
-future scope, not yet built — report that explicitly rather than
-answering from general knowledge (see docs/architecture/domain-map.md).
+knowledge.
+
+-   `xcodebuild` CLI usage — Excluded
+-   CI signing automation (fastlane, `match`) — Excluded
+-   Swift Package Manager build configuration — Excluded
+-   Test Plans and code coverage — Deferred; `testing` hands these off here
+-   Project language configuration and `.xcloc`/XLIFF export-and-import —
+    Deferred; `localization` hands these off here

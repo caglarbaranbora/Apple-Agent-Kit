@@ -707,13 +707,36 @@ def retired_domains(root):
 # naming an artifact, and both defects this check was written for followed it.
 # Requiring the backticks is what separates `authentication` the domain from
 # "concurrency-focused" the adjective.
+#
+# The noun is matched case-insensitively. Written case-sensitively, this missed
+# `authenticationservices`' "Route ... to the `authentication` Skill" -- the
+# capital S was the whole of the escape.
+# Only the noun is case-insensitive. Applying re.I to the whole pattern also
+# loosens the name's character class, which matched `IBAction` in "IBOutlet/
+# IBAction workflow" -- an English word, not an artifact.
 BACKTICKED_MENTION_RE = re.compile(
-    r"`([a-z][a-z0-9-]*)`\s+(domain|skill|workflow)\b"
+    r"`([a-z][a-z0-9-]*)`\s+(?i:(domain|skill|workflow))\b"
 )
 
 # A retired name is worth reporting even bare: a hand-off written as "see the
 # authentication skill" routes an agent exactly as far into nowhere.
-BARE_MENTION_RE = re.compile(r"\b([a-z][a-z0-9-]*)\s+(domain|skill|workflow)\b")
+BARE_MENTION_RE = re.compile(
+    r"\b([a-z][a-z0-9-]*)\s+(?i:(domain|skill|workflow))\b"
+)
+
+
+def describes_a_retirement(prose, position):
+    """True where the sentence around `position` is recording a retirement.
+
+    "The `authentication` Skill is retired" and "route to the `authentication`
+    Skill" both name a domain that is gone; only the second misroutes an agent.
+    A retirement has to be writable somewhere -- `workflows/authentication/`
+    says what it replaces, and the README's What's New says what shipped.
+    """
+    start = prose.rfind(".", 0, position) + 1
+    end = prose.find(".", position)
+    sentence = prose[start : end if end != -1 else len(prose)]
+    return "retire" in sentence.lower()
 
 
 def check_prose_domain_mentions_resolve(artifacts, root):
@@ -749,8 +772,13 @@ def check_prose_domain_mentions_resolve(artifacts, root):
         if rel.startswith(skipped):
             continue
         prose = re.sub(r"```.*?```", "", path.read_text(), flags=re.DOTALL)
-        mentions = set(BACKTICKED_MENTION_RE.findall(prose))
-        mentions |= {m for m in BARE_MENTION_RE.findall(prose) if m[0] in retired}
+        mentions = {
+            m.group(1, 2)
+            for pattern in (BACKTICKED_MENTION_RE, BARE_MENTION_RE)
+            for m in pattern.finditer(prose)
+            if (pattern is BACKTICKED_MENTION_RE or m.group(1) in retired)
+            and not describes_a_retirement(prose, m.start())
+        }
         for name, noun in sorted(mentions):
             if name in (workflows if noun == "workflow" else domains):
                 continue
@@ -764,6 +792,95 @@ def check_prose_domain_mentions_resolve(artifacts, root):
                     "repoint the hand-off at the domain that owns the topic "
                     "now, or drop it; prose carries the same routing meaning "
                     "an edge does",
+                )
+            )
+    return findings
+
+
+# Phrasings skill-spec.md's "Scope Statements" replaces. Each collapsed a
+# hand-off, a deferral, and a permanent decision into one sentence, so a reader
+# could not tell which was meant -- and neither could the next author.
+AMBIGUOUS_SCOPE_PHRASES = (
+    "out of scope for this skill",
+    "out of scope for this domain",
+    "deferred to future scope",
+    "deferred to a future",
+)
+
+# "not yet built" is legitimate about something genuinely unbuilt. It is a
+# defect only when aimed at a domain that exists, so the name is what decides.
+#
+# Proximity, not the sentence, binds the word to the name. One `accessibility`
+# sentence hands off to `human-interface-guidelines` and then calls `testing`
+# future; splitting on sentences blamed both.
+UNBUILT_RE = re.compile(
+    r"(?:future|unbuilt|not yet built)[^`]{0,35}`([a-z][a-z0-9-]*)`"
+    r"|`([a-z][a-z0-9-]*)`[^`]{0,35}(?:future|unbuilt|not yet built)"
+)
+
+
+def check_scope_vocabulary(artifacts, root):
+    """A Skill's scope statements use the vocabulary, and describe reality.
+
+    Two failures, both found in the repository when this was written.
+
+    The vocabulary failure: `## Stop Conditions` states three different facts --
+    another domain owns it, this domain will own it later, nobody will ever own
+    it -- and three Skills used the same "out of scope for this skill" phrasing
+    for all three. `skill-spec.md` now marks them apart.
+
+    The reality failure is the worse one. `skills/foundation/SKILL.md` called
+    `localization` and `combine` "future" and "(Tier 2, unbuilt)" when both had
+    shipped, and `skills/accessibility/SKILL.md` did the same to `testing`. An
+    agent routed there is told the answer does not exist while six Knowledge
+    Contracts holding it sit on disk. Pointing at a domain that was retired --
+    what `prose-domain-resolves` catches -- at least fails loudly.
+    """
+    findings = []
+    domains = known_domains(root)
+    for artifact in artifacts:
+        if artifact.artifact_type != "skill":
+            continue
+        scope = section(artifact.text, "## Stop Conditions")
+        # Line wrapping splits these phrases across newlines -- `swiftui` wraps
+        # between "this" and "skill". Matching raw text misses them, which is
+        # the same defect that let a manual grep miss a hand-off in Phase 5's
+        # first pull request.
+        scope = re.sub(r"\s+", " ", scope)
+        described = scope + " " + re.sub(
+            r"\s+", " ", str(artifact.meta.get("description", ""))
+        )
+        lowered = scope.lower()
+        for phrase in AMBIGUOUS_SCOPE_PHRASES:
+            if phrase in lowered:
+                findings.append(
+                    Finding(
+                        3,
+                        "scope-vocabulary",
+                        artifact.rel,
+                        f'scope statement says "{phrase}", which does not say '
+                        f"whether another domain owns it, this one will, or "
+                        f"nobody ever will",
+                        "mark it `owned by `<domain>``, `Deferred`, or "
+                        "`Excluded`; see docs/specifications/skill-spec.md "
+                        "Scope Statements",
+                    )
+                )
+        for match in UNBUILT_RE.finditer(described):
+            name = match.group(1) or match.group(2)
+            if name not in domains or name == artifact.domain:
+                continue
+            findings.append(
+                Finding(
+                    3,
+                    "scope-vocabulary",
+                    artifact.rel,
+                    f"describes `{name}` as future or unbuilt, but it exists",
+                    "an agent told a built domain is unbuilt falls back to "
+                    "general knowledge instead of loading the Contracts that "
+                    "answer it; if the topic is unbuilt inside a domain that "
+                    "exists, that is a hand-off marked `Deferred`, not a "
+                    "missing domain",
                 )
             )
     return findings
@@ -784,6 +901,7 @@ CHECKS = [
     check_dependency_graph_is_acyclic,
     check_routing_coverage,
     check_workflows_compose_skills,
+    check_scope_vocabulary,
 ]
 
 

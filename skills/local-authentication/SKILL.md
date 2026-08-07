@@ -41,8 +41,8 @@ Never load more than the contracts relevant to the specific question.
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/local-authentication/ — do not guess or fall back
-to general knowledge. macOS/watchOS-specific LocalAuthentication
-behavior and general Keychain storage (SecItemAdd/Copy/Update for
-non-biometric-bound items) are deferred to future scope, not yet built —
-report that explicitly rather than answering from general knowledge (see
-docs/architecture/domain-map.md).
+to general knowledge.
+
+-   macOS/watchOS-specific LocalAuthentication behavior — Deferred
+-   General Keychain storage (`SecItemAdd`/`SecItemCopyMatching`/
+    `SecItemUpdate` for non-biometric-bound items) — owned by `security`

@@ -38,16 +38,18 @@ Never load more than the contracts relevant to the specific question.
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/widgetkit/ — do not guess or fall back to general
-knowledge. Live Activities and `ActivityKit`, watchOS complications as a
-distinct surface, Control Widgets (iOS 18 `Controls`/`ControlWidget`),
-and StandBy-specific layout are deferred to future scope, not yet built
-— report that explicitly rather than answering from general knowledge
-(see docs/architecture/domain-map.md). Authoring an `AppIntent` itself —
-its parameters, `perform()` body, and any entities it exposes — is
-owned by `app-intents` (`knowledge.app-intents.intent-results-and-widget-hookup`),
-not this one; this Skill only routes to wiring an already-authored
-intent into a widget's tap target. Scheduling the background work that produces new
-widget data (e.g. a `BGAppRefreshTask`) is owned by `backgroundtasks`
-(`knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup`),
-not this one; this Skill only routes to the `reloadTimelines`/`reloadAllTimelines`
-call site once new data has already landed.
+knowledge.
+
+-   Live Activities and `ActivityKit` — Deferred
+-   watchOS complications as a distinct surface — Deferred
+-   Control Widgets (iOS 18 `Controls`/`ControlWidget`) — Deferred
+-   StandBy-specific layout — Deferred
+-   Authoring an `AppIntent` itself — its parameters, `perform()` body, and any
+    entities it exposes — owned by `app-intents`
+    (`knowledge.app-intents.intent-results-and-widget-hookup`); this Skill only
+    routes to wiring an already-authored intent into a widget's tap target
+-   Scheduling the background work that produces new widget data (e.g. a
+    `BGAppRefreshTask`) — owned by `backgroundtasks`
+    (`knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup`);
+    this Skill only routes to the `reloadTimelines`/`reloadAllTimelines` call
+    site once new data has already landed

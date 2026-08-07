@@ -63,18 +63,18 @@ Never load more than the contracts relevant to the specific question.
 
 Stop and report if the requested topic has no matching Knowledge Contract
 in knowledge/localization/ -- do not guess or fall back to general
-knowledge. Adding a language to an Xcode project, target localization
-settings, and `.xcloc`/XLIFF export-and-import are `xcode` territory and
-not yet built -- report the boundary rather than answer here. The iOS 18
-Translation framework (`TranslationSession`, `.translationTask`,
-`.translationPresentation`) is a real, documented capability deliberately
-out of scope -- do not fabricate guidance for it, and do not claim it does
-not exist. Source-copy wording, capitalization, punctuation, and
-international representation/formatting rules are owned by `style-guide`;
-date, time, number, and measurement formatting by `foundation`; RTL
-visual-design decisions by `human-interface-guidelines` (`right-to-left`).
-App Store Connect localized metadata, APNs `loc-key`/`loc-args` payloads,
-App Shortcuts phrase and `AppEnum` localization (owned by `app-intents`),
-and macOS/watchOS/tvOS-specific behavior are out of scope entirely. Apple
-publishes no schema for the `.xcstrings` format -- never assert its
-internal JSON field names.
+knowledge.
+
+-   Adding a language to an Xcode project, target localization settings, and
+    `.xcloc`/XLIFF export-and-import — owned by `xcode`, Deferred there
+-   The iOS 18 Translation framework (`TranslationSession`, `.translationTask`,
+    `.translationPresentation`) — Excluded; real and documented, so neither
+    fabricate guidance for it nor claim it does not exist
+-   Source-copy wording, capitalization, punctuation, and international
+    representation/formatting — owned by `style-guide`
+-   Date, time, number, and measurement formatting — owned by `foundation`
+-   RTL visual-design decisions — owned by `human-interface-guidelines`
+-   App Shortcuts phrase and `AppEnum` localization — owned by `app-intents`
+-   App Store Connect localized metadata, APNs `loc-key`/`loc-args` payloads,
+    macOS/watchOS/tvOS-specific behavior — Excluded
+-   Apple publishes no `.xcstrings` schema -- never assert its JSON field names

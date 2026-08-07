@@ -456,6 +456,47 @@ class TestLevel2(RepoTestCase):
         self.assertEqual([str(f) for f in self.repo.findings()], [])
 
 
+class TestScopeVocabulary(RepoTestCase):
+    def stop(self, text):
+        self.repo.edit("skills/example/SKILL.md", "Stop if no contract matches.", text)
+
+    def test_ambiguous_phrasing_is_reported(self):
+        self.stop("Widgets are out of scope for this skill.")
+        self.assertRule("scope-vocabulary")
+
+    def test_line_wrapped_ambiguous_phrasing_is_reported(self):
+        # `swiftui` wraps between "this" and "skill". Matching the raw text
+        # missed it, which is how a manual grep missed a hand-off in PR 0.
+        self.stop("Widgets are out of scope for this\nskill.")
+        self.assertRule("scope-vocabulary")
+
+    def test_calling_a_built_domain_unbuilt_is_reported(self):
+        self.stop("Keychain is owned by a future `other` domain, not yet built.")
+        self.repo.write("knowledge/other/thing.md", KNOWLEDGE)
+        self.assertRule("scope-vocabulary")
+
+    def test_a_distant_hand_off_is_not_blamed_for_a_nearby_deferral(self):
+        # One `accessibility` sentence hands off to a built domain and then
+        # calls a second domain future. Splitting on sentences blamed both.
+        self.repo.write("knowledge/other/thing.md", KNOWLEDGE)
+        self.stop(
+            "Design guidance is owned by `other`, and general testing "
+            "conventions well beyond anything this one covers belong to a "
+            "future domain nobody has built."
+        )
+        self.assertNotIn("scope-vocabulary", self.repo.rules())
+
+    def test_the_marked_vocabulary_is_accepted(self):
+        self.repo.write("knowledge/other/thing.md", KNOWLEDGE)
+        self.stop(
+            "Stop if no contract matches.\n\n"
+            "-   Widgets — Deferred\n"
+            "-   Storyboards — Excluded\n"
+            "-   Keychain — owned by `other`\n"
+        )
+        self.assertNotIn("scope-vocabulary", self.repo.rules())
+
+
 class TestLevel3(RepoTestCase):
     def test_forbidden_dependency_direction(self):
         # Knowledge may not depend on a Skill.
