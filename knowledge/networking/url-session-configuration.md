@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.networking.url-session-configuration
-type: knowledge
+artifact_type: knowledge
 title: URL Session Configuration
 version: 0.1.0
 status: Draft
@@ -22,7 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.networking.async-data-fetching
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

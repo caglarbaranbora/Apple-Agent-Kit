@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.authentication.authentication
-type: knowledge
+artifact_type: knowledge
 title: Authentication
 version: 0.1.0
 status: Draft
@@ -22,7 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.authentication.sign-in-terminology
-updated: 2026-07-29
+last_updated: 2026-07-29
 ```
 
 ## Intent

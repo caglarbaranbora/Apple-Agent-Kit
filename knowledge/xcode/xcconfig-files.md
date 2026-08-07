@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.xcode.xcconfig-files
-type: knowledge
+artifact_type: knowledge
 title: xcconfig Files
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.xcode.build-configurations
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

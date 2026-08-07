@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.networking.http-error-handling
-type: knowledge
+artifact_type: knowledge
 title: HTTP Error Handling
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ related:
   - knowledge.networking.async-data-fetching
   - knowledge.networking.authenticated-requests
   - knowledge.networking.codable-decoding
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.swiftui.view-composition
-type: knowledge
+artifact_type: knowledge
 title: View Composition
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.swiftui.modifier-order
   - knowledge.swiftui.view-identity
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

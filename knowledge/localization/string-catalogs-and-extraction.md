@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.localization.string-catalogs-and-extraction
-type: knowledge
+artifact_type: knowledge
 title: String Catalogs and Extraction
 version: 0.1.0
 status: Draft
@@ -30,7 +30,7 @@ depends_on: []
 related:
   - knowledge.localization.localized-string-apis
   - knowledge.localization.plural-and-device-variations
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

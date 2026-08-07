@@ -8,28 +8,55 @@ References → Knowledge → Skills → Workflows
 
 - References are authoritative sources (traceable to official Apple docs).
 - Knowledge Contracts define implementation rules, one per atomic concept.
-- Skills route to Knowledge Contracts deterministically — they must never embed domain knowledge directly.
-- Workflows compose multiple Skills.
+- Skills route to Knowledge Contracts deterministically — they must never embed domain knowledge directly, and never route to another Skill.
+- Workflows compose multiple Skills. Composing Skills is a Workflow's job, never a Skill's.
+
+`templates/` and `scripts/` are authoring and tooling directories, not layers.
+
+## The normative specs
+
+These are the authority on artifact structure. Don't hand-roll a new shape — and if a
+spec and the validator disagree, that's a release-blocking defect, not a preference.
+
+| Artifact | Spec |
+|---|---|
+| Knowledge Contract | `docs/specifications/knowledge-spec.md` |
+| Skill | `docs/specifications/skill-spec.md` |
+| Reference | `docs/specifications/reference-spec.md` |
+| Workflow | `docs/specifications/workflow-spec.md` |
+| Metadata fields (all types) | `schemas/metadata.schema.md` |
+
+Adding to, splitting, or retiring a Skill: `docs/specifications/skill-management.md`.
 
 ## File naming and structure
 
-- One vertical slice = one directory under `references/<domain>/`, `knowledge/<domain>/`, `skills/<domain>/`.
-- Knowledge Contract IDs follow `knowledge.<domain>.<slug>` (see existing files under `knowledge/` for examples).
-- New domains get their own subdirectory in each of `references/`, `knowledge/`, `skills/` — don't mix domains inside one file.
-- Required metadata fields and section headers per artifact type are enforced by `scripts/validate_artifact.py` (see `REQUIRED_SECTIONS` / `REQUIRED_METADATA_FIELDS` in that file) — don't hand-roll a new structure.
+- One vertical slice = `references/apple/<domain>.md`, `knowledge/<domain>/`, `skills/<domain>[-<facet>]/`.
+- Skill directories are always flat — never `skills/<domain>/<facet>/`. Claude Code derives the invocable name from the directory.
+- Knowledge Contract IDs follow `knowledge.<domain>.<slug>` and must agree with the path; `domain` must agree with the directory name.
+- New domains get their own entry in each of `references/apple/`, `knowledge/`, `skills/` — don't mix domains inside one file.
 
-## Validating an artifact
+## Validating
+
+Two scripts, split by scope. Both must pass before committing. See
+`docs/validation-model.md` for what each level covers.
 
 ```bash
-python3 scripts/validate_artifact.py <path/to/artifact.md> --type knowledge   # or: skill | reference
+# Level 1 — one file, structural
+python3 scripts/validate_artifact.py <path/to/artifact.md> --type knowledge   # or: skill | reference | workflow | entry
+
+# Level 1 — every artifact at once, each type read from its own metadata
+python3 scripts/validate_artifact.py . --all
+
+# Levels 2-3 — repository-wide: ids, edges, the dependency DAG, routing, index sync
+python3 scripts/validate_repo.py .
 ```
 
-Run this against any new or modified Knowledge Contract, Skill, or Reference before committing.
+Levels 4-5 are semantic and are checked by reading, in review — no script decides them.
 
 ## Running tests
 
 ```bash
-python3 -m unittest tests/test_validate_artifact.py -v
+python3 -m unittest discover tests/ -v
 ```
 
 ## Validating the plugin manifest

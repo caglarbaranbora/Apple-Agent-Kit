@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.settings
-type: knowledge
+artifact_type: knowledge
 title: Settings
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.privacy
   - knowledge.human-interface-guidelines.onboarding
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

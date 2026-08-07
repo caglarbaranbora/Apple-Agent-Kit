@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.buttons
-type: knowledge
+artifact_type: knowledge
 title: Buttons
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ related:
   - knowledge.style-guide.general-button-labels
   - knowledge.human-interface-guidelines.sf-symbols
   - knowledge.human-interface-guidelines.color
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

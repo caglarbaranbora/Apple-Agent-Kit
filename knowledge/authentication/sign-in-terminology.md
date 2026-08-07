@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.authentication.sign-in-terminology
-type: knowledge
+artifact_type: knowledge
 title: Sign In Terminology
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ depends_on:
 related:
   - knowledge.authentication.button-labels
   - knowledge.style-guide.sign-in-and-authentication-terminology
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

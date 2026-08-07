@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.undo-and-redo
-type: knowledge
+artifact_type: knowledge
 title: Undo and Redo
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.feedback
   - knowledge.human-interface-guidelines.sf-symbols
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

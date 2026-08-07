@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.privacy
-type: knowledge
+artifact_type: knowledge
 title: Privacy (Design)
 version: 0.1.0
 status: Draft
@@ -21,7 +21,7 @@ references:
   - https://developer.apple.com/design/human-interface-guidelines/privacy
 depends_on: []
 related: []
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

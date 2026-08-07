@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.local-authentication.policy-evaluation
-type: knowledge
+artifact_type: knowledge
 title: Policy Evaluation
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ related:
   - knowledge.local-authentication.reason-strings-and-info-plist
   - knowledge.local-authentication.fallback-ux-and-passcode
   - knowledge.local-authentication.context-lifecycle
-updated: 2026-08-05
+last_updated: 2026-08-05
 ```
 
 ## Intent

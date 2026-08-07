@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.foundation.measurement-and-unit-formatting
-type: knowledge
+artifact_type: knowledge
 title: Measurement and Unit Formatting
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.units-of-measure
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

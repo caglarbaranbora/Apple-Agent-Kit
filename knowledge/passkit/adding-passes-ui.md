@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.passkit.adding-passes-ui
-type: knowledge
+artifact_type: knowledge
 title: Adding Passes UI
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ references:
 depends_on:
   - knowledge.passkit.pass-library-and-authorization
 related: []
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

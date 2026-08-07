@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.accessibility
-type: knowledge
+artifact_type: knowledge
 title: Accessibility (Design)
 version: 0.1.0
 status: Draft
@@ -27,7 +27,7 @@ related:
   - knowledge.human-interface-guidelines.inclusion
   - knowledge.human-interface-guidelines.typography
   - knowledge.style-guide.writing-inclusively
-updated: 2026-08-05
+last_updated: 2026-08-05
 ```
 
 ## Intent

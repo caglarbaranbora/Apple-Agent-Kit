@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.uikit.tab-bar-controller
-type: knowledge
+artifact_type: knowledge
 title: Tab Bar Controller
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.uikit.navigation-controller
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

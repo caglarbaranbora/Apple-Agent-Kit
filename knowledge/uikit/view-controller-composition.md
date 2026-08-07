@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.uikit.view-controller-composition
-type: knowledge
+artifact_type: knowledge
 title: View Controller Composition
 version: 0.1.0
 status: Draft
@@ -27,7 +27,7 @@ related:
   - knowledge.uikit.navigation-controller
   - knowledge.uikit.tab-bar-controller
   - knowledge.uikit.view-controller-lifecycle
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.privacy.required-reason-api-declarations
-type: knowledge
+artifact_type: knowledge
 title: Required-Reason API Declarations
 version: 0.1.0
 status: Draft
@@ -27,7 +27,7 @@ depends_on:
 related:
   - knowledge.privacy.collected-data-types-declaration
   - knowledge.app-store-review-guidelines.privacy-manifest
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

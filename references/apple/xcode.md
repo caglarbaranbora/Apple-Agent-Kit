@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.xcode
+artifact_type: reference
+title: Xcode
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for Apple's Xcode project-configuration documentation, scoped to this domain's v1.
+domain: Xcode
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/documentation/xcode

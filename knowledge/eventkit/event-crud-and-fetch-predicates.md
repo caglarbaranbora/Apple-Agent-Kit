@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.eventkit.event-crud-and-fetch-predicates
-type: knowledge
+artifact_type: knowledge
 title: Event CRUD and Fetch Predicates
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ references:
 depends_on:
   - knowledge.eventkit.authorization-and-access-levels
 related: []
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

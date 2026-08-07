@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.testing.xctest-case-structure-and-assertions
-type: knowledge
+artifact_type: knowledge
 title: XCTest Case Structure and Assertions
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ references:
   - https://developer.apple.com/documentation/xctest/methods-for-skipping-tests
 depends_on: []
 related: []
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

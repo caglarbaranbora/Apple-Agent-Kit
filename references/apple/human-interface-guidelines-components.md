@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.human-interface-guidelines-components
+artifact_type: reference
+title: Human Interface Guidelines — Components
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for a curated subset of Apple's Human Interface Guidelines Components section (plus one Inputs topic), iOS/iPadOS scope.
+domain: Human Interface Guidelines — Components
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/design/human-interface-guidelines/components

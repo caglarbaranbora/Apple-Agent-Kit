@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.networking
+artifact_type: reference
+title: Networking
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for Apple's URLSession networking documentation, scoped to this domain's v1.
+domain: Networking
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/documentation/foundation/urlsession

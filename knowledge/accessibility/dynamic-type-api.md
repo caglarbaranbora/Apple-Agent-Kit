@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.accessibility.dynamic-type-api
-type: knowledge
+artifact_type: knowledge
 title: Dynamic Type API
 version: 0.1.0
 status: Draft
@@ -22,7 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.human-interface-guidelines.accessibility
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

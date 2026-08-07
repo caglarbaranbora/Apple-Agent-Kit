@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.sf-symbols
-type: knowledge
+artifact_type: knowledge
 title: SF Symbols (Design)
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ related:
   - knowledge.human-interface-guidelines.color
   - knowledge.human-interface-guidelines.accessibility
   - knowledge.sf-symbols.rendering-modes
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

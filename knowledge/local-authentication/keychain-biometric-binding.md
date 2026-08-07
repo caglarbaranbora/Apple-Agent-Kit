@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.local-authentication.keychain-biometric-binding
-type: knowledge
+artifact_type: knowledge
 title: Keychain-Biometric Binding
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ depends_on: []
 related:
   - knowledge.local-authentication.policy-evaluation
   - knowledge.local-authentication.context-lifecycle
-updated: 2026-08-05
+last_updated: 2026-08-05
 ```
 
 ## Intent

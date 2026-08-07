@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ```yaml
 id: knowledge.uikit.cell-configuration
-type: knowledge
+artifact_type: knowledge
 title: Cell Configuration
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ related:
   - knowledge.uikit.table-view-diffable
   - knowledge.uikit.collection-view-diffable
   - knowledge.accessibility.accessibility-labels
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.core-data.fetching-with-nsfetchrequest
-type: knowledge
+artifact_type: knowledge
 title: Fetching With NSFetchRequest
 version: 0.1.0
 status: Draft
@@ -31,7 +31,7 @@ depends_on:
   - knowledge.core-data.persistent-container-setup
 related:
   - knowledge.core-data.managed-object-context-crud
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

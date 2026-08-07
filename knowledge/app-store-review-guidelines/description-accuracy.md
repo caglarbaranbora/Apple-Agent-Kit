@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.app-store-review-guidelines.description-accuracy
-type: knowledge
+artifact_type: knowledge
 title: Description Accuracy
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.app-store-review-guidelines.screenshots-accuracy
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

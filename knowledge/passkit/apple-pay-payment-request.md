@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.passkit.apple-pay-payment-request
-type: knowledge
+artifact_type: knowledge
 title: Apple Pay Payment Request
 version: 0.1.0
 status: Draft
@@ -27,7 +27,7 @@ references:
   - https://developer.apple.com/documentation/passkit/pkpaymentauthorizationcontroller/canmakepayments()
 depends_on: []
 related: []
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

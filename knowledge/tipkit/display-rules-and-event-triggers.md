@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.tipkit.display-rules-and-event-triggers
-type: knowledge
+artifact_type: knowledge
 title: Display Rules and Event Triggers
 version: 0.1.0
 status: Draft
@@ -30,7 +30,7 @@ references:
 depends_on:
   - knowledge.tipkit.tip-declaration-and-content
 related: []
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

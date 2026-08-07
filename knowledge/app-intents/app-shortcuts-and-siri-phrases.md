@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.app-intents.app-shortcuts-and-siri-phrases
-type: knowledge
+artifact_type: knowledge
 title: App Shortcuts and Siri Phrases
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ references:
 depends_on:
   - knowledge.app-intents.app-intent-declaration-and-parameters
 related: []
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

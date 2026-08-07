@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.accessibility.accessibility-value-and-hint
-type: knowledge
+artifact_type: knowledge
 title: Accessibility Value and Hint
 version: 0.1.0
 status: Draft
@@ -27,7 +27,7 @@ depends_on: []
 related:
   - knowledge.accessibility.accessibility-labels
   - knowledge.accessibility.accessibility-traits
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

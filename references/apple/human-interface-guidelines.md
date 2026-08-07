@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.human-interface-guidelines
+artifact_type: reference
+title: Human Interface Guidelines
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for Apple's Human Interface Guidelines — Foundations section, iOS/iPadOS scope.
+domain: Human Interface Guidelines
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/design/human-interface-guidelines/foundations

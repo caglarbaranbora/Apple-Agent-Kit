@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.swiftui.phase-and-keyframe-animators
-type: knowledge
+artifact_type: knowledge
 title: Phase and Keyframe Animators
 version: 0.1.0
 status: Draft
@@ -22,7 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftui.animation-modifiers
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

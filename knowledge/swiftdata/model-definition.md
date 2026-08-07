@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.swiftdata.model-definition
-type: knowledge
+artifact_type: knowledge
 title: Model Definition
 version: 0.1.0
 status: Draft
@@ -30,7 +30,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftdata.relationships-and-cascade-delete
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

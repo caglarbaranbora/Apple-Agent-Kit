@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.xcode.manual-signing-provisioning-profiles
-type: knowledge
+artifact_type: knowledge
 title: Manual Signing & Provisioning Profiles
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ related:
   - knowledge.xcode.automatic-signing
   - knowledge.xcode.entitlements-capabilities
   - knowledge.xcode.export-options
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.app-store-review-guidelines.privacy-manifest
-type: knowledge
+artifact_type: knowledge
 title: Privacy Manifest
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.app-store-review-guidelines.privacy-nutrition-label
   - knowledge.app-store-review-guidelines.permission-usage-strings
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

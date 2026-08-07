@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.sf-symbols.symbol-basics
-type: knowledge
+artifact_type: knowledge
 title: Symbol Basics
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ related:
   - knowledge.sf-symbols.symbol-color-and-tinting
   - knowledge.sf-symbols.symbol-variants
   - knowledge.sf-symbols.symbol-weight-and-scale
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

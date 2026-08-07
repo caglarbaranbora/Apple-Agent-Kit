@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.app-tracking-transparency.usage-string-and-info-plist
-type: knowledge
+artifact_type: knowledge
 title: Usage String and Info.plist
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.app-tracking-transparency.authorization-request
   - knowledge.app-store-review-guidelines.permission-usage-strings
-updated: 2026-08-05
+last_updated: 2026-08-05
 ```
 
 ## Intent

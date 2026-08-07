@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.core-data.relationships-and-delete-rules
-type: knowledge
+artifact_type: knowledge
 title: Relationships and Delete Rules
 version: 0.1.0
 status: Draft
@@ -30,7 +30,7 @@ depends_on:
   - knowledge.core-data.model-definition
 related:
   - knowledge.core-data.managed-object-context-crud
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

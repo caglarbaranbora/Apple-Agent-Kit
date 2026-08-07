@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.branding
-type: knowledge
+artifact_type: knowledge
 title: Branding
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.color
   - knowledge.human-interface-guidelines.typography
   - knowledge.style-guide.copyright-and-trademarks
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

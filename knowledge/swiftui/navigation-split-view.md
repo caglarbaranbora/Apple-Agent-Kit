@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.swiftui.navigation-split-view
-type: knowledge
+artifact_type: knowledge
 title: Navigation Split View
 version: 0.1.0
 status: Draft
@@ -21,7 +21,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftui.navigation-stack
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

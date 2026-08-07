@@ -1,11 +1,24 @@
 # Dependency Graph
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Purpose
 
 Defines dependency rules between artifact types.
+
+## Scope
+
+Both tables below govern **`depends_on` only** — the binding dependency edge.
+
+Two other fields express relationships and are **not** covered here:
+
+- `related` — non-binding cross-reference. No direction constraint. Its target must
+  exist. A Skill's `related` may name another Skill, and 32 of 32 Skills do.
+- `routes` — a Skill's Knowledge load instruction. Every id must exist, but this is
+  not a dependency edge.
+
+See ../../schemas/metadata.schema.md [[metadata.schema]].
 
 ## Allowed Dependencies
 
@@ -22,9 +35,12 @@ Defines dependency rules between artifact types.
 | From | Forbidden |
 |---|---|
 | Reference | Knowledge, Skill, Workflow |
-| Skill | Reference |
+| Knowledge | Skill, Workflow |
+| Skill | Skill, Reference |
 | Workflow | Knowledge |
-| Knowledge | Workflow |
+
+`Entry` has no dependencies. It points an agent at the Routing Index and carries no
+`depends_on`, `routes`, or `related`.
 
 ## Rules
 
@@ -35,7 +51,10 @@ Defines dependency rules between artifact types.
 
 ## Validation
 
-- DAG verification
-- Broken link detection
+Enforced by `scripts/validate_repo.py` as Validation Level 3; see
+../validation-model.md [[validation-model]].
+
+- DAG verification over `depends_on`
+- Broken link detection across all three relationship fields
 - Orphan artifact detection
-- Dependency resolution
+- Direction-rule enforcement against the tables above

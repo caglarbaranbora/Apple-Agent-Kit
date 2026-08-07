@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.app-intents
+artifact_type: reference
+title: App Intents
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for Apple's App Intents documentation, scoped to this domain's v1.
+domain: App Intents
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/documentation/appintents

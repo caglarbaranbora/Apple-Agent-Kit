@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.passkit
+artifact_type: reference
+title: PassKit
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for Apple's PassKit documentation, scoped to this domain's v1.
+domain: PassKit
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/documentation/passkit

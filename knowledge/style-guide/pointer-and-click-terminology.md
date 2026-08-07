@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.pointer-and-click-terminology
-type: knowledge
+artifact_type: knowledge
 title: Pointer and Click Terminology
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.style-guide.touch-gesture-verbs
   - knowledge.style-guide.ui-action-verbs
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

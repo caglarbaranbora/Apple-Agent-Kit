@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.xcode.archive-process
-type: knowledge
+artifact_type: knowledge
 title: Archive Process
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.xcode.schemes-and-targets
   - knowledge.xcode.export-options
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

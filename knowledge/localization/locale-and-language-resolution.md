@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.localization.locale-and-language-resolution
-type: knowledge
+artifact_type: knowledge
 title: Locale and Language Resolution
 version: 0.1.0
 status: Draft
@@ -38,7 +38,7 @@ related:
   - knowledge.localization.localized-resources-and-infoplist
   - knowledge.foundation.date-time-formatting
   - knowledge.foundation.measurement-and-unit-formatting
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

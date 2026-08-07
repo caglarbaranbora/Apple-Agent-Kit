@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.eventkit.authorization-and-access-levels
-type: knowledge
+artifact_type: knowledge
 title: Authorization and Access Levels
 version: 0.1.0
 status: Draft
@@ -31,7 +31,7 @@ references:
   - https://developer.apple.com/documentation/bundleresources/information-property-list/nsremindersfullaccessusagedescription
 depends_on: []
 related: []
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

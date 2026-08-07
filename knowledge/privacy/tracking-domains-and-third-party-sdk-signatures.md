@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.privacy.tracking-domains-and-third-party-sdk-signatures
-type: knowledge
+artifact_type: knowledge
 title: Tracking Domains and Third-Party SDK Signatures
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ related:
   - knowledge.privacy.collected-data-types-declaration
   - knowledge.app-tracking-transparency.status-and-idfa-access
   - knowledge.app-store-review-guidelines.privacy-manifest
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

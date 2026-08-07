@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.swiftdata.relationships-and-cascade-delete
-type: knowledge
+artifact_type: knowledge
 title: Relationships and Cascade Delete
 version: 0.1.0
 status: Draft
@@ -29,7 +29,7 @@ depends_on:
   - knowledge.swiftdata.model-definition
 related:
   - knowledge.swiftdata.model-context-crud
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

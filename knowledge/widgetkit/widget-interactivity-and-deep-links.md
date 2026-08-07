@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.widgetkit.widget-interactivity-and-deep-links
-type: knowledge
+artifact_type: knowledge
 title: Widget Interactivity and Deep Links
 version: 0.1.0
 status: Draft
@@ -30,7 +30,7 @@ depends_on:
   - knowledge.widgetkit.widget-declaration-and-families
 related:
   - knowledge.app-intents.intent-results-and-widget-hookup
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

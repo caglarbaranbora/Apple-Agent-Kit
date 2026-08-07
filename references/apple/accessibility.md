@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.accessibility
+artifact_type: reference
+title: Accessibility
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for Apple's Accessibility API documentation across SwiftUI and UIKit — implementation-conventions scope (labeling, traits,.
+domain: Accessibility
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/accessibility/

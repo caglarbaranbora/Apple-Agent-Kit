@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.passkit.pass-updates-and-push-registration
-type: knowledge
+artifact_type: knowledge
 title: Pass Updates and Push Registration
 version: 0.1.0
 status: Draft
@@ -27,7 +27,7 @@ references:
 depends_on:
   - knowledge.passkit.pass-content-and-required-fields
 related: []
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

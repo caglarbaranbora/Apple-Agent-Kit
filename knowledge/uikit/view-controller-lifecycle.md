@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.uikit.view-controller-lifecycle
-type: knowledge
+artifact_type: knowledge
 title: View Controller Lifecycle
 version: 0.1.0
 status: Draft
@@ -27,7 +27,7 @@ depends_on: []
 related:
   - knowledge.uikit.auto-layout-constraints
   - knowledge.uikit.view-controller-composition
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

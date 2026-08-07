@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.images
-type: knowledge
+artifact_type: knowledge
 title: Images
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.color
   - knowledge.human-interface-guidelines.icons
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

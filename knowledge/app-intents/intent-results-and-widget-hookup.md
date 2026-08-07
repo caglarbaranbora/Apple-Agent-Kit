@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.app-intents.intent-results-and-widget-hookup
-type: knowledge
+artifact_type: knowledge
 title: Intent Results and Widget Hookup
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ depends_on:
   - knowledge.app-intents.app-intent-declaration-and-parameters
 related:
   - knowledge.widgetkit.widget-interactivity-and-deep-links
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

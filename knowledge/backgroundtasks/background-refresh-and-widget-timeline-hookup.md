@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup
-type: knowledge
+artifact_type: knowledge
 title: Background Refresh and Widget Timeline Hookup
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ depends_on:
   - knowledge.backgroundtasks.task-execution-and-expiration-handling
 related:
   - knowledge.widgetkit.timeline-reloading-and-refresh-budget
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

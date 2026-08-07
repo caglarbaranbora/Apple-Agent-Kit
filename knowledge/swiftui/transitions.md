@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.swiftui.transitions
-type: knowledge
+artifact_type: knowledge
 title: Transitions
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.swiftui.animation-modifiers
   - knowledge.swiftui.view-identity
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

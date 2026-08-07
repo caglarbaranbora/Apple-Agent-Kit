@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.human-interface-guidelines-patterns
+artifact_type: reference
+title: Human Interface Guidelines — Patterns
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for a curated subset of Apple's Human Interface Guidelines Patterns section, iOS/iPadOS scope.
+domain: Human Interface Guidelines — Patterns
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/design/human-interface-guidelines/patterns

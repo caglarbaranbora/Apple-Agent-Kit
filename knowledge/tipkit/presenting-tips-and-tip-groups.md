@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.tipkit.presenting-tips-and-tip-groups
-type: knowledge
+artifact_type: knowledge
 title: Presenting Tips and Tip Groups
 version: 0.1.0
 status: Draft
@@ -33,7 +33,7 @@ depends_on:
   - knowledge.tipkit.tip-declaration-and-content
 related:
   - knowledge.tipkit.tip-options-and-app-configuration
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

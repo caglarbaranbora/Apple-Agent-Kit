@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.accessibility.reduce-transparency-increase-contrast
-type: knowledge
+artifact_type: knowledge
 title: Reduce Transparency and Increase Contrast
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ references:
 depends_on: []
 related:
   - knowledge.accessibility.reduce-motion
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

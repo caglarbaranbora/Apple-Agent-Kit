@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.color
-type: knowledge
+artifact_type: knowledge
 title: Color
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.dark-mode
   - knowledge.human-interface-guidelines.accessibility
   - knowledge.human-interface-guidelines.materials
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

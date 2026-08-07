@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.punctuation-and-typography-in-text
-type: knowledge
+artifact_type: knowledge
 title: Punctuation and Typography in Text
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.style-guide.capitalization-style-rules
   - knowledge.style-guide.units-of-measure
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

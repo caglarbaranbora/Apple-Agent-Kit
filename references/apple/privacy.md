@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.privacy
+artifact_type: reference
+title: Privacy Manifest
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for Apple's `PrivacyInfo.xcprivacy` privacy manifest file documentation, scoped to this domain's v1.
+domain: Privacy
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/documentation/bundleresources/privacy-manifest-files

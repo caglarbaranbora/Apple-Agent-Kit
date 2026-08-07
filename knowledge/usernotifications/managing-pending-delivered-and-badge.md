@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.usernotifications.managing-pending-delivered-and-badge
-type: knowledge
+artifact_type: knowledge
 title: Managing Pending, Delivered, and Badge
 version: 0.1.0
 status: Draft
@@ -27,7 +27,7 @@ depends_on: []
 related:
   - knowledge.usernotifications.local-notification-scheduling
   - knowledge.human-interface-guidelines.notifications
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

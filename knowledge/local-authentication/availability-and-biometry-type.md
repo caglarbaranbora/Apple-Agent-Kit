@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.local-authentication.availability-and-biometry-type
-type: knowledge
+artifact_type: knowledge
 title: Availability and Biometry Type
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.local-authentication.policy-evaluation
   - knowledge.local-authentication.error-handling
-updated: 2026-08-05
+last_updated: 2026-08-05
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.touch-gesture-verbs
-type: knowledge
+artifact_type: knowledge
 title: Touch Gesture Verbs
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ related:
   - knowledge.style-guide.presentation-surfaces
   - knowledge.style-guide.pointer-and-click-terminology
   - knowledge.style-guide.ui-action-verbs
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

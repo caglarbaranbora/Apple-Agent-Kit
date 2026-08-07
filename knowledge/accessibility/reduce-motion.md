@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.accessibility.reduce-motion
-type: knowledge
+artifact_type: knowledge
 title: Reduce Motion
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.accessibility.reduce-transparency-increase-contrast
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

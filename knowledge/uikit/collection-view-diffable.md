@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.uikit.collection-view-diffable
-type: knowledge
+artifact_type: knowledge
 title: Collection View Diffable Data Source
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.uikit.collection-view-compositional-layout
   - knowledge.uikit.cell-configuration
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

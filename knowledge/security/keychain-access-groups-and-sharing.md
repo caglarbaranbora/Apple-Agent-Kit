@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.security.keychain-access-groups-and-sharing
-type: knowledge
+artifact_type: knowledge
 title: Keychain Access Groups and Sharing
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ depends_on: []
 related:
   - knowledge.security.keychain-item-crud
   - knowledge.security.keychain-accessibility-levels
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

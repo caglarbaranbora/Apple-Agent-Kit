@@ -5,6 +5,30 @@ All notable changes to this project are documented in this file. The format is b
 The project uses a single version number (`README.md` and `npx/package.json` share the same version).
 
 ## [Unreleased]
+### Changed
+- **v1 finalization, Phase 1 — rule corpus reconciliation.** 19 governance documents rewritten and 2 new specifications added, making the repository's own rules self-consistent for the first time. No Knowledge Contract, Skill, or Reference changed, so no release version bump.
+  - One metadata dialect. `schemas/metadata.schema.md` becomes the single field authority: `artifact_type`/`last_updated` throughout, a common base plus per-type extensions, and a four-value `status` enum. The `Review` lifecycle state is removed — two of three documents already omitted it, and the pull request is the review.
+  - Relationship fields given distinct semantics, which is what made the dependency rules enforceable: `depends_on` is the binding edge and the only field subject to DAG and direction rules; `related` is a non-binding cross-reference; `routes` is a Skill's load instruction.
+  - New `docs/specifications/reference-spec.md`. References previously had no specification at all — the validator checked only a line cap, so an empty reference file passed. Reference line cap raised 80 → 98 to fit the metadata block Phase 2 adds.
+  - New `docs/specifications/skill-management.md` — Skill lifecycle: the creation trigger (topical coherence, not size), identity and flat layout, and the add/split/retire procedures.
+  - New `entry` artifact type for `skills/apple-agent-kit/SKILL.md`, the plugin entry point, which failed the Skill schema on 12 counts because it is not a domain Skill. Three roles are now distinct: a Skill routes Knowledge, a Workflow composes Skills, an Entry is the plugin entry point.
+  - Templates are no longer an architectural layer. Four layers everywhere: References → Knowledge → Skills → Workflows.
+  - `linking-model.md` and `routing-model.md` rewritten to describe the mechanisms that exist rather than ones never built — three linking conventions (metadata ids, wiki links, relative paths), and three-stage routing in which transitive resolution lives in the Knowledge layer via each Contract's `## Dependencies` section.
+  - `validation-model.md` now names what enforces each level. Levels 1-3 become code in Phase 3; Levels 4-5 are semantic and become a review checklist, because a heuristic implementation would produce noise that gets silenced.
+  - Corrected size limits: the Skill cap was declared as both 60 and 80 in different documents; it is 80.
+- **v1 finalization, Phase 2 — metadata migration.** The 232 Knowledge Contracts move to the single dialect (`type:` → `artifact_type:`, `updated:` → `last_updated:`), and the 31 References gain the metadata block they have never had. Mechanical; no rule, example, or citation changed.
+  - `scripts/validate_artifact.py` migrated in the same commit as the artifacts, so the repository is never in a state where the validator and the files disagree. Field requirements are now expressed as a common base plus per-type extensions, matching `schemas/metadata.schema.md` field for field.
+  - Reference validation exists for the first time: four required sections and a metadata block. Previously `--type reference` checked only a line cap, so an empty reference file passed.
+  - `## Dependencies` is now a required Knowledge section, since transitive resolution runs through it. All 232 Contracts already had one.
+  - `workflow` and `entry` types added to the validator ahead of their first artifacts, so the specifications and the code stay in step.
+  - Verified: 295/295 artifacts pass, 25 tests pass (up from 16).
+- **v1 finalization, Phase 3 — Validation Levels 1-3 become code.** Until now every architectural rule in the repository was enforced by reading. `docs/validation-model.md` named enforcement for Level 1 only, and the two repository-wide levels were aspirations. Both are now scripts with tests.
+  - New `scripts/validate_repo.py` — 13 repository-wide checks across Levels 2 and 3: id uniqueness, id/path agreement, `domain`/directory agreement, resolution of all three metadata edge kinds, wiki links, prose relative paths, `## Used By` completeness, orphan detection, Routing Index sync in both directions, `depends_on` direction rules, DAG verification, routing coverage, and the Workflow-composes-Skills rule. Every finding reports level, rule, artifact, and a remediation, as `validation-model.md` requires of a validator.
+  - `scripts/validate_artifact.py` completes Level 1 with the three checks the model listed but the script never made: `status`/`artifact_type` enum values, semantic-version format, and agreement between `artifact_type` and the artifact's location. A new `--all` mode validates every artifact in one pass, taking each type from its own metadata — the only way the entry point is validated as an entry rather than as a Skill.
+  - Two link conventions needed real rules rather than heuristics to avoid ~50 false positives. `## Used By` completeness is matched by **URL**, never by directory name, because Reference-to-Knowledge is many-to-many. Prose paths in `npx/README.md` resolve against the repository root, since that file is a published mirror of the root README; links inside code spans and fenced blocks are format examples and are not links.
+  - Found and fixed 6 defects no per-file check could see: two References omitted a cross-domain Contract from `## Used By` (`security.md` ← `local-authentication`, `widgetkit.md` ← `backgroundtasks`); three Reference `domain` fields carried a title rather than a domain name, a Phase 2 migration artifact; and `skills/apple-agent-kit/SKILL.md` carried no metadata at all — it is now a declared `entry`.
+  - One finding is left open by design: `knowledge/authentication/accessibility-forms.md` declares `domain: Accessibility` while sitting in `authentication`. Moving it is entangled with the `authentication` Skill retirement and belongs to Phase 4.
+  - Verified: 296/296 artifacts pass Level 1, 67 tests pass (up from 25).
 
 ## [2.1.0] - 2026-08-07
 ### Added

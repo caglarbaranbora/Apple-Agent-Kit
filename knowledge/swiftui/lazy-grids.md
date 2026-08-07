@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.swiftui.lazy-grids
-type: knowledge
+artifact_type: knowledge
 title: Lazy Grids
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.swiftui.stacks-and-spacing
   - knowledge.swiftui.geometry-reader-anti-pattern
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

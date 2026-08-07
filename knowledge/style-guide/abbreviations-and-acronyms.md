@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.abbreviations-and-acronyms
-type: knowledge
+artifact_type: knowledge
 title: Abbreviations and Acronyms
 version: 0.1.0
 status: Draft
@@ -21,7 +21,7 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.units-of-measure
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

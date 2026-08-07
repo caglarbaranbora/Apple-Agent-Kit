@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.authentication
+artifact_type: reference
+title: Authentication
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for the `authentication` domain.
+domain: Authentication
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/design/human-interface-guidelines/

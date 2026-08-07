@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.combine.operators-transforming-and-combining
-type: knowledge
+artifact_type: knowledge
 title: Operators — Transforming and Combining
 version: 0.1.0
 status: Draft
@@ -33,7 +33,7 @@ references:
 depends_on:
   - knowledge.combine.publishers-and-subscribers
 related: []
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

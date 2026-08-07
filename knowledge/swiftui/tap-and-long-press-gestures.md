@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.swiftui.tap-and-long-press-gestures
-type: knowledge
+artifact_type: knowledge
 title: Tap and Long-Press Gestures
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftui.gesture-composition
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

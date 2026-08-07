@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.swiftui.view-identity
-type: knowledge
+artifact_type: knowledge
 title: View Identity
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.swiftui.state-and-binding
   - knowledge.swiftui.view-composition
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.alerts
-type: knowledge
+artifact_type: knowledge
 title: Alerts
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ related:
   - knowledge.style-guide.presentation-surfaces
   - knowledge.style-guide.general-button-labels
   - knowledge.human-interface-guidelines.color
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

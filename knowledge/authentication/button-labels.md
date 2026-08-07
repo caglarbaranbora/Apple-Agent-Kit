@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.authentication.button-labels
-type: knowledge
+artifact_type: knowledge
 title: Button Labels
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ depends_on:
 related:
   - knowledge.authentication.accessibility-forms
   - knowledge.style-guide.general-button-labels
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

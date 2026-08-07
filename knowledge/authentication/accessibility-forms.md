@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.authentication.accessibility-forms
-type: knowledge
+artifact_type: knowledge
 title: Accessibility Forms
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on:
   - knowledge.authentication.button-labels
 related:
   - knowledge.authentication.authentication
-updated: 2026-07-29
+last_updated: 2026-07-29
 ```
 
 ## Intent

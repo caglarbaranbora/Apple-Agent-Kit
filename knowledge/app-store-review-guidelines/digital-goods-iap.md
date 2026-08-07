@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.app-store-review-guidelines.digital-goods-iap
-type: knowledge
+artifact_type: knowledge
 title: Digital Goods In-App Purchase
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.app-store-review-guidelines.external-payment-links
   - knowledge.app-store-review-guidelines.restore-purchases
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.widgetkit
+artifact_type: reference
+title: WidgetKit
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for Apple's WidgetKit documentation, scoped to this domain's v1.
+domain: WidgetKit
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/documentation/widgetkit
@@ -50,3 +64,4 @@ Out of scope for v1: Live Activities and the `ActivityKit` framework; watchOS co
 - knowledge/widgetkit/timeline-provider-and-entries.md ([[knowledge/widgetkit/timeline-provider-and-entries]])
 - knowledge/widgetkit/widget-interactivity-and-deep-links.md ([[knowledge/widgetkit/widget-interactivity-and-deep-links]])
 - knowledge/widgetkit/timeline-reloading-and-refresh-budget.md ([[knowledge/widgetkit/timeline-reloading-and-refresh-budget]])
+- knowledge/backgroundtasks/background-refresh-and-widget-timeline-hookup.md ([[knowledge/backgroundtasks/background-refresh-and-widget-timeline-hookup]])

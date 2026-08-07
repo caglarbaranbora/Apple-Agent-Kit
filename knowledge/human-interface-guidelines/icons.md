@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.icons
-type: knowledge
+artifact_type: knowledge
 title: Icons (Interface Icons)
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ related:
   - knowledge.human-interface-guidelines.app-icons
   - knowledge.human-interface-guidelines.right-to-left
   - knowledge.human-interface-guidelines.sf-symbols
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

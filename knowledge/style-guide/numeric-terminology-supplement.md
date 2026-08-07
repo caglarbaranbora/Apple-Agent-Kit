@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.numeric-terminology-supplement
-type: knowledge
+artifact_type: knowledge
 title: Numeric Terminology Supplement
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ related:
   - knowledge.style-guide.units-of-measure
   - knowledge.style-guide.international-formatting
   - knowledge.style-guide.international-style
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

@@ -1,11 +1,16 @@
 # Knowledge Contract Template
 
-Status: Draft Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Purpose
 
-Defines the canonical structure for every Knowledge Contract in Apple
-Agent Kit.
+Provides the canonical scaffold for a Knowledge Contract.
+
+This is an authoring convenience. The authority is
+../docs/specifications/knowledge-spec.md [[knowledge-spec]] and
+../schemas/metadata.schema.md [[metadata.schema]] — where this template and those
+documents disagree, this template is the defect.
 
 ## Required Structure
 
@@ -15,7 +20,7 @@ Every contract MUST include:
 
 ``` yaml
 id:
-type: knowledge
+artifact_type: knowledge
 title:
 version:
 status:
@@ -26,7 +31,7 @@ tags:
 references:
 depends_on:
 related:
-updated:
+last_updated:
 ```
 
 ### Intent
@@ -82,13 +87,14 @@ Reference authoritative Apple documentation.
 
 -   One contract solves one problem.
 -   No duplicated rules.
--   No orchestration logic.
--   No workflow descriptions.
--   No skill behavior.
+-   No orchestration logic — sequencing tasks is a Workflow's job.
+-   No skill behavior — routing is a Skill's job.
 -   Optimize for AI agents.
 -   Prefer concise, normative language.
 -   Use official Apple terminology.
 
 ## Validation
 
-A Knowledge Contract is valid only if all required sections are present.
+    python3 scripts/validate_artifact.py <path> --type knowledge
+
+Full criteria: ../docs/validation-model.md [[validation-model]].

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.security.keychain-accessibility-levels
-type: knowledge
+artifact_type: knowledge
 title: Keychain Accessibility Levels
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ related:
   - knowledge.security.keychain-item-crud
   - knowledge.security.keychain-access-groups-and-sharing
   - knowledge.local-authentication.keychain-biometric-binding
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

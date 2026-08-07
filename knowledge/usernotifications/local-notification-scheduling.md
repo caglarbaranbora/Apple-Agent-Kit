@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.usernotifications.local-notification-scheduling
-type: knowledge
+artifact_type: knowledge
 title: Local Notification Scheduling
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ related:
   - knowledge.usernotifications.authorization-request
   - knowledge.usernotifications.managing-pending-delivered-and-badge
   - knowledge.usernotifications.notification-actions-and-categories
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

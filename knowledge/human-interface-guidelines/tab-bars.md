@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.tab-bars
-type: knowledge
+artifact_type: knowledge
 title: Tab Bars
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.navigation-bars
   - knowledge.human-interface-guidelines.sf-symbols
   - knowledge.style-guide.navigation-controls
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

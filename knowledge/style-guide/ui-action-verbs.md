@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.ui-action-verbs
-type: knowledge
+artifact_type: knowledge
 title: UI Action Verbs
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ related:
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.instructional-voice-and-phrasing
   - knowledge.style-guide.connectivity-and-media-terminology
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent
