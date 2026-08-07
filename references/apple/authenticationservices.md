@@ -66,8 +66,10 @@ Passkeys / WebAuthn APIs
 `ASAuthorizationSecurityKeyPublicKeyCredentialProvider`); server-side JWT
 signature/claims verification of the identity token (a backend
 responsibility); and "Sign in with Apple" button UI/HIG design
-conventions and sign-in terminology/UX, owned by the `authentication`
-domain. General Keychain CRUD mechanics are owned by the `security`
+conventions, owned by the `human-interface-guidelines` domain, and
+sign-in terminology, owned by the `style-guide` domain. Composing those
+with this domain is `workflow.authentication`'s job.
+General Keychain CRUD mechanics are owned by the `security`
 domain; this domain owns the Sign in with Apple API implementation angle
 only.
 

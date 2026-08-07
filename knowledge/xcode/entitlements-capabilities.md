@@ -45,7 +45,7 @@ other.
 ### Excluded
 
 -   Which capability a feature needs at a design/architecture level — implementation-only here
--   Sign in with Apple UX/flow — see the `authentication` domain
+-   Sign in with Apple UX/flow — see the `authenticationservices` domain
 
 ## Rules
 

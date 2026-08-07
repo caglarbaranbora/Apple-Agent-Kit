@@ -365,6 +365,86 @@ class TestLevel2(RepoTestCase):
         )
         self.assertRule("index-sync")
 
+    def test_prose_hand_off_to_a_domain_that_does_not_exist(self):
+        # The shape both defects Phase 4 left behind had: an Excluded line
+        # pointing at a domain, in prose rather than in an edge field.
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            "## Rules",
+            "## Notes\n\n-   Sign-in wording -- see the `ghost` domain\n\n## Rules",
+        )
+        self.assertRule("prose-domain-resolves")
+
+    def test_bare_mention_of_a_retired_domain(self):
+        # Not code-spanned, so only the retirement register catches it.
+        self.repo.write(
+            "docs/architecture/domain-map.md",
+            "| Domain | Status |\n|---|---|\n"
+            "| ghost | **Retired 2026-08-07** |\n",
+        )
+        self.repo.edit(
+            "skills/example/SKILL.md",
+            "## Routing",
+            "## Routing\n\nFor sign-in wording see the ghost skill.\n",
+        )
+        self.assertRule("prose-domain-resolves")
+
+    def test_hyphenated_adjective_before_domain_is_not_a_name(self):
+        # "concurrency-focused domain" is English. Reporting it was the whole
+        # false-positive class this check had to survive.
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            "## Rules",
+            "## Notes\n\n-   This is a concurrency-focused domain, and the\n"
+            "    per-domain skill split follows from that.\n\n## Rules",
+        )
+        self.assertEqual([str(f) for f in self.repo.findings()], [])
+
+    def test_a_workflow_does_not_make_a_retired_domain_name_resolve(self):
+        # `workflow.authentication` took the name of the domain Phase 4
+        # retired. Counting Workflow names as domain names made this check
+        # pass on the very hand-offs it was written to catch, and every unit
+        # test still went green -- only the real defect exposed it.
+        self.repo.write(
+            "workflows/ghost/WORKFLOW.md",
+            "# Ghost\n\n## Metadata\n\n``` yaml\nid: workflow.ghost\n"
+            "artifact_type: workflow\ntitle: Ghost\nversion: 0.1.0\n"
+            "status: Draft\nowner: Apple Agent Kit\nsummary: Composes two.\n"
+            "skills:\n  - skill.example.foundations\n  - skill.other.foundations\n"
+            "related: []\nlast_updated: 2026-08-07\n```\n",
+        )
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            "## Rules",
+            "## Notes\n\n-   Sign-in wording -- see the `ghost` domain\n\n## Rules",
+        )
+        self.assertRule("prose-domain-resolves")
+
+    def test_a_mention_of_an_existing_workflow_is_accepted(self):
+        self.repo.write(
+            "workflows/ghost/WORKFLOW.md",
+            "# Ghost\n\n## Metadata\n\n``` yaml\nid: workflow.ghost\n"
+            "artifact_type: workflow\ntitle: Ghost\nversion: 0.1.0\n"
+            "status: Draft\nowner: Apple Agent Kit\nsummary: Composes two.\n"
+            "skills:\n  - skill.example.foundations\n  - skill.other.foundations\n"
+            "related: []\nlast_updated: 2026-08-07\n```\n",
+        )
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            "## Rules",
+            "## Notes\n\n-   Composing these is the `ghost` workflow's job.\n\n## Rules",
+        )
+        self.assertNotIn("prose-domain-resolves", self.repo.rules())
+
+    def test_domain_map_may_still_name_what_it_retired(self):
+        self.repo.write(
+            "docs/architecture/domain-map.md",
+            "| Domain | Status |\n|---|---|\n"
+            "| ghost | **Retired 2026-08-07** |\n\n"
+            "The `ghost` domain was retired; `example` absorbed it.\n",
+        )
+        self.assertEqual([str(f) for f in self.repo.findings()], [])
+
     def test_entry_needs_no_routing_index_row(self):
         # The entry point points at the Routing Index; it is not listed in it.
         self.repo.write(

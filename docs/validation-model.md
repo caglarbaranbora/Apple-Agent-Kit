@@ -59,6 +59,9 @@ Checks:
 - Ids agree with paths, and `domain` agrees with the directory
 - Every metadata edge (`depends_on`, `related`, `routes`) resolves
 - Every wiki link and relative path resolves
+- Prose that names a `domain`, `skill`, or `workflow` names one that exists — a
+  hand-off written in prose routes an agent exactly as far as one written in an
+  edge field, so it is held to the same standard
 - A Reference's `## Used By` lists every Contract that cites one of its `## Source`
   URLs — matched by URL, never by directory name, because Reference-to-Knowledge is
   many-to-many; see architecture/linking-model.md [[linking-model]]

@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.0.0
+Version: 1.1.0
 Date: 2026-08-07
 
 ## Goal
@@ -231,8 +231,8 @@ rebuild per finding. The Workflow states the reordering and its reason inline.
 
 ## Phase 5 — Tier 1 content completion
 
-This is the goal, not a tail. The per-domain scope is **not yet decided** and requires
-its own grilling round before Phase 5 is planned. Recorded here so it cannot be lost.
+This is the goal, not a tail. Its scope was decided by the grilling round recorded
+below, held 2026-08-07 after Phase 4 merged.
 
 Gaps `docs/architecture/domain-map.md` declares against Tier 1:
 
@@ -247,18 +247,102 @@ Gaps `docs/architecture/domain-map.md` declares against Tier 1:
 | `xcode` | `xcodebuild` CLI, CI signing automation, SwiftPM build configuration — **plus two inherited hand-offs**: Test Plans and code coverage (deferred by `testing`), project language configuration and `.xcloc`/XLIFF (deferred by `localization`) |
 | `accessibility`, `style-guide`, `local-authentication`, `app-tracking-transparency` | none — complete as declared |
 
-Two questions must be grilled per domain before Phase 5 is planned:
+### Scope, decided 2026-08-07
 
-1. Which of these are genuinely required for Tier 1 to be *complete*, and which are
-   correctly-scoped v1 exclusions that should be restated as permanent rather than
-   deferred? "Fully complete" is the goal, so the default answer is *build it* — but a
-   deferral that is genuinely right (Storyboard/XIB was scoped out on purpose, not
-   postponed) should be recorded as a decision, not silently carried.
-2. What should be **removed** from each Skill — the question that opened this whole
-   effort and has not yet been answered for any domain.
+The grilling round this section gated has been held. Its outcome:
 
-`xcode` carries the heaviest load: its own three gaps plus two hand-offs other domains
-have already deferred to it. It is the strongest candidate to be scoped first.
+**"Tier 1 complete" means task-complete.** A domain is complete when the tasks its
+Skill claims to route can actually be carried out. Coverage-completeness — a Contract
+for every topic the map calls unbuilt — was rejected as unbounded.
+
+**A gap is required if any of four clauses holds:**
+
+| | Clause |
+|---|---|
+| (i) | Another artifact defers to it — a broken edge inside the repository |
+| (ii) | The domain's own Skill `description`/triggers already advertise the surface |
+| (iii) | An agent editing an *existing* iOS app hits it |
+| (iv) | Its silence causes concrete harm — App Store rejection, data leak, inaccessible UI — applied **per rule**, and only where the rule meets Tier 1's own bar of "nearly every iOS app" |
+
+Otherwise the gap is a **permanent exclusion**. A gap that is merely *vertical* is
+moved to Tier 3 instead, which is not the same thing as excluding it.
+
+Clause (iii) is the consequential one. The repository is greenfield-biased — iOS 17+,
+SwiftUI-first, async/await-only — while most of the declared gaps are brownfield
+surface. `uikit`'s existence is itself a brownfield bet: a new iOS 17+ app has no
+reason to reach for UIKit, so the domain exists because agents work in codebases that
+already do. Excluding legacy surface from it contradicts why it is there.
+
+Clause (iv) was added because (i)-(iii) produced a mechanically correct but
+indefensible result: App Store Review Guideline 1.x (Safety) would have been recorded
+as a permanent exclusion, leaving the kit silent on the single largest category of App
+Store rejections. The Tier 1 filter inside (iv) is what keeps it bounded — 1.2
+(user-generated content) is near-universal; 1.3 (Kids), 1.4 (physical harm), 5.3
+(gambling), 5.4 (VPN) and 5.5 (MDM) are vertical and move to Tier 3.
+
+**Two corrections to the gap table above**, found while applying the test:
+
+- `uikit`'s Storyboard/XIB entry is not a gap. `skills/uikit/SKILL.md` already records
+  it as "permanently out of scope", distinct from the four items it calls "deferred to
+  future scope". The table flattened a distinction the Skill had drawn.
+- `swiftui`'s `ObservableObject` entry is an over-promise, not merely a gap: the
+  Skill's `description` trigger list names `ObservableObject`, pulling the task in,
+  and the Stop Conditions then refuse it.
+
+Ownership decided: Combine's `dataTaskPublisher` goes to `networking`, not `combine`.
+Routing matches tasks, not frameworks, and an agent asking about it is making an HTTP
+request. This costs `combine` a cross-domain note and keeps Phase 5 inside Tier 1.
+
+### Phase 5's shape
+
+`docs/architecture/domain-map.md` states the build rule: "One domain is fully finished
+(Reference → Knowledge → Skill → Validation) before the next domain starts." That
+governs. **The framing of Phases 4-6 as one pull request each does not survive it** —
+Phase 5 touches six domains and ships as one PR per domain.
+
+| PR | Content | ~KC |
+|---|---|---|
+| 0 | Retired-domain prose hand-offs, and the check that catches them | 0 |
+| 1 | Scope-vocabulary revision: `Excluded (permanent)` vs `Deferred (planned)`, enforced; the two corrections above; the Tier 3 reclassifications | 0 |
+| 2 | `xcode` — Test Plans and coverage, `.xcloc`/XLIFF and project language *(both inherited)* | 4-5 |
+| 3 | `accessibility` — validation errors announced to assistive technologies | 1-2 |
+| 4 | `swiftui` — `ObservableObject`/`NavigationView` migration | 2 |
+| 5 | `networking` — completion-handler, `URLSessionDelegate`, `dataTaskPublisher` | 5-6 |
+| 6 | `uikit` — gesture recognizers, Core Animation and custom transitions, SwiftUI interop | 6-7 |
+| 7 | `app-store-review-guidelines` — 1.2, 1.5, 1.6, 4.1, 4.8, 5.2 | 8-10 |
+
+Broken edges first, largest last. PRs 0 and 1 add no content; they make the base
+truthful before anything is built on it.
+
+Guideline 4.8 satisfies clause (i) as well as (iv): `workflow.authentication`, shipped
+in Phase 4, walks an agent through building a sign-in screen across five domains and
+none of them mentions that omitting Sign in with Apple is a rejection under 4.8. The
+Workflow does not know the rule that can reject its own output.
+
+**Deliberately left open**, to be settled when PR 7 is scoped rather than assumed
+here: whether Guideline 4.4 (extensions) satisfies clause (i) via `widgetkit`; whether
+1.1 belongs in Tier 1 once 1.2 covers its actionable half; and the classification of
+4.5, 4.6, 4.7 and 5.6.
+
+### Phase 5b — removal
+
+The second question — what should be **removed** from each Skill — is answered in its
+own phase, after Tier 1 is content-complete, and Phase 6 moves behind it.
+
+Removal has no mechanical detector. The "names no API" heuristic that justified
+retiring `accessibility-forms` in Phase 4 does not generalize: 70 of the 176 Tier 1
+Contracts name no API, and `human-interface-guidelines` (design), `style-guide`
+(wording), `app-store-review-guidelines` (policy) and much of `xcode` (GUI
+configuration) are legitimately not API domains. The real standard is that a Contract
+be decidable in its own domain's terms, and no script decides that — Levels 4-5 say so
+already.
+
+Sequencing is the argument for a separate phase: a Contract's redundancy is only
+visible once its neighbours exist. Whether `human-interface-guidelines`'
+`touchscreen-gestures` is duplicated cannot be judged before `uikit`'s gesture
+Contracts are written. `human-interface-guidelines` (33 Contracts) and `style-guide`
+(25) carry the read-through and neither has a content gap, so nothing else brings a
+PR to them.
 
 ## Validation plan
 
@@ -281,5 +365,7 @@ have already deferred to it. It is the strongest candidate to be scoped first.
   citations) both looked broken and were not.
 - **Traceability (Level 4) cannot be regexed.** URL depth does not separate a useless
   hub from a real framework landing page. It stays a review-checklist item.
-- **Phase 5's scope is undecided**, and "fully complete Tier 1" could expand without a
-  bound. The grilling round gated in front of it exists to set that bound explicitly.
+- ~~**Phase 5's scope is undecided**~~ — retired 2026-08-07. The grilling round was
+  held and the bound is the four-clause test above. The residual risk moved rather
+  than closed: clause (iv) is the one that admits judgment, which is why it is applied
+  per rule and filtered by Tier 1's own definition rather than per guideline block.
