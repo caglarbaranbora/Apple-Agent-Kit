@@ -1,110 +1,144 @@
 # Validation Model
 
-Status: Draft Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Purpose
 
-Define the validation requirements that every artifact and architectural
-change must satisfy before approval.
+Define the validation requirements every artifact and architectural change must
+satisfy before approval, and name what enforces each one.
+
+A level with no named enforcement is an aspiration, not a gate.
 
 ## Validation Levels
 
-### Level 1 --- Structural
+### Level 1 — Structural
+
+Per file.
 
 Checks:
 
--   Metadata schema compliance
--   Naming convention compliance
--   Valid lifecycle state
--   Required fields present
+- Metadata schema compliance — required fields for the artifact's type
+- Enum values valid — `artifact_type` and `status`
+- Version format valid (semantic version)
+- Required sections present
+- Size limit respected
+- `artifact_type` agrees with the artifact's location
 
 Size limits:
 
--   Knowledge Contract: 150 lines (see docs/specifications/knowledge-spec.md)
--   Skill: 60 lines (see docs/specifications/skill-spec.md)
--   Reference: 80 lines (no dedicated spec doc; limit defined here)
+| Artifact | Limit |
+|---|---|
+| Knowledge Contract | 150 lines |
+| Skill | 80 lines |
+| Workflow | 80 lines |
+| Reference | 98 lines |
+
+Enforced by: `scripts/validate_artifact.py`
 
 Blocking: Yes
 
 ------------------------------------------------------------------------
 
-### Level 2 --- Repository Integrity
+### Level 2 — Repository Integrity
+
+Repository-wide.
 
 Checks:
 
--   Relative links resolve
--   Artifact IDs are unique
--   Dependency graph is acyclic
--   No orphaned required artifacts
+- Artifact ids are unique
+- Ids agree with paths, and `domain` agrees with the directory
+- Every metadata edge (`depends_on`, `related`, `routes`) resolves
+- Every wiki link and relative path resolves
+- No orphaned artifacts
+- `skills/index.md` agrees with `skills/` and `workflows/` in both directions
+
+Enforced by: `scripts/validate_repo.py`
 
 Blocking: Yes
 
 ------------------------------------------------------------------------
 
-### Level 3 --- Architectural
+### Level 3 — Architectural
+
+Repository-wide.
 
 Checks:
 
--   Layer responsibilities respected
--   Dependency rules respected
--   Routing rules respected
--   No forbidden cross-layer references
+- Layer responsibilities respected
+- Dependency direction rules respected, per architecture/dependency-graph.md
+  [[dependency-graph]]
+- `depends_on` graph is acyclic
+- Routing rules respected — every routed id appears in the Skill's `## Routing`; no
+  Skill routes to a Skill; every Workflow has a Routing Index row
+- No forbidden cross-layer references
+
+Enforced by: `scripts/validate_repo.py`
 
 Blocking: Yes
 
 ------------------------------------------------------------------------
 
-### Level 4 --- Domain
+### Level 4 — Domain
+
+Semantic. Checked by reading, in review. No script can decide these, and a heuristic
+implementation would produce noise that gets silenced.
 
 Checks:
 
--   Knowledge contracts are atomic
--   No duplicated rules
--   References point to authoritative sources
--   Skills contain no domain knowledge
+- Knowledge Contracts are atomic — one responsibility each
+- No duplicated rules across contracts
+- References point to authoritative sources, and each citation is specific enough to
+  authorize the rule it backs. **URL shape does not prove specificity** — a hub page
+  and a real framework landing page can sit at the same path depth.
+- Skills contain no domain knowledge
+- Excluded sections record real boundaries rather than assumed ones
+
+Enforced by: review checklist
 
 Blocking: Yes
 
 ------------------------------------------------------------------------
 
-### Level 5 --- Vertical Slice
+### Level 5 — Vertical Slice
+
+End-to-end exercise, run against a real task rather than a file.
 
 Checks:
 
--   End-to-end routing succeeds
--   Required knowledge is sufficient
--   Context is minimized
--   Architecture behaves as specified
+- Routing succeeds from task to Knowledge without repository search
+- The routed Knowledge is sufficient to complete the task
+- Context is minimized — no artifact was loaded that the task did not need
+- Architecture behaves as specified
+
+Enforced by: review, recorded under `validation/slices/`
 
 Blocking: Required before architecture approval.
 
 ## Validation Outcomes
 
-PASS
+**PASS** — the artifact satisfies the level.
 
-Artifact satisfies all validation levels.
+**FAIL** — the artifact cannot progress to Approved.
 
-FAIL
-
-Artifact cannot progress to Approved.
-
-WARNING
-
-Non-blocking recommendation. Does not prevent approval.
+**WARNING** — non-blocking recommendation. Does not prevent approval.
 
 ## Validator Responsibilities
 
 A validator MUST report:
 
--   Validation level
--   Rule violated
--   Artifact ID
--   Suggested remediation
+- Validation level
+- Rule violated
+- Artifact id or path
+- Suggested remediation
 
 ## Approval Gate
 
-An artifact may be approved only if:
+An artifact may be approved only when:
 
--   All blocking validations pass.
--   No critical architectural violations exist.
--   Required reviews are complete.
+- Levels 1-3 pass mechanically.
+- The Level 4-5 checklist is complete.
+- No critical architectural violations exist.
+- Required reviews are complete.
+
+See artifact-lifecycle.md [[artifact-lifecycle]].

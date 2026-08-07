@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file. The format is b
 The project uses a single version number (`README.md` and `npx/package.json` share the same version).
 
 ## [Unreleased]
+### Changed
+- **v1 finalization, Phase 1 — rule corpus reconciliation.** 19 governance documents rewritten and 2 new specifications added, making the repository's own rules self-consistent for the first time. No Knowledge Contract, Skill, or Reference changed, so no release version bump.
+  - One metadata dialect. `schemas/metadata.schema.md` becomes the single field authority: `artifact_type`/`last_updated` throughout, a common base plus per-type extensions, and a four-value `status` enum. The `Review` lifecycle state is removed — two of three documents already omitted it, and the pull request is the review.
+  - Relationship fields given distinct semantics, which is what made the dependency rules enforceable: `depends_on` is the binding edge and the only field subject to DAG and direction rules; `related` is a non-binding cross-reference; `routes` is a Skill's load instruction.
+  - New `docs/specifications/reference-spec.md`. References previously had no specification at all — the validator checked only a line cap, so an empty reference file passed. Reference line cap raised 80 → 98 to fit the metadata block Phase 2 adds.
+  - New `docs/specifications/skill-management.md` — Skill lifecycle: the creation trigger (topical coherence, not size), identity and flat layout, and the add/split/retire procedures.
+  - New `entry` artifact type for `skills/apple-agent-kit/SKILL.md`, the plugin entry point, which failed the Skill schema on 12 counts because it is not a domain Skill. Three roles are now distinct: a Skill routes Knowledge, a Workflow composes Skills, an Entry is the plugin entry point.
+  - Templates are no longer an architectural layer. Four layers everywhere: References → Knowledge → Skills → Workflows.
+  - `linking-model.md` and `routing-model.md` rewritten to describe the mechanisms that exist rather than ones never built — three linking conventions (metadata ids, wiki links, relative paths), and three-stage routing in which transitive resolution lives in the Knowledge layer via each Contract's `## Dependencies` section.
+  - `validation-model.md` now names what enforces each level. Levels 1-3 become code in Phase 3; Levels 4-5 are semantic and become a review checklist, because a heuristic implementation would produce noise that gets silenced.
+  - Corrected size limits: the Skill cap was declared as both 60 and 80 in different documents; it is 80.
 
 ## [2.1.0] - 2026-08-07
 ### Added

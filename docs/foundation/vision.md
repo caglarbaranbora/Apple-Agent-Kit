@@ -1,5 +1,8 @@
 # Vision
 
+Status: Approved
+Version: 1.0.0
+
 ## Purpose
 
 Apple Agent Kit exists to bridge the gap between Apple's extensive

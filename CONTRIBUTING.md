@@ -8,10 +8,11 @@ By submitting a pull request, you agree that your contribution is licensed to th
 
 ## Before opening a PR
 
-1. Read `CLAUDE.md` for repo dev conventions (validation scripts, file naming, layer order).
-2. Read `AGENTS.md` if your change touches how Skills/Knowledge Contracts route — it defines the layer order (References → Knowledge → Skills → Workflows) and what's forbidden (e.g. embedding domain knowledge inside Skills, duplicating Knowledge Contracts).
-3. Run the validation scripts under `scripts/` against any new or changed artifact before opening the PR.
-4. Keep changes scoped to one domain/vertical slice per PR where possible.
+1. Read `CLAUDE.md` for repo dev conventions (validation scripts, file naming, layer order) and the table of normative specs.
+2. Read `AGENTS.md` if your change touches how Skills/Knowledge Contracts route — it defines the layer order (References → Knowledge → Skills → Workflows) and what's forbidden (e.g. embedding domain knowledge inside Skills, duplicating Knowledge Contracts, routing from one Skill to another).
+3. Read `docs/specifications/skill-management.md` if you're adding a Knowledge Contract to an existing Skill, splitting a Skill, or retiring one — it lists everything that has to change in the same commit.
+4. Run the validation scripts under `scripts/` against any new or changed artifact before opening the PR.
+5. Keep changes scoped to one domain/vertical slice per PR where possible.
 
 ## What makes a good contribution
 
