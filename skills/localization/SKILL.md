@@ -3,7 +3,7 @@ name: localization
 description: Route Apple-platform localization tasks to the correct Knowledge Contracts -- String Catalog (.xcstrings) mechanics, compiler-driven extraction and the string-literal requirement it depends on, translator comments, the New/Needs Review/Translated/Stale states, explicit keys vs. value-as-key, and manually-managed entries; the localized-string API surface (String(localized:), LocalizedStringResource for deferred cross-process resolution, LocalizedStringKey and SwiftUI's implicit Text literal localization, Text(verbatim:), AttributedString(localized:), format specifiers, NSLocalizedString); plural and device variation, the CLDR categories with other required, substitutions, and legacy .stringsdict; Locale and language resolution (current vs. autoupdatingCurrent, preferredLanguages vs. preferredLocalizations, Locale.Language/Locale.Region, CFBundleDevelopmentRegion, the .lproj fallback chain); layout-direction and RTL APIs including SF Symbols' name-driven mirroring; and localized resources (InfoPlist.xcstrings, .lproj structure, asset-catalog localization, Bundle.module, defaultLocalization). Use when writing String(localized:), LocalizedStringResource, LocalizedStringKey, Text("..."), Text(verbatim:), AttributedString(localized:), NSLocalizedString, adding or editing a .xcstrings file, varying a string by plural or device, editing a .stringsdict, reading Locale.current/autoupdatingCurrent/preferredLanguages/language/region, Bundle.preferredLocalizations/localizations/localizedString(forKey:value:table:), CFBundleDevelopmentRegion/CFBundleDisplayName/CFBundleName, InfoPlist.xcstrings, .lproj directories, Bundle.module, defaultLocalization, \.layoutDirection, flipsForRightToLeftLayoutDirection, semanticContentAttribute, effectiveUserInterfaceLayoutDirection, imageFlippedForRightToLeftLayoutDirection, or characterDirection. Baseline is Xcode 16+ with an iOS 17+ API surface. v1 excludes Xcode project-language configuration and .xcloc/XLIFF export-import (xcode domain), the iOS 18 Translation framework, source-copy wording rules (style-guide), date/number/measurement formatting (foundation), RTL visual-design guidance (human-interface-guidelines), App Store Connect localized metadata, APNs loc-key payloads, App Shortcuts phrase localization (app-intents), and macOS/watchOS/tvOS-specific behavior. Triggers on localization, localize, String Catalog, xcstrings, stringsdict, pluralization, CLDR, Locale, preferredLanguages, preferredLocalizations, lproj, InfoPlist.xcstrings, Bundle.module, layoutDirection, RTL, right-to-left, semanticContentAttribute, characterDirection.
 id: skill.localization.foundations
 title: Localization — Foundations
-version: 0.1.0
+version: 0.2.0
 status: Draft
 artifact_type: skill
 domain: Localization
@@ -65,8 +65,8 @@ Stop and report if the requested topic has no matching Knowledge Contract
 in knowledge/localization/ -- do not guess or fall back to general
 knowledge.
 
--   Adding a language to an Xcode project, target localization settings, and
-    `.xcloc`/XLIFF export-and-import — owned by `xcode`, Deferred there
+-   Adding a language to an Xcode project and the `.xcloc`/XLIFF
+    export-and-import round trip — owned by `xcode`
 -   The iOS 18 Translation framework (`TranslationSession`, `.translationTask`,
     `.translationPresentation`) — Excluded; real and documented, so neither
     fabricate guidance for it nor claim it does not exist

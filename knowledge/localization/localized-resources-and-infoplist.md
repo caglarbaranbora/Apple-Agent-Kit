@@ -1,7 +1,7 @@
 # Localized Resources and Info.plist
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 0.1.0
 id: knowledge.localization.localized-resources-and-infoplist
 artifact_type: knowledge
 title: Localized Resources and Info.plist
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines localization of everything that is not a source-code string -- Info.plist values which live in InfoPlist.strings rather than Info.plist itself, the app name keys and the 15-character CFBundleName cap, lproj structure and the rule that a non-localized resource shadows every localized variant, per-asset catalog localization, Swift-package defaultLocalization and Bundle.module, and non-main-bundle lookup whose missing-key result is the key itself.
@@ -59,7 +59,7 @@ Sourcing note: Apple's current Xcode Localization documentation hub does not cov
 
 - Source-code string extraction and catalog states -- see `string-catalogs-and-extraction`; which string API to call -- see `localized-string-apis`; which localization the app resolved to -- see `locale-and-language-resolution`
 - The English wording of a permission usage string -- owned by `knowledge.app-store-review-guidelines.permission-usage-strings`; this contract owns getting that string translated
-- Adding a language to the project and `.xcloc`/XLIFF export-import -- Xcode project configuration, deferred to the `xcode` domain
+- Adding a language to the project -- owned by `knowledge.xcode.project-localizations`; `.xcloc`/XLIFF export-import -- owned by `knowledge.xcode.localization-export-import`
 
 ## Rules
 

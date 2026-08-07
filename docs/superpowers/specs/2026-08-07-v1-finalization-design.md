@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.1.0
+Version: 1.2.0
 Date: 2026-08-07
 
 ## Goal
@@ -244,7 +244,7 @@ Gaps `docs/architecture/domain-map.md` declares against Tier 1:
 | `uikit` | Storyboard/XIB, gesture recognizers, Core Animation, custom transitions, SwiftUI interop |
 | `sf-symbols` | Symbol effects/animations, Symbol Composer authoring |
 | `networking` | Completion-handler APIs, Combine, `URLSessionDelegate` background/progress/TLS |
-| `xcode` | `xcodebuild` CLI, CI signing automation, SwiftPM build configuration — **plus two inherited hand-offs**: Test Plans and code coverage (deferred by `testing`), project language configuration and `.xcloc`/XLIFF (deferred by `localization`) |
+| `xcode` | `xcodebuild` CLI, CI signing automation, SwiftPM build configuration — **plus two inherited hand-offs**: Test Plans and code coverage (deferred by `testing`), project language configuration and `.xcloc`/XLIFF (deferred by `localization`). **Both closed in PR 2, 2026-08-07.** |
 | `accessibility`, `style-guide`, `local-authentication`, `app-tracking-transparency` | none — complete as declared |
 
 ### Scope, decided 2026-08-07
@@ -304,7 +304,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 |---|---|---|
 | 0 | Retired-domain prose hand-offs, and the check that catches them | 0 |
 | 1 | Scope-vocabulary revision: `Excluded (permanent)` vs `Deferred (planned)`, enforced; the two corrections above; the Tier 3 reclassifications | 0 |
-| 2 | `xcode` — Test Plans and coverage, `.xcloc`/XLIFF and project language *(both inherited)* | 4-5 |
+| 2 | `xcode` — Test Plans and coverage, `.xcloc`/XLIFF and project language *(both inherited)* — **shipped 2026-08-07, 4 KC** | 4-5 |
 | 3 | `accessibility` — validation errors announced to assistive technologies | 1-2 |
 | 4 | `swiftui` — `ObservableObject`/`NavigationView` migration | 2 |
 | 5 | `networking` — completion-handler, `URLSessionDelegate`, `dataTaskPublisher` | 5-6 |
@@ -313,6 +313,26 @@ Phase 5 touches six domains and ships as one PR per domain.
 
 Broken edges first, largest last. PRs 0 and 1 add no content; they make the base
 truthful before anything is built on it.
+
+### Observed in PR 2
+
+The estimate held: 4 Contracts, at the low end of 4-5. Two things the plan did not
+anticipate, both worth carrying into PRs 3-7.
+
+`references/apple/xcode.md` carried a single hub URL while its eight Contracts cited
+deep pages. `used-by-complete` matches by URL, so the domain's entire reverse index was
+outside the check — `## Used By` was hand-maintained prose that happened to be right.
+Listing the real source URLs put it under enforcement, which immediately found a missing
+row. **Before adding Contracts to a domain, check whether its Reference indexes URLs at
+all**; a Reference that indexes nothing makes the check silently vacuous for that domain,
+which is the PR 0 lesson in a different place.
+
+`localization` and `testing` had both marked this surface `Deferred`, and PR 1 had added
+the matching `Deferred` markers on `xcode`'s side. Building it invalidated all of them at
+once — four scope statements across two Skills and two Contracts. **A PR that builds a
+deferred topic must revisit every artifact that deferred it**, and nothing mechanical
+catches this: `scope-vocabulary` verifies that a named domain exists, not that a topic
+inside it is still unbuilt.
 
 Guideline 4.8 satisfies clause (i) as well as (iv): `workflow.authentication`, shipped
 in Phase 4, walks an agent through building a sign-in screen across five domains and
