@@ -41,6 +41,7 @@ Maps implementation tasks to the correct Skill.
 | Core Data, NSManagedObject, NSManagedObjectContext, NSPersistentContainer, NSPersistentStoreDescription, NSEntityDescription, NSFetchRequest, NSPredicate, NSSortDescriptor, @FetchRequest, FetchedResults, NSRelationshipDescription, NSDeleteRule, viewContext, xcdatamodeld, Codegen, @NSManaged | skills/core-data/SKILL.md |
 | Combine, Publisher, Subscriber, AnyCancellable, @Published, ObservableObject, objectWillChange, PassthroughSubject, CurrentValueSubject, sink, assign, store(in:), combineLatest, debounce, removeDuplicates | skills/combine/SKILL.md |
 | XCTest, XCTestCase, XCTAssert, XCTSkip, Swift Testing, @Test, #expect, #require, @Suite, Tag, parameterized test, XCUITest, XCUIApplication, XCUIElement, accessibilityIdentifier, XCTestExpectation, fulfillment | skills/testing/SKILL.md |
+| localization, localize, String Catalog, .xcstrings, String(localized:), LocalizedStringResource, LocalizedStringKey, NSLocalizedString, Text(verbatim:), AttributedString(localized:), pluralization, stringsdict, NSStringLocalizedFormatKey, CLDR plural, Locale, Locale.current, autoupdatingCurrent, preferredLanguages, preferredLocalizations, Locale.Language, characterDirection, lproj, CFBundleDevelopmentRegion, CFBundleDisplayName, InfoPlist.xcstrings, Bundle.module, defaultLocalization, layoutDirection, RTL, right-to-left, semanticContentAttribute, flipsForRightToLeftLayoutDirection, effectiveUserInterfaceLayoutDirection | skills/localization/SKILL.md |
 
 ## Resolution Rules
 

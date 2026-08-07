@@ -5,6 +5,22 @@ All notable changes to this project are documented in this file. The format is b
 The project uses a single version number (`README.md` and `npx/package.json` share the same version).
 
 ## [Unreleased]
+### Added
+- `localization` domain — 1 Reference, 6 Knowledge Contracts, 1 Skill. **Seventeenth and final Tier 2 domain; Tier 2 is now complete.**
+  - `string-catalogs-and-extraction` — `.xcstrings` mechanics, compiler-driven extraction and the string-literal requirement it depends on, translator comments, the New/Needs Review/Translated/Stale states, explicit keys vs. value-as-key, manually-managed entries, and the per-table migration boundary with legacy `.strings`.
+  - `localized-string-apis` — `String(localized:)`, `LocalizedStringResource`, `LocalizedStringKey` and SwiftUI's implicit `Text` literal localization, `Text(verbatim:)`, `AttributedString(localized:)`, format specifiers, and `NSLocalizedString`'s remaining role.
+  - `plural-and-device-variations` — plural and device variation, the CLDR categories with `other` required and the applicable set language-dependent, substitutions, and legacy `.stringsdict`.
+  - `locale-and-language-resolution` — `Locale.current` vs. `autoupdatingCurrent`, `preferredLanguages` vs. `preferredLocalizations`, `Locale.Language`/`Locale.Region`, `CFBundleDevelopmentRegion`, and the `.lproj` fallback chain.
+  - `layout-direction-and-rtl-apis` — leading/trailing over left/right, SwiftUI automatic mirroring, `flipsForRightToLeftLayoutDirection(_:)`, UIKit `semanticContentAttribute`/`effectiveUserInterfaceLayoutDirection`, SF Symbols mirroring, `characterDirection`, and the RTL pseudolanguages.
+  - `localized-resources-and-infoplist` — `InfoPlist.xcstrings`/`InfoPlist.strings`, `CFBundleDisplayName`/`CFBundleName`, `.lproj` structure, per-asset catalog localization, Swift-package `defaultLocalization`/`Bundle.module`, and `Bundle.localizedString(forKey:value:table:)`.
+- Baseline is Xcode 16+ with an iOS 17+ API surface. String Catalogs impose no deployment-target cost — `.xcstrings` compiles to `.strings`/`.stringsdict` at build time — so the real gate is the Xcode version. Xcode 16 specifically because "Don't Translate", stale-string build warnings, format-specifier diagnostics, and the `xcstringstool` replacement for the deprecated `genstrings` do not exist in Xcode 15.
+- Four Cross-Domain Notes recorded in `docs/architecture/domain-map.md`: angle-split with `human-interface-guidelines` over RTL (design vs. API), clean handoffs with `foundation` (Locale resolution vs. formatter use) and `style-guide` (source copy vs. extraction/resolution mechanics), and a deferred hand-off to `xcode` for project-language configuration and `.xcloc`/XLIFF export-import.
+- Closes the SF Symbols RTL seam `knowledge.human-interface-guidelines.right-to-left` had explicitly left open: mirroring is automatic and driven by the symbol's name, with no API to request it — "forward"/"backward" mirror, "left"/"right" do not.
+
+### Notes
+- Corrects several natural-but-wrong assumptions: `String(localized:)`'s `locale:` parameter formats interpolated values but does not change which language is looked up (only `LocalizedStringResource.locale` does); `Text(someVariable)` silently resolves to a non-localizing initializer; `Locale.current` reports the locale the *app* resolved to rather than the user's preference; `Locale.autoupdatingCurrent` never compares equal to a fixed `Locale`; `UISemanticContentAttribute.unspecified` means *mirror*, not "do nothing"; `imageFlippedForRightToLeftLayoutDirection()` sets a flag rather than returning a flipped image; and `^[…](inflect: true)` is a runtime transform, not a pluralization mechanism.
+- Sourcing caveats recorded in `localized-resources-and-infoplist`: Info.plist localization is covered by none of the articles in Apple's current Xcode Localization documentation hub, leaving a WWDC23 transcript and the archived Info.plist Key Reference as its only sources; and no Apple source states in those words that permission usage strings must be localized — that rule is written as an inference from their documented user-visibility, not as an Apple mandate.
+- Apple publishes no schema for the `.xcstrings` file format, so these contracts describe the String Catalog through its editor affordances and public APIs, never through JSON field names.
 
 ## [2.0.0] - 2026-08-07
 ### Changed
