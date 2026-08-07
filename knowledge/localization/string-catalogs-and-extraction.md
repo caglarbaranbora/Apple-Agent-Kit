@@ -1,7 +1,7 @@
 # String Catalogs and Extraction
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 0.1.0
 id: knowledge.localization.string-catalogs-and-extraction
 artifact_type: knowledge
 title: String Catalogs and Extraction
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines how a String Catalog (.xcstrings) collects an app's localizable text -- compiler-driven extraction at build time and the string-literal requirement it depends on, translator comments, the New/Needs Review/Translated/Stale states, explicit keys versus value-as-key, manually-managed entries for dynamic keys, and the per-table migration boundary with legacy .strings files.
@@ -54,7 +54,7 @@ This contract governs how an app's localizable text gets *into* a String Catalog
 - Which localized-string API to call and its parameters -- see `localized-string-apis`
 - Plural, device, and substitution variations inside a catalog entry -- see `plural-and-device-variations`
 - The `.xcstrings` file's internal JSON structure -- Apple publishes no schema for it; this contract describes the catalog through the Xcode editor and the public APIs only
-- Adding a language to the project, target localization settings, and `.xcloc`/XLIFF export-and-import -- Xcode project configuration, deferred to the `xcode` domain
+- Adding a language to the project -- owned by `knowledge.xcode.project-localizations`; the `.xcloc`/XLIFF export-and-import round trip -- owned by `knowledge.xcode.localization-export-import`
 - Localizing Info.plist keys and non-string resources -- see `localized-resources-and-infoplist`
 
 ## Rules

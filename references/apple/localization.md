@@ -1,7 +1,7 @@
 # Localization
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 0.1.0
 id: reference.apple.localization
 artifact_type: reference
 title: Localization
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's localization documentation, scoped to this domain's v1.
@@ -68,7 +68,7 @@ Reference index for Apple's localization documentation, scoped to this domain's 
 
 Baseline is Xcode 16+ with an iOS 17+ API surface. String Catalogs carry no deployment-target requirement — per WWDC23, `.xcstrings` compiles to `.strings` and `.stringsdict` at build time, so "you can start using String Catalogs right away without having to update your minimum deployment target." Xcode 16 specifically, because marking a string "Don't Translate", stale-string build warnings, format-specifier conflict diagnostics, and the `xcstringstool` replacement for the deprecated `genstrings` do not exist in Xcode 15. `Locale.Language`, `Locale.Region`, and `Locale.Language.characterDirection` are iOS 16+, while `Locale.languageCode`, `Locale.regionCode`, and `Locale.characterDirection(forLanguage:)` are deprecated as of iOS 16 — already dead at this baseline despite remaining the form most third-party material uses.
 
-Out of scope for v1: the Xcode project-configuration side of localization (adding a project language, target localization settings, and the `.xcloc`/XLIFF export-and-import round trip), which is `xcode`'s territory and deferred to a future `xcode` expansion; the iOS 18 Translation framework (`TranslationSession`, `.translationTask`, `.translationPresentation`), a real and documented capability deliberately excluded because it translates user content at runtime rather than shipping the app's own text pre-translated, and requires iOS 18; source-copy wording, capitalization, and international representation/formatting rules (owned by `style-guide`); date/time/number/measurement formatting mechanics (owned by `foundation`); RTL visual-design guidance (owned by `human-interface-guidelines`); App Store Connect localized metadata; APNs `loc-key`/`loc-args` server payloads (already out of scope for `usernotifications`); App Shortcuts phrase and `AppEnum` localization (owned by `app-intents`); and macOS/watchOS/tvOS-specific behavior.
+Out of scope for v1: the Xcode project-configuration side of localization (adding a project language and the `.xcloc`/XLIFF export-and-import round trip), owned by `xcode` and built there 2026-08-07; the iOS 18 Translation framework (`TranslationSession`, `.translationTask`, `.translationPresentation`), a real and documented capability deliberately excluded because it translates user content at runtime rather than shipping the app's own text pre-translated, and requires iOS 18; source-copy wording, capitalization, and international representation/formatting rules (owned by `style-guide`); date/time/number/measurement formatting mechanics (owned by `foundation`); RTL visual-design guidance (owned by `human-interface-guidelines`); App Store Connect localized metadata; APNs `loc-key`/`loc-args` server payloads (already out of scope for `usernotifications`); App Shortcuts phrase and `AppEnum` localization (owned by `app-intents`); and macOS/watchOS/tvOS-specific behavior.
 
 Sourcing note: Apple publishes no schema reference for the `.xcstrings` file format — WWDC23 describes it only as "JSON files under the hood." This reference and the contracts using it therefore describe the String Catalog through its editor affordances and public APIs, never through JSON field names. Separately, Info.plist localization is covered by none of the articles in Apple's current Xcode Localization hub; its only current-era source is the WWDC23 transcript, and its only prose specification is the archived Info.plist Key Reference listed above.
 
@@ -89,4 +89,5 @@ Sourcing note: Apple publishes no schema reference for the `.xcstrings` file for
 - knowledge/localization/locale-and-language-resolution.md ([[knowledge/localization/locale-and-language-resolution]])
 - knowledge/localization/layout-direction-and-rtl-apis.md ([[knowledge/localization/layout-direction-and-rtl-apis]])
 - knowledge/localization/localized-resources-and-infoplist.md ([[knowledge/localization/localized-resources-and-infoplist]])
+- knowledge/xcode/project-localizations.md ([[knowledge/xcode/project-localizations]])
 - skills/localization/SKILL.md ([[skills/localization/SKILL]])
