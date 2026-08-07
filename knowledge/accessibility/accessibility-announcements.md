@@ -1,7 +1,7 @@
 # Accessibility Announcements
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 0.1.0
 id: knowledge.accessibility.accessibility-announcements
 artifact_type: knowledge
 title: Accessibility Announcements
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines how an app pushes out-of-band information such as a form's validation result to an assistive app -- AccessibilityNotification.Announcement (iOS 17+) versus UIAccessibility.post(notification:.announcement), the events an announcement is and is not for, the three priorities and the fact that equal-priority announcements truncate each other, where the priority attribute lives, and the rule that an announcement is an unverifiable channel that must never be the only route to the information.
@@ -51,8 +51,7 @@ This contract defines how an AI coding agent conveys an event to an assistive ap
 ### Excluded
 
 -   Moving VoiceOver focus to content that is on screen, including a
-    field that failed validation — owned by
-    `full-keyboard-access-and-focus`
+    field that failed validation — see `full-keyboard-access-and-focus`
 -   A control's own spoken state — see `accessibility-value-and-hint`
 -   Localizing the announcement string — `accessibility-labels` states
     that rule for accessibility text generally

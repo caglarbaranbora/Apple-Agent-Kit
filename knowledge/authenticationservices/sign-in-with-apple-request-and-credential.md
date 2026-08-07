@@ -1,6 +1,6 @@
 # Sign In With Apple Request and Credential
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.authenticationservices.sign-in-with-apple-request-and-credential
 artifact_type: knowledge
 title: Sign In With Apple Request and Credential
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines building an ASAuthorizationAppleIDRequest via ASAuthorizationAppleIDProvider().createRequest(), setting requestedScopes, driving an ASAuthorizationController through its delegate and presentation-context protocols, extracting the resulting ASAuthorizationAppleIDCredential, and handling every ASAuthorizationError case including .canceled.
@@ -30,7 +30,7 @@ depends_on: []
 related:
   - knowledge.authenticationservices.nonce-and-identity-token-verification
   - knowledge.authenticationservices.credential-state-and-revocation
-last_updated: 2026-08-06
+last_updated: 2026-08-07
 ```
 
 ## Intent
@@ -55,7 +55,8 @@ This contract defines how an AI coding agent builds an `ASAuthorizationAppleIDRe
 -   `getCredentialState(forUserID:)` and revocation — see `credential-state-and-revocation`
 -   Persisting the `user` identifier and sign-out — see `session-persistence-and-sign-out`
 -   Password AutoFill/credential-provider extensions and Passkeys/WebAuthn — out of v1 scope
--   Button UI/HIG and sign-in terminology — owned by `authentication`
+-   Button UI/HIG — owned by `human-interface-guidelines`; sign-in terminology
+    — owned by `style-guide`
 
 ## Rules
 

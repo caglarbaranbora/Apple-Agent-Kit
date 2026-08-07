@@ -1,6 +1,6 @@
 # Async Data Fetching
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.async-data-fetching
 artifact_type: knowledge
 title: Async Data Fetching
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines correct use of URLSession's async/await data(for:), upload(for:from:), and download(for:) APIs, and why a successful call does not by itself mean the server returned success.
@@ -25,7 +25,7 @@ depends_on:
 related:
   - knowledge.networking.http-error-handling
   - knowledge.networking.url-request-construction
-last_updated: 2026-08-01
+last_updated: 2026-08-07
 ```
 
 ## Intent
@@ -48,8 +48,8 @@ explicit checking).
 
 -   Building the `URLRequest` itself — see `url-request-construction`
 -   Checking the response's status code — see `http-error-handling`
--   Completion-handler-based `dataTask` APIs and Combine's
-    `dataTaskPublisher` — out of v1 scope
+-   Completion-handler-based `dataTask` APIs — see `completion-handler-apis`;
+    Combine's `dataTaskPublisher` — see `data-task-publisher`
 
 ## Rules
 

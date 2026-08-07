@@ -1,6 +1,6 @@
 # Task Cancellation
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.task-cancellation
 artifact_type: knowledge
 title: Task Cancellation
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines how network calls made inside a Swift Task respond to cancellation, when to check cancellation explicitly, and why CancellationError must not be treated as a generic failure.
@@ -24,7 +24,7 @@ depends_on:
   - knowledge.networking.async-data-fetching
 related:
   - knowledge.networking.async-data-fetching
-last_updated: 2026-08-01
+last_updated: 2026-08-07
 ```
 
 ## Intent
@@ -46,7 +46,8 @@ surfacing a spurious error to the user.
 ### Excluded
 
 -   The network call itself — see `async-data-fetching`
--   `URLSessionTask`-level cancellation via `URLSessionDelegate` — out of v1 scope
+-   `URLSessionTask`-level cancellation via `URLSessionDelegate` — see
+    `url-session-delegate`
 
 ## Rules
 

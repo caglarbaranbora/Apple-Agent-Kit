@@ -445,6 +445,43 @@ class TestLevel2(RepoTestCase):
         )
         self.assertEqual([str(f) for f in self.repo.findings()], [])
 
+    def test_owned_by_hand_off_to_a_domain_that_does_not_exist(self):
+        # ``owned by `x` `` is the scope vocabulary's own hand-off form and was
+        # the repository's most common one (57 occurrences), yet neither
+        # mention regex saw it: there is no trailing "domain"/"skill"/"workflow"
+        # noun for them to anchor on. Adding it surfaced four live defects,
+        # two of them written by the passes that introduced the vocabulary.
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            "## Rules",
+            "## Notes\n\n-   Sign-in wording — owned by `ghost`\n\n## Rules",
+        )
+        self.assertRule("prose-domain-resolves")
+
+    def test_domain_map_is_scanned_for_live_hand_offs(self):
+        # The exemption used to be whole-file, so this was invisible. PR 5
+        # found the real instance: an `owned by `authentication`` hand-off
+        # still in the map months after `authentication` was retired.
+        self.repo.write(
+            "docs/architecture/domain-map.md",
+            "| Domain | Status |\n|---|---|\n"
+            "| ghost | **Retired 2026-08-07** |\n\n"
+            "Sign-in UX owned by `ghost`.\n",
+        )
+        self.assertRule("prose-domain-resolves")
+
+    def test_domain_map_may_record_a_split_not_only_a_retirement(self):
+        # `design` was split by rfcs/0001, never retired. Keying the heuristic
+        # on the word "retired" alone would flag the map's own history.
+        self.repo.write(
+            "docs/architecture/domain-map.md",
+            "| Domain | Status |\n|---|---|\n"
+            "| example | Active |\n\n"
+            "`example` and `other` were previously merged under a single "
+            "`ghost` domain.\n",
+        )
+        self.assertEqual([str(f) for f in self.repo.findings()], [])
+
     def test_entry_needs_no_routing_index_row(self):
         # The entry point points at the Routing Index; it is not listed in it.
         self.repo.write(

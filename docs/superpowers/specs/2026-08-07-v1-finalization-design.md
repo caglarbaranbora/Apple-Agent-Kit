@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.4.0
+Version: 1.5.0
 Date: 2026-08-07
 
 ## Goal
@@ -245,7 +245,7 @@ Gaps `docs/architecture/domain-map.md` declares against Tier 1:
 | `swiftui` | Previews, custom `Layout` protocol conformances (both **Excluded**), legacy `ObservableObject`/`NavigationView` migration — **closed in PR 4, 2026-08-07** |
 | `uikit` | Storyboard/XIB, gesture recognizers, Core Animation, custom transitions, SwiftUI interop |
 | `sf-symbols` | Symbol effects/animations, Symbol Composer authoring |
-| `networking` | Completion-handler APIs, Combine, `URLSessionDelegate` background/progress/TLS |
+| `networking` | Completion-handler APIs, Combine, `URLSessionDelegate` background/progress/TLS — **closed in PR 5, 2026-08-07** |
 | `xcode` | `xcodebuild` CLI, CI signing automation, SwiftPM build configuration — **plus two inherited hand-offs**: Test Plans and code coverage (deferred by `testing`), project language configuration and `.xcloc`/XLIFF (deferred by `localization`). **Both closed in PR 2, 2026-08-07.** |
 | `accessibility` | none from its own scoping — **plus one inherited hand-off**: announcing a validation result to assistive apps, surfaced by the `authentication` retirement. **Closed in PR 3, 2026-08-07.** |
 | `style-guide`, `local-authentication`, `app-tracking-transparency` | none — complete as declared |
@@ -311,7 +311,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 | 2 | `xcode` — Test Plans and coverage, `.xcloc`/XLIFF and project language *(both inherited)* — **shipped 2026-08-07, 4 KC** | 4-5 |
 | 3 | `accessibility` — validation errors announced to assistive technologies — **shipped 2026-08-07, 1 KC** | 1-2 |
 | 4 | `swiftui` — `ObservableObject`/`NavigationView` migration — **shipped 2026-08-07, 2 KC** | 2 |
-| 5 | `networking` — completion-handler, `URLSessionDelegate`, `dataTaskPublisher` | 5-6 |
+| 5 | `networking` — completion-handler, `URLSessionDelegate`, `dataTaskPublisher` — **shipped 2026-08-07, 7 KC** | 5-6 |
 | 6 | `uikit` — gesture recognizers, Core Animation and custom transitions, SwiftUI interop | 6-7 |
 | 7 | `app-store-review-guidelines` — 1.2, 1.5, 1.6, 4.1, 4.8, 5.2 | 8-10 |
 
@@ -371,7 +371,7 @@ two**, so `used-by-complete` is vacuous on all 9:
 | `human-interface-guidelines` | 1 | 33 |
 | `usernotifications` | 2 | 26 |
 | `sf-symbols` | 1 | 15 |
-| `networking` | 1 | 13 |
+| `networking` — **fixed in PR 5, 2026-08-07** | 1 | 13 |
 | `local-authentication` | 1 | 9 |
 | `app-tracking-transparency` | 2 | 5 |
 | `app-store-review-guidelines` | 1 | 3 |
@@ -382,6 +382,35 @@ five — `human-interface-guidelines`, `usernotifications`, `sf-symbols`,
 `local-authentication`, `app-tracking-transparency` — are on no Phase 5 PR's path and
 need a pass of their own. Not folded into an `accessibility` PR: rewriting nine
 References under an unrelated heading is how a scoped PR stops being reviewable.
+
+**Corrected in PR 5:** the table above answers a narrower question than it reads as.
+Its selection rule is "indexes two URLs or fewer while citing more than two" — the set
+on which `used-by-complete` is *vacuous*. It is not the set of References with an
+unindexed citation. Re-measured on 2026-08-07 across every domain, **17 References cite
+at least one URL no Reference indexes**, and ten of them are recorded nowhere:
+
+| Reference | Cited URLs not indexed anywhere |
+|---|---|
+| `security` | 12 of 19 |
+| `localization` | 7 of 44 |
+| `privacy` | 6 of 11 |
+| `eventkit` | 4 of 23 |
+| `tipkit` | 3 of 31 |
+| `testing` | 2 of 23 |
+| `storekit`, `style-guide`, `swiftdata`, `widgetkit` | 1 each |
+
+The mechanism is the same in all of them and is worth stating plainly, because it is
+what makes partial gaps invisible rather than merely smaller. `check_used_by_is_complete`
+walks `## Source` URLs and asks which Contracts cite each one. A URL that **no**
+Reference indexes resolves to an empty list and touches no check at all. Indexing
+coverage is therefore unenforceable by construction: the check can only verify the
+reverse index of what is already indexed. `security` at 12 unindexed of 19 cited is not
+a rounding error, and nothing in the repository would ever have reported it.
+
+The Reference pass this implies is larger than "the remaining five" and is still not
+foldable into a domain PR. It also wants a sixteenth check — one that reads Contract
+`references:` and reports any URL no Reference indexes — which is the only thing that
+would make coverage enforceable rather than periodically re-measured by hand.
 
 Guideline 4.8 satisfies clause (i) as well as (iv): `workflow.authentication`, shipped
 in Phase 4, walks an agent through building a sign-in screen across five domains and
@@ -434,6 +463,77 @@ assigned," while `skills/uikit/SKILL.md` had already carried it as Deferred. The
 and the Skill disagreed, and nothing detects that: `scope-vocabulary` checks a Skill's
 markers against reality, not against the map's prose. PR 4 assigned it to `uikit` and
 made `skills/swiftui/SKILL.md` hand off there by name.
+
+### Observed in PR 5
+
+**The Reference fits in one file, at exactly the cap.** PR 4's lesson said the five
+remaining under-indexed References should be checked for a half-finished split, not
+just refilled. `networking` was checked and does not need one: its 15 Contracts cite 29
+distinct URLs, and the indexed Reference is **98 lines against a 98-line cap**. That is
+a pass with no headroom. Recording it rather than trimming prose to manufacture slack
+is deliberate — the next Contract added to `networking` will fail Level 1, which forces
+the split decision at the moment it becomes real instead of letting the file quietly
+grow past the point where it was answerable. If that happens, the seam is the
+async/await request path against the delegate-driven surface; the two share only the
+`URLSession` hub, `URLSessionConfiguration`, and the ATS article, so a split would be
+clean. It is not taken now because `reference-spec.md` ties Reference count to Skill
+count, and splitting the Skill would need a topical-coherence argument (S1) that this
+domain does not yet support: `authenticated-requests` and `authentication-challenges`
+are both "authentication in networking," and two Skills whose descriptions both match
+that phrase is a worse defect than a full Reference.
+
+**The estimate was 5-6 Contracts; PR 5 shipped 7.** The overrun is not scope creep. The
+Skill's Stop Conditions listed three deferred items, and the third — "`URLSessionDelegate`-based
+background transfer, progress tracking, and custom TLS/challenge handling" — names
+three sub-topics inside one bullet, then needs a fourth Contract (`url-session-delegate`)
+underneath them to own delegate lifetime, which none of the three could hold alone.
+This is the **third consecutive PR** where a gap's recorded name concealed its real
+shape: PR 3 and PR 4 each found a version boundary hidden inside a name, and PR 5 found
+a Contract count hidden inside one. The gap table sizes work by counting names.
+
+**Four of the seven Contracts document a defect with no failure signal**, which is a
+higher proportion than any prior PR in this phase. A delegate session that is never
+invalidated leaks for the process lifetime while every request succeeds; a task that is
+never `resume()`d produces no error, no warning, and no callback; an unconditional
+`.useCredential(URLCredential(trust:))` accepts every certificate from every host and
+passes every test; a discarded `AnyCancellable` cancels the request without calling the
+completion closure. `URLSession`'s delegate surface is old API whose failure modes
+predate the compiler diagnostics that would now catch them, so "it builds and the
+requests work" is worth less here than anywhere else in the kit.
+
+**The check that should have caught PR 5's stale hand-off had two holes, and the
+smaller one was the obvious one.** `check_prose_domain_mentions_resolve` skipped
+`docs/architecture/domain-map.md` outright, on the stated grounds that "recording a
+retirement is the one place a retired name must still appear" — and the networking Tier
+1 row was still reading "Sign-in UX owned by `authentication`", a live routing hand-off
+to a domain retired in Phase 4, sitting in the one file nothing scanned.
+
+Removing that exemption alone would not have caught it. Both mention regexes anchor on
+a trailing "domain"/"skill"/"workflow" noun, and ``owned by `authentication` `` has
+none. That phrasing is not incidental: it is the scope vocabulary's **own** hand-off
+form, defined in PR 1 and used 57 times across the repository — the single most common
+hand-off shape, and the one shape no check could see. Both holes are closed in PR 5:
+
+- `describes_a_retirement()` becomes `describes_a_former_domain()`. Retirement is not
+  the only way a domain stops existing — `design` was split by rfcs/0001 and the map
+  still records that — so the predicate is "this sentence is history", over a small
+  explicit verb list. Its sentence bounds now break on a blank line as well as a
+  period, because a table row and the paragraph after it are not one sentence and a
+  status cell reading "**Retired 2026-08-07**" was leaking its verb forward.
+- A third regex matches the ownership form directly, and `domain-map.md` is scanned
+  like every other file.
+
+**Turning it on surfaced four live defects, two of them written by the passes that
+introduced the vocabulary.** Two were genuine stale routing: the map's
+`authenticationservices` entry, and `knowledge/authenticationservices/sign-in-with-apple-request-and-credential.md`,
+which had carried ``owned by `authentication` `` in its Excluded section since before
+the retirement — a Contract telling agents to consult a domain that no longer exists,
+which is exactly the defect class PR 0 was written to eliminate and which it missed
+because nothing could see this phrasing. The other two were marker misuse: PR 3 and PR
+4 each wrote ``owned by `<contract>` `` where the target is a **sibling Contract**, not
+a domain. `owned by` is reserved for cross-domain hand-offs; an intra-domain one is
+"see `x`". Both files used the correct form on adjacent lines, which is what a
+vocabulary with no enforcement produces — right most of the time, wrong silently.
 
 ### Deviation taken in PR 1
 

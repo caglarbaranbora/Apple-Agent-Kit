@@ -1,7 +1,7 @@
 # Observable Object Migration
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 0.1.0
 id: knowledge.swiftui.observable-object-migration
 artifact_type: knowledge
 title: Observable Object Migration
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines how existing ObservableObject code is migrated to the Observable macro -- the platform floor the migration requires, Apple's per-type incremental path, the full property-wrapper mapping (@Published, @StateObject, @ObservedObject, @EnvironmentObject, .environmentObject, @Bindable), the fact that a half-migrated type still compiles and behaves correctly so a green build proves nothing, the tracking default that inverts when @Published is removed, and the invalidation-granularity change that makes the migration not behavior-preserving.
@@ -48,7 +48,7 @@ This contract defines how an AI coding agent converts *existing* `ObservableObje
 
 ### Excluded
 
-- `@Observable` as the default for newly written code, and its ownership rules -- owned by `observable-macro`
+- `@Observable` as the default for newly written code, and its ownership rules -- see `observable-macro`
 - `@State`/`@Binding` for value-type state (`state-and-binding`) and `@Environment` key definition (`environment-values`)
 - `@Published`'s publisher semantics and `objectWillChange` as Combine patterns -- owned by `knowledge.combine.published-and-observableobject`; this contract owns only their removal
 - `NavigationView` migration -- see `navigation-view-migration`; different platform floor, separate task
