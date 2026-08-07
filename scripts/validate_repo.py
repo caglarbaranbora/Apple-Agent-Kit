@@ -660,6 +660,115 @@ def check_workflows_compose_skills(artifacts, root):
     return findings
 
 
+def known_domains(root):
+    """Every domain name the repository currently has artifacts for.
+
+    Derived from disk rather than declared anywhere, so it cannot drift. Skill
+    directories carry an optional `-<facet>` suffix (`swiftui-interaction`),
+    which is not part of the domain name.
+
+    Workflows are deliberately not counted. A Workflow is not a domain -- it
+    composes several -- and `workflow.authentication` shares its name with the
+    domain Phase 4 retired. Counting it would make every stale hand-off to that
+    domain resolve again, which is the exact defect this feeds.
+    """
+    names = set()
+    for path in (root / "knowledge").glob("*/"):
+        names.add(path.name)
+    for path in (root / "skills").glob("*/"):
+        names.add(path.name)
+        names.add(path.name.split("-")[0])
+    for path in (root / "references" / "apple").glob("*.md"):
+        names.add(path.stem)
+    return names
+
+
+def known_workflows(root):
+    """Workflow names, kept apart from domain names -- see `known_domains`."""
+    return {path.name for path in (root / "workflows").glob("*/")}
+
+
+def retired_domains(root):
+    """Domain names `domain-map.md` marks as retired.
+
+    The map is the register of what exists, so it is also the register of what
+    stopped existing. Rows look like `| authentication | **Retired 2026-08-07**
+    | ... |`. A repository with no map has recorded no retirements.
+    """
+    path = root / "docs" / "architecture" / "domain-map.md"
+    if not path.exists():
+        return set()
+    text = path.read_text()
+    rows = re.findall(r"^\|\s*`?([a-z][a-z0-9-]*)`?\s*\|([^|]*)\|", text, re.M)
+    return {name for name, status in rows if "retired" in status.lower()}
+
+
+# A name in prose is code-spanned -- that is the repository's convention for
+# naming an artifact, and both defects this check was written for followed it.
+# Requiring the backticks is what separates `authentication` the domain from
+# "concurrency-focused" the adjective.
+BACKTICKED_MENTION_RE = re.compile(
+    r"`([a-z][a-z0-9-]*)`\s+(domain|skill|workflow)\b"
+)
+
+# A retired name is worth reporting even bare: a hand-off written as "see the
+# authentication skill" routes an agent exactly as far into nowhere.
+BARE_MENTION_RE = re.compile(r"\b([a-z][a-z0-9-]*)\s+(domain|skill|workflow)\b")
+
+
+def check_prose_domain_mentions_resolve(artifacts, root):
+    """Prose that points at a domain must point at one that exists.
+
+    Phase 4 retired the `authentication` domain and resolved seven inbound
+    edges -- `related` entries, `routes`, `## Used By` rows -- all of which the
+    id-based checks above would have caught. Two mentions survived because they
+    were prose: a Reference's Purpose and a Contract's Excluded line, the
+    latter a hand-off telling agents to consult a domain that no longer exists.
+    Neither is an id, so nothing flagged them.
+
+    A hand-off in prose carries exactly the routing meaning an edge does. This
+    check gives it the same enforcement.
+
+    Historical records are excluded: `CHANGELOG.md` released entries,
+    `validation/slices/`, `rfcs/`, and `docs/superpowers/` are dated snapshots
+    of what was true when written, and the design spec names rewriting them a
+    non-goal. `domain-map.md` itself is excluded, since recording a retirement
+    is the one place a retired name must still appear.
+    """
+    findings = []
+    domains = known_domains(root)
+    workflows = known_workflows(root)
+    retired = retired_domains(root)
+    skipped = (
+        ".git/", ".claude/", "node_modules/", "docs/superpowers/",
+        "validation/slices/", "rfcs/", "CHANGELOG.md",
+        "docs/architecture/domain-map.md",
+    )
+    for path in sorted(root.rglob("*.md")):
+        rel = path.relative_to(root).as_posix()
+        if rel.startswith(skipped):
+            continue
+        prose = re.sub(r"```.*?```", "", path.read_text(), flags=re.DOTALL)
+        mentions = set(BACKTICKED_MENTION_RE.findall(prose))
+        mentions |= {m for m in BARE_MENTION_RE.findall(prose) if m[0] in retired}
+        for name, noun in sorted(mentions):
+            if name in (workflows if noun == "workflow" else domains):
+                continue
+            why = "was retired" if name in retired else "has no artifacts"
+            findings.append(
+                Finding(
+                    2,
+                    "prose-domain-resolves",
+                    rel,
+                    f"prose names the `{name}` {noun}, which {why}",
+                    "repoint the hand-off at the domain that owns the topic "
+                    "now, or drop it; prose carries the same routing meaning "
+                    "an edge does",
+                )
+            )
+    return findings
+
+
 CHECKS = [
     check_ids_unique,
     check_id_matches_path,
@@ -667,6 +776,7 @@ CHECKS = [
     check_edges_resolve,
     check_wiki_links_resolve,
     check_prose_paths_resolve,
+    check_prose_domain_mentions_resolve,
     check_used_by_is_complete,
     check_no_orphans,
     check_routing_index_sync,

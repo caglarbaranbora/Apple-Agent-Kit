@@ -31,9 +31,10 @@ Security requirements, and authenticated request patterns. Completion-
 handler-based `URLSession` APIs, Combine's `dataTaskPublisher`, and
 `URLSessionDelegate`-based APIs (background transfers, progress
 tracking, custom TLS/challenge handling) are deferred to a future pass.
-Authentication UX/flow (sign-in terminology, entry points, form
-accessibility) is owned by the `authentication` domain, not this one —
-see docs/architecture/domain-map.md Cross-Domain Notes.
+Authentication UX/flow is not owned here: the sign-in mechanism belongs
+to `authenticationservices`, the wording to `style-guide`, and form
+accessibility to `accessibility` — see docs/architecture/domain-map.md
+Cross-Domain Notes.
 
 ## Primary Topics
 
