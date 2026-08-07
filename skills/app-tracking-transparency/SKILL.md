@@ -36,9 +36,8 @@ Never load more than the contracts relevant to the specific question.
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/app-tracking-transparency/ — do not guess or fall
-back to general knowledge. tvOS-specific App Tracking Transparency
-behavior, SKAdNetwork, and AdServices attribution are deferred to future
-scope, not yet built — report that explicitly rather than answering from
-general knowledge (see docs/architecture/domain-map.md). Custom
-pre-permission screen design and request-timing UX judgment are owned by
-the `human-interface-guidelines` Skill, not this one.
+back to general knowledge.
+
+-   tvOS-specific App Tracking Transparency behavior — Deferred
+-   SKAdNetwork and AdServices attribution — Deferred
+-   Pre-permission screen design, request-timing UX — owned by `human-interface-guidelines`

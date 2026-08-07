@@ -36,8 +36,11 @@ Never load more than the contracts relevant to the specific question.
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/app-store-review-guidelines/ — do not guess or
-fall back to general knowledge. Safety, most of Legal, Design (4.0,
-owned by `human-interface-guidelines`), and Guideline 4.8 Sign in with
-Apple are out of scope for this skill (see
-docs/architecture/domain-map.md) — report that explicitly rather than
-answering from general knowledge.
+fall back to general knowledge.
+
+-   Safety 1.2 (user-generated content), 1.5, 1.6; Design 4.1; Guideline 4.8
+    (Sign in with Apple); Legal 5.2 — Deferred
+-   Safety 1.3 (Kids), 1.4 (physical harm), 1.7; Legal 5.3, 5.4, 5.5 — Deferred,
+    scheduled at Tier 3; these are vertical, not the near-universal surface
+    Tier 1 covers
+-   Design 4.0 as design guidance — owned by `human-interface-guidelines`

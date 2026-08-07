@@ -43,8 +43,10 @@ mechanics of attaching credentials to a request.
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/networking/ — do not guess or fall back to
-general knowledge. Completion-handler `URLSession` APIs, Combine's
-`dataTaskPublisher`, and `URLSessionDelegate`-based background transfer,
-progress tracking, and custom TLS/challenge handling are deferred to
-future scope, not yet built — report that explicitly rather than
-answering from general knowledge (see docs/architecture/domain-map.md).
+general knowledge.
+
+-   Completion-handler `URLSession` APIs — Deferred
+-   Combine's `dataTaskPublisher` — Deferred; this domain owns it, not
+    `combine`, because routing matches the task and the task is an HTTP request
+-   `URLSessionDelegate`-based background transfer, progress tracking, and
+    custom TLS/challenge handling — Deferred

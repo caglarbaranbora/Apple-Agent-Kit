@@ -38,15 +38,16 @@ Never load more than the contracts relevant to the specific question.
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/authenticationservices/ — do not guess or fall
-back to general knowledge. Password AutoFill / credential-provider
-extensions (`ASCredentialProviderExtension`,
-`ASCredentialProviderViewController`), Passkeys / WebAuthn APIs
-(`ASAuthorizationPlatformPublicKeyCredentialProvider`,
-`ASAuthorizationSecurityKeyPublicKeyCredentialProvider`), and
-server-side JWT signature/claims verification of the identity token are
-deferred to future scope or are backend responsibility, not yet built —
-report that explicitly rather than answering from general knowledge (see
-docs/architecture/domain-map.md). Route "Sign in with Apple" button
-UI/HIG design and sign-in terminology/UX questions to the
-`authentication` Skill, and general Keychain storage/CRUD questions to
-the `security` Skill, explicitly, rather than answering them here.
+back to general knowledge.
+
+-   Password AutoFill / credential-provider extensions
+    (`ASCredentialProviderExtension`, `ASCredentialProviderViewController`) — Deferred
+-   Passkeys / WebAuthn (`ASAuthorizationPlatformPublicKeyCredentialProvider`,
+    `ASAuthorizationSecurityKeyPublicKeyCredentialProvider`) — Deferred
+-   Server-side JWT signature/claims verification of the identity token — Excluded,
+    a backend responsibility this kit does not cover
+-   "Sign in with Apple" button UI/HIG design — owned by `human-interface-guidelines`
+-   Sign-in terminology and wording — owned by `style-guide`
+-   General Keychain storage/CRUD — owned by `security`
+
+Composing these with this Skill is `workflow.authentication`'s job.

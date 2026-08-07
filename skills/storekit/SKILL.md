@@ -38,13 +38,13 @@ Never load more than the contracts relevant to the specific question.
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/storekit/ — do not guess or fall back to general
-knowledge. Legacy StoreKit 1 (`SKPaymentQueue`, `SKProduct`,
-`SKPaymentTransaction`), server-side receipt validation, the App Store
-Server API, and StoreKit Configuration file test setup are deferred to
-future scope, not yet built — report that explicitly rather than
-answering from general knowledge (see docs/architecture/domain-map.md).
-The App Review compliance angle — the requirement to use IAP to unlock
-content, prohibited alternative unlock mechanisms, loot-box odds
-disclosure, the restore-mechanism requirement, and the non-expiration
-rule for purchased currencies — is owned by the
-`app-store-review-guidelines` Skill, not this one.
+knowledge.
+
+-   Legacy StoreKit 1 (`SKPaymentQueue`, `SKProduct`,
+    `SKPaymentTransaction`) — Deferred
+-   Server-side receipt validation and the App Store Server API — Deferred
+-   StoreKit Configuration file test setup — Deferred
+-   The App Review compliance angle — the requirement to use IAP to unlock
+    content, prohibited alternative unlock mechanisms, loot-box odds
+    disclosure, the restore-mechanism requirement, and the non-expiration
+    rule for purchased currencies — owned by `app-store-review-guidelines`

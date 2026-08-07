@@ -45,8 +45,8 @@ itself, route to `skill.swiftui.foundations` or `skill.uikit.foundations`.
 
 Stop and report if the requested topic has no matching Knowledge
 Contract in knowledge/sf-symbols/ — do not guess or fall back to general
-knowledge. Symbol effects/animations (`SymbolEffect`, `.bounce`,
-`.pulse`, `.variableColor`) and Symbol Composer / custom symbol
-authoring are deferred to future scope, not yet built — report that
-explicitly rather than answering from general knowledge (see
-docs/architecture/domain-map.md).
+knowledge.
+
+-   Symbol effects/animations (`SymbolEffect`, `.bounce`, `.pulse`,
+    `.variableColor`) — Excluded
+-   Symbol Composer / custom symbol authoring — Excluded
