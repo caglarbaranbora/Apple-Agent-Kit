@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.3.0
+Version: 1.4.0
 Date: 2026-08-07
 
 ## Goal
@@ -242,7 +242,7 @@ Gaps `docs/architecture/domain-map.md` declares against Tier 1:
 |---|---|
 | `human-interface-guidelines` | Charts, Drag and Drop, Multitasking, Column Views, Sliders, Toolbars beyond navigation, Apple Pencil, Game Controllers |
 | `app-store-review-guidelines` | Safety (1.x), most of Legal (5.x), Design 4.0, Guideline 4.8 |
-| `swiftui` | Previews, custom `Layout` protocol conformances, legacy `ObservableObject`/`NavigationView` migration |
+| `swiftui` | Previews, custom `Layout` protocol conformances (both **Excluded**), legacy `ObservableObject`/`NavigationView` migration — **closed in PR 4, 2026-08-07** |
 | `uikit` | Storyboard/XIB, gesture recognizers, Core Animation, custom transitions, SwiftUI interop |
 | `sf-symbols` | Symbol effects/animations, Symbol Composer authoring |
 | `networking` | Completion-handler APIs, Combine, `URLSessionDelegate` background/progress/TLS |
@@ -290,7 +290,8 @@ Store rejections. The Tier 1 filter inside (iv) is what keeps it bounded — 1.2
   future scope". The table flattened a distinction the Skill had drawn.
 - `swiftui`'s `ObservableObject` entry is an over-promise, not merely a gap: the
   Skill's `description` trigger list names `ObservableObject`, pulling the task in,
-  and the Stop Conditions then refuse it.
+  and the Stop Conditions then refuse it. **Resolved in PR 4, 2026-08-07**, by
+  building the Contracts rather than by narrowing the trigger list.
 
 Ownership decided: Combine's `dataTaskPublisher` goes to `networking`, not `combine`.
 Routing matches tasks, not frameworks, and an agent asking about it is making an HTTP
@@ -309,7 +310,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 | 1 | Scope-vocabulary revision: `Excluded (permanent)` vs `Deferred (planned)`, enforced; the two corrections above; the Tier 3 reclassifications | 0 |
 | 2 | `xcode` — Test Plans and coverage, `.xcloc`/XLIFF and project language *(both inherited)* — **shipped 2026-08-07, 4 KC** | 4-5 |
 | 3 | `accessibility` — validation errors announced to assistive technologies — **shipped 2026-08-07, 1 KC** | 1-2 |
-| 4 | `swiftui` — `ObservableObject`/`NavigationView` migration | 2 |
+| 4 | `swiftui` — `ObservableObject`/`NavigationView` migration — **shipped 2026-08-07, 2 KC** | 2 |
 | 5 | `networking` — completion-handler, `URLSessionDelegate`, `dataTaskPublisher` | 5-6 |
 | 6 | `uikit` — gesture recognizers, Core Animation and custom transitions, SwiftUI interop | 6-7 |
 | 7 | `app-store-review-guidelines` — 1.2, 1.5, 1.6, 4.1, 4.8, 5.2 | 8-10 |
@@ -365,7 +366,7 @@ two**, so `used-by-complete` is vacuous on all 9:
 
 | Reference | URLs indexed | URLs its Contracts cite |
 |---|---|---|
-| `swiftui` | 1 | 50 |
+| `swiftui` — **fixed in PR 4, 2026-08-07** | 1 | 50 |
 | `uikit` | 1 | 34 |
 | `human-interface-guidelines` | 1 | 33 |
 | `usernotifications` | 2 | 26 |
@@ -391,6 +392,48 @@ Workflow does not know the rule that can reject its own output.
 here: whether Guideline 4.4 (extensions) satisfies clause (i) via `widgetkit`; whether
 1.1 belongs in Tier 1 once 1.2 covers its actionable half; and the classification of
 4.5, 4.6, 4.7 and 5.6.
+
+### Observed in PR 4
+
+**The `swiftui` Reference was not merely unindexed — it was a half-finished split.**
+`reference-spec.md` states "One Reference per Skill-scoped domain," and `swiftui` has
+had two Skills since its Animation/Gestures v1 shipped. It had one Reference. The
+defect was invisible while that Reference indexed a single hub URL; indexing the real
+56 made it unmissable, because the four sections then need 118 lines against a 98-line
+cap. The spec already answers this — "If a domain's sources do not fit, split the
+domain's Skill and give each Skill its own Reference" — and the Skill split had already
+happened, so PR 4 wrote `references/apple/swiftui-interaction.md` and narrowed
+`references/apple/swiftui.md` to the foundations surface. The two URL sets partition
+cleanly with **zero overlap**, which is evidence the Skill boundary was drawn in the
+right place, not just a convenient result.
+
+The general lesson: **a Reference that indexes one hub URL hides more than a broken
+`used-by-complete` check.** It also hides whether the domain still fits in one
+Reference at all. The five References still on the list should be checked for the same
+thing, not only refilled.
+
+**Two migrations, two platform floors, one recorded gap.** `domain-map.md` recorded
+"legacy `ObservableObject`/`NavigationView` migration" as a single deferred item. They
+are not one task: Observation requires iOS 17/macOS 14, the navigation containers
+require iOS 16/macOS 13, and a deployment target can permit one and refuse the other.
+Both Contracts now state their own floor and cross-reference the other's. This is the
+same failure shape PR 3 recorded — a gap written as a list of API names loses the
+boundaries between them — and it is now the second consecutive PR to find it. The gap
+table is a list of names, and names do not carry versions.
+
+**The over-promise was resolved by building, not by narrowing.** The `swiftui` Skill's
+`description` named `ObservableObject` as a trigger while its Stop Conditions refused
+the task. Both directions were available: cut the trigger, or build the Contract. PR 4
+built it, because the trigger was right — an agent asking about `ObservableObject` in
+2026 is almost always holding existing code, which is exactly the task. A Skill that
+attracts the right task and then refuses it is under-built, not over-scoped.
+
+**Closing this gap assigned a boundary the map had left unowned.** `domain-map.md`
+called UIKit-SwiftUI interop "future scope for whichever domain builds it — not yet
+assigned," while `skills/uikit/SKILL.md` had already carried it as Deferred. The map
+and the Skill disagreed, and nothing detects that: `scope-vocabulary` checks a Skill's
+markers against reality, not against the map's prose. PR 4 assigned it to `uikit` and
+made `skills/swiftui/SKILL.md` hand off there by name.
 
 ### Deviation taken in PR 1
 
