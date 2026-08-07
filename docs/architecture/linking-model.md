@@ -1,6 +1,7 @@
 # Linking Model
 
-Status: Draft Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Purpose
 
@@ -8,71 +9,96 @@ Define how artifacts reference each other throughout the repository.
 
 ## Goals
 
--   Deterministic navigation
--   Stable references
--   Low maintenance
--   Obsidian compatibility
--   Tool-agnostic parsing
+- Deterministic navigation
+- Stable references that survive file moves
+- Obsidian compatibility
+- Tool-agnostic parsing
 
-## Link Types
+## Three Conventions
 
-### Relative Path (Canonical)
+There is no single canonical link mechanism. Three conventions exist, each with a
+distinct job, and each is authoritative for its own job.
 
-Use relative Markdown paths as the canonical linking mechanism.
+### 1. Metadata edges — artifact IDs
 
-Example:
+The dependency graph's source of truth. `depends_on`, `related`, and `routes` all name
+artifacts by id, never by path.
 
-``` md
-See: ../knowledge/authentication/sign-in.md
+```yaml
+depends_on:
+  - knowledge.localization.string-catalogs-and-extraction
+routes: [knowledge.swiftui.view-identity, knowledge.swiftui.modifier-order]
 ```
 
-### Wiki Link (Optional)
+Ids are immutable (../../schemas/metadata.schema.md [[metadata.schema]]), which is
+exactly why ids and not paths carry the graph: a moved or renamed file does not break
+an id.
 
-Wiki links MAY be included for Obsidian convenience.
+### 2. Reference `## Used By` — wiki links
 
-Example:
+A Reference lists the Knowledge Contracts that cite it as wiki links:
 
-``` md
-[[knowledge/authentication/sign-in]]
+```md
+- [[knowledge/localization/localized-string-apis]]
 ```
 
-Wiki links MUST mirror the canonical relative path.
+This repository is maintained in an Obsidian vault, where wiki links are functional
+navigation rather than decoration. A wiki link here stands alone; it does not need a
+mirroring relative path.
+
+### 3. Document prose — relative paths
+
+Governance documents under `docs/` link each other with relative Markdown paths, with
+an optional wiki link alongside for Obsidian:
+
+```md
+See: ../glossary.md
+[[glossary]]
+```
+
+Artifacts (`knowledge/`, `skills/`, `references/`, `workflows/`) use no relative-path
+links between each other. Their relationships are metadata edges.
 
 ## Rules
 
--   Relative paths are the source of truth.
--   Wiki links are optional and must never be the only reference.
--   Never reference artifacts by title alone.
--   Prefer linking by file rather than directory.
--   Broken links are validation failures.
-
-## Resolution Order
-
-1.  Relative path
-2.  Wiki link
-3.  Artifact ID (metadata lookup)
+- An artifact relationship MUST be expressed as a metadata edge, never as a prose link.
+- A prose link MUST NOT be the only record of a dependency.
+- Never reference an artifact by title alone.
+- Prefer linking to a file rather than a directory.
+- Broken links are validation failures, in all three conventions.
 
 ## Cross-Layer Linking
 
-Allowed:
+Governs `depends_on`. See ../architecture/dependency-graph.md [[dependency-graph]] for
+the full tables.
 
--   Skill → Knowledge
--   Workflow → Skill
--   Specification → Any specification
--   Knowledge → Reference
+**Allowed:** Workflow → Skill · Skill → Knowledge · Knowledge → Knowledge ·
+Knowledge → Reference · Specification → Specification
 
-Forbidden:
+**Forbidden:** Knowledge → Skill · Knowledge → Workflow · Skill → Skill ·
+Workflow → Knowledge · circular navigation used as a dependency
 
--   Knowledge → Workflow
--   Knowledge → Skill
--   Circular navigation used as dependency
+A Skill's `related` naming another Skill is legal and widespread. It is a
+cross-reference, not a dependency.
+
+## Reference-to-Knowledge Is Many-to-Many
+
+A Reference's `## Used By` may name Contracts from more than one domain, and a domain's
+Contracts may be indexed by more than one Reference.
+
+Both happen today: the three `human-interface-guidelines*` References share one
+Knowledge directory, and `references/apple/style-guide.md` is legitimately cited by
+Contracts outside `knowledge/style-guide/`.
+
+**A validator MUST NOT derive this relationship from directory names.** A
+directory-derived check reports false positives on both cases.
 
 ## Validation
 
-A repository validator MUST report:
+Enforced by `scripts/validate_repo.py`; see ../validation-model.md [[validation-model]].
 
--   Missing targets
--   Broken relative paths
--   Invalid wiki links
--   Duplicate artifact IDs
--   Orphaned artifacts
+- Every metadata-edge id resolves to an existing artifact
+- Every wiki-link target resolves
+- Every relative path resolves
+- Artifact ids are unique
+- No orphaned artifacts
