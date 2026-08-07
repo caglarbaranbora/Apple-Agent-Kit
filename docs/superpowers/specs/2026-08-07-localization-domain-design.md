@@ -35,13 +35,58 @@ Rules/Excluded/Examples, not procedure steps.
 
 ### Platform
 
-iOS/iPadOS, iOS 17+ / Xcode 15+, matching every prior domain.
+iOS/iPadOS, **Xcode 16+**, iOS 17+ for the API surface.
+
+The two-part baseline is deliberate, and research established why. String
+Catalogs carry **no deployment-target cost at all**: `.xcstrings` is an
+authoring format that compiles to `.strings`/`.stringsdict` at build time,
+so per WWDC23, "you can start using String Catalogs right away without
+having to update your minimum deployment target." The real gate on the
+catalog half of this domain is the **Xcode** version, not the OS.
+
+Xcode 16 rather than Xcode 15 because several behaviors this domain teaches
+do not exist in Xcode 15: marking a string "Don't Translate" (Xcode 15's
+documented answer was instead "strings that don't require localization
+should not be marked as localizable in code"), stale-string build warnings,
+format-specifier conflict diagnostics, and the `xcstringstool`-based
+replacement for the now-deprecated `genstrings`. Pinning to Xcode 15 would
+push all of these into version-gated footnotes.
+
+iOS 17+ remains the API-surface baseline, consistent with every prior
+domain. Individual symbols carry their own availability, noted where it
+matters — `Locale.Language`, `Locale.Region`, and
+`Locale.Language.characterDirection` are iOS 16+, and the older
+`Locale.languageCode`/`regionCode`/`characterDirection(forLanguage:)`
+spellings are **deprecated as of iOS 16**, i.e. already dead at this
+baseline despite remaining the form most third-party material uses.
 
 String Catalogs (`.xcstrings`) are the primary mechanism. Legacy
 `.strings`, `.stringsdict`, and `NSLocalizedString` are covered only to the
 extent an agent meets them in an existing codebase — the same
 current-conventions-first stance `swiftui` took when it scoped out legacy
-`ObservableObject`/`NavigationView` migration guidance.
+`ObservableObject`/`NavigationView` migration guidance. Note that
+`.stringsdict` is legacy only as an *authoring* format: it remains the
+runtime artifact a String Catalog compiles into, which is why Apple's
+`.stringsdict` page is still the only place the plural-category semantics
+are documented.
+
+### Sourcing and evidence class
+
+Every Rule in this domain must be traceable to an official Apple source —
+developer.apple.com documentation, a WWDC session transcript, or an Apple
+archived guide — and quoted in the `Per Apple's documentation:` form used
+by every prior domain.
+
+Findings obtained by running local tooling (e.g. inspecting
+`xcstringstool` output to infer the `.xcstrings` JSON schema, the device-class
+identifier list, or build-validation behavior) are a **different evidence
+class** and are excluded, however plausible. Two independent research
+passes concluded that Apple publishes no `.xcstrings` schema reference, so
+these contracts describe the catalog through its **editor affordances and
+public APIs**, never through JSON field names.
+
+Where the documentation itself is thin, the contract says so rather than
+implying a stable reference exists — see the KC 6 note below.
 
 ### Included (v1)
 
@@ -242,6 +287,25 @@ All under `knowledge/localization/`, IDs `knowledge.localization.<slug>`.
    `knowledge.app-store-review-guidelines.permission-usage-strings` via
    `related:` — that KC owns the English wording of a usage string, this
    one owns getting it translated.
+
+   **Sourcing note, to be stated inside the contract itself.** Research
+   enumerated all 24 articles under Apple's Xcode Localization
+   documentation hub and found that **none** covers Info.plist
+   localization; `documentation/xcode/localizing-your-apps-name` returns
+   404. The only current-era official source for `InfoPlist.xcstrings` is
+   the WWDC23 session transcript, and the only prose specification of the
+   mechanism is the **archived** Info.plist Key Reference. That mechanism
+   is nonetheless still correct — `.xcstrings` compiles to
+   `InfoPlist.strings`, exactly the runtime artifact the archived document
+   describes — so the contract is buildable, but its References section
+   must name these sources honestly rather than imply a current reference
+   page exists.
+
+   Related constraint: no Apple source states, in those words, that
+   permission usage strings *must* be localized. Their user-visibility and
+   their required status are both documented; the imperative is an
+   inference. This contract states it as such rather than fabricating an
+   Apple mandate.
 
 ## Reference
 
