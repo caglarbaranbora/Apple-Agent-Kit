@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.combine.assign-and-memory-management
-type: knowledge
+artifact_type: knowledge
 title: Assign and Memory Management
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ depends_on:
   - knowledge.combine.publishers-and-subscribers
 related:
   - knowledge.combine.published-and-observableobject
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

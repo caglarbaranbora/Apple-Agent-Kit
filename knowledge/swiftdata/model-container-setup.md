@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.swiftdata.model-container-setup
-type: knowledge
+artifact_type: knowledge
 title: Model Container Setup
 version: 0.1.0
 status: Draft
@@ -31,7 +31,7 @@ depends_on:
   - knowledge.swiftdata.model-definition
 related:
   - knowledge.swiftdata.model-context-crud
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.swiftui.stacks-and-spacing
-type: knowledge
+artifact_type: knowledge
 title: Stacks and Spacing
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.swiftui.safe-area
   - knowledge.swiftui.lazy-grids
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

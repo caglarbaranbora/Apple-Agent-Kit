@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.accessibility.accessibility-hidden-decorative
-type: knowledge
+artifact_type: knowledge
 title: Accessibility Hidden and Decorative Elements
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.accessibility
   - knowledge.accessibility.accessibility-labels
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

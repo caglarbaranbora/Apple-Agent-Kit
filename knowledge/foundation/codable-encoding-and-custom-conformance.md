@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.foundation.codable-encoding-and-custom-conformance
-type: knowledge
+artifact_type: knowledge
 title: Codable Encoding and Custom Conformance
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ references:
 depends_on: []
 related:
   - knowledge.networking.codable-decoding
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

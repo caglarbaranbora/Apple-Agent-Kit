@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.testing.parameterized-and-async-tests
-type: knowledge
+artifact_type: knowledge
 title: Parameterized and Async Tests
 version: 0.1.0
 status: Draft
@@ -32,7 +32,7 @@ depends_on:
   - knowledge.testing.xctest-case-structure-and-assertions
 related:
   - knowledge.testing.expectations-for-asynchronous-code
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

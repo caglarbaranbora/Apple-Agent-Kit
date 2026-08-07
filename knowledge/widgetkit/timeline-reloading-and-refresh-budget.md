@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.widgetkit.timeline-reloading-and-refresh-budget
-type: knowledge
+artifact_type: knowledge
 title: Timeline Reloading and Refresh Budget
 version: 0.1.0
 status: Draft
@@ -27,7 +27,7 @@ depends_on:
   - knowledge.widgetkit.timeline-provider-and-entries
 related:
   - knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

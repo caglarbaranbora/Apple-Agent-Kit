@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.networking.async-data-fetching
-type: knowledge
+artifact_type: knowledge
 title: Async Data Fetching
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ depends_on:
 related:
   - knowledge.networking.http-error-handling
   - knowledge.networking.url-request-construction
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

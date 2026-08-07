@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.networking.app-transport-security
-type: knowledge
+artifact_type: knowledge
 title: App Transport Security
 version: 0.1.0
 status: Draft
@@ -21,7 +21,7 @@ references:
   - https://developer.apple.com/documentation/security/preventing-insecure-network-connections
 depends_on: []
 related: []
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.accessibility.accessibility-audits-testing
-type: knowledge
+artifact_type: knowledge
 title: Accessibility Audits and Testing
 version: 0.1.0
 status: Draft
@@ -22,7 +22,7 @@ references:
   - https://developer.apple.com/documentation/xcuiautomation/xcuiaccessibilityaudittype
 depends_on: []
 related: []
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

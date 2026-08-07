@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.motion
-type: knowledge
+artifact_type: knowledge
 title: Motion
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.accessibility
   - knowledge.human-interface-guidelines.sf-symbols
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

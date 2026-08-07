@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.privacy.collected-data-types-declaration
-type: knowledge
+artifact_type: knowledge
 title: Collected Data Types Declaration
 version: 0.1.0
 status: Draft
@@ -27,7 +27,7 @@ related:
   - knowledge.privacy.required-reason-api-declarations
   - knowledge.app-store-review-guidelines.privacy-manifest
   - knowledge.app-store-review-guidelines.privacy-nutrition-label
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

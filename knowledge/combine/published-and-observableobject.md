@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.combine.published-and-observableobject
-type: knowledge
+artifact_type: knowledge
 title: Published and ObservableObject
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ references:
 depends_on:
   - knowledge.combine.publishers-and-subscribers
 related: []
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

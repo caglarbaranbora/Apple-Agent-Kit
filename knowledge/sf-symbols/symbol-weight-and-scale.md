@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.sf-symbols.symbol-weight-and-scale
-type: knowledge
+artifact_type: knowledge
 title: Symbol Weight and Scale
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ depends_on:
 related:
   - knowledge.sf-symbols.rendering-modes
   - knowledge.sf-symbols.symbol-color-and-tinting
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.sf-symbols.custom-symbol-usage
-type: knowledge
+artifact_type: knowledge
 title: Custom Symbol Usage
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ related:
   - knowledge.sf-symbols.rendering-modes
   - knowledge.sf-symbols.symbol-weight-and-scale
   - knowledge.sf-symbols.symbol-color-and-tinting
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

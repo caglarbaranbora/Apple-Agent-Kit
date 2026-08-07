@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.app-store-review-guidelines.restore-purchases
-type: knowledge
+artifact_type: knowledge
 title: Restore Purchases
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.app-store-review-guidelines.digital-goods-iap
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

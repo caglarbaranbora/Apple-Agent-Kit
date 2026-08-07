@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.eventkit.recurrence-rules-and-eventkitui-handoff
-type: knowledge
+artifact_type: knowledge
 title: Recurrence Rules and EventKitUI Hand-off
 version: 0.1.0
 status: Draft
@@ -30,7 +30,7 @@ depends_on:
   - knowledge.eventkit.event-crud-and-fetch-predicates
 related:
   - knowledge.eventkit.reminder-crud-and-fetch
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

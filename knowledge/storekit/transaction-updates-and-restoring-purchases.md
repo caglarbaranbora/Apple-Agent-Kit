@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.storekit.transaction-updates-and-restoring-purchases
-type: knowledge
+artifact_type: knowledge
 title: Transaction Updates and Restoring Purchases
 version: 0.1.0
 status: Draft
@@ -27,7 +27,7 @@ related:
   - knowledge.storekit.product-loading-and-purchase
   - knowledge.storekit.subscription-status-and-renewal-info
   - knowledge.app-store-review-guidelines.restore-purchases
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

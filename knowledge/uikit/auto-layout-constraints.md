@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.uikit.auto-layout-constraints
-type: knowledge
+artifact_type: knowledge
 title: Auto Layout Constraints
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ depends_on: []
 related:
   - knowledge.uikit.safe-area-and-layout-guides
   - knowledge.uikit.auto-layout-stack-views
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

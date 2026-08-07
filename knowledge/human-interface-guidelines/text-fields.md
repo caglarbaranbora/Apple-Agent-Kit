@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.text-fields
-type: knowledge
+artifact_type: knowledge
 title: Text Fields
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.style-guide.authentication-credentials-and-biometrics
   - knowledge.human-interface-guidelines.layout
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

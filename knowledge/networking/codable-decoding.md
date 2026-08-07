@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.networking.codable-decoding
-type: knowledge
+artifact_type: knowledge
 title: Codable Decoding
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ depends_on:
 related:
   - knowledge.networking.async-data-fetching
   - knowledge.networking.url-request-construction
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

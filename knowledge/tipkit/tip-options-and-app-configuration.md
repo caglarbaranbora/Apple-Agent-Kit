@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.tipkit.tip-options-and-app-configuration
-type: knowledge
+artifact_type: knowledge
 title: Tip Options and App Configuration
 version: 0.1.0
 status: Draft
@@ -32,7 +32,7 @@ references:
 depends_on:
   - knowledge.tipkit.tip-declaration-and-content
 related: []
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

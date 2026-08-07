@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.uikit.auto-layout-stack-views
-type: knowledge
+artifact_type: knowledge
 title: Auto Layout Stack Views
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ references:
 depends_on: []
 related:
   - knowledge.uikit.auto-layout-constraints
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

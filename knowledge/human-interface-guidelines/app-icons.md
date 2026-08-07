@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.app-icons
-type: knowledge
+artifact_type: knowledge
 title: App Icons
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ related:
   - knowledge.human-interface-guidelines.color
   - knowledge.human-interface-guidelines.icons
   - knowledge.human-interface-guidelines.sf-symbols
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

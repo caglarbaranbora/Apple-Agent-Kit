@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.general-button-labels
-type: knowledge
+artifact_type: knowledge
 title: General Button Labels
 version: 0.1.0
 status: Draft
@@ -31,7 +31,7 @@ related:
   - knowledge.style-guide.sign-in-and-authentication-terminology
   - knowledge.style-guide.status-and-progress-indicators
   - knowledge.style-guide.ui-action-verbs
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

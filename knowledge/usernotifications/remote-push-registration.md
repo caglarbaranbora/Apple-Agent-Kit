@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.usernotifications.remote-push-registration
-type: knowledge
+artifact_type: knowledge
 title: Remote Push Registration
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ depends_on: []
 related:
   - knowledge.usernotifications.authorization-request
   - knowledge.usernotifications.notification-delegate-handling
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

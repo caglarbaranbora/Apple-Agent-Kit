@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.combine.publishers-and-subscribers
-type: knowledge
+artifact_type: knowledge
 title: Publishers and Subscribers
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ references:
   - https://developer.apple.com/documentation/combine/anycancellable
 depends_on: []
 related: []
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

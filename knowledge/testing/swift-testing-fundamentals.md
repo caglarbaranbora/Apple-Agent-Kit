@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.testing.swift-testing-fundamentals
-type: knowledge
+artifact_type: knowledge
 title: Swift Testing Fundamentals
 version: 0.1.0
 status: Draft
@@ -30,7 +30,7 @@ references:
 depends_on: []
 related:
   - knowledge.testing.xctest-case-structure-and-assertions
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

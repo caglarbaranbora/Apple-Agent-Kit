@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.networking.authenticated-requests
-type: knowledge
+artifact_type: knowledge
 title: Authenticated Requests
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ related:
   - knowledge.authentication.authentication
   - knowledge.networking.http-error-handling
   - knowledge.networking.url-request-construction
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

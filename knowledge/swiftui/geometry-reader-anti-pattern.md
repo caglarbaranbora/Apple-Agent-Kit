@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.swiftui.geometry-reader-anti-pattern
-type: knowledge
+artifact_type: knowledge
 title: GeometryReader Anti-Pattern
 version: 0.1.0
 status: Draft
@@ -22,7 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftui.lazy-grids
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

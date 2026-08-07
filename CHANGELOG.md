@@ -16,6 +16,12 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
   - `linking-model.md` and `routing-model.md` rewritten to describe the mechanisms that exist rather than ones never built — three linking conventions (metadata ids, wiki links, relative paths), and three-stage routing in which transitive resolution lives in the Knowledge layer via each Contract's `## Dependencies` section.
   - `validation-model.md` now names what enforces each level. Levels 1-3 become code in Phase 3; Levels 4-5 are semantic and become a review checklist, because a heuristic implementation would produce noise that gets silenced.
   - Corrected size limits: the Skill cap was declared as both 60 and 80 in different documents; it is 80.
+- **v1 finalization, Phase 2 — metadata migration.** The 232 Knowledge Contracts move to the single dialect (`type:` → `artifact_type:`, `updated:` → `last_updated:`), and the 31 References gain the metadata block they have never had. Mechanical; no rule, example, or citation changed.
+  - `scripts/validate_artifact.py` migrated in the same commit as the artifacts, so the repository is never in a state where the validator and the files disagree. Field requirements are now expressed as a common base plus per-type extensions, matching `schemas/metadata.schema.md` field for field.
+  - Reference validation exists for the first time: four required sections and a metadata block. Previously `--type reference` checked only a line cap, so an empty reference file passed.
+  - `## Dependencies` is now a required Knowledge section, since transitive resolution runs through it. All 232 Contracts already had one.
+  - `workflow` and `entry` types added to the validator ahead of their first artifacts, so the specifications and the code stay in step.
+  - Verified: 295/295 artifacts pass, 25 tests pass (up from 16).
 
 ## [2.1.0] - 2026-08-07
 ### Added

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.widgetkit.widget-declaration-and-families
-type: knowledge
+artifact_type: knowledge
 title: Widget Declaration and Families
 version: 0.1.0
 status: Draft
@@ -30,7 +30,7 @@ references:
 depends_on: []
 related:
   - knowledge.widgetkit.timeline-provider-and-entries
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

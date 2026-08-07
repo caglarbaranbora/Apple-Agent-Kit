@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.tipkit.tip-declaration-and-content
-type: knowledge
+artifact_type: knowledge
 title: Tip Declaration and Content
 version: 0.1.0
 status: Draft
@@ -30,7 +30,7 @@ references:
   - https://developer.apple.com/documentation/tipkit/highlightingappfeatureswithtipkit
 depends_on: []
 related: []
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.usernotifications.authorization-request
-type: knowledge
+artifact_type: knowledge
 title: Authorization Request
 version: 0.1.0
 status: Draft
@@ -27,7 +27,7 @@ related:
   - knowledge.usernotifications.remote-push-registration
   - knowledge.usernotifications.local-notification-scheduling
   - knowledge.human-interface-guidelines.notifications
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

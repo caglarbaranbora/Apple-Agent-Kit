@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.xcode.automatic-signing
-type: knowledge
+artifact_type: knowledge
 title: Automatic Signing
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.xcode.manual-signing-provisioning-profiles
   - knowledge.xcode.entitlements-capabilities
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

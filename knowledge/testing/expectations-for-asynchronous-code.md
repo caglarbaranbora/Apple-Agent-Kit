@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.testing.expectations-for-asynchronous-code
-type: knowledge
+artifact_type: knowledge
 title: Expectations for Asynchronous Code
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ depends_on:
   - knowledge.testing.xctest-case-structure-and-assertions
 related:
   - knowledge.testing.parameterized-and-async-tests
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

@@ -1,25 +1,77 @@
 #!/usr/bin/env python3
-"""Level 1 (Structural) validation for Apple Agent Kit artifacts."""
+"""Level 1 (Structural) validation for Apple Agent Kit artifacts.
+
+Authority for everything in this file:
+  schemas/metadata.schema.md          -- field names and per-type extensions
+  docs/specifications/*-spec.md       -- required sections and size limits
+  docs/validation-model.md            -- what Level 1 covers
+
+A disagreement between this file and those documents is a release-blocking
+defect, not a preference. Levels 2-3 (repository-wide) live in validate_repo.py.
+"""
 import argparse
 import re
 import sys
 from pathlib import Path
 
-LINE_CAPS = {"knowledge": 150, "skill": 80, "reference": 80}
+ARTIFACT_TYPES = ["knowledge", "skill", "reference", "workflow", "entry"]
+
+LINE_CAPS = {"knowledge": 150, "skill": 80, "reference": 98, "workflow": 80}
 
 REQUIRED_SECTIONS = {
-    "knowledge": ["## Intent", "## Rules", "## Compliant Example", "## Non-Compliant Example"],
+    "knowledge": [
+        "## Intent",
+        "## Rules",
+        "## Compliant Example",
+        "## Non-Compliant Example",
+        "## Dependencies",
+    ],
     "skill": ["## Purpose", "## Routing", "## Stop Conditions"],
+    "reference": ["## Source", "## Purpose", "## Primary Topics", "## Used By"],
+    "workflow": [
+        "## Purpose",
+        "## Scope",
+        "## Trigger Conditions",
+        "## Skill Sequence",
+        "## Exit Conditions",
+    ],
 }
 
-REQUIRED_METADATA_FIELDS = {
-    "knowledge": ["id", "type", "title", "version", "status", "owner", "summary", "domain", "tags", "updated"],
-    "skill": ["name", "description", "id", "title", "version", "status", "artifact_type", "domain", "routes", "related", "last_updated"],
+# Required of every artifact type.
+BASE_METADATA_FIELDS = [
+    "id",
+    "artifact_type",
+    "title",
+    "version",
+    "status",
+    "last_updated",
+]
+
+# Added per type. `domain` is an extension rather than a base field because a
+# workflow spans domains by definition and an entry belongs to none.
+METADATA_EXTENSIONS = {
+    "knowledge": [
+        "domain",
+        "owner",
+        "summary",
+        "tags",
+        "depends_on",
+        "related",
+        "references",
+    ],
+    "skill": ["domain", "name", "description", "routes", "related"],
+    "reference": ["domain", "owner", "summary"],
+    "workflow": ["skills", "related"],
+    "entry": ["name", "description"],
 }
+
+
+def required_metadata_fields(artifact_type):
+    return BASE_METADATA_FIELDS + METADATA_EXTENSIONS.get(artifact_type, [])
 
 
 def extract_metadata_block(text, artifact_type=None):
-    if artifact_type == "skill":
+    if artifact_type in ("skill", "entry"):
         # Real Claude Code skills need frontmatter at byte offset 0 -- a
         # fenced ```yaml block anywhere in the body (the knowledge/reference
         # convention) is not something the skill loader parses.
@@ -40,14 +92,13 @@ def validate_text(text, artifact_type):
         if not re.search(rf"^{re.escape(heading)}\s*$", text, re.MULTILINE):
             errors.append(f"missing required section: {heading}")
 
-    if artifact_type in REQUIRED_METADATA_FIELDS:
-        block = extract_metadata_block(text, artifact_type)
-        if not block:
-            errors.append("missing metadata YAML block")
-        else:
-            for field in REQUIRED_METADATA_FIELDS[artifact_type]:
-                if not re.search(rf"^{field}:", block, re.MULTILINE):
-                    errors.append(f"missing required metadata field: {field}")
+    block = extract_metadata_block(text, artifact_type)
+    if not block:
+        errors.append("missing metadata YAML block")
+    else:
+        for field in required_metadata_fields(artifact_type):
+            if not re.search(rf"^{field}:", block, re.MULTILINE):
+                errors.append(f"missing required metadata field: {field}")
 
     return errors
 
@@ -57,9 +108,13 @@ def validate_file(path, artifact_type):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Validate an Apple Agent Kit artifact (Level 1 - Structural).")
+    parser = argparse.ArgumentParser(
+        description="Validate an Apple Agent Kit artifact (Level 1 - Structural)."
+    )
     parser.add_argument("path", help="Path to the artifact markdown file")
-    parser.add_argument("--type", required=True, choices=["knowledge", "skill", "reference"], help="Artifact type")
+    parser.add_argument(
+        "--type", required=True, choices=ARTIFACT_TYPES, help="Artifact type"
+    )
     args = parser.parse_args()
 
     errors = validate_file(args.path, args.type)

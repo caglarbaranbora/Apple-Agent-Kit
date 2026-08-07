@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.local-authentication.reason-strings-and-info-plist
-type: knowledge
+artifact_type: knowledge
 title: Reason Strings and Info.plist
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ related:
   - knowledge.local-authentication.policy-evaluation
   - knowledge.local-authentication.error-handling
   - knowledge.local-authentication.fallback-ux-and-passcode
-updated: 2026-08-05
+last_updated: 2026-08-05
 ```
 
 ## Intent

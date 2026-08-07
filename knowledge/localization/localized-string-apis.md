@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.localization.localized-string-apis
-type: knowledge
+artifact_type: knowledge
 title: Localized String APIs
 version: 0.1.0
 status: Draft
@@ -36,7 +36,7 @@ depends_on:
 related:
   - knowledge.localization.locale-and-language-resolution
   - knowledge.localization.localized-resources-and-infoplist
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

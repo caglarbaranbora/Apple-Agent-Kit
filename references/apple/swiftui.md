@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.swiftui
+artifact_type: reference
+title: SwiftUI
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for Apple's SwiftUI framework documentation, implementation-conventions scope (Views, Navigation, Layout, State management,.
+domain: SwiftUI
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/documentation/swiftui

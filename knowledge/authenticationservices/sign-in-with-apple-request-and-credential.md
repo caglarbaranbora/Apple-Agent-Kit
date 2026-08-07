@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.authenticationservices.sign-in-with-apple-request-and-credential
-type: knowledge
+artifact_type: knowledge
 title: Sign In With Apple Request and Credential
 version: 0.1.0
 status: Draft
@@ -30,7 +30,7 @@ depends_on: []
 related:
   - knowledge.authenticationservices.nonce-and-identity-token-verification
   - knowledge.authenticationservices.credential-state-and-revocation
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

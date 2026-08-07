@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.units-of-measure
-type: knowledge
+artifact_type: knowledge
 title: Units of Measure
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ related:
   - knowledge.style-guide.numeric-terminology-supplement
   - knowledge.style-guide.abbreviations-and-acronyms
   - knowledge.style-guide.punctuation-and-typography-in-text
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

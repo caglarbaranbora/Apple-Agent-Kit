@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.app-chrome-and-window-terminology
-type: knowledge
+artifact_type: knowledge
 title: App Chrome and Window Terminology
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ related:
   - knowledge.style-guide.presentation-surfaces
   - knowledge.style-guide.capitalization-of-apple-proper-nouns
   - knowledge.style-guide.app-state-and-error-terminology
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

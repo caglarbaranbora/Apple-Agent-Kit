@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.localization.plural-and-device-variations
-type: knowledge
+artifact_type: knowledge
 title: Plural and Device Variations
 version: 0.1.0
 status: Draft
@@ -30,7 +30,7 @@ depends_on:
   - knowledge.localization.string-catalogs-and-extraction
 related:
   - knowledge.localization.localized-string-apis
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

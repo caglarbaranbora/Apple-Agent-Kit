@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.capitalization-style-rules
-type: knowledge
+artifact_type: knowledge
 title: Capitalization Style Rules
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ related:
   - knowledge.style-guide.capitalization-of-apple-proper-nouns
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.punctuation-and-typography-in-text
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

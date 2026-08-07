@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.authenticationservices.credential-state-and-revocation
-type: knowledge
+artifact_type: knowledge
 title: Credential State and Revocation
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ depends_on:
   - knowledge.authenticationservices.sign-in-with-apple-request-and-credential
 related:
   - knowledge.authenticationservices.session-persistence-and-sign-out
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.action-sheets
-type: knowledge
+artifact_type: knowledge
 title: Action Sheets
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.alerts
   - knowledge.style-guide.presentation-surfaces
   - knowledge.style-guide.general-button-labels
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

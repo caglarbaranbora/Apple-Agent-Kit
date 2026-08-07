@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.accessibility.accessibility-labels
-type: knowledge
+artifact_type: knowledge
 title: Accessibility Labels
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ related:
   - knowledge.accessibility.accessibility-traits
   - knowledge.accessibility.accessibility-value-and-hint
   - knowledge.human-interface-guidelines.accessibility
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

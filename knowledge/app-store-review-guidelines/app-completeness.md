@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.app-store-review-guidelines.app-completeness
-type: knowledge
+artifact_type: knowledge
 title: App Completeness
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.app-store-review-guidelines.demo-account
   - knowledge.app-store-review-guidelines.digital-goods-iap
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

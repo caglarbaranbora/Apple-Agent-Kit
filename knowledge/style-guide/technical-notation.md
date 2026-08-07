@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.technical-notation
-type: knowledge
+artifact_type: knowledge
 title: Technical Notation
 version: 0.1.0
 status: Draft
@@ -20,7 +20,7 @@ references:
   - https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf
 depends_on: []
 related: []
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

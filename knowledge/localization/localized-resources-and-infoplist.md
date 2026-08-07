@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.localization.localized-resources-and-infoplist
-type: knowledge
+artifact_type: knowledge
 title: Localized Resources and Info.plist
 version: 0.1.0
 status: Draft
@@ -36,7 +36,7 @@ related:
   - knowledge.localization.localized-string-apis
   - knowledge.localization.locale-and-language-resolution
   - knowledge.app-store-review-guidelines.permission-usage-strings
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

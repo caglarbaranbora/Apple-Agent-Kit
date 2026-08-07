@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.backgroundtasks.background-task-registration-and-scheduling
-type: knowledge
+artifact_type: knowledge
 title: Background Task Registration and Scheduling
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ references:
   - https://developer.apple.com/documentation/uikit/using-background-tasks-to-update-your-app
 depends_on: []
 related: []
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.layout
-type: knowledge
+artifact_type: knowledge
 title: Layout
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.typography
   - knowledge.human-interface-guidelines.right-to-left
   - knowledge.human-interface-guidelines.materials
-updated: 2026-07-31
+last_updated: 2026-07-31
 ```
 
 ## Intent

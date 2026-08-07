@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.local-authentication.context-lifecycle
-type: knowledge
+artifact_type: knowledge
 title: Context Lifecycle
 version: 0.1.0
 status: Draft
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.local-authentication.policy-evaluation
   - knowledge.local-authentication.keychain-biometric-binding
-updated: 2026-08-05
+last_updated: 2026-08-05
 ```
 
 ## Intent

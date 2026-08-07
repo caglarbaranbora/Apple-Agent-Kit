@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.sf-symbols.symbol-color-and-tinting
-type: knowledge
+artifact_type: knowledge
 title: Symbol Color and Tinting
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ depends_on:
 related:
   - knowledge.human-interface-guidelines.sf-symbols
   - knowledge.sf-symbols.rendering-modes
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

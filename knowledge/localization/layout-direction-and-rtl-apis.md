@@ -7,7 +7,7 @@ Version: 0.1.0
 
 ```yaml
 id: knowledge.localization.layout-direction-and-rtl-apis
-type: knowledge
+artifact_type: knowledge
 title: Layout Direction and RTL APIs
 version: 0.1.0
 status: Draft
@@ -35,7 +35,7 @@ related:
   - knowledge.human-interface-guidelines.right-to-left
   - knowledge.localization.locale-and-language-resolution
   - knowledge.sf-symbols.symbol-variants
-updated: 2026-08-07
+last_updated: 2026-08-07
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.app-tracking-transparency.authorization-request
-type: knowledge
+artifact_type: knowledge
 title: Authorization Request
 version: 0.1.0
 status: Draft
@@ -25,7 +25,7 @@ related:
   - knowledge.app-tracking-transparency.status-and-idfa-access
   - knowledge.app-tracking-transparency.usage-string-and-info-plist
   - knowledge.human-interface-guidelines.privacy
-updated: 2026-08-05
+last_updated: 2026-08-05
 ```
 
 ## Intent

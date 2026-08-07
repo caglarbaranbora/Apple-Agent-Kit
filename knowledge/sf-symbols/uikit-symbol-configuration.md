@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.sf-symbols.uikit-symbol-configuration
-type: knowledge
+artifact_type: knowledge
 title: UIKit Symbol Configuration
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ depends_on:
 related:
   - knowledge.sf-symbols.rendering-modes
   - knowledge.sf-symbols.symbol-weight-and-scale
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

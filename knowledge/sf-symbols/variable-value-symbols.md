@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.sf-symbols.variable-value-symbols
-type: knowledge
+artifact_type: knowledge
 title: Variable Value Symbols
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ depends_on:
   - knowledge.sf-symbols.symbol-basics
 related:
   - knowledge.human-interface-guidelines.sf-symbols
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

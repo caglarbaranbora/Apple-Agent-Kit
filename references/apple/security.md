@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.security
+artifact_type: reference
+title: Security (Keychain Services)
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for Apple's Security framework Keychain Services documentation, scoped to this domain's v1.
+domain: Security (Keychain Services)
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/documentation/security/keychain-services

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.human-interface-guidelines.right-to-left
-type: knowledge
+artifact_type: knowledge
 title: Right to Left
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ related:
   - knowledge.human-interface-guidelines.sf-symbols
   - knowledge.style-guide.international-formatting
   - knowledge.style-guide.international-style
-updated: 2026-08-05
+last_updated: 2026-08-05
 ```
 
 ## Intent

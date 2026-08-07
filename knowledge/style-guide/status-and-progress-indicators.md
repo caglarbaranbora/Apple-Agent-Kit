@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.status-and-progress-indicators
-type: knowledge
+artifact_type: knowledge
 title: Status and Progress Indicators
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ related:
   - knowledge.style-guide.presentation-surfaces
   - knowledge.style-guide.input-controls
   - knowledge.style-guide.general-button-labels
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

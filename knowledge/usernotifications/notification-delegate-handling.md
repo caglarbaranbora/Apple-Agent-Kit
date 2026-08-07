@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.usernotifications.notification-delegate-handling
-type: knowledge
+artifact_type: knowledge
 title: Notification Delegate Handling
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ related:
   - knowledge.usernotifications.remote-push-registration
   - knowledge.usernotifications.notification-actions-and-categories
   - knowledge.human-interface-guidelines.notifications
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

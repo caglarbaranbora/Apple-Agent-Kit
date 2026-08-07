@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.app-intents.app-entities-and-queries
-type: knowledge
+artifact_type: knowledge
 title: App Entities and Queries
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ references:
 depends_on:
   - knowledge.app-intents.app-intent-declaration-and-parameters
 related: []
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

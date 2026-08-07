@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.uikit.collection-view-compositional-layout
-type: knowledge
+artifact_type: knowledge
 title: Collection View Compositional Layout
 version: 0.1.0
 status: Draft
@@ -26,7 +26,7 @@ depends_on: []
 related:
   - knowledge.uikit.cell-configuration
   - knowledge.uikit.collection-view-diffable
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.style-guide.authentication-credentials-and-biometrics
-type: knowledge
+artifact_type: knowledge
 title: Authentication Credentials and Biometrics
 version: 0.1.0
 status: Draft
@@ -22,7 +22,7 @@ depends_on: []
 related:
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.sign-in-and-authentication-terminology
-updated: 2026-07-30
+last_updated: 2026-07-30
 ```
 
 ## Intent

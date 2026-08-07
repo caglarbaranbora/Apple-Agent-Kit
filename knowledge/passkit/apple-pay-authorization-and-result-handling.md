@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.passkit.apple-pay-authorization-and-result-handling
-type: knowledge
+artifact_type: knowledge
 title: Apple Pay Authorization and Result Handling
 version: 0.1.0
 status: Draft
@@ -28,7 +28,7 @@ references:
 depends_on:
   - knowledge.passkit.apple-pay-payment-request
 related: []
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

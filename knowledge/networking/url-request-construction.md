@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.networking.url-request-construction
-type: knowledge
+artifact_type: knowledge
 title: URL Request Construction
 version: 0.1.0
 status: Draft
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.networking.async-data-fetching
   - knowledge.networking.authenticated-requests
-updated: 2026-08-01
+last_updated: 2026-08-01
 ```
 
 ## Intent

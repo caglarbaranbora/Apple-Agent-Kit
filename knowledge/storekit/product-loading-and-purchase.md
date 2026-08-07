@@ -6,7 +6,7 @@ Status: Draft Version: 0.1.0
 
 ``` yaml
 id: knowledge.storekit.product-loading-and-purchase
-type: knowledge
+artifact_type: knowledge
 title: Product Loading and Purchase
 version: 0.1.0
 status: Draft
@@ -29,7 +29,7 @@ related:
   - knowledge.storekit.transaction-updates-and-restoring-purchases
   - knowledge.storekit.subscription-status-and-renewal-info
   - knowledge.app-store-review-guidelines.digital-goods-iap
-updated: 2026-08-06
+last_updated: 2026-08-06
 ```
 
 ## Intent

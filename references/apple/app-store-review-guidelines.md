@@ -3,6 +3,20 @@
 Status: Draft
 Version: 0.1.0
 
+## Metadata
+
+``` yaml
+id: reference.apple.app-store-review-guidelines
+artifact_type: reference
+title: App Store Review Guidelines
+version: 0.1.0
+status: Draft
+owner: Apple Agent Kit
+summary: Reference index for Apple's App Store Review Guidelines — the subset of sections most frequently responsible for real-world app rejections and.
+domain: App Store Review Guidelines
+last_updated: 2026-08-07
+```
+
 ## Source
 
 https://developer.apple.com/app-store/review/guidelines/
