@@ -200,7 +200,20 @@ Reached by grilling; the full record with measured facts is the decision log.
 
 Phase 1 is documents only and changes no artifact. Phase 2 is mechanical and
 scriptable, with a large diff and zero semantic change. Phase 3 makes 1 and 2
-enforceable. Phases are separate pull requests so review stays tractable.
+enforceable.
+
+Phases 1-3 ship as one pull request. Phase 3 is what makes Phases 1 and 2
+checkable, so reviewing them apart would mean reviewing rules with nothing
+enforcing them. Phases 4-6 are separate pull requests.
+
+### Carried into Phase 4
+
+`scripts/validate_repo.py` reports exactly one finding against the repository:
+`knowledge/authentication/accessibility-forms.md` declares `domain: Accessibility`
+while sitting in `knowledge/authentication/`. The move is already listed as Phase 4
+work and is entangled with the `authentication` Skill retirement, since moving the
+Contract changes its id and therefore which Skill routes to it. It is left open
+rather than suppressed: an allowlist in the validator is how a gate stops being one.
 
 ## Phase 5 — Tier 1 content completion
 

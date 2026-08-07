@@ -36,6 +36,15 @@ Size limits:
 
 Enforced by: `scripts/validate_artifact.py`
 
+```bash
+python3 scripts/validate_artifact.py <path> --type knowledge   # one file
+python3 scripts/validate_artifact.py . --all                   # every artifact
+```
+
+`--all` takes each file's type from its own `artifact_type` rather than from its
+location, which is the only way `skills/apple-agent-kit/SKILL.md` is validated as the
+entry point rather than as a Skill.
+
 Blocking: Yes
 
 ------------------------------------------------------------------------
@@ -50,10 +59,17 @@ Checks:
 - Ids agree with paths, and `domain` agrees with the directory
 - Every metadata edge (`depends_on`, `related`, `routes`) resolves
 - Every wiki link and relative path resolves
+- A Reference's `## Used By` lists every Contract that cites one of its `## Source`
+  URLs — matched by URL, never by directory name, because Reference-to-Knowledge is
+  many-to-many; see architecture/linking-model.md [[linking-model]]
 - No orphaned artifacts
 - `skills/index.md` agrees with `skills/` and `workflows/` in both directions
 
 Enforced by: `scripts/validate_repo.py`
+
+```bash
+python3 scripts/validate_repo.py .
+```
 
 Blocking: Yes
 
@@ -71,11 +87,22 @@ Checks:
 - `depends_on` graph is acyclic
 - Routing rules respected — every routed id appears in the Skill's `## Routing`; no
   Skill routes to a Skill; every Workflow has a Routing Index row
+- Every Workflow names at least two Skills — composing Skills is what a Workflow is for
 - No forbidden cross-layer references
 
 Enforced by: `scripts/validate_repo.py`
 
 Blocking: Yes
+
+------------------------------------------------------------------------
+
+Levels 1-3 are covered by `tests/test_validate_artifact.py` and
+`tests/test_validate_repo.py`. Each test builds a fixture and breaks exactly one
+thing, so a check that stops working fails a test rather than going quiet:
+
+```bash
+python3 -m unittest discover tests/
+```
 
 ------------------------------------------------------------------------
 

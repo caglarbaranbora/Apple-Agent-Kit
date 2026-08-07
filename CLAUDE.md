@@ -35,18 +35,28 @@ Adding to, splitting, or retiring a Skill: `docs/specifications/skill-management
 - Knowledge Contract IDs follow `knowledge.<domain>.<slug>` and must agree with the path; `domain` must agree with the directory name.
 - New domains get their own entry in each of `references/apple/`, `knowledge/`, `skills/` — don't mix domains inside one file.
 
-## Validating an artifact
+## Validating
+
+Two scripts, split by scope. Both must pass before committing. See
+`docs/validation-model.md` for what each level covers.
 
 ```bash
-python3 scripts/validate_artifact.py <path/to/artifact.md> --type knowledge   # or: skill | reference
+# Level 1 — one file, structural
+python3 scripts/validate_artifact.py <path/to/artifact.md> --type knowledge   # or: skill | reference | workflow | entry
+
+# Level 1 — every artifact at once, each type read from its own metadata
+python3 scripts/validate_artifact.py . --all
+
+# Levels 2-3 — repository-wide: ids, edges, the dependency DAG, routing, index sync
+python3 scripts/validate_repo.py .
 ```
 
-Run this against any new or modified Knowledge Contract, Skill, or Reference before committing.
+Levels 4-5 are semantic and are checked by reading, in review — no script decides them.
 
 ## Running tests
 
 ```bash
-python3 -m unittest tests/test_validate_artifact.py -v
+python3 -m unittest discover tests/ -v
 ```
 
 ## Validating the plugin manifest

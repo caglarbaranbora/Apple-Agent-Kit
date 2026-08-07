@@ -13,7 +13,7 @@ version: 0.1.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's Security framework Keychain Services documentation, scoped to this domain's v1.
-domain: Security (Keychain Services)
+domain: Security
 last_updated: 2026-08-07
 ```
 
@@ -61,3 +61,4 @@ generic/internet password (certificates, cryptographic keys, identities)
 - knowledge/security/keychain-accessibility-levels.md ([[knowledge/security/keychain-accessibility-levels]])
 - knowledge/security/keychain-access-groups-and-sharing.md ([[knowledge/security/keychain-access-groups-and-sharing]])
 - knowledge/security/storing-structured-data-in-keychain.md ([[knowledge/security/storing-structured-data-in-keychain]])
+- knowledge/local-authentication/keychain-biometric-binding.md ([[knowledge/local-authentication/keychain-biometric-binding]])

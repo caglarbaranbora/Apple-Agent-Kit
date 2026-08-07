@@ -13,7 +13,7 @@ version: 0.1.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's Style Guide.
-domain: Apple Style Guide
+domain: Style Guide
 last_updated: 2026-08-07
 ```
 

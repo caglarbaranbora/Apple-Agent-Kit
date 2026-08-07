@@ -64,3 +64,4 @@ Out of scope for v1: Live Activities and the `ActivityKit` framework; watchOS co
 - knowledge/widgetkit/timeline-provider-and-entries.md ([[knowledge/widgetkit/timeline-provider-and-entries]])
 - knowledge/widgetkit/widget-interactivity-and-deep-links.md ([[knowledge/widgetkit/widget-interactivity-and-deep-links]])
 - knowledge/widgetkit/timeline-reloading-and-refresh-budget.md ([[knowledge/widgetkit/timeline-reloading-and-refresh-budget]])
+- knowledge/backgroundtasks/background-refresh-and-widget-timeline-hookup.md ([[knowledge/backgroundtasks/background-refresh-and-widget-timeline-hookup]])
