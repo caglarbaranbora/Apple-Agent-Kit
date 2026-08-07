@@ -383,6 +383,35 @@ five — `human-interface-guidelines`, `usernotifications`, `sf-symbols`,
 need a pass of their own. Not folded into an `accessibility` PR: rewriting nine
 References under an unrelated heading is how a scoped PR stops being reviewable.
 
+**Corrected in PR 5:** the table above answers a narrower question than it reads as.
+Its selection rule is "indexes two URLs or fewer while citing more than two" — the set
+on which `used-by-complete` is *vacuous*. It is not the set of References with an
+unindexed citation. Re-measured on 2026-08-07 across every domain, **17 References cite
+at least one URL no Reference indexes**, and ten of them are recorded nowhere:
+
+| Reference | Cited URLs not indexed anywhere |
+|---|---|
+| `security` | 12 of 19 |
+| `localization` | 7 of 44 |
+| `privacy` | 6 of 11 |
+| `eventkit` | 4 of 23 |
+| `tipkit` | 3 of 31 |
+| `testing` | 2 of 23 |
+| `storekit`, `style-guide`, `swiftdata`, `widgetkit` | 1 each |
+
+The mechanism is the same in all of them and is worth stating plainly, because it is
+what makes partial gaps invisible rather than merely smaller. `check_used_by_is_complete`
+walks `## Source` URLs and asks which Contracts cite each one. A URL that **no**
+Reference indexes resolves to an empty list and touches no check at all. Indexing
+coverage is therefore unenforceable by construction: the check can only verify the
+reverse index of what is already indexed. `security` at 12 unindexed of 19 cited is not
+a rounding error, and nothing in the repository would ever have reported it.
+
+The Reference pass this implies is larger than "the remaining five" and is still not
+foldable into a domain PR. It also wants a sixteenth check — one that reads Contract
+`references:` and reports any URL no Reference indexes — which is the only thing that
+would make coverage enforceable rather than periodically re-measured by hand.
+
 Guideline 4.8 satisfies clause (i) as well as (iv): `workflow.authentication`, shipped
 in Phase 4, walks an agent through building a sign-in screen across five domains and
 none of them mentions that omitting Sign in with Apple is a rejection under 4.8. The
@@ -472,17 +501,39 @@ completion closure. `URLSession`'s delegate surface is old API whose failure mod
 predate the compiler diagnostics that would now catch them, so "it builds and the
 requests work" is worth less here than anywhere else in the kit.
 
-**`domain-map.md` is exempt from the check that would have caught its own stale
-hand-off.** `check_prose_domain_mentions_resolve` skips `docs/architecture/domain-map.md`
-outright, on the stated grounds that "recording a retirement is the one place a retired
-name must still appear." The networking Tier 1 row was still reading "Sign-in UX owned
-by `authentication`" — a live routing hand-off to a domain retired in Phase 4, in the
-file that records the retirement. The exemption is broader than its justification: the
-check already carries `describes_a_retirement()`, a per-sentence heuristic that
-distinguishes "the `authentication` Skill is retired" from "route to the `authentication`
-Skill." PR 5 fixed the row by hand. Narrowing the exemption from whole-file to
-sentence-level, so `domain-map.md` is scanned with the heuristic every other file gets,
-is the real fix and is left for a later pass.
+**The check that should have caught PR 5's stale hand-off had two holes, and the
+smaller one was the obvious one.** `check_prose_domain_mentions_resolve` skipped
+`docs/architecture/domain-map.md` outright, on the stated grounds that "recording a
+retirement is the one place a retired name must still appear" — and the networking Tier
+1 row was still reading "Sign-in UX owned by `authentication`", a live routing hand-off
+to a domain retired in Phase 4, sitting in the one file nothing scanned.
+
+Removing that exemption alone would not have caught it. Both mention regexes anchor on
+a trailing "domain"/"skill"/"workflow" noun, and ``owned by `authentication` `` has
+none. That phrasing is not incidental: it is the scope vocabulary's **own** hand-off
+form, defined in PR 1 and used 57 times across the repository — the single most common
+hand-off shape, and the one shape no check could see. Both holes are closed in PR 5:
+
+- `describes_a_retirement()` becomes `describes_a_former_domain()`. Retirement is not
+  the only way a domain stops existing — `design` was split by rfcs/0001 and the map
+  still records that — so the predicate is "this sentence is history", over a small
+  explicit verb list. Its sentence bounds now break on a blank line as well as a
+  period, because a table row and the paragraph after it are not one sentence and a
+  status cell reading "**Retired 2026-08-07**" was leaking its verb forward.
+- A third regex matches the ownership form directly, and `domain-map.md` is scanned
+  like every other file.
+
+**Turning it on surfaced four live defects, two of them written by the passes that
+introduced the vocabulary.** Two were genuine stale routing: the map's
+`authenticationservices` entry, and `knowledge/authenticationservices/sign-in-with-apple-request-and-credential.md`,
+which had carried ``owned by `authentication` `` in its Excluded section since before
+the retirement — a Contract telling agents to consult a domain that no longer exists,
+which is exactly the defect class PR 0 was written to eliminate and which it missed
+because nothing could see this phrasing. The other two were marker misuse: PR 3 and PR
+4 each wrote ``owned by `<contract>` `` where the target is a **sibling Contract**, not
+a domain. `owned by` is reserved for cross-domain hand-offs; an intra-domain one is
+"see `x`". Both files used the correct form on adjacent lines, which is what a
+vocabulary with no enforcement produces — right most of the time, wrong silently.
 
 ### Deviation taken in PR 1
 

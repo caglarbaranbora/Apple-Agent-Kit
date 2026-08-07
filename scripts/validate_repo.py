@@ -724,19 +724,46 @@ BARE_MENTION_RE = re.compile(
     r"\b([a-z][a-z0-9-]*)\s+(?i:(domain|skill|workflow))\b"
 )
 
+# The scope vocabulary's own hand-off form. `docs/specifications/skill-spec.md`
+# tells authors to write ``owned by `<domain>` `` -- and that phrasing carries
+# no trailing "domain"/"skill"/"workflow" noun, so neither regex above sees it.
+# It was the single most common hand-off in the repository (57 occurrences) and
+# the one form nothing checked; PR 5 found a stale one that had survived the
+# `authentication` retirement in `domain-map.md` for exactly this reason.
+OWNERSHIP_MENTION_RE = re.compile(r"(?i:owned by)\s+`([a-z][a-z0-9-]*)`")
 
-def describes_a_retirement(prose, position):
-    """True where the sentence around `position` is recording a retirement.
+
+# Verbs that mark a sentence as recording history rather than routing. A
+# domain that no longer exists must stay writable somewhere -- what it was
+# renamed to, split into, or absorbed by is exactly the kind of thing
+# `domain-map.md` exists to record.
+HISTORY_VERBS = ("retire", "merged", "split", "former", "previously",
+                 "replaced", "superseded", "renamed", "absorbed")
+
+
+def describes_a_former_domain(prose, position):
+    """True where the sentence around `position` is recording history.
 
     "The `authentication` Skill is retired" and "route to the `authentication`
     Skill" both name a domain that is gone; only the second misroutes an agent.
     A retirement has to be writable somewhere -- `workflows/authentication/`
     says what it replaces, and the README's What's New says what shipped.
+
+    Retirement is not the only way a domain stops existing: `design` was split
+    into `style-guide`, `human-interface-guidelines`, and `sf-symbols` by
+    rfcs/0001, and `domain-map.md` still records that. So the predicate is
+    "this sentence is history", not "this sentence says retired".
+
+    Sentence bounds break on a blank line as well as on a period. A table row
+    and the paragraph after it are not one sentence, and without the blank-line
+    bound a status cell reading "**Retired 2026-08-07**" leaks its verb into
+    every mention that follows it before the next period.
     """
-    start = prose.rfind(".", 0, position) + 1
-    end = prose.find(".", position)
-    sentence = prose[start : end if end != -1 else len(prose)]
-    return "retire" in sentence.lower()
+    start = max(prose.rfind(".", 0, position), prose.rfind("\n\n", 0, position)) + 1
+    ends = [i for i in (prose.find(".", position), prose.find("\n\n", position))
+            if i != -1]
+    sentence = prose[start : min(ends) if ends else len(prose)].lower()
+    return any(verb in sentence for verb in HISTORY_VERBS)
 
 
 def check_prose_domain_mentions_resolve(artifacts, root):
@@ -755,8 +782,16 @@ def check_prose_domain_mentions_resolve(artifacts, root):
     Historical records are excluded: `CHANGELOG.md` released entries,
     `validation/slices/`, `rfcs/`, and `docs/superpowers/` are dated snapshots
     of what was true when written, and the design spec names rewriting them a
-    non-goal. `domain-map.md` itself is excluded, since recording a retirement
-    is the one place a retired name must still appear.
+    non-goal.
+
+    `domain-map.md` used to be excluded wholesale, on the grounds that
+    recording a retirement is the one place a retired name must still appear.
+    That was broader than its justification: `describes_a_former_domain()`
+    already draws exactly that distinction per sentence, so the map got a
+    blanket pass it did not need. PR 5 found the cost -- the `networking` row
+    still read "Sign-in UX owned by `authentication`", a live hand-off to a
+    domain retired in Phase 4, in the one file nothing scanned. The map is now
+    scanned like every other file.
     """
     findings = []
     domains = known_domains(root)
@@ -765,7 +800,6 @@ def check_prose_domain_mentions_resolve(artifacts, root):
     skipped = (
         ".git/", ".claude/", "node_modules/", "docs/superpowers/",
         "validation/slices/", "rfcs/", "CHANGELOG.md",
-        "docs/architecture/domain-map.md",
     )
     for path in sorted(root.rglob("*.md")):
         rel = path.relative_to(root).as_posix()
@@ -777,7 +811,12 @@ def check_prose_domain_mentions_resolve(artifacts, root):
             for pattern in (BACKTICKED_MENTION_RE, BARE_MENTION_RE)
             for m in pattern.finditer(prose)
             if (pattern is BACKTICKED_MENTION_RE or m.group(1) in retired)
-            and not describes_a_retirement(prose, m.start())
+            and not describes_a_former_domain(prose, m.start())
+        }
+        mentions |= {
+            (m.group(1), "domain")
+            for m in OWNERSHIP_MENTION_RE.finditer(prose)
+            if not describes_a_former_domain(prose, m.start())
         }
         for name, noun in sorted(mentions):
             if name in (workflows if noun == "workflow" else domains):
