@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.2.0
+Version: 1.3.0
 Date: 2026-08-07
 
 ## Goal
@@ -219,7 +219,9 @@ no API, which every Contract in that directory does — moving it as written wou
 planted a quality outlier in the repository's strongest domain. The Contract was
 retired with the rest of the domain, and its one genuinely uncovered rule (announcing
 form validation errors to assistive technologies) is recorded in `domain-map.md` as a
-Tier 1 `accessibility` gap for Phase 5. The validator now passes with zero findings.
+Tier 1 `accessibility` gap for Phase 5, where PR 3 closed it as
+`knowledge.accessibility.accessibility-announcements` on 2026-08-07. The validator now
+passes with zero findings.
 
 ### Deviations taken in Phase 4
 
@@ -245,7 +247,8 @@ Gaps `docs/architecture/domain-map.md` declares against Tier 1:
 | `sf-symbols` | Symbol effects/animations, Symbol Composer authoring |
 | `networking` | Completion-handler APIs, Combine, `URLSessionDelegate` background/progress/TLS |
 | `xcode` | `xcodebuild` CLI, CI signing automation, SwiftPM build configuration — **plus two inherited hand-offs**: Test Plans and code coverage (deferred by `testing`), project language configuration and `.xcloc`/XLIFF (deferred by `localization`). **Both closed in PR 2, 2026-08-07.** |
-| `accessibility`, `style-guide`, `local-authentication`, `app-tracking-transparency` | none — complete as declared |
+| `accessibility` | none from its own scoping — **plus one inherited hand-off**: announcing a validation result to assistive apps, surfaced by the `authentication` retirement. **Closed in PR 3, 2026-08-07.** |
+| `style-guide`, `local-authentication`, `app-tracking-transparency` | none — complete as declared |
 
 ### Scope, decided 2026-08-07
 
@@ -305,7 +308,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 | 0 | Retired-domain prose hand-offs, and the check that catches them | 0 |
 | 1 | Scope-vocabulary revision: `Excluded (permanent)` vs `Deferred (planned)`, enforced; the two corrections above; the Tier 3 reclassifications | 0 |
 | 2 | `xcode` — Test Plans and coverage, `.xcloc`/XLIFF and project language *(both inherited)* — **shipped 2026-08-07, 4 KC** | 4-5 |
-| 3 | `accessibility` — validation errors announced to assistive technologies | 1-2 |
+| 3 | `accessibility` — validation errors announced to assistive technologies — **shipped 2026-08-07, 1 KC** | 1-2 |
 | 4 | `swiftui` — `ObservableObject`/`NavigationView` migration | 2 |
 | 5 | `networking` — completion-handler, `URLSessionDelegate`, `dataTaskPublisher` | 5-6 |
 | 6 | `uikit` — gesture recognizers, Core Animation and custom transitions, SwiftUI interop | 6-7 |
@@ -333,6 +336,51 @@ once — four scope statements across two Skills and two Contracts. **A PR that 
 deferred topic must revisit every artifact that deferred it**, and nothing mechanical
 catches this: `scope-vocabulary` verifies that a named domain exists, not that a topic
 inside it is still unbuilt.
+
+### Observed in PR 3
+
+One Contract, at the low end of 1-2, and for a reason worth stating: the second
+candidate would have restated a neighbour. `full-keyboard-access-and-focus` Rule 2
+already owns `.screenChanged` with an element argument and moving VoiceOver focus to a
+field that failed validation. A Contract covering the layout- and screen-change
+notifications would have re-litigated that ownership for the sake of hitting an
+estimate. **The recorded gap is the deliverable, not the API surface around it.**
+
+Closing the gap exposed a smaller one. `AccessibilityNotification` has four cases;
+`Announcement` is now owned and `ScreenChanged`-with-focus was already owned, which
+leaves `LayoutChanged` and `PageScrolled` visibly unowned for the first time. Recorded
+as `Deferred` in `skills/accessibility/SKILL.md` rather than absorbed to look complete.
+
+`domain-map.md` recorded the gap's API as "`UIAccessibility.post(.announcement:)` /
+`AccessibilityNotification.Announcement`" with no module. `AccessibilityNotification` is
+published under Apple's **Accessibility** framework, not SwiftUI, even though Apple's own
+example for it is SwiftUI code, and it is iOS 17+ while `UIAccessibility.post` goes back
+to iOS 4. A gap recorded as two API names side by side hid a version boundary and a
+framework boundary.
+
+**PR 2's Reference finding is systemic, not an `xcode` accident.** The same defect was
+present in `accessibility` — 1 URL indexed, 33 cited across 12 Contracts. Measured across
+all 31 References, **9 index two URLs or fewer while their own Contracts cite more than
+two**, so `used-by-complete` is vacuous on all 9:
+
+| Reference | URLs indexed | URLs its Contracts cite |
+|---|---|---|
+| `swiftui` | 1 | 50 |
+| `uikit` | 1 | 34 |
+| `human-interface-guidelines` | 1 | 33 |
+| `usernotifications` | 2 | 26 |
+| `sf-symbols` | 1 | 15 |
+| `networking` | 1 | 13 |
+| `local-authentication` | 1 | 9 |
+| `app-tracking-transparency` | 2 | 5 |
+| `app-store-review-guidelines` | 1 | 3 |
+
+PRs 4-7 cover `swiftui`, `networking`, `uikit`, and `app-store-review-guidelines` by
+construction, and each MUST index its Reference before adding Contracts. The remaining
+five — `human-interface-guidelines`, `usernotifications`, `sf-symbols`,
+`local-authentication`, `app-tracking-transparency` — are on no Phase 5 PR's path and
+need a pass of their own. Not folded into an `accessibility` PR: rewriting nine
+References under an unrelated heading is how a scoped PR stops being reviewable.
 
 Guideline 4.8 satisfies clause (i) as well as (iv): `workflow.authentication`, shipped
 in Phase 4, walks an agent through building a sign-in screen across five domains and

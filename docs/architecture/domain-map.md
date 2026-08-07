@@ -1,7 +1,7 @@
 # Domain Map
 
 Status: Draft
-Version: 1.14.0
+Version: 1.15.0
 
 See: ../glossary.md
 [[glossary]]
@@ -97,7 +97,7 @@ Mapped before this Tier list existed. No Tier assigned yet — resolve when reac
 
 | Domain | Status | Initial Scope | Owns |
 |---|---|---|---|
-| authentication | **Retired 2026-08-07** | Sign in, identity, sessions | Nothing. Replaced by `workflow.authentication`; its four Knowledge Contracts were retired, and one gap they papered over is now recorded against `accessibility` — see Cross-Domain Notes |
+| authentication | **Retired 2026-08-07** | Sign in, identity, sessions | Nothing. Replaced by `workflow.authentication`; its four Knowledge Contracts were retired, and the one gap they papered over was recorded against `accessibility` and closed there 2026-08-07 — see Cross-Domain Notes |
 
 A retired domain stays in this record with its disposition rather than being erased, per ../specifications/skill-management.md [[skill-management]].
 
@@ -106,7 +106,7 @@ A retired domain stays in this record with its disposition rather than being era
 ## Cross-Domain Notes
 
 - `authenticationservices` (Tier 2, complete) and the former `sign-in-with-apple` placeholder resolved: `authenticationservices` absorbs `sign-in-with-apple` outright — same framework, same feature, no distinct content existed for a separate row. It also absorbed the sign-in *mechanism* half of the retired `authentication` domain, while the wording half went to `knowledge.style-guide.sign-in-and-authentication-terminology` (which already stated those rules in seven Rules against cited Apple Style Guide pages, versus `authentication`'s two). `authenticationservices` owns the `ASAuthorizationAppleIDProvider`/`ASAuthorizationController` API surface; the "Sign in with Apple" button's own capitalization stays a `style-guide` rule. Composing the two is `workflow.authentication`'s job.
-- `accessibility` (Tier 1) carries **one recorded gap**, surfaced by the `authentication` retirement rather than by its own scoping. The retired `knowledge.authentication.accessibility-forms` stated four rules; three were already owned in far more depth by `accessibility-labels`, `voiceover-navigation-order`, and the domain's traits Contracts. The fourth — that a form's **validation errors must be announced to assistive technologies** (`UIAccessibility.post(.announcement:)` / `AccessibilityNotification.Announcement`) — has no Contract in `knowledge/accessibility/`. It was not migrated, because the retired Contract named no API at all and every `accessibility` Contract does. Recorded here as a Tier 1 gap for content completion, not carried as a substandard file.
+- `accessibility` (Tier 1) carried **one recorded gap**, surfaced by the `authentication` retirement rather than by its own scoping — **closed 2026-08-07**. The retired `knowledge.authentication.accessibility-forms` stated four rules; three were already owned in far more depth by `accessibility-labels`, `voiceover-navigation-order`, and the domain's traits Contracts. The fourth — that a form's **validation errors must be announced to assistive technologies** — had no Contract, and was not migrated because the retired Contract named no API at all while every `accessibility` Contract does. It is now `knowledge.accessibility.accessibility-announcements`, built against the API rather than against the retired Contract's prose. Two boundaries the recorded gap did not show: `AccessibilityNotification` is published under Apple's **Accessibility** framework and is iOS 17+, while `UIAccessibility.post(notification:.announcement)` is UIKit-only and goes back to iOS 4; and moving VoiceOver focus to a field that failed validation stays with `full-keyboard-access-and-focus`, which already owned it. `AccessibilityNotification.LayoutChanged` and `.PageScrolled` are now the domain's one open surface, marked `Deferred` in its Skill.
 - `human-interface-guidelines` and `sf-symbols` were previously merged with `style-guide` under a single `design` domain. Split per ../../rfcs/0001-style-guide-domain-and-domain-roadmap.md ([[0001-style-guide-domain-and-domain-roadmap]]).
 - `core-data` and `swiftdata` (both Tier 2, complete) overlap (both persistence), now resolved: both are built as separate, non-overlapping frameworks with separate APIs — a clean split, not an angle-split, since they solve the same problem with entirely distinct API surfaces (`NSManagedObject`/`NSPersistentContainer`/`NSManagedObjectContext` vs. `@Model`/`ModelContainer`/`ModelContext`). Neither domain's KCs reference or restate the other's content. No shared "which framework to recommend" note was added — that judgment call is left to whoever is building the app, not encoded as a rule here.
 - `arkit` and `realitykit` overlap (AR/3D rendering, RealityKit often layers on ARKit sessions). Boundary not yet resolved — decide when either is reached.

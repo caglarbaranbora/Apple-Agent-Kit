@@ -1,7 +1,7 @@
 # Authentication
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 0.1.0
 id: workflow.authentication
 artifact_type: workflow
 title: Authentication
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Composes the five Skills a sign-in feature spans, from user-facing wording through credential storage.
@@ -57,7 +57,7 @@ Triggers: sign in, sign up, login screen, account session, sign out, credentials
 
 1. `skill.style-guide.writing` — fix the terminology before it is written into views.
    Sign In / Sign Out, hyphenation, button label wording.
-2. `skill.accessibility.foundations` — labels, VoiceOver order, and focus for the form.
+2. `skill.accessibility.foundations` — the form's labels, VoiceOver order, focus, and how its validation result reaches an assistive app.
 3. `skill.authenticationservices.foundations` — the sign-in mechanism itself, and the
    credential-state and revocation handling that follows it.
 4. `skill.local-authentication.foundations` — only when the feature re-authenticates a
