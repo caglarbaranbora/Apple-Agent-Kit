@@ -5,6 +5,8 @@ All notable changes to this project are documented in this file. The format is b
 The project uses a single version number (`README.md` and `npx/package.json` share the same version).
 
 ## [Unreleased]
+
+## [2.1.0] - 2026-08-07
 ### Added
 - `localization` domain — 1 Reference, 6 Knowledge Contracts, 1 Skill. **Seventeenth and final Tier 2 domain; Tier 2 is now complete.**
   - `string-catalogs-and-extraction` — `.xcstrings` mechanics, compiler-driven extraction and the string-literal requirement it depends on, translator comments, the New/Needs Review/Translated/Stale states, explicit keys vs. value-as-key, manually-managed entries, and the per-table migration boundary with legacy `.strings`.
