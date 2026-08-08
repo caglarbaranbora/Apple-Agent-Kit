@@ -1,6 +1,6 @@
 # Collection View Diffable Data Source
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.collection-view-diffable
 artifact_type: knowledge
 title: Collection View Diffable Data Source
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines use of UICollectionViewDiffableDataSource and NSDiffableDataSourceSnapshot to bind data to a collection view built with UICollectionViewCompositionalLayout.
@@ -18,13 +18,13 @@ tags:
   - collection-view
   - diffable-data-source
 references:
-  - https://developer.apple.com/documentation/uikit/uicollectionviewdiffabledatasource
-  - https://developer.apple.com/documentation/uikit/nsdiffabledatasourcesnapshot
+  - https://developer.apple.com/documentation/uikit/uicollectionviewdiffabledatasource-9tqpa
+  - https://developer.apple.com/documentation/uikit/nsdiffabledatasourcesnapshot-swift.struct
 depends_on: []
 related:
   - knowledge.uikit.collection-view-compositional-layout
   - knowledge.uikit.cell-configuration
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -128,5 +128,5 @@ None.
 
 ## References
 
--   [Apple Developer — UICollectionViewDiffableDataSource](https://developer.apple.com/documentation/uikit/uicollectionviewdiffabledatasource)
--   [Apple Developer — NSDiffableDataSourceSnapshot](https://developer.apple.com/documentation/uikit/nsdiffabledatasourcesnapshot)
+-   [Apple Developer — UICollectionViewDiffableDataSource](https://developer.apple.com/documentation/uikit/uicollectionviewdiffabledatasource-9tqpa)
+-   [Apple Developer — NSDiffableDataSourceSnapshot](https://developer.apple.com/documentation/uikit/nsdiffabledatasourcesnapshot-swift.struct)
