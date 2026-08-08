@@ -1,6 +1,6 @@
 # App Completeness
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.app-completeness
 artifact_type: knowledge
 title: App Completeness
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines requirements for submitting a final, fully tested, non-placeholder app build to App Review, including functional in-app purchase items at submission time.
@@ -18,12 +18,12 @@ tags:
   - app-completeness
   - submission
 references:
-  - https://developer.apple.com/app-store/review/guidelines/
+  - https://developer.apple.com/app-store/review/guidelines/#2.1
 depends_on: []
 related:
   - knowledge.app-store-review-guidelines.demo-account
   - knowledge.app-store-review-guidelines.digital-goods-iap
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -86,4 +86,4 @@ None.
 
 ## References
 
--   [Apple App Review Guidelines — 2.1 App Completeness](https://developer.apple.com/app-store/review/guidelines/)
+-   [Apple App Review Guidelines — 2.1 App Completeness](https://developer.apple.com/app-store/review/guidelines/#2.1)

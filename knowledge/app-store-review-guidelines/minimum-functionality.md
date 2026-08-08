@@ -1,6 +1,6 @@
 # Minimum Functionality
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.minimum-functionality
 artifact_type: knowledge
 title: Minimum Functionality
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines the requirement that an app provide functionality, content, and UI beyond a repackaged website or template-generated wrapper, per guideline 4.2.
@@ -18,11 +18,11 @@ tags:
   - minimum-functionality
   - quality
 references:
-  - https://developer.apple.com/app-store/review/guidelines/
+  - https://developer.apple.com/app-store/review/guidelines/#4.2
 depends_on: []
 related:
   - knowledge.app-store-review-guidelines.spam-duplicate-apps
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -86,4 +86,4 @@ None.
 
 ## References
 
--   [Apple App Review Guidelines — 4.2 Minimum Functionality](https://developer.apple.com/app-store/review/guidelines/)
+-   [Apple App Review Guidelines — 4.2 Minimum Functionality](https://developer.apple.com/app-store/review/guidelines/#4.2)

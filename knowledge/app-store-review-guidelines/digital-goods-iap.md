@@ -1,6 +1,6 @@
 # Digital Goods In-App Purchase
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.digital-goods-iap
 artifact_type: knowledge
 title: Digital Goods In-App Purchase
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines the requirement to use Apple's in-app purchase system to unlock digital content or functionality, per guideline 3.1.1.
@@ -18,12 +18,12 @@ tags:
   - in-app-purchase
   - monetization
 references:
-  - https://developer.apple.com/app-store/review/guidelines/
+  - https://developer.apple.com/app-store/review/guidelines/#3.1.1
 depends_on: []
 related:
   - knowledge.app-store-review-guidelines.external-payment-links
   - knowledge.app-store-review-guidelines.restore-purchases
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -86,4 +86,4 @@ None.
 
 ## References
 
--   [Apple App Review Guidelines — 3.1.1 In-App Purchase](https://developer.apple.com/app-store/review/guidelines/)
+-   [Apple App Review Guidelines — 3.1.1 In-App Purchase](https://developer.apple.com/app-store/review/guidelines/#3.1.1)

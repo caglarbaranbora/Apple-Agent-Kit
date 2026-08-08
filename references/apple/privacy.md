@@ -54,3 +54,4 @@ out of scope.
 - knowledge/privacy/required-reason-api-declarations.md ([[knowledge/privacy/required-reason-api-declarations]])
 - knowledge/privacy/collected-data-types-declaration.md ([[knowledge/privacy/collected-data-types-declaration]])
 - knowledge/privacy/tracking-domains-and-third-party-sdk-signatures.md ([[knowledge/privacy/tracking-domains-and-third-party-sdk-signatures]])
+- knowledge/app-store-review-guidelines/privacy-manifest.md ([[knowledge/app-store-review-guidelines/privacy-manifest]])
