@@ -1012,37 +1012,63 @@ def check_scope_vocabulary(artifacts, root):
     Contracts holding it sit on disk. Pointing at a domain that was retired --
     what `prose-domain-resolves` catches -- at least fails loudly.
 
-    The reality half also applies to References, which state the same scope
-    boundaries in `## Purpose`. It was scoped to Skills at first and that was
-    too narrow: `references/apple/foundation.md` carried the identical claim
-    about `localization` and `combine` that this docstring credits to
-    `skills/foundation/SKILL.md`, one layer away and uncaught, alongside three
-    more in `local-authentication`, `security`, and `privacy`. The marker
-    vocabulary itself stays a Skill rule -- `Deferred`/`Excluded` are defined by
-    skill-spec.md and a Reference has no `## Stop Conditions` to put them in.
+    The reality half applies to every artifact type, and learning that took
+    three passes. It was scoped to Skills, then widened to a Reference's
+    `## Purpose` after `references/apple/foundation.md` turned out to carry the
+    identical claim about `localization` and `combine` one layer away. Vertical
+    slice #0005 then found it a third time, in the 258 Knowledge Contracts that
+    had never been scanned -- nine of them, in `### Excluded` and `## Intent`,
+    calling `testing`, `localization`, `sf-symbols`, `usernotifications`,
+    `privacy`, `security`, and `app-intents` future while all seven were built
+    and complete.
+
+    Twice the fix added one artifact type. That was the wrong shape of fix: the
+    question is not which type states scope but where the claim is *false*, and
+    it is false anywhere it appears. The reality half now reads the whole prose
+    body of every artifact, fenced code excluded. This defect class also scales
+    with exactly what the repository is built to do -- every domain that ships
+    turns every "future `<that domain>`" into a lie, silently, in files nobody
+    is editing.
+
+    The marker vocabulary itself stays a Skill rule -- `Deferred`/`Excluded`
+    are defined by skill-spec.md and only a Skill has `## Stop Conditions` to
+    put them in.
     """
     findings = []
     domains = known_domains(root)
+
+    # The reality half: every artifact, whole prose body. A domain that is on
+    # disk is built, so a Tier 3 domain that has not shipped stays legal to
+    # call future -- `name not in domains` is what makes the check safe to run
+    # this widely.
     for artifact in artifacts:
-        if artifact.artifact_type == "reference":
-            purpose = re.sub(r"\s+", " ", section(artifact.text, "## Purpose"))
-            for match in UNBUILT_RE.finditer(purpose):
-                name = match.group(1) or match.group(2)
-                if name not in domains or name == slugify(artifact.domain or ""):
-                    continue
-                findings.append(
-                    Finding(
-                        3,
-                        "scope-vocabulary",
-                        artifact.rel,
-                        f"describes `{name}` as future or unbuilt, but it exists",
-                        "a Reference that calls a built domain unbuilt sends the "
-                        "next Contract author to the wrong authority; name the "
-                        "domain as the owner, or mark the topic `Deferred` inside "
-                        "the domain that owns it",
-                    )
+        body = re.sub(r"```.*?```", " ", artifact.text, flags=re.DOTALL)
+        body = body.replace(extract_metadata_block(artifact.text), " ")
+        body = re.sub(r"\s+", " ", body)
+        own = slugify(artifact.domain or "")
+        seen = set()
+        for match in UNBUILT_RE.finditer(body):
+            name = match.group(1) or match.group(2)
+            if name not in domains or name == own or name in seen:
+                continue
+            seen.add(name)
+            findings.append(
+                Finding(
+                    3,
+                    "scope-vocabulary",
+                    artifact.rel,
+                    f"describes `{name}` as future or unbuilt, but it exists",
+                    "an agent or author told a built domain is unbuilt falls "
+                    "back to general knowledge past the Contracts that answer "
+                    "the question; name the domain as the owner, or -- if the "
+                    "topic is unbuilt inside a domain that exists -- mark it "
+                    "`Deferred` in the domain that owns it",
                 )
-            continue
+            )
+
+    # The vocabulary half stays a Skill rule: `Deferred`/`Excluded` are defined
+    # by skill-spec.md, and only a Skill has `## Stop Conditions` to carry them.
+    for artifact in artifacts:
         if artifact.artifact_type != "skill":
             continue
         scope = section(artifact.text, "## Stop Conditions")
@@ -1051,9 +1077,6 @@ def check_scope_vocabulary(artifacts, root):
         # the same defect that let a manual grep miss a hand-off in Phase 5's
         # first pull request.
         scope = re.sub(r"\s+", " ", scope)
-        described = scope + " " + re.sub(
-            r"\s+", " ", str(artifact.meta.get("description", ""))
-        )
         lowered = scope.lower()
         for phrase in AMBIGUOUS_SCOPE_PHRASES:
             if phrase in lowered:
@@ -1070,23 +1093,6 @@ def check_scope_vocabulary(artifacts, root):
                         "Scope Statements",
                     )
                 )
-        for match in UNBUILT_RE.finditer(described):
-            name = match.group(1) or match.group(2)
-            if name not in domains or name == artifact.domain:
-                continue
-            findings.append(
-                Finding(
-                    3,
-                    "scope-vocabulary",
-                    artifact.rel,
-                    f"describes `{name}` as future or unbuilt, but it exists",
-                    "an agent told a built domain is unbuilt falls back to "
-                    "general knowledge instead of loading the Contracts that "
-                    "answer it; if the topic is unbuilt inside a domain that "
-                    "exists, that is a hand-off marked `Deferred`, not a "
-                    "missing domain",
-                )
-            )
     return findings
 
 

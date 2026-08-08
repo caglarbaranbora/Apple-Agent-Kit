@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.11.0
+Version: 1.12.0
 Date: 2026-08-07
 
 ## Goal
@@ -318,6 +318,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 | 9 | The link checker: fetch every cited URL, and put the repository-wide checks into CI — **shipped 2026-08-08, 0 KC, 4 dead URLs found** | 0 |
 | 5b | The removal read-through: `human-interface-guidelines` (33) + `style-guide` (25) — **shipped 2026-08-08, 0 removed, 10 KC revised, 8 duplicated rules resolved** | −n |
 | 6 | Draft → Approved promotion, gated on Level 5 — **shipped 2026-08-08, 325 promoted, 3 slices run, 3 defects found, 3 checks added** | 0 |
+| 7 | The Level 4 instrument, and the two untested Workflows — **shipped 2026-08-08, 2 slices run, 11 defects fixed, 1 check generalized** | 0 |
 
 Broken edges first, largest last. PRs 0 and 1 add no content; they make the base
 truthful before anything is built on it.
@@ -956,6 +957,58 @@ nothing; `architecture.md`'s "Architecture changes require RFC" was a sentence a
 file nobody was governed by. The version floor is the part that keeps it honest: an
 artifact cannot be `Approved 0.1.0`, so the claim and the version number can no longer
 drift apart silently.
+
+### Observed in Phase 7 — the gate had no instrument, and the check had the wrong shape
+
+**Phase 6 promoted 326 artifacts through a gate that was half-built.** `validation-model.md`
+opens with "a level with no named enforcement is an aspiration, not a gate", then names
+"review checklist" as what enforces Level 4, and no checklist existed. The `.github`
+template's checkboxes cover process hygiene and contain none of Level 4's five checks. So
+the level marked **Blocking: Yes** blocked nothing, and every semantic defect this effort
+has found — Phase 5b's eight duplicated rules, its mis-scoped cross-reference, Phase 6's
+unowned widget rule — was a Level 4 item found by a phase that happened to be looking.
+
+The instrument is now `docs/contributing/review-checklist.md`, seven checks, each naming
+the failure that earned it. **Two of the seven are failure modes Level 4's own wording did
+not name**, and both were found by slices rather than reasoning:
+
+- **A coupling left unowned.** Two Contracts each correct, each Excluded list deferring
+  one rule to the other, so the rule exists nowhere. Looking for duplication cannot find
+  this — it is the inverse. Twice now: the widget reload (#0002) and the Keychain
+  accessibility constant (#0005).
+- **A cross-reference false at the far end.** Level 2 proves the id resolves; nothing
+  proves the rule there covers the case cited for it.
+
+**The scope-vocabulary check had been fixed twice in the wrong shape.** Written for
+Skills; widened to a Reference's `## Purpose` when the identical claim turned up one
+layer away; and slice #0005 found it a third time in nine Knowledge Contracts calling
+seven *built* domains future. Each fix added one artifact type. The question was never
+which type states scope — it is where the claim is **false**, and it is false anywhere
+it appears. The reality half now reads every artifact's whole prose body.
+
+**That class is the one that matters for what comes next.** It scales with exactly what
+this repository is built to do: every domain that ships turns every "future `<that
+domain>`" into a lie, silently, in files nobody is editing. It has surfaced once per
+expansion — Skills, then References, then Contracts. With 19 Tier 3 domains queued, a
+fourth per-type fix would have guaranteed a fourth occurrence. `name not in domains` is
+what keeps the general form safe: an unbuilt Tier 3 domain is legitimately future.
+
+**A slice that finds nothing is evidence too, and #0006 explains the others.** The two
+privacy disclosure surfaces are the cleanest cross-domain boundary any slice has
+examined. The difference is *when the boundary was decided*: `domain-map.md` classified
+manifest-versus-nutrition-label as a handoff rather than an angle-split **before either
+domain was written**, and both were authored to that classification. The widget and
+Keychain seams were never classified in advance — each domain was written correctly on
+its own terms and the boundary was whatever fell out. **A boundary decided ahead of both
+sides does not need a slice to find its gaps; one that emerges from two
+independently-correct domains does.** That is where the next slice should go: pairs whose
+Cross-Domain Notes entry was written after both domains shipped.
+
+**What remains open, deliberately.** F-003-01 — a task two domains answer jointly that
+the Routing Index can only send to one — is still recorded rather than fixed. Slice #0005
+did not produce a second instance, so the evidence for choosing between a fourth Workflow
+and a Skill-to-Skill hand-off has not grown. Deciding it on one instance would be
+deciding it on the weaker of the two available reasons.
 
 ## Validation plan
 

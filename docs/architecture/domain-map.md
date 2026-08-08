@@ -1,7 +1,7 @@
 # Domain Map
 
 Status: Approved
-Version: 1.19.0
+Version: 1.20.0
 
 See: ../glossary.md
 [[glossary]]
@@ -163,6 +163,12 @@ workflows/<domain>/
 - Cross-domain dependencies must be explicit.
 - Skills cannot span unrelated domains.
 - Knowledge Contracts remain atomic.
+- A boundary resolved in Cross-Domain Notes MUST also be carried into
+  `skills/index.md`, qualifying the shared keyword on each row. This file is not in
+  `AGENTS.md`'s Startup Procedure and an agent never opens it, so a resolution that
+  lives only here is unreachable at the moment routing needs it. Nine keywords were
+  ambiguous for exactly that reason until vertical slice #0004;
+  `check_routing_keywords_unambiguous` now fails the build instead.
 
 ## Validation Checklist
 

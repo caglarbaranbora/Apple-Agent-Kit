@@ -52,7 +52,7 @@ This contract defines how an AI coding agent declares a single widget's type and
 -   `TimelineProvider` implementation and `TimelineEntry` shape — see `timeline-provider-and-entries`
 -   `widgetURL`/`Link`/`Button(intent:)`/`Toggle(_:isOn:intent:)` interactivity — see `widget-interactivity-and-deep-links`
 -   `WidgetCenter` reloads and the refresh budget — see `timeline-reloading-and-refresh-budget`
--   Live Activities (`ActivityKit`), watchOS complications, Control Widgets, StandBy — out of v1 scope; `AppIntent` authoring for `AppIntentConfiguration` — deferred to the future `app-intents` domain
+-   Live Activities (`ActivityKit`), watchOS complications, Control Widgets, StandBy — out of v1 scope; `AppIntent` authoring for `AppIntentConfiguration` — owned by the `app-intents` domain
 
 ## Rules
 

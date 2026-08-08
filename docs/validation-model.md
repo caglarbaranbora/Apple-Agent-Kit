@@ -1,7 +1,7 @@
 # Validation Model
 
 Status: Approved
-Version: 1.3.0
+Version: 1.4.0
 
 ## Purpose
 
@@ -113,11 +113,16 @@ Checks:
   Skill routes to a Skill; every Workflow has a Routing Index row
 - Every Workflow names at least two Skills — composing Skills is what a Workflow is for
 - Scope statements use the vocabulary specifications/skill-spec.md [[skill-spec]]
-  defines, and describe reality: a Skill may not call a domain that exists `future`
-  or `unbuilt`, which would send an agent to general knowledge past Contracts that
-  answer the question. The reality half also applies to a Reference's `## Purpose`,
-  which states the same boundaries — the marker vocabulary itself stays a Skill rule,
-  since a Reference has no `## Stop Conditions` to carry it
+  defines — a Skill rule, since only a Skill has `## Stop Conditions` to carry
+  `Deferred`/`Excluded`
+- No artifact calls a domain that exists `future` or `unbuilt`. That sends an agent to
+  general knowledge past the Contracts answering the question. Scoped to Skills, then
+  widened to References, then widened again in 2026-08-08's slice #0005 to every
+  artifact's whole prose body — twice the fix added one type, and the question was
+  never which type states scope but where the claim is *false*, which is anywhere it
+  appears. This class scales with exactly what the repository is built to do: every
+  domain that ships turns every "future `<that domain>`" into a lie, silently, in
+  files nobody is editing
 - No forbidden cross-layer references
 
 Enforced by: `scripts/validate_repo.py`
@@ -145,13 +150,27 @@ Checks:
 
 - Knowledge Contracts are atomic — one responsibility each
 - No duplicated rules across contracts
+- No coupling left unowned. Two Contracts can each be correct and still leave a rule
+  between them, because each Excluded list defers it to the other. This is not
+  duplication and looking for repetition will not find it — it was found twice, by
+  slices #0002 and #0005, in two domains that had passed every other level
+- Every cross-reference is true at the far end. Level 2 proves the *id* resolves; it
+  never proves the rule at the other end says what the citing sentence claims
 - References point to authoritative sources, and each citation is specific enough to
   authorize the rule it backs. **URL shape does not prove specificity** — a hub page
   and a real framework landing page can sit at the same path depth.
 - Skills contain no domain knowledge
-- Excluded sections record real boundaries rather than assumed ones
+- Excluded sections record real boundaries rather than assumed ones. Whether the
+  named domain *exists* is now mechanical (`check_scope_vocabulary`); whether the
+  boundary is the real one is not
 
-Enforced by: review checklist
+Enforced by: contributing/review-checklist.md [[review-checklist]], carried as
+checkboxes in `.github/PULL_REQUEST_TEMPLATE.md`
+
+Until 2026-08-08 this line read "review checklist" and no such checklist existed, so
+a level marked blocking blocked nothing — the defect this document's own second line
+describes. Every semantic defect the project has found was found by a phase that
+happened to look, and every one of them was a Level 4 item.
 
 Blocking: Yes
 

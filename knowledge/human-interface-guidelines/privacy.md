@@ -30,7 +30,7 @@ This contract defines how an AI coding agent designs permission-request
 UI and consent flows on iOS/iPadOS: when to ask, what the purpose
 string must say, and what custom pre-permission screens may and may
 not do. It does not cover the Privacy Manifest / data-use-disclosure
-implementation, which belongs to the future dedicated `privacy` domain
+implementation, which belongs to the `privacy` domain
 (see docs/architecture/domain-map.md Cross-Domain Notes).
 
 ## Scope
@@ -45,8 +45,8 @@ implementation, which belongs to the future dedicated `privacy` domain
 
 ### Excluded
 
--   Privacy Manifest file contents / data-use disclosure — future `privacy` domain
--   Keychain/credential storage — future `security` domain
+-   Privacy Manifest file contents / data-use disclosure — owned by `privacy`
+-   Keychain/credential storage — owned by `security`
 
 ## Rules
 

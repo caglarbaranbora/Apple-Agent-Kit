@@ -58,8 +58,8 @@ resulting text's copy-formatting rules.
     `knowledge.style-guide.units-of-measure`
 -   Currency formatting (`NumberFormatter` currency styles)
 -   Date and time formatting — see `date-time-formatting.md`
--   Locale/Bundle translation workflow mechanics — deferred to the future
-    `localization` domain (Tier 2, unbuilt)
+-   Locale/Bundle translation workflow mechanics — owned by the
+    `localization` domain
 
 ## Rules
 
