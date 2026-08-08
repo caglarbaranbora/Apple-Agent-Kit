@@ -1,6 +1,6 @@
 # Touch Gesture Verbs
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.touch-gesture-verbs
 artifact_type: knowledge
 title: Touch Gesture Verbs
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines the correct verbs for touchscreen, trackpad, and Apple Vision Pro gestures, and which gesture terms are user-facing versus developer-only.
@@ -26,7 +26,7 @@ related:
   - knowledge.style-guide.presentation-surfaces
   - knowledge.style-guide.pointer-and-click-terminology
   - knowledge.style-guide.ui-action-verbs
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -78,7 +78,7 @@ replacement in user-facing text.
 | press and hold | Pressing a mouse/trackpad, key, or mechanical button until an action or result occurs | Don't use "hold down"; don't confuse with "click and hold" (Rule 15) |
 | hold down | Don't use | Use "press and hold" (Rule 16) |
 | scroll | Avoid as a transitive verb ("Scroll through a document," not "Scroll a document") | Prefer over specific gestures like drag/swipe when describing moving through content (Rule 17) |
-| slide | Avoid as a verb for operating a slider or switch | Use "tap," "click," or "drag" instead (Rule 18) |
+| slide | Avoid as a verb | Operating a slider or switch is defined by `input-controls` Rules 4 and 6, which this contract's Excluded list defers to; no separate rule here (Rule 18) |
 | flick | Developer documentation only | In user materials, use "swipe" (Rule 19) |
 | haptic, haptics | Technology that uses touch (e.g., a tap) to give feedback | Define "haptics" on first use; prefer describing what the user feels ("you feel a tap") (Rule 20) |
 
@@ -101,7 +101,7 @@ replacement in user-facing text.
 -   ✗ "Long press the icon to open options." in user materials (Rule 14)
 -   ✗ "Hold down the power button to restart." (Rule 16)
 -   ✗ "Scroll a document." used transitively (Rule 17)
--   ✗ "Slide the switch to turn Airplane Mode on." (Rule 18)
+-   ✗ "Slide the switch to turn Airplane Mode on." (Rule 18, and `input-controls` Rule 6)
 -   ✗ "Flick to the next photo." in user materials (Rule 19)
 
 ## Dependencies

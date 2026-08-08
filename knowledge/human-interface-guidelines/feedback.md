@@ -1,6 +1,6 @@
 # Feedback
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.feedback
 artifact_type: knowledge
 title: Feedback
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines design rules for matching the form and interruption level of interface feedback to the significance of the information it communicates on iOS/iPadOS.
@@ -22,8 +22,9 @@ references:
 depends_on: []
 related:
   - knowledge.human-interface-guidelines.notifications
+  - knowledge.human-interface-guidelines.alerts
   - knowledge.human-interface-guidelines.accessibility
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -71,9 +72,10 @@ rather than requiring people to take an action to check it.
 ### Rule 3
 
 Agents MUST match the interruption level of feedback to the
-significance of the information: reserve alerts for critical,
-ideally actionable information, and avoid using alerts so often that
-they lose impact.
+significance of the information, reserving the most interrupting forms
+for the most significant information. What an alert may contain, and
+how sparingly alerts may be used, is `alerts` Rule 1; this rule governs
+only the choice of interruption level.
 
 ### Rule 4
 

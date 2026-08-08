@@ -1,6 +1,6 @@
 # SF Symbols (Design)
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.sf-symbols
 artifact_type: knowledge
 title: SF Symbols (Design)
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines when and how to choose, compose, and style SF Symbols within an iOS/iPadOS design — rendering modes, weights/scales, and variants.
@@ -22,10 +22,11 @@ references:
 depends_on: []
 related:
   - knowledge.human-interface-guidelines.icons
+  - knowledge.human-interface-guidelines.app-icons
   - knowledge.human-interface-guidelines.color
   - knowledge.human-interface-guidelines.accessibility
   - knowledge.sf-symbols.rendering-modes
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -82,9 +83,10 @@ the symbol appears alongside text in lists or toolbars.
 ### Rule 5
 
 Agents MUST NOT customize or modify a symbol that SF Symbols already
-marks as representing an Apple product or feature. The general
-prohibition on replicating Apple hardware in custom icons is covered
-by `icons` Rule 6.
+marks as representing an Apple product or feature. The prohibition on
+replicating Apple hardware is surface-scoped rather than general:
+`icons` Rule 6 covers interface icons, and `app-icons` Rule 4 covers
+the app icon.
 
 ### Rule 6
 

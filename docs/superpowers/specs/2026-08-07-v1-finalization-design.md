@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.9.0
+Version: 1.10.0
 Date: 2026-08-07
 
 ## Goal
@@ -316,6 +316,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 | 7 | `app-store-review-guidelines` — 1.2, 1.5, 1.6, 4.1, 4.8, 5.2 — **shipped 2026-08-08, 8 KC + 5.6.1** | 8-10 |
 | 8 | The Reference indexing pass across all remaining domains, and the sixteenth check that makes coverage enforceable — **shipped 2026-08-08, 0 KC, 124 URLs indexed** | 0 |
 | 9 | The link checker: fetch every cited URL, and put the repository-wide checks into CI — **shipped 2026-08-08, 0 KC, 4 dead URLs found** | 0 |
+| 5b | The removal read-through: `human-interface-guidelines` (33) + `style-guide` (25) — **shipped 2026-08-08, 0 removed, 10 KC revised, 8 duplicated rules resolved** | −n |
 
 Broken edges first, largest last. PRs 0 and 1 add no content; they make the base
 truthful before anything is built on it.
@@ -830,6 +831,64 @@ Contracts are written — **they were, in PR 6**, so that particular comparison 
 available to Phase 5b. `human-interface-guidelines` (33 Contracts) and `style-guide`
 (25) carry the read-through and neither has a content gap, so nothing else brings a
 PR to them.
+
+### Observed in Phase 5b — the read-through removed nothing, and that is the finding
+
+All 58 Contracts and roughly 200 rules were read. **Nothing is removable.** The phase
+was scoped around a question — which of these duplicate each other? — whose answer
+turned out to be structural rather than case-by-case: **the two domains are partitioned
+by kind, not by topic.** `human-interface-guidelines` decides what to build,
+`style-guide` decides what to call it. They name the same objects constantly — buttons,
+sheets, steppers, gestures — and are never answering the same question about them. A
+topic-shaped overlap between these two domains is therefore not evidence of duplication,
+which is exactly the inference the phase was set up to make and would have made wrongly.
+
+**The comparison PR 6 unblocked resolves as a negative.** `touchscreen-gestures` governs
+whether a gesture may exist (alternate input, in-progress feedback, no custom gesture for
+a standard action); `touch-gesture-verbs` governs the verb used to describe one; `uikit`
+and `swiftui` govern the recognizer. All three boundaries were already written into the
+contracts' own Excluded lists before the comparison was possible. The sequencing argument
+above was still right — the comparison genuinely could not be made before PR 6 — but what
+it bought was a confirmation, not a removal.
+
+**What the read-through found instead is duplicated *rules*, in eight places, in contracts
+that all stay.** This is the more dangerous defect and the one no phase had been aimed at.
+A duplicated contract is visible in a directory listing; a duplicated rule is two correct
+paragraphs in two files that no mechanical check will ever compare, because no check can
+know that differently-worded prose states the same requirement. Both copies are right the
+day they are written. The failure arrives when Apple changes the guidance and one copy is
+updated — and the repository has already had this failure once, in the two Contracts that
+contradicted each other on "Log In", which Phase 4 found only as a side effect of retiring
+a domain.
+
+**Two of the eight were not repetition but incoherence, and are the reason a read-through
+beats a diff.** `touch-gesture-verbs`'s Excluded list defers input controls to
+`input-controls`, and its Rule 18 then stated the slider rule anyway, down to the same
+three replacement verbs — a contract stating a rule it declares out of scope. And
+`sf-symbols` Rule 5 deferred to "`icons` Rule 6" for "the general prohibition on
+replicating Apple hardware", when `icons` is scoped to interface icons and explicitly
+distinguishes itself from the app icon: the delegation pointed at a rule that did not
+cover the case it was cited for. Apple states that prohibition per surface, so there was
+no general rule anywhere to point at. **A cross-reference is only as good as the scope of
+its target, and nothing validates that** — Level 2 proves the *id* resolves, never that
+the rule at the other end says what the citing sentence claims.
+
+**The fix was to apply a pattern the repository already had and had applied unevenly.**
+`branding` Rule 3 defers to `typography` Rule 5 in as many words — "branding does not
+define separate font-accessibility rules" — and `international-formatting` Rule 3 does
+the same to `units-of-measure`. Where that sentence was present, no duplication existed;
+where it was absent, duplication had accumulated. One owner states the rule, the
+neighbour points and states that it defines none.
+
+**The mechanical half of the check is worth keeping.** The 9 table-driven `style-guide`
+Contracts define 196 terms with **zero** collisions across all of them, which bounded the
+search: in a term-table domain, duplication cannot hide in the tables, only in the prose
+around them. That is cheap to re-run and would catch a regression the prose reading is
+too expensive to repeat for.
+
+**Phase 6 is now the only thing left, and it inherits a cleaner argument for itself.**
+325 of 326 artifacts are `Draft`; this phase revised 10 of them without changing a single
+rule's meaning, which is the kind of change `Approved` is supposed to survive.
 
 ## Validation plan
 

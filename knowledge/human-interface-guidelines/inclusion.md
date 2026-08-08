@@ -1,6 +1,6 @@
 # Inclusion
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.inclusion
 artifact_type: knowledge
 title: Inclusion
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines requirements for inclusive language, imagery, and representation in iOS/iPadOS app content, distinct from style-guide's word-level inclusive-writing rules.
@@ -22,8 +22,9 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.writing-inclusively
+  - knowledge.style-guide.instructional-voice-and-phrasing
   - knowledge.human-interface-guidelines.accessibility
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -49,6 +50,7 @@ a design/content-strategy concern. Word-level inclusive-writing rules
 ### Excluded
 
 -   Specific banned/preferred terminology — see `knowledge.style-guide.writing-inclusively`
+-   Point-of-view and address rules ("you" vs. "the user," first person) — see `knowledge.style-guide.instructional-voice-and-phrasing`, which owns them; Rule 1 below states the design intent, not the wording rule
 -   Accessibility API/contrast mechanics — see `accessibility`
 
 ## Rules

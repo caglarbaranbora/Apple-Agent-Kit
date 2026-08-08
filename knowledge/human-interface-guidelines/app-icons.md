@@ -1,6 +1,6 @@
 # App Icons
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.app-icons
 artifact_type: knowledge
 title: App Icons
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines design requirements for iOS/iPadOS app icons — layered composition, unmasked shape, simplicity, and light/dark/tinted appearance variants.
@@ -25,7 +25,7 @@ related:
   - knowledge.human-interface-guidelines.color
   - knowledge.human-interface-guidelines.icons
   - knowledge.human-interface-guidelines.sf-symbols
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -73,7 +73,9 @@ fine detail becomes illegible at small icon sizes.
 ### Rule 4
 
 Agents MUST NOT depict replicas of Apple hardware products in an app
-icon.
+icon. The same prohibition applies to interface icons under `icons`
+Rule 6 — Apple states it per surface, and neither rule generalizes to
+the other.
 
 ### Rule 5
 

@@ -1,6 +1,6 @@
 # Navigation Controls
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.navigation-controls
 artifact_type: knowledge
 title: Navigation Controls
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines the correct terms for named navigation buttons and controls — Back, More, Help, and disclosure elements — used to move between screens or reveal more content.
@@ -25,7 +25,7 @@ related:
   - knowledge.style-guide.presentation-surfaces
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.touch-gesture-verbs
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -92,7 +92,9 @@ arrow."
 
 Agents MUST use "up arrow" for the small arrow that users click to
 increase a value in a stepper control, and MUST NOT call it "the stepper"
-or "the increment button."
+or "the increment button." This rule names the arrow; naming the control
+the arrow belongs to is `input-controls` Rule 5, which permits "stepper"
+in developer materials and where referring to the control is unavoidable.
 
 ## Compliant Example
 

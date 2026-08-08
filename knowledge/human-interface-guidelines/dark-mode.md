@@ -1,6 +1,6 @@
 # Dark Mode
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.dark-mode
 artifact_type: knowledge
 title: Dark Mode
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines requirements for supporting the systemwide Dark Mode appearance setting on iOS/iPadOS, including contrast minimums and background-color layering.
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.color
   - knowledge.human-interface-guidelines.materials
   - knowledge.human-interface-guidelines.accessibility
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -65,9 +65,10 @@ turned on.
 
 ### Rule 3
 
-Agents MUST maintain at least a 4.5:1 contrast ratio between
-foreground and background in both appearances, targeting 7:1 for small
-custom text.
+Agents MUST maintain the baseline contrast ratio defined in
+`accessibility` Rule 2 (4.5:1) in *both* appearances, not only in
+Light, and SHOULD target 7:1 for small custom text. The per-appearance
+and small-text targets are this contract's; the baseline is not.
 
 ### Rule 4
 
