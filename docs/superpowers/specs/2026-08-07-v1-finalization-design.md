@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.5.0
+Version: 1.6.0
 Date: 2026-08-07
 
 ## Goal
@@ -312,7 +312,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 | 3 | `accessibility` — validation errors announced to assistive technologies — **shipped 2026-08-07, 1 KC** | 1-2 |
 | 4 | `swiftui` — `ObservableObject`/`NavigationView` migration — **shipped 2026-08-07, 2 KC** | 2 |
 | 5 | `networking` — completion-handler, `URLSessionDelegate`, `dataTaskPublisher` — **shipped 2026-08-07, 7 KC** | 5-6 |
-| 6 | `uikit` — gesture recognizers, Core Animation and custom transitions, SwiftUI interop | 6-7 |
+| 6 | `uikit` — gesture recognizers, Core Animation and custom transitions, SwiftUI interop — **shipped 2026-08-08, 8 KC, Skill split in two** | 6-7 |
 | 7 | `app-store-review-guidelines` — 1.2, 1.5, 1.6, 4.1, 4.8, 5.2 | 8-10 |
 
 Broken edges first, largest last. PRs 0 and 1 add no content; they make the base
@@ -535,6 +535,54 @@ a domain. `owned by` is reserved for cross-domain hand-offs; an intra-domain one
 "see `x`". Both files used the correct form on adjacent lines, which is what a
 vocabulary with no enforcement produces — right most of the time, wrong silently.
 
+### Observed in PR 6
+
+**The Reference did not fit, and this time the arithmetic decided it.** PR 5 recorded
+`networking` at 98 lines against a 98-line cap and said the next Contract added there
+would force a split. `uikit` reached that point first, and before any new Contract was
+written: its 12 scaffolding Contracts cite **34 distinct URLs while the Reference
+indexed one**, and indexing them lands the file at 99 lines. There was no version of
+PR 6 that fit in one Reference, so the split was not a judgment call about topical
+coherence — it was `reference-spec.md`'s own instruction: "If a domain's sources do not
+fit, split the domain's Skill and give each Skill its own Reference — never raise this
+limit."
+
+**That instruction and `skill-management.md`'s S1 are in tension, and `uikit` happens
+not to expose it.** `reference-spec.md` makes a size overflow a reason to split a
+Skill; `skill-management.md` says "Size is not the trigger" and requires topical
+coherence. A domain whose sources exceed 98 lines but whose Knowledge is one task
+family would satisfy one spec by violating the other. `uikit` escapes because the seam
+is real independently: screen scaffolding against what a built screen then does is the
+same static-composition-versus-interaction line `swiftui` was split along, so S1 and
+the line count agree. The conflict is recorded here rather than resolved, because
+resolving it needs a case that actually exhibits it — but it is a spec-versus-spec
+disagreement, which CLAUDE.md classes as release-blocking when it bites.
+
+**The interop Contracts live in `knowledge/uikit/` and cite SwiftUI documentation.**
+`UIViewRepresentable`, `UIHostingController` and their members are declared in SwiftUI,
+not UIKit, so `references/apple/uikit-interaction.md` indexes three frameworks —
+QuartzCore, SwiftUI, UIKit. That is not a layering violation: a Reference indexes the
+sources one Skill routes to, and reference-spec.md's many-to-many rule exists precisely
+so a Contract's citation may cross a directory boundary. The alternative — filing
+interop under `swiftui` — was refused in PR 4, which assigned the boundary to `uikit`.
+
+**The estimate was 6-7 Contracts; PR 6 shipped 8, and the split is why.** Three of the
+Skill's Deferred bullets named four topics, and two of those four each needed a pair:
+gestures needed a coordination Contract (the delegate's asymmetric answers are not
+attachment), and transitions needed an interactive one (the percent-driven object is
+not the animator). This is the **fourth consecutive PR** whose gap name understated its
+shape — PRs 3 and 4 hid a version boundary, PR 5 hid a Contract count, PR 6 hid both a
+Contract count and a Skill boundary. A gap table sizes work by counting names, and a
+name has no arity.
+
+**One `addChild(_:)` URL is indexed by the foundations Reference and cited from the
+interaction one.** `swiftui-hosting-controller` cites it because Rule 1 requires the
+containment sequence, and `check_used_by_is_complete` walks Source URLs, so
+`references/apple/uikit.md` now lists a Contract routed by the *other* Skill in its
+`## Used By`. That is correct under reference-spec.md — "`## Used By` may name Contracts
+outside this Reference's own domain" — and it is the first place in the kit where the
+rule is load-bearing rather than incidental.
+
 ### Deviation taken in PR 1
 
 The grilling round settled on two terms, `Excluded (permanent)` and `Deferred
@@ -564,7 +612,8 @@ already.
 Sequencing is the argument for a separate phase: a Contract's redundancy is only
 visible once its neighbours exist. Whether `human-interface-guidelines`'
 `touchscreen-gestures` is duplicated cannot be judged before `uikit`'s gesture
-Contracts are written. `human-interface-guidelines` (33 Contracts) and `style-guide`
+Contracts are written — **they were, in PR 6**, so that particular comparison is now
+available to Phase 5b. `human-interface-guidelines` (33 Contracts) and `style-guide`
 (25) carry the read-through and neither has a content gap, so nothing else brings a
 PR to them.
 

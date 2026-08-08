@@ -1,6 +1,6 @@
 # Table View Diffable Data Source
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.table-view-diffable
 artifact_type: knowledge
 title: Table View Diffable Data Source
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines use of UITableViewDiffableDataSource and NSDiffableDataSourceSnapshot to drive a UITableView's content from applied snapshots instead of manual reloadData or index-path bookkeeping.
@@ -18,12 +18,12 @@ tags:
   - table-view
   - diffable-data-source
 references:
-  - https://developer.apple.com/documentation/uikit/uitableviewdiffabledatasource
-  - https://developer.apple.com/documentation/uikit/nsdiffabledatasourcesnapshot
+  - https://developer.apple.com/documentation/uikit/uitableviewdiffabledatasource-2euir
+  - https://developer.apple.com/documentation/uikit/nsdiffabledatasourcesnapshot-swift.struct
 depends_on: []
 related:
   - knowledge.uikit.cell-configuration
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -143,5 +143,5 @@ None.
 
 ## References
 
--   [Apple Developer — UITableViewDiffableDataSource](https://developer.apple.com/documentation/uikit/uitableviewdiffabledatasource)
--   [Apple Developer — NSDiffableDataSourceSnapshot](https://developer.apple.com/documentation/uikit/nsdiffabledatasourcesnapshot)
+-   [Apple Developer — UITableViewDiffableDataSource](https://developer.apple.com/documentation/uikit/uitableviewdiffabledatasource-2euir)
+-   [Apple Developer — NSDiffableDataSourceSnapshot](https://developer.apple.com/documentation/uikit/nsdiffabledatasourcesnapshot-swift.struct)

@@ -46,5 +46,6 @@ knowledge. Animation and gesture questions route to
 
 -   Previews — Excluded
 -   Custom `Layout` protocol conformances — Excluded
--   Migrating a UIKit screen into SwiftUI, or hosting SwiftUI in UIKit — owned by `uikit`
+-   Migrating a UIKit screen into SwiftUI, or hosting SwiftUI in UIKit —
+    owned by `uikit`, in its `uikit-interaction` skill
 -   Accessibility APIs — owned by `accessibility`
