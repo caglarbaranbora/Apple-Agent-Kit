@@ -1,6 +1,6 @@
 # Gesture Composition
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.gesture-composition
 artifact_type: knowledge
 title: Gesture Composition
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of Gesture.simultaneously/sequenced/exclusively combinators and the .gesture/.highPriorityGesture/.simultaneousGesture view modifier priority semantics.
 domain: SwiftUI
@@ -27,7 +27,7 @@ depends_on: []
 related:
   - knowledge.swiftui.gesture-state
   - knowledge.swiftui.drag-gesture
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

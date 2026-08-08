@@ -1,6 +1,6 @@
 # FileManager App Sandbox Directories
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.foundation.filemanager-app-sandbox-directories
 artifact_type: knowledge
 title: FileManager App Sandbox Directories
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of FileManager.urls(for:in:) to locate Documents/Caches/Application Support, safe file read/write, and isExcludedFromBackup for cache-type data.
 domain: Foundation
@@ -24,7 +24,7 @@ references:
   - https://developer.apple.com/documentation/foundation/urlresourcevalues/isexcludedfrombackup
 depends_on: []
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -3,8 +3,8 @@ name: uikit
 description: Route UIKit screen-scaffolding implementation tasks to the correct Knowledge Contracts — view controller lifecycle and composition, programmatic Auto Layout (constraints, stack views, safe area), navigation (UINavigationController, UITabBarController, modal presentation), and diffable table/collection views. Use when writing or reviewing UIKit screens, layout code, navigation flow, or list/grid UI. v1 is programmatic UI only (no Storyboard/XIB) and diffable data sources only (no classic cellForRowAt). Gestures, animation, custom transitions, and SwiftUI interop are out of scope here — see the uikit-interaction skill; accessibility API implementation — see the accessibility skill. Triggers on UIViewController, viewDidLoad, viewWillAppear, addChild, NSLayoutConstraint, layout anchors, UIStackView, safeAreaLayoutGuide, UINavigationController, UITabBarController, UITableViewDiffableDataSource, UICollectionViewCompositionalLayout, UICollectionViewDiffableDataSource, CellRegistration, prepareForReuse, present, dismiss, UIModalPresentationStyle.
 id: skill.uikit.foundations
 title: UIKit — Foundations
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: UIKit
 routes: [knowledge.uikit.view-controller-lifecycle, knowledge.uikit.view-controller-composition, knowledge.uikit.auto-layout-constraints, knowledge.uikit.auto-layout-stack-views, knowledge.uikit.safe-area-and-layout-guides, knowledge.uikit.navigation-controller, knowledge.uikit.tab-bar-controller, knowledge.uikit.table-view-diffable, knowledge.uikit.collection-view-compositional-layout, knowledge.uikit.collection-view-diffable, knowledge.uikit.cell-configuration, knowledge.uikit.modal-presentation]

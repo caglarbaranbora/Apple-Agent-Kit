@@ -1,6 +1,6 @@
 # Notifications
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.notifications
 artifact_type: knowledge
 title: Notifications
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines design rules for notification content, timing, foreground handling, actions, and badging on iOS/iPadOS — not the UserNotifications API.
 domain: Human Interface Guidelines
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.privacy
   - knowledge.human-interface-guidelines.feedback
   - knowledge.human-interface-guidelines.sf-symbols
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

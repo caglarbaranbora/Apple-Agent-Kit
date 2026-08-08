@@ -1,6 +1,6 @@
 # View Identity
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.view-identity
 artifact_type: knowledge
 title: View Identity
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how to give ForEach/List content stable, correct identity to avoid state loss, animation glitches, and wrong-row bugs after data mutation.
 domain: SwiftUI
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.swiftui.state-and-binding
   - knowledge.swiftui.view-composition
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

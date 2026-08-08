@@ -1,6 +1,6 @@
 # Widget Declaration and Families
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.widgetkit.widget-declaration-and-families
 artifact_type: knowledge
 title: Widget Declaration and Families
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines declaring a widget via the Widget protocol and a WidgetConfiguration, bundling multiple widgets with WidgetBundle, declaring supportedFamilies and adapting per widgetFamily, the containerBackground(for:) requirement, and kind-string stability.
 domain: WidgetKit
@@ -30,7 +30,7 @@ references:
 depends_on: []
 related:
   - knowledge.widgetkit.timeline-provider-and-entries
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

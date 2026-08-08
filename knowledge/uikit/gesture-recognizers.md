@@ -1,6 +1,6 @@
 # Gesture Recognizers
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.gesture-recognizers
 artifact_type: knowledge
 title: Gesture Recognizers
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how a UIGestureRecognizer is attached to the one view whose hit-tested touches it observes, the isUserInteractionEnabled default that silently disables recognizers on UILabel and UIImageView, the difference between a discrete recognizer that only reports .recognized and a continuous one that must be branched on state, the obligation to treat .cancelled as a terminal state alongside .ended, and the fact that a recognized gesture cancels the view's own touch delivery because the recognizer is not in the responder chain.
 domain: UIKit

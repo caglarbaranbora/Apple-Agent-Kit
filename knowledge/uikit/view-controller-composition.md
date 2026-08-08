@@ -1,6 +1,6 @@
 # View Controller Composition
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.view-controller-composition
 artifact_type: knowledge
 title: View Controller Composition
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the child view controller container pattern — addChild(_:), view hierarchy insertion, and didMove(toParent:)/willMove(toParent:) — for embedding one view controller's content inside another.
 domain: UIKit
@@ -27,7 +27,7 @@ related:
   - knowledge.uikit.navigation-controller
   - knowledge.uikit.tab-bar-controller
   - knowledge.uikit.view-controller-lifecycle
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

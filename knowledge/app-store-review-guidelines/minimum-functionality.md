@@ -1,6 +1,6 @@
 # Minimum Functionality
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.app-store-review-guidelines.minimum-functionality
 artifact_type: knowledge
 title: Minimum Functionality
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the requirement that an app provide functionality, content, and UI beyond a repackaged website or template-generated wrapper, per guideline 4.2.
 domain: App Store Review Guidelines

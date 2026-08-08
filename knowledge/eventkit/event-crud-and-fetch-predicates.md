@@ -1,6 +1,6 @@
 # Event CRUD and Fetch Predicates
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.eventkit.event-crud-and-fetch-predicates
 artifact_type: knowledge
 title: Event CRUD and Fetch Predicates
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines creating an EKEvent(eventStore:), setting its required title/startDate/endDate/calendar fields, saving/removing it with EKEventStore.save(_:span:commit:)/remove(_:span:commit:), and building/running fetch predicates with predicateForEvents(withStart:end:calendars:) + events(matching:).
 domain: EventKit
@@ -28,7 +28,7 @@ references:
 depends_on:
   - knowledge.eventkit.authorization-and-access-levels
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

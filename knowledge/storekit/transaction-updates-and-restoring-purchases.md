@@ -1,6 +1,6 @@
 # Transaction Updates and Restoring Purchases
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.storekit.transaction-updates-and-restoring-purchases
 artifact_type: knowledge
 title: Transaction Updates and Restoring Purchases
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the Transaction.updates AsyncSequence listener task started early to catch purchases/renewals/refunds/revocations outside the direct purchase flow, and AppStore.sync() as the explicit user-initiated Restore Purchases mechanism.
 domain: StoreKit
@@ -27,7 +27,7 @@ related:
   - knowledge.storekit.product-loading-and-purchase
   - knowledge.storekit.subscription-status-and-renewal-info
   - knowledge.app-store-review-guidelines.restore-purchases
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Privacy (Design)
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.privacy
 artifact_type: knowledge
 title: Privacy (Design)
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines design-level rules for requesting permissions and communicating data use in iOS/iPadOS interfaces — UI and consent-flow patterns, not the Privacy Manifest/data-use-disclosure implementation.
 domain: Human Interface Guidelines
@@ -21,7 +21,7 @@ references:
   - https://developer.apple.com/design/human-interface-guidelines/privacy
 depends_on: []
 related: []
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent

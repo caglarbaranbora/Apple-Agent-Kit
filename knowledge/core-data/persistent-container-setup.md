@@ -1,7 +1,7 @@
 # Persistent Container Setup
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.core-data.persistent-container-setup
 artifact_type: knowledge
 title: Persistent Container Setup
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines standing up a Core Data stack with NSPersistentContainer -- constructing it with init(name:), loading stores with loadPersistentStores(completionHandler:) and handling its error, reading the main-queue viewContext, and configuring an individual store via NSPersistentStoreDescription/persistentStoreDescriptions before loading.
 domain: Core Data
@@ -31,7 +31,7 @@ depends_on:
   - knowledge.core-data.model-definition
 related:
   - knowledge.core-data.managed-object-context-crud
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Safe Area
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.safe-area
 artifact_type: knowledge
 title: Safe Area
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of safeAreaInset for persistent chrome versus ignoresSafeArea for edge-to-edge content, and the risks of misapplying either.
 domain: SwiftUI
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftui.stacks-and-spacing
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

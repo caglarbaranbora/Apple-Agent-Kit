@@ -1,6 +1,6 @@
 # Transaction Verification and Entitlements
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.storekit.transaction-verification-and-entitlements
 artifact_type: knowledge
 title: Transaction Verification and Entitlements
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines checking VerificationResult<Transaction> for .verified/.unverified, never trusting an .unverified payload, reading Transaction.currentEntitlements, and calling transaction.finish() after delivering content.
 domain: StoreKit
@@ -28,7 +28,7 @@ depends_on:
 related:
   - knowledge.storekit.transaction-updates-and-restoring-purchases
   - knowledge.storekit.subscription-status-and-renewal-info
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

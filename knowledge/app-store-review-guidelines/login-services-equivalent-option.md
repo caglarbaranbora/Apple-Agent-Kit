@@ -1,6 +1,6 @@
 # Login Services Equivalent Option
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.login-services-equivalent-option
 artifact_type: knowledge
 title: Login Services Equivalent Option
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines guideline 4.8's rule that an app using a third-party or social login service for the user's primary account must also offer an equivalent option with three named properties — data collection limited to name and email, the ability to keep the email address private, and no collection of in-app interactions for advertising without consent — the definition of a primary account that decides whether the rule applies at all, and the five exemptions an agent must be able to name before concluding the option is not required.
 domain: App Store Review Guidelines

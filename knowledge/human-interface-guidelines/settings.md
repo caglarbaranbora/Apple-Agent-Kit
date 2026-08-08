@@ -1,6 +1,6 @@
 # Settings
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.settings
 artifact_type: knowledge
 title: Settings
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines design rules for where a setting belongs — the system Settings app, a custom in-app settings area, or inline with the task it affects — on iOS/iPadOS.
 domain: Human Interface Guidelines
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.privacy
   - knowledge.human-interface-guidelines.onboarding
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

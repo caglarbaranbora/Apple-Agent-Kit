@@ -1,6 +1,6 @@
 # App Intent Declaration and Parameters
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-intents.app-intent-declaration-and-parameters
 artifact_type: knowledge
 title: App Intent Declaration and Parameters
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines AppIntent protocol conformance (title, description, perform()), declaring inputs with the @Parameter property wrapper (IntentParameter), AppEnum-conforming custom enums, and parameterSummary for the Shortcuts-app editor.
 domain: App Intents
@@ -27,7 +27,7 @@ references:
   - https://developer.apple.com/documentation/appintents/parametersummary
 depends_on: []
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

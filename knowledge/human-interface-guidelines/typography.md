@@ -1,6 +1,6 @@
 # Typography
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.typography
 artifact_type: knowledge
 title: Typography
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for typographic choices in iOS/iPadOS interfaces — legibility, hierarchy, system fonts, and Dynamic Type support.
 domain: Human Interface Guidelines
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.accessibility
   - knowledge.human-interface-guidelines.color
   - knowledge.human-interface-guidelines.layout
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Cell Configuration
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.cell-configuration
 artifact_type: knowledge
 title: Cell Configuration
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of UICollectionView.CellRegistration and UITableView cell registration, reuse identifiers, and prepareForReuse to configure reusable table and collection view cells correctly.
 domain: UIKit
@@ -26,7 +26,7 @@ related:
   - knowledge.uikit.table-view-diffable
   - knowledge.uikit.collection-view-diffable
   - knowledge.accessibility.accessibility-labels
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Server Trust Evaluation
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.server-trust-evaluation
 artifact_type: knowledge
 title: Server Trust Evaluation
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines when an app should evaluate a server's TLS credentials itself instead of accepting the system's default handling, the two legitimate reasons Apple gives (accepting a credential the system would reject, and pinning to reject one it would accept), the authenticationMethod and host checks that must precede any custom decision, the fact that ATS requirements can be tightened but never loosened, and the blanket-acceptance anti-pattern that disables TLS validation for the whole session.
 domain: Networking
@@ -28,7 +28,7 @@ depends_on:
   - knowledge.networking.authentication-challenges
 related:
   - knowledge.networking.app-transport-security
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

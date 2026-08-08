@@ -1,6 +1,6 @@
 # Touchscreen Gestures
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.touchscreen-gestures
 artifact_type: knowledge
 title: Touchscreen Gestures
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for using standard vs. custom touch gestures on iOS/iPadOS, including alternate-input and feedback requirements.
 domain: Human Interface Guidelines
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.style-guide.touch-gesture-verbs
   - knowledge.accessibility.full-keyboard-access-and-focus
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

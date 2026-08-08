@@ -1,6 +1,6 @@
 # App Shortcuts and Siri Phrases
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-intents.app-shortcuts-and-siri-phrases
 artifact_type: knowledge
 title: App Shortcuts and Siri Phrases
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the AppShortcutsProvider protocol's appShortcuts static property, the AppShortcut struct (phrase, shortTitle, systemImageName), phrase-authoring rules (must include applicationName, must be unambiguous, up to 10 per app), the one-AppShortcutsProvider-per-app constraint, and updateAppShortcutParameters().
 domain: App Intents
@@ -26,7 +26,7 @@ references:
 depends_on:
   - knowledge.app-intents.app-intent-declaration-and-parameters
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

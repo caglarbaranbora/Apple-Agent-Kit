@@ -1,6 +1,6 @@
 # Keychain Item CRUD
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.security.keychain-item-crud
 artifact_type: knowledge
 title: Keychain Item CRUD
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of SecItemAdd/SecItemCopyMatching/SecItemUpdate/SecItemDelete for kSecClassGenericPassword and kSecClassInternetPassword items, query dictionary construction, and OSStatus result handling.
 domain: Security
@@ -30,7 +30,7 @@ related:
   - knowledge.security.keychain-access-groups-and-sharing
   - knowledge.security.storing-structured-data-in-keychain
   - knowledge.local-authentication.keychain-biometric-binding
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

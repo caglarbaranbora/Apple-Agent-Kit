@@ -1,6 +1,6 @@
 # Authenticated Requests
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.authenticated-requests
 artifact_type: knowledge
 title: Authenticated Requests
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines attaching credentials to a network request via the Authorization header, a single-flight 401-triggered refresh-and-retry pattern, and never logging the raw header value.
 domain: Networking
@@ -25,7 +25,7 @@ depends_on:
 related:
   - knowledge.networking.http-error-handling
   - knowledge.networking.url-request-construction
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

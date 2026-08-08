@@ -1,6 +1,6 @@
 # Magnification and Rotation Gestures
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.magnification-and-rotation-gestures
 artifact_type: knowledge
 title: Magnification and Rotation Gestures
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of the iOS 17+ MagnifyGesture and RotateGesture, and when the deprecated MagnificationGesture/RotationGesture are still required.
 domain: SwiftUI
@@ -24,7 +24,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftui.gesture-composition
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

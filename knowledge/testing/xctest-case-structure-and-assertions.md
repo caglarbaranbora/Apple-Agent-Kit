@@ -1,7 +1,7 @@
 # XCTest Case Structure and Assertions
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.testing.xctest-case-structure-and-assertions
 artifact_type: knowledge
 title: XCTest Case Structure and Assertions
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines XCTestCase subclassing with test-prefixed methods, the per-test setUp()/tearDown()/setUpWithError()/tearDownWithError() lifecycle and its documented order, the naming collision with the once-per-class setUp()/tearDown() class methods, the XCTAssert family plus XCTFail, and XCTSkip/XCTSkipIf/XCTSkipUnless for conditional skipping.
 domain: Testing
@@ -28,7 +28,7 @@ references:
   - https://developer.apple.com/documentation/xctest/methods-for-skipping-tests
 depends_on: []
 related: []
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

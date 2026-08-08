@@ -1,6 +1,6 @@
 # Custom Symbol Usage
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.sf-symbols.custom-symbol-usage
 artifact_type: knowledge
 title: Custom Symbol Usage
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how to reference an already-authored custom symbol asset in code so it renders with the same rendering-mode/weight/scale/tinting behavior as a system SF Symbol. Excludes authoring the symbol artwork itself.
 domain: SF Symbols
@@ -26,7 +26,7 @@ related:
   - knowledge.sf-symbols.rendering-modes
   - knowledge.sf-symbols.symbol-weight-and-scale
   - knowledge.sf-symbols.symbol-color-and-tinting
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

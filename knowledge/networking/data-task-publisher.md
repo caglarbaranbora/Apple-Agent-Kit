@@ -1,6 +1,6 @@
 # Data Task Publisher
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.data-task-publisher
 artifact_type: knowledge
 title: Data Task Publisher
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines when URLSession.dataTaskPublisher is the right choice over async/await, the (data, response) Output and URLError Failure that mean an HTTP error status is delivered as success rather than a failure, the tryMap that must therefore check the status code, delivering on the main queue before a UI sink, and the AnyCancellable whose release cancels the in-flight request with no error.
 domain: Networking
@@ -28,7 +28,7 @@ depends_on:
 related:
   - knowledge.networking.async-data-fetching
   - knowledge.networking.codable-decoding
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

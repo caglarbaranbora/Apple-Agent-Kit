@@ -1,7 +1,7 @@
 # Xcode
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,12 +9,12 @@ Version: 0.2.0
 id: reference.apple.xcode
 artifact_type: reference
 title: Xcode
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's Xcode project-configuration documentation, scoped to this domain — build settings, schemes, signing, archiving and export, test plans and coverage, and project localization.
 domain: Xcode
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source

@@ -1,6 +1,6 @@
 # Background Transfers
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.background-transfers
 artifact_type: knowledge
 title: Background Transfers
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how a URLSession background configuration is built and driven -- the fixed session identifier, the upload/download-only restriction that follows from transfers running in a separate process, sessionSendsLaunchEvents and isDiscretionary, the app-relaunch handshake through handleEventsForBackgroundURLSession and urlSessionDidFinishEvents, recreating the session with the same identifier at launch, the file that is deleted when didFinishDownloadingTo returns, and the force-quit case the system does not resume.
 domain: Networking
@@ -28,7 +28,7 @@ depends_on:
 related:
   - knowledge.networking.url-session-configuration
   - knowledge.networking.transfer-progress-tracking
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

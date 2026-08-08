@@ -1,7 +1,7 @@
 # Navigation View Migration
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.swiftui.navigation-view-migration
 artifact_type: knowledge
 title: Navigation View Migration
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how existing deprecated NavigationView code is migrated to NavigationStack and NavigationSplitView -- the platform floor, choosing the replacement from the view's column count rather than preference, the iPhone/iPad adaptive case that must become NavigationSplitView and not NavigationStack, converting isActive: NavigationLinks to a path-driven stack and tag:selection: links to List selection, and the availability-gated wrapper Apple documents for deployment targets below the floor.
 domain: SwiftUI
@@ -31,7 +31,7 @@ depends_on:
   - knowledge.swiftui.navigation-split-view
 related:
   - knowledge.swiftui.observable-object-migration
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Manual Signing & Provisioning Profiles
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.xcode.manual-signing-provisioning-profiles
 artifact_type: knowledge
 title: Manual Signing & Provisioning Profiles
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct manual code signing — selecting an explicit certificate and provisioning profile, and matching profile type (Development/Ad Hoc/Enterprise/App Store Connect) to build purpose.
 domain: Xcode
@@ -26,7 +26,7 @@ related:
   - knowledge.xcode.automatic-signing
   - knowledge.xcode.entitlements-capabilities
   - knowledge.xcode.export-options
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

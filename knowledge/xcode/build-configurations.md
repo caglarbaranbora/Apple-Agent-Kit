@@ -1,6 +1,6 @@
 # Build Configurations
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.xcode.build-configurations
 artifact_type: knowledge
 title: Build Configurations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of build configurations (Debug/Release, custom configurations) and Build Settings scoping (project vs. target, per-configuration) so build behavior stays predictable across environments.
 domain: Xcode
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.xcode.xcconfig-files
   - knowledge.xcode.schemes-and-targets
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

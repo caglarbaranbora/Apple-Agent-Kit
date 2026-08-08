@@ -1,6 +1,6 @@
 # HTTP Error Handling
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.http-error-handling
 artifact_type: knowledge
 title: HTTP Error Handling
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines checking HTTPURLResponse status codes, handling URLError transport failures, and unifying transport/HTTP-status/decoding failures behind a single custom error type.
 domain: Networking
@@ -26,7 +26,7 @@ related:
   - knowledge.networking.async-data-fetching
   - knowledge.networking.authenticated-requests
   - knowledge.networking.codable-decoding
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

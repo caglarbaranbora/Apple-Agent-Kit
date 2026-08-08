@@ -1,7 +1,7 @@
 # Local Authentication
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.2.0
 id: reference.apple.local-authentication
 artifact_type: reference
 title: Local Authentication
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's LocalAuthentication framework documentation, scoped to this domain's v1.
 domain: Local Authentication

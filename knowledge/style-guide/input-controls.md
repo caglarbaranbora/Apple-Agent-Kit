@@ -1,6 +1,6 @@
 # Input Controls
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.input-controls
 artifact_type: knowledge
 title: Input Controls
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the correct terms and verbs for checkbox, radio button, slider, stepper, and switch controls, and rules for describing their states and interactions.
 domain: Style Guide
@@ -26,7 +26,7 @@ related:
   - knowledge.style-guide.status-and-progress-indicators
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.presentation-surfaces
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

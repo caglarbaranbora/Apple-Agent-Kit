@@ -1,6 +1,6 @@
 # Numeric Terminology Supplement
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.numeric-terminology-supplement
 artifact_type: knowledge
 title: Numeric Terminology Supplement
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines formatting rules for a narrow set of numeric terms not covered by units of measure, international formatting, or international style — aspect ratio, fractions, version number, resolution "x" notation, step, and zip code.
 domain: Style Guide
@@ -23,7 +23,7 @@ related:
   - knowledge.style-guide.units-of-measure
   - knowledge.style-guide.international-formatting
   - knowledge.style-guide.international-style
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

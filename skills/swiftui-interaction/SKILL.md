@@ -3,15 +3,15 @@ name: swiftui-interaction
 description: Route SwiftUI Animation and Gesture implementation tasks to the correct Knowledge Contracts — implicit/explicit animation, timing curves, transitions, matchedGeometryEffect, the Animatable protocol, PhaseAnimator/KeyframeAnimator, tap/long-press gestures, drag gesture, magnification/rotation gestures, gesture composition, and GestureState. Use when writing or reviewing SwiftUI animation code, building custom transitions, implementing drag/pinch/rotate interactions, or combining multiple gestures on a view. This is implementation-code guidance (iOS 17+), not visual design — for when/why to animate or which gesture to use, see human-interface-guidelines. Triggers on withAnimation, .animation, AnyTransition, matchedGeometryEffect, Animatable, animatableData, PhaseAnimator, KeyframeAnimator, TapGesture, LongPressGesture, DragGesture, MagnifyGesture, RotateGesture, MagnificationGesture, RotationGesture, GestureState, simultaneously, sequenced, exclusively, highPriorityGesture, simultaneousGesture.
 id: skill.swiftui.interaction
 title: SwiftUI — Interaction (Animation & Gestures)
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: SwiftUI
 routes: [knowledge.swiftui.animation-modifiers, knowledge.swiftui.transitions, knowledge.swiftui.matched-geometry-effect, knowledge.swiftui.animatable-values, knowledge.swiftui.phase-and-keyframe-animators, knowledge.swiftui.tap-and-long-press-gestures, knowledge.swiftui.drag-gesture, knowledge.swiftui.magnification-and-rotation-gestures, knowledge.swiftui.gesture-composition, knowledge.swiftui.gesture-state]
 related:
   - skill.swiftui.foundations
   - skill.human-interface-guidelines.foundations
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # SwiftUI — Interaction Skill

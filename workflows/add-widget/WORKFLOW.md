@@ -1,7 +1,7 @@
 # Add Widget
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: workflow.add-widget
 artifact_type: workflow
 title: Add Widget
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Composes the widget surface, its user-configurable and interactive intents, and the background work that keeps its timeline fresh.
 skills:
@@ -18,7 +18,7 @@ skills:
   - skill.app-intents.foundations
   - skill.backgroundtasks.foundations
 related: []
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Purpose

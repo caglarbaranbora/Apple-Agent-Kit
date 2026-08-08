@@ -1,6 +1,6 @@
 # App Chrome and Window Terminology
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.app-chrome-and-window-terminology
 artifact_type: knowledge
 title: App Chrome and Window Terminology
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the correct usage of window and app-chrome vocabulary — window, document, launch, mode, system — for Settings and Mac Catalyst UI text and documentation.
 domain: Style Guide
@@ -24,7 +24,7 @@ related:
   - knowledge.style-guide.presentation-surfaces
   - knowledge.style-guide.capitalization-of-apple-proper-nouns
   - knowledge.style-guide.app-state-and-error-terminology
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

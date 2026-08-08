@@ -1,6 +1,6 @@
 # Developer Contact Information
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.developer-contact-information
 artifact_type: knowledge
 title: Developer Contact Information
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines guideline 1.5's requirement that both the app itself and its App Store Connect Support URL carry an easy way to reach the developer, that the information be accurate and current because inaccuracy "may violate the law in some countries or regions", the heightened expectation for apps used in classrooms, and the separate obligation that Wallet passes carry issuer contact information and be signed with a certificate assigned to the brand owner.
 domain: App Store Review Guidelines

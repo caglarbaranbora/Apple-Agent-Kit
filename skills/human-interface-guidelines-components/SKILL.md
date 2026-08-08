@@ -3,8 +3,8 @@ name: human-interface-guidelines-components
 description: Route Human Interface Guidelines Components/Inputs design tasks to the correct Knowledge Contracts -- lists and tables, buttons, sheets, alerts, action sheets, navigation bars, tab bars, pickers, toggles, text fields, menus, and touchscreen gestures. Use when designing or reviewing iOS/iPadOS list/table layout, button hierarchy, modal presentation (sheets/alerts/action sheets), navigation chrome, form controls, or touch gesture usage. This is design-level guidance, not implementation code -- for SwiftUI/UIKit component code see swiftui/uikit; for component label wording see style-guide. Triggers on lists and tables, buttons, sheets, alerts, action sheet, navigation bar, tab bar, pickers, toggles, text fields, menus, touchscreen gestures, HIG components.
 id: skill.human-interface-guidelines.components
 title: Human Interface Guidelines — Components
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: Human Interface Guidelines
 routes: [knowledge.human-interface-guidelines.lists-and-tables, knowledge.human-interface-guidelines.buttons, knowledge.human-interface-guidelines.sheets, knowledge.human-interface-guidelines.alerts, knowledge.human-interface-guidelines.action-sheets, knowledge.human-interface-guidelines.navigation-bars, knowledge.human-interface-guidelines.tab-bars, knowledge.human-interface-guidelines.pickers, knowledge.human-interface-guidelines.toggles, knowledge.human-interface-guidelines.text-fields, knowledge.human-interface-guidelines.menus, knowledge.human-interface-guidelines.touchscreen-gestures]
@@ -12,7 +12,7 @@ related:
   - skill.human-interface-guidelines.foundations
   - skill.human-interface-guidelines.patterns
   - skill.style-guide.writing
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # Human Interface Guidelines — Components Skill

@@ -1,6 +1,6 @@
 # Reduce Transparency and Increase Contrast
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.accessibility.reduce-transparency-increase-contrast
 artifact_type: knowledge
 title: Reduce Transparency and Increase Contrast
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines checking accessibilityReduceTransparency/colorSchemeContrast (SwiftUI) and UIAccessibility.isReduceTransparencyEnabled/isDarkerSystemColorsEnabled (UIKit) to replace translucent materials and fixed low-contrast colors when these settings are on.
 domain: Accessibility
@@ -24,7 +24,7 @@ references:
 depends_on: []
 related:
   - knowledge.accessibility.reduce-motion
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

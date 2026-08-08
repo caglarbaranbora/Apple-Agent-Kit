@@ -1,6 +1,6 @@
 # Units of Measure
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.units-of-measure
 artifact_type: knowledge
 title: Units of Measure
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for spelling out, abbreviating, formatting, and capitalizing units of measure in Apple platform UI and documentation text.
 domain: Style Guide
@@ -25,7 +25,7 @@ related:
   - knowledge.style-guide.numeric-terminology-supplement
   - knowledge.style-guide.abbreviations-and-acronyms
   - knowledge.style-guide.punctuation-and-typography-in-text
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

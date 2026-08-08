@@ -1,6 +1,6 @@
 # Entitlements & Capabilities
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.xcode.entitlements-capabilities
 artifact_type: knowledge
 title: Entitlements & Capabilities
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct addition of a capability via Signing & Capabilities and the resulting entitlements file, and how a capability constrains which provisioning profile is valid.
 domain: Xcode
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.xcode.automatic-signing
   - knowledge.xcode.manual-signing-provisioning-profiles
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

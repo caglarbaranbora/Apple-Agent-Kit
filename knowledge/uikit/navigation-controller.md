@@ -1,6 +1,6 @@
 # Navigation Controller
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.navigation-controller
 artifact_type: knowledge
 title: Navigation Controller
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of UINavigationController push/pop navigation and navigationItem configuration for a stack-based UIKit screen flow.
 domain: UIKit
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.uikit.tab-bar-controller
   - knowledge.uikit.modal-presentation
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

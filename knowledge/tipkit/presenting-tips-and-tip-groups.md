@@ -1,6 +1,6 @@
 # Presenting Tips and Tip Groups
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.tipkit.presenting-tips-and-tip-groups
 artifact_type: knowledge
 title: Presenting Tips and Tip Groups
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines presenting a tip with SwiftUI's TipView/popoverTip(_:arrowEdge:action:) vs. UIKit's TipUIView/TipUIPopoverViewController, grouping tips with TipGroup so at most one tip in the group shows at a time, and dismissing a tip programmatically with invalidate(reason:) and Tip.InvalidationReason.
 domain: TipKit
@@ -33,7 +33,7 @@ depends_on:
   - knowledge.tipkit.tip-declaration-and-content
 related:
   - knowledge.tipkit.tip-options-and-app-configuration
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

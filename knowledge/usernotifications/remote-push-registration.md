@@ -1,6 +1,6 @@
 # Remote Push Registration
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.usernotifications.remote-push-registration
 artifact_type: knowledge
 title: Remote Push Registration
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines client-side APNs device-token registration via UIApplication.registerForRemoteNotifications and its app delegate callbacks -- not server-side payload construction.
 domain: UserNotifications
@@ -26,7 +26,7 @@ depends_on: []
 related:
   - knowledge.usernotifications.authorization-request
   - knowledge.usernotifications.notification-delegate-handling
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

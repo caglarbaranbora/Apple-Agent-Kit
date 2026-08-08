@@ -1,5 +1,8 @@
 # FINDINGS --- Vertical Slice #0001
 
+> **Superseded 2026-08-08.** See the note in `vertical-slice-0001.md`. Every artifact
+> these findings were written against has since been deleted. Retained as history.
+
 Status: Draft Version: 0.1.0
 
 ## Scope

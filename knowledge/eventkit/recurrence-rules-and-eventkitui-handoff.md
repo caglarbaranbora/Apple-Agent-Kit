@@ -1,6 +1,6 @@
 # Recurrence Rules and EventKitUI Hand-off
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.eventkit.recurrence-rules-and-eventkitui-handoff
 artifact_type: knowledge
 title: Recurrence Rules and EventKitUI Hand-off
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines constructing EKRecurrenceRule/EKRecurrenceEnd (frequency, interval, date-based vs. count-based end) and deciding when to hand off to EventKitUI's EKEventEditViewController/EKEventViewController instead of building custom recurrence-editing UI on top of the CRUD APIs.
 domain: EventKit
@@ -30,7 +30,7 @@ depends_on:
   - knowledge.eventkit.event-crud-and-fetch-predicates
 related:
   - knowledge.eventkit.reminder-crud-and-fetch
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

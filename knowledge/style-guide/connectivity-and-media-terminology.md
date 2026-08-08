@@ -1,6 +1,6 @@
 # Connectivity and Media Terminology
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.connectivity-and-media-terminology
 artifact_type: knowledge
 title: Connectivity and Media Terminology
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the correct vocabulary for connectivity state, device pairing, and media terms that recur in onboarding, settings, and messaging UI text.
 domain: Style Guide
@@ -24,7 +24,7 @@ related:
   - knowledge.style-guide.capitalization-of-apple-proper-nouns
   - knowledge.style-guide.app-state-and-error-terminology
   - knowledge.style-guide.ui-action-verbs
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

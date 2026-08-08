@@ -1,6 +1,6 @@
 # Pass Library and Authorization
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.passkit.pass-library-and-authorization
 artifact_type: knowledge
 title: Pass Library and Authorization
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines querying the user's Wallet pass library with PKPassLibrary -- isPassLibraryAvailable(), containsPass(_:), passes()/passes(of:), and adding passes already in hand with addPasses(_:withCompletionHandler:) -- and why PKPassLibrary has no EventKit-style general read/write permission gate.
 domain: PassKit
@@ -30,7 +30,7 @@ references:
   - https://developer.apple.com/documentation/passkit/pkpasslibraryaddpassesstatus
 depends_on: []
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

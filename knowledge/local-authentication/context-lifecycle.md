@@ -1,6 +1,6 @@
 # Context Lifecycle
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.local-authentication.context-lifecycle
 artifact_type: knowledge
 title: Context Lifecycle
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct LAContext lifecycle -- one context per authentication attempt, invalidate() after use, evaluatedPolicyDomainState for detecting enrollment changes, and why a context must not be persisted across app launches.
 domain: Local Authentication
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.local-authentication.policy-evaluation
   - knowledge.local-authentication.keychain-biometric-binding
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ```
 
 ## Intent

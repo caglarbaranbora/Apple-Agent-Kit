@@ -1,7 +1,7 @@
 # Layout Direction and RTL APIs
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.localization.layout-direction-and-rtl-apis
 artifact_type: knowledge
 title: Layout Direction and RTL APIs
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the API layer of right-to-left support -- leading and trailing over left and right, SwiftUI's automatic mirroring and why reading layoutDirection usually means double-flipping, flipsForRightToLeftLayoutDirection as a contents-mirroring modifier rather than an RTL switch, UIKit semanticContentAttribute whose unspecified default means flip, effectiveUserInterfaceLayoutDirection which does not inherit, SF Symbols name-driven mirroring, and detecting direction through Locale.Language.characterDirection.
 domain: Localization
@@ -35,7 +35,7 @@ related:
   - knowledge.human-interface-guidelines.right-to-left
   - knowledge.localization.locale-and-language-resolution
   - knowledge.sf-symbols.symbol-variants
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

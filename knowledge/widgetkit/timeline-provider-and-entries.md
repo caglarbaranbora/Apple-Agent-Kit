@@ -1,6 +1,6 @@
 # Timeline Provider and Entries
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.widgetkit.timeline-provider-and-entries
 artifact_type: knowledge
 title: Timeline Provider and Entries
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines implementing TimelineProvider's placeholder(in:), getSnapshot(in:completion:), and getTimeline(in:completion:), building a Timeline of TimelineEntry values with real future dates, and choosing a TimelineReloadPolicy.
 domain: WidgetKit
@@ -29,7 +29,7 @@ depends_on:
   - knowledge.widgetkit.widget-declaration-and-families
 related:
   - knowledge.widgetkit.timeline-reloading-and-refresh-budget
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

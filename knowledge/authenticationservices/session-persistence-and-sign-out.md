@@ -1,6 +1,6 @@
 # Session Persistence and Sign-Out
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.authenticationservices.session-persistence-and-sign-out
 artifact_type: knowledge
 title: Session Persistence and Sign-Out
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines persisting the Apple-provided user identifier (not email) in Keychain as the durable account key, alongside the app's own derived session/auth token rather than Apple credentials themselves, and that app sign-out does not revoke Sign-in-with-Apple access at Apple's end.
 domain: AuthenticationServices
@@ -26,7 +26,7 @@ depends_on:
 related:
   - knowledge.security.keychain-item-crud
   - knowledge.style-guide.sign-in-and-authentication-terminology
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

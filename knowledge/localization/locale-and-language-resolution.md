@@ -1,7 +1,7 @@
 # Locale and Language Resolution
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.localization.locale-and-language-resolution
 artifact_type: knowledge
 title: Locale and Language Resolution
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines where a Locale comes from and how the system resolves which localization an app runs in -- Locale.current as a snapshot of the app's resolved locale rather than the device's, autoupdatingCurrent and its equality caveat, preferredLanguages versus preferredLocalizations, the modern Locale.Language and Locale.Region split that replaced the deprecated string properties, development region, and the lproj fallback chain.
 domain: Localization
@@ -38,7 +38,7 @@ related:
   - knowledge.localization.localized-resources-and-infoplist
   - knowledge.foundation.date-time-formatting
   - knowledge.foundation.measurement-and-unit-formatting
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

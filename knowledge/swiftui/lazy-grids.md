@@ -1,6 +1,6 @@
 # Lazy Grids
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.lazy-grids
 artifact_type: knowledge
 title: Lazy Grids
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines when to use LazyVGrid/LazyHGrid and LazyVStack/LazyHStack instead of eager stacks or List, for large or dynamic content inside a ScrollView.
 domain: SwiftUI
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.swiftui.stacks-and-spacing
   - knowledge.swiftui.geometry-reader-anti-pattern
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

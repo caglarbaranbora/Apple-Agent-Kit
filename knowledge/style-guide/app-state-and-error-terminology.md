@@ -1,6 +1,6 @@
 # App State and Error Terminology
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.app-state-and-error-terminology
 artifact_type: knowledge
 title: App State and Error Terminology
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the correct vocabulary for describing something going wrong or an app's lifecycle state, replacing avoid-list terms like crash, bug, and splash screen with Apple's preferred phrasing.
 domain: Style Guide
@@ -25,7 +25,7 @@ related:
   - knowledge.style-guide.instructional-voice-and-phrasing
   - knowledge.style-guide.app-chrome-and-window-terminology
   - knowledge.style-guide.connectivity-and-media-terminology
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

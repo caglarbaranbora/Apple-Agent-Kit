@@ -1,6 +1,6 @@
 # Buttons
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.buttons
 artifact_type: knowledge
 title: Buttons
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for button hit targets, press states, prominence, role assignment, and content on iOS/iPadOS.
 domain: Human Interface Guidelines
@@ -24,7 +24,7 @@ related:
   - knowledge.style-guide.general-button-labels
   - knowledge.human-interface-guidelines.sf-symbols
   - knowledge.human-interface-guidelines.color
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

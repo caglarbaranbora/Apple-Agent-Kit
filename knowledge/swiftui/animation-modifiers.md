@@ -1,6 +1,6 @@
 # Animation Modifiers
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.animation-modifiers
 artifact_type: knowledge
 title: Animation Modifiers
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of implicit (.animation(_:value:)) and explicit (withAnimation) animation triggers, standard timing curves, and the iOS 17+ completion-callback overload.
 domain: SwiftUI
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.swiftui.transitions
   - knowledge.human-interface-guidelines.motion
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # General Button Labels
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.general-button-labels
 artifact_type: knowledge
 title: General Button Labels
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines general-purpose rules for referring to buttons, quoting or not quoting their labels, and wording for common labels like OK and Allow.
 domain: Style Guide
@@ -30,7 +30,7 @@ related:
   - knowledge.style-guide.sign-in-and-authentication-terminology
   - knowledge.style-guide.status-and-progress-indicators
   - knowledge.style-guide.ui-action-verbs
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

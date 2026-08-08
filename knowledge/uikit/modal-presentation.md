@@ -1,6 +1,6 @@
 # Modal Presentation
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.modal-presentation
 artifact_type: knowledge
 title: Modal Presentation
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of present(_:animated:completion:), dismiss(animated:completion:), and UIModalPresentationStyle to show a screen modally, including sheet-style presentation.
 domain: UIKit
@@ -24,7 +24,7 @@ references:
 depends_on: []
 related:
   - knowledge.uikit.navigation-controller
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

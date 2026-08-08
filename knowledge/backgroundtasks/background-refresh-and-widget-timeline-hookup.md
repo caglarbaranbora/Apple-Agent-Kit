@@ -1,6 +1,6 @@
 # Background Refresh and Widget Timeline Hookup
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup
 artifact_type: knowledge
 title: Background Refresh and Widget Timeline Hookup
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines scheduling a BGAppRefreshTaskRequest to refresh data a widget depends on, and the boundary that once the task's handler has fetched/updated that data, calling WidgetCenter.shared.reloadTimelines(ofKind:)/reloadAllTimelines() to trigger the widget refresh is widgetkit's territory.
 domain: BackgroundTasks
@@ -28,7 +28,7 @@ depends_on:
   - knowledge.backgroundtasks.task-execution-and-expiration-handling
 related:
   - knowledge.widgetkit.timeline-reloading-and-refresh-budget
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

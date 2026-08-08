@@ -3,13 +3,13 @@ name: security
 description: Route Keychain Services implementation tasks to the correct Knowledge Contracts -- item CRUD via SecItemAdd/SecItemCopyMatching/SecItemUpdate/SecItemDelete, accessibility levels, access groups and sharing, and storing structured/Codable data. Use when working with kSecClassGenericPassword, kSecClassInternetPassword, OSStatus, errSecSuccess, errSecItemNotFound, errSecDuplicateItem, kSecAttrAccessible, kSecAttrAccessGroup, Keychain Sharing, or kSecValueData. v1 is general (non-biometric-bound) Keychain item CRUD for generic/internet password items -- no SecAccessControl/biometric binding, no AutoFill/credential providers, no iCloud Keychain sync, no certificate/key/identity item classes. Triggers on SecItemAdd, SecItemCopyMatching, SecItemUpdate, SecItemDelete, kSecClassGenericPassword, kSecClassInternetPassword, kSecAttrAccessible, kSecAttrAccessGroup, Keychain access group, kSecValueData, Keychain, credential storage.
 id: skill.security.foundations
 title: Security — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: Security
 routes: [knowledge.security.keychain-item-crud, knowledge.security.keychain-accessibility-levels, knowledge.security.keychain-access-groups-and-sharing, knowledge.security.storing-structured-data-in-keychain]
 related: [knowledge.local-authentication.keychain-biometric-binding]
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # Security — Foundations Skill

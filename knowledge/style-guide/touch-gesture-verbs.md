@@ -1,6 +1,6 @@
 # Touch Gesture Verbs
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.style-guide.touch-gesture-verbs
 artifact_type: knowledge
 title: Touch Gesture Verbs
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the correct verbs for touchscreen, trackpad, and Apple Vision Pro gestures, and which gesture terms are user-facing versus developer-only.
 domain: Style Guide

@@ -1,6 +1,6 @@
 # Onboarding
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.onboarding
 artifact_type: knowledge
 title: Onboarding
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines design rules for structuring an optional, fast, and focused first-run onboarding flow on iOS/iPadOS.
 domain: Human Interface Guidelines
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.privacy
   - knowledge.human-interface-guidelines.settings
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,7 +1,7 @@
 # Operators — Transforming and Combining
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.combine.operators-transforming-and-combining
 artifact_type: knowledge
 title: Operators — Transforming and Combining
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the transforming operators map, filter, and removeDuplicates, the time-based debounce(for:scheduler:options:), and the multi-publisher combining operators combineLatest, merge, and zip -- what each does and the shape of its output, including the tuple-vs-flat-stream distinction between combineLatest/zip and merge.
 domain: Combine
@@ -33,7 +33,7 @@ references:
 depends_on:
   - knowledge.combine.publishers-and-subscribers
 related: []
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

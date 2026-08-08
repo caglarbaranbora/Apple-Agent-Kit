@@ -3,13 +3,13 @@ name: foundation
 description: Route Swift Foundation framework implementation tasks to the correct Knowledge Contracts -- date/time formatting, measurement and unit formatting, Codable encoding and custom conformance, and FileManager app sandbox directories. Use when working with DateFormatter, ISO8601DateFormatter, Date.FormatStyle, .formatted(), RelativeDateTimeFormatter, Measurement, .converted(to:), MeasurementFormatter, unitStyle, unitOptions, JSONEncoder, Codable, encode(to:), init(from:), CodingKeys, FileManager, Documents directory, Caches directory, Application Support directory, or isExcludedFromBackup. v1 is a curated, highest-usage subset of Foundation -- not an exhaustive API reference.
 id: skill.foundation.foundations
 title: Foundation — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: Foundation
 routes: [knowledge.foundation.date-time-formatting, knowledge.foundation.measurement-and-unit-formatting, knowledge.foundation.codable-encoding-and-custom-conformance, knowledge.foundation.filemanager-app-sandbox-directories]
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # Foundation — Foundations Skill

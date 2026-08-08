@@ -1,6 +1,6 @@
 # GeometryReader Anti-Pattern
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.geometry-reader-anti-pattern
 artifact_type: knowledge
 title: GeometryReader Anti-Pattern
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the pitfalls of GeometryReader's greedy size-filling behavior and when it should and should not be used in a SwiftUI layout tree.
 domain: SwiftUI
@@ -22,7 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftui.lazy-grids
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Task Cancellation
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.networking.task-cancellation
 artifact_type: knowledge
 title: Task Cancellation
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how network calls made inside a Swift Task respond to cancellation, when to check cancellation explicitly, and why CancellationError must not be treated as a generic failure.
 domain: Networking
@@ -24,7 +24,7 @@ depends_on:
   - knowledge.networking.async-data-fetching
 related:
   - knowledge.networking.async-data-fetching
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

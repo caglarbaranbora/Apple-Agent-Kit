@@ -1,6 +1,6 @@
 # Symbol Color and Tinting
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.sf-symbols.symbol-color-and-tinting
 artifact_type: knowledge
 title: Symbol Color and Tinting
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the code-level mechanics of coloring an SF Symbol with foregroundStyle in SwiftUI and tintColor in UIKit, matched to the active rendering mode.
 domain: SF Symbols
@@ -25,7 +25,7 @@ depends_on:
 related:
   - knowledge.human-interface-guidelines.sf-symbols
   - knowledge.sf-symbols.rendering-modes
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Completion Handler APIs
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.completion-handler-apis
 artifact_type: knowledge
 title: Completion Handler APIs
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines when the completion-handler URLSession APIs are still the correct choice, the resume() call newly created tasks silently require, exhaustive handling of the (Data?, URLResponse?, Error?) triple, the delegate queue completion handlers run on, what passing a nil handler changes, and how to wrap a callback API in async/await with a continuation that must resume exactly once.
 domain: Networking
@@ -29,7 +29,7 @@ depends_on:
 related:
   - knowledge.networking.http-error-handling
   - knowledge.networking.url-session-delegate
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

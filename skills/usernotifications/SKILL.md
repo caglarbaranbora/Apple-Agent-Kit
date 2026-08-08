@@ -3,13 +3,13 @@ name: usernotifications
 description: Route UserNotifications framework implementation tasks to the correct Knowledge Contracts -- authorization, local notification scheduling, remote push registration, delegate handling, actions/categories, and managing pending/delivered requests plus badge count. Use when calling UNUserNotificationCenter, requestAuthorization, UNAuthorizationOptions, getNotificationSettings, UNMutableNotificationContent, UNNotificationRequest, UNTimeIntervalNotificationTrigger, UNCalendarNotificationTrigger, registerForRemoteNotifications, didRegisterForRemoteNotificationsWithDeviceToken, UNUserNotificationCenterDelegate, willPresent, didReceive, UNNotificationAction, UNTextInputNotificationAction, UNNotificationCategory, setNotificationCategories, removePendingNotificationRequests, removeDeliveredNotifications, or badge count / setBadgeCount. v1 is client-side UserNotifications + UIKit push-registration API only -- no rich media extensions, critical alerts, location triggers, APNs server payloads, Live Activities, or watchOS.
 id: skill.usernotifications.foundations
 title: UserNotifications — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: UserNotifications
 routes: [knowledge.usernotifications.authorization-request, knowledge.usernotifications.local-notification-scheduling, knowledge.usernotifications.remote-push-registration, knowledge.usernotifications.notification-delegate-handling, knowledge.usernotifications.notification-actions-and-categories, knowledge.usernotifications.managing-pending-delivered-and-badge]
 related: [skill.human-interface-guidelines.foundations]
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # UserNotifications — Foundations Skill

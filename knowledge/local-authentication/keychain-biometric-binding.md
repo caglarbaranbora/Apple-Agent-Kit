@@ -1,6 +1,6 @@
 # Keychain-Biometric Binding
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.local-authentication.keychain-biometric-binding
 artifact_type: knowledge
 title: Keychain-Biometric Binding
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct construction of a SecAccessControl for a biometric-protected Keychain item, the biometryCurrentSet vs. biometryAny tradeoff, and passing an evaluated LAContext into a Keychain query.
 domain: Local Authentication
@@ -25,7 +25,7 @@ depends_on: []
 related:
   - knowledge.local-authentication.policy-evaluation
   - knowledge.local-authentication.context-lifecycle
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ```
 
 ## Intent

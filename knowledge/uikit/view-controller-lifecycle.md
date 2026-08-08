@@ -1,6 +1,6 @@
 # View Controller Lifecycle
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.view-controller-lifecycle
 artifact_type: knowledge
 title: View Controller Lifecycle
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct placement of setup and teardown work across UIViewController's viewDidLoad, viewWillAppear, viewDidAppear, viewWillDisappear, and viewDidDisappear.
 domain: UIKit
@@ -27,7 +27,7 @@ depends_on: []
 related:
   - knowledge.uikit.auto-layout-constraints
   - knowledge.uikit.view-controller-composition
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

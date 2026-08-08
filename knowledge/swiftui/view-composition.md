@@ -1,6 +1,6 @@
 # View Composition
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.view-composition
 artifact_type: knowledge
 title: View Composition
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how to break SwiftUI UI into small, single-responsibility views using ViewBuilder and extracted view types instead of monolithic body implementations.
 domain: SwiftUI
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.swiftui.modifier-order
   - knowledge.swiftui.view-identity
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

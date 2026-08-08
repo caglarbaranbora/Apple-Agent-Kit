@@ -1,7 +1,7 @@
 # UIKit — Interaction
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: reference.apple.uikit-interaction
 artifact_type: reference
 title: UIKit — Interaction
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for the Apple documentation behind skill.uikit.interaction -- gesture recognizers and their coordination, Core Animation layers, UIView and property-animator animation, custom and interactive view controller transitions, and UIKit-SwiftUI interop through UIViewRepresentable and UIHostingController.
 domain: UIKit — Interaction

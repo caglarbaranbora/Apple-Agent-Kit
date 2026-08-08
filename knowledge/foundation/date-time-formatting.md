@@ -1,6 +1,6 @@
 # Date/Time Formatting
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.foundation.date-time-formatting
 artifact_type: knowledge
 title: Date/Time Formatting
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of DateFormatter, ISO8601DateFormatter, Date.FormatStyle, and RelativeDateTimeFormatter, including the formatter-reuse performance rule.
 domain: Foundation
@@ -26,7 +26,7 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.units-of-measure
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

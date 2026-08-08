@@ -1,6 +1,6 @@
 # Instructional Voice and Phrasing
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.instructional-voice-and-phrasing
 artifact_type: knowledge
 title: Instructional Voice and Phrasing
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines sentence-level phrasing and point-of-view rules — avoiding first person, "please," and reader-distancing constructions — that shape the tone of onboarding, instructional, and error copy.
 domain: Style Guide
@@ -24,7 +24,7 @@ related:
   - knowledge.style-guide.app-state-and-error-terminology
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.ui-action-verbs
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

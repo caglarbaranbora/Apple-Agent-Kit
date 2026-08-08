@@ -1,6 +1,6 @@
 # Text Fields
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.text-fields
 artifact_type: knowledge
 title: Text Fields
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for sizing, spacing, validating, and securing single-line text field input on iOS/iPadOS.
 domain: Human Interface Guidelines
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.style-guide.authentication-credentials-and-biometrics
   - knowledge.human-interface-guidelines.layout
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

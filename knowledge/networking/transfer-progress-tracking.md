@@ -1,6 +1,6 @@
 # Transfer Progress Tracking
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.transfer-progress-tracking
 artifact_type: knowledge
 title: Transfer Progress Tracking
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the three ways URLSession reports transfer progress -- the task's Progress object, the didWriteData/didSendBodyData delegate callbacks, and the bytes(for:) async sequence -- how to choose between them, and the NSURLSessionTransferSizeUnknown value a server that omits Content-Length produces, which turns a percentage calculation into a negative number rather than an error.
 domain: Networking
@@ -28,7 +28,7 @@ depends_on:
 related:
   - knowledge.networking.background-transfers
   - knowledge.networking.async-data-fetching
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

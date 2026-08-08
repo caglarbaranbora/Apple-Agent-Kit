@@ -1,6 +1,6 @@
 # Display Rules and Event Triggers
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.tipkit.display-rules-and-event-triggers
 artifact_type: knowledge
 title: Display Rules and Event Triggers
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the #Rule(_:) macro for declaring parameter-bound and event-bound display conditions on a Tip's rules property, donating app-usage events with Tips.Event and sendDonation(), and the AND combination of every rule on a tip.
 domain: TipKit
@@ -30,7 +30,7 @@ references:
 depends_on:
   - knowledge.tipkit.tip-declaration-and-content
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

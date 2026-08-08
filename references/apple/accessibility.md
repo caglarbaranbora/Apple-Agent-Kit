@@ -1,7 +1,7 @@
 # Accessibility
 
-Status: Draft
-Version: 0.3.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.3.0
 id: reference.apple.accessibility
 artifact_type: reference
 title: Accessibility
-version: 0.3.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's Accessibility API documentation across SwiftUI, UIKit, and the Accessibility framework -- implementation-conventions scope (labeling, traits, value/hint, custom actions, grouping, navigation order, Dynamic Type, reduce-motion/transparency/contrast, keyboard access and focus, hidden elements, announcements, and audits).
 domain: Accessibility

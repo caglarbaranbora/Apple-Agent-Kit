@@ -1,6 +1,6 @@
 # Accessibility Element Grouping
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.accessibility.accessibility-element-grouping
 artifact_type: knowledge
 title: Accessibility Element Grouping
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of .accessibilityElement(children:) (SwiftUI) and isAccessibilityElement/accessibilityElements (UIKit) to control whether a composite view is one VoiceOver stop or several.
 domain: Accessibility
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.accessibility.accessibility-hidden-decorative
   - knowledge.accessibility.voiceover-navigation-order
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

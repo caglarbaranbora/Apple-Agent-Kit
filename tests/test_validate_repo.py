@@ -132,13 +132,16 @@ Route example tasks.
 Stop if no contract matches.
 """
 
+# Column order matches the real Routing Index: keywords first, target second.
+# `check_routing_keywords_unambiguous` reads the two columns positionally, so a
+# fixture in the other orientation would exercise nothing.
 INDEX = """# Routing Index
 
 ## Skills
 
-| Skill | Triggers |
+| Task Keywords | Load Skill |
 |---|---|
-| skills/example/SKILL.md | example |
+| example, example thing | skills/example/SKILL.md |
 """
 
 
@@ -389,8 +392,8 @@ class TestLevel2(RepoTestCase):
     def test_routing_index_naming_something_absent_from_disk(self):
         self.repo.edit(
             "skills/index.md",
-            "| skills/example/SKILL.md | example |",
-            "| skills/example/SKILL.md | example |\n| skills/ghost/SKILL.md | ghost |",
+            "| example, example thing | skills/example/SKILL.md |",
+            "| example, example thing | skills/example/SKILL.md |\n| ghost | skills/ghost/SKILL.md |",
         )
         self.assertRule("index-sync")
 
@@ -609,6 +612,88 @@ class TestScopeVocabulary(RepoTestCase):
         self.assertNotIn("scope-vocabulary", self.repo.rules())
 
 
+class TestArchivedEdges(RepoTestCase):
+    """artifact-lifecycle.md: "Must not be referenced by new artifacts.\""""
+
+    def test_edge_to_an_archived_artifact_is_reported(self):
+        self.repo.write(
+            "knowledge/example/old.md",
+            KNOWLEDGE.replace("# Thing", "# Old")
+            .replace("id: knowledge.example.thing", "id: knowledge.example.old")
+            .replace("status: Approved", "status: Archived")
+            .replace("Status: Approved", "Status: Archived"),
+        )
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            "related: []",
+            "related:\n  - knowledge.example.old",
+        )
+        self.assertRule("no-archived-edges")
+
+    def test_an_archived_artifact_may_still_carry_its_own_edges(self):
+        # Archived constrains what points *at* an artifact, not what it points
+        # at. Its own outgoing edges are what let it stay readable, which is
+        # the whole reason the state retains the file instead of deleting it.
+        self.repo.write(
+            "knowledge/example/old.md",
+            KNOWLEDGE.replace("# Thing", "# Old")
+            .replace("id: knowledge.example.thing", "id: knowledge.example.old")
+            .replace("status: Approved", "status: Archived")
+            .replace("Status: Approved", "Status: Archived")
+            .replace("related: []", "related:\n  - knowledge.example.thing"),
+        )
+        self.assertNotIn("no-archived-edges", self.repo.rules())
+
+
+class TestRoutingAmbiguity(RepoTestCase):
+    """Vertical slice #0004: `AGENTS.md` says "select exactly one Skill."""
+
+    def test_keyword_claimed_by_two_skills_is_reported(self):
+        self.repo.write("skills/other/SKILL.md", SKILL.replace("example", "other"))
+        self.repo.edit(
+            "skills/index.md",
+            "| example, example thing | skills/example/SKILL.md |",
+            "| example, example thing | skills/example/SKILL.md |\n"
+            "| example thing, other | skills/other/SKILL.md |",
+        )
+        self.assertRule("routing-ambiguous")
+
+    def test_the_finding_names_the_keyword_and_both_skills(self):
+        self.repo.write("skills/other/SKILL.md", SKILL.replace("example", "other"))
+        self.repo.edit(
+            "skills/index.md",
+            "| example, example thing | skills/example/SKILL.md |",
+            "| example, example thing | skills/example/SKILL.md |\n"
+            "| example thing, other | skills/other/SKILL.md |",
+        )
+        message = "\n".join(
+            str(f) for f in self.repo.findings() if f.rule == "routing-ambiguous"
+        )
+        self.assertIn("example thing", message)
+        self.assertIn("skills/example/SKILL.md", message)
+        self.assertIn("skills/other/SKILL.md", message)
+
+    def test_one_skill_claiming_a_keyword_twice_is_not_ambiguous(self):
+        # `ModelContainer` and `modelContainer` are the type and the view
+        # modifier. Both route to one Skill, so routing stays determined and
+        # reporting it would be noise.
+        self.repo.edit(
+            "skills/index.md",
+            "| example, example thing | skills/example/SKILL.md |",
+            "| example, Example, example thing | skills/example/SKILL.md |",
+        )
+        self.assertNotIn("routing-ambiguous", self.repo.rules())
+
+    def test_the_real_routing_index_is_unambiguous(self):
+        # The one test here that reads the repository rather than a fixture.
+        # Nine keywords failed this on 2026-08-08; the regression it guards
+        # against is a keyword quietly re-added to a second row.
+        findings = validate_repo.check_routing_keywords_unambiguous(
+            validate_repo.load_artifacts(REPO_ROOT), REPO_ROOT
+        )
+        self.assertEqual([str(f) for f in findings], [])
+
+
 class TestLevel3(RepoTestCase):
     def test_forbidden_dependency_direction(self):
         # Knowledge may not depend on a Skill.
@@ -652,7 +737,11 @@ class TestLevel3(RepoTestCase):
             .replace("name: example", "name: second")
             .replace("domain: Example", "domain: Second"),
         )
-        self.repo.edit("skills/index.md", "| example |", "| example |\n| skills/second/SKILL.md | second |")
+        self.repo.edit(
+            "skills/index.md",
+            "| example, example thing | skills/example/SKILL.md |",
+            "| example, example thing | skills/example/SKILL.md |\n| second | skills/second/SKILL.md |",
+        )
         self.repo.edit(
             "skills/example/SKILL.md",
             "routes: [knowledge.example.thing]",
@@ -672,8 +761,8 @@ class TestLevel3(RepoTestCase):
         )
         self.repo.edit(
             "skills/index.md",
-            "| example |",
-            "| example |\n| workflows/example-flow/WORKFLOW.md | flow |",
+            "| example, example thing | skills/example/SKILL.md |",
+            "| example, example thing | skills/example/SKILL.md |\n| flow | workflows/example-flow/WORKFLOW.md |",
         )
         self.assertRule("workflow-composes")
 

@@ -1,6 +1,6 @@
 # Usage String and Info.plist
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-tracking-transparency.usage-string-and-info-plist
 artifact_type: knowledge
 title: Usage String and Info.plist
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the required NSUserTrackingUsageDescription Info.plist key and its wording rules, without which requestTrackingAuthorization fails at runtime.
 domain: App Tracking Transparency
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.app-tracking-transparency.authorization-request
   - knowledge.app-store-review-guidelines.permission-usage-strings
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ```
 
 ## Intent

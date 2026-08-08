@@ -133,6 +133,57 @@ def validate_text(text, artifact_type):
     if version is not None and not SEMVER.match(version):
         errors.append(f"version is not a semantic version: {version}")
 
+    # docs/artifact-lifecycle.md, "Versioning": "Approval establishes a stable
+    # version -- 1.0.0 for a first approval". An Approved artifact still on a
+    # 0.x version is Approved in name only.
+    if status == "Approved" and version is not None and SEMVER.match(version):
+        if int(version.split(".")[0]) < 1:
+            errors.append(
+                f"status is Approved but version is {version}; approval "
+                f"establishes a stable version (>= 1.0.0)"
+            )
+
+    # The prose header duplicates two metadata fields in every artifact that
+    # has one. Nothing compared them until Phase 6, and the promotion pass is
+    # exactly the edit that writes both -- so it is exactly the edit that can
+    # leave them disagreeing.
+    errors.extend(header_disagreements(text, status, version))
+
+    return errors
+
+
+# `Status: Draft` on its own line, or `Status: Draft Version: 0.1.0` on one
+# line. Skills carry neither: their frontmatter is the only copy.
+HEADER = re.compile(
+    r"^Status:[ \t]+(?P<status>\S+)(?:[ \t]+Version:[ \t]+(?P<version>\S+))?[ \t]*$",
+    re.MULTILINE,
+)
+
+
+def header_disagreements(text, status, version):
+    """The prose `Status:`/`Version:` header agrees with the metadata block."""
+    match = HEADER.search(text)
+    if match is None:
+        return []
+
+    errors = []
+    if status is not None and match.group("status") != status:
+        errors.append(
+            f"prose header says `Status: {match.group('status')}` but metadata "
+            f"says `status: {status}`"
+        )
+
+    header_version = match.group("version")
+    if header_version is None:
+        # A `Version:` on its own line, which several documents use.
+        line = re.search(r"^Version:[ \t]+(\S+)[ \t]*$", text, re.MULTILINE)
+        header_version = line.group(1) if line else None
+
+    if header_version is not None and version is not None and header_version != version:
+        errors.append(
+            f"prose header says `Version: {header_version}` but metadata "
+            f"says `version: {version}`"
+        )
     return errors
 
 

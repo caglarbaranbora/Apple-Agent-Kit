@@ -1,6 +1,6 @@
 # Widget Interactivity and Deep Links
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.widgetkit.widget-interactivity-and-deep-links
 artifact_type: knowledge
 title: Widget Interactivity and Deep Links
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines whole-widget navigation via widgetURL(_:), per-region navigation via Link, wiring an already-authored AppIntent into Button(intent:)/Toggle(_:isOn:intent:), and routing a deep-link URL's identifying data in the app.
 domain: WidgetKit
@@ -30,7 +30,7 @@ depends_on:
   - knowledge.widgetkit.widget-declaration-and-families
 related:
   - knowledge.app-intents.intent-results-and-widget-hookup
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

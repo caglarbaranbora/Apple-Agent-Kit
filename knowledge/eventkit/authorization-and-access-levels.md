@@ -1,6 +1,6 @@
 # Authorization and Access Levels
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.eventkit.authorization-and-access-levels
 artifact_type: knowledge
 title: Authorization and Access Levels
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines checking EKAuthorizationStatus, requesting the correct iOS 17+ access level (requestFullAccessToEvents(completion:)/requestWriteOnlyAccessToEvents(completion:)/requestFullAccessToReminders(completion:)) or the legacy requestAccess(to:completion:), and declaring the matching Info.plist usage-description key.
 domain: EventKit
@@ -31,7 +31,7 @@ references:
   - https://developer.apple.com/documentation/bundleresources/information-property-list/nsremindersfullaccessusagedescription
 depends_on: []
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

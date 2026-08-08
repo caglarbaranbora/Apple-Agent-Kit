@@ -1,6 +1,6 @@
 # Keychain Accessibility Levels
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.security.keychain-accessibility-levels
 artifact_type: knowledge
 title: Keychain Accessibility Levels
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the kSecAttrAccessible* family and how to choose the correct value -- WhenUnlocked, AfterFirstUnlock, WhenPasscodeSetThisDeviceOnly, the ThisDeviceOnly variants, and the deprecated Always/AlwaysThisDeviceOnly -- per use case.
 domain: Security
@@ -28,7 +28,7 @@ related:
   - knowledge.security.keychain-item-crud
   - knowledge.security.keychain-access-groups-and-sharing
   - knowledge.local-authentication.keychain-biometric-binding
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,7 +1,7 @@
 # UI Testing with XCUIApplication
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.testing.ui-testing-with-xcuiapplication
 artifact_type: knowledge
 title: UI Testing with XCUIApplication
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines launching the app under test with XCUIApplication().launch(), the continueAfterFailure = false convention in setUp() for UI tests, XCUIElement query-type properties and identifier-based element lookup, and asserting UI state with exists/waitForExistence(timeout:) plus basic interaction via tap()/typeText(_:).
 domain: Testing
@@ -29,7 +29,7 @@ references:
 depends_on:
   - knowledge.testing.xctest-case-structure-and-assertions
 related: []
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

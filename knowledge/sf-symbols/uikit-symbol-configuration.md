@@ -1,6 +1,6 @@
 # UIKit Symbol Configuration
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.sf-symbols.uikit-symbol-configuration
 artifact_type: knowledge
 title: UIKit Symbol Configuration
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines composing and applying UIImage.SymbolConfiguration objects in UIKit — withConfiguration(_:), preferredSymbolConfiguration, and combining configurations with applying(_:).
 domain: SF Symbols

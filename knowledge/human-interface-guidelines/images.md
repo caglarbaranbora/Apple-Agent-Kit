@@ -1,6 +1,6 @@
 # Images
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.images
 artifact_type: knowledge
 title: Images
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for delivering bitmap image assets at the correct resolution and color profile across iOS/iPadOS devices.
 domain: Human Interface Guidelines
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.color
   - knowledge.human-interface-guidelines.icons
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent

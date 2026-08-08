@@ -1,6 +1,6 @@
 # Drag Gesture
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.drag-gesture
 artifact_type: knowledge
 title: Drag Gesture
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of DragGesture, its Value properties, and the choice between .updating and .onChanged/.onEnded for handling drag state.
 domain: SwiftUI
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.swiftui.gesture-state
   - knowledge.swiftui.gesture-composition
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

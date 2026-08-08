@@ -1,6 +1,6 @@
 # Schemes and Targets
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.xcode.schemes-and-targets
 artifact_type: knowledge
 title: Schemes and Targets
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct scheme structure — each scheme action (Run/Test/Profile/Analyze/Archive) maps to a build configuration and target set — and shared vs. user scheme management.
 domain: Xcode
@@ -26,7 +26,7 @@ related:
   - knowledge.xcode.automatic-signing
   - knowledge.xcode.build-configurations
   - knowledge.xcode.manual-signing-provisioning-profiles
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

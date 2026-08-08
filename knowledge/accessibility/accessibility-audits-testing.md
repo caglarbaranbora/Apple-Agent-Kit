@@ -1,6 +1,6 @@
 # Accessibility Audits and Testing
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.accessibility.accessibility-audits-testing
 artifact_type: knowledge
 title: Accessibility Audits and Testing
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of Xcode's Accessibility Inspector and XCUIApplication's performAccessibilityAudit() to catch missing labels, low contrast, and undersized hit targets automatically, alongside required manual VoiceOver verification.
 domain: Accessibility
@@ -22,7 +22,7 @@ references:
   - https://developer.apple.com/documentation/xcuiautomation/xcuiaccessibilityaudittype
 depends_on: []
 related: []
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

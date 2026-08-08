@@ -3,8 +3,8 @@ name: uikit-interaction
 description: Route UIKit interaction, animation, transition, and SwiftUI-interop implementation tasks to the correct Knowledge Contracts — gesture recognizers and their coordination, Core Animation layers, UIView and property-animator animation, custom and interactive view controller transitions, and the UIViewRepresentable/UIHostingController boundary. Use when writing or reviewing code that adds a gesture to a UIKit view, animates a view or layer, replaces a modal presentation's animation, drives a dismissal from a pan, wraps a UIKit view for SwiftUI, or embeds a SwiftUI view in a UIKit screen. Screen scaffolding (lifecycle, Auto Layout, navigation, diffable lists) is out of scope here — see the uikit skill. Triggers on UIGestureRecognizer, UIPanGestureRecognizer, UITapGestureRecognizer, addGestureRecognizer, UIGestureRecognizerDelegate, shouldRecognizeSimultaneouslyWith, require(toFail:), CALayer, CABasicAnimation, presentation layer, isRemovedOnCompletion, fillMode, UIView.animate, UIViewPropertyAnimator, startAnimation, layoutIfNeeded, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate, transitioningDelegate, containerView, completeTransition, UIPercentDrivenInteractiveTransition, interactionControllerForDismissal, UIViewRepresentable, UIViewControllerRepresentable, makeCoordinator, updateUIView, UIHostingController, rootView, sizingOptions, safeAreaRegions.
 id: skill.uikit.interaction
 title: UIKit — Interaction (Gestures, Animation, Transitions, Interop)
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: UIKit
 routes: [knowledge.uikit.gesture-recognizers, knowledge.uikit.gesture-recognizer-coordination, knowledge.uikit.core-animation-layers, knowledge.uikit.uiview-animation, knowledge.uikit.custom-view-controller-transitions, knowledge.uikit.interactive-transitions, knowledge.uikit.swiftui-view-representable, knowledge.uikit.swiftui-hosting-controller]

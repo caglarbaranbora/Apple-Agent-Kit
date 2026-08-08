@@ -1,6 +1,6 @@
 # Transitions
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.transitions
 artifact_type: knowledge
 title: Transitions
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of AnyTransition and .transition(_:) for view insertion/removal animation tied to view-identity changes.
 domain: SwiftUI
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.swiftui.animation-modifiers
   - knowledge.swiftui.view-identity
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

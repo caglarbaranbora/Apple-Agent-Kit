@@ -1,6 +1,6 @@
 # Restore Purchases
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.app-store-review-guidelines.restore-purchases
 artifact_type: knowledge
 title: Restore Purchases
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the requirement to provide a restore mechanism for restorable in-app purchases, and the non-expiration rule for purchased credits/currencies, per guideline 3.1.1.
 domain: App Store Review Guidelines

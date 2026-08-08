@@ -1,6 +1,6 @@
 # Symbol Basics
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.sf-symbols.symbol-basics
 artifact_type: knowledge
 title: Symbol Basics
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of Image(systemName:) and UIImage(systemName:) to render a system SF Symbol, including safe existence-checking and OS-version availability guarding.
 domain: SF Symbols
@@ -28,7 +28,7 @@ related:
   - knowledge.sf-symbols.symbol-color-and-tinting
   - knowledge.sf-symbols.symbol-variants
   - knowledge.sf-symbols.symbol-weight-and-scale
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,7 +1,7 @@
 # Localized String APIs
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.localization.localized-string-apis
 artifact_type: knowledge
 title: Localized String APIs
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines which localized-string API to call and how -- String(localized:) and its parameters including the locale parameter that does not change lookup language, LocalizedStringResource for deferred cross-process resolution, SwiftUI's implicit Text literal localization and the silent non-localization of string variables, format specifiers and positional arguments, AttributedString(localized:), and the remaining role of NSLocalizedString.
 domain: Localization
@@ -36,7 +36,7 @@ depends_on:
 related:
   - knowledge.localization.locale-and-language-resolution
   - knowledge.localization.localized-resources-and-infoplist
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

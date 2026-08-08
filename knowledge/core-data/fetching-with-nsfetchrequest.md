@@ -1,7 +1,7 @@
 # Fetching With NSFetchRequest
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.2.0
 id: knowledge.core-data.fetching-with-nsfetchrequest
 artifact_type: knowledge
 title: Fetching With NSFetchRequest
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines fetching managed objects with NSFetchRequest<T> -- filtering with NSPredicate, sorting with NSSortDescriptor, executing via context.fetch(_:), and SwiftUI's @FetchRequest property wrapper as the SwiftUI-side convenience over the same request.
 domain: Core Data

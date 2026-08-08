@@ -1,6 +1,6 @@
 # Codable Decoding
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.codable-decoding
 artifact_type: knowledge
 title: Codable Decoding
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of JSONDecoder to decode network response data into Codable types, including decoding-strategy configuration and DecodingError handling.
 domain: Networking
@@ -25,7 +25,7 @@ depends_on:
 related:
   - knowledge.networking.async-data-fetching
   - knowledge.networking.url-request-construction
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

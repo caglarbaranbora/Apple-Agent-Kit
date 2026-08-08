@@ -1,6 +1,6 @@
 # Credential State and Revocation
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.authenticationservices.credential-state-and-revocation
 artifact_type: knowledge
 title: Credential State and Revocation
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines calling ASAuthorizationAppleIDProvider().getCredentialState(forUserID:) to check .authorized/.revoked/.notFound/.transferred, when to perform the check, reacting correctly to each state, and observing credentialRevokedNotification while the app is running.
 domain: AuthenticationServices
@@ -26,7 +26,7 @@ depends_on:
   - knowledge.authenticationservices.sign-in-with-apple-request-and-credential
 related:
   - knowledge.authenticationservices.session-persistence-and-sign-out
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

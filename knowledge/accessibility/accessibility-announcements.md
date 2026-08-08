@@ -1,7 +1,7 @@
 # Accessibility Announcements
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.2.0
 id: knowledge.accessibility.accessibility-announcements
 artifact_type: knowledge
 title: Accessibility Announcements
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how an app pushes out-of-band information such as a form's validation result to an assistive app -- AccessibilityNotification.Announcement (iOS 17+) versus UIAccessibility.post(notification:.announcement), the events an announcement is and is not for, the three priorities and the fact that equal-priority announcements truncate each other, where the priority attribute lives, and the rule that an announcement is an unverifiable channel that must never be the only route to the information.
 domain: Accessibility
@@ -31,7 +31,7 @@ depends_on: []
 related:
   - knowledge.accessibility.full-keyboard-access-and-focus
   - knowledge.accessibility.accessibility-value-and-hint
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

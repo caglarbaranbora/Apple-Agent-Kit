@@ -1,6 +1,6 @@
 # Availability and Biometry Type
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.local-authentication.availability-and-biometry-type
 artifact_type: knowledge
 title: Availability and Biometry Type
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of canEvaluatePolicy to check biometric availability before evaluating, and LABiometryType to detect which biometry (Face ID/Touch ID/none) is present.
 domain: Local Authentication
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.local-authentication.policy-evaluation
   - knowledge.local-authentication.error-handling
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ```
 
 ## Intent

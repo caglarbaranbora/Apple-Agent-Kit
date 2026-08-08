@@ -1,6 +1,6 @@
 # Background Task Registration and Scheduling
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.backgroundtasks.background-task-registration-and-scheduling
 artifact_type: knowledge
 title: Background Task Registration and Scheduling
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines registering a task identifier with BGTaskScheduler.shared.register(forTaskWithIdentifier:using:launchHandler:) before the app finishes launching, declaring every identifier in Info.plist under BGTaskSchedulerPermittedIdentifiers, submitting a BGAppRefreshTaskRequest/BGProcessingTaskRequest via submit(_:), and treating earliestBeginDate as a hint, not a guarantee.
 domain: BackgroundTasks
@@ -28,7 +28,7 @@ references:
   - https://developer.apple.com/documentation/uikit/using-background-tasks-to-update-your-app
 depends_on: []
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

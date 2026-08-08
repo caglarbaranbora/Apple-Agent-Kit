@@ -1,6 +1,6 @@
 # App Transport Security
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.networking.app-transport-security
 artifact_type: knowledge
 title: App Transport Security
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines App Transport Security's HTTPS/TLS requirements and how to declare a narrowly-scoped Info.plist exception when genuinely required, rather than a blanket allow-arbitrary-loads exception.
 domain: Networking
@@ -21,7 +21,7 @@ references:
   - https://developer.apple.com/documentation/security/preventing-insecure-network-connections
 depends_on: []
 related: []
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -3,13 +3,13 @@ name: passkit
 description: Route PassKit implementation tasks to the correct Knowledge Contracts -- pass library querying/adding, .pkpass/pass.json content and required fields, the add-to-Wallet UI flow, pass updates and the app-vs-server push boundary, and Apple Pay payment requests plus authorization/result handling. Use when calling PKPassLibrary.isPassLibraryAvailable()/containsPass(_:)/passes()/passes(of:)/addPasses(_:withCompletionHandler:), authoring pass.json (formatVersion/passTypeIdentifier/serialNumber/teamIdentifier/organizationName/description, boardingPass/coupon/eventTicket/storeCard/generic, PassFields, barcodes, locations/relevantDates), inspecting a pass with PKPass(data:), presenting PKAddPassesViewController/PKAddPassButton, wiring webServiceURL/authenticationToken, or building/presenting Apple Pay with PKPaymentRequest, PKPaymentAuthorizationController/PKPaymentAuthorizationViewController, PayWithApplePayButton/PKPaymentButton, PKPaymentAuthorizationControllerDelegate, PKPayment/PKPaymentToken, or PKPaymentAuthorizationResult. v1 is app-side Wallet-pass and Apple Pay Swift API only -- no server-side pass signing/certificate/Pass Type ID setup, no PKAddSecureElementPassViewController/NFC/secure-element passes, no PKPassPersonalization, and no Apple Pay server-side merchant validation/token decryption/payment-processor integration. Triggers on PassKit, PKPassLibrary, PKPass, pass.json, Wallet pass, PKAddPassesViewController, PKAddPassButton, webServiceURL, PKPaymentRequest, PKPaymentAuthorizationController, PKPaymentAuthorizationViewController, PayWithApplePayButton, PKPaymentButton, PKPayment, PKPaymentToken, Apple Pay.
 id: skill.passkit.foundations
 title: PassKit — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: PassKit
 routes: [knowledge.passkit.pass-library-and-authorization, knowledge.passkit.pass-content-and-required-fields, knowledge.passkit.adding-passes-ui, knowledge.passkit.pass-updates-and-push-registration, knowledge.passkit.apple-pay-payment-request, knowledge.passkit.apple-pay-authorization-and-result-handling]
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # PassKit — Foundations Skill

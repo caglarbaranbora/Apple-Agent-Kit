@@ -1,6 +1,6 @@
 # Technical Notation
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.technical-notation
 artifact_type: knowledge
 title: Technical Notation
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines code-font, syntax-description, and placeholder-naming rules for writing developer-facing code, UI text, and documentation.
 domain: Style Guide
@@ -20,7 +20,7 @@ references:
   - https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf
 depends_on: []
 related: []
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Motion
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.motion
 artifact_type: knowledge
 title: Motion
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for using animation and motion purposefully in iOS/iPadOS interfaces, including Reduce Motion accessibility support.
 domain: Human Interface Guidelines
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.accessibility
   - knowledge.human-interface-guidelines.sf-symbols
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent

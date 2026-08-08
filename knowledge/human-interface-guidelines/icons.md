@@ -1,6 +1,6 @@
 # Icons (Interface Icons)
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.human-interface-guidelines.icons
 artifact_type: knowledge
 title: Icons (Interface Icons)
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines design rules for in-UI interface icons/glyphs (toolbars, tab bars, buttons) on iOS/iPadOS, distinct from the app icon itself.
 domain: Human Interface Guidelines

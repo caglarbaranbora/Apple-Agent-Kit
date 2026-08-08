@@ -1,6 +1,6 @@
 # Variable Value Symbols
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.sf-symbols.variable-value-symbols
 artifact_type: knowledge
 title: Variable Value Symbols
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of the variableValue parameter on Image(systemName:variableValue:) and UIImage(systemName:variableValue:) to represent a continuous quantity, such as signal or battery strength.
 domain: SF Symbols
@@ -24,7 +24,7 @@ depends_on:
   - knowledge.sf-symbols.symbol-basics
 related:
   - knowledge.human-interface-guidelines.sf-symbols
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Task Execution and Expiration Handling
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.backgroundtasks.task-execution-and-expiration-handling
 artifact_type: knowledge
 title: Task Execution and Expiration Handling
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines handling the BGTask delivered to a launchHandler (casting to BGAppRefreshTask/BGProcessingTask), setting task.expirationHandler to cancel in-flight work, calling task.setTaskCompleted(success:) exactly once, and re-submitting a request for the next occurrence when work should repeat.
 domain: BackgroundTasks
@@ -26,7 +26,7 @@ references:
 depends_on:
   - knowledge.backgroundtasks.background-task-registration-and-scheduling
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

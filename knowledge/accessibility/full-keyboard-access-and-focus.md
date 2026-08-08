@@ -1,6 +1,6 @@
 # Full Keyboard Access and Accessibility Focus
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.accessibility.full-keyboard-access-and-focus
 artifact_type: knowledge
 title: Full Keyboard Access and Accessibility Focus
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines making custom controls reachable via .focusable() and UIFocusEnvironment for Full Keyboard Access, and moving VoiceOver focus programmatically with @AccessibilityFocusState / UIAccessibility.post(.screenChanged).
 domain: Accessibility
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.accessibility.custom-accessibility-actions
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

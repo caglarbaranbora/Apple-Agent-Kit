@@ -1,6 +1,6 @@
 # Codable Encoding and Custom Conformance
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.foundation.codable-encoding-and-custom-conformance
 artifact_type: knowledge
 title: Codable Encoding and Custom Conformance
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of JSONEncoder configuration and custom encode(to:)/init(from:) conformance for types needing non-synthesized Codable behavior.
 domain: Foundation
@@ -24,7 +24,7 @@ references:
 depends_on: []
 related:
   - knowledge.networking.codable-decoding
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Interactive Transitions
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.interactive-transitions
 artifact_type: knowledge
 title: Interactive Transitions
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the gesture-driven view controller transition — that it requires an animator object as well as an interaction controller, that the interaction controller must be vended only while a gesture is actually driving because a non-interactive dismissal otherwise stalls mid-transition, the mapping from gesture states to update(_:)/finish()/cancel(), the completeTransition(_:) call still owed on top of finish or cancel, and the super call every UIPercentDrivenInteractiveTransition override must begin with.
 domain: UIKit

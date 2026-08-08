@@ -1,6 +1,6 @@
 # Symbol Weight and Scale
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.sf-symbols.symbol-weight-and-scale
 artifact_type: knowledge
 title: Symbol Weight and Scale
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of fontWeight/imageScale in SwiftUI and UIImage.SymbolConfiguration(pointSize:weight:scale:) in UIKit to size and weight-match SF Symbols against adjacent content.
 domain: SF Symbols
@@ -25,7 +25,7 @@ depends_on:
 related:
   - knowledge.sf-symbols.rendering-modes
   - knowledge.sf-symbols.symbol-color-and-tinting
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

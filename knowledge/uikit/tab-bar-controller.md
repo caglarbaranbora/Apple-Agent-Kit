@@ -1,6 +1,6 @@
 # Tab Bar Controller
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.tab-bar-controller
 artifact_type: knowledge
 title: Tab Bar Controller
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of UITabBarController and per-view-controller tabBarItem configuration to present sibling top-level screens behind a persistent tab bar.
 domain: UIKit
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.uikit.navigation-controller
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

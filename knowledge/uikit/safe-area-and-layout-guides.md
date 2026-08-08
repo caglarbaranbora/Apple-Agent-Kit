@@ -1,6 +1,6 @@
 # Safe Area and Layout Guides
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.safe-area-and-layout-guides
 artifact_type: knowledge
 title: Safe Area and Layout Guides
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of safeAreaLayoutGuide and layoutMarginsGuide to anchor content clear of system chrome and respect consistent view margins.
 domain: UIKit
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.uikit.auto-layout-constraints
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

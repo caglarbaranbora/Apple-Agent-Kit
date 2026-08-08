@@ -3,13 +3,13 @@ name: eventkit
 description: Route EventKit implementation tasks to the correct Knowledge Contracts -- authorization and access levels, event CRUD and fetch predicates, reminder CRUD and fetch, and recurrence rules with the EventKitUI hand-off decision. Use when checking EKAuthorizationStatus, calling requestFullAccessToEvents(completion:)/requestWriteOnlyAccessToEvents(completion:)/requestFullAccessToReminders(completion:)/requestAccess(to:completion:), declaring NSCalendarsUsageDescription/NSCalendarsFullAccessUsageDescription/NSCalendarsWriteOnlyAccessUsageDescription/NSRemindersUsageDescription/NSRemindersFullAccessUsageDescription, creating/saving/removing an EKEvent or EKReminder, building predicateForEvents(withStart:end:calendars:)/predicateForReminders(in:), calling events(matching:)/fetchReminders(matching:completion:), constructing EKRecurrenceRule/EKRecurrenceEnd, or deciding between EKEventEditViewController/EKEventViewController and custom UI. v1 is calendar/reminder access through EKEventStore only -- no EKSource/multi-account calendar-source management as its own topic, no CalDAV/Exchange server-specific behavior, no EKEventStoreChanged live-sync notifications, and no EventKit inside a widget extension (that's widgetkit's job). Triggers on EventKit, EventKitUI, EKEventStore, EKEvent, EKReminder, EKCalendar, EKCalendarItem, EKAuthorizationStatus, EKRecurrenceRule, EKRecurrenceEnd, EKEventEditViewController, EKEventViewController.
 id: skill.eventkit.foundations
 title: EventKit — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: EventKit
 routes: [knowledge.eventkit.authorization-and-access-levels, knowledge.eventkit.event-crud-and-fetch-predicates, knowledge.eventkit.reminder-crud-and-fetch, knowledge.eventkit.recurrence-rules-and-eventkitui-handoff]
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # EventKit — Foundations Skill

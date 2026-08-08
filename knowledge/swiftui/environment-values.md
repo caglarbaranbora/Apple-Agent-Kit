@@ -1,6 +1,6 @@
 # Environment Values
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.environment-values
 artifact_type: knowledge
 title: Environment Values
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of @Environment for dependency injection of shared app state and custom environment values, instead of manually threading dependencies through view initializers.
 domain: SwiftUI
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.swiftui.observable-macro
   - knowledge.swiftui.state-and-binding
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

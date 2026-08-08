@@ -1,7 +1,7 @@
 # Managed Object Context CRUD
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.core-data.managed-object-context-crud
 artifact_type: knowledge
 title: Managed Object Context CRUD
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines using NSManagedObjectContext for create/delete/save operations -- inserting via NSEntityDescription.insertNewObject(forEntityName:into:) or the generated init(context:), delete(_:), save() and its throwing/error behavior, perform(_:)/performAndWait(_:) thread confinement, and a basic parent-child context relationship via parent.
 domain: Core Data
@@ -34,7 +34,7 @@ depends_on:
 related:
   - knowledge.core-data.model-definition
   - knowledge.core-data.fetching-with-nsfetchrequest
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

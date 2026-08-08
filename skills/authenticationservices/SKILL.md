@@ -3,13 +3,13 @@ name: authenticationservices
 description: Route Sign in with Apple implementation tasks to the correct Knowledge Contracts -- building the authorization request and reading the resulting credential, nonce generation and identity-token/authorization-code handling, credential-state checks and revocation reactions, and session persistence and sign-out. Use when calling ASAuthorizationAppleIDProvider, createRequest(), ASAuthorizationController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding, ASAuthorizationAppleIDCredential, ASAuthorizationError, getCredentialState(forUserID:), ASAuthorizationAppleIDProvider.CredentialState, or credentialRevokedNotification. v1 is Sign in with Apple only -- no Password AutoFill/credential-provider extensions, no Passkeys/WebAuthn, no server-side JWT verification. Triggers on Sign in with Apple, AuthenticationServices, ASAuthorizationAppleIDProvider, ASAuthorizationAppleIDRequest, ASAuthorizationController, ASAuthorizationAppleIDCredential, identityToken, authorizationCode, nonce, getCredentialState, CredentialState, credentialRevokedNotification.
 id: skill.authenticationservices.foundations
 title: AuthenticationServices — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: AuthenticationServices
 routes: [knowledge.authenticationservices.sign-in-with-apple-request-and-credential, knowledge.authenticationservices.nonce-and-identity-token-verification, knowledge.authenticationservices.credential-state-and-revocation, knowledge.authenticationservices.session-persistence-and-sign-out]
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # AuthenticationServices — Foundations Skill

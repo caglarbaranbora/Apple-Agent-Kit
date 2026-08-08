@@ -1,6 +1,6 @@
 # Pass Updates and Push Registration
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.passkit.pass-updates-and-push-registration
 artifact_type: knowledge
 title: Pass Updates and Push Registration
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how an already-added pass gets updated -- the webServiceURL/authenticationToken fields on a pass, the device-to-server web-service registration protocol, and why the app itself registers for no PassKit-specific push type, drawing a hard app-vs-server boundary.
 domain: PassKit
@@ -27,7 +27,7 @@ references:
 depends_on:
   - knowledge.passkit.pass-content-and-required-fields
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

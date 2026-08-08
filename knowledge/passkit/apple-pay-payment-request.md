@@ -1,6 +1,6 @@
 # Apple Pay Payment Request
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.passkit.apple-pay-payment-request
 artifact_type: knowledge
 title: Apple Pay Payment Request
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines building a PKPaymentRequest (merchantIdentifier, countryCode, currencyCode, supportedNetworks, merchantCapabilities, paymentSummaryItems) and checking payment availability with PKPaymentAuthorizationController.canMakePayments()/canMakePayments(usingNetworks:) before offering Apple Pay as an option at all.
 domain: PassKit
@@ -27,7 +27,7 @@ references:
   - https://developer.apple.com/documentation/passkit/pkpaymentauthorizationcontroller/canmakepayments()
 depends_on: []
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

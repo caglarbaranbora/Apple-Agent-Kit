@@ -1,6 +1,6 @@
 # URL Session Delegate
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.url-session-delegate
 artifact_type: knowledge
 title: URL Session Delegate
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines when a URLSession needs a delegate at all, which protocol in the URLSessionDelegate/URLSessionTaskDelegate/URLSessionDataDelegate/URLSessionDownloadDelegate hierarchy to implement, the fact that a delegate session is strongly retained and leaks until it is invalidated, the difference between finishTasksAndInvalidate() and invalidateAndCancel(), why URLSession.shared can never carry a delegate, and the delegate queue that callbacks arrive on.
 domain: Networking
@@ -28,7 +28,7 @@ depends_on:
   - knowledge.networking.url-session-configuration
 related:
   - knowledge.networking.async-data-fetching
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

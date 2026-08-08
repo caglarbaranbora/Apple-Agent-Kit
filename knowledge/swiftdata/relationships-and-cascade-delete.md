@@ -1,7 +1,7 @@
 # Relationships and Cascade Delete
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.swiftdata.relationships-and-cascade-delete
 artifact_type: knowledge
 title: Relationships and Cascade Delete
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines @Relationship(deleteRule:) semantics -- .cascade, .nullify (default), .deny, .noAction -- what each does when the owning object is deleted, the inverse-relationship requirement for SwiftData to maintain referential integrity, and the common mistake of declaring a relationship on only one side without linking it as the other's inverse.
 domain: SwiftData
@@ -29,7 +29,7 @@ depends_on:
   - knowledge.swiftdata.model-definition
 related:
   - knowledge.swiftdata.model-context-crud
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Navigation Stack
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.swiftui.navigation-stack
 artifact_type: knowledge
 title: Navigation Stack
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the use of NavigationStack and NavigationPath for stack-based push/pop navigation, including programmatic and deep-link navigation.
 domain: SwiftUI
@@ -22,7 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftui.navigation-split-view
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

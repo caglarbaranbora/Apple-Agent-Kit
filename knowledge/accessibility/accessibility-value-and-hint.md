@@ -1,6 +1,6 @@
 # Accessibility Value and Hint
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.accessibility.accessibility-value-and-hint
 artifact_type: knowledge
 title: Accessibility Value and Hint
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of accessibilityValue for a custom control's current state and accessibilityHint for the outcome of an ambiguous action, in SwiftUI and UIKit.
 domain: Accessibility
@@ -27,7 +27,7 @@ depends_on: []
 related:
   - knowledge.accessibility.accessibility-labels
   - knowledge.accessibility.accessibility-traits
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

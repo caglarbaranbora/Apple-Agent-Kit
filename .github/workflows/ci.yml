@@ -74,3 +74,26 @@ jobs:
       - name: Tests for the validators themselves
         # A check that stops working should fail a test rather than go quiet.
         run: python3 -m unittest discover tests/
+
+  check-transitions:
+    name: Check lifecycle transitions
+    # Only on a pull request: a transition exists between two versions of a
+    # file, so there is nothing to compare on a push to main -- the merge has
+    # already happened. See scripts/check_transitions.py for why this is not a
+    # nineteenth check in validate_repo.py.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # The base commit has to be in the clone for `git show` to reach it.
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+
+      - name: Every status change is one the lifecycle allows
+        run: |
+          git fetch --no-tags origin "${{ github.base_ref }}"
+          python3 scripts/check_transitions.py . --base "origin/${{ github.base_ref }}"

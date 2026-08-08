@@ -1,7 +1,7 @@
 # Plural and Device Variations
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.localization.plural-and-device-variations
 artifact_type: knowledge
 title: Plural and Device Variations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how a single catalog entry varies by grammatical number and by device -- the CLDR plural categories with other required and the applicable set language-dependent, Vary by Plural and Vary by Device, substitutions for strings with more than one varying value, the legacy stringsdict form a catalog compiles into, and why runtime inflection is a separate mechanism from plural variation.
 domain: Localization
@@ -30,7 +30,7 @@ depends_on:
   - knowledge.localization.string-catalogs-and-extraction
 related:
   - knowledge.localization.localized-string-apis
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

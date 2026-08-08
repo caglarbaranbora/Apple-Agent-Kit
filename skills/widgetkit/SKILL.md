@@ -3,13 +3,13 @@ name: widgetkit
 description: Route WidgetKit implementation tasks to the correct Knowledge Contracts -- widget declaration and families, timeline provider and entries, widget interactivity and deep links, and timeline reloading and refresh budget. Use when conforming to Widget, WidgetBundle, or WidgetConfiguration, choosing StaticConfiguration or AppIntentConfiguration, declaring supportedFamilies or reading widgetFamily, applying containerBackground, implementing TimelineProvider (placeholder, getSnapshot, getTimeline), building a Timeline of TimelineEntry values, choosing a TimelineReloadPolicy, wiring widgetURL, Link, Button(intent:), or Toggle(_:isOn:intent:), or calling WidgetCenter.reloadTimelines/reloadAllTimelines. v1 is home-screen/Lock-Screen widgets only -- no Live Activities/ActivityKit, no watchOS complications as a distinct surface, no Control Widgets (iOS 18 Controls/ControlWidget), no StandBy-specific layout. Triggers on WidgetKit, Widget, WidgetBundle, WidgetConfiguration, StaticConfiguration, AppIntentConfiguration, supportedFamilies, widgetFamily, containerBackground, TimelineProvider, TimelineEntry, Timeline, TimelineReloadPolicy, placeholder, getSnapshot, getTimeline, widgetURL, Link, Button(intent:), WidgetCenter, reloadTimelines, reloadAllTimelines.
 id: skill.widgetkit.foundations
 title: WidgetKit — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: WidgetKit
 routes: [knowledge.widgetkit.widget-declaration-and-families, knowledge.widgetkit.timeline-provider-and-entries, knowledge.widgetkit.widget-interactivity-and-deep-links, knowledge.widgetkit.timeline-reloading-and-refresh-budget]
 related: [knowledge.app-intents.intent-results-and-widget-hookup, knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup]
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # WidgetKit — Foundations Skill

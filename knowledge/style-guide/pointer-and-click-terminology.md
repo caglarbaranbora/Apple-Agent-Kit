@@ -1,6 +1,6 @@
 # Pointer and Click Terminology
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.pointer-and-click-terminology
 artifact_type: knowledge
 title: Pointer and Click Terminology
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the correct verbs and nouns for pointer, mouse, and click-based interactions, for the secondary pointer-support surface on iPad and Mac Catalyst.
 domain: Style Guide
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.style-guide.touch-gesture-verbs
   - knowledge.style-guide.ui-action-verbs
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

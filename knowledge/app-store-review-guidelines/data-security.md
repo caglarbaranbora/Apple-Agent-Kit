@@ -1,6 +1,6 @@
 # Data Security
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.data-security
 artifact_type: knowledge
 title: Data Security
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines what guideline 1.6's one-sentence requirement for "appropriate security measures" resolves to in practice — credentials and personal data at rest belong in the Keychain rather than UserDefaults or a plist, data in transit stays under App Transport Security, secrets embedded in the bundle are extractable and therefore not secret, and an embedded third-party SDK is a third party under this guideline, so the app carries responsibility for what it does with user data.
 domain: App Store Review Guidelines

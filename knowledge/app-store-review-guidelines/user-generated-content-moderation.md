@@ -1,6 +1,6 @@
 # User-Generated Content Moderation
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.user-generated-content-moderation
 artifact_type: knowledge
 title: User-Generated Content Moderation
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the four moderation mechanisms guideline 1.2 requires of any app carrying user-generated content or social networking — a filter for objectionable material, a report mechanism backed by timely response, the ability to block abusive users, and published contact information — plus the default-hidden rule for incidental NSFW content from a web service and the categories Apple removes without notice.
 domain: App Store Review Guidelines

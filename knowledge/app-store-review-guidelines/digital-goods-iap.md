@@ -1,6 +1,6 @@
 # Digital Goods In-App Purchase
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.app-store-review-guidelines.digital-goods-iap
 artifact_type: knowledge
 title: Digital Goods In-App Purchase
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the requirement to use Apple's in-app purchase system to unlock digital content or functionality, per guideline 3.1.1.
 domain: App Store Review Guidelines

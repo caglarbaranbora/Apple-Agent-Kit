@@ -1,6 +1,6 @@
 # Navigation Split View
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.navigation-split-view
 artifact_type: knowledge
 title: Navigation Split View
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the use of NavigationSplitView for adaptive multi-column sidebar/content/detail navigation.
 domain: SwiftUI
@@ -21,7 +21,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftui.navigation-stack
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Presentation Surfaces
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.presentation-surfaces
 artifact_type: knowledge
 title: Presentation Surfaces
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the correct terms for dialogs, sheets, menus, pickers, and other UI surfaces used to present information or choices, and when each term is appropriate for user vs. developer materials.
 domain: Style Guide
@@ -27,7 +27,7 @@ related:
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.touch-gesture-verbs
   - knowledge.style-guide.app-chrome-and-window-terminology
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

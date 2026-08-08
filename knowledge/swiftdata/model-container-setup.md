@@ -1,7 +1,7 @@
 # Model Container Setup
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.swiftdata.model-container-setup
 artifact_type: knowledge
 title: Model Container Setup
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines creating and injecting a SwiftData ModelContainer -- the SwiftUI .modelContainer(for:) scene/view modifier, ModelConfiguration (in-memory vs. on-disk via isStoredInMemoryOnly), the manual ModelContainer(for:configurations:) initializer for non-SwiftUI contexts or previews, and how .modelContainer makes a ModelContext available via @Environment(\.modelContext).
 domain: SwiftData
@@ -31,7 +31,7 @@ depends_on:
   - knowledge.swiftdata.model-definition
 related:
   - knowledge.swiftdata.model-context-crud
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

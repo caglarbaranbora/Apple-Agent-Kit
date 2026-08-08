@@ -1,6 +1,6 @@
 # Custom View Controller Transitions
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.custom-view-controller-transitions
 artifact_type: knowledge
 title: Custom View Controller Transitions
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the non-interactive custom presentation transition — the modalPresentationStyle .custom and weak transitioningDelegate that together arm it, the animator's obligation to add the presented view to the context's containerView because UIKit adds only the presenting one, the completeTransition(_:) call without which UIKit never finishes the presentation, the isAnimated check that must gate the animations, and the protocol's own rule that an animator object must not be interactive.
 domain: UIKit

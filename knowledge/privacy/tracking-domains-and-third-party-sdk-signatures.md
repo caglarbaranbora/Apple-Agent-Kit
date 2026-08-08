@@ -1,6 +1,6 @@
 # Tracking Domains and Third-Party SDK Signatures
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.privacy.tracking-domains-and-third-party-sdk-signatures
 artifact_type: knowledge
 title: Tracking Domains and Third-Party SDK Signatures
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the NSPrivacyTracking/NSPrivacyTrackingDomains keys and Apple's third-party SDK privacy-manifest-and-signature requirement -- which SDKs must ship a manifest and cryptographic signature, and the consequence if one doesn't.
 domain: Privacy
@@ -28,7 +28,7 @@ related:
   - knowledge.privacy.collected-data-types-declaration
   - knowledge.app-tracking-transparency.status-and-idfa-access
   - knowledge.app-store-review-guidelines.privacy-manifest
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

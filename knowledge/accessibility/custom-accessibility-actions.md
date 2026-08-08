@@ -1,6 +1,6 @@
 # Custom Accessibility Actions
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.accessibility.custom-accessibility-actions
 artifact_type: knowledge
 title: Custom Accessibility Actions
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of .accessibilityAction() (SwiftUI) and UIAccessibilityCustomAction (UIKit) to give VoiceOver users a reachable alternative to gesture-only interactions like swipe-to-delete or drag-to-reorder.
 domain: Accessibility
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.accessibility.full-keyboard-access-and-focus
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

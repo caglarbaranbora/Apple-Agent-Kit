@@ -1,7 +1,7 @@
 # Assign and Memory Management
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.combine.assign-and-memory-management
 artifact_type: knowledge
 title: Assign and Memory Management
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines assign(to:on:) and the newer assign(to:) into a @Published property, the documented strong-reference retain-cycle risk of assign(to:on:), and .store(in:) for AnyCancellable lifetime management in a Set<AnyCancellable>.
 domain: Combine
@@ -28,7 +28,7 @@ depends_on:
   - knowledge.combine.publishers-and-subscribers
 related:
   - knowledge.combine.published-and-observableobject
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

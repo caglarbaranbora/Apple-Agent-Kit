@@ -1,6 +1,6 @@
 # UI Action Verbs
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.ui-action-verbs
 artifact_type: knowledge
 title: UI Action Verbs
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the correct verbs for common UI actions and the discouraged verbs each one replaces, covering entry, selection, window, sync, and power/toggle-state vocabulary.
 domain: Style Guide
@@ -26,7 +26,7 @@ related:
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.instructional-voice-and-phrasing
   - knowledge.style-guide.connectivity-and-media-terminology
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

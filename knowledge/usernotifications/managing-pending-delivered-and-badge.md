@@ -1,6 +1,6 @@
 # Managing Pending, Delivered, and Badge
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.usernotifications.managing-pending-delivered-and-badge
 artifact_type: knowledge
 title: Managing Pending, Delivered, and Badge
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of removePendingNotificationRequests, removeDeliveredNotifications, getPendingNotificationRequests, getDeliveredNotifications, and badge-count APIs.
 domain: UserNotifications
@@ -27,7 +27,7 @@ depends_on: []
 related:
   - knowledge.usernotifications.local-notification-scheduling
   - knowledge.human-interface-guidelines.notifications
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

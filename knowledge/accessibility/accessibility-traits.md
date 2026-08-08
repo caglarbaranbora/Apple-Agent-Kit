@@ -1,6 +1,6 @@
 # Accessibility Traits
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.accessibility.accessibility-traits
 artifact_type: knowledge
 title: Accessibility Traits
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of accessibilityTraits (SwiftUI .accessibilityAddTraits()/.accessibilityRemoveTraits(), UIKit accessibilityTraits) so VoiceOver announces an element's role and state correctly.
 domain: Accessibility
@@ -25,7 +25,7 @@ related:
   - knowledge.human-interface-guidelines.accessibility
   - knowledge.accessibility.accessibility-labels
   - knowledge.accessibility.accessibility-value-and-hint
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

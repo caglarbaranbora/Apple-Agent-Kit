@@ -1,6 +1,6 @@
 # Animatable Values
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.animatable-values
 artifact_type: knowledge
 title: Animatable Values
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines when and how to conform a custom Shape or View to Animatable using animatableData and AnimatablePair for per-frame interpolation.
 domain: SwiftUI
@@ -22,7 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftui.animation-modifiers
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

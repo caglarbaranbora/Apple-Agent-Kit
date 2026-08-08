@@ -1,7 +1,7 @@
 # Model Definition
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.core-data.model-definition
 artifact_type: knowledge
 title: Model Definition
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines subclassing NSManagedObject for a Core Data entity, the three .xcdatamodeld Codegen modes (Class Definition / Manual/None / Category+Extension) and when to use each, and declaring persisted attributes/relationships with @NSManaged rather than ordinary stored properties.
 domain: Core Data
@@ -27,7 +27,7 @@ references:
 depends_on: []
 related:
   - knowledge.core-data.relationships-and-delete-rules
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

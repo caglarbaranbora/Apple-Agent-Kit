@@ -1,6 +1,6 @@
 # Accessibility Labels
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.accessibility.accessibility-labels
 artifact_type: knowledge
 title: Accessibility Labels
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how to set accessibilityLabel (SwiftUI .accessibilityLabel(), UIKit accessibilityLabel) so VoiceOver announces a concise, meaningful name for every element that needs one.
 domain: Accessibility
@@ -25,7 +25,7 @@ related:
   - knowledge.accessibility.accessibility-traits
   - knowledge.accessibility.accessibility-value-and-hint
   - knowledge.human-interface-guidelines.accessibility
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent
