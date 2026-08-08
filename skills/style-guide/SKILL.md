@@ -42,3 +42,11 @@ Never load more than the contracts relevant to the specific question.
 
 Stop and report if the requested topic has no matching Knowledge Contract
 in knowledge/style-guide/ — do not guess or fall back to general knowledge.
+
+This domain owns how user-facing text is *worded*, never what it must
+*communicate*. If the task turns on the latter — an error message that
+must explain why an action failed, an alert whose contents are in
+question, onboarding text that must convey something specific — stop and
+report that `human-interface-guidelines-patterns` owns it, naming the
+topic. Rewording text that is wrong about its own content produces
+correct wording and an unfixed screen.

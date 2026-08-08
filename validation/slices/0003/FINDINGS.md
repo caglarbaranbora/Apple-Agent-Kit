@@ -14,7 +14,8 @@ is no Workflow for the join.
 
 ### F-003-01 "Exactly one Skill" under-serves tasks the kind-partition splits
 
-Status: **Architectural** — recorded, not fixed in this pull request
+Status: **Resolved 2026-08-08** — recorded here as originally written; the resolution
+is at the end of this finding.
 
 Observation:
 
@@ -62,6 +63,45 @@ Two options, and the choice is a design decision rather than a defect fix:
 Option 1 is the smaller change and does not touch the layer order. Neither is in scope
 for a promotion pull request; recorded here so the decision is made deliberately rather
 than discovered again by the next slice.
+
+## Resolution — 2026-08-08
+
+**Both options above were wrong, and measuring the class is what showed it.**
+
+Option 1 assumed the join was narrow enough for one Workflow. It is not: rules
+constraining what user-facing text must say are spread across 29 of the 33
+`human-interface-guidelines` Contracts, not concentrated in Patterns. A Workflow would
+have loaded `style-guide` plus up to three HIG Skills for any task touching text — the
+opposite of the context minimization Level 5 measures, and a new artifact that makes
+the architecture worse at the thing it exists for.
+
+Option 2 was rejected on cost: `no-skill-to-skill` is a layer-order rule, and it is the
+only one of these options that cannot be undone.
+
+A third option was considered and rejected: a Skill routing *across domains* to
+`knowledge.human-interface-guidelines.feedback` directly. The dependency table permits
+it — `skill → knowledge` carries no domain constraint — but **zero of the 33 Skills do
+it**, so it would establish a convention, and a convention that spreads makes domain
+ownership meaningless at the routing layer.
+
+**What was done instead: a reporting Stop Condition, in both directions.**
+
+The diagnosis in this finding was slightly wrong, and the correction matters.
+F-004-01's lesson was that Stop Conditions are read too late — but there the tiebreak
+was needed *to select the Skill*. Here the selection is correct: `style-guide` really
+does own wording. The gap appears while the work is under way, which is exactly when
+Stop Conditions are read. Same instrument, different timing, opposite verdict.
+
+`skills/style-guide/SKILL.md` now stops and reports when a task turns on what text must
+*communicate* rather than how it is worded.
+`skills/human-interface-guidelines-patterns/SKILL.md` does the same in reverse. Neither
+routes to the other; `AGENTS.md` already forbids falling back to general knowledge past
+a Stop Condition, so reporting is a real outcome rather than a shrug.
+
+Cost: two paragraphs, no new artifact, no precedent set, no layer-order change. It also
+forecloses nothing — if reporting proves insufficient in practice, the Workflow and
+cross-domain-routing options are both still available. Option 2 was the only one that
+would have closed the others off.
 
 ------------------------------------------------------------------------
 

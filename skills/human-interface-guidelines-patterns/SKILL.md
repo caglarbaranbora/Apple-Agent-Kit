@@ -53,3 +53,9 @@ Modality, Multitasking, Playing Audio, Printing, Ratings and Reviews,
 Sharing, Status, Syncing, Workouts) is out of scope (see
 docs/architecture/domain-map.md) — report that explicitly rather than
 answering from general knowledge.
+
+This domain decides what a screen must communicate, never how the words
+are formed. Once the content requirement is settled, terminology,
+capitalization, and phrasing are `style-guide`'s — stop and report that
+rather than wording the text here. The two directions are the same
+boundary read from opposite sides.
