@@ -1,6 +1,6 @@
 # Privacy Manifest
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.privacy-manifest
 artifact_type: knowledge
 title: Privacy Manifest
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines the requirement to ship an accurate PrivacyInfo.xcprivacy privacy manifest declaring data collection and required-reason API usage, and the App Store Connect rejection risk of a missing or incomplete manifest.
@@ -19,12 +19,13 @@ tags:
   - privacy-manifest
   - xcprivacy
 references:
-  - https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
+  - https://developer.apple.com/app-store/review/guidelines/#5.1.2
+  - https://developer.apple.com/documentation/bundleresources/privacy-manifest-files
 depends_on: []
 related:
   - knowledge.app-store-review-guidelines.privacy-nutrition-label
   - knowledge.app-store-review-guidelines.permission-usage-strings
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -98,4 +99,5 @@ None.
 
 ## References
 
--   [Apple Developer — Privacy Manifest Files](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files)
+-   [Apple App Review Guidelines — 5.1.2 Data Use and Sharing](https://developer.apple.com/app-store/review/guidelines/#5.1.2)
+-   [Apple Developer — Privacy Manifest Files](https://developer.apple.com/documentation/bundleresources/privacy-manifest-files)

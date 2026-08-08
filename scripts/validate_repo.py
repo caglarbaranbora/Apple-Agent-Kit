@@ -806,8 +806,11 @@ def check_prose_domain_mentions_resolve(artifacts, root):
         if rel.startswith(skipped):
             continue
         prose = re.sub(r"```.*?```", "", path.read_text(), flags=re.DOTALL)
+        # The noun is matched case-insensitively, so normalise it before it
+        # is used as a table selector below -- "Workflow" at the start of a
+        # sentence must reach the same table as "workflow" mid-sentence.
         mentions = {
-            m.group(1, 2)
+            (m.group(1), m.group(2).lower())
             for pattern in (BACKTICKED_MENTION_RE, BARE_MENTION_RE)
             for m in pattern.finditer(prose)
             if (pattern is BACKTICKED_MENTION_RE or m.group(1) in retired)

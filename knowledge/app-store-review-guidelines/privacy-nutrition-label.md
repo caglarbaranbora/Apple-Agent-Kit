@@ -1,6 +1,6 @@
 # Privacy Nutrition Label
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.privacy-nutrition-label
 artifact_type: knowledge
 title: Privacy Nutrition Label
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines the App Store Connect "App Privacy" nutrition-label disclosure requirements — declared data types, identity linkage, and tracking use — and the accuracy bar relative to actual app behavior, per guideline 5.1.1 and 5.1.2.
@@ -19,12 +19,13 @@ tags:
   - nutrition-label
   - app-privacy-details
 references:
+  - https://developer.apple.com/app-store/review/guidelines/#5.1.1
   - https://developer.apple.com/app-store/app-privacy-details/
 depends_on: []
 related:
   - knowledge.app-store-review-guidelines.privacy-manifest
   - knowledge.app-store-review-guidelines.permission-usage-strings
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -99,4 +100,5 @@ None.
 
 ## References
 
+-   [Apple App Review Guidelines — 5.1.1 Data Collection and Storage](https://developer.apple.com/app-store/review/guidelines/#5.1.1)
 -   [Apple Developer — App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/)

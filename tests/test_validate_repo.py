@@ -470,6 +470,29 @@ class TestLevel2(RepoTestCase):
         )
         self.assertRule("prose-domain-resolves")
 
+    def test_a_capitalised_workflow_mention_reaches_the_workflow_table(self):
+        # The noun is matched case-insensitively but was compared with `==`,
+        # so a capitalised "Workflow" selected the *domain* table. Every
+        # mention of `workflow.authentication` by that spelling resolved
+        # against the retired `authentication` domain rather than the live
+        # Workflow. Found by PR 7's own README prose, which used the bare
+        # form; the backticked one reproduces the same fault without also
+        # depending on the retirement filter.
+        self.repo.write(
+            "workflows/ghost/WORKFLOW.md",
+            "# Ghost\n\n## Metadata\n\n``` yaml\nid: workflow.ghost\n"
+            "artifact_type: workflow\ntitle: Ghost\nversion: 0.1.0\n"
+            "status: Draft\nowner: Apple Agent Kit\nsummary: Composes two.\n"
+            "skills:\n  - skill.example.foundations\n  - skill.other.foundations\n"
+            "related: []\nlast_updated: 2026-08-07\n```\n",
+        )
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            "## Rules",
+            "## Notes\n\n-   The `ghost` Workflow composes both Skills.\n\n## Rules",
+        )
+        self.assertNotIn("prose-domain-resolves", self.repo.rules())
+
     def test_domain_map_may_record_a_split_not_only_a_retirement(self):
         # `design` was split by rfcs/0001, never retired. Keying the heuristic
         # on the word "retired" alone would flag the map's own history.

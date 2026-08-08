@@ -1,6 +1,6 @@
 # Restore Purchases
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.restore-purchases
 artifact_type: knowledge
 title: Restore Purchases
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines the requirement to provide a restore mechanism for restorable in-app purchases, and the non-expiration rule for purchased credits/currencies, per guideline 3.1.1.
@@ -19,11 +19,11 @@ tags:
   - restore
   - monetization
 references:
-  - https://developer.apple.com/app-store/review/guidelines/
+  - https://developer.apple.com/app-store/review/guidelines/#3.1.1
 depends_on: []
 related:
   - knowledge.app-store-review-guidelines.digital-goods-iap
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -77,4 +77,4 @@ None.
 
 ## References
 
--   [Apple App Review Guidelines — 3.1.1 In-App Purchase](https://developer.apple.com/app-store/review/guidelines/)
+-   [Apple App Review Guidelines — 3.1.1 In-App Purchase](https://developer.apple.com/app-store/review/guidelines/#3.1.1)

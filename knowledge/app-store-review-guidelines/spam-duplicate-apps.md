@@ -1,6 +1,6 @@
 # Spam / Duplicate Apps
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.spam-duplicate-apps
 artifact_type: knowledge
 title: Spam / Duplicate Apps
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines the prohibition on submitting multiple near-identical apps (per-location/per-team variants) or apps indistinguishable from existing App Store listings, per guideline 4.3.
@@ -19,11 +19,11 @@ tags:
   - duplicate-apps
   - quality
 references:
-  - https://developer.apple.com/app-store/review/guidelines/
+  - https://developer.apple.com/app-store/review/guidelines/#4.3
 depends_on: []
 related:
   - knowledge.app-store-review-guidelines.minimum-functionality
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -79,4 +79,4 @@ None.
 
 ## References
 
--   [Apple App Review Guidelines — 4.3 Spam](https://developer.apple.com/app-store/review/guidelines/)
+-   [Apple App Review Guidelines — 4.3 Spam](https://developer.apple.com/app-store/review/guidelines/#4.3)

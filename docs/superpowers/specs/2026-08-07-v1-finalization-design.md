@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.6.0
+Version: 1.7.0
 Date: 2026-08-07
 
 ## Goal
@@ -313,7 +313,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 | 4 | `swiftui` — `ObservableObject`/`NavigationView` migration — **shipped 2026-08-07, 2 KC** | 2 |
 | 5 | `networking` — completion-handler, `URLSessionDelegate`, `dataTaskPublisher` — **shipped 2026-08-07, 7 KC** | 5-6 |
 | 6 | `uikit` — gesture recognizers, Core Animation and custom transitions, SwiftUI interop — **shipped 2026-08-08, 8 KC, Skill split in two** | 6-7 |
-| 7 | `app-store-review-guidelines` — 1.2, 1.5, 1.6, 4.1, 4.8, 5.2 | 8-10 |
+| 7 | `app-store-review-guidelines` — 1.2, 1.5, 1.6, 4.1, 4.8, 5.2 — **shipped 2026-08-08, 8 KC + 5.6.1** | 8-10 |
 
 Broken edges first, largest last. PRs 0 and 1 add no content; they make the base
 truthful before anything is built on it.
@@ -420,7 +420,7 @@ Workflow does not know the rule that can reject its own output.
 **Deliberately left open**, to be settled when PR 7 is scoped rather than assumed
 here: whether Guideline 4.4 (extensions) satisfies clause (i) via `widgetkit`; whether
 1.1 belongs in Tier 1 once 1.2 covers its actionable half; and the classification of
-4.5, 4.6, 4.7 and 5.6.
+4.5, 4.6, 4.7 and 5.6. **All four settled in PR 7** — see Observed in PR 7.
 
 ### Observed in PR 4
 
@@ -582,6 +582,81 @@ containment sequence, and `check_used_by_is_complete` walks Source URLs, so
 `## Used By`. That is correct under reference-spec.md — "`## Used By` may name Contracts
 outside this Reference's own domain" — and it is the first place in the kit where the
 rule is load-bearing rather than incidental.
+
+### Observed in PR 7
+
+**The four open scope questions, settled.** They were left open on the correct
+grounds: each needed the guideline text read against the four-clause test, not a guess.
+
+- **4.4 does not satisfy clause (i).** The clause requires that another artifact defer
+  to it, and nothing in `widgetkit` does. 4.4 carries a real code-level rule — an app's
+  extensions "may not include marketing, advertising, or in-app purchases" — but a rule
+  being real is clause (iv), which then fails Tier 1's "nearly every iOS app" bar,
+  because widgets do not meet it. 4.4 is **Deferred, Tier 3**, and the missing
+  `widgetkit` hand-off is recorded in `domain-map.md` as the thing that would change
+  the answer.
+- **1.1 is Excluded, not Deferred.** Its subject is whether content is "offensive,
+  insensitive, upsetting, intended to disgust, in exceptionally poor taste, or just
+  plain creepy" — a judgment about what an app contains, with no implementation rule
+  that satisfies or violates it. 1.2's four mechanisms are the buildable half and they
+  now exist. A permanent exclusion is the honest marker; Deferred would promise a
+  Contract nobody can write.
+- **4.6 is Excluded because Apple excluded it.** Its full text is "Intentionally
+  omitted." A guideline that does not exist cannot be a gap, and recording it as
+  Deferred would have kept a phantom on the backlog indefinitely.
+- **4.5 and 4.7 are Tier 3; 5.6 splits.** 4.5's near-universal clause is 4.5.4 (push
+  notification content), whose natural reader is inside `usernotifications` rather than
+  here; the rest of 4.5 and all of 4.7 (mini apps, streaming games, emulators) are
+  vertical. 5.6 does not classify as a unit: 5.6.2, 5.6.3 and 5.6.4 govern **developer
+  conduct** and are Excluded, but 5.6.1 carries a code rule.
+
+**The gap table missed a Contract, and the scoping pass found it.** 5.6.1 states "Use
+the provided API to prompt users to review your app… and we will disallow custom review
+prompts", which is as concrete as any rule in this domain and reaches the two designs
+teams actually build: a satisfaction gate ("Enjoying the app?" routing happy users to
+the prompt) is itself a custom prompt, and a "Rate us" button is what Apple's own API
+documentation tells developers not to build — "Because this method may not present an
+alert, don't call `requestReview()` or `requestReview(in:)` in response to a button tap
+or other user action." `review-prompt-api` ships as the eighth Contract. The gap table
+listed sections by number; a section number does not say whether the section contains
+code.
+
+**Ten Contracts were citing a bare hub, and the Reference could not have been honest
+without fixing it.** `reference-spec.md` requires a URL "specific enough to authorize a
+rule" and says "a bare hub that indexes unrelated topics is not". Every Contract in this
+domain cited `https://developer.apple.com/app-store/review/guidelines/` — one URL for
+ten different guidelines. The page carries an `id` for every numbered section, so the
+fix is mechanical and was applied to all 20 Contracts: the Reference now indexes 26
+per-guideline anchors. This is the first Reference in the kit where indexing required
+changing what the Contracts cite rather than only what the Reference lists.
+
+**Second consecutive PR where indexing surfaced a stale URL.** PR 6 found three UIKit
+diffable-data-source URLs that 301-redirect; PR 7 found
+`bundleresources/privacy_manifest_files`, now `privacy-manifest-files`. The mechanism is
+the same both times and worth stating plainly: **an unindexed URL is an unverified URL.**
+Nothing fetches a citation that no Reference lists, so it rots silently. Here it had a
+second effect — `references/apple/privacy.md` already indexed the hyphenated form, so
+the two domains' Contracts were citing the same Apple page under two spellings and
+`used-by-complete` could not see the shared edge. Correcting the URL made the check fire
+immediately and both References now cross-list, which is the many-to-many rule working
+as designed.
+
+**A third hole in `prose-domain-resolves`, and this one was a plain bug.** The mention
+regexes match the trailing noun case-insensitively — `(?i:(domain|skill|workflow))` —
+but the resolver compared the captured text with `noun == "workflow"`. A capitalised
+"Workflow" therefore failed that test and fell through to the *domain* table, where
+`authentication` is retired. Every prose mention of `workflow.authentication` in that
+spelling was reported as a dead hand-off to a domain, while the live Workflow sat in
+`workflows/authentication/`. PR 7's own README sentence is what surfaced it, which makes
+three consecutive passes where this check was corrected by prose written in the same
+pull request. The pattern is worth naming: a check that reads prose is exercised hardest
+by the prose describing its own repository.
+
+**Third domain in a row to land at or beside the 98-line cap.** `networking` sits at
+98/98, `uikit` at 95 after its split, and this Reference at 98/98. Left there rather
+than trimmed, on PR 5's reasoning: manufactured slack hides the signal. If it splits,
+Apple's own five sections (Safety, Performance, Business, Design, Legal) are the seam,
+and unlike `uikit` the S1 argument is already made for us by the source's structure.
 
 ### Deviation taken in PR 1
 

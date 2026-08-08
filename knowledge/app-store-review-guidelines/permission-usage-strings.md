@@ -1,6 +1,6 @@
 # Permission Usage Strings
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.permission-usage-strings
 artifact_type: knowledge
 title: Permission Usage Strings
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines the requirement for accurate, specific Info.plist usage-description strings and informed user consent before collecting user or usage data, per guideline 5.1.1(ii) and 5.1.1(iv).
@@ -19,12 +19,12 @@ tags:
   - permissions
   - info-plist
 references:
-  - https://developer.apple.com/app-store/review/guidelines/
+  - https://developer.apple.com/app-store/review/guidelines/#5.1.1
 depends_on: []
 related:
   - knowledge.app-store-review-guidelines.privacy-manifest
   - knowledge.app-store-review-guidelines.privacy-nutrition-label
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -101,4 +101,4 @@ None.
 
 ## References
 
--   [Apple App Review Guidelines — 5.1.1 Data Collection and Storage](https://developer.apple.com/app-store/review/guidelines/)
+-   [Apple App Review Guidelines — 5.1.1 Data Collection and Storage](https://developer.apple.com/app-store/review/guidelines/#5.1.1)
