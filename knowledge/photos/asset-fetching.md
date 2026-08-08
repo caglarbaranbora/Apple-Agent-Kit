@@ -11,7 +11,7 @@ title: Asset Fetching
 version: 0.1.0
 status: Draft
 owner: Apple Agent Kit
-summary: Defines querying the photo library once access is granted -- expressing filtering and ordering as PHFetchOptions, holding a PHFetchResult as the lazily-batched cursor it is, and refreshing it through a change observer rather than refetching.
+summary: Defines querying the photo library once access is granted -- expressing filtering and ordering as PHFetchOptions, holding a PHFetchResult as the lazily-batched cursor it is, refreshing it through a change observer rather than refetching, and reading a fetched asset's recorded capture place.
 domain: Photos
 tags:
   - photos
@@ -38,7 +38,7 @@ last_updated: 2026-08-09
 
 ## Intent
 
-This contract defines how an AI coding agent queries the photo library once access is granted: expressing the query as fetch options rather than as post-filtering, holding the result in the form Photos returns it, and keeping it current as the library changes underneath.
+This contract defines how an AI coding agent queries the photo library once access is granted: expressing the query as fetch options rather than as post-filtering, holding the result in the form Photos returns it, keeping it current as the library changes underneath, and reading the capture place a fetched asset already carries.
 
 ## Scope
 
@@ -78,7 +78,7 @@ Agents fetching a collection's contents MUST fetch its members separately rather
 
 ### Rule 5
 
-Agents MUST read a photo's recorded capture place from `PHAsset.location` and MUST NOT request Core Location authorization in order to obtain it. The property is declared `var location: CLLocation? { get }`, Apple describes it as "The location information for the asset," and notes that "Typically, an asset's location metadata identifies the place where the asset was captured." The `CLLocation` is metadata the library hands back under the grant this contract already depends on, not a fix Core Location produced — `CLLocationManager` authorization governs the device's *current* location and has no part in reading an asset's *recorded* one. A feature that needs only where a photo was taken and prompts for location access is asking the user for data it never uses. The property is optional, so an asset carrying no location metadata MUST be handled as absent rather than force-unwrapped.
+Agents MUST read a photo's recorded capture place from `PHAsset.location`, and MUST NOT request Core Location authorization in order to obtain it. The property is declared `var location: CLLocation? { get }`; Apple describes it as "The location information for the asset" and notes that "Typically, an asset's location metadata identifies the place where the asset was captured." The type is Core Location's and the delivery is not: the property carries no authorization requirement of its own on Apple's page for it, and arrives with the photo-library grant this contract already depends on, so a location request does not change what it returns — that request governs Core Location's own services, which is `knowledge.core-location.authorization-and-usage-strings`' subject and not this one. This is read from the symbol's own documented surface rather than inferred from Core Location's side, and it means a feature needing only where a photo was taken buys nothing by prompting for location access. The property is optional, so an asset carrying no location metadata MUST be handled as absent rather than force-unwrapped.
 
 ## Compliant Example
 

@@ -38,7 +38,15 @@ decomposes into three sub-tasks that route independently.
 |---|---|---|
 | Pick photos | `photos` | `picker-and-selection-results` |
 | Show where each was taken | — | **none** (see F-007-01) |
-| React on returning to a place, app not running | `core-location` | `background-monitoring-and-launches`, and its declared dependency `authorization-and-usage-strings` |
+| React on returning to a place, app not running | `core-location` | `background-monitoring-and-launches`, plus both of its declared dependencies — `authorization-and-usage-strings` and `accuracy-and-precise-location` |
+
+Four Contracts in total. The task never mentions accuracy, and
+`accuracy-and-precise-location` is loaded anyway because `depends_on` is binding — which
+is correct here rather than over-loading: a geofence radius under `reducedAccuracy` is
+exactly the case a background monitoring rule assumes has been settled, and that is what a
+declared dependency is for. Recorded because "context is minimized" is measured against
+what the task asked for, and a binding dependency is the one legitimate way that count
+grows.
 
 Two Skills for one feature is not F-003-01's failure. There the *single* question needed
 two domains at once; here each sub-task is separable, and `AGENTS.md`'s "exactly one
@@ -85,7 +93,7 @@ said so, so the sub-task routes nowhere.
 |---|---|
 | Routing succeeds from task to Knowledge without repository search | **PASS** for two sub-tasks, **FAIL** for the third |
 | The routed Knowledge is sufficient to complete the task | **FAIL** — F-007-01 |
-| Context is minimized | **PASS** — 2 Skills, 3 Contracts, no Contract loaded that the task did not need |
+| Context is minimized | **PASS** — 2 Skills, 4 Contracts, one of them a binding dependency rather than a task match |
 | Architecture behaves as specified | **PASS** — the Stop Condition fires rather than the agent guessing |
 
 ## Result

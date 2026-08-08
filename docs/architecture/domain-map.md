@@ -303,7 +303,9 @@ The fifth, `mapkit`, was corrected above — the entry was right that the bounda
 and wrong about how it could be expressed. That is the pilot's second result: a
 pre-classification can be correct about ownership and still be unwritable as stated.
 
-**`photos` was built against these four entries on 2026-08-09**, and three of the four held
+**`photos` was built against these four pre-classified entries on 2026-08-09** — the fifth
+bullet above, `core-location`, was added afterwards by slice #0007 and is outside this
+count — and three of the four held
 without amendment: the `privacy` and `app-store-review-guidelines` handoffs became
 `### Excluded` bullets and a delegation rule, and the `human-interface-guidelines`
 angle-split needed no adjudication. The fourth, `uikit-interaction`, was corrected above.
@@ -336,6 +338,14 @@ pilot's first result, arriving before any Contract exists. Whether this was wort
 doing is answerable: if the pilot's own slice finds a seam defect anyway, the rule from
 #0006 is weaker than it looked, and that is a result worth having before nineteen
 domains are built on it.
+
+**Answered 2026-08-09 by slice #0007.** The slice found a seam defect and the rule
+survived, because the defect is at none of the nine. Four of the nine were exercised by a
+task rather than by an author and all four held; the defect is at the tenth boundary, the
+one between the two new domains, which this pass never classified because it walked each
+new domain against domains that already existed. The rule from #0006 is not weaker than it
+looked. The *method* that produces entries for it is, by exactly the width of a phase that
+builds two domains at once — now a rule of its own below.
 
 ## Artifact Layout
 

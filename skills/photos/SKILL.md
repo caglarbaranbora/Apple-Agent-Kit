@@ -1,6 +1,6 @@
 ---
 name: photos
-description: Route Photos and PhotoKit implementation tasks to the correct Knowledge Contracts -- picking assets with no authorization, requesting library access and its usage-description keys, the limited library, fetching assets, requesting images, and writing to the library. Use when presenting PhotosPicker or PHPickerViewController, configuring PHPickerConfiguration/selectionLimit/PHPickerFilter, reading PHPickerResult.itemProvider or assetIdentifier or PhotosPickerItem, calling PHPhotoLibrary.requestAuthorization(for:) or authorizationStatus(for:), declaring NSPhotoLibraryUsageDescription/NSPhotoLibraryAddUsageDescription, handling PHAuthorizationStatus.limited or presentLimitedLibraryPicker(from:), fetching with PHFetchOptions/PHFetchResult, requesting images through PHImageManager/PHCachingImageManager, or saving with performChanges and PHAssetCreationRequest. v1 is library access, reading, and saving only -- no photo editing (PHContentEditingInput/Output), no PHLivePhotoView, no AVAsset export, and no camera capture (that is AVFoundation, not this domain). Triggers on Photos, PhotoKit, PhotosUI, photo library, PHPickerViewController, PhotosPicker, PHPhotoLibrary, PHAsset, PHFetchResult, PHImageManager, PHAssetCreationRequest, limited library, photo permission, save to photos, photo picker.
+description: Route Photos and PhotoKit implementation tasks to the correct Knowledge Contracts -- picking assets with no authorization, requesting library access and its usage-description keys, the limited library, fetching assets, requesting images, and writing to the library. Use when presenting PhotosPicker or PHPickerViewController, configuring PHPickerConfiguration/selectionLimit/PHPickerFilter, reading PHPickerResult.itemProvider or assetIdentifier or PhotosPickerItem, calling PHPhotoLibrary.requestAuthorization(for:) or authorizationStatus(for:), declaring NSPhotoLibraryUsageDescription/NSPhotoLibraryAddUsageDescription, handling PHAuthorizationStatus.limited or presentLimitedLibraryPicker(from:), fetching with PHFetchOptions/PHFetchResult, requesting images through PHImageManager/PHCachingImageManager, or saving with performChanges and PHAssetCreationRequest. v1 is library access, reading, and saving only -- no photo editing (PHContentEditingInput/Output), no PHLivePhotoView, no AVAsset export, and no camera capture (that is AVFoundation, not this domain). Triggers on Photos, PhotoKit, PhotosUI, photo library, PHPickerViewController, PhotosPicker, PHPhotoLibrary, PHAsset, PHAsset.location, PHFetchResult, PHImageManager, PHAssetCreationRequest, limited library, photo permission, save to photos, photo picker.
 id: skill.photos.foundations
 title: Photos — Foundations
 version: 0.1.0
@@ -55,11 +55,11 @@ docs/architecture/domain-map.md). Capturing a new photo from the camera
 is AVFoundation's and has no Skill yet — report that rather than
 answering.
 
-A photo's recorded capture place is this domain's, not `core-location`'s:
-`PHAsset.location` arrives with the library grant, so asset-fetching.md
-Rule 5 owns it and no location authorization is involved. Route to
-`core-location` only when the task needs the *device's* current or
-ongoing location, which is a different fact about a different subject.
+A photo's recorded capture place is this domain's, not `core-location`'s,
+even though `PHAsset.location` is typed as a `CLLocation`:
+asset-fetching.md Rule 5 owns it, including the authorization question.
+Route to `core-location` only when the task needs the *device's* current
+or ongoing location, which is a different subject.
 
 SwiftUI interop with this domain is split deliberately, and the split is
 this Skill's: `PhotosPicker` is SwiftUI-native, so
