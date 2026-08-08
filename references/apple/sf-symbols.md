@@ -1,7 +1,7 @@
 # SF Symbols
 
 Status: Draft
-Version: 0.2.0
+Version: 0.3.0
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 0.2.0
 id: reference.apple.sf-symbols
 artifact_type: reference
 title: SF Symbols
-version: 0.2.0
+version: 0.3.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's SF Symbols API documentation, scoped to this domain's v1.
@@ -45,7 +45,10 @@ variants (fill/circle/square/slash), variable value symbols, weight/scale
 configuration, color/tinting mechanics, custom symbol usage, and UIKit
 `SymbolConfiguration` object composition — across SwiftUI and UIKit.
 Symbol effects/animations (`SymbolEffect`, iOS 17+) and Symbol Composer /
-custom symbol authoring are deferred to a future pass. Design-level symbol
+custom symbol authoring are **Excluded**, matching
+`skills/sf-symbols/SKILL.md` — this file called them deferred until
+2026-08-08, which promised a pass the Skill had already ruled out.
+Design-level symbol
 *selection* (which symbol fits a meaning, fill vs. outline as a design
 choice) is owned by the `human-interface-guidelines` domain's
 `sf-symbols.md` Knowledge Contract, not this one — see

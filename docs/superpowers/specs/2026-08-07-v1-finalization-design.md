@@ -244,7 +244,7 @@ Gaps `docs/architecture/domain-map.md` declares against Tier 1:
 | `app-store-review-guidelines` | Safety (1.x), most of Legal (5.x), Design 4.0, Guideline 4.8 |
 | `swiftui` | Previews, custom `Layout` protocol conformances (both **Excluded**), legacy `ObservableObject`/`NavigationView` migration — **closed in PR 4, 2026-08-07** |
 | `uikit` | Storyboard/XIB, gesture recognizers, Core Animation, custom transitions, SwiftUI interop |
-| `sf-symbols` | Symbol effects/animations, Symbol Composer authoring |
+| `sf-symbols` | Symbol effects/animations, Symbol Composer authoring — both **Excluded** by `skills/sf-symbols/SKILL.md`; no Phase 5 PR, and the row is annotated 2026-08-08 so it stops reading as an open gap |
 | `networking` | Completion-handler APIs, Combine, `URLSessionDelegate` background/progress/TLS — **closed in PR 5, 2026-08-07** |
 | `xcode` | `xcodebuild` CLI, CI signing automation, SwiftPM build configuration — **plus two inherited hand-offs**: Test Plans and code coverage (deferred by `testing`), project language configuration and `.xcloc`/XLIFF (deferred by `localization`). **Both closed in PR 2, 2026-08-07.** |
 | `accessibility` | none from its own scoping — **plus one inherited hand-off**: announcing a validation result to assistive apps, surfaced by the `authentication` retirement. **Closed in PR 3, 2026-08-07.** |
