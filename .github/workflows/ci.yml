@@ -33,7 +33,7 @@ jobs:
         run: test -f bin/install.js
 
   validate-artifacts:
-    name: Run Level 1 structural validation
+    name: Run Level 1-3 validation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -42,34 +42,21 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Validate Knowledge Contracts
-        run: |
-          fail=0
-          while IFS= read -r -d '' f; do
-            echo "::group::$f"
-            python3 scripts/validate_artifact.py "$f" --type knowledge || fail=1
-            echo "::endgroup::"
-          done < <(find knowledge -type f -iname "*.md" -print0)
-          exit $fail
+      - name: Level 1 -- every artifact, structural
+        # `--all` rather than a find loop per type. The loops it replaces
+        # covered knowledge/, skills/ and references/ and therefore never saw
+        # workflows/ or the entry point: a WORKFLOW.md with an invalid version
+        # passed CI until 2026-08-08. `--all` reads each file's own
+        # `artifact_type`, which is also the only way the entry point gets
+        # validated as an entry rather than skipped for not being a Skill.
+        run: python3 scripts/validate_artifact.py . --all
 
-      - name: Validate Skills
-        run: |
-          # skills/apple-agent-kit/SKILL.md is Claude Code's native plugin entrypoint
-          # format, not this repo's custom Skill spec -- excluded by design.
-          fail=0
-          while IFS= read -r -d '' f; do
-            echo "::group::$f"
-            python3 scripts/validate_artifact.py "$f" --type skill || fail=1
-            echo "::endgroup::"
-          done < <(find skills -type f -iname "SKILL.md" ! -path "skills/apple-agent-kit/SKILL.md" -print0)
-          exit $fail
+      - name: Levels 2-3 -- ids, edges, the DAG, routing, index sync
+        # docs/validation-model.md marks these blocking, and they were not run
+        # here at all until 2026-08-08 -- sixteen repository-wide checks that
+        # existed only on the machine of whoever remembered to run them.
+        run: python3 scripts/validate_repo.py .
 
-      - name: Validate References
-        run: |
-          fail=0
-          while IFS= read -r -d '' f; do
-            echo "::group::$f"
-            python3 scripts/validate_artifact.py "$f" --type reference || fail=1
-            echo "::endgroup::"
-          done < <(find references -type f -iname "*.md" ! -iname "README.md" -print0)
-          exit $fail
+      - name: Tests for the validators themselves
+        # A check that stops working should fail a test rather than go quiet.
+        run: python3 -m unittest discover tests/

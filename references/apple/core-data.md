@@ -1,7 +1,7 @@
 # Core Data
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,44 +9,44 @@ Version: 0.1.0
 id: reference.apple.core-data
 artifact_type: reference
 title: Core Data
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's Core Data documentation, scoped to this domain's v1.
 domain: Core Data
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
 https://developer.apple.com/documentation/coredata
-https://developer.apple.com/documentation/coredata/nsmanagedobject
-https://developer.apple.com/documentation/coredata/nsmanagedobject/init(context:)
+https://developer.apple.com/documentation/coredata/configuring-relationships
+https://developer.apple.com/documentation/coredata/generating-code
+https://developer.apple.com/documentation/coredata/nsdeleterule
 https://developer.apple.com/documentation/coredata/nsentitydescription
 https://developer.apple.com/documentation/coredata/nsentitydescription/insertnewobject(forentityname:into:)
-https://developer.apple.com/documentation/coredata/generating-code
-https://developer.apple.com/documentation/coredata/configuring-relationships
+https://developer.apple.com/documentation/coredata/nsfetchrequest
+https://developer.apple.com/documentation/coredata/nsmanagedobject
+https://developer.apple.com/documentation/coredata/nsmanagedobject/init(context:)
+https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext
+https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/delete(_:)
+https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/fetch(_:)-4xeoz
+https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/insert(_:)
+https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/parent
+https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/perform(_:)
+https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/performandwait(_:)-ypye
+https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/save()
 https://developer.apple.com/documentation/coredata/nspersistentcontainer
 https://developer.apple.com/documentation/coredata/nspersistentcontainer/init(name:)
 https://developer.apple.com/documentation/coredata/nspersistentcontainer/loadpersistentstores(completionhandler:)
 https://developer.apple.com/documentation/coredata/nspersistentcontainer/viewcontext
 https://developer.apple.com/documentation/coredata/nspersistentstoredescription
-https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext
-https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/insert(_:)
-https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/delete(_:)
-https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/save()
-https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/perform(_:)
-https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/performandwait(_:)
-https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/parent
-https://developer.apple.com/documentation/coredata/nsfetchrequest
-https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/fetch(_:)
-https://developer.apple.com/documentation/foundation/nspredicate
-https://developer.apple.com/documentation/foundation/nssortdescriptor
-https://developer.apple.com/documentation/swiftui/fetchrequest
-https://developer.apple.com/documentation/coredata/nsdeleterule
 https://developer.apple.com/documentation/coredata/nsrelationshipdescription
 https://developer.apple.com/documentation/coredata/nsrelationshipdescription/deleterule
 https://developer.apple.com/documentation/coredata/nsrelationshipdescription/inverserelationship
+https://developer.apple.com/documentation/foundation/nspredicate
+https://developer.apple.com/documentation/foundation/nssortdescriptor
+https://developer.apple.com/documentation/swiftui/fetchrequest
 
 ## Purpose
 

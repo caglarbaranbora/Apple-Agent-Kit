@@ -1,7 +1,7 @@
 # Testing
 
 Status: Draft
-Version: 0.2.0
+Version: 0.3.0
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 0.2.0
 id: reference.apple.testing
 artifact_type: reference
 title: Testing
-version: 0.2.0
+version: 0.3.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's Apple-platform testing documentation, scoped to this domain's v1.
@@ -44,7 +44,7 @@ https://developer.apple.com/documentation/xctest/xctestcase/continueafterfailure
 https://developer.apple.com/documentation/xctest/xctestcase/fulfillment(of:timeout:enforceorder:)
 https://developer.apple.com/documentation/xctest/xctestcase/wait(for:timeout:)
 https://developer.apple.com/documentation/xctest/xctestexpectation
-https://developer.apple.com/documentation/xctest/xctskip
+https://developer.apple.com/documentation/xctest/xctskip-swift.struct
 https://developer.apple.com/documentation/xcuiautomation
 https://developer.apple.com/documentation/xcuiautomation/xcuiapplication
 https://developer.apple.com/documentation/xcuiautomation/xcuielement

@@ -1,7 +1,7 @@
 # Reference Specification
 
 Status: Approved
-Version: 1.1.0
+Version: 1.2.0
 
 ## Purpose
 
@@ -64,6 +64,14 @@ a metadata field.
   a human fetches rather than something a Contract asserts, and three consecutive
   domain passes found Apple pages that had begun to redirect the moment indexing
   forced someone to open them.
+- Every URL under `## Source` MUST be the address Apple currently serves, not one Apple
+  redirects away from. Apple disambiguates a documentation path whenever a name is both
+  a type and a member (`xctskip` → `xctskip-swift.struct`) or an overload set
+  (`fetch(_:)` → `fetch(_:)-4xeoz`), and the undisambiguated form is a courtesy
+  redirect, never the stable one — it is the address that later becomes a 404. A
+  redirect is therefore a finding, not a pass. Enforced by `scripts/check_links.py`,
+  which is scheduled rather than blocking because it depends on Apple being reachable;
+  see ../validation-model.md [[validation-model]].
 - A Reference MUST NOT contain implementation rules. Rules live in Knowledge Contracts;
   the Reference records where their authority comes from.
 - `## Primary Topics` names the source surface this Reference covers, not the Contracts

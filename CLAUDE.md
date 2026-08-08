@@ -53,6 +53,16 @@ python3 scripts/validate_repo.py .
 
 Levels 4-5 are semantic and are checked by reading, in review — no script decides them.
 
+Link freshness is a third script, deliberately outside the levels because it leaves
+the machine — it fetches every cited URL and treats a redirect as a finding, since
+the form Apple redirects from is the one that later 404s. CI runs it on the files a
+PR changes, plus a weekly full sweep. Run it yourself after editing any `## Source`
+block or `references:` list:
+
+```bash
+python3 scripts/check_links.py . --files <changed files>   # or `.` for all 739
+```
+
 ## Running tests
 
 ```bash

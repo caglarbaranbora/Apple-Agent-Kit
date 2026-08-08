@@ -1,7 +1,7 @@
 # Fetching With NSFetchRequest
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 0.1.0
 id: knowledge.core-data.fetching-with-nsfetchrequest
 artifact_type: knowledge
 title: Fetching With NSFetchRequest
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines fetching managed objects with NSFetchRequest<T> -- filtering with NSPredicate, sorting with NSSortDescriptor, executing via context.fetch(_:), and SwiftUI's @FetchRequest property wrapper as the SwiftUI-side convenience over the same request.
@@ -22,7 +22,7 @@ tags:
   - fetchrequest
 references:
   - https://developer.apple.com/documentation/coredata/nsfetchrequest
-  - https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/fetch(_:)
+  - https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/fetch(_:)-4xeoz
   - https://developer.apple.com/documentation/foundation/nspredicate
   - https://developer.apple.com/documentation/foundation/nssortdescriptor
   - https://developer.apple.com/documentation/swiftui/fetchrequest
@@ -31,7 +31,7 @@ depends_on:
   - knowledge.core-data.persistent-container-setup
 related:
   - knowledge.core-data.managed-object-context-crud
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -133,7 +133,7 @@ Depends on `model-definition` for the managed object types being fetched, and on
 ## References
 
 - [Apple Developer — NSFetchRequest](https://developer.apple.com/documentation/coredata/nsfetchrequest)
-- [Apple Developer — fetch(_:)](https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/fetch(_:))
+- [Apple Developer — fetch(_:)](https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/fetch(_:)-4xeoz)
 - [Apple Developer — NSPredicate](https://developer.apple.com/documentation/foundation/nspredicate)
 - [Apple Developer — NSSortDescriptor](https://developer.apple.com/documentation/foundation/nssortdescriptor)
 - [Apple Developer — FetchRequest](https://developer.apple.com/documentation/swiftui/fetchrequest)
