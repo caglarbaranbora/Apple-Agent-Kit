@@ -1,7 +1,7 @@
 # App Store Review Guidelines
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.2.0
 id: reference.apple.app-store-review-guidelines
 artifact_type: reference
 title: App Store Review Guidelines
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's App Store Review Guidelines behind skill.app-store-review-guidelines.submission -- the sections most frequently responsible for real-world rejections and actionable from application code or App Store Connect metadata, indexed per guideline anchor across Safety (1.2, 1.5, 1.6), Performance (2.1, 2.3), Business (3.1.1), Design (4.1, 4.2, 4.3, 4.8), and Legal (5.1, 5.2, 5.6).
 domain: App Store Review Guidelines

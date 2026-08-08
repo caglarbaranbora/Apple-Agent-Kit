@@ -1,6 +1,6 @@
 # Keychain Access Groups and Sharing
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.security.keychain-access-groups-and-sharing
 artifact_type: knowledge
 title: Keychain Access Groups and Sharing
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines kSecAttrAccessGroup, the Keychain Sharing entitlement/capability, the team-ID prefix convention, and sharing Keychain items between apps/extensions signed by the same team.
 domain: Security
@@ -26,7 +26,7 @@ depends_on: []
 related:
   - knowledge.security.keychain-item-crud
   - knowledge.security.keychain-accessibility-levels
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

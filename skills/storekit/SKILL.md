@@ -3,13 +3,13 @@ name: storekit
 description: Route StoreKit 2 in-app purchase implementation tasks to the correct Knowledge Contracts -- product loading, purchase initiation, transaction verification, entitlements, transaction updates, restoring purchases, and subscription status/renewal info. Use when calling Product.products(for:), product.purchase(), handling Product.PurchaseResult, checking VerificationResult, reading Transaction.currentEntitlements, calling transaction.finish(), listening to Transaction.updates, calling AppStore.sync(), or reading Product.SubscriptionInfo.Status/RenewalInfo/renewalState. v1 is StoreKit 2 async/await API only -- no legacy StoreKit 1 (SKPaymentQueue/SKProduct/SKPaymentTransaction), no server-side receipt validation or App Store Server API, no StoreKit Configuration file test setup. Triggers on StoreKit, Product.products, product.purchase, PurchaseResult, VerificationResult, currentEntitlements, transaction.finish, Transaction.updates, AppStore.sync, restore purchases, SubscriptionInfo.Status, RenewalInfo, renewalState, subscription group, in-app purchase, IAP.
 id: skill.storekit.foundations
 title: StoreKit — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: StoreKit
 routes: [knowledge.storekit.product-loading-and-purchase, knowledge.storekit.transaction-verification-and-entitlements, knowledge.storekit.transaction-updates-and-restoring-purchases, knowledge.storekit.subscription-status-and-renewal-info]
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # StoreKit — Foundations Skill

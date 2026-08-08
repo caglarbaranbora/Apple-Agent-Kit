@@ -1,7 +1,7 @@
 # Model Context CRUD
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.swiftdata.model-context-crud
 artifact_type: knowledge
 title: Model Context CRUD
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines using a SwiftData ModelContext for create/delete/save operations -- insert(_:), delete(_:), save(), when autosaveEnabled makes an explicit save() unnecessary versus when it's required, mainContext vs. creating a background/secondary ModelContext, and undo support via context.undoManager.
 domain: SwiftData
@@ -30,7 +30,7 @@ depends_on:
   - knowledge.swiftdata.model-container-setup
 related:
   - knowledge.swiftdata.model-definition
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

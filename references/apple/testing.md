@@ -1,7 +1,7 @@
 # Testing
 
-Status: Draft
-Version: 0.3.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.3.0
 id: reference.apple.testing
 artifact_type: reference
 title: Testing
-version: 0.3.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's Apple-platform testing documentation, scoped to this domain's v1.
 domain: Testing

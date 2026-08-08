@@ -1,6 +1,6 @@
 # Nonce and Identity Token Verification
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.authenticationservices.nonce-and-identity-token-verification
 artifact_type: knowledge
 title: Nonce and Identity Token Verification
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines generating a cryptographically random nonce per request, SHA256-hashing it into the request's nonce property, and sending the raw nonce plus identityToken and authorizationCode to a backend for verification, without performing server-side JWT verification client-side.
 domain: AuthenticationServices
@@ -26,7 +26,7 @@ depends_on:
   - knowledge.authenticationservices.sign-in-with-apple-request-and-credential
 related:
   - knowledge.authenticationservices.credential-state-and-revocation
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

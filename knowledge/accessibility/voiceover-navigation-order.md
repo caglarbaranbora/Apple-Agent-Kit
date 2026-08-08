@@ -1,6 +1,6 @@
 # VoiceOver Navigation Order
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.accessibility.voiceover-navigation-order
 artifact_type: knowledge
 title: VoiceOver Navigation Order
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of accessibilitySortPriority (SwiftUI) and an explicit accessibilityElements order (UIKit) to fix VoiceOver reading order when it diverges from visual/z-order layout.
 domain: Accessibility
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.accessibility.accessibility-element-grouping
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

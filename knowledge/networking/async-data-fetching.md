@@ -1,6 +1,6 @@
 # Async Data Fetching
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.networking.async-data-fetching
 artifact_type: knowledge
 title: Async Data Fetching
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of URLSession's async/await data(for:), upload(for:from:), and download(for:) APIs, and why a successful call does not by itself mean the server returned success.
 domain: Networking
@@ -25,7 +25,7 @@ depends_on:
 related:
   - knowledge.networking.http-error-handling
   - knowledge.networking.url-request-construction
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

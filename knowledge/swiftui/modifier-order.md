@@ -1,6 +1,6 @@
 # Modifier Order
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.modifier-order
 artifact_type: knowledge
 title: Modifier Order
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines that SwiftUI view modifiers apply in the order written, each wrapping the view in a new view, and that order changes the rendered result.
 domain: SwiftUI
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.swiftui.stacks-and-spacing
   - knowledge.swiftui.view-composition
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

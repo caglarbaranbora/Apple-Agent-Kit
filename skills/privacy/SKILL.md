@@ -3,13 +3,13 @@ name: privacy
 description: Route Privacy Manifest (PrivacyInfo.xcprivacy) implementation tasks to the correct Knowledge Contracts -- file structure/bundling, required-reason API declarations, collected data type declarations, and tracking domains/third-party SDK signatures. Use when writing or editing PrivacyInfo.xcprivacy, NSPrivacyCollectedDataTypes, NSPrivacyAccessedAPITypes, NSPrivacyAccessedAPITypeReasons, NSPrivacyTracking, NSPrivacyTrackingDomains, NSPrivacyCollectedDataType, NSPrivacyCollectedDataTypePurposes, or handling "required reason API" / "privacy manifest" / "third-party SDK signature" tasks. v1 is manifest file implementation/schema only -- no App Store Connect nutrition-label questionnaire, no permission-request UI design, no Info.plist usage strings, no Keychain/security. Triggers on PrivacyInfo.xcprivacy, privacy manifest, NSPrivacyTracking, NSPrivacyTrackingDomains, NSPrivacyCollectedDataTypes, NSPrivacyAccessedAPITypes, NSPrivacyAccessedAPITypeReasons, required reason API, App Privacy Configuration, third-party SDK signature.
 id: skill.privacy.foundations
 title: Privacy — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: Privacy
 routes: [knowledge.privacy.manifest-file-structure-and-scope, knowledge.privacy.required-reason-api-declarations, knowledge.privacy.collected-data-types-declaration, knowledge.privacy.tracking-domains-and-third-party-sdk-signatures]
 related: [knowledge.human-interface-guidelines.privacy, knowledge.app-store-review-guidelines.privacy-manifest, knowledge.app-store-review-guidelines.privacy-nutrition-label]
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # Privacy — Foundations Skill

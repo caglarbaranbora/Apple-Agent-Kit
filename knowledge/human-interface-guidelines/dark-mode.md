@@ -1,6 +1,6 @@
 # Dark Mode
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.human-interface-guidelines.dark-mode
 artifact_type: knowledge
 title: Dark Mode
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines requirements for supporting the systemwide Dark Mode appearance setting on iOS/iPadOS, including contrast minimums and background-color layering.
 domain: Human Interface Guidelines

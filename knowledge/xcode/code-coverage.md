@@ -1,6 +1,6 @@
 # Code Coverage
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.xcode.code-coverage
 artifact_type: knowledge
 title: Code Coverage
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines where code coverage is enabled — the Configurations pane of a test plan, per configuration or under Shared Settings — the target scoping the percentage depends on, and what the resulting number does and does not attest.
 domain: Xcode
@@ -24,7 +24,7 @@ depends_on:
   - knowledge.xcode.test-plans
 related:
   - knowledge.xcode.schemes-and-targets
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Branding
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.branding
 artifact_type: knowledge
 title: Branding
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how an app's brand identity (voice, accent color, custom fonts, logo) appears in iOS/iPadOS UI without overriding platform conventions.
 domain: Human Interface Guidelines
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.color
   - knowledge.human-interface-guidelines.typography
   - knowledge.style-guide.copyright-and-trademarks
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent

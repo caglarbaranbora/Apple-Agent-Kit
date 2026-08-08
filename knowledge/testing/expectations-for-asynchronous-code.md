@@ -1,7 +1,7 @@
 # Expectations for Asynchronous Code
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.testing.expectations-for-asynchronous-code
 artifact_type: knowledge
 title: Expectations for Asynchronous Code
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines XCTestExpectation for testing callback-based (non-async/await) asynchronous code -- expectation(description:), fulfilling it with .fulfill() inside the completion handler under test, and waiting via the concurrency-safe await fulfillment(of:timeout:) in preference to the older synchronous wait(for:timeout:) -- scoped to APIs with no async/await entry point.
 domain: Testing
@@ -28,7 +28,7 @@ depends_on:
   - knowledge.testing.xctest-case-structure-and-assertions
 related:
   - knowledge.testing.parameterized-and-async-tests
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

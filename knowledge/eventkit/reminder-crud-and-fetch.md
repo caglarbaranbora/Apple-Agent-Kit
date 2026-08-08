@@ -1,6 +1,6 @@
 # Reminder CRUD and Fetch
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.eventkit.reminder-crud-and-fetch
 artifact_type: knowledge
 title: Reminder CRUD and Fetch
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines creating an EKReminder(eventStore:), setting its required title/calendar fields, saving/removing it with EKEventStore.save(_:commit:)/remove(_:commit:) (no span parameter), and fetching reminders only via the asynchronous fetchReminders(matching:completion:) built from predicateForReminders(in:).
 domain: EventKit
@@ -27,7 +27,7 @@ references:
 depends_on:
   - knowledge.eventkit.authorization-and-access-levels
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

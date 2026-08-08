@@ -1,6 +1,6 @@
 # Copycat and Impersonation
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.copycat-and-impersonation
 artifact_type: knowledge
 title: Copycat and Impersonation
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines guideline 4.1's three clauses — that copying a popular app's name or UI with minor changes is a rejection in its own right and not only an intellectual property risk, that submitting an app impersonating another app or service is a Developer Code of Conduct violation carrying removal from the Apple Developer Program rather than only from the App Store, and that another developer's icon, brand, or product name may not appear in an app's icon or name without that developer's approval.
 domain: App Store Review Guidelines

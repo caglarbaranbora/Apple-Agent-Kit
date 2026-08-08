@@ -1,6 +1,6 @@
 # App Completeness
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.app-store-review-guidelines.app-completeness
 artifact_type: knowledge
 title: App Completeness
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines requirements for submitting a final, fully tested, non-placeholder app build to App Review, including functional in-app purchase items at submission time.
 domain: App Store Review Guidelines

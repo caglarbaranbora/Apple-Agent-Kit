@@ -1,6 +1,6 @@
 # Authentication Challenges
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.networking.authentication-challenges
 artifact_type: knowledge
 title: Authentication Challenges
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how a URLSession delegate answers a server authentication challenge -- choosing the session-wide URLSessionDelegate method or the task-specific URLSessionTaskDelegate one, dispatching on protectionSpace.authenticationMethod and falling through to performDefaultHandling, the requirement that the completion handler be called exactly once on every path including cancellation, and using previousFailureCount and proposedCredential to stop a rejected credential from looping.
 domain: Networking
@@ -28,7 +28,7 @@ depends_on:
 related:
   - knowledge.networking.authenticated-requests
   - knowledge.networking.server-trust-evaluation
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

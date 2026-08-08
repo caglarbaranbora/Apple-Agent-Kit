@@ -1,6 +1,6 @@
 # Project Localizations
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.xcode.project-localizations
 artifact_type: knowledge
 title: Project Localizations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how a language and region is added to an Xcode project — the project-level Localizations list, the language ID that names the .lproj folder, the resource-selection sheet that decides what is localizable, and the Base entry Xcode adds by default.
 domain: Xcode
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.xcode.localization-export-import
   - knowledge.xcode.schemes-and-targets
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

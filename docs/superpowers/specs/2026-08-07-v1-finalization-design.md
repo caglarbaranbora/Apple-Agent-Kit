@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.10.0
+Version: 1.11.0
 Date: 2026-08-07
 
 ## Goal
@@ -317,6 +317,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 | 8 | The Reference indexing pass across all remaining domains, and the sixteenth check that makes coverage enforceable — **shipped 2026-08-08, 0 KC, 124 URLs indexed** | 0 |
 | 9 | The link checker: fetch every cited URL, and put the repository-wide checks into CI — **shipped 2026-08-08, 0 KC, 4 dead URLs found** | 0 |
 | 5b | The removal read-through: `human-interface-guidelines` (33) + `style-guide` (25) — **shipped 2026-08-08, 0 removed, 10 KC revised, 8 duplicated rules resolved** | −n |
+| 6 | Draft → Approved promotion, gated on Level 5 — **shipped 2026-08-08, 325 promoted, 3 slices run, 3 defects found, 3 checks added** | 0 |
 
 Broken edges first, largest last. PRs 0 and 1 add no content; they make the base
 truthful before anything is built on it.
@@ -889,6 +890,72 @@ too expensive to repeat for.
 **Phase 6 is now the only thing left, and it inherits a cleaner argument for itself.**
 325 of 326 artifacts are `Draft`; this phase revised 10 of them without changing a single
 rule's meaning, which is the kind of change `Approved` is supposed to survive.
+
+### Observed in Phase 6 — the promotion was blocked by its own gate, and the gate was right
+
+The phase was scoped as a status change across 325 files. It could not begin as one,
+because `artifact-lifecycle.md`'s Approval Gate names three conditions and the
+repository met one. Levels 1-3 passed. Review feedback was resolved. **Level 5's only
+record was void** — vertical slice #0001 tested `skills/login.md` and four
+`knowledge/authentication/` Contracts, and Phase 4 deleted all five when it retired
+that domain. Its own F-001 had asked for `artifact_type`, which Phases 1-2 delivered.
+A record that validates an architecture which no longer exists is not weak evidence;
+it is no evidence, and it was the sole evidence for approving everything.
+
+**A slice record ages differently from the artifact it tests.** A Knowledge Contract
+that goes stale still describes something. A slice that goes stale describes a path
+through the repository, and when the path is deleted the record does not degrade — it
+inverts, because it now certifies the wrong architecture under a name that reads as
+certification. This is the second time this effort has found a document asserting
+something about artifacts that no longer exist; the first was the two Contracts
+contradicting each other on "Log In". Both were found by reading, and neither is
+findable any other way.
+
+**Three slices replaced it, and each found something a mechanical level is not shaped
+to see.** The common shape is worth stating once: *in all three, the lower layers are
+right and the Routing Index resolves less than `AGENTS.md` claims it does.*
+
+- **#0002, the Workflow layer's first exercise ever.** Routing, conditional
+  sequencing, and context minimization all behaved as designed — 6 Contracts of 326,
+  and step 3 correctly skipped because step 1 decided it. What it found is a rule in
+  the gap between two correct Excluded lists: `widgetkit` defers authoring the intent
+  to `app-intents`, `app-intents` defers the wiring back, and neither says what
+  happens when `perform()` returns. Worse than silence, the general rule the agent
+  does reach — `timeline-reloading` Rule 1 — gives the wrong answer for the
+  interactive case, directing a `reloadTimelines` call that Apple documents as already
+  guaranteed and that spends the 40-70/day budget Rule 2 of the same Contract
+  describes. Level 4 asks whether Excluded sections record real boundaries; both do.
+  The defect is not a wrong boundary but a rule falling between two right ones, which
+  only a task crossing the gap can expose.
+- **#0004, mechanical and re-runnable.** Nine keywords named two Skills apiece. Every
+  pair is an angle-split `domain-map.md` resolves explicitly, and several losing
+  Skills name the winner in their own Stop Conditions — which are read *after* a Skill
+  is selected. **The tiebreak existed one layer too late**, in a file the Startup
+  Procedure never opens. Sixteen checks proved the Index was complete in both
+  directions and that no Contract was stranded; both are presence properties, and
+  ambiguity is a uniqueness property nobody had asked about.
+- **#0003, recorded rather than fixed.** "Fix this error message" routes to
+  `style-guide` and never reaches `feedback` Rule 6, which owns what the message must
+  say. This is Phase 5b's kind-partition seen from the routing side, and it is the one
+  finding whose fix is a design decision — a fourth Workflow, or letting a Skill hand
+  off to a Skill, which weakens a layer-order rule. Deciding it inside a promotion
+  pull request would have been the wrong place to decide it.
+
+**The lifecycle document demanded four validator rejections and had received one.**
+Under `CLAUDE.md`'s own rule that a spec-validator disagreement is release-blocking,
+this was a defect, not a backlog item. Three became code. The fourth exposed a real
+boundary in the model: *a transition cannot be a Level 1-3 check at all.* Those levels
+are defined as offline **and deterministic** — the same tree gives the same answer
+forever — and a transition is a relationship between two versions of a file. It runs
+on pull requests instead, alongside the link checker, and for the same structural
+reason rather than by analogy.
+
+**What promotion is actually worth.** `Approved` means changes require review and
+breaking architectural changes require an RFC. Held by 1 of 326 artifacts, it bound
+nothing; `architecture.md`'s "Architecture changes require RFC" was a sentence about a
+file nobody was governed by. The version floor is the part that keeps it honest: an
+artifact cannot be `Approved 0.1.0`, so the claim and the version number can no longer
+drift apart silently.
 
 ## Validation plan
 

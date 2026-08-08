@@ -1,6 +1,6 @@
 # Alerts
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.human-interface-guidelines.alerts
 artifact_type: knowledge
 title: Alerts
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for when to show an alert, its structure, and button placement/role on iOS/iPadOS.
 domain: Human Interface Guidelines

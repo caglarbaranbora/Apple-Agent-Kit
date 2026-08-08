@@ -1,6 +1,6 @@
 # Right to Left
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.right-to-left
 artifact_type: knowledge
 title: Right to Left
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for adapting iOS/iPadOS interfaces to right-to-left (RTL) languages such as Arabic and Hebrew — layout mirroring, numerals, and icon flipping.
 domain: Human Interface Guidelines
@@ -26,7 +26,7 @@ related:
   - knowledge.human-interface-guidelines.sf-symbols
   - knowledge.style-guide.international-formatting
   - knowledge.style-guide.international-style
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ```
 
 ## Intent

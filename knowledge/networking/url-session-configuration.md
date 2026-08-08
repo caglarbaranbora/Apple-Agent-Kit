@@ -1,6 +1,6 @@
 # URL Session Configuration
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.networking.url-session-configuration
 artifact_type: knowledge
 title: URL Session Configuration
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines when to create a custom URLSession with a configured URLSessionConfiguration versus using URLSession.shared, covering timeout, cache policy, and ephemeral (non-persistent) sessions.
 domain: Networking
@@ -22,7 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.networking.async-data-fetching
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

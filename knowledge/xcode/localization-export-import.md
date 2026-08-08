@@ -1,6 +1,6 @@
 # Localization Export and Import
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.xcode.localization-export-import
 artifact_type: knowledge
 title: Localization Export and Import
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the .xcloc round trip — the build setting an export silently depends on, which of the catalog's four folders comes back on import, and what import overwrites in the project.
 domain: Xcode
@@ -26,7 +26,7 @@ depends_on:
   - knowledge.xcode.project-localizations
 related:
   - knowledge.xcode.build-configurations
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

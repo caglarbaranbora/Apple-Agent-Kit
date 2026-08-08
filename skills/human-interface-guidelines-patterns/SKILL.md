@@ -3,8 +3,8 @@ name: human-interface-guidelines-patterns
 description: Route Human Interface Guidelines Patterns design tasks to the correct Knowledge Contracts -- onboarding, searching, settings, notifications, feedback, and undo/redo. Use when designing or reviewing an iOS/iPadOS first-run flow, in-app search placement, settings-screen structure, notification content/timing, status/error feedback, or undo/redo affordances. This is design-level guidance, not implementation code -- for UserNotifications/UIKit/SwiftUI implementation see the respective implementation domain; for copy wording see style-guide. Triggers on onboarding, first-run experience, searching, search UI, settings screen, notification design, feedback, error feedback, undo, redo, HIG patterns.
 id: skill.human-interface-guidelines.patterns
 title: Human Interface Guidelines — Patterns
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: Human Interface Guidelines
 routes: [knowledge.human-interface-guidelines.onboarding, knowledge.human-interface-guidelines.searching, knowledge.human-interface-guidelines.settings, knowledge.human-interface-guidelines.notifications, knowledge.human-interface-guidelines.feedback, knowledge.human-interface-guidelines.undo-and-redo]
@@ -12,7 +12,7 @@ related:
   - skill.human-interface-guidelines.foundations
   - skill.human-interface-guidelines.components
   - skill.style-guide.writing
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # Human Interface Guidelines — Patterns Skill

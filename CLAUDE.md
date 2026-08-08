@@ -63,6 +63,15 @@ block or `references:` list:
 python3 scripts/check_links.py . --files <changed files>   # or `.` for all 739
 ```
 
+Lifecycle transitions are a fourth script, outside the levels for the same reason:
+a transition exists between two versions of a file, not inside one working tree, so
+it has nothing to check until there is a pull request. Run it after changing any
+`status:`:
+
+```bash
+python3 scripts/check_transitions.py .            # vs origin/main
+```
+
 ## Running tests
 
 ```bash

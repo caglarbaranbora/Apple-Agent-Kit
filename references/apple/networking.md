@@ -1,7 +1,7 @@
 # Networking
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,12 +9,12 @@ Version: 0.2.0
 id: reference.apple.networking
 artifact_type: reference
 title: Networking
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's URLSession documentation behind skill.networking.foundations -- request construction, async/await and completion-handler data fetching, Codable decoding, HTTP error handling, cancellation, session configuration, App Transport Security, authenticated requests, and the delegate-based surface (background transfers, progress, authentication challenges, server trust) plus Combine's dataTaskPublisher.
 domain: Networking
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source

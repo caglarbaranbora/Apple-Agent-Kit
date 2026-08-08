@@ -1,6 +1,6 @@
 # Sign In With Apple Request and Credential
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.authenticationservices.sign-in-with-apple-request-and-credential
 artifact_type: knowledge
 title: Sign In With Apple Request and Credential
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines building an ASAuthorizationAppleIDRequest via ASAuthorizationAppleIDProvider().createRequest(), setting requestedScopes, driving an ASAuthorizationController through its delegate and presentation-context protocols, extracting the resulting ASAuthorizationAppleIDCredential, and handling every ASAuthorizationError case including .canceled.
 domain: AuthenticationServices
@@ -30,7 +30,7 @@ depends_on: []
 related:
   - knowledge.authenticationservices.nonce-and-identity-token-verification
   - knowledge.authenticationservices.credential-state-and-revocation
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

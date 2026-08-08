@@ -1,7 +1,7 @@
 # BackgroundTasks
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,12 +9,12 @@ Version: 0.1.0
 id: reference.apple.backgroundtasks
 artifact_type: reference
 title: BackgroundTasks
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's BackgroundTasks documentation, scoped to this domain's v1.
 domain: BackgroundTasks
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source

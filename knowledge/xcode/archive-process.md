@@ -1,6 +1,6 @@
 # Archive Process
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.xcode.archive-process
 artifact_type: knowledge
 title: Archive Process
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the correct archive workflow — Product > Archive and validating the resulting archive in the Organizer — before it is exported or uploaded.
 domain: Xcode
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.xcode.schemes-and-targets
   - knowledge.xcode.export-options
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

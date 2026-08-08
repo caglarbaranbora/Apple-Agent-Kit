@@ -1,6 +1,6 @@
 # xcconfig Files
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.xcode.xcconfig-files
 artifact_type: knowledge
 title: xcconfig Files
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct authoring and attachment of .xcconfig build configuration files, and how xcconfig-supplied values interact with Build Settings UI values.
 domain: Xcode
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.xcode.build-configurations
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

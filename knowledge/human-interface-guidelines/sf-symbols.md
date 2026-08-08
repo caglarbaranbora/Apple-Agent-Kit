@@ -1,6 +1,6 @@
 # SF Symbols (Design)
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.human-interface-guidelines.sf-symbols
 artifact_type: knowledge
 title: SF Symbols (Design)
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines when and how to choose, compose, and style SF Symbols within an iOS/iPadOS design — rendering modes, weights/scales, and variants.
 domain: Human Interface Guidelines

@@ -3,13 +3,13 @@ name: app-tracking-transparency
 description: Route App Tracking Transparency / IDFA implementation tasks to the correct Knowledge Contracts -- authorization request mechanics, authorization status handling, IDFA access, and the NSUserTrackingUsageDescription Info.plist requirement. Use when calling requestTrackingAuthorization, checking trackingAuthorizationStatus, reading advertisingIdentifier, or writing NSUserTrackingUsageDescription. v1 is iOS/iPadOS AppTrackingTransparency + AdSupport framework API only -- no tvOS-specific behavior, no SKAdNetwork, no AdServices attribution. Triggers on ATTrackingManager, requestTrackingAuthorization, trackingAuthorizationStatus, ATTrackingManagerAuthorizationStatus, ASIdentifierManager, advertisingIdentifier, IDFA, NSUserTrackingUsageDescription, App Tracking Transparency, tracking authorization.
 id: skill.app-tracking-transparency.foundations
 title: App Tracking Transparency — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: App Tracking Transparency
 routes: [knowledge.app-tracking-transparency.authorization-request, knowledge.app-tracking-transparency.status-and-idfa-access, knowledge.app-tracking-transparency.usage-string-and-info-plist]
 related: []
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ---
 
 # App Tracking Transparency — Foundations Skill

@@ -1,6 +1,6 @@
 # Product Loading and Purchase
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.storekit.product-loading-and-purchase
 artifact_type: knowledge
 title: Product Loading and Purchase
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines loading Product instances via Product.products(for:), initiating a purchase via product.purchase(options:), and handling all three Product.PurchaseResult cases.
 domain: StoreKit
@@ -29,7 +29,7 @@ related:
   - knowledge.storekit.transaction-updates-and-restoring-purchases
   - knowledge.storekit.subscription-status-and-renewal-info
   - knowledge.app-store-review-guidelines.digital-goods-iap
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

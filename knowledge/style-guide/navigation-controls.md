@@ -1,6 +1,6 @@
 # Navigation Controls
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.style-guide.navigation-controls
 artifact_type: knowledge
 title: Navigation Controls
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the correct terms for named navigation buttons and controls — Back, More, Help, and disclosure elements — used to move between screens or reveal more content.
 domain: Style Guide

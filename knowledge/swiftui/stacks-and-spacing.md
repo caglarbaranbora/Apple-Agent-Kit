@@ -1,6 +1,6 @@
 # Stacks and Spacing
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.stacks-and-spacing
 artifact_type: knowledge
 title: Stacks and Spacing
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of VStack/HStack/ZStack, Spacer, alignment, and the spacing parameter for arranging views — the code-implementation angle, distinct from human-interface-guidelines' visual-design angle on layout.
 domain: SwiftUI
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.swiftui.safe-area
   - knowledge.swiftui.lazy-grids
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

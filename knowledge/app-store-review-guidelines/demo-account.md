@@ -1,6 +1,6 @@
 # Demo Account
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.app-store-review-guidelines.demo-account
 artifact_type: knowledge
 title: Demo Account
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the requirement to provide App Review with working demo credentials or an Apple-approved built-in demo mode for any app that gates functionality behind login.
 domain: App Store Review Guidelines

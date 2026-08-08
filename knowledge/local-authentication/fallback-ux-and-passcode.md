@@ -1,6 +1,6 @@
 # Fallback UX and Passcode
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.local-authentication.fallback-ux-and-passcode
 artifact_type: knowledge
 title: Fallback UX and Passcode
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines when to offer a passcode fallback via .deviceOwnerAuthentication vs. biometrics-only, and correct use of localizedFallbackTitle.
 domain: Local Authentication
@@ -25,7 +25,7 @@ related:
   - knowledge.local-authentication.policy-evaluation
   - knowledge.local-authentication.error-handling
   - knowledge.local-authentication.keychain-biometric-binding
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ```
 
 ## Intent

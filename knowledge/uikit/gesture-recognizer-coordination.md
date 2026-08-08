@@ -1,6 +1,6 @@
 # Gesture Recognizer Coordination
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.gesture-recognizer-coordination
 artifact_type: knowledge
 title: Gesture Recognizer Coordination
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how two gesture recognizers competing for the same touch are resolved — the exclusive-by-default behaviour that makes a custom pan block a scroll view, the asymmetry by which returning true from shouldRecognizeSimultaneouslyWith is guaranteed while returning false is not, require(toFail:) as the ordering tool and the latency it buys with, its documented limit across view hierarchies, and the weak delegate reference that silently reverts every answer to its default.
 domain: UIKit

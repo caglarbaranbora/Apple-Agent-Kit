@@ -1,7 +1,7 @@
 # String Catalogs and Extraction
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.2.0
 id: knowledge.localization.string-catalogs-and-extraction
 artifact_type: knowledge
 title: String Catalogs and Extraction
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how a String Catalog (.xcstrings) collects an app's localizable text -- compiler-driven extraction at build time and the string-literal requirement it depends on, translator comments, the New/Needs Review/Translated/Stale states, explicit keys versus value-as-key, manually-managed entries for dynamic keys, and the per-table migration boundary with legacy .strings files.
 domain: Localization
@@ -30,7 +30,7 @@ depends_on: []
 related:
   - knowledge.localization.localized-string-apis
   - knowledge.localization.plural-and-device-variations
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

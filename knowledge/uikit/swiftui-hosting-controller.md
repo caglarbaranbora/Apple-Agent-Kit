@@ -1,6 +1,6 @@
 # SwiftUI Hosting Controller
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.swiftui-hosting-controller
 artifact_type: knowledge
 title: SwiftUI Hosting Controller
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how SwiftUI content is embedded in a UIKit hierarchy through UIHostingController — that it is a view controller and must be installed with the containment sequence rather than by adding its view, that content is updated by assigning rootView because the SwiftUI view is a value, that sizingOptions defaults to the empty set so the controller tracks no size change until asked, that safeAreaRegions defaults to all and double-insets content inside a container that already inset it, and that the SwiftUI environment starts at rootView.
 domain: UIKit

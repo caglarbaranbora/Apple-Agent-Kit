@@ -1,6 +1,6 @@
 # Dynamic Type API
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.accessibility.dynamic-type-api
 artifact_type: knowledge
 title: Dynamic Type API
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of @ScaledMetric (SwiftUI) and UIFontMetrics (UIKit) to scale custom spacing/sizing with Dynamic Type, and text-style-based fonts instead of fixed point sizes — the API-implementation half of HIG's Dynamic Type requirement.
 domain: Accessibility
@@ -22,7 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.human-interface-guidelines.accessibility
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

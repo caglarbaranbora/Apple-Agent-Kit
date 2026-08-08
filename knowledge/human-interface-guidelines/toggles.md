@@ -1,6 +1,6 @@
 # Toggles
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.toggles
 artifact_type: knowledge
 title: Toggles
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for using switch-style toggles on iOS/iPadOS, including state legibility and list-row vs. standalone usage.
 domain: Human Interface Guidelines
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.style-guide.input-controls
   - knowledge.human-interface-guidelines.color
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

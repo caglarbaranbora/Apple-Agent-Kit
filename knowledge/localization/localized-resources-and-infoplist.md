@@ -1,7 +1,7 @@
 # Localized Resources and Info.plist
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.2.0
 id: knowledge.localization.localized-resources-and-infoplist
 artifact_type: knowledge
 title: Localized Resources and Info.plist
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines localization of everything that is not a source-code string -- Info.plist values which live in InfoPlist.strings rather than Info.plist itself, the app name keys and the 15-character CFBundleName cap, lproj structure and the rule that a non-localized resource shadows every localized variant, per-asset catalog localization, Swift-package defaultLocalization and Bundle.module, and non-main-bundle lookup whose missing-key result is the key itself.
 domain: Localization
@@ -36,7 +36,7 @@ related:
   - knowledge.localization.localized-string-apis
   - knowledge.localization.locale-and-language-resolution
   - knowledge.app-store-review-guidelines.permission-usage-strings
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

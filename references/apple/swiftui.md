@@ -1,7 +1,7 @@
 # SwiftUI
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,12 +9,12 @@ Version: 0.2.0
 id: reference.apple.swiftui
 artifact_type: reference
 title: SwiftUI
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for the Apple SwiftUI documentation behind skill.swiftui.foundations -- views and view composition, view identity, modifier order, NavigationStack/NavigationSplitView and migration away from NavigationView, stack and lazy layout, safe area, GeometryReader, State/Binding, the Observable macro and migration away from ObservableObject, and Environment values.
 domain: SwiftUI
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source

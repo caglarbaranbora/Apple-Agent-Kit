@@ -1,6 +1,6 @@
 # Rendering Modes
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.sf-symbols.rendering-modes
 artifact_type: knowledge
 title: Rendering Modes
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of SF Symbols rendering modes (monochrome, hierarchical, palette, multicolor) via symbolRenderingMode in SwiftUI and UIImage.SymbolConfiguration in UIKit.
 domain: SF Symbols

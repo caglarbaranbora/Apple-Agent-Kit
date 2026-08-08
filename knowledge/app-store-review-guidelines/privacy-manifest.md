@@ -1,6 +1,6 @@
 # Privacy Manifest
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.app-store-review-guidelines.privacy-manifest
 artifact_type: knowledge
 title: Privacy Manifest
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the requirement to ship an accurate PrivacyInfo.xcprivacy privacy manifest declaring data collection and required-reason API usage, and the App Store Connect rejection risk of a missing or incomplete manifest.
 domain: App Store Review Guidelines

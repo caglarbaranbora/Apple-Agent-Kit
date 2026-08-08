@@ -1,6 +1,6 @@
 # External Payment Links
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.app-store-review-guidelines.external-payment-links
 artifact_type: knowledge
 title: External Payment Links
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the prohibition on in-app buttons, links, or calls to action that direct users to purchase digital goods outside of in-app purchase, per guideline 3.1.1(a).
 domain: App Store Review Guidelines

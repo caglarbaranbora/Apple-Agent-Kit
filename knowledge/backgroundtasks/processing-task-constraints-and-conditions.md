@@ -1,6 +1,6 @@
 # Processing Task Constraints and Conditions
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.backgroundtasks.processing-task-constraints-and-conditions
 artifact_type: knowledge
 title: Processing Task Constraints and Conditions
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines BGProcessingTaskRequest's requiresNetworkConnectivity and requiresExternalPower flags, when to choose BGProcessingTaskRequest over BGAppRefreshTaskRequest, and why these constraints make prompt execution less likely, not more.
 domain: BackgroundTasks
@@ -27,7 +27,7 @@ references:
 depends_on:
   - knowledge.backgroundtasks.background-task-registration-and-scheduling
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # UIView Animation
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.uiview-animation
 artifact_type: knowledge
 title: UIView Animation
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the view-level animation APIs — the UIViewPropertyAnimator that runs nothing until startAnimation() is called, the requirement to set final values on animatable properties rather than deltas, the Auto Layout rule that a constrained view is animated by changing constraint constants and calling layoutIfNeeded inside the block rather than by animating frame, the disabling of user interaction on views under animation, and the interruptibility that decides between UIView.animate and a property animator.
 domain: UIKit

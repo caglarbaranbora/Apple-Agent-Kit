@@ -1,7 +1,7 @@
 # Publishers and Subscribers
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.combine.publishers-and-subscribers
 artifact_type: knowledge
 title: Publishers and Subscribers
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the Publisher/Subscriber protocol contract, subscribing via sink(receiveCompletion:receiveValue:) or the Failure == Never sink(receiveValue:) overload, type-erasing the subscription into AnyCancellable, and the requirement to retain that AnyCancellable or the subscription tears down immediately.
 domain: Combine
@@ -28,7 +28,7 @@ references:
   - https://developer.apple.com/documentation/combine/anycancellable
 depends_on: []
 related: []
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

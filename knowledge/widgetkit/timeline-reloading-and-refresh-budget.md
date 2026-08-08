@@ -1,6 +1,6 @@
 # Timeline Reloading and Refresh Budget
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.widgetkit.timeline-reloading-and-refresh-budget
 artifact_type: knowledge
 title: Timeline Reloading and Refresh Budget
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines calling WidgetCenter.shared.reloadTimelines(ofKind:)/reloadAllTimelines() when data changes, treating the system-managed refresh budget as best-effort, and preferring future-dated timeline entries over frequent reload requests.
 domain: WidgetKit
@@ -23,11 +23,12 @@ references:
   - https://developer.apple.com/documentation/widgetkit/widgetcenter
   - https://developer.apple.com/documentation/widgetkit/widgetcenter/reloadtimelines(ofkind:)
   - https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date
+  - https://developer.apple.com/documentation/widgetkit/adding-interactivity-to-widgets-and-live-activities
 depends_on:
   - knowledge.widgetkit.timeline-provider-and-entries
 related:
   - knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -54,7 +55,7 @@ This contract defines how an AI coding agent tells WidgetKit that a widget's und
 
 ### Rule 1
 
-Agents MUST call `WidgetCenter.shared.reloadTimelines(ofKind:)` (or `reloadAllTimelines()` for a `WidgetBundle` with multiple widget kinds) whenever the data a widget depends on changes outside the provider's own predicted schedule — for example, right after the app receives new data. Per Apple's documentation, one way to "keep its content up to date" is to "tell the system to reload all timelines when data changes; for example, when your app receives new data" — the system does not poll app or server state on its own; without this call it has no signal that a reload is warranted.
+Agents MUST call `WidgetCenter.shared.reloadTimelines(ofKind:)` (or `reloadAllTimelines()` for a `WidgetBundle` with multiple widget kinds) whenever the data a widget depends on changes outside the provider's own predicted schedule — for example, right after the app receives new data. Per Apple's documentation, one way to "keep its content up to date" is to "tell the system to reload all timelines when data changes; for example, when your app receives new data" — the system does not poll app or server state on its own; without this call it has no signal that a reload is warranted. This rule covers changes originating outside the widget; a change made *by* the widget's own `Button(intent:)`/`Toggle(_:isOn:intent:)` is Rule 5's case and is explicitly not this one.
 
 ### Rule 2
 
@@ -67,6 +68,10 @@ Agents MUST treat every `reloadTimelines(ofKind:)`/`reloadAllTimelines()` call a
 ### Rule 4
 
 Agents MUST prefer scheduling a `Timeline` with several future-dated entries (see `timeline-provider-and-entries`) over issuing frequent `reloadTimelines()` calls when future content is predictable, since entries already inside a delivered timeline render on their scheduled dates without consuming the reload budget at all. Reserve `reloadTimelines`/`reloadAllTimelines` for changes the provider could not have predicted in advance. When the new data driving a reload arrives from background work (e.g. a `BGAppRefreshTask` or a push payload), call `reloadTimelines` at the point that data lands — the scheduling of that background work itself is owned by `backgroundtasks` (`knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup`).
+
+### Rule 5
+
+Agents MUST NOT call `reloadTimelines(ofKind:)`/`reloadAllTimelines()` for a change made by an interactive `Button(intent:)`/`Toggle(_:isOn:intent:)` in the widget's own view — the system already reloads that widget's timeline when the bound intent's `perform()` returns. Per Apple's documentation, "When you return from the `perform()` function, the system reloads the widget's timeline using its timeline provider," and "Interactions with a toggle or button always guarantee a timeline reload." A manual call here is redundant and is charged against the same daily budget Rule 2 describes. The corresponding obligation on the intent's side — that any work the reload depends on must finish *before* `perform()` returns — is `knowledge.app-intents.intent-results-and-widget-hookup` Rule 5; this contract does not restate it.
 
 ## Compliant Example
 
@@ -120,3 +125,4 @@ Requests a reload every 60 seconds assuming minute-level cadence, which the budg
 -   [Apple Developer — WidgetCenter](https://developer.apple.com/documentation/widgetkit/widgetcenter)
 -   [Apple Developer — WidgetCenter.reloadTimelines(ofKind:)](https://developer.apple.com/documentation/widgetkit/widgetcenter/reloadtimelines(ofkind:))
 -   [Apple Developer — Keeping a widget up to date](https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date)
+-   [Apple Developer — Adding interactivity to widgets and Live Activities](https://developer.apple.com/documentation/widgetkit/adding-interactivity-to-widgets-and-live-activities)

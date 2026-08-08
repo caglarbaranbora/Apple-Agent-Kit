@@ -1,6 +1,6 @@
 # Reason Strings and Info.plist
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.local-authentication.reason-strings-and-info-plist
 artifact_type: knowledge
 title: Reason Strings and Info.plist
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct localizedReason copy rules and the required NSFaceIDUsageDescription Info.plist key, without which Face ID calls fail at runtime.
 domain: Local Authentication
@@ -25,7 +25,7 @@ related:
   - knowledge.local-authentication.policy-evaluation
   - knowledge.local-authentication.error-handling
   - knowledge.local-authentication.fallback-ux-and-passcode
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ```
 
 ## Intent

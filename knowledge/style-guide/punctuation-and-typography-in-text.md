@@ -1,6 +1,6 @@
 # Punctuation and Typography in Text
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.punctuation-and-typography-in-text
 artifact_type: knowledge
 title: Punctuation and Typography in Text
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines punctuation and typography conventions in running UI text — ampersand usage, exclamation points, ellipsis, and the correct terms for typeface, type size, and type style.
 domain: Style Guide
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.style-guide.capitalization-style-rules
   - knowledge.style-guide.units-of-measure
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

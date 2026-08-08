@@ -1,6 +1,6 @@
 # Tap and Long-Press Gestures
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.tap-and-long-press-gestures
 artifact_type: knowledge
 title: Tap and Long-Press Gestures
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of TapGesture, LongPressGesture, and their onTapGesture/onLongPressGesture shorthand modifiers, including count and maximumDistance configuration.
 domain: SwiftUI
@@ -24,7 +24,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftui.gesture-composition
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

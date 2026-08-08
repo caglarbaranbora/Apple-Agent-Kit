@@ -1,6 +1,6 @@
 # Status and IDFA Access
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-tracking-transparency.status-and-idfa-access
 artifact_type: knowledge
 title: Status and IDFA Access
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct handling of ATTrackingManagerAuthorizationStatus and ASIdentifierManager.advertisingIdentifier, including the zeroed-UUID fallback and the requirement to read both live rather than cache them.
 domain: App Tracking Transparency
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.app-tracking-transparency.authorization-request
   - knowledge.app-store-review-guidelines.privacy-nutrition-label
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ```
 
 ## Intent

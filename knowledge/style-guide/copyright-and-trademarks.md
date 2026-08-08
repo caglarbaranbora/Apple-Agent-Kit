@@ -1,6 +1,6 @@
 # Copyright and Trademarks
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.copyright-and-trademarks
 artifact_type: knowledge
 title: Copyright and Trademarks
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for attributing Apple and third-party trademarks and for reproducing copyright/trademark notices when writing documentation for Apple platforms.
 domain: Style Guide
@@ -21,7 +21,7 @@ references:
   - https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf
 depends_on: []
 related: []
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

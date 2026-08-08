@@ -3,13 +3,13 @@ name: local-authentication
 description: Route Face ID/Touch ID/device-passcode implementation tasks to the correct Knowledge Contracts -- availability and biometry-type detection, policy evaluation, reason strings and Info.plist, error handling, LAContext lifecycle, Keychain-biometric binding, and fallback UX. Use when checking biometric availability, calling evaluatePolicy, writing an NSFaceIDUsageDescription string, handling an LAError, managing LAContext lifetime, binding a Keychain item to biometrics via SecAccessControl, or deciding on a passcode fallback. v1 is iOS/iPadOS LocalAuthentication framework API only -- no macOS/watchOS-specific behavior, no general Keychain storage (SecItemAdd/Copy/Update for non-biometric-bound items). Triggers on Face ID, Touch ID, LAContext, LABiometryType, canEvaluatePolicy, evaluatePolicy, deviceOwnerAuthentication, deviceOwnerAuthenticationWithBiometrics, LAPolicy, LAError, biometryNotEnrolled, biometryLockout, NSFaceIDUsageDescription, localizedReason, localizedFallbackTitle, SecAccessControl, biometryCurrentSet, biometryAny, biometric Keychain, Enter Passcode fallback, biometric authentication.
 id: skill.local-authentication.foundations
 title: Local Authentication — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: Local Authentication
 routes: [knowledge.local-authentication.availability-and-biometry-type, knowledge.local-authentication.policy-evaluation, knowledge.local-authentication.reason-strings-and-info-plist, knowledge.local-authentication.error-handling, knowledge.local-authentication.context-lifecycle, knowledge.local-authentication.keychain-biometric-binding, knowledge.local-authentication.fallback-ux-and-passcode]
 related: []
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ---
 
 # Local Authentication — Foundations Skill

@@ -1,6 +1,6 @@
 # Screenshots Accuracy
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.app-store-review-guidelines.screenshots-accuracy
 artifact_type: knowledge
 title: Screenshots Accuracy
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines what App Store screenshots and preview videos must and must not depict, per guideline 2.3.3 and 2.3.4.
 domain: App Store Review Guidelines

@@ -1,6 +1,6 @@
 # Tip Declaration and Content
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.tipkit.tip-declaration-and-content
 artifact_type: knowledge
 title: Tip Declaration and Content
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines conforming a struct to the Tip protocol -- the required title (Text) property, optional message (Text?) and image (Image?) properties, and the actions ([Tip.Action]) property for tip-embedded buttons -- as the minimal-conformance shape every other TipKit contract builds on.
 domain: TipKit
@@ -30,7 +30,7 @@ references:
   - https://developer.apple.com/documentation/tipkit/highlightingappfeatureswithtipkit
 depends_on: []
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

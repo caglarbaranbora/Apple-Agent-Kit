@@ -1,6 +1,6 @@
 # Core Animation Layers
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.core-animation-layers
 artifact_type: knowledge
 title: Core Animation Layers
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the model-versus-presentation-layer split that governs every CALayer animation — that the properties an agent sets are the model tree while presentation() returns the tree onscreen, that an explicit CAAnimation never writes the model so the layer snaps back on completion, why isRemovedOnCompletion and fillMode hide that snap instead of fixing it and leave hit testing on stale geometry, that a CABasicAnimation keyPath is an unchecked string, and that a view-backed layer's delegate belongs to the view.
 domain: UIKit

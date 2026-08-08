@@ -1,6 +1,6 @@
 # Manifest File Structure and Scope
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.privacy.manifest-file-structure-and-scope
 artifact_type: knowledge
 title: Manifest File Structure and Scope
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines PrivacyInfo.xcprivacy's top-level keys, per-bundle-type file location rules, the per-target/framework/xcframework manifest requirement, and Xcode's privacy report aggregation.
 domain: Privacy
@@ -27,7 +27,7 @@ related:
   - knowledge.privacy.collected-data-types-declaration
   - knowledge.privacy.tracking-domains-and-third-party-sdk-signatures
   - knowledge.app-store-review-guidelines.privacy-manifest
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

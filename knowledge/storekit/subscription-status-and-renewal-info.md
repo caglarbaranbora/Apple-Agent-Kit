@@ -1,6 +1,6 @@
 # Subscription Status and Renewal Info
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.storekit.subscription-status-and-renewal-info
 artifact_type: knowledge
 title: Subscription Status and Renewal Info
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines reading Product.SubscriptionInfo.Status and RenewalInfo, branching on renewalState (.subscribed/.expired/.inBillingRetryPeriod/.inGracePeriod/.revoked), and same-subscription-group upgrade/downgrade behavior.
 domain: StoreKit
@@ -28,7 +28,7 @@ depends_on:
 related:
   - knowledge.storekit.product-loading-and-purchase
   - knowledge.storekit.transaction-updates-and-restoring-purchases
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

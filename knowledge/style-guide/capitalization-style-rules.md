@@ -1,6 +1,6 @@
 # Capitalization Style Rules
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.capitalization-style-rules
 artifact_type: knowledge
 title: Capitalization Style Rules
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines when to use sentence-style vs. title-style capitalization, and the word-by-word rules for applying title-style capitalization.
 domain: Style Guide
@@ -23,7 +23,7 @@ related:
   - knowledge.style-guide.capitalization-of-apple-proper-nouns
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.punctuation-and-typography-in-text
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

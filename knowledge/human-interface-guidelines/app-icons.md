@@ -1,6 +1,6 @@
 # App Icons
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.human-interface-guidelines.app-icons
 artifact_type: knowledge
 title: App Icons
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines design requirements for iOS/iPadOS app icons — layered composition, unmasked shape, simplicity, and light/dark/tinted appearance variants.
 domain: Human Interface Guidelines

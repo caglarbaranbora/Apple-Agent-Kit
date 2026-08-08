@@ -1,6 +1,6 @@
 # Policy Evaluation
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.local-authentication.policy-evaluation
 artifact_type: knowledge
 title: Policy Evaluation
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct choice and use of LAPolicy (deviceOwnerAuthenticationWithBiometrics vs. deviceOwnerAuthentication) when calling evaluatePolicy.
 domain: Local Authentication
@@ -26,7 +26,7 @@ related:
   - knowledge.local-authentication.reason-strings-and-info-plist
   - knowledge.local-authentication.fallback-ux-and-passcode
   - knowledge.local-authentication.context-lifecycle
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ```
 
 ## Intent

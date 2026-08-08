@@ -332,6 +332,90 @@ def check_edges_resolve(artifacts, root):
     return findings
 
 
+def check_no_edges_to_archived(artifacts, root):
+    """No artifact points at an Archived one -- artifact-lifecycle.md, "Validation".
+
+    Archived means "retained for historical reference only. Must not be
+    referenced by new artifacts." `check_edges_resolve` proves an edge lands
+    somewhere; it cannot tell that where it landed is a tombstone.
+    """
+    findings = []
+    archived = {a.id: a for a in artifacts if a.id and a.meta.get("status") == "Archived"}
+    if not archived:
+        return findings
+    for artifact in artifacts:
+        if artifact.id in archived:
+            continue
+        for field in EDGE_FIELDS:
+            for target in get_list(artifact.meta, field):
+                if target in archived:
+                    findings.append(
+                        Finding(
+                            2,
+                            "no-archived-edges",
+                            artifact.rel,
+                            f"`{field}` names `{target}`, which is Archived",
+                            "point at the artifact that replaced it, or drop the edge",
+                        )
+                    )
+    return findings
+
+
+def check_routing_keywords_unambiguous(artifacts, root):
+    """No Routing Index keyword names two different Skills.
+
+    `AGENTS.md` step 3 tells an agent to "select exactly one Skill". A keyword
+    in two rows makes that instruction unexecutable and sends the agent back to
+    the repository search the Routing Index exists to replace.
+
+    Case is normalized, then same-Skill pairs are dropped: `ModelContainer` and
+    `modelContainer` are the type and the view modifier, both route to
+    `swiftdata`, and a keyword claimed twice by one Skill is never ambiguous.
+
+    Added by vertical slice #0004, which found nine such keywords -- every one
+    of them a boundary `domain-map.md` had already resolved and the Index had
+    not carried.
+    """
+    index_path = root / ROUTING_INDEX
+    if not index_path.exists():
+        return []  # check_routing_index_sync owns the missing-index case.
+
+    section = re.search(
+        r"^## Skills\s*$(.*?)(?=^## |\Z)", index_path.read_text(), re.M | re.S
+    )
+    if not section:
+        return []
+
+    claims = {}
+    for line in section.group(1).splitlines():
+        if not line.startswith("|") or "---" in line or "Task Keywords" in line:
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) != 2:
+            continue
+        for keyword in cells[0].split(","):
+            keyword = keyword.strip()
+            if keyword:
+                claims.setdefault(keyword.lower(), set()).add(cells[1])
+
+    findings = []
+    for keyword, targets in sorted(claims.items()):
+        if len(targets) < 2:
+            continue
+        named = ", ".join(sorted(f"`{t}`" for t in targets))
+        findings.append(
+            Finding(
+                2,
+                "routing-ambiguous",
+                ROUTING_INDEX,
+                f"keyword `{keyword}` routes to {len(targets)} Skills: {named}",
+                "qualify the keyword on each row with the angle that row owns, "
+                "so the table decides instead of the agent",
+            )
+        )
+    return findings
+
+
 def check_wiki_links_resolve(artifacts, root):
     """A Reference's `## Used By` links resolve -- linking-model.md convention 2."""
     findings = []
@@ -1011,6 +1095,7 @@ CHECKS = [
     check_id_matches_path,
     check_domain_matches_directory,
     check_edges_resolve,
+    check_no_edges_to_archived,
     check_wiki_links_resolve,
     check_prose_paths_resolve,
     check_prose_domain_mentions_resolve,
@@ -1018,6 +1103,7 @@ CHECKS = [
     check_reference_indexes_citations,
     check_no_orphans,
     check_routing_index_sync,
+    check_routing_keywords_unambiguous,
     check_dependency_direction,
     check_dependency_graph_is_acyclic,
     check_routing_coverage,

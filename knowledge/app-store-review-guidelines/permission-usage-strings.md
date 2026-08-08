@@ -1,6 +1,6 @@
 # Permission Usage Strings
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.app-store-review-guidelines.permission-usage-strings
 artifact_type: knowledge
 title: Permission Usage Strings
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the requirement for accurate, specific Info.plist usage-description strings and informed user consent before collecting user or usage data, per guideline 5.1.1(ii) and 5.1.1(iv).
 domain: App Store Review Guidelines

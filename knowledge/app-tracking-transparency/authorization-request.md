@@ -1,6 +1,6 @@
 # Authorization Request
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-tracking-transparency.authorization-request
 artifact_type: knowledge
 title: Authorization Request
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of ATTrackingManager.requestTrackingAuthorization -- one-time-only semantics, the .active-state requirement, and pre-call status checks.
 domain: App Tracking Transparency
@@ -25,7 +25,7 @@ related:
   - knowledge.app-tracking-transparency.status-and-idfa-access
   - knowledge.app-tracking-transparency.usage-string-and-info-plist
   - knowledge.human-interface-guidelines.privacy
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ```
 
 ## Intent

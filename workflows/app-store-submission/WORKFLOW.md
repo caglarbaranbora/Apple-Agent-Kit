@@ -1,7 +1,7 @@
 # App Store Submission
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: workflow.app-store-submission
 artifact_type: workflow
 title: App Store Submission
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Gates an app through review-guideline compliance and privacy declaration before it is signed, archived, and exported.
 skills:
@@ -18,7 +18,7 @@ skills:
   - skill.privacy.foundations
   - skill.xcode.foundations
 related: []
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Purpose

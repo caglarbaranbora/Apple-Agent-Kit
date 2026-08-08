@@ -3,13 +3,13 @@ name: tipkit
 description: Route TipKit implementation tasks to the correct Knowledge Contracts -- tip declaration and content, display rules and event triggers, tip options and app configuration, and presenting tips/tip groups. Use when conforming a struct to Tip, setting title/message/image/actions, writing #Rule(_:) with Tips.Parameter or Tips.Event, calling Tips.configure(_:), setting MaxDisplayCount/MaxDisplayDuration/IgnoresDisplayFrequency, presenting TipView/popoverTip/TipUIView/TipUIPopoverViewController, grouping tips with TipGroup, or calling invalidate(reason:). v1 is in-app feature tips/onboarding hints on iOS 17+ only -- no custom TipViewStyle authoring beyond the system default, no watchOS-specific presentation differences, and no CloudKit sync of the tip datastore (Tips.ConfigurationOption.cloudKitContainer(_:) is real and documented but out of scope). Triggers on TipKit, Tip protocol, TipView, TipUIView, TipUIPopoverViewController, TipGroup, Tips.configure, #Rule, Tips.Parameter, Tips.Event, Tip.Action, Tip.Option, MaxDisplayCount, IgnoresDisplayFrequency, invalidate(reason:), InvalidationReason.
 id: skill.tipkit.foundations
 title: TipKit — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: TipKit
 routes: [knowledge.tipkit.tip-declaration-and-content, knowledge.tipkit.display-rules-and-event-triggers, knowledge.tipkit.tip-options-and-app-configuration, knowledge.tipkit.presenting-tips-and-tip-groups]
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # TipKit — Foundations Skill

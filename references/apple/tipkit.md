@@ -1,7 +1,7 @@
 # TipKit
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.2.0
 id: reference.apple.tipkit
 artifact_type: reference
 title: TipKit
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's TipKit documentation, scoped to this domain's v1.
 domain: TipKit

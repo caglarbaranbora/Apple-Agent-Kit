@@ -1,6 +1,6 @@
 # Authorization Request
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.usernotifications.authorization-request
 artifact_type: knowledge
 title: Authorization Request
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of UNUserNotificationCenter.requestAuthorization, UNAuthorizationOptions selection, getNotificationSettings status checks, and provisional authorization.
 domain: UserNotifications
@@ -27,7 +27,7 @@ related:
   - knowledge.usernotifications.remote-push-registration
   - knowledge.usernotifications.local-notification-scheduling
   - knowledge.human-interface-guidelines.notifications
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Tip Options and App Configuration
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.tipkit.tip-options-and-app-configuration
 artifact_type: knowledge
 title: Tip Options and App Configuration
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines calling Tips.configure(_:) once at app launch before any tip is evaluated (datastore location, display frequency), and setting per-tip Tip.Option values (MaxDisplayCount, MaxDisplayDuration, IgnoresDisplayFrequency) through a tip's options property.
 domain: TipKit
@@ -32,7 +32,7 @@ references:
 depends_on:
   - knowledge.tipkit.tip-declaration-and-content
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

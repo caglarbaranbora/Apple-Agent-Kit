@@ -1,6 +1,6 @@
 # Tab Bars
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.tab-bars
 artifact_type: knowledge
 title: Tab Bars
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for using a tab bar for top-level app navigation on iOS/iPadOS, including visibility, tab count, and labeling.
 domain: Human Interface Guidelines
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.navigation-bars
   - knowledge.human-interface-guidelines.sf-symbols
   - knowledge.style-guide.navigation-controls
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

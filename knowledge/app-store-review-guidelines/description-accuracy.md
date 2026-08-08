@@ -1,6 +1,6 @@
 # Description Accuracy
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.app-store-review-guidelines.description-accuracy
 artifact_type: knowledge
 title: Description Accuracy
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines requirements for accurate, non-misleading App Store descriptions and keywords, and prohibits hidden/undocumented functionality, per guidelines 2.3, 2.3.1(a), and 2.3.7.
 domain: App Store Review Guidelines

@@ -1,6 +1,6 @@
 # Apple Trademarks and Product Confusion
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.apple-trademarks-and-product-confusion
 artifact_type: knowledge
 title: Apple Trademarks and Product Confusion
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines guideline 5.2.4 and 5.2.5 — that an app may not suggest Apple is its source, supplier, or endorser and that the Editor's Choice badge is applied by Apple rather than by the developer, that an app may not look confusingly similar to an Apple product, interface, or app, that Apple emoji may not be included in apps, extensions, keyboards, or Sticker packs, that iTunes and Apple Music previews may not be used for entertainment value and require a link back, and that Activity rings and Apple Weather data carry their own display and attribution rules.
 domain: App Store Review Guidelines

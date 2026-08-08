@@ -3,15 +3,15 @@ name: swiftui
 description: Route SwiftUI implementation tasks to the correct Knowledge Contracts — view composition, view identity in ForEach/List, modifier order, NavigationStack/NavigationPath, NavigationSplitView, stack/spacing layout, safe area handling, lazy grids/stacks, GeometryReader pitfalls, @State/@Binding, the @Observable macro, @Environment values, and migrating legacy ObservableObject and NavigationView code. Use when writing or reviewing SwiftUI view code, structuring navigation, laying out a screen in code, choosing a state-management approach, modernising an older SwiftUI codebase, or debugging view-identity/layout bugs. This is implementation-code guidance (iOS 17+), not visual design — for what a screen should look like, see human-interface-guidelines. Triggers on SwiftUI, NavigationStack, NavigationSplitView, NavigationView, navigationViewStyle, @State, @Binding, @Observable, @Bindable, @ObservationIgnored, ObservableObject, @Published, @StateObject, @ObservedObject, @EnvironmentObject, environmentObject, @Environment, GeometryReader, LazyVGrid, LazyVStack, ForEach identity, view composition, ViewBuilder, modifier order, safeAreaInset, ignoresSafeArea, migration, deprecated.
 id: skill.swiftui.foundations
 title: SwiftUI — Foundations
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: SwiftUI
 routes: [knowledge.swiftui.view-composition, knowledge.swiftui.view-identity, knowledge.swiftui.modifier-order, knowledge.swiftui.navigation-stack, knowledge.swiftui.navigation-split-view, knowledge.swiftui.navigation-view-migration, knowledge.swiftui.stacks-and-spacing, knowledge.swiftui.safe-area, knowledge.swiftui.lazy-grids, knowledge.swiftui.geometry-reader-anti-pattern, knowledge.swiftui.state-and-binding, knowledge.swiftui.observable-macro, knowledge.swiftui.observable-object-migration, knowledge.swiftui.environment-values]
 related:
   - skill.human-interface-guidelines.foundations
   - skill.swiftui.interaction
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ---
 
 # SwiftUI — Foundations Skill

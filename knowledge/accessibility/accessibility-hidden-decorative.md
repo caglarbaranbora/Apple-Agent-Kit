@@ -1,6 +1,6 @@
 # Accessibility Hidden and Decorative Elements
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.accessibility.accessibility-hidden-decorative
 artifact_type: knowledge
 title: Accessibility Hidden and Decorative Elements
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of .accessibilityHidden(true) (SwiftUI) and isAccessibilityElement = false (UIKit) to exclude purely decorative or duplicate content from VoiceOver, without hiding elements that carry unique information.
 domain: Accessibility
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.accessibility
   - knowledge.accessibility.accessibility-labels
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

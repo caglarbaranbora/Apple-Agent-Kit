@@ -1,7 +1,7 @@
 # Published and ObservableObject
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.combine.published-and-observableobject
 artifact_type: knowledge
 title: Published and ObservableObject
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the @Published property wrapper, the ObservableObject protocol, the auto-synthesized objectWillChange publisher, and how @Published's projectedValue (the $name publisher) relates to the wrapped property, including the willSet-timing gotcha where subscribers see the new value before the property itself is updated.
 domain: Combine
@@ -25,7 +25,7 @@ references:
 depends_on:
   - knowledge.combine.publishers-and-subscribers
 related: []
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

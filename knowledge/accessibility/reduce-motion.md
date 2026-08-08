@@ -1,6 +1,6 @@
 # Reduce Motion
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.accessibility.reduce-motion
 artifact_type: knowledge
 title: Reduce Motion
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines checking accessibilityReduceMotion (SwiftUI environment value) / UIAccessibility.isReduceMotionEnabled (UIKit) before playing large-scale motion animations, substituting a simpler alternative instead of disabling feedback entirely.
 domain: Accessibility
@@ -23,7 +23,7 @@ references:
 depends_on: []
 related:
   - knowledge.accessibility.reduce-transparency-increase-contrast
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Review Prompt API
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.review-prompt-api
 artifact_type: knowledge
 title: Review Prompt API
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines guideline 5.6.1's requirement to request ratings only through the system API and Apple's statement that custom review prompts are disallowed, the satisfaction gate that is itself a custom prompt, Apple's instruction not to call requestReview from a button because the alert may not appear and the write-review product-page link that is the sanctioned alternative, the rate limits that make an unseen prompt normal rather than broken and the TestFlight build where it never appears at all, and the 5.6.3 prohibition on manipulating reviews.
 domain: App Store Review Guidelines

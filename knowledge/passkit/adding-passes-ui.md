@@ -1,6 +1,6 @@
 # Adding Passes UI
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.passkit.adding-passes-ui
 artifact_type: knowledge
 title: Adding Passes UI
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines presenting the system add-to-Wallet UI for a pass the app already has as PKPass/Data -- PKAddPassesViewController(pass:)/(passes:), PKAddPassButton, the canAddPasses() availability check, and the UIKit-only delegate/dismissal pattern (no SwiftUI representable ships in PassKit).
 domain: PassKit
@@ -28,7 +28,7 @@ references:
 depends_on:
   - knowledge.passkit.pass-library-and-authorization
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

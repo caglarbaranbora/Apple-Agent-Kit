@@ -1,6 +1,6 @@
 # Intent Results and Widget Hookup
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-intents.intent-results-and-widget-hookup
 artifact_type: knowledge
 title: Intent Results and Widget Hookup
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the IntentResult protocol and its ReturnsValue/ProvidesDialog/OpensIntent variants returned from perform(), and closes the seam with widgetkit -- this is where an AppIntent used in a widget's Button(intent:)/Toggle(_:isOn:intent:) actually gets authored.
 domain: App Intents
@@ -24,11 +24,12 @@ references:
   - https://developer.apple.com/documentation/appintents/returnsvalue
   - https://developer.apple.com/documentation/appintents/providesdialog
   - https://developer.apple.com/documentation/appintents/opensintent
+  - https://developer.apple.com/documentation/widgetkit/adding-interactivity-to-widgets-and-live-activities
 depends_on:
   - knowledge.app-intents.app-intent-declaration-and-parameters
 related:
   - knowledge.widgetkit.widget-interactivity-and-deep-links
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -72,7 +73,7 @@ Agents MUST compose the `perform()` return type with `OpensIntent` (`protocol Op
 
 ### Rule 5
 
-Agents authoring an `AppIntent` that a widget's `Button(intent:)`/`Toggle(_:isOn:intent:)` will bind to MUST fully implement that intent's `perform()`, parameters, and result here, per Rules 1–4, and MUST treat the widget-side wiring itself as out of scope for this contract — that binding step is `knowledge.widgetkit.widget-interactivity-and-deep-links`'s territory. Agents MUST NOT leave `perform()` as a stub on the assumption that the widget domain will "finish" the intent; a widget's `Button`/`Toggle` only invokes an intent that already runs correctly on its own.
+Agents authoring an `AppIntent` that a widget's `Button(intent:)`/`Toggle(_:isOn:intent:)` will bind to MUST fully implement that intent's `perform()`, parameters, and result here, per Rules 1–4, and MUST treat the widget-side wiring itself as out of scope for this contract — that binding step is `knowledge.widgetkit.widget-interactivity-and-deep-links`'s territory. Agents MUST NOT leave `perform()` as a stub on the assumption that the widget domain will "finish" the intent; a widget's `Button`/`Toggle` only invokes an intent that already runs correctly on its own. Agents MUST additionally complete every piece of work the widget's next render depends on *before* returning from `perform()`, and MUST NOT return while that work is still in flight — per Apple's documentation, "When you return from the `perform()` function, the system reloads the widget's timeline using its timeline provider," so "make sure any code that's necessary for the timeline update runs before you return from `perform()`." An intent that returns early re-renders the widget from the pre-change state, showing the person the opposite of what they just did. Whether the reload happens at all is not this contract's concern — it is guaranteed, and stated in `knowledge.widgetkit.timeline-reloading-and-refresh-budget` Rule 5.
 
 ## Compliant Example
 
@@ -123,3 +124,4 @@ Leaves `perform()` as a stub that never toggles anything, on the mistaken assump
 -   [Apple Developer — ReturnsValue](https://developer.apple.com/documentation/appintents/returnsvalue)
 -   [Apple Developer — ProvidesDialog](https://developer.apple.com/documentation/appintents/providesdialog)
 -   [Apple Developer — OpensIntent](https://developer.apple.com/documentation/appintents/opensintent)
+-   [Apple Developer — Adding interactivity to widgets and Live Activities](https://developer.apple.com/documentation/widgetkit/adding-interactivity-to-widgets-and-live-activities)

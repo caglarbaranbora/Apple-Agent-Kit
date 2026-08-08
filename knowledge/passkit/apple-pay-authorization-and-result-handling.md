@@ -1,6 +1,6 @@
 # Apple Pay Authorization and Result Handling
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.passkit.apple-pay-authorization-and-result-handling
 artifact_type: knowledge
 title: Apple Pay Authorization and Result Handling
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines presenting the Apple Pay sheet with PKPaymentAuthorizationController and its delegate, receiving PKPayment/PKPaymentToken in didAuthorizePayment(_:handler:), returning a PKPaymentAuthorizationResult, and dismissing via paymentAuthorizationControllerDidFinish(_:) -- with token decryption and processor validation kept strictly server-side.
 domain: PassKit
@@ -28,7 +28,7 @@ references:
 depends_on:
   - knowledge.passkit.apple-pay-payment-request
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

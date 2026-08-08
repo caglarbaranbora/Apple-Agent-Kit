@@ -326,10 +326,65 @@ class TestEnumsAndVersion(unittest.TestCase):
         self.assertTrue(any("unknown status" in e for e in errors), errors)
 
     def test_every_lifecycle_state_is_accepted(self):
+        # Every state on a version that state permits. `Draft` may sit on 0.x;
+        # the three post-approval states may not, so the fixture is versioned
+        # per status rather than the check being loosened to accommodate it.
         for status in validate_artifact.STATUSES:
-            text = VALID_KNOWLEDGE.replace("status: Draft", f"status: {status}")
+            version = "0.1.0" if status == "Draft" else "1.0.0"
+            text = VALID_KNOWLEDGE.replace(
+                "status: Draft", f"status: {status}"
+            ).replace("version: 0.1.0", f"version: {version}")
             errors = validate_artifact.validate_text(text, "knowledge")
             self.assertEqual(errors, [], f"{status} was rejected")
+
+    def test_prose_header_disagreeing_on_status_is_rejected(self):
+        # The header duplicates two metadata fields. Nothing compared them
+        # before Phase 6, and the promotion pass writes both.
+        text = VALID_REFERENCE.replace("status: Draft", "status: Approved").replace(
+            "version: 0.1.0", "version: 1.0.0"
+        )
+        errors = validate_artifact.validate_text(text, "reference")
+        self.assertTrue(any("prose header says `Status:" in e for e in errors), errors)
+
+    def test_prose_header_disagreeing_on_version_is_rejected(self):
+        text = VALID_REFERENCE.replace("version: 0.1.0", "version: 0.2.0")
+        errors = validate_artifact.validate_text(text, "reference")
+        self.assertTrue(any("prose header says `Version:" in e for e in errors), errors)
+
+    def test_prose_header_agreeing_is_accepted(self):
+        text = (
+            VALID_REFERENCE.replace("Status: Draft", "Status: Approved")
+            .replace("status: Draft", "status: Approved")
+            .replace("Version: 0.1.0", "Version: 1.0.0")
+            .replace("version: 0.1.0", "version: 1.0.0")
+        )
+        self.assertEqual(validate_artifact.validate_text(text, "reference"), [])
+
+    def test_an_artifact_without_a_prose_header_is_not_penalized(self):
+        # Skills carry frontmatter and no header. Absence is the convention,
+        # not an omission.
+        self.assertNotIn("Status:", VALID_KNOWLEDGE)
+        self.assertEqual(
+            validate_artifact.validate_text(VALID_KNOWLEDGE, "knowledge"), []
+        )
+
+    def test_approved_on_a_zero_version_is_rejected(self):
+        # artifact-lifecycle.md, "Versioning": approval establishes 1.0.0.
+        text = VALID_KNOWLEDGE.replace("status: Draft", "status: Approved")
+        errors = validate_artifact.validate_text(text, "knowledge")
+        self.assertTrue(any("stable version" in e for e in errors), errors)
+
+    def test_approved_on_one_zero_zero_is_accepted(self):
+        text = VALID_KNOWLEDGE.replace("status: Draft", "status: Approved").replace(
+            "version: 0.1.0", "version: 1.0.0"
+        )
+        self.assertEqual(validate_artifact.validate_text(text, "knowledge"), [])
+
+    def test_draft_on_a_zero_version_is_accepted(self):
+        # The floor applies to Approved only. Draft is where 0.x belongs.
+        self.assertEqual(
+            validate_artifact.validate_text(VALID_KNOWLEDGE, "knowledge"), []
+        )
 
     def test_non_semantic_version_is_rejected(self):
         for bad in ("1.0", "v1.0.0", "1.0.0-beta", "latest"):

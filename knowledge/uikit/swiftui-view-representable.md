@@ -1,6 +1,6 @@
 # SwiftUI View Representable
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.swiftui-view-representable
 artifact_type: knowledge
 title: SwiftUI View Representable
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how a UIKit view is wrapped for a SwiftUI hierarchy — the layout properties SwiftUI owns and an agent must never assign, the Coordinator that is the only supported route for delegate and target-action messages back into SwiftUI, the documented ordering that makeCoordinator runs before makeUIView so delegates are read from the context rather than constructed, the idempotence updateUIView must have because it runs on every state change, and the choice of UIViewControllerRepresentable when the wrapped type is a view controller.
 domain: UIKit

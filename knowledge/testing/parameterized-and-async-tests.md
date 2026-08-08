@@ -1,7 +1,7 @@
 # Parameterized and Async Tests
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.testing.parameterized-and-async-tests
 artifact_type: knowledge
 title: Parameterized and Async Tests
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines Swift Testing's @Test(arguments:) parameterization -- single-collection (once per element), two-bare-collection (Cartesian product), and zip-paired overloads -- plus native async/throws-capable test functions in both Swift Testing and XCTest, with no XCTestExpectation needed for pure async/await code.
 domain: Testing
@@ -32,7 +32,7 @@ depends_on:
   - knowledge.testing.xctest-case-structure-and-assertions
 related:
   - knowledge.testing.expectations-for-asynchronous-code
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

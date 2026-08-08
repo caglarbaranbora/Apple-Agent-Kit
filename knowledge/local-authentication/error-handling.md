@@ -1,6 +1,6 @@
 # Error Handling
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.local-authentication.error-handling
 artifact_type: knowledge
 title: Error Handling
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the required agent behavior for each LAError code returned by canEvaluatePolicy/evaluatePolicy, so failures are handled with the correct recovery instead of a generic failure message.
 domain: Local Authentication

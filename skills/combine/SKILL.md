@@ -3,13 +3,13 @@ name: combine
 description: Route Combine implementation tasks to the correct Knowledge Contracts -- the Publisher/Subscriber protocol pair, sink(receiveCompletion:receiveValue:)/sink(receiveValue:) and retaining the returned AnyCancellable; @Published/ObservableObject and the synthesized objectWillChange publisher; PassthroughSubject vs. CurrentValueSubject with send(_:)/send(completion:); the operators map/filter/removeDuplicates/debounce(for:scheduler:)/combineLatest/merge/zip; and assign(to:on:)/assign(to:) with their retain-cycle risk plus .store(in:). Use when writing publisher.sink { ... }, .sink(receiveCompletion:receiveValue:), var cancellable: AnyCancellable, .store(in: &cancellables), @Published var name: Type, class Foo: ObservableObject, objectWillChange, $propertyName, PassthroughSubject<Output, Failure>(), CurrentValueSubject<Output, Failure>(initialValue), subject.send(_:), subject.send(completion:), .map { }, .filter { }, .removeDuplicates(), .debounce(for:scheduler:), .combineLatest(_:), .merge(with:), .zip(_:), .assign(to:on:), or .assign(to: &$property). v1 is Combine only -- no async/await interop (Publisher.values, AsyncPublisher), no custom Publisher/Subscriber conformances, no backpressure/Subscribers.Demand, no SwiftData/Core Data interop, and Timer.publish/NotificationCenter.publisher are usable only as examples inside other contracts, not their own contract. Triggers on Combine, Publisher, Subscriber, AnyCancellable, @Published, ObservableObject, objectWillChange, PassthroughSubject, CurrentValueSubject, sink, assign, store(in:), combineLatest, debounce, removeDuplicates.
 id: skill.combine.foundations
 title: Combine — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: Combine
 routes: [knowledge.combine.publishers-and-subscribers, knowledge.combine.published-and-observableobject, knowledge.combine.subjects, knowledge.combine.operators-transforming-and-combining, knowledge.combine.assign-and-memory-management]
 related: []
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ---
 
 # Combine — Foundations Skill

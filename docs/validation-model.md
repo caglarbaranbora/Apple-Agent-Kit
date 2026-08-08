@@ -1,7 +1,7 @@
 # Validation Model
 
 Status: Approved
-Version: 1.2.0
+Version: 1.3.0
 
 ## Purpose
 
@@ -24,6 +24,13 @@ Checks:
 - Required sections present
 - Size limit respected
 - `artifact_type` agrees with the artifact's location
+- An `Approved` artifact is on a stable version (>= 1.0.0) — artifact-lifecycle.md
+  [[artifact-lifecycle]] makes approval establish one, so `Approved 0.1.0` is
+  approved in name only
+- The prose `Status:`/`Version:` header agrees with the metadata block. Most artifacts
+  carry both copies and nothing compared them until 2026-08-08; the promotion pass
+  that writes both at once is exactly the edit that can leave them disagreeing.
+  Skills have no header — absence is the convention there, not an omission
 
 Size limits:
 
@@ -70,7 +77,17 @@ Checks:
   Reference lists: it walks indexed URLs, so an unindexed one resolves to an empty
   list and is never examined at all
 - No orphaned artifacts
+- No edge points at an `Archived` artifact. Archived is "retained for historical
+  reference only"; the resolution check above proves an edge lands somewhere, not
+  that where it landed is still current — see artifact-lifecycle.md
+  [[artifact-lifecycle]]
 - `skills/index.md` agrees with `skills/` and `workflows/` in both directions
+- No Routing Index keyword names two different Skills. `AGENTS.md` tells an agent to
+  "select exactly one Skill", which a keyword in two rows makes unexecutable. The two
+  index checks above are about presence — that nothing is missing, that nothing is
+  stranded — and ambiguity is a uniqueness property neither of them touches. Added
+  after vertical slice #0004 found nine such keywords, every one a boundary
+  `architecture/domain-map.md` had already resolved and the Index had not carried
 
 Enforced by: `scripts/validate_repo.py`
 
@@ -154,6 +171,43 @@ Checks:
 Enforced by: review, recorded under `validation/slices/`
 
 Blocking: Required before architecture approval.
+
+A slice record is only evidence for the architecture it was run against. Slice #0001
+was superseded on 2026-08-08 rather than merely aged: all five artifacts it tested had
+been deleted with the `authentication` domain, so it could not support the approval it
+was the only record for. Slices #0002-#0004 replaced it and found three defects — an
+unowned rule between two correct Excluded lists, a two-domain task the Routing Index
+cannot express, and nine ambiguous routing keywords — none of which Levels 1-4 are
+shaped to see, because none of them sees a task.
+
+------------------------------------------------------------------------
+
+### Lifecycle Transitions — deliberately outside the levels
+
+artifact-lifecycle.md [[artifact-lifecycle]] requires validators to reject invalid
+state transitions. No working tree can decide that. A transition is a relationship
+between two versions of a file, and Levels 1-3 are defined as offline *and*
+deterministic — the same tree gives the same answer forever, which is what earns them
+the right to block a commit. A check that reads history does not have that property.
+
+It belongs where a transition actually exists: a pull request. This is the second
+check outside the levels and it is outside for the same structural reason as the
+first — its answer depends on something other than the tree in front of it.
+
+Checks:
+
+- Every `status` change between the base ref and the working tree is one of the four
+  transitions artifact-lifecycle.md allows
+
+Enforced by: `scripts/check_transitions.py`, run by `.github/workflows/ci.yml`
+
+```bash
+python3 scripts/check_transitions.py .                  # vs origin/main
+python3 scripts/check_transitions.py . --base HEAD~1
+```
+
+Blocking: On a pull request. Nothing to compare on a push to `main` — the merge has
+already happened.
 
 ------------------------------------------------------------------------
 

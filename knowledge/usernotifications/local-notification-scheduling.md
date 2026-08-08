@@ -1,6 +1,6 @@
 # Local Notification Scheduling
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.usernotifications.local-notification-scheduling
 artifact_type: knowledge
 title: Local Notification Scheduling
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct construction and scheduling of local notifications via UNMutableNotificationContent, UNNotificationRequest, UNTimeIntervalNotificationTrigger, UNCalendarNotificationTrigger, and UNUserNotificationCenter.add.
 domain: UserNotifications
@@ -28,7 +28,7 @@ related:
   - knowledge.usernotifications.authorization-request
   - knowledge.usernotifications.managing-pending-delivered-and-badge
   - knowledge.usernotifications.notification-actions-and-categories
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

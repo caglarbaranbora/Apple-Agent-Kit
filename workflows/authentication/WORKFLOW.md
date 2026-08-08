@@ -1,7 +1,7 @@
 # Authentication
 
-Status: Draft
-Version: 0.3.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.3.0
 id: workflow.authentication
 artifact_type: workflow
 title: Authentication
-version: 0.3.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Composes the six Skills a sign-in feature spans, from the App Store Review rule that decides which login services the screen must offer, through user-facing wording, to credential storage.
 skills:

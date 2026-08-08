@@ -1,6 +1,6 @@
 # Writing Inclusively
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.writing-inclusively
 artifact_type: knowledge
 title: Writing Inclusively
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for writing gender-neutral, unbiased, and disability-respectful UI text on Apple platforms.
 domain: Style Guide
@@ -20,7 +20,7 @@ references:
   - https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf
 depends_on: []
 related: []
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

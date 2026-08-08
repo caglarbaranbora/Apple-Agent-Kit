@@ -1,6 +1,6 @@
 # Authentication Credentials and Biometrics
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.authentication-credentials-and-biometrics
 artifact_type: knowledge
 title: Authentication Credentials and Biometrics
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct usage and distinctions among passkey, passphrase, password, PIN, code/passcode, Touch ID, Face ID, two-factor authentication, and two-step verification.
 domain: Style Guide
@@ -22,7 +22,7 @@ depends_on: []
 related:
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.sign-in-and-authentication-terminology
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

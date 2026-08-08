@@ -3,13 +3,13 @@ name: swiftdata
 description: Route SwiftData implementation tasks to the correct Knowledge Contracts -- declaring persistent model classes with @Model/@Attribute/@Relationship/@Transient, creating and injecting a ModelContainer/ModelConfiguration via .modelContainer, ModelContext CRUD (insert/delete/save/autosave/undo), fetching with @Query or FetchDescriptor+context.fetch(_:), and @Relationship(deleteRule:) referential integrity. Use when writing @Model class RemoteImage { ... }, @Attribute(.unique), @Relationship(deleteRule:inverse:), @Transient, ModelContainer(for:configurations:), ModelConfiguration(isStoredInMemoryOnly:), .modelContainer(for:)/.modelContainer(_:), @Environment(\.modelContext), context.insert(_:)/delete(_:)/save(), context.autosaveEnabled, context.undoManager, @Query(filter:sort:order:), #Predicate, FetchDescriptor<Model>(predicate:sortBy:), context.fetch(_:), or choosing .cascade/.nullify/.deny/.noAction delete rules. v1 is SwiftData only -- no CloudKit sync (ModelConfiguration(cloudKitDatabase:)), no SchemaMigrationPlan/VersionedSchema migration, no Core Data interop (NSManagedObjectContext/NSFetchRequest are a separate domain), no #Index/#Unique macros beyond basic @Attribute(.unique), and no widget-extension/App-Group container sharing specifics. Triggers on SwiftData, @Model, @Attribute, @Relationship, @Transient, ModelContainer, ModelConfiguration, ModelContext, modelContainer, modelContext, @Query, FetchDescriptor, #Predicate, deleteRule, cascade delete.
 id: skill.swiftdata.foundations
 title: SwiftData — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: SwiftData
 routes: [knowledge.swiftdata.model-definition, knowledge.swiftdata.model-container-setup, knowledge.swiftdata.model-context-crud, knowledge.swiftdata.querying-with-query-and-fetchdescriptor, knowledge.swiftdata.relationships-and-cascade-delete]
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # SwiftData — Foundations Skill

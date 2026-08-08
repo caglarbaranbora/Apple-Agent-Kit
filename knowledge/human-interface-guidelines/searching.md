@@ -1,6 +1,6 @@
 # Searching
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.searching
 artifact_type: knowledge
 title: Searching
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines design rules for in-app search placement, scope, and suggestions, and for making app content discoverable through systemwide Spotlight search on iOS/iPadOS.
 domain: Human Interface Guidelines
@@ -21,7 +21,7 @@ references:
   - https://developer.apple.com/design/human-interface-guidelines/searching
 depends_on: []
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Observable Macro
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.swiftui.observable-macro
 artifact_type: knowledge
 title: Observable Macro
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of the @Observable macro (iOS 17+) for reference-type model objects, as the default replacement for ObservableObject/@Published in new code.
 domain: SwiftUI
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.swiftui.state-and-binding
   - knowledge.swiftui.environment-values
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

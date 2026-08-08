@@ -3,13 +3,13 @@ name: backgroundtasks
 description: Route BackgroundTasks implementation tasks to the correct Knowledge Contracts -- background task registration and scheduling, task execution and expiration handling, processing task constraints and conditions, and background refresh and widget timeline hookup. Use when registering a task identifier with BGTaskScheduler.register(forTaskWithIdentifier:using:launchHandler:), declaring BGTaskSchedulerPermittedIdentifiers, submitting a BGAppRefreshTaskRequest/BGProcessingTaskRequest, reading earliestBeginDate, handling a BGTask/BGAppRefreshTask/BGProcessingTask in a launch handler, setting expirationHandler, calling setTaskCompleted(success:), setting requiresNetworkConnectivity/requiresExternalPower, or scheduling background refresh that feeds a widget. v1 is BGTaskScheduler-based scheduling and execution only -- no BGContinuedProcessingTask, no legacy Background Fetch (setMinimumBackgroundFetchInterval, performFetchWithCompletionHandler), no unrelated background modes (background audio, background location, VoIP/PushKit), and no URLSession background transfer configuration -- that's networking's job. Triggers on BackgroundTasks, BGTaskScheduler, BGTask, BGTaskRequest, BGAppRefreshTaskRequest, BGProcessingTaskRequest, BGAppRefreshTask, BGProcessingTask, launchHandler, expirationHandler, setTaskCompleted, requiresNetworkConnectivity, requiresExternalPower, earliestBeginDate, BGTaskSchedulerPermittedIdentifiers.
 id: skill.backgroundtasks.foundations
 title: BackgroundTasks — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: BackgroundTasks
 routes: [knowledge.backgroundtasks.background-task-registration-and-scheduling, knowledge.backgroundtasks.task-execution-and-expiration-handling, knowledge.backgroundtasks.processing-task-constraints-and-conditions, knowledge.backgroundtasks.background-refresh-and-widget-timeline-hookup]
 related: [knowledge.widgetkit.timeline-reloading-and-refresh-budget]
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # BackgroundTasks — Foundations Skill

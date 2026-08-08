@@ -1,7 +1,7 @@
 # UIKit
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.2.0
 id: reference.apple.uikit
 artifact_type: reference
 title: UIKit
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's UIKit screen-scaffolding documentation behind skill.uikit.foundations -- view controller lifecycle and containment, programmatic Auto Layout (anchors, constraints, stack views, safe area and layout margins), navigation and modal presentation, and the diffable table and collection view data sources with compositional layout and cell registration.
 domain: UIKit

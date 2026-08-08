@@ -1,6 +1,6 @@
 # Sheets
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.sheets
 artifact_type: knowledge
 title: Sheets
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for presenting, sizing, and dismissing sheets on iOS/iPadOS, including detents, grabbers, and button placement.
 domain: Human Interface Guidelines
@@ -24,7 +24,7 @@ related:
   - knowledge.style-guide.presentation-surfaces
   - knowledge.human-interface-guidelines.materials
   - knowledge.human-interface-guidelines.alerts
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

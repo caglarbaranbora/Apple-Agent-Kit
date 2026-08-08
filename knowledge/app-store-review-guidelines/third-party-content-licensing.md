@@ -1,6 +1,6 @@
 # Third-Party Content Licensing
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-store-review-guidelines.third-party-content-licensing
 artifact_type: knowledge
 title: Third-Party Content Licensing
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines guideline 5.2.1 through 5.2.3 — that protected third-party material may not appear in an app without permission and that the submitting entity must be the one holding the rights, that using or displaying a third-party service's content requires being permitted under that service's terms of use, that saving, converting, or downloading media from third-party sources needs explicit authorization from those sources, and that in both cases Apple may require the authorization to be produced on request.
 domain: App Store Review Guidelines

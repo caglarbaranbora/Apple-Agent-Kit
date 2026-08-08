@@ -1,7 +1,7 @@
 # SwiftUI — Interaction
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,12 +9,12 @@ Version: 0.1.0
 id: reference.apple.swiftui-interaction
 artifact_type: reference
 title: SwiftUI — Interaction
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for the Apple SwiftUI documentation behind skill.swiftui.interaction -- implicit and explicit animation, timing curves, view transitions, matchedGeometryEffect, the Animatable protocol, PhaseAnimator and KeyframeAnimator, tap/long-press/drag/magnification/rotation gestures, gesture composition, and GestureState.
 domain: SwiftUI — Interaction
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source

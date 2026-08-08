@@ -1,6 +1,6 @@
 # Symbol Variants
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.sf-symbols.symbol-variants
 artifact_type: knowledge
 title: Symbol Variants
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of SF Symbols variant suffixes (.fill/.circle/.square/.slash) and the symbolVariant(_:) modifier for applying a variant across a view hierarchy.
 domain: SF Symbols
@@ -24,7 +24,7 @@ depends_on:
 related:
   - knowledge.human-interface-guidelines.sf-symbols
   - knowledge.sf-symbols.rendering-modes
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

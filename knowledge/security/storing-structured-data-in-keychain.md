@@ -1,6 +1,6 @@
 # Storing Structured Data in the Keychain
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.security.storing-structured-data-in-keychain
 artifact_type: knowledge
 title: Storing Structured Data in the Keychain
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines encoding a Codable struct via JSONEncoder into Data for kSecValueData and decoding it back on read, the NSKeyedArchiver alternative, and why Codable/JSON is generally preferred for new code.
 domain: Security
@@ -26,7 +26,7 @@ depends_on: []
 related:
   - knowledge.security.keychain-item-crud
   - knowledge.security.keychain-accessibility-levels
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

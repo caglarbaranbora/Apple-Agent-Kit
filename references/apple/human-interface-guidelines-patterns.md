@@ -1,7 +1,7 @@
 # Human Interface Guidelines — Patterns
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.2.0
 id: reference.apple.human-interface-guidelines-patterns
 artifact_type: reference
 title: Human Interface Guidelines — Patterns
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for a curated subset of Apple's Human Interface Guidelines Patterns section, iOS/iPadOS scope.
 domain: Human Interface Guidelines — Patterns

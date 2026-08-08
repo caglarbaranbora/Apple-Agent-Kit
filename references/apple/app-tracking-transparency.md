@@ -1,7 +1,7 @@
 # App Tracking Transparency
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.2.0
 id: reference.apple.app-tracking-transparency
 artifact_type: reference
 title: App Tracking Transparency
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's AppTrackingTransparency and AdSupport framework documentation, scoped to this domain's v1.
 domain: App Tracking Transparency

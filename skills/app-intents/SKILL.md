@@ -3,13 +3,13 @@ name: app-intents
 description: Route App Intents implementation tasks to the correct Knowledge Contracts -- app intent declaration and parameters, app entities and queries, App Shortcuts and Siri phrases, and intent results. Use when conforming to AppIntent, declaring @Parameter, AppEnum, or parameterSummary, conforming to AppEntity or EntityQuery/EntityStringQuery, implementing displayRepresentation, conforming to AppShortcutsProvider or building an AppShortcut, authoring Siri phrases, or returning IntentResult/ReturnsValue/ProvidesDialog/OpensIntent from perform(). v1 is intent authoring only -- no legacy SiriKit (INIntent, NSUserActivity donation), no custom Siri vocabulary beyond basic phrase authoring, no Interactive Snippets, no Spotlight indexing of entities, no LiveActivityIntent specifics, and no wiring an already-authored intent into a widget's Button(intent:)/Toggle(_:isOn:intent:) -- that's widgetkit's job. Triggers on AppIntent, @Parameter, IntentParameter, AppEnum, ParameterSummary, AppEntity, EntityQuery, EntityStringQuery, DisplayRepresentation, AppShortcutsProvider, AppShortcut, applicationName, IntentResult, ReturnsValue, ProvidesDialog, OpensIntent, perform().
 id: skill.app-intents.foundations
 title: App Intents — Foundations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: App Intents
 routes: [knowledge.app-intents.app-intent-declaration-and-parameters, knowledge.app-intents.app-entities-and-queries, knowledge.app-intents.app-shortcuts-and-siri-phrases, knowledge.app-intents.intent-results-and-widget-hookup]
 related: [knowledge.widgetkit.widget-interactivity-and-deep-links]
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ---
 
 # App Intents — Foundations Skill

@@ -1,6 +1,6 @@
 # Capitalization of Apple Proper Nouns
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.capitalization-of-apple-proper-nouns
 artifact_type: knowledge
 title: Capitalization of Apple Proper Nouns
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the correct capitalization, pluralization, and article usage for Apple product names, platform names, and system feature names.
 domain: Style Guide
@@ -25,7 +25,7 @@ related:
   - knowledge.style-guide.connectivity-and-media-terminology
   - knowledge.style-guide.general-button-labels
   - knowledge.style-guide.sign-in-and-authentication-terminology
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

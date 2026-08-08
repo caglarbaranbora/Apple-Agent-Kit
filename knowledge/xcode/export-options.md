@@ -1,6 +1,6 @@
 # Export Options
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.xcode.export-options
 artifact_type: knowledge
 title: Export Options
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of the Organizer's Distribute App export flow — distribution-method selection and signing-option choice — when exporting a signed IPA from an archive.
 domain: Xcode
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.xcode.archive-process
   - knowledge.xcode.manual-signing-provisioning-profiles
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

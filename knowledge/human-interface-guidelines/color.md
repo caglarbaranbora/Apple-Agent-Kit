@@ -1,6 +1,6 @@
 # Color
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.color
 artifact_type: knowledge
 title: Color
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for using system and custom color in iOS/iPadOS interfaces — consistency, contrast, semantic meaning, and wide-color support.
 domain: Human Interface Guidelines
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.dark-mode
   - knowledge.human-interface-guidelines.accessibility
   - knowledge.human-interface-guidelines.materials
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent

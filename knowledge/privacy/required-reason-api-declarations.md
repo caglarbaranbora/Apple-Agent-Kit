@@ -1,6 +1,6 @@
 # Required-Reason API Declarations
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.privacy.required-reason-api-declarations
 artifact_type: knowledge
 title: Required-Reason API Declarations
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the five documented required-reason API categories, their triggering APIs, and the exact NSPrivacyAccessedAPITypeReasons justification codes valid for each, per the live Apple Developer documentation.
 domain: Privacy
@@ -27,7 +27,7 @@ depends_on:
 related:
   - knowledge.privacy.collected-data-types-declaration
   - knowledge.app-store-review-guidelines.privacy-manifest
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

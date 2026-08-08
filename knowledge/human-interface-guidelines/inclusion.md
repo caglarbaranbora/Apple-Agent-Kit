@@ -1,6 +1,6 @@
 # Inclusion
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.human-interface-guidelines.inclusion
 artifact_type: knowledge
 title: Inclusion
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines requirements for inclusive language, imagery, and representation in iOS/iPadOS app content, distinct from style-guide's word-level inclusive-writing rules.
 domain: Human Interface Guidelines

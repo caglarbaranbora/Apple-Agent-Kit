@@ -1,6 +1,6 @@
 # App Entities and Queries
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.app-intents.app-entities-and-queries
 artifact_type: knowledge
 title: App Entities and Queries
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines AppEntity protocol conformance, EntityQuery/EntityStringQuery for locating entities by identifier or string, DisplayRepresentation, defaultQuery wiring, and system-driven disambiguation when a query resolves to multiple matches.
 domain: App Intents
@@ -28,7 +28,7 @@ references:
 depends_on:
   - knowledge.app-intents.app-intent-declaration-and-parameters
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

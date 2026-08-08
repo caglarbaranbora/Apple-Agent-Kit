@@ -1,7 +1,7 @@
 # Subjects
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.combine.subjects
 artifact_type: knowledge
 title: Subjects
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines PassthroughSubject<Output, Failure> versus CurrentValueSubject<Output, Failure> -- the latter requires an initial value and exposes .value -- plus send(_:) and send(completion:) for imperatively injecting values and termination into a Combine stream.
 domain: Combine
@@ -26,7 +26,7 @@ references:
 depends_on:
   - knowledge.combine.publishers-and-subscribers
 related: []
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

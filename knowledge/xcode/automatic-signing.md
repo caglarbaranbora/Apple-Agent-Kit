@@ -1,6 +1,6 @@
 # Automatic Signing
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.xcode.automatic-signing
 artifact_type: knowledge
 title: Automatic Signing
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of Xcode-managed (automatic) code signing — Development Team selection, Xcode-generated certificates/profiles, and device registration.
 domain: Xcode
@@ -24,7 +24,7 @@ depends_on: []
 related:
   - knowledge.xcode.manual-signing-provisioning-profiles
   - knowledge.xcode.entitlements-capabilities
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

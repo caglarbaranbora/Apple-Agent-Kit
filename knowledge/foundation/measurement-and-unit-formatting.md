@@ -1,6 +1,6 @@
 # Measurement and Unit Formatting
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.foundation.measurement-and-unit-formatting
 artifact_type: knowledge
 title: Measurement and Unit Formatting
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct construction and conversion of Measurement<UnitType> and locale-aware display via MeasurementFormatter, including unitStyle and unitOptions configuration.
 domain: Foundation
@@ -24,7 +24,7 @@ references:
 depends_on: []
 related:
   - knowledge.style-guide.units-of-measure
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

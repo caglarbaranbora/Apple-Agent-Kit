@@ -1,7 +1,7 @@
 # Model Definition
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.swiftdata.model-definition
 artifact_type: knowledge
 title: Model Definition
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines turning a Swift class into a persistent SwiftData model with the @Model macro, customizing individual properties with @Attribute (e.g. .unique) and @Relationship (inverse:), excluding a property from persistence with @Transient, and the auto-synthesized conformances and structural constraints (class, not struct; noncomputed stored properties only) that follow.
 domain: SwiftData
@@ -30,7 +30,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftdata.relationships-and-cascade-delete
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

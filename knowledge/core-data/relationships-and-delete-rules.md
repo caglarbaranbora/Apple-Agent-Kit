@@ -1,7 +1,7 @@
 # Relationships and Delete Rules
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.core-data.relationships-and-delete-rules
 artifact_type: knowledge
 title: Relationships and Delete Rules
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines NSDeleteRule's four cases -- cascadeDeleteRule, nullifyDeleteRule (default), denyDeleteRule, noActionDeleteRule -- what each does when the owning managed object is deleted, the requirement that every relationship have an inverse, and how relationships are configured in the .xcdatamodeld model editor or programmatically via NSRelationshipDescription.
 domain: Core Data
@@ -30,7 +30,7 @@ depends_on:
   - knowledge.core-data.model-definition
 related:
   - knowledge.core-data.managed-object-context-crud
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

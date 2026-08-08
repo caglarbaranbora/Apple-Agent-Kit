@@ -1,6 +1,6 @@
 # Lists and Tables
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.lists-and-tables
 artifact_type: knowledge
 title: Lists and Tables
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for structuring list and table rows, columns, selection feedback, and edit-mode gating on iOS/iPadOS.
 domain: Human Interface Guidelines
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.typography
   - knowledge.human-interface-guidelines.layout
   - knowledge.accessibility.voiceover-navigation-order
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

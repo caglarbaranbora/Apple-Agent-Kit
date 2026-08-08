@@ -1,6 +1,6 @@
 # Collection View Compositional Layout
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.collection-view-compositional-layout
 artifact_type: knowledge
 title: Collection View Compositional Layout
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines composing UICollectionViewCompositionalLayout from NSCollectionLayoutItem, NSCollectionLayoutGroup, and NSCollectionLayoutSection to describe a collection view's visual arrangement.
 domain: UIKit
@@ -26,7 +26,7 @@ depends_on: []
 related:
   - knowledge.uikit.cell-configuration
   - knowledge.uikit.collection-view-diffable
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

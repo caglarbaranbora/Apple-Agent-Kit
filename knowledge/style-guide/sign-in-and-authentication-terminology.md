@@ -1,6 +1,6 @@
 # Sign-In and Authentication Terminology
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.style-guide.sign-in-and-authentication-terminology
 artifact_type: knowledge
 title: Sign-In and Authentication Terminology
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct hyphenation, part-of-speech forms, and preposition usage for sign-in, sign-out, sign-on, single sign-on, and login/log-in terminology.
 domain: Style Guide
@@ -22,7 +22,7 @@ depends_on: []
 related:
   - knowledge.style-guide.authentication-credentials-and-biometrics
   - knowledge.style-guide.general-button-labels
-last_updated: 2026-07-30
+last_updated: 2026-08-08
 ```
 
 ## Intent

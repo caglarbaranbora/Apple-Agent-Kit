@@ -1,6 +1,6 @@
 # Collected Data Types Declaration
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.privacy.collected-data-types-declaration
 artifact_type: knowledge
 title: Collected Data Types Declaration
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the NSPrivacyCollectedDataTypes array entry schema -- NSPrivacyCollectedDataType, NSPrivacyCollectedDataTypeLinked, NSPrivacyCollectedDataTypeTracking, and NSPrivacyCollectedDataTypePurposes valid values -- as manifest-level declaration mechanics.
 domain: Privacy
@@ -27,7 +27,7 @@ related:
   - knowledge.privacy.required-reason-api-declarations
   - knowledge.app-store-review-guidelines.privacy-manifest
   - knowledge.app-store-review-guidelines.privacy-nutrition-label
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Pass Content and Required Fields
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.passkit.pass-content-and-required-fields
 artifact_type: knowledge
 title: Pass Content and Required Fields
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the structure of a .pkpass bundle's pass.json -- the required top-level keys, the five pass style keys, the PassFields field groups, the barcodes array, and locations/relevantDates -- and the app-vs-server boundary for authoring, signing, and client-side inspection via PKPass(data:).
 domain: PassKit
@@ -27,7 +27,7 @@ references:
   - https://developer.apple.com/documentation/passkit/pkpass/init(data:)
 depends_on: []
 related: []
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -3,13 +3,13 @@ name: xcode
 description: Route Xcode project-configuration implementation tasks to the correct Knowledge Contracts — build configurations, .xcconfig files, schemes/targets, automatic and manual code signing, entitlements/capabilities, archiving, export, test plans and code coverage, and project localization including .xcloc/XLIFF export-and-import. Use when configuring build settings, authoring an xcconfig file, editing a scheme, setting up code signing, adding a capability, archiving/exporting an app, creating or editing an .xctestplan, enabling code coverage, adding a language to a project, or exporting/importing localizations in Xcode. Scope is Xcode GUI / project-file configuration only — no xcodebuild CLI, no CI signing automation (fastlane/match), no Swift Package Manager build configuration. Triggers on build configuration, Debug configuration, Release configuration, .xcconfig, Build Settings, Xcode scheme, Xcode target, Signing & Capabilities, automatic signing, manual signing, provisioning profile, signing certificate, entitlements, Xcode capability, Product > Archive, Organizer, ExportOptions, distribution method, Ad Hoc, Enterprise, App Store Connect distribution, IPA export, test plan, .xctestplan, default test plan, Include Tags, Exclude Tags, test plan configuration, code coverage, Gather coverage for, Coverage report, Localizations, add a language, language ID, .lproj, Base localization, Export Localizations, Import Localizations, .xcloc, Xcode Localization Catalog, XLIFF, trans-unit, Use Compiler to Extract Swift Strings.
 id: skill.xcode.foundations
 title: Xcode — Foundations
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: Xcode
 routes: [knowledge.xcode.build-configurations, knowledge.xcode.xcconfig-files, knowledge.xcode.schemes-and-targets, knowledge.xcode.automatic-signing, knowledge.xcode.manual-signing-provisioning-profiles, knowledge.xcode.entitlements-capabilities, knowledge.xcode.archive-process, knowledge.xcode.export-options, knowledge.xcode.test-plans, knowledge.xcode.code-coverage, knowledge.xcode.project-localizations, knowledge.xcode.localization-export-import]
 related: []
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ---
 
 # Xcode — Foundations Skill

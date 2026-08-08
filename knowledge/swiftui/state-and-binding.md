@@ -1,6 +1,6 @@
 # State and Binding
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.state-and-binding
 artifact_type: knowledge
 title: State and Binding
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct ownership of local view state with @State versus propagating a parent-owned value for read/write access to a child with @Binding.
 domain: SwiftUI
@@ -23,7 +23,7 @@ depends_on: []
 related:
   - knowledge.swiftui.observable-macro
   - knowledge.swiftui.environment-values
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

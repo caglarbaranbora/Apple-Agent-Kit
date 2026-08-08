@@ -1,6 +1,6 @@
 # Auto Layout Constraints
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.uikit.auto-layout-constraints
 artifact_type: knowledge
 title: Auto Layout Constraints
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of NSLayoutConstraint and layout anchors, plus translatesAutoresizingMaskIntoConstraints, to position views programmatically without ambiguous or conflicting layout.
 domain: UIKit
@@ -25,7 +25,7 @@ depends_on: []
 related:
   - knowledge.uikit.safe-area-and-layout-guides
   - knowledge.uikit.auto-layout-stack-views
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent

@@ -1,6 +1,6 @@
 # Action Sheets
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.action-sheets
 artifact_type: knowledge
 title: Action Sheets
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for using an action sheet to offer choices related to an intentionally initiated action on iOS/iPadOS.
 domain: Human Interface Guidelines
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.alerts
   - knowledge.style-guide.presentation-surfaces
   - knowledge.style-guide.general-button-labels
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

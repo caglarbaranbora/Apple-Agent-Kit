@@ -1,7 +1,7 @@
 # Swift Testing Fundamentals
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.testing.swift-testing-fundamentals
 artifact_type: knowledge
 title: Swift Testing Fundamentals
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines the Swift Testing framework's core vocabulary -- the @Test macro replacing XCTestCase subclassing, #expect(_:) as the continue-on-failure assertion macro, #require(_:) as the throw-and-halt assertion macro used for safely unwrapping optionals, the optional @Suite grouping macro, and tagging tests with Tag via .tags(_:).
 domain: Testing
@@ -30,7 +30,7 @@ references:
 depends_on: []
 related:
   - knowledge.testing.xctest-case-structure-and-assertions
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

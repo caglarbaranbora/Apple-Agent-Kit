@@ -1,6 +1,6 @@
 # Feedback
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.human-interface-guidelines.feedback
 artifact_type: knowledge
 title: Feedback
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines design rules for matching the form and interruption level of interface feedback to the significance of the information it communicates on iOS/iPadOS.
 domain: Human Interface Guidelines

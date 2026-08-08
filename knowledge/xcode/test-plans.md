@@ -1,6 +1,6 @@
 # Test Plans
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.xcode.test-plans
 artifact_type: knowledge
 title: Test Plans
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how an agent configures an .xctestplan — the default-plan choice a scheme depends on, tag and checkbox inclusion, per-configuration runtime settings, and the multi-scheme sharing that makes one edit reach several schemes.
 domain: Xcode
@@ -25,7 +25,7 @@ depends_on:
 related:
   - knowledge.xcode.build-configurations
   - knowledge.xcode.code-coverage
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

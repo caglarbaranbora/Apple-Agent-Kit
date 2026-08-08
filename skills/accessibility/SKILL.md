@@ -3,15 +3,15 @@ name: accessibility
 description: Route Accessibility API implementation tasks to the correct Knowledge Contracts — accessibility labels, traits, value/hint, custom actions, element grouping, VoiceOver navigation order, Dynamic Type API, Reduce Motion, Reduce Transparency/Increase Contrast, Full Keyboard Access and accessibility focus, hidden/decorative elements, announcements to assistive apps including announcement priority, and accessibility audits. Use when writing or reviewing VoiceOver support, custom-control accessibility, Dynamic Type handling, announcing an event or a form's validation result to VoiceOver, or accessibility test coverage in SwiftUI or UIKit. This is API-implementation guidance, not visual design — for the underlying design requirement (contrast ratio, text-scaling requirement, color-alone prohibition), see human-interface-guidelines. Triggers on VoiceOver, accessibilityLabel, accessibilityTraits, accessibilityValue, accessibilityHint, accessibilityAction, UIAccessibilityCustomAction, accessibilityElement, isAccessibilityElement, accessibilitySortPriority, Dynamic Type, ScaledMetric, UIFontMetrics, Reduce Motion, Reduce Transparency, Increase Contrast, Full Keyboard Access, AccessibilityFocusState, accessibilityHidden, AccessibilityNotification, AccessibilityNotification.Announcement, UIAccessibility.post, UIAccessibilityPriority, accessibilitySpeechAnnouncementPriority, announcement priority, performAccessibilityAudit, Accessibility Inspector.
 id: skill.accessibility.foundations
 title: Accessibility — Foundations
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: Accessibility
 routes: [knowledge.accessibility.accessibility-labels, knowledge.accessibility.accessibility-traits, knowledge.accessibility.accessibility-value-and-hint, knowledge.accessibility.custom-accessibility-actions, knowledge.accessibility.accessibility-element-grouping, knowledge.accessibility.voiceover-navigation-order, knowledge.accessibility.dynamic-type-api, knowledge.accessibility.reduce-motion, knowledge.accessibility.reduce-transparency-increase-contrast, knowledge.accessibility.full-keyboard-access-and-focus, knowledge.accessibility.accessibility-hidden-decorative, knowledge.accessibility.accessibility-audits-testing, knowledge.accessibility.accessibility-announcements]
 related:
   - skill.human-interface-guidelines.foundations
   - skill.swiftui.foundations
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ---
 
 # Accessibility — Foundations Skill

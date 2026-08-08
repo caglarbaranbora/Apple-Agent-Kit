@@ -1,6 +1,6 @@
 # Layout
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.layout
 artifact_type: knowledge
 title: Layout
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines rules for structuring and adapting iOS/iPadOS interface layout — grouping, hierarchy, safe areas, and adaptability to size/orientation changes.
 domain: Human Interface Guidelines
@@ -24,7 +24,7 @@ related:
   - knowledge.human-interface-guidelines.typography
   - knowledge.human-interface-guidelines.right-to-left
   - knowledge.human-interface-guidelines.materials
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent

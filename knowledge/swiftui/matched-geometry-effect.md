@@ -1,6 +1,6 @@
 # Matched Geometry Effect
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.swiftui.matched-geometry-effect
 artifact_type: knowledge
 title: Matched Geometry Effect
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of matchedGeometryEffect and @Namespace for shared-element transitions between two co-present views.
 domain: SwiftUI
@@ -22,7 +22,7 @@ references:
 depends_on: []
 related:
   - knowledge.swiftui.transitions
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

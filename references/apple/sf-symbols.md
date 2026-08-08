@@ -1,7 +1,7 @@
 # SF Symbols
 
-Status: Draft
-Version: 0.3.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.3.0
 id: reference.apple.sf-symbols
 artifact_type: reference
 title: SF Symbols
-version: 0.3.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's SF Symbols API documentation, scoped to this domain's v1.
 domain: SF Symbols

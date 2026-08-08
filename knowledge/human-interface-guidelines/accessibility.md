@@ -1,6 +1,6 @@
 # Accessibility (Design)
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.accessibility
 artifact_type: knowledge
 title: Accessibility (Design)
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines design-level accessibility requirements for iOS/iPadOS interfaces — text scaling, contrast, VoiceOver labeling, alternatives to gesture and color-only cues.
 domain: Human Interface Guidelines
@@ -27,7 +27,7 @@ related:
   - knowledge.human-interface-guidelines.inclusion
   - knowledge.human-interface-guidelines.typography
   - knowledge.style-guide.writing-inclusively
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ```
 
 ## Intent

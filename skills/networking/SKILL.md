@@ -3,14 +3,14 @@ name: networking
 description: Route URLSession networking implementation tasks to the correct Knowledge Contracts — request construction, async/await and completion-handler data fetching, Codable decoding, HTTP error handling, task cancellation, session configuration, App Transport Security, authenticated requests, session delegates and their invalidation, background transfers, progress reporting, authentication challenges, server trust and certificate pinning, and Combine's dataTaskPublisher. Use when writing or reviewing code that makes an HTTP request, decodes a JSON response, handles a network error, downloads a file in the background, reports transfer progress, or answers a TLS or credential challenge in Swift. Sign-in UX/terminology is out of scope here — see the authenticationservices skill. Triggers on URLSession, URLRequest, URLComponents, async await network call, data(for:), bytes(for:), dataTask, completionHandler, resume(), withCheckedThrowingContinuation, JSONDecoder, Codable decoding, DecodingError, HTTPURLResponse, URLError, Task cancellation, URLSessionConfiguration, background(withIdentifier:), URLSessionDelegate, URLSessionTaskDelegate, URLSessionDownloadDelegate, invalidateAndCancel, finishTasksAndInvalidate, didFinishDownloadingTo, handleEventsForBackgroundURLSession, didWriteData, didSendBodyData, URLAuthenticationChallenge, AuthChallengeDisposition, URLCredential, serverTrust, certificate pinning, App Transport Security, ATS, NSAppTransportSecurity, Authorization header, Bearer token, 401 refresh, dataTaskPublisher.
 id: skill.networking.foundations
 title: Networking — Foundations
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 artifact_type: skill
 domain: Networking
 routes: [knowledge.networking.url-request-construction, knowledge.networking.async-data-fetching, knowledge.networking.completion-handler-apis, knowledge.networking.data-task-publisher, knowledge.networking.codable-decoding, knowledge.networking.http-error-handling, knowledge.networking.task-cancellation, knowledge.networking.url-session-configuration, knowledge.networking.url-session-delegate, knowledge.networking.background-transfers, knowledge.networking.transfer-progress-tracking, knowledge.networking.app-transport-security, knowledge.networking.authenticated-requests, knowledge.networking.authentication-challenges, knowledge.networking.server-trust-evaluation]
 related:
   - skill.authenticationservices.foundations
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ---
 
 # Networking — Foundations Skill

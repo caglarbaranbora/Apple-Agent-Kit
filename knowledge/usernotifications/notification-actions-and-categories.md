@@ -1,6 +1,6 @@
 # Notification Actions and Categories
 
-Status: Draft Version: 0.1.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.1.0
 id: knowledge.usernotifications.notification-actions-and-categories
 artifact_type: knowledge
 title: Notification Actions and Categories
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines correct definition and registration of UNNotificationAction, UNTextInputNotificationAction, and UNNotificationCategory via setNotificationCategories.
 domain: UserNotifications
@@ -27,7 +27,7 @@ related:
   - knowledge.usernotifications.local-notification-scheduling
   - knowledge.usernotifications.notification-delegate-handling
   - knowledge.human-interface-guidelines.notifications
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

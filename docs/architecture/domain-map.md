@@ -1,6 +1,6 @@
 # Domain Map
 
-Status: Draft
+Status: Approved
 Version: 1.19.0
 
 See: ../glossary.md

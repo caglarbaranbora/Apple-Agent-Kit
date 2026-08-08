@@ -1,7 +1,7 @@
 # Observable Object Migration
 
-Status: Draft
-Version: 0.2.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.2.0
 id: knowledge.swiftui.observable-object-migration
 artifact_type: knowledge
 title: Observable Object Migration
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines how existing ObservableObject code is migrated to the Observable macro -- the platform floor the migration requires, Apple's per-type incremental path, the full property-wrapper mapping (@Published, @StateObject, @ObservedObject, @EnvironmentObject, .environmentObject, @Bindable), the fact that a half-migrated type still compiles and behaves correctly so a green build proves nothing, the tracking default that inverts when @Published is removed, and the invalidation-granularity change that makes the migration not behavior-preserving.
 domain: SwiftUI
@@ -31,7 +31,7 @@ depends_on:
 related:
   - knowledge.swiftui.state-and-binding
   - knowledge.swiftui.environment-values
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Intent

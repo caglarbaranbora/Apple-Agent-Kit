@@ -1,7 +1,7 @@
 # Querying With @Query and FetchDescriptor
 
-Status: Draft
-Version: 0.1.0
+Status: Approved
+Version: 1.0.0
 
 ## Metadata
 
@@ -9,8 +9,8 @@ Version: 0.1.0
 id: knowledge.swiftdata.querying-with-query-and-fetchdescriptor
 artifact_type: knowledge
 title: Querying With @Query and FetchDescriptor
-version: 0.1.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines fetching SwiftData models -- the @Query property wrapper for SwiftUI views (filter via #Predicate, sort:, order:, animation:) versus imperative fetching with FetchDescriptor<Model> plus context.fetch(_:) outside view context, and when to use which.
 domain: SwiftData
@@ -32,7 +32,7 @@ depends_on:
   - knowledge.swiftdata.model-container-setup
 related:
   - knowledge.swiftdata.model-context-crud
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent

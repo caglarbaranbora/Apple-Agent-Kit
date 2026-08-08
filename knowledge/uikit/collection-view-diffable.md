@@ -1,6 +1,6 @@
 # Collection View Diffable Data Source
 
-Status: Draft Version: 0.2.0
+Status: Approved Version: 1.0.0
 
 ## Metadata
 
@@ -8,8 +8,8 @@ Status: Draft Version: 0.2.0
 id: knowledge.uikit.collection-view-diffable
 artifact_type: knowledge
 title: Collection View Diffable Data Source
-version: 0.2.0
-status: Draft
+version: 1.0.0
+status: Approved
 owner: Apple Agent Kit
 summary: Defines use of UICollectionViewDiffableDataSource and NSDiffableDataSourceSnapshot to bind data to a collection view built with UICollectionViewCompositionalLayout.
 domain: UIKit
