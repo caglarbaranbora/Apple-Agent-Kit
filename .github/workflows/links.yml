@@ -1,0 +1,78 @@
+name: Links
+
+permissions:
+  contents: read
+
+# Split from ci.yml deliberately. Every job in ci.yml is offline and
+# deterministic, which is what lets it block a merge; this one depends on
+# developer.apple.com being up and honest, so it is scheduled separately and
+# reports on its own terms. See docs/validation-model.md, "Link Freshness".
+on:
+  schedule:
+    # Mondays, 06:00 UTC. Weekly is the right cadence for a check whose subject
+    # is another organisation's release notes, not this repository's commits.
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - "references/**"
+      - "knowledge/**"
+      - "scripts/check_links.py"
+
+jobs:
+  changed-links:
+    name: Check links added or changed in this PR
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+
+      - name: Collect changed artifacts
+        id: changed
+        # Values reach the shell through the environment, never through `${{ }}`
+        # interpolation into the script body: that substitution happens before
+        # the shell sees the line, so a branch or file name is executable there.
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.sha }}
+        run: |
+          # Only the files this PR touched. Fetching all 739 cited URLs on every
+          # pull request would hammer Apple for no added signal: a URL nobody
+          # edited is the scheduled sweep's job, not this one's.
+          files=$(git diff --name-only --diff-filter=d "$BASE_SHA" "$HEAD_SHA" \
+            -- 'references/**/*.md' 'knowledge/**/*.md' | tr '\n' ' ')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+          echo "changed: ${files:-<none>}"
+
+      - name: Check their links
+        if: steps.changed.outputs.files != ''
+        # Not --strict: an unreachable URL here is most likely Apple having a
+        # bad minute, and that is not this pull request's fault. Broken and
+        # redirected URLs still fail, because those are the repository's.
+        env:
+          FILES: ${{ steps.changed.outputs.files }}
+        run: python3 scripts/check_links.py . --files $FILES
+
+  all-links:
+    name: Check every cited link
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+
+      - name: Sweep every cited URL
+        # --strict here: this run exists only to report on link health, so an
+        # unreachable URL is the finding rather than an interruption, and a run
+        # that could not reach Apple at all should say so rather than pass.
+        run: python3 scripts/check_links.py . --strict

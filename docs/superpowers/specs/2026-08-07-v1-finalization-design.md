@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.8.0
+Version: 1.9.0
 Date: 2026-08-07
 
 ## Goal
@@ -315,6 +315,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 | 6 | `uikit` — gesture recognizers, Core Animation and custom transitions, SwiftUI interop — **shipped 2026-08-08, 8 KC, Skill split in two** | 6-7 |
 | 7 | `app-store-review-guidelines` — 1.2, 1.5, 1.6, 4.1, 4.8, 5.2 — **shipped 2026-08-08, 8 KC + 5.6.1** | 8-10 |
 | 8 | The Reference indexing pass across all remaining domains, and the sixteenth check that makes coverage enforceable — **shipped 2026-08-08, 0 KC, 124 URLs indexed** | 0 |
+| 9 | The link checker: fetch every cited URL, and put the repository-wide checks into CI — **shipped 2026-08-08, 0 KC, 4 dead URLs found** | 0 |
 
 Broken edges first, largest last. PRs 0 and 1 add no content; they make the base
 truthful before anything is built on it.
@@ -718,6 +719,83 @@ Skill rule: `Deferred`/`Excluded` are defined by `skill-spec.md` and a Reference
 `## Stop Conditions`. **A check written from one layer's defect should be asked, at
 once, whether the other layers state the same fact** — References, Skills and Workflows
 all write scope prose, and only one of them was being read.
+
+### Observed in PR 9 — fetching what PR 8 only indexed
+
+PR 8 ended with a number it could not act on: 739 URLs indexed, 124 of them verified in
+that pass, **615 never fetched by anyone**, and no check that fetches. PR 9 is that
+check. Its first full run found **4 defects across 4 domains, every one of which had
+passed all three mechanical levels** — 735 ok, 2 redirected, 2 broken.
+
+**Indexed and resolving are independent properties, and only one of them was enforced.**
+`coredata/nsmanagedobjectcontext/fetch(_:)` was indexed by the right Reference, listed
+under the right `## Used By`, cited by a Contract whose own prose quotes the signature of
+the overload — and it is a 404. Every structural check the repository has said it was
+fine, because every structural check it has is offline.
+
+**Both 404s are the type-versus-member pattern one case further on: overloads.** Apple
+serves an overload set at hashed paths (`fetch(_:)-4xeoz`, `performandwait(_:)-ypye`) and
+404s the undisambiguated form outright rather than redirecting it — which is *worse* than
+the redirect case, because there is no grace period. The sibling members on the same
+page, `perform(_:)` and `delete(_:)` and `save()`, are not overloaded and resolve fine.
+That is why nothing looked wrong: the defect is invisible from the URL's shape, which is
+the same lesson Level 4 already records about specificity. The right overload was
+recovered from the citing Contract's own quoted signature rather than guessed, via
+Apple's documentation JSON API.
+
+**A redirect is recorded as a finding, not a pass.** PR 8 generalised that the bare form
+is never the stable one; PR 9 is the evidence that it eventually stops being a redirect
+at all. `xctest/xctskip` still 301s today. The two Core Data URLs are what it becomes.
+
+**A fifth defect surfaced from the total changing, not from a finding.** After the four
+fixes the sweep reported 738 URLs, not 739. `developer.apple.com/accessibility/` and
+`developer.apple.com/documentation/accessibility` were both indexed in the same
+`## Source` block — a marketing path and a documentation path for one page — so
+resolving the redirect collapsed them into a literal duplicate. This is PR 7's and PR
+8's two-spellings-of-one-page defect in a third form, and the argument for PR 8 sorting
+every `## Source` block: sorted, the two spellings sit adjacent. **No offline check can
+find this one**, because the two strings share no prefix and differ in the segment that
+matters; it is visible only to something that resolves both and notices they are the
+same page. That is a property of this check specifically, not a gap in the others.
+
+**This check is deliberately not the seventeenth check in `validate_repo.py`.** Levels
+1-3 are offline and deterministic — the same tree gives the same answer forever, which is
+precisely what earns them the right to block a commit. This one asks another
+organisation's web server, so its answer can change without the repository changing, and
+a network blip would fail a correct commit. Separate script, separate schedule: a pull
+request checks only the files it touched, a weekly sweep checks all 739. The `--strict`
+flag (unreachable fails too) is right for the sweep and wrong for the pull request, where
+the outage being reported would be someone else's.
+
+**The normalisation had to be deliberately *unlike* `validate_repo.py`'s, in both
+directions.** That function strips `.,);` safely because it strips both sides of a
+comparison and the damage cancels. Here the string is about to be fetched and `)` is
+load-bearing — Apple's member URLs end in one — and an early draft copied it and reported
+37 nonexistent 404s. In the other direction, percent-encoding and trailing slashes must
+be normalised *away* before deciding whether a redirect moved a page, or every Swift
+selector URL reports as having moved. **Two scripts sharing a domain concept do not
+automatically share its edge cases**, and the tell was that one compares while the other
+dereferences.
+
+**CI was running Level 1 only, on 322 of the 326 artifacts.** This was found while adding
+the new job, not looked for. `validate_repo.py`'s sixteen checks and the entire test
+suite were never in CI — they existed only on the machine of whoever remembered to run
+them, while `validation-model.md` marked Levels 2-3 blocking. Worse, the three
+hand-rolled per-type `find` loops covered `knowledge/`, `skills/` and `references/`, so
+`workflows/` had gone unvalidated since Phase 4 created the layer; a `WORKFLOW.md` with
+an invalid version passes CI today, verified by breaking one. **And fixing that broke the merge, which is its own lesson.** Renaming the job to
+describe its new contents turned `mergeable` from CLEAN to BLOCKED instantly: branch
+protection matches a required check by its **displayed name**, so the required context
+`Run Level 1 structural validation` would never have reported again and every future
+pull request would have waited on it forever. Levels 2-3 and the tests therefore went
+into a *second job* rather than a second step, and the constraint is now written in the
+workflow beside the name. **A CI job name is an API with an off-repository consumer**,
+and the consumer is a setting no file in this repository can see.
+
+**A validation level that
+names its enforcement is still an aspiration if nothing runs it** — the same sentence
+this document's opening applies to unenforced levels applies to unrun ones, and Phase 3
+closed the first half of it while leaving the second open for four phases.
 
 ### Deviation taken in PR 1
 

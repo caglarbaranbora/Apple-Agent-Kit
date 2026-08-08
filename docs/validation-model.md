@@ -1,7 +1,7 @@
 # Validation Model
 
 Status: Approved
-Version: 1.1.0
+Version: 1.2.0
 
 ## Purpose
 
@@ -155,7 +155,45 @@ Enforced by: review, recorded under `validation/slices/`
 
 Blocking: Required before architecture approval.
 
-## Validation Outcomes
+------------------------------------------------------------------------
+
+### Link Freshness — deliberately outside the levels
+
+Repository-wide, and the only check here that leaves the machine.
+
+Levels 1-3 are offline and deterministic: the same working tree gives the same
+answer forever, which is exactly what earns them the right to block a commit. This
+one asks another organisation's web server a question, so its answer can change
+without this repository changing, and a network blip could fail a commit that is
+perfectly correct. That is why it is a separate script on a separate schedule
+rather than a seventeenth check in `validate_repo.py`.
+
+It closes the half `check_reference_indexes_citations` structurally cannot. That
+check proves a cited URL is *indexed*; nothing proved it *resolves*, and the two
+are independent — a URL can be indexed by the right Reference, listed under the
+right `## Used By`, and still be a 404.
+
+Checks:
+
+- Every cited URL returns a success status
+- Every cited URL is the address Apple currently serves. A redirect is a finding,
+  not a pass: Apple disambiguates a path whenever a name is both a type and a
+  member or an overload set, and the undisambiguated form it redirects from is
+  the address that later becomes a 404
+
+Enforced by: `scripts/check_links.py`, run by `.github/workflows/links.yml`
+
+```bash
+python3 scripts/check_links.py .                   # every cited URL
+python3 scripts/check_links.py . --files a.md b.md # only those files' URLs
+```
+
+Blocking: On a pull request, for the files that pull request changed. The weekly
+full sweep reports rather than blocks — nothing is merging at 06:00 on a Monday,
+and a red cron is a notification, not a gate.
+
+Its first full run, 2026-08-08, found four defects in 739 cited URLs: two 404s and
+two redirects, in four domains that had each passed every other level.
 
 **PASS** — the artifact satisfies the level.
 
