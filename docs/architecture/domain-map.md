@@ -1,7 +1,7 @@
 # Domain Map
 
 Status: Approved
-Version: 1.23.0
+Version: 1.24.0
 
 See: ../glossary.md
 [[glossary]]
@@ -77,7 +77,7 @@ Completed: `style-guide` (Tier 1), `authentication` (Existing/Unscheduled — **
 | CloudKit | cloudkit | CloudKit | CloudKit sync and record management conventions |
 | HealthKit | healthkit | Health data | Health data access and terminology |
 | MapKit | mapkit | Maps | Map display and interaction conventions |
-| Photos | photos | **Tier 3 pilot — scoped 2026-08-08, unbuilt.** Photo library access: authorization and the limited library, `PHPickerViewController`/`PhotosPicker` configuration and results, asset fetching and image requests, saving to the library | Photo library access and permission conventions |
+| Photos | photos | **Tier 3 pilot — scoped 2026-08-08, built 2026-08-09.** Photo library access: authorization and the limited library, `PHPickerViewController`/`PhotosPicker` configuration and results, asset fetching and image requests, saving to the library | Photo library access and permission conventions |
 | Core Location | core-location | **Tier 3 pilot — scoped 2026-08-08, built 2026-08-09.** Location services: authorization (when-in-use vs. always, the two-stage prompt), `CLLocationManager`/`CLLocationUpdate` delivery, accuracy and `CLLocationAccuracy`, region monitoring and significant-change, and location-triggered launches | Location services access and permission conventions |
 | Apple Ads | apple-ads | Ad attribution: AdAttributionKit, SKAdNetwork | Ad-campaign attribution and measurement implementation |
 | HomeKit | homekit | Smart-home accessory control | HomeKit accessory and automation implementation |
@@ -267,6 +267,20 @@ test whether one classification pass generalizes across two new domains.
   `PHPickerViewController` and reading its results. Wrapping a view controller for
   SwiftUI is `UIViewControllerRepresentable`, which Phase 5 assigned to
   `uikit-interaction`; that mechanic is not duplicated here.
+  **Corrected 2026-08-09, on building the domain.** The entry named the right neighbour and
+  the wrong symbol. `photos` is *not* the third instance of the `eventkit`/`passkit`
+  pattern, because PhotosUI ships `PhotosPicker`, a SwiftUI-native picker with the same
+  configuration surface as `PHPickerViewController` including the `photoLibrary:` variant
+  (verified against Apple's own initializer index, not recalled). Written as stated, this
+  entry would have produced a rule telling agents to wrap a view controller that has a
+  native replacement — a confidently wrong instruction, and worse than no entry at all.
+  What is true is that the coupling exists on a *different* symbol:
+  `presentLimitedLibraryPicker(from:)` is declared to take a `UIViewController` and has no
+  SwiftUI counterpart, so that call does need the bridge. The domain therefore ships two
+  rules that disagree about the same technique on purpose:
+  `picker-and-selection-results` Rule 2 forbids the wrapper and
+  `limited-library` Rule 5 requires it, each naming the symbol it governs, and only the
+  latter names `knowledge.uikit.swiftui-view-representable` Rule 5.
 - ↔ `swiftui` — no overlap. `PhotosPicker` is PhotosUI, part of this domain's surface,
   not SwiftUI view composition. `swiftui` owns how the picker is placed in a view
   hierarchy, never how it is configured or what it returns.
@@ -279,6 +293,23 @@ became `background-monitoring-and-launches` Rule 4 with this file's named owner 
 The fifth, `mapkit`, was corrected above — the entry was right that the boundary exists
 and wrong about how it could be expressed. That is the pilot's second result: a
 pre-classification can be correct about ownership and still be unwritable as stated.
+
+**`photos` was built against these four entries on 2026-08-09**, and three of the four held
+without amendment: the `privacy` and `app-store-review-guidelines` handoffs became
+`### Excluded` bullets and a delegation rule, and the `human-interface-guidelines`
+angle-split needed no adjudication. The fourth, `uikit-interaction`, was corrected above.
+Both pilot domains therefore produced the same class of failure and neither produced the
+class the pilot was built to prevent: no boundary was mis-assigned, and no rule was
+duplicated across a seam. What advance classification got wrong both times was not *who
+owns the rule* but *how the rule can be expressed* — `core-location` named a domain that
+cannot legally be named in a shipped artifact, and `photos` named a symbol whose framework
+had already solved the problem. That is the pilot's verdict: pre-classification reliably
+settles ownership and does not verify expressibility, so an entry is a hypothesis about
+the seam and not a specification of it. Contract count is the other divergence worth
+recording — the scope line above names four topic areas and the domain shipped six
+Contracts, because "authorization and the limited library" and "asset fetching and image
+requests" are each two atomic concepts, and merging either pair breached the 150-line cap
+before the rules were finished.
 
 Nine boundaries, four existing domains, zero Contracts written. Two of the nine were
 first written as clean handoffs and re-classified as **coupled** after the Tier 2 review
