@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.12.0
+Version: 1.13.0
 Date: 2026-08-07
 
 ## Goal
@@ -319,6 +319,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 | 5b | The removal read-through: `human-interface-guidelines` (33) + `style-guide` (25) — **shipped 2026-08-08, 0 removed, 10 KC revised, 8 duplicated rules resolved** | −n |
 | 6 | Draft → Approved promotion, gated on Level 5 — **shipped 2026-08-08, 325 promoted, 3 slices run, 3 defects found, 3 checks added** | 0 |
 | 7 | The Level 4 instrument, and the two untested Workflows — **shipped 2026-08-08, 2 slices run, 11 defects fixed, 1 check generalized** | 0 |
+| 8 | F-003-01 decided; Tier 3 pilot boundaries classified in advance — **shipped 2026-08-08, 2 Skills amended, 9 boundaries pre-classified** | 0 |
 
 Broken edges first, largest last. PRs 0 and 1 add no content; they make the base
 truthful before anything is built on it.
@@ -1004,11 +1005,55 @@ sides does not need a slice to find its gaps; one that emerges from two
 independently-correct domains does.** That is where the next slice should go: pairs whose
 Cross-Domain Notes entry was written after both domains shipped.
 
-**What remains open, deliberately.** F-003-01 — a task two domains answer jointly that
-the Routing Index can only send to one — is still recorded rather than fixed. Slice #0005
-did not produce a second instance, so the evidence for choosing between a fourth Workflow
-and a Skill-to-Skill hand-off has not grown. Deciding it on one instance would be
-deciding it on the weaker of the two available reasons.
+**F-003-01 was still open at the end of this phase, and Phase 8 closed it — by
+measuring the class instead of the instance.**
+
+### Observed in Phase 8 — both proposed fixes were wrong, and one measurement showed it
+
+**F-003-01 had two options on record and the phase adopted neither.** The finding
+proposed a fourth Workflow or a Skill-to-Skill hand-off, and reasoned that the Workflow
+was "the smaller change". That reasoning assumed the join was narrow. It is not: rules
+constraining what user-facing text must *say* are spread across **29 of the 33**
+`human-interface-guidelines` Contracts. A Workflow would have loaded `style-guide` plus
+up to three HIG Skills for any task touching text — the opposite of the context
+minimization Level 5 exists to measure, and a new artifact making the architecture worse
+at its own purpose. One count settled it; a year of argument would not have.
+
+A third option surfaced and was rejected on precedent rather than legality: a Skill
+routing *across domains* straight to `knowledge.human-interface-guidelines.feedback`.
+The dependency table permits it — `skill → knowledge` carries no domain constraint — but
+**zero of 33 Skills do it.** Legal-but-unprecedented is a convention decision, and a
+convention that spreads makes domain ownership meaningless at the routing layer.
+
+**The fix was a reporting Stop Condition in both directions, and the diagnosis had to be
+corrected to see it.** F-003-01 was written under F-004-01's lesson that Stop Conditions
+are read too late. That lesson does not transfer: there, the tiebreak was needed *to
+select the Skill*, so being read after selection made it useless. Here the selection is
+correct — `style-guide` really does own wording — and the gap appears mid-task, which is
+exactly when Stop Conditions are read. **Same instrument, opposite verdict, because the
+timing of the need is different.** Two paragraphs, no new artifact, no precedent, no
+layer-order change, and it forecloses nothing: the Workflow and cross-domain options both
+remain available. The Skill-to-Skill option was the only one that would have closed the
+others off, which is the strongest argument against ever taking it first.
+
+**Tier 3 opens as a two-domain pilot, and the pilot's real subject is the rule, not the
+content.** Slice #0006 produced a claim: a boundary classified in `domain-map.md` before
+either side is written does not need a slice to find its gaps; one that emerges from two
+independently-correct domains does. That claim is worth something only if it holds
+prospectively, so `core-location` and `photos` have all nine of their boundaries with
+built domains classified **before a single Contract exists**.
+
+One of the nine already earned its place. `permission-usage-strings` names
+`NSLocationWhenInUseUsageDescription` among its own examples — a live claim on a key
+`core-location` will own. The precedent for `NSUserTrackingUsageDescription` and
+`NSFaceIDUsageDescription` settles it (an example is illustrative, not ownership), and
+writing that down now is the difference between a resolved boundary and a duplicated
+rule discovered by a read-through two phases later.
+
+The pilot is falsifiable, which is the point of running two domains rather than
+nineteen: **if the pilot's own slice finds a seam defect anyway, #0006's rule is weaker
+than it looked** — and that is a result worth having before nineteen domains are built
+on it.
 
 ## Validation plan
 

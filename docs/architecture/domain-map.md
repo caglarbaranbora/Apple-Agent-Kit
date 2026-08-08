@@ -1,7 +1,7 @@
 # Domain Map
 
 Status: Approved
-Version: 1.20.0
+Version: 1.21.0
 
 See: ../glossary.md
 [[glossary]]
@@ -77,8 +77,8 @@ Completed: `style-guide` (Tier 1), `authentication` (Existing/Unscheduled — **
 | CloudKit | cloudkit | CloudKit | CloudKit sync and record management conventions |
 | HealthKit | healthkit | Health data | Health data access and terminology |
 | MapKit | mapkit | Maps | Map display and interaction conventions |
-| Photos | photos | Photo library access | Photo library access and permission conventions |
-| Core Location | core-location | Location services | Location services access and permission conventions |
+| Photos | photos | **Tier 3 pilot — scoped 2026-08-08, unbuilt.** Photo library access: authorization and the limited library, `PHPickerViewController`/`PhotosPicker` configuration and results, asset fetching and image requests, saving to the library | Photo library access and permission conventions |
+| Core Location | core-location | **Tier 3 pilot — scoped 2026-08-08, unbuilt.** Location services: authorization (when-in-use vs. always, the two-stage prompt), `CLLocationManager`/`CLLocationUpdate` delivery, accuracy and `CLLocationAccuracy`, region monitoring and significant-change, and location-triggered launches | Location services access and permission conventions |
 | Apple Ads | apple-ads | Ad attribution: AdAttributionKit, SKAdNetwork | Ad-campaign attribution and measurement implementation |
 | HomeKit | homekit | Smart-home accessory control | HomeKit accessory and automation implementation |
 | CarPlay | carplay | In-car app UI | CarPlay app template and UI conventions |
@@ -149,6 +149,72 @@ A retired domain stays in this record with its disposition rather than being era
 - `localization` (Tier 2, complete) and `style-guide` (Tier 1, complete) do not overlap — this is a clean handoff, not an angle-split, the same shape as `networking` ↔ `authentication`. `style-guide` owns what the English source copy says and how it is written and formatted, including its three international-facing contracts (`international-style.md` — country/currency/language codes and telephone numbers; `international-formatting.md` — locale-neutral numeric and date formatting *in copy*; `units-of-measure.md`), none of which touch an API. `localization` owns the mechanics that follow once the copy exists: extraction, storage, variation, and runtime resolution. `international-style.md`'s guidance to write simple structures so translators and machine translation have less to fight is adjacent in intent but is a copy-authoring rule, not an API rule, so the handoff holds. No content is duplicated between the two domains.
 - `localization` (Tier 2, complete) and `xcode` (Tier 1, complete) had an **unresolved** boundary, **resolved 2026-08-07**. Adding a language to an Xcode project and the `.xcloc`/XLIFF export-and-import round trip with translators belong to `xcode` by domain type — it owns GUI/project-file configuration — and are now built there as `knowledge.xcode.project-localizations` and `knowledge.xcode.localization-export-import`. The same expansion closed the older `testing` → `xcode` hand-off (Test Plans and code coverage) as `knowledge.xcode.test-plans` and `knowledge.xcode.code-coverage`. Both hand-offs had been on record longer than either receiving Contract existed, which is what Phase 5's ordering — declare the scope, then build it — was designed to end.
 - `localization` (Tier 2, complete) and `accessibility` (Tier 1, complete) do not overlap and required no boundary bullet of their own: `knowledge.accessibility.accessibility-labels`'s Rule 5 directs agents to "localize accessibility labels through the same localization pipeline as visible strings, not hardcode English text that visible UI already localizes" — it points at the pipeline without describing it, so a one-way `related:` reference is sufficient. Noted here only to record that the overlap was checked, not assumed absent.
+
+### Tier 3 pilot — boundaries classified before either domain is written
+
+Vertical slice #0006 produced a rule: *a cross-domain boundary decided in this file
+before either side is written does not need a slice to find its gaps; a boundary that
+emerges from two independently-correct domains does.* The privacy seam was clean
+because it was classified in advance. The widget and Keychain seams were not, and each
+cost a slice to find.
+
+`core-location` and `photos` are the pilot for that rule. Every boundary each has with
+a built domain is classified here **first**, and the domains are written against these
+entries rather than the entries being written to describe them afterwards. Both are
+permission-gated system data stores, so they land on the same four existing domains and
+test whether one classification pass generalizes across two new domains.
+
+**`core-location`**
+
+- ↔ `privacy` — clean handoff. `privacy` owns declaring Location as a collected data
+  type in `PrivacyInfo.xcprivacy`; `core-location` owns the API that collects it.
+  Same shape as `app-tracking-transparency` ↔ `privacy-nutrition-label`.
+- ↔ `app-store-review-guidelines` (`permission-usage-strings`) — clean handoff, **with
+  a live claim to disarm now.** That Contract's own examples already name
+  `NSLocationWhenInUseUsageDescription`. Per the precedent set for
+  `NSUserTrackingUsageDescription` and `NSFaceIDUsageDescription`, an example there is
+  illustrative and not ownership: `app-store-review-guidelines` owns the *quality* rule
+  every usage string must meet, and the domain owns its own keys' specifics — here the
+  when-in-use/always distinction and the fact that "always" needs both keys. Written
+  down before `core-location` exists precisely because this is how a duplicated rule
+  would otherwise have been born.
+- ↔ `human-interface-guidelines` (`privacy`) — angle-split, identical to
+  `app-tracking-transparency` ↔ `human-interface-guidelines`. HIG keeps the design
+  layer (whether and how to show a pre-permission screen, its copy and buttons, the
+  anti-deception rule); `core-location` owns the request call and status handling.
+- ↔ `backgroundtasks` — clean handoff, and the one an agent will get wrong without it.
+  Region monitoring and significant-change updates relaunch the app through Core
+  Location's own delegate, not `BGTaskScheduler`. `backgroundtasks` owns `BGTask`
+  scheduling; `core-location` owns location-triggered launches. An agent reaching for
+  `BGAppRefreshTask` to poll location is the failure this entry exists to prevent.
+- ↔ `mapkit` — `mapkit` is Tier 3 and unbuilt, so it is legitimately future. Display of
+  a location on a map is not this domain's, and saying so stays correct until `mapkit`
+  ships, at which point `check_scope_vocabulary` fails the build until this is updated.
+
+**`photos`**
+
+- ↔ `privacy` — clean handoff, same shape as `core-location` above. Whether any
+  photo-metadata API falls under `NSPrivacyAccessedAPITypes` is a question for
+  `privacy`'s required-reason Contract, not for this domain to answer in passing.
+- ↔ `app-store-review-guidelines` (`permission-usage-strings`) — clean handoff.
+  `NSPhotoLibraryUsageDescription` and `NSPhotoLibraryAddUsageDescription` are this
+  domain's; the quality rule they must meet is not.
+- ↔ `human-interface-guidelines` (`privacy`) — angle-split, as above, plus the
+  limited-library selection UX, which is a design question rather than an API one.
+- ↔ `uikit-interaction` — clean handoff, following the `eventkit` precedent.
+  `eventkit` keeps its own framework's UI hand-off inside the domain
+  (`recurrence-rules-and-eventkitui-handoff`), so `photos` owns configuring
+  `PHPickerViewController` and reading its results. Wrapping a view controller for
+  SwiftUI is `UIViewControllerRepresentable`, which Phase 5 assigned to
+  `uikit-interaction`; that mechanic is not duplicated here.
+- ↔ `swiftui` — no overlap. `PhotosPicker` is PhotosUI, part of this domain's surface,
+  not SwiftUI view composition. `swiftui` owns how the picker is placed in a view
+  hierarchy, never how it is configured or what it returns.
+
+Nine boundaries, four existing domains, zero Contracts written. Whether this was worth
+doing is answerable: if the pilot's own slice finds a seam defect anyway, the rule from
+#0006 is weaker than it looked, and that is a result worth having before nineteen
+domains are built on it.
 
 ## Artifact Layout
 
