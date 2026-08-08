@@ -1,7 +1,7 @@
 # Reference Specification
 
 Status: Approved
-Version: 1.0.0
+Version: 1.1.0
 
 ## Purpose
 
@@ -56,6 +56,14 @@ a metadata field.
   [[linking-model]].
 - `## Used By` may name Contracts outside this Reference's own domain. A Contract in
   one domain legitimately cites another domain's authoritative source.
+- Every URL any Knowledge Contract cites in `references:` MUST be indexed under some
+  Reference's `## Source` — not necessarily this one, since indexing is many-to-many
+  in both directions. An unindexed citation is outside the `## Used By` check
+  entirely, because that check walks indexed URLs and an unindexed one matches
+  nothing. It is also an unverified citation: indexing is what makes a URL something
+  a human fetches rather than something a Contract asserts, and three consecutive
+  domain passes found Apple pages that had begun to redirect the moment indexing
+  forced someone to open them.
 - A Reference MUST NOT contain implementation rules. Rules live in Knowledge Contracts;
   the Reference records where their authority comes from.
 - `## Primary Topics` names the source surface this Reference covers, not the Contracts

@@ -1,7 +1,7 @@
 # EventKit
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,43 +9,47 @@ Version: 0.1.0
 id: reference.apple.eventkit
 artifact_type: reference
 title: EventKit
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's EventKit documentation, scoped to this domain's v1.
 domain: EventKit
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
-https://developer.apple.com/documentation/eventkit
-https://developer.apple.com/documentation/eventkit/ekeventstore
-https://developer.apple.com/documentation/eventkit/ekevent
-https://developer.apple.com/documentation/eventkit/ekreminder
-https://developer.apple.com/documentation/eventkit/ekcalendaritem
-https://developer.apple.com/documentation/eventkit/ekcalendar
-https://developer.apple.com/documentation/eventkit/eksource
-https://developer.apple.com/documentation/eventkit/ekrecurrencerule
-https://developer.apple.com/documentation/eventkit/ekrecurrenceend
-https://developer.apple.com/documentation/eventkit/ekauthorizationstatus
-https://developer.apple.com/documentation/eventkit/ekspan
-https://developer.apple.com/documentation/eventkit/accessing-the-event-store
-https://developer.apple.com/documentation/eventkit/ekeventstore/requestfullaccesstoevents(completion:)
-https://developer.apple.com/documentation/eventkit/ekeventstore/requestwriteonlyaccesstoevents(completion:)
-https://developer.apple.com/documentation/eventkit/ekeventstore/requestfullaccesstoreminders(completion:)
-https://developer.apple.com/documentation/eventkit/ekeventstore/requestaccess(to:completion:)
-https://developer.apple.com/documentation/eventkit/ekeventstore/predicateforevents(withstart:end:calendars:)
-https://developer.apple.com/documentation/eventkit/ekeventstore/predicateforreminders(in:)
-https://developer.apple.com/documentation/eventkit/ekeventstore/events(matching:)
-https://developer.apple.com/documentation/eventkit/ekeventstore/fetchreminders(matching:completion:)
-https://developer.apple.com/documentation/eventkit/ekeventstore/save(_:span:commit:)
-https://developer.apple.com/documentation/eventkit/ekeventstore/save(_:commit:)
-https://developer.apple.com/documentation/eventkitui/ekeventeditviewcontroller
-https://developer.apple.com/documentation/eventkitui/ekeventviewcontroller
 https://developer.apple.com/documentation/bundleresources/information-property-list/nscalendarsfullaccessusagedescription
 https://developer.apple.com/documentation/bundleresources/information-property-list/nscalendarswriteonlyaccessusagedescription
 https://developer.apple.com/documentation/bundleresources/information-property-list/nsremindersfullaccessusagedescription
+https://developer.apple.com/documentation/eventkit
+https://developer.apple.com/documentation/eventkit/accessing-the-event-store
+https://developer.apple.com/documentation/eventkit/ekauthorizationstatus
+https://developer.apple.com/documentation/eventkit/ekcalendar
+https://developer.apple.com/documentation/eventkit/ekcalendaritem
+https://developer.apple.com/documentation/eventkit/ekevent
+https://developer.apple.com/documentation/eventkit/ekevent/init(eventstore:)
+https://developer.apple.com/documentation/eventkit/ekeventstore
+https://developer.apple.com/documentation/eventkit/ekeventstore/defaultcalendarfornewevents
+https://developer.apple.com/documentation/eventkit/ekeventstore/events(matching:)
+https://developer.apple.com/documentation/eventkit/ekeventstore/fetchreminders(matching:completion:)
+https://developer.apple.com/documentation/eventkit/ekeventstore/predicateforevents(withstart:end:calendars:)
+https://developer.apple.com/documentation/eventkit/ekeventstore/predicateforreminders(in:)
+https://developer.apple.com/documentation/eventkit/ekeventstore/requestaccess(to:completion:)
+https://developer.apple.com/documentation/eventkit/ekeventstore/requestfullaccesstoevents(completion:)
+https://developer.apple.com/documentation/eventkit/ekeventstore/requestfullaccesstoreminders(completion:)
+https://developer.apple.com/documentation/eventkit/ekeventstore/requestwriteonlyaccesstoevents(completion:)
+https://developer.apple.com/documentation/eventkit/ekeventstore/save(_:commit:)
+https://developer.apple.com/documentation/eventkit/ekeventstore/save(_:span:commit:)
+https://developer.apple.com/documentation/eventkit/ekrecurrenceend
+https://developer.apple.com/documentation/eventkit/ekrecurrencerule
+https://developer.apple.com/documentation/eventkit/ekrecurrencerule/init(recurrencewith:interval:end:)
+https://developer.apple.com/documentation/eventkit/ekreminder
+https://developer.apple.com/documentation/eventkit/ekreminder/init(eventstore:)
+https://developer.apple.com/documentation/eventkit/eksource
+https://developer.apple.com/documentation/eventkit/ekspan
+https://developer.apple.com/documentation/eventkitui/ekeventeditviewcontroller
+https://developer.apple.com/documentation/eventkitui/ekeventviewcontroller
 
 ## Purpose
 

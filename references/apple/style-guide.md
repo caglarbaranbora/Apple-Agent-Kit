@@ -1,7 +1,7 @@
 # Apple Style Guide
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,17 +9,18 @@ Version: 0.1.0
 id: reference.apple.style-guide
 artifact_type: reference
 title: Apple Style Guide
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's Style Guide.
 domain: Style Guide
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
 https://help.apple.com/applestyleguide/
+https://help.apple.com/pdf/applestyleguide/en_US/apple-style-guide.pdf
 
 ## Purpose
 

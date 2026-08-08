@@ -1,7 +1,7 @@
 # App Tracking Transparency
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,18 +9,23 @@ Version: 0.1.0
 id: reference.apple.app-tracking-transparency
 artifact_type: reference
 title: App Tracking Transparency
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's AppTrackingTransparency and AdSupport framework documentation, scoped to this domain's v1.
 domain: App Tracking Transparency
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
-https://developer.apple.com/documentation/apptrackingtransparency
 https://developer.apple.com/documentation/adsupport
+https://developer.apple.com/documentation/adsupport/asidentifiermanager/advertisingidentifier
+https://developer.apple.com/documentation/apptrackingtransparency
+https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager
+https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/authorizationstatus
+https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/requesttrackingauthorization(completionhandler:)
+https://developer.apple.com/documentation/bundleresources/information-property-list/nsusertrackingusagedescription
 
 ## Purpose
 

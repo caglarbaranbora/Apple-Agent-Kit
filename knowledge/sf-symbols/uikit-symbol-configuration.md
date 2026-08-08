@@ -1,6 +1,6 @@
 # UIKit Symbol Configuration
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.sf-symbols.uikit-symbol-configuration
 artifact_type: knowledge
 title: UIKit Symbol Configuration
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines composing and applying UIImage.SymbolConfiguration objects in UIKit — withConfiguration(_:), preferredSymbolConfiguration, and combining configurations with applying(_:).
@@ -18,7 +18,7 @@ tags:
   - uikit
   - symbolconfiguration
 references:
-  - https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration
+  - https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class
   - https://developer.apple.com/documentation/uikit/uiimage/withconfiguration(_:)
   - https://developer.apple.com/documentation/uikit/uiimageview/preferredsymbolconfiguration
 depends_on:
@@ -26,7 +26,7 @@ depends_on:
 related:
   - knowledge.sf-symbols.rendering-modes
   - knowledge.sf-symbols.symbol-weight-and-scale
-last_updated: 2026-08-01
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -112,6 +112,6 @@ The return value of `withConfiguration(_:)` is discarded — `image` and the ass
 
 ## References
 
--   [Apple Developer — UIImage.SymbolConfiguration](https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration)
+-   [Apple Developer — UIImage.SymbolConfiguration](https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class)
 -   [Apple Developer — withConfiguration(_:)](https://developer.apple.com/documentation/uikit/uiimage/withconfiguration(_:))
 -   [Apple Developer — preferredSymbolConfiguration](https://developer.apple.com/documentation/uikit/uiimageview/preferredsymbolconfiguration)

@@ -1,7 +1,7 @@
 # UserNotifications
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,18 +9,43 @@ Version: 0.1.0
 id: reference.apple.usernotifications
 artifact_type: reference
 title: UserNotifications
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's UserNotifications framework documentation, scoped to this domain's v1.
 domain: UserNotifications
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
+https://developer.apple.com/documentation/uikit/uiapplication/registerforremotenotifications()
+https://developer.apple.com/documentation/uikit/uiapplicationdelegate/application(_:didfailtoregisterforremotenotificationswitherror:)
+https://developer.apple.com/documentation/uikit/uiapplicationdelegate/application(_:didregisterforremotenotificationswithdevicetoken:)
 https://developer.apple.com/documentation/usernotifications
 https://developer.apple.com/documentation/usernotifications/registering-your-app-with-apns
+https://developer.apple.com/documentation/usernotifications/unauthorizationoptions
+https://developer.apple.com/documentation/usernotifications/uncalendarnotificationtrigger
+https://developer.apple.com/documentation/usernotifications/unmutablenotificationcontent
+https://developer.apple.com/documentation/usernotifications/unnotificationaction
+https://developer.apple.com/documentation/usernotifications/unnotificationcategory
+https://developer.apple.com/documentation/usernotifications/unnotificationpresentationoptions
+https://developer.apple.com/documentation/usernotifications/unnotificationrequest
+https://developer.apple.com/documentation/usernotifications/unnotificationsettings
+https://developer.apple.com/documentation/usernotifications/untextinputnotificationaction
+https://developer.apple.com/documentation/usernotifications/untimeintervalnotificationtrigger
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/add(_:withcompletionhandler:)
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/getdeliverednotifications(completionhandler:)
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/getnotificationsettings(completionhandler:)
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/getpendingnotificationrequests(completionhandler:)
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/removedeliverednotifications(withidentifiers:)
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/removependingnotificationrequests(withidentifiers:)
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/requestauthorization(options:completionhandler:)
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/setbadgecount(_:withcompletionhandler:)
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/setnotificationcategories(_:)
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/usernotificationcenter(_:didreceive:withcompletionhandler:)
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/usernotificationcenter(_:willpresent:withcompletionhandler:)
 
 ## Purpose
 

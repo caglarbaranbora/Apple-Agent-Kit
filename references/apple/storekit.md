@@ -1,7 +1,7 @@
 # StoreKit
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,29 +9,30 @@ Version: 0.1.0
 id: reference.apple.storekit
 artifact_type: reference
 title: StoreKit
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's StoreKit 2 async/await documentation, scoped to this domain's v1.
 domain: StoreKit
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
+https://developer.apple.com/documentation/storekit/appstore/sync()
 https://developer.apple.com/documentation/storekit/product
 https://developer.apple.com/documentation/storekit/product/products(for:)
 https://developer.apple.com/documentation/storekit/product/purchase(options:)
 https://developer.apple.com/documentation/storekit/product/purchaseresult
-https://developer.apple.com/documentation/storekit/verificationresult
-https://developer.apple.com/documentation/storekit/transaction
-https://developer.apple.com/documentation/storekit/transaction/currententitlements
-https://developer.apple.com/documentation/storekit/transaction/updates
-https://developer.apple.com/documentation/storekit/transaction/finish()
-https://developer.apple.com/documentation/storekit/appstore/sync()
-https://developer.apple.com/documentation/storekit/product/subscriptioninfo/status-swift.struct
+https://developer.apple.com/documentation/storekit/product/subscriptioninfo/grouplevel
 https://developer.apple.com/documentation/storekit/product/subscriptioninfo/renewalinfo
 https://developer.apple.com/documentation/storekit/product/subscriptioninfo/renewalstate
+https://developer.apple.com/documentation/storekit/product/subscriptioninfo/status-swift.struct
+https://developer.apple.com/documentation/storekit/transaction
+https://developer.apple.com/documentation/storekit/transaction/currententitlements
+https://developer.apple.com/documentation/storekit/transaction/finish()
+https://developer.apple.com/documentation/storekit/transaction/updates
+https://developer.apple.com/documentation/storekit/verificationresult
 
 ## Purpose
 

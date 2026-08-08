@@ -1,7 +1,7 @@
 # Validation Model
 
 Status: Approved
-Version: 1.0.0
+Version: 1.1.0
 
 ## Purpose
 
@@ -65,6 +65,10 @@ Checks:
 - A Reference's `## Used By` lists every Contract that cites one of its `## Source`
   URLs — matched by URL, never by directory name, because Reference-to-Knowledge is
   many-to-many; see architecture/linking-model.md [[linking-model]]
+- Every URL a Contract cites is indexed by some Reference's `## Source`. This is the
+  forward half of the edge above, and without it that check is vacuous on any URL no
+  Reference lists: it walks indexed URLs, so an unindexed one resolves to an empty
+  list and is never examined at all
 - No orphaned artifacts
 - `skills/index.md` agrees with `skills/` and `workflows/` in both directions
 
@@ -94,7 +98,9 @@ Checks:
 - Scope statements use the vocabulary specifications/skill-spec.md [[skill-spec]]
   defines, and describe reality: a Skill may not call a domain that exists `future`
   or `unbuilt`, which would send an agent to general knowledge past Contracts that
-  answer the question
+  answer the question. The reality half also applies to a Reference's `## Purpose`,
+  which states the same boundaries — the marker vocabulary itself stays a Skill rule,
+  since a Reference has no `## Stop Conditions` to carry it
 - No forbidden cross-layer references
 
 Enforced by: `scripts/validate_repo.py`

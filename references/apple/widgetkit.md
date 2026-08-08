@@ -1,7 +1,7 @@
 # WidgetKit
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,41 +9,42 @@ Version: 0.1.0
 id: reference.apple.widgetkit
 artifact_type: reference
 title: WidgetKit
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's WidgetKit documentation, scoped to this domain's v1.
 domain: WidgetKit
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
-https://developer.apple.com/documentation/widgetkit
+https://developer.apple.com/documentation/swiftui/button/init(_:intent:)
+https://developer.apple.com/documentation/swiftui/containerbackgroundplacement
+https://developer.apple.com/documentation/swiftui/environmentvalues/widgetfamily
+https://developer.apple.com/documentation/swiftui/link
+https://developer.apple.com/documentation/swiftui/toggle/init(_:ison:intent:)
+https://developer.apple.com/documentation/swiftui/view/containerbackground(for:alignment:content:)
+https://developer.apple.com/documentation/swiftui/view/widgeturl(_:)
 https://developer.apple.com/documentation/swiftui/widget
 https://developer.apple.com/documentation/swiftui/widgetbundle
 https://developer.apple.com/documentation/swiftui/widgetconfiguration
-https://developer.apple.com/documentation/widgetkit/staticconfiguration
-https://developer.apple.com/documentation/widgetkit/appintentconfiguration
 https://developer.apple.com/documentation/swiftui/widgetconfiguration/supportedfamilies(_:)
-https://developer.apple.com/documentation/swiftui/environmentvalues/widgetfamily
-https://developer.apple.com/documentation/swiftui/view/containerbackground(for:alignment:content:)
-https://developer.apple.com/documentation/swiftui/containerbackgroundplacement
+https://developer.apple.com/documentation/widgetkit
+https://developer.apple.com/documentation/widgetkit/adding-interactivity-to-widgets-and-live-activities
+https://developer.apple.com/documentation/widgetkit/appintentconfiguration
+https://developer.apple.com/documentation/widgetkit/creating-a-widget-extension
+https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date
+https://developer.apple.com/documentation/widgetkit/linking-to-specific-app-scenes-from-your-widget-or-live-activity
+https://developer.apple.com/documentation/widgetkit/staticconfiguration
+https://developer.apple.com/documentation/widgetkit/timeline
+https://developer.apple.com/documentation/widgetkit/timelineentry
 https://developer.apple.com/documentation/widgetkit/timelineprovider
 https://developer.apple.com/documentation/widgetkit/timelineprovidercontext
-https://developer.apple.com/documentation/widgetkit/timelineentry
-https://developer.apple.com/documentation/widgetkit/timeline
 https://developer.apple.com/documentation/widgetkit/timelinereloadpolicy
-https://developer.apple.com/documentation/swiftui/view/widgeturl(_:)
-https://developer.apple.com/documentation/swiftui/link
-https://developer.apple.com/documentation/swiftui/button/init(_:intent:)
-https://developer.apple.com/documentation/swiftui/toggle/init(_:ison:intent:)
 https://developer.apple.com/documentation/widgetkit/widgetcenter
 https://developer.apple.com/documentation/widgetkit/widgetcenter/reloadtimelines(ofkind:)
-https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date
-https://developer.apple.com/documentation/widgetkit/adding-interactivity-to-widgets-and-live-activities
-https://developer.apple.com/documentation/widgetkit/linking-to-specific-app-scenes-from-your-widget-or-live-activity
-https://developer.apple.com/documentation/widgetkit/creating-a-widget-extension
+https://developer.apple.com/documentation/widgetkit/widgetinfo
 
 ## Purpose
 

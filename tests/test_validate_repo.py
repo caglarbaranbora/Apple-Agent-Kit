@@ -292,6 +292,35 @@ class TestLevel2(RepoTestCase):
         self.repo.edit("skills/example/SKILL.md", "-> thing.md", "-> thing.md, second.md")
         self.assertNotIn("used-by-complete", self.repo.rules())
 
+    def test_a_citation_no_reference_indexes_is_reported(self):
+        # The forward half of the same edge. Without it a Contract can cite a
+        # URL that appears in no `## Source` at all, and `used-by-complete`
+        # never sees it -- which is how 124 citations across 15 domains stayed
+        # outside every check until 2026-08-08.
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            f"  - {URL}",
+            f"  - {URL}\n  - https://developer.apple.com/documentation/example/unindexed",
+        )
+        self.assertRule("reference-indexes-citations")
+
+    def test_a_citation_indexed_by_another_domains_reference_is_accepted(self):
+        # Indexing stays many-to-many: the Reference that authorizes a URL need
+        # not be the one named for the Contract's own domain.
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            f"  - {URL}",
+            f"  - {URL}\n  - https://developer.apple.com/documentation/other/shared",
+        )
+        self.repo.write(
+            "references/apple/other.md",
+            REFERENCE.replace("reference.apple.example", "reference.apple.other")
+            .replace("domain: Example", "domain: Other")
+            .replace("# Example", "# Other")
+            .replace(URL, "https://developer.apple.com/documentation/other/shared"),
+        )
+        self.assertNotIn("reference-indexes-citations", self.repo.rules())
+
     def test_broken_prose_link_is_reported(self):
         self.repo.write("docs/guide.md", "See [the spec](../docs/missing.md).\n")
         self.assertRule("prose-path-resolves")
@@ -543,6 +572,29 @@ class TestScopeVocabulary(RepoTestCase):
             "Design guidance is owned by `other`, and general testing "
             "conventions well beyond anything this one covers belong to a "
             "future domain nobody has built."
+        )
+        self.assertNotIn("scope-vocabulary", self.repo.rules())
+
+    def test_a_reference_calling_a_built_domain_unbuilt_is_reported(self):
+        # References state the same boundaries in `## Purpose`, and the check
+        # was scoped to Skills at first. `references/apple/foundation.md`
+        # carried the identical claim its own SKILL.md was fixed for.
+        self.repo.write("knowledge/other/thing.md", KNOWLEDGE)
+        self.repo.edit(
+            "references/apple/example.md",
+            "Reference index for Apple's example documentation.\n\n## Primary",
+            "Reference index for Apple's example documentation. Keychain is "
+            "owned by a future `other` domain, not yet built.\n\n## Primary",
+        )
+        self.assertRule("scope-vocabulary")
+
+    def test_a_reference_naming_a_built_domain_as_owner_is_accepted(self):
+        self.repo.write("knowledge/other/thing.md", KNOWLEDGE)
+        self.repo.edit(
+            "references/apple/example.md",
+            "Reference index for Apple's example documentation.\n\n## Primary",
+            "Reference index for Apple's example documentation. Keychain is "
+            "owned by the `other` domain.\n\n## Primary",
         )
         self.assertNotIn("scope-vocabulary", self.repo.rules())
 

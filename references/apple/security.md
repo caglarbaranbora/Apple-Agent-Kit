@@ -1,7 +1,7 @@
 # Security (Keychain Services)
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,24 +9,36 @@ Version: 0.1.0
 id: reference.apple.security
 artifact_type: reference
 title: Security (Keychain Services)
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's Security framework Keychain Services documentation, scoped to this domain's v1.
 domain: Security
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
+https://developer.apple.com/documentation/bundleresources/entitlements/keychain-access-groups
+https://developer.apple.com/documentation/foundation/jsondecoder/decode(_:from:)
+https://developer.apple.com/documentation/foundation/jsonencoder/encode(_:)
+https://developer.apple.com/documentation/foundation/nskeyedarchiver
+https://developer.apple.com/documentation/security/errsecmissingentitlement
 https://developer.apple.com/documentation/security/keychain-services
+https://developer.apple.com/documentation/security/ksecattraccessgroup
+https://developer.apple.com/documentation/security/ksecattraccessibleafterfirstunlock
+https://developer.apple.com/documentation/security/ksecattraccessiblealways
+https://developer.apple.com/documentation/security/ksecattraccessiblewhenpasscodesetthisdeviceonly
+https://developer.apple.com/documentation/security/ksecattraccessiblewhenunlocked
+https://developer.apple.com/documentation/security/ksecclassgenericpassword
+https://developer.apple.com/documentation/security/ksecclassinternetpassword
+https://developer.apple.com/documentation/security/ksecvaluedata
+https://developer.apple.com/documentation/security/restricting-keychain-item-accessibility
 https://developer.apple.com/documentation/security/secitemadd(_:_:)
 https://developer.apple.com/documentation/security/secitemcopymatching(_:_:)
-https://developer.apple.com/documentation/security/secitemupdate(_:_:)
 https://developer.apple.com/documentation/security/secitemdelete(_:)
-https://developer.apple.com/documentation/security/restricting-keychain-item-accessibility
+https://developer.apple.com/documentation/security/secitemupdate(_:_:)
 https://developer.apple.com/documentation/security/sharing-access-to-keychain-items-among-a-collection-of-apps
-https://developer.apple.com/documentation/bundleresources/entitlements/keychain-access-groups
 
 ## Purpose
 
@@ -42,8 +54,9 @@ data via `kSecValueData`.
 Out of scope for v1: biometric-bound access control (`SecAccessControl`,
 `.biometryCurrentSet`/`.biometryAny`, `kSecUseAuthenticationContext`) —
 owned by `knowledge.local-authentication.keychain-biometric-binding`;
-password AutoFill / credential provider extensions — deferred to a future
-`authenticationservices` domain (Tier 2, unbuilt); iCloud Keychain sync
+password AutoFill / credential provider extensions — owned by the
+`authenticationservices` domain, built 2026-08 and scoped to Sign in with
+Apple only, which defers them within its own scope; iCloud Keychain sync
 (`kSecAttrSynchronizable`) — deferred; Keychain item classes beyond
 generic/internet password (certificates, cryptographic keys, identities)
 — deferred.

@@ -395,6 +395,56 @@ def check_used_by_is_complete(artifacts, root):
     return findings
 
 
+def check_reference_indexes_citations(artifacts, root):
+    """Every URL a Contract cites is indexed by some Reference's `## Source`.
+
+    This is the forward half of the edge `used_by_is_complete` checks in
+    reverse, and without it that check is silently vacuous. It walks indexed
+    URLs and asks which Contracts cite each one; a URL that *no* Reference
+    indexes resolves to an empty list and is therefore never examined. The
+    consequence is not academic -- measured on 2026-08-08, 124 cited URLs
+    across 15 domains were indexed nowhere, and `security` alone had 12 of
+    its 19 outside every check.
+
+    An unindexed URL is also an unverified URL. Three consecutive domain
+    passes (PRs 5-7) found Apple pages that 301-redirect the moment indexing
+    forced someone to fetch them, because indexing is what makes a citation
+    something a human reads rather than something a Contract asserts.
+
+    Matching is by exact URL string with the same trailing-punctuation
+    normalisation `used_by_is_complete` uses, so the two checks agree on what
+    counts as the same page. Reference-to-Knowledge stays many-to-many: any
+    Reference may index the URL, not only the one named for the Contract's
+    own domain.
+    """
+    findings = []
+    indexed = set()
+    for reference in artifacts:
+        if reference.artifact_type != "reference":
+            continue
+        for url in re.findall(r"https?://\S+", section(reference.text, "## Source")):
+            indexed.add(url.rstrip(".,);"))
+
+    for artifact in artifacts:
+        if artifact.artifact_type != "knowledge":
+            continue
+        for url in get_list(artifact.meta, "references"):
+            if url.rstrip(".,);") in indexed:
+                continue
+            findings.append(
+                Finding(
+                    2,
+                    "reference-indexes-citations",
+                    artifact.rel,
+                    f"cites {url}, which no Reference indexes under `## Source`; "
+                    f"the citation is outside `used-by-complete` entirely",
+                    "add the URL to the `## Source` block of the Reference that "
+                    "authorizes it, and list this Contract under its `## Used By`",
+                )
+            )
+    return findings
+
+
 def check_prose_paths_resolve(artifacts, root):
     """Relative links in prose resolve -- linking-model.md convention 3.
 
@@ -877,10 +927,38 @@ def check_scope_vocabulary(artifacts, root):
     agent routed there is told the answer does not exist while six Knowledge
     Contracts holding it sit on disk. Pointing at a domain that was retired --
     what `prose-domain-resolves` catches -- at least fails loudly.
+
+    The reality half also applies to References, which state the same scope
+    boundaries in `## Purpose`. It was scoped to Skills at first and that was
+    too narrow: `references/apple/foundation.md` carried the identical claim
+    about `localization` and `combine` that this docstring credits to
+    `skills/foundation/SKILL.md`, one layer away and uncaught, alongside three
+    more in `local-authentication`, `security`, and `privacy`. The marker
+    vocabulary itself stays a Skill rule -- `Deferred`/`Excluded` are defined by
+    skill-spec.md and a Reference has no `## Stop Conditions` to put them in.
     """
     findings = []
     domains = known_domains(root)
     for artifact in artifacts:
+        if artifact.artifact_type == "reference":
+            purpose = re.sub(r"\s+", " ", section(artifact.text, "## Purpose"))
+            for match in UNBUILT_RE.finditer(purpose):
+                name = match.group(1) or match.group(2)
+                if name not in domains or name == slugify(artifact.domain or ""):
+                    continue
+                findings.append(
+                    Finding(
+                        3,
+                        "scope-vocabulary",
+                        artifact.rel,
+                        f"describes `{name}` as future or unbuilt, but it exists",
+                        "a Reference that calls a built domain unbuilt sends the "
+                        "next Contract author to the wrong authority; name the "
+                        "domain as the owner, or mark the topic `Deferred` inside "
+                        "the domain that owns it",
+                    )
+                )
+            continue
         if artifact.artifact_type != "skill":
             continue
         scope = section(artifact.text, "## Stop Conditions")
@@ -937,6 +1015,7 @@ CHECKS = [
     check_prose_paths_resolve,
     check_prose_domain_mentions_resolve,
     check_used_by_is_complete,
+    check_reference_indexes_citations,
     check_no_orphans,
     check_routing_index_sync,
     check_dependency_direction,

@@ -1,7 +1,7 @@
 # TipKit
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,52 +9,55 @@ Version: 0.1.0
 id: reference.apple.tipkit
 artifact_type: reference
 title: TipKit
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's TipKit documentation, scoped to this domain's v1.
 domain: TipKit
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
 https://developer.apple.com/documentation/tipkit
+https://developer.apple.com/documentation/tipkit/highlightingappfeatureswithtipkit
 https://developer.apple.com/documentation/tipkit/tip
-https://developer.apple.com/documentation/tipkit/tip/title
-https://developer.apple.com/documentation/tipkit/tip/message
-https://developer.apple.com/documentation/tipkit/tip/image
-https://developer.apple.com/documentation/tipkit/tip/rules
-https://developer.apple.com/documentation/tipkit/tip/actions
-https://developer.apple.com/documentation/tipkit/tip/options
 https://developer.apple.com/documentation/tipkit/tip/action
-https://developer.apple.com/documentation/tipkit/tip/option
+https://developer.apple.com/documentation/tipkit/tip/actions
+https://developer.apple.com/documentation/tipkit/tip/ignoresdisplayfrequency
+https://developer.apple.com/documentation/tipkit/tip/image
+https://developer.apple.com/documentation/tipkit/tip/invalidate(reason:)
+https://developer.apple.com/documentation/tipkit/tip/invalidationreason
 https://developer.apple.com/documentation/tipkit/tip/maxdisplaycount
 https://developer.apple.com/documentation/tipkit/tip/maxdisplayduration
-https://developer.apple.com/documentation/tipkit/tip/ignoresdisplayfrequency
-https://developer.apple.com/documentation/tipkit/tip/invalidationreason
-https://developer.apple.com/documentation/tipkit/tip/invalidate(reason:)
-https://developer.apple.com/documentation/tipkit/tipview
-https://developer.apple.com/documentation/tipkit/tipuiview
-https://developer.apple.com/documentation/tipkit/tipuipopoverviewcontroller
+https://developer.apple.com/documentation/tipkit/tip/message
+https://developer.apple.com/documentation/tipkit/tip/option
+https://developer.apple.com/documentation/tipkit/tip/options
+https://developer.apple.com/documentation/tipkit/tip/rules
+https://developer.apple.com/documentation/tipkit/tip/title
 https://developer.apple.com/documentation/tipkit/tipgroup
+https://developer.apple.com/documentation/tipkit/tipgroup/currenttip
 https://developer.apple.com/documentation/tipkit/tipgroup/init(_:_:)
 https://developer.apple.com/documentation/tipkit/tipgroup/priority
-https://developer.apple.com/documentation/tipkit/tipgroup/currenttip
 https://developer.apple.com/documentation/tipkit/tips
-https://developer.apple.com/documentation/tipkit/tips/configure(_:)
+https://developer.apple.com/documentation/tipkit/tips/action
+https://developer.apple.com/documentation/tipkit/tips/action/init(id:title:perform:)
+https://developer.apple.com/documentation/tipkit/tips/configurationoption/cloudkitcontainer(_:)
 https://developer.apple.com/documentation/tipkit/tips/configurationoption/datastorelocation(_:)
 https://developer.apple.com/documentation/tipkit/tips/configurationoption/displayfrequency(_:)
-https://developer.apple.com/documentation/tipkit/tips/configurationoption/cloudkitcontainer(_:)
-https://developer.apple.com/documentation/tipkit/tips/rule
-https://developer.apple.com/documentation/tipkit/tips/parameter
+https://developer.apple.com/documentation/tipkit/tips/configure(_:)
 https://developer.apple.com/documentation/tipkit/tips/event
-https://developer.apple.com/documentation/tipkit/tips/action
+https://developer.apple.com/documentation/tipkit/tips/event/donate()
+https://developer.apple.com/documentation/tipkit/tips/event/senddonation(_:)
 https://developer.apple.com/documentation/tipkit/tips/invalidationreason
+https://developer.apple.com/documentation/tipkit/tips/parameter
+https://developer.apple.com/documentation/tipkit/tips/resetdatastore()
+https://developer.apple.com/documentation/tipkit/tips/rule
 https://developer.apple.com/documentation/tipkit/tips/showalltipsfortesting()
 https://developer.apple.com/documentation/tipkit/tips/showtipsfortesting(_:)
-https://developer.apple.com/documentation/tipkit/tips/resetdatastore()
-https://developer.apple.com/documentation/tipkit/highlightingappfeatureswithtipkit
+https://developer.apple.com/documentation/tipkit/tipuipopoverviewcontroller
+https://developer.apple.com/documentation/tipkit/tipuiview
+https://developer.apple.com/documentation/tipkit/tipview
 
 ## Purpose
 

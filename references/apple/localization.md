@@ -1,7 +1,7 @@
 # Localization
 
 Status: Draft
-Version: 0.2.0
+Version: 0.3.0
 
 ## Metadata
 
@@ -9,64 +9,69 @@ Version: 0.2.0
 id: reference.apple.localization
 artifact_type: reference
 title: Localization
-version: 0.2.0
+version: 0.3.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's localization documentation, scoped to this domain's v1.
 domain: Localization
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
-https://developer.apple.com/documentation/xcode/localization
-https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog
-https://developer.apple.com/documentation/xcode/preparing-your-apps-text-for-translation
-https://developer.apple.com/documentation/xcode/preparing-your-interface-for-localization
-https://developer.apple.com/documentation/xcode/localizing-strings-that-contain-plurals
-https://developer.apple.com/documentation/xcode/adding-support-for-languages-and-regions
-https://developer.apple.com/documentation/xcode/adding-resources-to-localizations
-https://developer.apple.com/documentation/xcode/localizing-assets-in-a-catalog
-https://developer.apple.com/documentation/xcode/localizing-package-resources
-https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package
-https://developer.apple.com/documentation/xcode-release-notes/xcode-15-release-notes
-https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes
-https://developer.apple.com/documentation/swift/string/init(localized:table:bundle:locale:comment:)
-https://developer.apple.com/documentation/swift/string/init(localized:defaultvalue:table:bundle:locale:comment:)
-https://developer.apple.com/documentation/swift/string/init(localized:)
-https://developer.apple.com/documentation/foundation/localizedstringresource
-https://developer.apple.com/documentation/foundation/nslocalizedstring(_:tablename:bundle:value:comment:)
-https://developer.apple.com/documentation/foundation/attributedstring
-https://developer.apple.com/documentation/swiftui/localizedstringkey
-https://developer.apple.com/documentation/swiftui/text/init(_:tablename:bundle:comment:)
-https://developer.apple.com/documentation/foundation/locale/current
-https://developer.apple.com/documentation/foundation/locale/autoupdatingcurrent
-https://developer.apple.com/documentation/foundation/locale/preferredlanguages
-https://developer.apple.com/documentation/foundation/locale/language-swift.struct/characterdirection
-https://developer.apple.com/documentation/foundation/bundle
-https://developer.apple.com/documentation/foundation/bundle/preferredlocalizations
-https://developer.apple.com/documentation/foundation/bundle/localizedstring(forkey:value:table:)
 https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundledevelopmentregion
 https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundledisplayname
+https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundlename
+https://developer.apple.com/documentation/foundation/attributedstring
+https://developer.apple.com/documentation/foundation/bundle
+https://developer.apple.com/documentation/foundation/bundle/localizedstring(forkey:value:table:)
+https://developer.apple.com/documentation/foundation/bundle/preferredlocalizations
+https://developer.apple.com/documentation/foundation/bundle/preferredlocalizations(from:)
+https://developer.apple.com/documentation/foundation/inflectionrule
+https://developer.apple.com/documentation/foundation/locale/autoupdatingcurrent
+https://developer.apple.com/documentation/foundation/locale/current
+https://developer.apple.com/documentation/foundation/locale/language-swift.struct/characterdirection
+https://developer.apple.com/documentation/foundation/locale/preferredlanguages
+https://developer.apple.com/documentation/foundation/locale/region-swift.property
+https://developer.apple.com/documentation/foundation/localizedstringresource
+https://developer.apple.com/documentation/foundation/nslocalizedstring(_:tablename:bundle:value:comment:)
 https://developer.apple.com/documentation/packagedescription/package/defaultlocalization
+https://developer.apple.com/documentation/swift/string/init(localized:)
+https://developer.apple.com/documentation/swift/string/init(localized:defaultvalue:table:bundle:locale:comment:)
+https://developer.apple.com/documentation/swift/string/init(localized:table:bundle:locale:comment:)
 https://developer.apple.com/documentation/swiftui/layoutdirection
-https://developer.apple.com/documentation/uikit/uiview/semanticcontentattribute
-https://developer.apple.com/documentation/uikit/uiview/effectiveuserinterfacelayoutdirection
+https://developer.apple.com/documentation/swiftui/localizedstringkey
+https://developer.apple.com/documentation/swiftui/text/init(_:tablename:bundle:comment:)
+https://developer.apple.com/documentation/swiftui/text/init(verbatim:)
+https://developer.apple.com/documentation/swiftui/view/flipsforrighttoleftlayoutdirection(_:)
 https://developer.apple.com/documentation/uikit/creating-custom-symbol-images-for-your-app
-https://developer.apple.com/videos/play/wwdc2023/10155/
-https://developer.apple.com/videos/play/wwdc2022/10107/
-https://developer.apple.com/videos/play/wwdc2022/10110/
-https://developer.apple.com/videos/play/wwdc2024/10185/
-https://developer.apple.com/library/archive/qa/qa1828/_index.html
+https://developer.apple.com/documentation/uikit/uiimage/imageflippedforrighttoleftlayoutdirection()
+https://developer.apple.com/documentation/uikit/uiview/effectiveuserinterfacelayoutdirection
+https://developer.apple.com/documentation/uikit/uiview/semanticcontentattribute
+https://developer.apple.com/documentation/xcode-release-notes/xcode-15-release-notes
+https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes
+https://developer.apple.com/documentation/xcode/adding-resources-to-localizations
+https://developer.apple.com/documentation/xcode/adding-support-for-languages-and-regions
+https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package
+https://developer.apple.com/documentation/xcode/localization
+https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog
+https://developer.apple.com/documentation/xcode/localizing-assets-in-a-catalog
+https://developer.apple.com/documentation/xcode/localizing-package-resources
+https://developer.apple.com/documentation/xcode/localizing-strings-that-contain-plurals
+https://developer.apple.com/documentation/xcode/preparing-your-apps-text-for-translation
+https://developer.apple.com/documentation/xcode/preparing-your-interface-for-localization
 https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html
 https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html
 https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/ImageSetType.html
+https://developer.apple.com/library/archive/qa/qa1828/_index.html
+https://developer.apple.com/videos/play/wwdc2022/10107/
+https://developer.apple.com/videos/play/wwdc2022/10110/
+https://developer.apple.com/videos/play/wwdc2023/10155/
+https://developer.apple.com/videos/play/wwdc2024/10185/
 
 ## Purpose
 
-Reference index for Apple's localization documentation, scoped to this domain's v1: String Catalog (`.xcstrings`) mechanics and compiler-driven extraction, including the literal-argument requirement it depends on, translator comments, translation states, explicit keys vs. value-as-key, and manually-managed entries; the localized-string API surface (`String(localized:)`, `LocalizedStringResource`, `LocalizedStringKey` and SwiftUI's implicit `Text` literal localization, `AttributedString(localized:)`, and the remaining role of `NSLocalizedString`); plural and device variation, the CLDR categories and their language-dependence, substitutions, and the legacy `.stringsdict` form; `Locale` and language resolution (`current` vs. `autoupdatingCurrent`, `preferredLanguages` vs. `preferredLocalizations`, the `Locale.Language`/`Locale.Region` split, development region, and the `.lproj` fallback chain); layout-direction and RTL APIs across SwiftUI and UIKit including SF Symbols' name-driven mirroring; and localized resources (`InfoPlist.xcstrings`, `.lproj` structure, asset-catalog localization, Swift-package `defaultLocalization`/`Bundle.module`, and non-main-bundle lookup).
-
-Baseline is Xcode 16+ with an iOS 17+ API surface. String Catalogs carry no deployment-target requirement — per WWDC23, `.xcstrings` compiles to `.strings` and `.stringsdict` at build time, so "you can start using String Catalogs right away without having to update your minimum deployment target." Xcode 16 specifically, because marking a string "Don't Translate", stale-string build warnings, format-specifier conflict diagnostics, and the `xcstringstool` replacement for the deprecated `genstrings` do not exist in Xcode 15. `Locale.Language`, `Locale.Region`, and `Locale.Language.characterDirection` are iOS 16+, while `Locale.languageCode`, `Locale.regionCode`, and `Locale.characterDirection(forLanguage:)` are deprecated as of iOS 16 — already dead at this baseline despite remaining the form most third-party material uses.
+Reference index for Apple's localization documentation, scoped to this domain's v1. The six surfaces it indexes are enumerated under Primary Topics below; this section states only what bounds them. Baseline is Xcode 16+ with an iOS 17+ API surface. String Catalogs carry no deployment-target requirement — per WWDC23, `.xcstrings` compiles to `.strings` and `.stringsdict` at build time, so "you can start using String Catalogs right away without having to update your minimum deployment target." Xcode 16 specifically, because marking a string "Don't Translate", stale-string build warnings, format-specifier conflict diagnostics, and the `xcstringstool` replacement for the deprecated `genstrings` do not exist in Xcode 15. `Locale.Language`, `Locale.Region`, and `Locale.Language.characterDirection` are iOS 16+, while `Locale.languageCode`, `Locale.regionCode`, and `Locale.characterDirection(forLanguage:)` are deprecated as of iOS 16 — already dead at this baseline despite remaining the form most third-party material uses.
 
 Out of scope for v1: the Xcode project-configuration side of localization (adding a project language and the `.xcloc`/XLIFF export-and-import round trip), owned by `xcode` and built there 2026-08-07; the iOS 18 Translation framework (`TranslationSession`, `.translationTask`, `.translationPresentation`), a real and documented capability deliberately excluded because it translates user content at runtime rather than shipping the app's own text pre-translated, and requires iOS 18; source-copy wording, capitalization, and international representation/formatting rules (owned by `style-guide`); date/time/number/measurement formatting mechanics (owned by `foundation`); RTL visual-design guidance (owned by `human-interface-guidelines`); App Store Connect localized metadata; APNs `loc-key`/`loc-args` server payloads (already out of scope for `usernotifications`); App Shortcuts phrase and `AppEnum` localization (owned by `app-intents`); and macOS/watchOS/tvOS-specific behavior.
 
