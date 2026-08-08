@@ -29,6 +29,7 @@ references:
 depends_on:
   - knowledge.eventkit.event-crud-and-fetch-predicates
 related:
+  - knowledge.uikit.swiftui-view-representable
   - knowledge.eventkit.reminder-crud-and-fetch
 last_updated: 2026-08-08
 ```
@@ -76,7 +77,7 @@ Agents MUST reserve custom UI built on the CRUD contracts for cases EventKitUI c
 
 ### Rule 6
 
-Agents MUST treat EventKitUI as UIKit-only when choosing how to present it from SwiftUI, and MUST bridge it with `UIViewControllerRepresentable` rather than assuming a native SwiftUI view exists. This was verified directly against Apple's EventKitUI framework-overview page rather than assumed from general knowledge: its declared "Calendar Views"/"Calendar Edits" symbols are `EKEventViewController`/`EKEventEditViewController`, both declared as `class` (`UIViewController` subclasses), and Apple's own overview text introduces them as "the view controllers you'll use on iOS" — no SwiftUI `View`-conforming wrapper appears in the framework's symbol index as of this verification.
+Agents MUST treat EventKitUI as UIKit-only when choosing how to present it from SwiftUI, and MUST bridge it with `UIViewControllerRepresentable` rather than assuming a native SwiftUI view exists. How that wrapper is written is `knowledge.uikit.swiftui-view-representable` Rule 5 — this contract states only that EventKitUI needs one, and defines no wrapping mechanics of its own. This was verified directly against Apple's EventKitUI framework-overview page rather than assumed from general knowledge: its declared "Calendar Views"/"Calendar Edits" symbols are `EKEventViewController`/`EKEventEditViewController`, both declared as `class` (`UIViewController` subclasses), and Apple's own overview text introduces them as "the view controllers you'll use on iOS" — no SwiftUI `View`-conforming wrapper appears in the framework's symbol index as of this verification.
 
 ## Compliant Example
 

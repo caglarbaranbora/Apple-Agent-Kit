@@ -1,7 +1,7 @@
 # Domain Map
 
 Status: Approved
-Version: 1.21.0
+Version: 1.22.0
 
 See: ../glossary.md
 [[glossary]]
@@ -105,6 +105,23 @@ A retired domain stays in this record with its disposition rather than being era
 
 ## Cross-Domain Notes
 
+Each entry classifies one boundary. Three values, and the third was missing until the
+Tier 2 review of 2026-08-08:
+
+- **angle-split** — both domains cover the same subject from different angles (design vs.
+  API, policy vs. implementation). Each owns its angle and cross-references the other.
+- **clean handoff** — the domains do not overlap; one stops where the other begins.
+- **coupled** — they do not overlap, *and* a choice on one side fixes a choice on the
+  other. This is not answerable by asking "do they overlap?", which is why two boundaries
+  classified as clean handoffs still produced defects: `widgetkit` ↔ `app-intents`
+  (slice #0002) and `local-authentication` ↔ `security` (slice #0005). A coupled boundary
+  MUST name which side owns the coupling rule.
+
+A boundary classified against a domain that was **not yet built** MUST be revisited when
+that domain ships. `widgetkit`'s entry was written when `app-intents` did not exist and
+was never revisited; that is where slice #0002's defect came from.
+
+
 - `authenticationservices` (Tier 2, complete) and the former `sign-in-with-apple` placeholder resolved: `authenticationservices` absorbs `sign-in-with-apple` outright — same framework, same feature, no distinct content existed for a separate row. It also absorbed the sign-in *mechanism* half of the retired `authentication` domain, while the wording half went to `knowledge.style-guide.sign-in-and-authentication-terminology` (which already stated those rules in seven Rules against cited Apple Style Guide pages, versus `authentication`'s two). `authenticationservices` owns the `ASAuthorizationAppleIDProvider`/`ASAuthorizationController` API surface; the "Sign in with Apple" button's own capitalization stays a `style-guide` rule. Composing the two is `workflow.authentication`'s job.
 - `accessibility` (Tier 1) carried **one recorded gap**, surfaced by the `authentication` retirement rather than by its own scoping — **closed 2026-08-07**. The retired `knowledge.authentication.accessibility-forms` stated four rules; three were already owned in far more depth by `accessibility-labels`, `voiceover-navigation-order`, and the domain's traits Contracts. The fourth — that a form's **validation errors must be announced to assistive technologies** — had no Contract, and was not migrated because the retired Contract named no API at all while every `accessibility` Contract does. It is now `knowledge.accessibility.accessibility-announcements`, built against the API rather than against the retired Contract's prose. Two boundaries the recorded gap did not show: `AccessibilityNotification` is published under Apple's **Accessibility** framework and is iOS 17+, while `UIAccessibility.post(notification:.announcement)` is UIKit-only and goes back to iOS 4; and moving VoiceOver focus to a field that failed validation stays with `full-keyboard-access-and-focus`, which already owned it. `AccessibilityNotification.LayoutChanged` and `.PageScrolled` are now the domain's one open surface, marked `Deferred` in its Skill.
 - `human-interface-guidelines` and `sf-symbols` were previously merged with `style-guide` under a single `design` domain. Split per ../../rfcs/0001-style-guide-domain-and-domain-roadmap.md ([[0001-style-guide-domain-and-domain-roadmap]]).
@@ -140,7 +157,7 @@ A retired domain stays in this record with its disposition rather than being era
 - `human-interface-guidelines` (`notifications` Patterns topic) and `usernotifications` (Tier 2, complete) overlap: `human-interface-guidelines` owns notification *design* (content structure, when/how to request permission, foreground handling, action design, badging), `usernotifications` owns `UNUserNotificationCenter`/`UNAuthorizationOptions` API implementation. Resolved via angle-split, same pattern as `accessibility` vs. `human-interface-guidelines`. Every `usernotifications` Knowledge Contract whose topic overlaps (delegate handling, actions/categories, managing pending/delivered/badge) cross-references `knowledge.human-interface-guidelines.notifications` via `related:` rather than restating its Rules.
 - `storekit` (Tier 2, complete) and `app-store-review-guidelines` (`digital-goods-iap`/`restore-purchases` topics) do not overlap — this is a clean handoff, same pattern as `local-authentication` vs. `security`. `app-store-review-guidelines` owns the review-compliance angle (the requirement to use IAP to unlock content, prohibited alternative unlock mechanisms, loot-box odds disclosure, the requirement to implement a restore mechanism, the non-expiration rule for purchased currencies); `storekit` owns the StoreKit 2 API implementation angle only (`Product.products(for:)`/`purchase()`, `VerificationResult`/`Transaction.currentEntitlements`/`finish()`, the `Transaction.updates` listener and `AppStore.sync()` mechanics, subscription status/renewal info). `storekit`'s `transaction-updates-and-restoring-purchases.md` cross-references `knowledge.app-store-review-guidelines.restore-purchases` via `related:` rather than restating why a restore mechanism is required. No content is duplicated between the two domains.
 - `authenticationservices` (Tier 2, complete) and `security` (Tier 2, complete) do not overlap — this is a clean handoff, same pattern as `local-authentication` vs. `security`. `authenticationservices`'s `session-persistence-and-sign-out.md` owns what to persist (the `user` identifier, not `email` or the raw `identityToken`/`authorizationCode`) and cross-references `knowledge.security.keychain-item-crud` via `related:` for the storage mechanics itself, rather than restating Keychain CRUD. No content is duplicated between the two domains.
-- `widgetkit` (Tier 2, complete) has no overlap with any existing domain: no `swiftui`/`human-interface-guidelines` content on widget-specific design exists to hand off to or angle-split against. `widgetkit` proactively deferred two seams to domains not yet built: `AppIntent` authoring itself (parameters, `perform()`, entities) to the future `app-intents` domain, and background-refresh scheduling mechanics (e.g. `BGAppRefreshTask`) to the future `backgroundtasks` domain — both are now resolved. `app-intents` (Tier 2, complete) is a clean handoff with `widgetkit`, not an angle-split: `widgetkit`'s `widget-interactivity-and-deep-links.md` continues to own wiring an already-authored `AppIntent` into a widget's `Button(intent:)`/`Toggle(_:isOn:intent:)`; `app-intents`'s `intent-results-and-widget-hookup.md` owns authoring that intent's `perform()`, parameters, and result. `backgroundtasks` (Tier 2, complete) is likewise a clean handoff: `backgroundtasks`'s `background-refresh-and-widget-timeline-hookup.md` owns registering, submitting, and running the `BGAppRefreshTaskRequest` that produces fresh widget data; `widgetkit`'s `timeline-reloading-and-refresh-budget.md` continues to own the `reloadTimelines`/`reloadAllTimelines` call site and its refresh-budget reasoning once that data has landed. All three KCs cross-reference their counterparts via `related:`/`Dependencies` rather than restating each other's Rules. No content is duplicated across these domains.
+- `widgetkit` (Tier 2, complete) has no overlap with any existing domain: no `swiftui`/`human-interface-guidelines` content on widget-specific design exists to hand off to or angle-split against. `widgetkit` proactively deferred two seams to domains not yet built: `AppIntent` authoring itself (parameters, `perform()`, entities) to the future `app-intents` domain, and background-refresh scheduling mechanics (e.g. `BGAppRefreshTask`) to the future `backgroundtasks` domain — both are now resolved. `app-intents` (Tier 2, complete) is a clean handoff with `widgetkit`, not an angle-split: `widgetkit`'s `widget-interactivity-and-deep-links.md` continues to own wiring an already-authored `AppIntent` into a widget's `Button(intent:)`/`Toggle(_:isOn:intent:)`; `app-intents`'s `intent-results-and-widget-hookup.md` owns authoring that intent's `perform()`, parameters, and result. `backgroundtasks` (Tier 2, complete) is likewise a clean handoff: `backgroundtasks`'s `background-refresh-and-widget-timeline-hookup.md` owns registering, submitting, and running the `BGAppRefreshTaskRequest` that produces fresh widget data; `widgetkit`'s `timeline-reloading-and-refresh-budget.md` continues to own the `reloadTimelines`/`reloadAllTimelines` call site and its refresh-budget reasoning once that data has landed. All three KCs cross-reference their counterparts via `related:`/`Dependencies` rather than restating each other's Rules. No content is duplicated across these domains. **Revisited 2026-08-08:** both deferred seams are now live — `app-intents` and `backgroundtasks` shipped, and this entry was not updated when they did. The `widgetkit` ↔ `app-intents` boundary is **coupled**, not merely a handoff: an interactive intent's `perform()` returning is what reloads the widget's timeline, so the reload rule is `knowledge.widgetkit.timeline-reloading-and-refresh-budget` Rule 5 and the ordering obligation is `knowledge.app-intents.intent-results-and-widget-hookup` Rule 5. Slice #0002 found that gap because this entry was never revisited.
 - `app-intents` (Tier 2, complete) supersedes legacy `SiriKit` (donation-based intents, `INIntent`, `NSUserActivity` donation) on current OS versions; no separate `SiriKit` domain is planned unless a legacy-support need is identified — this confirms, rather than changes, the note already on record before `app-intents` was built.
 - `local-authentication` (`keychain-biometric-binding` topic) and `security` (Tier 2, complete) do not overlap — this is a clean handoff, not an angle-split. `knowledge.local-authentication.keychain-biometric-binding`'s own Excluded section named this boundary before `security` was built ("General Keychain item storage/retrieval for non-biometric-bound items — future `security` domain"): `local-authentication` owns `SecAccessControlCreateWithFlags`/`kSecAttrAccessControl`/`.biometryCurrentSet`/`.biometryAny`/`kSecUseAuthenticationContext` — the seam where a Keychain item is bound to a biometric prompt — while `security` owns general (non-biometric-bound) Keychain item CRUD, accessibility levels, access-group sharing, and structured-data storage. Every `security` Knowledge Contract cross-references `knowledge.local-authentication.keychain-biometric-binding` via `related:` rather than restating its Rules. No content is duplicated between the two domains.
 
@@ -149,6 +166,33 @@ A retired domain stays in this record with its disposition rather than being era
 - `localization` (Tier 2, complete) and `style-guide` (Tier 1, complete) do not overlap — this is a clean handoff, not an angle-split, the same shape as `networking` ↔ `authentication`. `style-guide` owns what the English source copy says and how it is written and formatted, including its three international-facing contracts (`international-style.md` — country/currency/language codes and telephone numbers; `international-formatting.md` — locale-neutral numeric and date formatting *in copy*; `units-of-measure.md`), none of which touch an API. `localization` owns the mechanics that follow once the copy exists: extraction, storage, variation, and runtime resolution. `international-style.md`'s guidance to write simple structures so translators and machine translation have less to fight is adjacent in intent but is a copy-authoring rule, not an API rule, so the handoff holds. No content is duplicated between the two domains.
 - `localization` (Tier 2, complete) and `xcode` (Tier 1, complete) had an **unresolved** boundary, **resolved 2026-08-07**. Adding a language to an Xcode project and the `.xcloc`/XLIFF export-and-import round trip with translators belong to `xcode` by domain type — it owns GUI/project-file configuration — and are now built there as `knowledge.xcode.project-localizations` and `knowledge.xcode.localization-export-import`. The same expansion closed the older `testing` → `xcode` hand-off (Test Plans and code coverage) as `knowledge.xcode.test-plans` and `knowledge.xcode.code-coverage`. Both hand-offs had been on record longer than either receiving Contract existed, which is what Phase 5's ordering — declare the scope, then build it — was designed to end.
 - `localization` (Tier 2, complete) and `accessibility` (Tier 1, complete) do not overlap and required no boundary bullet of their own: `knowledge.accessibility.accessibility-labels`'s Rule 5 directs agents to "localize accessibility labels through the same localization pipeline as visible strings, not hardcode English text that visible UI already localizes" — it points at the pipeline without describing it, so a one-way `related:` reference is sufficient. Noted here only to record that the overlap was checked, not assumed absent.
+- `localization` and `sf-symbols` do not overlap — clean handoff. `localization`'s
+  `layout-direction-and-rtl-apis` cross-references `sf-symbols`'s `symbol-variants`
+  because some symbols mirror in RTL; `sf-symbols` owns which symbols mirror and how a
+  variant is selected, `localization` owns detecting the layout direction. Neither states
+  the other's rule.
+- `app-store-review-guidelines` and `localization` do not overlap — clean handoff, the
+  same shape as its handoff with `app-tracking-transparency`. `permission-usage-strings`
+  owns the quality rule every usage string must meet; `localization`'s
+  `localized-resources-and-infoplist` owns getting those strings into
+  `InfoPlist.xcstrings` so they are translated at all. One is what the string must say,
+  the other is where it must live.
+- `app-tracking-transparency` and `privacy` do not overlap — clean handoff. This is the
+  third of ATT's three boundaries and the only one that was never written down;
+  `privacy`'s `tracking-domains-and-third-party-sdk-signatures` points at ATT for the
+  authorization API, and ATT states no manifest rule. Recorded 2026-08-08 by the Tier 2
+  review, which found it by walking declared edges rather than by reading.
+- `app-store-review-guidelines` and `authenticationservices` do not overlap — clean
+  handoff. Guideline 4.8 decides *whether* an equivalent login option is required;
+  `authenticationservices` implements Sign in with Apple once that decision is made.
+  `workflow.authentication` is what puts them in that order.
+- `eventkit`, `passkit` and `uikit` are **coupled** on SwiftUI presentation, recorded
+  2026-08-08. Each of the two frameworks owns the fact that it has no SwiftUI-native
+  equivalent and must be bridged; `knowledge.uikit.swiftui-view-representable` Rule 5 owns
+  how the bridge is written, including the constraint that makes it correct. Both
+  Contracts stated the instruction without naming the owner until the Tier 2 review, so an
+  agent was told to wrap a view controller and never reached the rule saying not to wrap
+  its `view`. `photos` will be the third instance and is pre-classified below.
 
 ### Tier 3 pilot — boundaries classified before either domain is written
 
@@ -182,7 +226,10 @@ test whether one classification pass generalizes across two new domains.
   `app-tracking-transparency` ↔ `human-interface-guidelines`. HIG keeps the design
   layer (whether and how to show a pre-permission screen, its copy and buttons, the
   anti-deception rule); `core-location` owns the request call and status handling.
-- ↔ `backgroundtasks` — clean handoff, and the one an agent will get wrong without it.
+- ↔ `backgroundtasks` — **coupled**, and the one an agent will get wrong without it.
+  Re-classified 2026-08-08: choosing region monitoring or significant-change *removes* the
+  need for a `BGAppRefreshTask` rather than sitting beside it, so the choice on one side
+  fixes the choice on the other. `core-location` will own that coupling rule.
   Region monitoring and significant-change updates relaunch the app through Core
   Location's own delegate, not `BGTaskScheduler`. `backgroundtasks` owns `BGTask`
   scheduling; `core-location` owns location-triggered launches. An agent reaching for
@@ -201,7 +248,11 @@ test whether one classification pass generalizes across two new domains.
   domain's; the quality rule they must meet is not.
 - ↔ `human-interface-guidelines` (`privacy`) — angle-split, as above, plus the
   limited-library selection UX, which is a design question rather than an API one.
-- ↔ `uikit-interaction` — clean handoff, following the `eventkit` precedent.
+- ↔ `uikit-interaction` — **coupled**, following the precedent the Tier 2 review had to
+  repair in `eventkit` and `passkit`: both stated "wrap it in a
+  `UIViewControllerRepresentable`" without naming the owner, so the constraint that makes
+  the wrap correct was unreachable. `photos` is the third instance and MUST name
+  `knowledge.uikit.swiftui-view-representable` Rule 5 rather than restate it.
   `eventkit` keeps its own framework's UI hand-off inside the domain
   (`recurrence-rules-and-eventkitui-handoff`), so `photos` owns configuring
   `PHPickerViewController` and reading its results. Wrapping a view controller for
@@ -211,7 +262,10 @@ test whether one classification pass generalizes across two new domains.
   not SwiftUI view composition. `swiftui` owns how the picker is placed in a view
   hierarchy, never how it is configured or what it returns.
 
-Nine boundaries, four existing domains, zero Contracts written. Whether this was worth
+Nine boundaries, four existing domains, zero Contracts written. Two of the nine were
+first written as clean handoffs and re-classified as **coupled** after the Tier 2 review
+showed that "do they overlap?" is the wrong question for a seam — which is itself the
+pilot's first result, arriving before any Contract exists. Whether this was worth
 doing is answerable: if the pilot's own slice finds a seam defect anyway, the rule from
 #0006 is weaker than it looked, and that is a result worth having before nineteen
 domains are built on it.

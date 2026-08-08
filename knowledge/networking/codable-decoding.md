@@ -23,6 +23,7 @@ references:
 depends_on:
   - knowledge.networking.async-data-fetching
 related:
+  - knowledge.foundation.codable-encoding-and-custom-conformance
   - knowledge.networking.async-data-fetching
   - knowledge.networking.url-request-construction
 last_updated: 2026-08-08
