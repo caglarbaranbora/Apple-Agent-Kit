@@ -1,7 +1,7 @@
 # Review Checklist
 
 Status: Approved
-Version: 1.0.0
+Version: 1.1.0
 
 ## Purpose
 
@@ -67,6 +67,11 @@ it.
 
 Ask: **does this rule constrain a choice made in another Contract?** If applying rule
 A changes what is legal under rule B, one of them must say so.
+
+`domain-map.md`'s Cross-Domain Notes carry three values — angle-split, clean handoff,
+and **coupled**. The third exists because the first two both answer *do these overlap?*,
+and two boundaries classified correctly as clean handoffs produced defects anyway. A
+coupled boundary must name which side owns the coupling rule.
 
 Found by hand, twice:
 
@@ -136,6 +141,15 @@ A slice record is evidence only for the architecture it was run against. When a
 pull request deletes an artifact a slice tested, that slice is void and must be marked
 superseded — see slice #0001, which certified a login flow whose five artifacts had all
 been removed.
+
+## Recording a review
+
+A Level 4 review of an existing corpus — as opposed to a diff — is recorded under
+`validation/reviews/NNNN-<scope>.md`, so that a level marked blocking leaves the same
+evidentiary trail Level 5 does. Record the mechanical bounds used, the findings, **and
+the passes**: a review that reports only defects cannot be told apart from one that
+stopped early. Record rejected checks too — review #0001 rejected an atomicity heuristic
+that flagged half the corpus, and that rejection is why L4.1 stays a reading check.
 
 ## Pull request
 

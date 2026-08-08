@@ -1,7 +1,7 @@
 # Validation Model
 
 Status: Approved
-Version: 1.4.0
+Version: 1.5.0
 
 ## Purpose
 
@@ -165,7 +165,9 @@ Checks:
   boundary is the real one is not
 
 Enforced by: contributing/review-checklist.md [[review-checklist]], carried as
-checkboxes in `.github/PULL_REQUEST_TEMPLATE.md`
+checkboxes in `.github/PULL_REQUEST_TEMPLATE.md`. A review of an existing corpus rather
+than a diff is recorded under `validation/reviews/`, the Level 4 counterpart to
+`validation/slices/`.
 
 Until 2026-08-08 this line read "review checklist" and no such checklist existed, so
 a level marked blocking blocked nothing — the defect this document's own second line

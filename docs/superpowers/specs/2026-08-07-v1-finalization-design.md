@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.13.0
+Version: 1.14.0
 Date: 2026-08-07
 
 ## Goal
@@ -320,6 +320,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 | 6 | Draft → Approved promotion, gated on Level 5 — **shipped 2026-08-08, 325 promoted, 3 slices run, 3 defects found, 3 checks added** | 0 |
 | 7 | The Level 4 instrument, and the two untested Workflows — **shipped 2026-08-08, 2 slices run, 11 defects fixed, 1 check generalized** | 0 |
 | 8 | F-003-01 decided; Tier 3 pilot boundaries classified in advance — **shipped 2026-08-08, 2 Skills amended, 9 boundaries pre-classified** | 0 |
+| 9 | Level 4 review of Tier 2, the first ever — **shipped 2026-08-08, 78 KCs reviewed, 1 real defect, 3 structural gaps** | 0 |
 
 Broken edges first, largest last. PRs 0 and 1 add no content; they make the base
 truthful before anything is built on it.
@@ -1054,6 +1055,54 @@ The pilot is falsifiable, which is the point of running two domains rather than
 nineteen: **if the pilot's own slice finds a seam defect anyway, #0006's rule is weaker
 than it looked** — and that is a result worth having before nineteen domains are built
 on it.
+
+### Observed in Phase 9 — the mechanical evidence argued against the review that was needed
+
+**Asked whether Tier 2 should be reviewed before extending, the measurements said no and
+they were measuring the wrong things.** Levels 1-3 passed on all 326 artifacts. The nine
+stale scope claims split 5/4 between tiers, proportional to size, with no Tier 2 skew.
+27 of 31 declared cross-domain boundaries were classified. Every one of those is
+mechanical — and Phase 7's entire finding was that the mechanical checks are not the ones
+that catch semantic defects. **The conclusion drawn from them was over-claimed, and the
+instinct to review anyway was right.**
+
+The gap in the evidence was simple and should have been stated first: Phase 5b's
+read-through covered `human-interface-guidelines` and `style-guide`, both Tier 1.
+**No Tier 2 domain had ever been read against Level 4 at all.**
+
+**The review found one real defect, and it was already propagating.** `eventkit` Rule 6
+and `passkit` Rule 5 each instruct an agent to wrap a view controller in a
+`UIViewControllerRepresentable`, and neither names the Contract that owns the constraint
+making the wrap correct. `photos` was pre-classified in Phase 8 with the note that the
+mechanic "is not duplicated here" — right about duplication, silent about the pointer, and
+therefore the third instance in waiting. **A pre-classification is only as good as the
+question it was written to answer.**
+
+**The largest finding is that the classification vocabulary could not express the defect
+class the last two slices found.** Cross-Domain Notes had two values, angle-split and
+clean handoff, and both answer *do these overlap?* Two boundaries classified as clean
+handoffs produced defects anyway, and in both cases **the classification was correct.**
+A vocabulary that cannot be wrong cannot be complete. The third value, **coupled**, asks
+whether a choice on one side fixes a choice on the other, and requires naming which side
+owns the rule. Two of the nine pilot boundaries were immediately re-classified under it —
+the pilot's first result, before a single Contract exists.
+
+**Two mechanical bounds made an 78-Contract read tractable**, continuing the pattern
+Phase 5b started with its 196-term check: 0 dangling rule-number citations
+repository-wide, and 1,604 symbols in Rules narrowed to the 97 claimed by more than one
+domain. Neither bound decides anything; both say where to look.
+
+**A proposed check was built and rejected, which is worth recording as a result.** An
+atomicity heuristic flagged 131 of 258 Contracts — half the corpus — and the sampled
+Contracts were atomic. `validation-model.md` already gives the reason not to ship it: a
+heuristic that noisy gets silenced. L4.1 stays a reading check, and the rejection is now
+in the record so it is not proposed again.
+
+**`validation/reviews/` is the Level 4 counterpart to `validation/slices/`.** Level 5 has
+left an evidentiary trail since the beginning; Level 4 was marked blocking and left none.
+A review records its mechanical bounds, its findings, its passes, and its rejected
+checks — passes included, because a review reporting only defects cannot be told apart
+from one that stopped early.
 
 ## Validation plan
 

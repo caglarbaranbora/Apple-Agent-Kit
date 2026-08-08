@@ -27,7 +27,8 @@ references:
   - https://developer.apple.com/documentation/passkit/pkaddpassbutton
 depends_on:
   - knowledge.passkit.pass-library-and-authorization
-related: []
+related:
+  - knowledge.uikit.swiftui-view-representable
 last_updated: 2026-08-08
 ```
 
@@ -71,7 +72,7 @@ Agents adding an entry point for this flow SHOULD use `PKAddPassButton` rather t
 
 ### Rule 5
 
-Agents building this flow in SwiftUI MUST wrap `PKAddPassesViewController` in a `UIViewControllerRepresentable`, and MUST NOT expect a SwiftUI-native equivalent to `TipView`/`EventKitUI`'s pattern. This is reasoned framework behavior rather than a literal Apple quote: `PKAddPassesViewController` and `PKAddPassButton` are documented only for iOS, iPadOS, Mac Catalyst, and visionOS with no SwiftUI counterpart in PassKit's topic index — unlike Apple Pay's `PayWithApplePayButton` (see `apple-pay-payment-request`), which does ship a SwiftUI-native button.
+Agents building this flow in SwiftUI MUST wrap `PKAddPassesViewController` in a `UIViewControllerRepresentable` as defined by `knowledge.uikit.swiftui-view-representable` Rule 5 — which this contract does not restate — and MUST NOT expect a SwiftUI-native equivalent to `TipView`/`EventKitUI`'s pattern. This is reasoned framework behavior rather than a literal Apple quote: `PKAddPassesViewController` and `PKAddPassButton` are documented only for iOS, iPadOS, Mac Catalyst, and visionOS with no SwiftUI counterpart in PassKit's topic index — unlike Apple Pay's `PayWithApplePayButton` (see `apple-pay-payment-request`), which does ship a SwiftUI-native button.
 
 ## Compliant Example
 
