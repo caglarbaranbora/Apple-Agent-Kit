@@ -1,6 +1,6 @@
 # Alerts
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.alerts
 artifact_type: knowledge
 title: Alerts
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines rules for when to show an alert, its structure, and button placement/role on iOS/iPadOS.
@@ -25,7 +25,7 @@ related:
   - knowledge.style-guide.presentation-surfaces
   - knowledge.style-guide.general-button-labels
   - knowledge.human-interface-guidelines.color
-last_updated: 2026-08-06
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -96,10 +96,11 @@ destructive choice, giving people a clear, safe way out.
 
 ### Rule 8
 
-Agents MUST use an action sheet instead of an alert when the situation
-calls for multiple choices related to an intentional action, reserving
-alerts for confirming/canceling a single action or communicating a
-problem.
+Agents MUST apply the alert-versus-action-sheet boundary defined in
+`action-sheets` Rule 1 — alerts does not define a separate boundary
+rule. In short: an alert confirms/cancels a single action or
+communicates a problem; multiple choices related to an intentional
+action belong in an action sheet.
 
 ## Compliant Example
 

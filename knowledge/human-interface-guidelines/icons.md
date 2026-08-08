@@ -1,6 +1,6 @@
 # Icons (Interface Icons)
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.icons
 artifact_type: knowledge
 title: Icons (Interface Icons)
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines design rules for in-UI interface icons/glyphs (toolbars, tab bars, buttons) on iOS/iPadOS, distinct from the app icon itself.
@@ -25,7 +25,7 @@ related:
   - knowledge.human-interface-guidelines.app-icons
   - knowledge.human-interface-guidelines.right-to-left
   - knowledge.human-interface-guidelines.sf-symbols
-last_updated: 2026-07-31
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -84,7 +84,9 @@ sizes.
 ### Rule 6
 
 Agents MUST NOT depict replicas of Apple hardware products in
-interface icons.
+interface icons. The same prohibition applies to the app icon under
+`app-icons` Rule 4 — Apple states it per surface, and neither rule
+generalizes to the other.
 
 ## Compliant Example
 

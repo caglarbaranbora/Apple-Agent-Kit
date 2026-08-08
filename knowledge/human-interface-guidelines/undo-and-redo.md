@@ -1,6 +1,6 @@
 # Undo and Redo
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.human-interface-guidelines.undo-and-redo
 artifact_type: knowledge
 title: Undo and Redo
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines design rules for predictable, discoverable undo and redo behavior on iOS/iPadOS, including standard gesture and alert conventions.
@@ -23,7 +23,8 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.feedback
   - knowledge.human-interface-guidelines.sf-symbols
-last_updated: 2026-08-06
+  - knowledge.human-interface-guidelines.touchscreen-gestures
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -82,7 +83,10 @@ fits the task.
 ### Rule 5
 
 Agents MUST NOT redefine the standard iOS/iPadOS undo/redo gestures
-(three-finger swipe, shake-to-undo) for a different purpose.
+(three-finger swipe, shake-to-undo) for a different purpose. The
+general requirement to leave system gestures unconflicted is
+`touchscreen-gestures` Rule 7; this rule adds shake-to-undo and the
+undo/redo semantics specifically.
 
 ### Rule 6
 
