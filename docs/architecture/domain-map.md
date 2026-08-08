@@ -1,7 +1,7 @@
 # Domain Map
 
 Status: Approved
-Version: 1.22.0
+Version: 1.23.0
 
 See: ../glossary.md
 [[glossary]]
@@ -78,7 +78,7 @@ Completed: `style-guide` (Tier 1), `authentication` (Existing/Unscheduled — **
 | HealthKit | healthkit | Health data | Health data access and terminology |
 | MapKit | mapkit | Maps | Map display and interaction conventions |
 | Photos | photos | **Tier 3 pilot — scoped 2026-08-08, unbuilt.** Photo library access: authorization and the limited library, `PHPickerViewController`/`PhotosPicker` configuration and results, asset fetching and image requests, saving to the library | Photo library access and permission conventions |
-| Core Location | core-location | **Tier 3 pilot — scoped 2026-08-08, unbuilt.** Location services: authorization (when-in-use vs. always, the two-stage prompt), `CLLocationManager`/`CLLocationUpdate` delivery, accuracy and `CLLocationAccuracy`, region monitoring and significant-change, and location-triggered launches | Location services access and permission conventions |
+| Core Location | core-location | **Tier 3 pilot — scoped 2026-08-08, built 2026-08-09.** Location services: authorization (when-in-use vs. always, the two-stage prompt), `CLLocationManager`/`CLLocationUpdate` delivery, accuracy and `CLLocationAccuracy`, region monitoring and significant-change, and location-triggered launches | Location services access and permission conventions |
 | Apple Ads | apple-ads | Ad attribution: AdAttributionKit, SKAdNetwork | Ad-campaign attribution and measurement implementation |
 | HomeKit | homekit | Smart-home accessory control | HomeKit accessory and automation implementation |
 | CarPlay | carplay | In-car app UI | CarPlay app template and UI conventions |
@@ -237,6 +237,15 @@ test whether one classification pass generalizes across two new domains.
 - ↔ `mapkit` — `mapkit` is Tier 3 and unbuilt, so it is legitimately future. Display of
   a location on a map is not this domain's, and saying so stays correct until `mapkit`
   ships, at which point `check_scope_vocabulary` fails the build until this is updated.
+  **Corrected 2026-08-09, on building the domain.** The sentence above named the wrong
+  check and the wrong moment. `check_prose_domain_resolves` fails *immediately* on any
+  artifact whose prose names a domain with no artifacts, so the boundary could not be
+  written into the Skill or the Reference the way it is written here at all — both had
+  to describe the future domain without naming it ("a future map-rendering domain"),
+  which is the convention `human-interface-guidelines-patterns` already used for
+  `usernotifications` before it shipped. A boundary against an unbuilt domain is
+  therefore recordable **in this file only**; `docs/` is not scanned as artifacts, and
+  that asymmetry is what makes this file the right home for it.
 
 **`photos`**
 
@@ -261,6 +270,15 @@ test whether one classification pass generalizes across two new domains.
 - ↔ `swiftui` — no overlap. `PhotosPicker` is PhotosUI, part of this domain's surface,
   not SwiftUI view composition. `swiftui` owns how the picker is placed in a view
   hierarchy, never how it is configured or what it returns.
+
+**`core-location` was built against these five entries on 2026-08-09**, and four of the
+five held without amendment: the `privacy` and `app-store-review-guidelines` handoffs
+became `### Excluded` bullets and a delegation rule verbatim, the `human-interface-guidelines`
+angle-split needed no adjudication at authoring time, and the `backgroundtasks` coupling
+became `background-monitoring-and-launches` Rule 4 with this file's named owner intact.
+The fifth, `mapkit`, was corrected above — the entry was right that the boundary exists
+and wrong about how it could be expressed. That is the pilot's second result: a
+pre-classification can be correct about ownership and still be unwritable as stated.
 
 Nine boundaries, four existing domains, zero Contracts written. Two of the nine were
 first written as clean handoffs and re-classified as **coupled** after the Tier 2 review
