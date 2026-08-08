@@ -50,5 +50,6 @@ knowledge.
 
 -   Previews and custom `Layout` protocol conformances — Excluded
 -   Legacy `ObservableObject`/`NavigationView` migration — Deferred
--   `UIGestureRecognizer` and Core Animation — owned by `uikit`
+-   `UIGestureRecognizer` and Core Animation — owned by `uikit`, in its
+    `uikit-interaction` skill
 -   Accessibility APIs — owned by `accessibility`
