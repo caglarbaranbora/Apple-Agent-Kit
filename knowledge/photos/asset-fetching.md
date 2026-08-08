@@ -23,6 +23,7 @@ references:
   - https://developer.apple.com/documentation/photos/phfetchoptions
   - https://developer.apple.com/documentation/photos/phfetchresult
   - https://developer.apple.com/documentation/photos/phasset/fetchassets(with:options:)
+  - https://developer.apple.com/documentation/photos/phasset/location
   - https://developer.apple.com/documentation/photos/phassetcollection
   - https://developer.apple.com/documentation/photos/phphotolibrarychangeobserver
 depends_on:
@@ -30,6 +31,8 @@ depends_on:
 related:
   - knowledge.photos.limited-library
   - knowledge.photos.image-requests
+  - knowledge.core-location.authorization-and-usage-strings
+  - knowledge.privacy.collected-data-types-declaration
 last_updated: 2026-08-09
 ```
 
@@ -44,10 +47,12 @@ This contract defines how an AI coding agent queries the photo library once acce
 -   `PHFetchOptions` predicates and sort descriptors, and the restricted key set each fetching class supports
 -   `PHFetchResult` snapshot and lazy-batching semantics, and why it is not an array
 -   Refreshing a fetch result through `PHPhotoLibraryChangeObserver`
+-   `PHAsset.location` as a fetched asset's recorded capture place, and the authorization it does not require
 
 ### Excluded
 
 -   Obtaining access at all — see `authorization-and-access-levels`; every fetch here requires it
+-   The device's *current* location, which is `knowledge.core-location.authorization-and-usage-strings`' domain entirely, and declaring location as a collected data type once a capture place leaves the device, which is `knowledge.privacy.collected-data-types-declaration`'s; Rule 5 below owns only the fact that an asset's recorded place is neither
 -   Turning a fetched `PHAsset` into an image — see `image-requests`
 -   What limited access removes from a fetch, and the selection-change trigger — see `limited-library` Rules 1 and 4
 -   Writing to the library — see `saving-to-the-library`
@@ -71,9 +76,14 @@ Agents MUST treat a fetch result as a snapshot and refresh it through a register
 
 Agents fetching a collection's contents MUST fetch its members separately rather than expecting the collection object to carry them. Per Apple's documentation, "In the Photos framework, collection objects (including asset collections) do not directly reference their member objects, and there are no other objects that directly reference collection objects. To retrieve the members of an asset collection, fetch them with a `PHAsset` class method such as `fetchAssets(in:options:)`." A `PHAssetCollection` is a handle, not a container, and code that treats it as a list of assets has nothing to iterate.
 
+### Rule 5
+
+Agents MUST read a photo's recorded capture place from `PHAsset.location` and MUST NOT request Core Location authorization in order to obtain it. The property is declared `var location: CLLocation? { get }`, Apple describes it as "The location information for the asset," and notes that "Typically, an asset's location metadata identifies the place where the asset was captured." The `CLLocation` is metadata the library hands back under the grant this contract already depends on, not a fix Core Location produced — `CLLocationManager` authorization governs the device's *current* location and has no part in reading an asset's *recorded* one. A feature that needs only where a photo was taken and prompts for location access is asking the user for data it never uses. The property is optional, so an asset carrying no location metadata MUST be handled as absent rather than force-unwrapped.
+
 ## Compliant Example
 
 ```swift
+import CoreLocation
 import Photos
 
 final class RecentPhotos: NSObject, PHPhotoLibraryChangeObserver {
@@ -82,25 +92,25 @@ final class RecentPhotos: NSObject, PHPhotoLibraryChangeObserver {
     func load() {
         let options = PHFetchOptions()                   // Rule 1: query, not post-filter
         options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        options.fetchLimit = 200
         result = PHAsset.fetchAssets(with: .image, options: options)
         PHPhotoLibrary.shared().register(self)           // Rule 3: refresh, never refetch
     }
-
     func photoLibraryDidChange(_ change: PHChange) {
         guard let details = change.changeDetails(for: result) else { return }
         result = details.fetchResultAfterChanges
     }
-
     func assets(in album: PHAssetCollection) -> PHFetchResult<PHAsset> {
         PHAsset.fetchAssets(in: album, options: nil)     // Rule 4: members are fetched
     }
+    // Rule 5: place ships with the asset -- no manager, no prompt, nil if unrecorded.
+    func place(of asset: PHAsset) -> CLLocation? { asset.location }
 }
 ```
 
 ## Non-Compliant Example
 
 ```swift
+import CoreLocation
 import Photos
 
 func recentPhotos() -> [PHAsset] {
@@ -109,18 +119,23 @@ func recentPhotos() -> [PHAsset] {
     var assets: [PHAsset] = []
     all.enumerateObjects { asset, _, _ in assets.append(asset) }   // violates Rule 2
     // Filtering and sorting in Swift, over every asset the user owns -- violates Rule 1.
-    return assets
-        .filter { $0.creationDate ?? .distantPast > .now.addingTimeInterval(-86_400) }
-        .sorted { ($0.creationDate ?? .distantPast) > ($1.creationDate ?? .distantPast) }
+    return assets.filter { $0.creationDate ?? .distantPast > .now.addingTimeInterval(-86_400) }
+                 .sorted { ($0.creationDate ?? .distantPast) > ($1.creationDate ?? .distantPast) }
 }
 
 func refresh(every seconds: TimeInterval) {
     // Polls instead of observing, so it misses changes and repeats work -- violates Rule 3.
     Timer.scheduledTimer(withTimeInterval: seconds, repeats: true) { _ in _ = recentPhotos() }
 }
+
+func showPlace(of asset: PHAsset, on manager: CLLocationManager) {
+    // Asks for access the feature never uses -- the place is on the asset already,
+    // and the device's current location is a different fact. Violates Rule 5.
+    manager.requestWhenInUseAuthorization()
+}
 ```
 
-Fetches the entire library and narrows it in Swift (Rule 1), copies a lazily-batched result into an array (Rule 2), and polls on a timer instead of registering for the change notifications Photos already sends (Rule 3).
+Fetches the entire library and narrows it in Swift (Rule 1), copies a lazily-batched result into an array (Rule 2), polls on a timer instead of registering for the change notifications Photos already sends (Rule 3), and asks the user for location access to read a place the library already returned (Rule 5).
 
 ## Dependencies
 
@@ -130,5 +145,6 @@ Fetches the entire library and narrows it in Swift (Rule 1), copies a lazily-bat
 -   [Apple Developer — PHFetchOptions](https://developer.apple.com/documentation/photos/phfetchoptions)
 -   [Apple Developer — PHFetchResult](https://developer.apple.com/documentation/photos/phfetchresult)
 -   [Apple Developer — fetchAssets(with:options:)](https://developer.apple.com/documentation/photos/phasset/fetchassets(with:options:))
+-   [Apple Developer — PHAsset.location](https://developer.apple.com/documentation/photos/phasset/location)
 -   [Apple Developer — PHAssetCollection](https://developer.apple.com/documentation/photos/phassetcollection)
 -   [Apple Developer — PHPhotoLibraryChangeObserver](https://developer.apple.com/documentation/photos/phphotolibrarychangeobserver)

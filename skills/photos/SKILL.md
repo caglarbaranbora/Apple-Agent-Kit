@@ -32,7 +32,7 @@ knowledge/photos/.
 -   Presenting `PhotosPicker` or `PHPickerViewController`; setting `selectionLimit`/`maxSelectionCount` or a `PHPickerFilter`; reading `PHPickerResult.itemProvider`/`assetIdentifier` or a `PhotosPickerItem` -> picker-and-selection-results.md
 -   Calling `PHPhotoLibrary.requestAuthorization(for:handler:)`/`authorizationStatus(for:)`; choosing `PHAccessLevel.addOnly` vs `.readWrite`; declaring `NSPhotoLibraryUsageDescription`/`NSPhotoLibraryAddUsageDescription`; branching on `PHAuthorizationStatus` -> authorization-and-access-levels.md
 -   Handling `PHAuthorizationStatus.limited`; calling `presentLimitedLibraryPicker(from:)`; setting `PHPhotoLibraryPreventAutomaticLimitedAccessAlert` -> limited-library.md
--   Building a `PHFetchOptions` query; holding or refreshing a `PHFetchResult`; fetching a `PHAssetCollection`'s members -> asset-fetching.md
+-   Building a `PHFetchOptions` query; holding or refreshing a `PHFetchResult`; fetching a `PHAssetCollection`'s members; reading where a photo was taken from `PHAsset.location` -> asset-fetching.md
 -   Calling `PHImageManager.requestImage(...)`; setting `PHImageRequestOptions`' `isSynchronous`/`deliveryMode`/`isNetworkAccessAllowed`; priming a `PHCachingImageManager` -> image-requests.md
 -   Running `performChanges(_:completionHandler:)`; creating with `PHAssetChangeRequest`/`PHAssetCreationRequest`; capturing `placeholderForCreatedAsset` -> saving-to-the-library.md
 
@@ -54,6 +54,12 @@ knowledge. Photo and video editing (`PHContentEditingInput`,
 docs/architecture/domain-map.md). Capturing a new photo from the camera
 is AVFoundation's and has no Skill yet — report that rather than
 answering.
+
+A photo's recorded capture place is this domain's, not `core-location`'s:
+`PHAsset.location` arrives with the library grant, so asset-fetching.md
+Rule 5 owns it and no location authorization is involved. Route to
+`core-location` only when the task needs the *device's* current or
+ongoing location, which is a different fact about a different subject.
 
 SwiftUI interop with this domain is split deliberately, and the split is
 this Skill's: `PhotosPicker` is SwiftUI-native, so

@@ -54,6 +54,12 @@ Displaying a location on a map belongs to a future map-rendering
 domain, not yet built — report that boundary explicitly rather than
 answering from general knowledge.
 
+Where a *photo* was taken is not this domain's question. `PHAsset.location`
+returns a `CLLocation` under the photo-library grant and needs no
+authorization from here, so a task about a photo's capture place routes to
+`photos` — `knowledge.photos.asset-fetching` Rule 5 owns it. Requesting
+location access to answer it prompts for data the feature never uses.
+
 Scheduling background work with `BGTaskScheduler` is `backgroundtasks`'
 job. The one place the two meet — whether a movement-triggered feature
 should use a scheduled task at all — is answered by

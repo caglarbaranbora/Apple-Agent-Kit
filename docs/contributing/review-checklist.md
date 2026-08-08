@@ -81,6 +81,15 @@ Found by hand, twice:
 - Binding a Keychain item to biometrics fixes the accessibility constant. Two
   Contracts each owned half of one coupled decision and neither said it was coupled
   (slice #0005).
+- `PHAsset.location` returns a `CLLocation`. Photos hands back a type Core Location
+  owns, under the photo-library grant and with no location authorization involved, and
+  neither domain mentioned the other (slice #0007).
+
+The third instance is a different shape from the first two, and the question above would
+not have found it: both earlier defects were two Contracts each *deferring* half of a
+decision, and this one is two Contracts saying nothing at all — there was no rule to ask
+the question of. Ask also: **does this domain hand back a type another domain owns?** A
+returned type is a boundary whether or not any rule has been written about it.
 
 ### L4.4 — Every cross-reference is true at the far end
 
