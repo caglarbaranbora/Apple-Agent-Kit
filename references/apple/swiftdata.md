@@ -1,7 +1,7 @@
 # SwiftData
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,37 +9,38 @@ Version: 0.1.0
 id: reference.apple.swiftdata
 artifact_type: reference
 title: SwiftData
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's SwiftData documentation, scoped to this domain's v1.
 domain: SwiftData
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
-https://developer.apple.com/documentation/swiftdata
-https://developer.apple.com/documentation/swiftdata/model()
-https://developer.apple.com/documentation/swiftdata/attribute(_:originalname:hashmodifier:)
-https://developer.apple.com/documentation/swiftdata/relationship(_:deleterule:minimummodelcount:maximummodelcount:originalname:inverse:hashmodifier:)
-https://developer.apple.com/documentation/swiftdata/transient()
-https://developer.apple.com/documentation/swiftdata/persistentmodel
-https://developer.apple.com/documentation/swiftdata/modelcontainer
-https://developer.apple.com/documentation/swiftdata/modelconfiguration
-https://developer.apple.com/documentation/swiftui/view/modelcontainer(_:)
-https://developer.apple.com/documentation/swiftui/view/modelcontainer(for:inmemory:isautosaveenabled:isundoenabled:onsetup:)
-https://developer.apple.com/documentation/swiftui/environmentvalues/modelcontext
-https://developer.apple.com/documentation/swiftdata/modelcontext
-https://developer.apple.com/documentation/swiftdata/query
-https://developer.apple.com/documentation/swiftdata/fetchdescriptor
 https://developer.apple.com/documentation/foundation/predicate
-https://developer.apple.com/documentation/swiftdata/schema/relationship/deleterule-swift.enum
-https://developer.apple.com/documentation/swiftdata/preserving-your-apps-model-data-across-launches
-https://developer.apple.com/documentation/swiftdata/filtering-and-sorting-persistent-data
+https://developer.apple.com/documentation/swiftdata
+https://developer.apple.com/documentation/swiftdata/attribute(_:originalname:hashmodifier:)
 https://developer.apple.com/documentation/swiftdata/defining-data-relationships-with-enumerations-and-model-classes
 https://developer.apple.com/documentation/swiftdata/deleting-persistent-data-from-your-app
+https://developer.apple.com/documentation/swiftdata/fetchdescriptor
+https://developer.apple.com/documentation/swiftdata/filtering-and-sorting-persistent-data
+https://developer.apple.com/documentation/swiftdata/model()
+https://developer.apple.com/documentation/swiftdata/modelconfiguration
+https://developer.apple.com/documentation/swiftdata/modelcontainer
+https://developer.apple.com/documentation/swiftdata/modelcontainer/maincontext
+https://developer.apple.com/documentation/swiftdata/modelcontext
+https://developer.apple.com/documentation/swiftdata/persistentmodel
+https://developer.apple.com/documentation/swiftdata/preserving-your-apps-model-data-across-launches
+https://developer.apple.com/documentation/swiftdata/query
+https://developer.apple.com/documentation/swiftdata/relationship(_:deleterule:minimummodelcount:maximummodelcount:originalname:inverse:hashmodifier:)
 https://developer.apple.com/documentation/swiftdata/reverting-data-changes-using-the-undo-manager
+https://developer.apple.com/documentation/swiftdata/schema/relationship/deleterule-swift.enum
+https://developer.apple.com/documentation/swiftdata/transient()
+https://developer.apple.com/documentation/swiftui/environmentvalues/modelcontext
+https://developer.apple.com/documentation/swiftui/view/modelcontainer(_:)
+https://developer.apple.com/documentation/swiftui/view/modelcontainer(for:inmemory:isautosaveenabled:isundoenabled:onsetup:)
 
 ## Purpose
 

@@ -1,7 +1,7 @@
 # SF Symbols
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,17 +9,32 @@ Version: 0.1.0
 id: reference.apple.sf-symbols
 artifact_type: reference
 title: SF Symbols
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's SF Symbols API documentation, scoped to this domain's v1.
 domain: SF Symbols
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
+https://developer.apple.com/documentation/swiftui/image/init(_:bundle:)
+https://developer.apple.com/documentation/swiftui/image/init(systemname:)
+https://developer.apple.com/documentation/swiftui/image/init(systemname:variablevalue:)
+https://developer.apple.com/documentation/swiftui/symbolrenderingmode
+https://developer.apple.com/documentation/swiftui/symbolvariants
+https://developer.apple.com/documentation/swiftui/view/foregroundstyle(_:_:_:)
+https://developer.apple.com/documentation/swiftui/view/imagescale(_:)
 https://developer.apple.com/documentation/uikit/configuring-and-displaying-symbol-images-in-your-ui
+https://developer.apple.com/documentation/uikit/uiimage/init(named:)
+https://developer.apple.com/documentation/uikit/uiimage/init(systemname:)
+https://developer.apple.com/documentation/uikit/uiimage/init(systemname:variablevalue:configuration:)
+https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class
+https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class/init(pointsize:weight:scale:)
+https://developer.apple.com/documentation/uikit/uiimage/withconfiguration(_:)
+https://developer.apple.com/documentation/uikit/uiimageview/preferredsymbolconfiguration
+https://developer.apple.com/documentation/uikit/uiview/tintcolor
 
 ## Purpose
 

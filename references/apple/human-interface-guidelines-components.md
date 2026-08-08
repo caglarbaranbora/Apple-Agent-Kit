@@ -1,7 +1,7 @@
 # Human Interface Guidelines — Components
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,18 +9,30 @@ Version: 0.1.0
 id: reference.apple.human-interface-guidelines-components
 artifact_type: reference
 title: Human Interface Guidelines — Components
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for a curated subset of Apple's Human Interface Guidelines Components section (plus one Inputs topic), iOS/iPadOS scope.
 domain: Human Interface Guidelines — Components
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
+https://developer.apple.com/design/human-interface-guidelines/action-sheets
+https://developer.apple.com/design/human-interface-guidelines/alerts
+https://developer.apple.com/design/human-interface-guidelines/buttons
 https://developer.apple.com/design/human-interface-guidelines/components
+https://developer.apple.com/design/human-interface-guidelines/gestures
 https://developer.apple.com/design/human-interface-guidelines/inputs
+https://developer.apple.com/design/human-interface-guidelines/lists-and-tables
+https://developer.apple.com/design/human-interface-guidelines/menus
+https://developer.apple.com/design/human-interface-guidelines/pickers
+https://developer.apple.com/design/human-interface-guidelines/sheets
+https://developer.apple.com/design/human-interface-guidelines/tab-bars
+https://developer.apple.com/design/human-interface-guidelines/text-fields
+https://developer.apple.com/design/human-interface-guidelines/toggles
+https://developer.apple.com/design/human-interface-guidelines/toolbars
 
 ## Purpose
 

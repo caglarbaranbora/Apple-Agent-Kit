@@ -1,7 +1,7 @@
 # Human Interface Guidelines — Patterns
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,17 +9,23 @@ Version: 0.1.0
 id: reference.apple.human-interface-guidelines-patterns
 artifact_type: reference
 title: Human Interface Guidelines — Patterns
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for a curated subset of Apple's Human Interface Guidelines Patterns section, iOS/iPadOS scope.
 domain: Human Interface Guidelines — Patterns
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
+https://developer.apple.com/design/human-interface-guidelines/feedback
+https://developer.apple.com/design/human-interface-guidelines/notifications
+https://developer.apple.com/design/human-interface-guidelines/onboarding
 https://developer.apple.com/design/human-interface-guidelines/patterns
+https://developer.apple.com/design/human-interface-guidelines/searching
+https://developer.apple.com/design/human-interface-guidelines/settings
+https://developer.apple.com/design/human-interface-guidelines/undo-and-redo
 
 ## Purpose
 

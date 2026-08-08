@@ -1,7 +1,7 @@
 # v1 Finalization — Design
 
 Status: Approved
-Version: 1.7.0
+Version: 1.8.0
 Date: 2026-08-07
 
 ## Goal
@@ -314,6 +314,7 @@ Phase 5 touches six domains and ships as one PR per domain.
 | 5 | `networking` — completion-handler, `URLSessionDelegate`, `dataTaskPublisher` — **shipped 2026-08-07, 7 KC** | 5-6 |
 | 6 | `uikit` — gesture recognizers, Core Animation and custom transitions, SwiftUI interop — **shipped 2026-08-08, 8 KC, Skill split in two** | 6-7 |
 | 7 | `app-store-review-guidelines` — 1.2, 1.5, 1.6, 4.1, 4.8, 5.2 — **shipped 2026-08-08, 8 KC + 5.6.1** | 8-10 |
+| 8 | The Reference indexing pass across all remaining domains, and the sixteenth check that makes coverage enforceable — **shipped 2026-08-08, 0 KC, 124 URLs indexed** | 0 |
 
 Broken edges first, largest last. PRs 0 and 1 add no content; they make the base
 truthful before anything is built on it.
@@ -411,6 +412,9 @@ The Reference pass this implies is larger than "the remaining five" and is still
 foldable into a domain PR. It also wants a sixteenth check — one that reads Contract
 `references:` and reports any URL no Reference indexes — which is the only thing that
 would make coverage enforceable rather than periodically re-measured by hand.
+**Both shipped in PR 8, 2026-08-08**: the re-measurement had drifted again by then (15
+References, not 17, `uikit` and `app-store-review-guidelines` having been fixed by
+construction), which is itself the argument for the check. See Observed in PR 8.
 
 Guideline 4.8 satisfies clause (i) as well as (iv): `workflow.authentication`, shipped
 in Phase 4, walks an agent through building a sign-in screen across five domains and
@@ -657,6 +661,63 @@ by the prose describing its own repository.
 than trimmed, on PR 5's reasoning: manufactured slack hides the signal. If it splits,
 Apple's own five sections (Safety, Performance, Business, Design, Legal) are the seam,
 and unlike `uikit` the S1 argument is already made for us by the source's structure.
+
+### Observed in PR 8 — the Reference pass and the sixteenth check
+
+PR 8 is the pass this document deferred out of PRs 2 through 7, and it closes with the
+check that makes the deferral impossible to repeat. **124 cited URLs across 15 domains
+were indexed by no Reference at all**; all 124 are now indexed and
+`check_reference_indexes_citations` fails the build if a new one appears. Run against
+`main` immediately before this PR, the check reports **155 findings** — 124 URLs, some
+cited by more than one Contract. After it, zero.
+
+**The measurement in this document was itself an under-count, for the third time.** PR 3
+counted 9 References on the "indexes ≤2 while citing >2" rule; PR 5 corrected that to 17
+on the right rule; PR 8 measured 15 — the two-PR difference being `uikit` and
+`app-store-review-guidelines`, fixed by construction. Each correction was made by
+someone re-measuring by hand, which is exactly the mode of failure the new check ends.
+No hand-maintained coverage number survived contact with the next pass.
+
+**Third consecutive PR in which indexing surfaced a stale URL, and it is the same
+redirect as PR 6's.** `localauthentication/laerror` and `uikit/uiimage/symbolconfiguration`
+both 301 to a `-swift.struct`/`-swift.class` suffixed form. PR 6 found three UIKit URLs
+that redirect the same direction, and `knowledge/sf-symbols/symbol-weight-and-scale.md`
+was already citing the suffixed spelling while two sibling Contracts cited the bare one.
+The generalisation is now safe to state: Apple disambiguates a path whenever a name is
+both a type and a member, **the bare form is never the stable one**, and a domain can
+carry both spellings of one page without anything noticing — the same
+two-spellings-of-one-page defect PR 7 found, in a second domain.
+
+**`used-by-complete` needed no repair.** Indexing 124 URLs produced zero new
+`## Used By` findings and zero cross-domain edges. That is worth recording because it
+was not the expected result — PR 2's equivalent step immediately found a missing row.
+The hand-maintained reverse indexes were right; what was missing was any mechanism that
+could have told us so.
+
+**The size-versus-coherence conflict recorded in PR 6 finally had a case.**
+`references/apple/localization.md` reached 100 lines against the 98-line cap once its 7
+missing URLs were indexed. `reference-spec.md` makes not fitting a reason to split the
+domain's Skill; `skill-management.md` S1 says "Size is not the trigger." Localization's
+six Contracts are one task family — make the app's text work in another language — so
+the split would have been driven purely by arithmetic, which S1 forbids. Resolved by
+deleting two lines of genuinely redundant prose: the Purpose's opening paragraph
+re-enumerated the six areas that `## Primary Topics` already lists in more detail. **The
+conflict is real but did not have to be adjudicated here**, because a Reference that is
+2 lines over has a trim available and one that is 20 over does not. That is the
+threshold at which it must actually be settled.
+
+**A fifth defect class, found by reading rather than by measuring.** Four References
+described built domains as `future` or `unbuilt`: `foundation` on `localization` and
+`combine`, `local-authentication` and `privacy` on `security`, `security` on
+`authenticationservices`. `check_scope_vocabulary` already forbids exactly this — and
+its own docstring credits the discovery to `skills/foundation/SKILL.md` — but the check
+was scoped to Skills, so `references/apple/foundation.md` carried the identical claim
+one layer away, uncaught. The check now reads a Reference's `## Purpose` too, and
+reports all five claims when run against pre-PR `main`. The marker vocabulary stays a
+Skill rule: `Deferred`/`Excluded` are defined by `skill-spec.md` and a Reference has no
+`## Stop Conditions`. **A check written from one layer's defect should be asked, at
+once, whether the other layers state the same fact** — References, Skills and Workflows
+all write scope prose, and only one of them was being read.
 
 ### Deviation taken in PR 1
 

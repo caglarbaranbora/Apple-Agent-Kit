@@ -1,7 +1,7 @@
 # Local Authentication
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,17 +9,25 @@ Version: 0.1.0
 id: reference.apple.local-authentication
 artifact_type: reference
 title: Local Authentication
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's LocalAuthentication framework documentation, scoped to this domain's v1.
 domain: Local Authentication
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
+https://developer.apple.com/documentation/bundleresources/information-property-list/nsfaceidusagedescription
 https://developer.apple.com/documentation/localauthentication
+https://developer.apple.com/documentation/localauthentication/accessing-keychain-items-with-face-id-or-touch-id
+https://developer.apple.com/documentation/localauthentication/labiometrytype
+https://developer.apple.com/documentation/localauthentication/lacontext
+https://developer.apple.com/documentation/localauthentication/laerror-swift.struct
+https://developer.apple.com/documentation/localauthentication/lapolicy
+https://developer.apple.com/documentation/localauthentication/logging-a-user-into-your-app-with-face-id-or-touch-id
+https://developer.apple.com/documentation/security/secaccesscontrolcreateflags
 
 ## Purpose
 
@@ -28,10 +36,10 @@ scoped to this domain's v1: biometry availability and type detection,
 policy evaluation, reason-string/Info.plist requirements, error handling,
 context lifecycle, Keychain-biometric binding, and fallback UX.
 macOS/watchOS-specific behavior, general Keychain storage APIs (owned by
-the future `security` domain), and Sign in with Apple/passkeys (boundary
-unresolved between `authentication`/`authenticationservices`/
-`sign-in-with-apple` — see domain-map.md Cross-Domain Notes) are out of
-scope.
+the `security` domain, built 2026-08), and Sign in with Apple (owned by the
+`authenticationservices` domain, built 2026-08, which defers passkeys and
+WebAuthn within its own scope; the `authentication` domain that once shared
+this boundary was retired 2026-08-07) are out of scope.
 
 ## Primary Topics
 

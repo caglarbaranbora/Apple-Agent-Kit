@@ -1,7 +1,7 @@
 # Human Interface Guidelines
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,17 +9,32 @@ Version: 0.1.0
 id: reference.apple.human-interface-guidelines
 artifact_type: reference
 title: Human Interface Guidelines
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's Human Interface Guidelines — Foundations section, iOS/iPadOS scope.
 domain: Human Interface Guidelines
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
 
+https://developer.apple.com/design/human-interface-guidelines/accessibility
+https://developer.apple.com/design/human-interface-guidelines/app-icons
+https://developer.apple.com/design/human-interface-guidelines/branding
+https://developer.apple.com/design/human-interface-guidelines/color
+https://developer.apple.com/design/human-interface-guidelines/dark-mode
 https://developer.apple.com/design/human-interface-guidelines/foundations
+https://developer.apple.com/design/human-interface-guidelines/icons
+https://developer.apple.com/design/human-interface-guidelines/images
+https://developer.apple.com/design/human-interface-guidelines/inclusion
+https://developer.apple.com/design/human-interface-guidelines/layout
+https://developer.apple.com/design/human-interface-guidelines/materials
+https://developer.apple.com/design/human-interface-guidelines/motion
+https://developer.apple.com/design/human-interface-guidelines/privacy
+https://developer.apple.com/design/human-interface-guidelines/right-to-left
+https://developer.apple.com/design/human-interface-guidelines/sf-symbols
+https://developer.apple.com/design/human-interface-guidelines/typography
 
 ## Purpose
 
@@ -28,8 +43,8 @@ section, iOS/iPadOS scope. A curated subset of Patterns and Components
 (plus one Inputs topic) is covered separately by
 `references/apple/human-interface-guidelines-patterns.md` and
 `references/apple/human-interface-guidelines-components.md` — see
-docs/architecture/domain-map.md for full scope and what remains
-unbuilt.
+docs/architecture/domain-map.md for full scope. The remaining
+Patterns/Components/Inputs topics are **Excluded**, not deferred.
 
 ## Primary Topics
 

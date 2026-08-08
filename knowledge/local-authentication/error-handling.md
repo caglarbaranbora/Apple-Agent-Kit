@@ -1,6 +1,6 @@
 # Error Handling
 
-Status: Draft Version: 0.1.0
+Status: Draft Version: 0.2.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Draft Version: 0.1.0
 id: knowledge.local-authentication.error-handling
 artifact_type: knowledge
 title: Error Handling
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Defines the required agent behavior for each LAError code returned by canEvaluatePolicy/evaluatePolicy, so failures are handled with the correct recovery instead of a generic failure message.
@@ -18,13 +18,13 @@ tags:
   - laerror
   - error-handling
 references:
-  - https://developer.apple.com/documentation/localauthentication/laerror
+  - https://developer.apple.com/documentation/localauthentication/laerror-swift.struct
   - https://developer.apple.com/documentation/localauthentication/lacontext
 depends_on: []
 related:
   - knowledge.local-authentication.availability-and-biometry-type
   - knowledge.local-authentication.fallback-ux-and-passcode
-last_updated: 2026-08-05
+last_updated: 2026-08-08
 ```
 
 ## Intent
@@ -137,5 +137,5 @@ None.
 
 ## References
 
--   [Apple Developer — LAError](https://developer.apple.com/documentation/localauthentication/laerror)
+-   [Apple Developer — LAError](https://developer.apple.com/documentation/localauthentication/laerror-swift.struct)
 -   [Apple Developer — LAContext](https://developer.apple.com/documentation/localauthentication/lacontext)

@@ -1,7 +1,7 @@
 # Foundation
 
 Status: Draft
-Version: 0.1.0
+Version: 0.2.0
 
 ## Metadata
 
@@ -9,12 +9,12 @@ Version: 0.1.0
 id: reference.apple.foundation
 artifact_type: reference
 title: Foundation
-version: 0.1.0
+version: 0.2.0
 status: Draft
 owner: Apple Agent Kit
 summary: Reference index for Apple's Foundation framework documentation, scoped to this domain's v1.
 domain: Foundation
-last_updated: 2026-08-07
+last_updated: 2026-08-08
 ```
 
 ## Source
@@ -52,9 +52,10 @@ directories (`Documents`/`Caches`/`Application Support`, safe file I/O,
 Explicitly out of scope for v1: general String/Unicode text processing,
 `NotificationCenter`, the `Result` type, GCD/`DispatchQueue` (owned by a
 future concurrency-focused domain), Locale/Bundle localization and
-translation workflow mechanics (owned by the future `localization`
-domain, Tier 2, unbuilt), Combine (future `combine` domain, Tier 2,
-unbuilt), and network-response `Codable` decoding (owned by
+translation workflow mechanics (owned by the `localization` domain, built
+2026-08), Combine (owned by the `combine` domain, built 2026-08, with
+`dataTaskPublisher` specifically owned by `networking`), and
+network-response `Codable` decoding (owned by
 `networking`'s `codable-decoding.md`). Unit-of-measure UI copy wording
 (spelling out vs. abbreviating, spacing, capitalization once a value is
 already display text) is owned by `style-guide`'s `units-of-measure.md`;
