@@ -552,9 +552,91 @@ class TestScopeVocabulary(RepoTestCase):
     def stop(self, text):
         self.repo.edit("skills/example/SKILL.md", "Stop if no contract matches.", text)
 
+    def other_domain(self):
+        """A second built domain, so `future `other`` is a false claim."""
+        self.repo.write(
+            "knowledge/other/thing.md",
+            KNOWLEDGE.replace("knowledge.example.thing", "knowledge.other.thing")
+            .replace("domain: Example", "domain: Other"),
+        )
+
     def test_ambiguous_phrasing_is_reported(self):
         self.stop("Widgets are out of scope for this skill.")
         self.assertRule("scope-vocabulary")
+
+    def test_a_knowledge_contract_calling_a_built_domain_future_is_reported(self):
+        # The third place this class surfaced -- after Skills and References --
+        # and the largest: 258 Contracts had never been scanned.
+        self.other_domain()
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            "## Intent\n\nIntent.",
+            "## Intent\n\nGeneral handling is the future `other` domain's.",
+        )
+        self.assertRule("scope-vocabulary")
+
+    def test_an_excluded_list_calling_a_built_domain_future_is_reported(self):
+        self.other_domain()
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            "## Rules",
+            "## Scope\n\n### Excluded\n\n-   Other things — future `other` domain\n\n## Rules",
+        )
+        self.assertRule("scope-vocabulary")
+
+    def test_a_workflow_calling_a_built_domain_future_is_reported(self):
+        # Workflows state scope too, and were never covered either.
+        self.other_domain()
+        self.repo.write("skills/second/SKILL.md", SKILL.replace("example", "second"))
+        self.repo.write(
+            "workflows/flow/WORKFLOW.md",
+            "# Flow\n\nStatus: Approved\nVersion: 1.0.0\n\n## Metadata\n\n``` yaml\n"
+            "id: workflow.flow\nartifact_type: workflow\ntitle: Flow\n"
+            "version: 1.0.0\nstatus: Approved\nlast_updated: 2026-08-08\n"
+            "skills: [skill.example.foundations, skill.second.foundations]\n"
+            "related: []\n```\n\n"
+            "## Purpose\n\nExcludes the future `other` domain.\n\n## Scope\n\nS.\n\n"
+            "## Trigger Conditions\n\nT.\n\n## Skill Sequence\n\n1. a\n2. b\n\n"
+            "## Exit Conditions\n\nE.\n",
+        )
+        self.assertRule("scope-vocabulary")
+
+    def test_an_unbuilt_domain_may_still_be_called_future(self):
+        # `name not in domains` is what makes a body-wide scan safe: the 19
+        # Tier 3 domains have not shipped, and saying so is correct.
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            "## Intent\n\nIntent.",
+            "## Intent\n\nMaps are the future `mapkit` domain's.",
+        )
+        self.assertNotIn("scope-vocabulary", self.repo.rules())
+
+    def test_a_domain_may_call_itself_future_without_being_reported(self):
+        # An artifact describing its own domain's unbuilt topics is a Deferred
+        # marker, not a misdirection -- there is nowhere else to send anyone.
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            "## Intent\n\nIntent.",
+            "## Intent\n\nSome topics await the future `example` build-out.",
+        )
+        self.assertNotIn("scope-vocabulary", self.repo.rules())
+
+    def test_a_code_block_is_not_a_scope_claim(self):
+        # Fenced code is an example, not prose. Matching it would flag sample
+        # output that happens to contain the words.
+        self.other_domain()
+        self.repo.edit(
+            "knowledge/example/thing.md",
+            "## Compliant Example\n\nOK.",
+            "## Compliant Example\n\n```swift\n// future `other` domain\n```\n",
+        )
+        self.assertNotIn("scope-vocabulary", self.repo.rules())
+
+    def test_the_real_repository_has_no_stale_scope_claims(self):
+        findings = validate_repo.check_scope_vocabulary(
+            validate_repo.load_artifacts(REPO_ROOT), REPO_ROOT
+        )
+        self.assertEqual([str(f) for f in findings], [])
 
     def test_line_wrapped_ambiguous_phrasing_is_reported(self):
         # `swiftui` wraps between "this" and "skill". Matching the raw text

@@ -51,7 +51,7 @@ This contract defines how an AI coding agent implements a `TimelineProvider` —
 -   Declaring the `Widget`/`WidgetConfiguration` that owns this provider — see `widget-declaration-and-families`
 -   `widgetURL`/`Link`/`Button(intent:)`/`Toggle(_:isOn:intent:)` interactivity — see `widget-interactivity-and-deep-links`
 -   `WidgetCenter.reloadTimelines`/`reloadAllTimelines` and the refresh budget — see `timeline-reloading-and-refresh-budget`
--   `AppIntentTimelineProvider`'s intent-specific parameter handling — deferred to the future `app-intents` domain
+-   `AppIntentTimelineProvider`'s intent-specific parameter handling — owned by the `app-intents` domain
 
 ## Rules
 

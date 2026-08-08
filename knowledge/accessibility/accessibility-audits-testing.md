@@ -46,7 +46,7 @@ walkthrough.
 
 ### Excluded
 
--   General XCTest/Swift Testing/UI-testing conventions beyond accessibility audits — owned by the future `testing` domain
+-   General XCTest/Swift Testing/UI-testing conventions beyond accessibility audits — owned by the `testing` domain
 
 ## Rules
 

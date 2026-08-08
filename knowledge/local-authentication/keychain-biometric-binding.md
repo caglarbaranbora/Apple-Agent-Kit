@@ -23,6 +23,7 @@ references:
   - https://developer.apple.com/documentation/security/restricting-keychain-item-accessibility
 depends_on: []
 related:
+  - knowledge.security.keychain-accessibility-levels
   - knowledge.local-authentication.policy-evaluation
   - knowledge.local-authentication.context-lifecycle
 last_updated: 2026-08-08
@@ -34,9 +35,8 @@ This contract defines how an AI coding agent binds a Keychain item to
 biometric authentication — the exact seam between LocalAuthentication and
 Keychain — so a stored secret (e.g. a session token) is genuinely
 protected by Face ID/Touch ID rather than merely stored alongside a
-separate, disconnected authentication check. General Keychain item
-storage (`SecItemAdd`/`SecItemCopyMatching` for non-biometric-bound
-items) is out of scope for this domain; see the future `security` domain.
+separate, disconnected authentication check. General Keychain item storage
+for non-biometric-bound items is `security`'s, as the Excluded list says.
 
 ## Scope
 
@@ -49,7 +49,7 @@ items) is out of scope for this domain; see the future `security` domain.
 
 ### Excluded
 
--   General Keychain item storage/retrieval for non-biometric-bound items — future `security` domain
+-   General Keychain item storage/retrieval for non-biometric-bound items — owned by `security`
 -   `LAContext` creation and policy evaluation themselves — see `policy-evaluation`, `context-lifecycle`
 
 ## Rules
@@ -58,37 +58,41 @@ items) is out of scope for this domain; see the future `security` domain.
 
 Agents MUST create the item's `SecAccessControl` with
 `SecAccessControlCreateWithFlags`, passing a biometry-related flag
-(`.biometryCurrentSet` or `.biometryAny`) combined with an accessibility
-constant restricted to the device (e.g. `.whenUnlockedThisDeviceOnly`) —
-a Keychain item written without a biometry flag in its access control is
-retrievable without any biometric prompt at all, regardless of how the
-app's own UI flow looks.
+(`.biometryCurrentSet` or `.biometryAny`) — a Keychain item written
+without a biometry flag in its access control is retrievable without any
+biometric prompt at all, regardless of how the app's own UI flow looks.
+Agents MUST pair that flag with
+`kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly`, the constant Apple
+passes in its own example, and MUST NOT treat the accessibility constant
+as free to choose: per Apple's documentation it "prevents items from being
+stored if the device has no passcode", so a weaker one leaves a
+biometry-bound item on a device whose passcode was later removed. That
+constant's semantics are `knowledge.security.keychain-accessibility-levels`
+Rule 3.
 
 ### Rule 2
 
 Agents MUST choose `.biometryCurrentSet` when the item should become
 inaccessible the moment the user's enrolled biometrics change (e.g. a new
-fingerprint is added, or Face ID is reset) — this is the correct choice
-for high-sensitivity items, since an enrollment change could mean a
-different physical person now has biometric access to the device.
+fingerprint is added, or Face ID is reset) — the correct choice for
+high-sensitivity items, since an enrollment change could mean a different
+physical person now has biometric access to the device.
 
 ### Rule 3
 
 Agents MUST choose `.biometryAny` only when the item should remain
-accessible across a biometry re-enrollment (e.g. a convenience-login
-token where surviving a fingerprint re-enrollment is preferred to forcing
-a full re-login) — this is a deliberate security/convenience tradeoff,
-not a default; `.biometryCurrentSet` is the safer default absent a
-specific reason to choose otherwise.
+accessible across a biometry re-enrollment (e.g. a convenience-login token
+where surviving re-enrollment beats forcing a full re-login) — a deliberate
+security/convenience tradeoff, not a default; `.biometryCurrentSet` is the
+safer default absent a specific reason.
 
 ### Rule 4
 
 Agents MUST attach the same `LAContext` used for the biometric prompt to
 the Keychain query via `kSecUseAuthenticationContext` when reading a
 biometric-protected item immediately after a successful `evaluatePolicy`
-call — omitting this attribute causes the Keychain query to trigger its
-own separate, redundant biometric prompt instead of reusing the
-already-succeeded evaluation.
+call — omitting it makes the Keychain query trigger its own separate,
+redundant prompt instead of reusing the already-succeeded evaluation.
 
 ## Compliant Example
 
@@ -96,7 +100,7 @@ already-succeeded evaluation.
 var accessControlError: Unmanaged<CFError>?
 guard let accessControl = SecAccessControlCreateWithFlags(
     kCFAllocatorDefault,
-    kSecAttrAccessibleWhenUnlockedThisDeviceOnly,
+    kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,
     .biometryCurrentSet,
     &accessControlError
 ) else {
@@ -120,7 +124,7 @@ let readQuery: [String: Any] = [
     kSecReturnData as String: true
 ]
 ```
-Uses `.biometryCurrentSet` for a sensitive token, and reuses the already-evaluated context via `kSecUseAuthenticationContext` on read. (Rules 1, 2, 4)
+Pairs `.biometryCurrentSet` with `kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly`, and reuses the already-evaluated context via `kSecUseAuthenticationContext` on read. (Rules 1, 2, 4)
 
 ## Non-Compliant Example
 

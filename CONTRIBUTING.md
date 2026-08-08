@@ -11,8 +11,18 @@ By submitting a pull request, you agree that your contribution is licensed to th
 1. Read `CLAUDE.md` for repo dev conventions (validation scripts, file naming, layer order) and the table of normative specs.
 2. Read `AGENTS.md` if your change touches how Skills/Knowledge Contracts route — it defines the layer order (References → Knowledge → Skills → Workflows) and what's forbidden (e.g. embedding domain knowledge inside Skills, duplicating Knowledge Contracts, routing from one Skill to another).
 3. Read `docs/specifications/skill-management.md` if you're adding a Knowledge Contract to an existing Skill, splitting a Skill, or retiring one — it lists everything that has to change in the same commit.
-4. Run the validation scripts under `scripts/` against any new or changed artifact before opening the PR.
-5. Keep changes scoped to one domain/vertical slice per PR where possible.
+4. Run all four validation scripts before opening the PR. They have different scopes and only the first two are per-artifact:
+
+   ```bash
+   python3 scripts/validate_artifact.py . --all    # Level 1, every artifact, structural
+   python3 scripts/validate_repo.py .              # Levels 2-3, repository-wide
+   python3 scripts/check_transitions.py .          # any `status:` you changed
+   python3 scripts/check_links.py . --files <changed files>   # any citation you touched
+   python3 -m unittest discover tests/             # if you changed a script
+   ```
+
+5. Work `docs/contributing/review-checklist.md` against your diff. Levels 1-3 are the scripts above; Levels 4 and 5 are semantic and no script decides them. The pull request template carries them as checkboxes.
+6. Keep changes scoped to one domain/vertical slice per PR where possible.
 
 ## What makes a good contribution
 

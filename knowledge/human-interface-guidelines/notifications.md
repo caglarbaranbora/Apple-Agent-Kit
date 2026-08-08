@@ -35,7 +35,7 @@ iOS/iPadOS: what a notification should say, when to avoid sending
 one, how to behave while the app is foregrounded, and how to use
 actions and badges. It does not cover `UNUserNotificationCenter`,
 `UNAuthorizationOptions`, or any UserNotifications framework API,
-which belong to a future dedicated `usernotifications` domain.
+which belong to the `usernotifications` domain.
 
 ## Scope
 
@@ -50,7 +50,7 @@ which belong to a future dedicated `usernotifications` domain.
 
 ### Excluded
 
--   `UNUserNotificationCenter`/`UNAuthorizationOptions` implementation — future `usernotifications` domain
+-   `UNUserNotificationCenter`/`UNAuthorizationOptions` implementation — owned by `usernotifications`
 -   Notification and action copy/wording specifics — see `style-guide`
 -   Permission purpose-string wording and system-alert mechanics — see `privacy`
 -   Interface-icon rendering mechanics for action icons — see `sf-symbols`
