@@ -783,7 +783,16 @@ suite were never in CI — they existed only on the machine of whoever remembere
 them, while `validation-model.md` marked Levels 2-3 blocking. Worse, the three
 hand-rolled per-type `find` loops covered `knowledge/`, `skills/` and `references/`, so
 `workflows/` had gone unvalidated since Phase 4 created the layer; a `WORKFLOW.md` with
-an invalid version passes CI today, verified by breaking one. **A validation level that
+an invalid version passes CI today, verified by breaking one. **And fixing that broke the merge, which is its own lesson.** Renaming the job to
+describe its new contents turned `mergeable` from CLEAN to BLOCKED instantly: branch
+protection matches a required check by its **displayed name**, so the required context
+`Run Level 1 structural validation` would never have reported again and every future
+pull request would have waited on it forever. Levels 2-3 and the tests therefore went
+into a *second job* rather than a second step, and the constraint is now written in the
+workflow beside the name. **A CI job name is an API with an off-repository consumer**,
+and the consumer is a setting no file in this repository can see.
+
+**A validation level that
 names its enforcement is still an aspiration if nothing runs it** — the same sentence
 this document's opening applies to unenforced levels applies to unrun ones, and Phase 3
 closed the first half of it while leaving the second open for four phases.
