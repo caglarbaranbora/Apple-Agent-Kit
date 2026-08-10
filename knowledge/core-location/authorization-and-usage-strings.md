@@ -56,6 +56,7 @@ This contract defines how an AI coding agent obtains Core Location authorization
 -   How a usage-description string is *worded* to survive App Review — see `knowledge.app-store-review-guidelines.permission-usage-strings`
 -   Whether and how to show a pre-permission explanation screen before the system prompt, and its copy — see `knowledge.human-interface-guidelines.privacy`
 -   Declaring Location as a collected data type in `PrivacyInfo.xcprivacy` — see `knowledge.privacy.collected-data-types-declaration`
+-   The place a photo was *captured*, which arrives on `PHAsset.location` under the photo-library grant and requires no authorization from this domain — see `knowledge.photos.asset-fetching` Rule 5, which owns that fact; nothing here applies to it
 
 ## Rules
 
@@ -139,7 +140,6 @@ Requests Always without reading the status first (Rule 1), skips the when-in-use
 None within this domain — this is the foundational contract every other Core Location Knowledge Contract assumes access has already been granted correctly.
 
 ## References
-
 -   [Apple Developer — Requesting authorization to use location services](https://developer.apple.com/documentation/corelocation/requesting-authorization-to-use-location-services)
 -   [Apple Developer — CLAuthorizationStatus](https://developer.apple.com/documentation/corelocation/clauthorizationstatus)
 -   [Apple Developer — CLLocationManager.authorizationStatus](https://developer.apple.com/documentation/corelocation/cllocationmanager/authorizationstatus-swift.property)

@@ -1,7 +1,7 @@
 # Domain Map
 
 Status: Approved
-Version: 1.24.0
+Version: 1.25.0
 
 See: ../glossary.md
 [[glossary]]
@@ -284,6 +284,15 @@ test whether one classification pass generalizes across two new domains.
 - ↔ `swiftui` — no overlap. `PhotosPicker` is PhotosUI, part of this domain's surface,
   not SwiftUI view composition. `swiftui` owns how the picker is placed in a view
   hierarchy, never how it is configured or what it returns.
+- ↔ `core-location` — **coupled, and added 2026-08-09 by vertical slice #0007, not by the
+  classification pass.** `PHAsset.location` is declared `var location: CLLocation? { get }`:
+  the Photos framework hands back a Core Location type under the photo-library grant, with
+  no Core Location authorization involved at all. `photos` owns that fact, because the
+  question only exists once an asset is in hand — `knowledge.photos.asset-fetching` Rule 5,
+  with `knowledge.core-location.authorization-and-usage-strings` excluding it in the same
+  terms. Same shape as `core-location` ↔ `backgroundtasks`: the choice on one side removes
+  a call on the other. Left unowned, the two failure modes are a stop-and-report (the task
+  cannot be completed) or an unnecessary location prompt for data the feature never uses.
 
 **`core-location` was built against these five entries on 2026-08-09**, and four of the
 five held without amendment: the `privacy` and `app-store-review-guidelines` handoffs
@@ -294,7 +303,9 @@ The fifth, `mapkit`, was corrected above — the entry was right that the bounda
 and wrong about how it could be expressed. That is the pilot's second result: a
 pre-classification can be correct about ownership and still be unwritable as stated.
 
-**`photos` was built against these four entries on 2026-08-09**, and three of the four held
+**`photos` was built against these four pre-classified entries on 2026-08-09** — the fifth
+bullet above, `core-location`, was added afterwards by slice #0007 and is outside this
+count — and three of the four held
 without amendment: the `privacy` and `app-store-review-guidelines` handoffs became
 `### Excluded` bullets and a delegation rule, and the `human-interface-guidelines`
 angle-split needed no adjudication. The fourth, `uikit-interaction`, was corrected above.
@@ -311,6 +322,15 @@ Contracts, because "authorization and the limited library" and "asset fetching a
 requests" are each two atomic concepts, and merging either pair breached the 150-line cap
 before the rules were finished.
 
+**Vertical slice #0007 ran the pilot's own test on 2026-08-09**, and the rule from #0006
+survived it: under a task touching four of the nine pre-classified boundaries, none
+produced a seam defect at routing time. The one defect it found is at the tenth boundary —
+`photos` ↔ `core-location`, recorded above — which this pass never classified, because the
+pass enumerated each new domain against **built** domains only. Two domains built in the
+same phase are structurally invisible to that method: neither exists when the other is
+being classified. That is a defect in the classification *method*, not in #0006's rule,
+and it is now a rule of its own in the Rules section below.
+
 Nine boundaries, four existing domains, zero Contracts written. Two of the nine were
 first written as clean handoffs and re-classified as **coupled** after the Tier 2 review
 showed that "do they overlap?" is the wrong question for a seam — which is itself the
@@ -318,6 +338,14 @@ pilot's first result, arriving before any Contract exists. Whether this was wort
 doing is answerable: if the pilot's own slice finds a seam defect anyway, the rule from
 #0006 is weaker than it looked, and that is a result worth having before nineteen
 domains are built on it.
+
+**Answered 2026-08-09 by slice #0007.** The slice found a seam defect and the rule
+survived, because the defect is at none of the nine. Four of the nine were exercised by a
+task rather than by an author and all four held; the defect is at the tenth boundary, the
+one between the two new domains, which this pass never classified because it walked each
+new domain against domains that already existed. The rule from #0006 is not weaker than it
+looked. The *method* that produces entries for it is, by exactly the width of a phase that
+builds two domains at once — now a rule of its own below.
 
 ## Artifact Layout
 
@@ -332,6 +360,10 @@ workflows/<domain>/
 - Cross-domain dependencies must be explicit.
 - Skills cannot span unrelated domains.
 - Knowledge Contracts remain atomic.
+- A phase that builds more than one domain MUST classify the new domains against **each
+  other**, not only against built domains. Slice #0007 found the one unowned rule in the
+  Tier 3 pilot at exactly that seam, and the classification pass could not have caught it:
+  it walked each new domain's boundaries with domains that already existed.
 - A boundary resolved in Cross-Domain Notes MUST also be carried into
   `skills/index.md`, qualifying the shared keyword on each row. This file is not in
   `AGENTS.md`'s Startup Procedure and an agent never opens it, so a resolution that

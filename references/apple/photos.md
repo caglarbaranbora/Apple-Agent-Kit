@@ -27,6 +27,7 @@ https://developer.apple.com/documentation/photos/phaccesslevel
 https://developer.apple.com/documentation/photos/phasset
 https://developer.apple.com/documentation/photos/phasset/fetchassets(in:options:)
 https://developer.apple.com/documentation/photos/phasset/fetchassets(with:options:)
+https://developer.apple.com/documentation/photos/phasset/location
 https://developer.apple.com/documentation/photos/phassetchangerequest
 https://developer.apple.com/documentation/photos/phassetchangerequest/creationrequestforasset(from:)
 https://developer.apple.com/documentation/photos/phassetchangerequest/creationrequestforassetfromimage(atfileurl:)
@@ -63,7 +64,7 @@ https://developer.apple.com/documentation/photosui/phpickerviewcontroller
 
 ## Purpose
 
-Reference index for Apple's PhotoKit and PhotosUI documentation, scoped to this domain's v1: picking assets without any authorization at all through `PHPickerViewController` and its SwiftUI-native equivalent `PhotosPicker`, reading what those pickers return (`PHPickerResult.itemProvider`, `assetIdentifier`, `PhotosPickerItem`'s `Transferable` conformance) and configuring them (`PHPickerConfiguration`, `selectionLimit`, `PHPickerFilter`); requesting library access when the picker is not enough — `PHPhotoLibrary.requestAuthorization(for:handler:)`/`authorizationStatus(for:)` with `PHAccessLevel` and `PHAuthorizationStatus`, and the matching Information Property List keys `NSPhotoLibraryUsageDescription` and `NSPhotoLibraryAddUsageDescription`; the limited library (`PHAuthorizationStatus.limited`, `presentLimitedLibraryPicker(from:)`, the `PHPhotoLibraryPreventAutomaticLimitedAccessAlert` Information Property List key, and `PHPhotoLibraryChangeObserver` as the signal a selection changed); fetching and displaying assets (`PHAsset`, `PHAssetCollection`, `PHFetchOptions`, `PHFetchResult`, `PHImageManager`/`PHCachingImageManager` with `PHImageRequestOptions`); and writing to the library inside a change block (`performChanges(_:completionHandler:)`, `PHAssetChangeRequest`, `PHAssetCreationRequest`).
+Reference index for Apple's PhotoKit and PhotosUI documentation, scoped to this domain's v1: picking assets without any authorization at all through `PHPickerViewController` and its SwiftUI-native equivalent `PhotosPicker`, reading what those pickers return (`PHPickerResult.itemProvider`, `assetIdentifier`, `PhotosPickerItem`'s `Transferable` conformance) and configuring them (`PHPickerConfiguration`, `selectionLimit`, `PHPickerFilter`); requesting library access when the picker is not enough — `PHPhotoLibrary.requestAuthorization(for:handler:)`/`authorizationStatus(for:)` with `PHAccessLevel` and `PHAuthorizationStatus`, and the matching Information Property List keys `NSPhotoLibraryUsageDescription` and `NSPhotoLibraryAddUsageDescription`; the limited library (`PHAuthorizationStatus.limited`, `presentLimitedLibraryPicker(from:)`, the `PHPhotoLibraryPreventAutomaticLimitedAccessAlert` Information Property List key, and `PHPhotoLibraryChangeObserver` as the signal a selection changed); fetching and displaying assets (`PHAsset` and its `location`, `PHAssetCollection`, `PHFetchOptions`, `PHFetchResult`, `PHImageManager`/`PHCachingImageManager` with `PHImageRequestOptions`); and writing to the library inside a change block (`performChanges(_:completionHandler:)`, `PHAssetChangeRequest`, `PHAssetCreationRequest`).
 
 Out of scope for v1: photo and video *editing* (`PHContentEditingInput`/`PHContentEditingOutput`, adjustment data, and Photo Editing extensions); Live Photo playback surfaces (`PHLivePhotoView`); video playback and `AVAsset` export from a `PHAsset`; `PHAssetResource`-level resource copying; iCloud Shared Albums, Shared Photo Library, and cloud-identifier mapping; camera capture, which is AVFoundation's and not this framework's; and the deprecated `UIImagePickerController`, which `PHPickerViewController` replaces.
 
@@ -72,7 +73,7 @@ Out of scope for v1: photo and video *editing* (`PHContentEditingInput`/`PHConte
 - Picking assets with no library authorization: `PHPickerViewController` and `PhotosPicker`
 - Authorization levels, their usage-description keys, and the status API that reports `limited` truthfully
 - The limited library: what it changes, and presenting its selection interface
-- Fetching assets and requesting images, including the multi-callback delivery contract
+- Fetching assets and requesting images, including the multi-callback delivery contract and an asset's recorded capture place
 - Writing to the library through a change block
 
 ## Used By
