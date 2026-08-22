@@ -13,6 +13,8 @@ Inside a Codex CLI session:
 ```
 
 Then install the `apple-agent-kit` plugin from that marketplace and restart Codex.
+Codex's own plugin update mechanism keeps a marketplace install current — no manual
+`git pull` step applies to this path.
 
 ## Option B: Manual clone + symlink
 
@@ -47,6 +49,11 @@ Then install the `apple-agent-kit` plugin from that marketplace and restart Code
 ls -la ~/.agents/skills/apple-agent-kit
 ```
 
+**Windows (PowerShell):**
+```powershell
+Get-Item "$env:USERPROFILE\.agents\skills\apple-agent-kit"
+```
+
 You should see a symlink (or junction on Windows) pointing at this repo's `skills/`
 directory.
 
@@ -65,3 +72,12 @@ rm ~/.agents/skills/apple-agent-kit
 ```
 
 Optionally delete the clone: `rm -rf ~/.codex/apple-agent-kit`.
+
+**Windows (PowerShell):**
+```powershell
+Remove-Item "$env:USERPROFILE\.agents\skills\apple-agent-kit"
+```
+
+Do not add `-Recurse` — this must remove only the junction itself, not follow into the
+linked directory. Optionally delete the clone:
+`Remove-Item -Recurse "$env:USERPROFILE\.codex\apple-agent-kit"`.
