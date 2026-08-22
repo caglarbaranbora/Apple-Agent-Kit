@@ -37,8 +37,10 @@ Investigation for this RFC found:
 - `superpowers` (a comparable multi-skill plugin already installed in this environment)
   ships exactly this pattern: a `.codex-plugin/plugin.json` manifest whose `"skills"`
   field points at the **same** `skills/` directory used for Claude Code — no per-skill
-  translation files — plus a `.codex/INSTALL.md` covering both the marketplace command
-  and a manual clone-and-symlink fallback. superpowers' `openai.yaml`-shaped concern
+  translation files. Its own `.codex/INSTALL.md` documents only the manual
+  clone-and-symlink path, not the marketplace command — confirmed by reading that file
+  directly, not assumed from the manifest's existence. superpowers' `openai.yaml`-shaped
+  concern
   (see its `codex-tools.md` "Named agent dispatch" section) exists only because its
   *workflow* skills dispatch named subagents (`Task tool (superpowers:code-reviewer)`),
   which Codex has no named-agent registry for. Apple Agent Kit's Skills are pure
@@ -56,9 +58,10 @@ Mirrors superpowers' manifest shape: `name`, `version`, `description`, `author`,
 `homepage`, `repository`, `license`, `keywords`, and `"skills": "./skills/"`. No
 `interface`/`capabilities`/`defaultPrompt` block for v1 — those are Codex-marketplace
 presentation metadata, not required for skills to load, and can be added later without
-a breaking change. Content values (`description`, `keywords`) are drawn from
-`.claude-plugin/plugin.json`, not duplicated by hand from scratch, so the two manifests
-describe the same package consistently.
+a breaking change. `description` is drawn from `.claude-plugin/plugin.json` (which has
+no `keywords` field); `keywords` is drawn from `npx/package.json`'s list minus its two
+Claude-Code-specific entries (`claude-code`, `claude-code-plugin`) — not duplicated by
+hand from scratch, so all three manifests describe the same package consistently.
 
 Rejected alternative: a per-domain `agents/openai.yaml` under each `skills/<domain>/`,
 per the stale `skill-spec.md` line. Rejected because Codex's native skill discovery
