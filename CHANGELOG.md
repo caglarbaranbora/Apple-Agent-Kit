@@ -6,6 +6,15 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [2.3.0] - 2026-08-23
+### Added
+- **Codex CLI support.** This repo's Skills are now loadable from OpenAI's Codex CLI, not just Claude Code — with zero changes to any Knowledge Contract, Skill, Reference, or Workflow. Design in `rfcs/0002-codex-support.md`.
+  - `.codex-plugin/plugin.json` — Codex plugin manifest, `skills` field points at the existing `skills/` directory as a whole. No per-domain translation file: Codex reads the same `SKILL.md`s Claude Code does. Corrects a stale assumption in `docs/specifications/skill-spec.md` (and, discovered mid-implementation, an identical stale claim in `CLAUDE.md`) that a per-domain `skills/<domain>/agents/openai.yaml` would eventually be needed.
+  - `.codex/INSTALL.md` — two install paths: Codex's own plugin marketplace command, and a manual clone-and-symlink fallback (with Windows PowerShell equivalents for every step, including verify and uninstall).
+  - `npx/bin/install.js` — when the `claude` CLI is absent but `codex` is present, prints Codex install instructions (pointing at the install doc's absolute GitHub URL, since an npx user hasn't cloned the repo) and exits 0, instead of erroring. Never spawns `codex` itself — its plugin install is interactive, run inside a Codex session, not scriptable.
+  - `README.md`/`npx/README.md` — Installation section now mentions Codex support and links to the install doc.
+  - `.codex-plugin/plugin.json` joins the release-version consistency check `CLAUDE.md` defines (five files → six); a pre-existing "four-file" miscount in the same paragraph (it said "four" while already listing five) is corrected to "six" alongside it.
+
 ## [2.2.0] - 2026-08-23
 ### Added
 - **Level 4 Review #0003 — L4.5 (does the cited Apple page actually say the quoted rule) closed for all 17 of Tier 2's domains and all 78 Contracts, 14 real defects found and fixed.** Reviews #0001/#0002 explicitly left L4.5 open — a repository-only reading review cannot check live citation content. This one fetches it, via a JSON-endpoint workaround for `developer.apple.com/documentation/*`'s client-rendered pages, and closes the last four domains (`eventkit`'s final citation, `testing`, `security`, `backgroundtasks`, and `app-intents`'s remaining three Contracts) that a first pass had left open.
