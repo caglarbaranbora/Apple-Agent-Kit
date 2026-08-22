@@ -27,7 +27,7 @@ function printCodexInstructions() {
   console.log(`  /plugin marketplace add ${REPO}`);
   console.log('');
   console.log('Then install the `apple-agent-kit` plugin from that marketplace and restart Codex.');
-  console.log('For a manual install instead, see .codex/INSTALL.md in this repository.');
+  console.log(`For a manual install instead, see: https://github.com/${REPO}/blob/main/.codex/INSTALL.md`);
 }
 
 function printNeitherFoundError() {
