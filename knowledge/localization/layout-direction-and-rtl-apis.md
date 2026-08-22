@@ -1,7 +1,7 @@
 # Layout Direction and RTL APIs
 
 Status: Approved
-Version: 1.0.0
+Version: 1.0.1
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 1.0.0
 id: knowledge.localization.layout-direction-and-rtl-apis
 artifact_type: knowledge
 title: Layout Direction and RTL APIs
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines the API layer of right-to-left support -- leading and trailing over left and right, SwiftUI's automatic mirroring and why reading layoutDirection usually means double-flipping, flipsForRightToLeftLayoutDirection as a contents-mirroring modifier rather than an RTL switch, UIKit semanticContentAttribute whose unspecified default means flip, effectiveUserInterfaceLayoutDirection which does not inherit, SF Symbols name-driven mirroring, and detecting direction through Locale.Language.characterDirection.
@@ -34,8 +34,8 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.right-to-left
   - knowledge.localization.locale-and-language-resolution
-  - knowledge.sf-symbols.symbol-variants
-last_updated: 2026-08-08
+  - knowledge.sf-symbols.symbol-basics
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -137,7 +137,7 @@ Reverses content SwiftUI has already mirrored, producing a double flip (Rule 2);
 
 ## Dependencies
 
-None within this domain. Cross-references `knowledge.human-interface-guidelines.right-to-left` via `related:` for the design layer this contract deliberately does not cover, and `knowledge.sf-symbols.symbol-variants` for general symbol usage beyond mirroring behavior.
+None within this domain. Cross-references `knowledge.human-interface-guidelines.right-to-left` via `related:` for the design layer this contract deliberately does not cover, and `knowledge.sf-symbols.symbol-basics` -- the hub every other `sf-symbols` Contract depends on -- for general symbol rendering beyond the name-driven mirroring this contract states in Rule 6.
 
 ## References
 

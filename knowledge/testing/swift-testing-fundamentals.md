@@ -1,7 +1,7 @@
 # Swift Testing Fundamentals
 
 Status: Approved
-Version: 1.0.0
+Version: 1.0.1
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 1.0.0
 id: knowledge.testing.swift-testing-fundamentals
 artifact_type: knowledge
 title: Swift Testing Fundamentals
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines the Swift Testing framework's core vocabulary -- the @Test macro replacing XCTestCase subclassing, #expect(_:) as the continue-on-failure assertion macro, #require(_:) as the throw-and-halt assertion macro used for safely unwrapping optionals, the optional @Suite grouping macro, and tagging tests with Tag via .tags(_:).
@@ -30,7 +30,7 @@ references:
 depends_on: []
 related:
   - knowledge.testing.xctest-case-structure-and-assertions
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -61,11 +61,11 @@ Agents MUST declare a Swift Testing test as a function annotated `@Test`, at fil
 
 ### Rule 2
 
-Agents MUST use `#expect(_:)` as the default assertion and MUST expect it to continue the test after a failed expectation, permitting multiple recorded failures per test -- the same continue-on-failure behavior as XCTest's `XCTAssert*` family in `xctest-case-structure-and-assertions`, expressed as a macro instead of a function. Per Apple's documentation: "Your test keeps running after `#expect` fails."
+Agents MUST use `#expect(_:)` as the default assertion and MUST expect it to continue the test after a failed expectation, permitting multiple recorded failures per test -- the same continue-on-failure behavior as XCTest's `XCTAssert*` family in `xctest-case-structure-and-assertions`, expressed as a macro instead of a function. Per Apple's documentation, `#expect` "allows your test to continue running even when the condition fails."
 
 ### Rule 3
 
-Agents MUST use `#require(_:)` instead of `#expect(_:)` whenever the test cannot meaningfully continue after a failed check -- most commonly to unwrap an optional -- since `#require` throws and stops the test immediately. Per Apple's documentation: "`#require` throws an instance of `ExpectationFailedError` when your code fails to satisfy the requirement," demonstrated by `let customer = try #require(Customer(id: 123))` where "the test runner doesn't reach [the next] line if the customer is nil."
+Agents MUST use `#require(_:)` instead of `#expect(_:)` whenever the test cannot meaningfully continue after a failed check -- most commonly to unwrap an optional -- since `#require` throws and stops the test immediately. Per Apple's documentation, "when `#require` fails to satisfy a requirement, it throws an instance of `ExpectationFailedError`," demonstrated by `let customer = try #require(Customer(id: 123))` where "the test runner doesn't reach this line if the customer is nil."
 
 ### Rule 4
 

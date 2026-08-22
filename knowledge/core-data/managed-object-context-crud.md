@@ -1,7 +1,7 @@
 # Managed Object Context CRUD
 
 Status: Approved
-Version: 1.0.0
+Version: 1.0.1
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 1.0.0
 id: knowledge.core-data.managed-object-context-crud
 artifact_type: knowledge
 title: Managed Object Context CRUD
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines using NSManagedObjectContext for create/delete/save operations -- inserting via NSEntityDescription.insertNewObject(forEntityName:into:) or the generated init(context:), delete(_:), save() and its throwing/error behavior, perform(_:)/performAndWait(_:) thread confinement, and a basic parent-child context relationship via parent.
@@ -28,13 +28,14 @@ references:
   - https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/delete(_:)
   - https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/save()
   - https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/perform(_:)
+  - https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/performandwait(_:)-ypye
   - https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/parent
 depends_on:
   - knowledge.core-data.persistent-container-setup
 related:
   - knowledge.core-data.model-definition
   - knowledge.core-data.fetching-with-nsfetchrequest
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -74,11 +75,11 @@ Agents MUST check `context.hasChanges` before calling `save()` and MUST handle t
 
 ### Rule 4
 
-Agents operating on a queue-confined context MUST wrap context work in `perform(_:)` (asynchronous, returns immediately) or `performAndWait(_:)` (synchronous, blocks until the block finishes) rather than calling context methods directly from an arbitrary thread. Per Apple's documentation: "`perform(_:)` and `performAndWait(_:)` ensure the block operations execute on the correct queue for the context. The `perform(_:)` method returns immediately... With the `performAndWait(_:)` method, the context still executes the block methods on its own thread, but the method doesn't return until the block completes." Code already running on the main thread against a main-queue context is the one documented exception that may call the context directly.
+Agents operating on a queue-confined context MUST wrap context work in `perform(_:)` (asynchronous) or `performAndWait(_:)` (synchronous) rather than calling context methods directly from an arbitrary thread. Per Apple's documentation, `perform(_:)` "Asynchronously performs the specified closure on the context's queue"; `performAndWait(_:)` "Synchronously performs the specified closure on the context's queue," and "is a synchronous operation, unlike the asynchronous `perform(_:)` method, making it useful when you need to wait for the closure to complete before proceeding." Code already running on the main thread against a main-queue context is the one documented exception that may call the context directly.
 
 ### Rule 5
 
-Agents needing a lightweight child context MUST set its `parent` to an existing context rather than expecting it to reach a persistent store coordinator on its own, and MUST remember that saving a child only commits changes "one store up" to its parent, not to the persistent store, until that parent is also saved. Per Apple's documentation: "If a context's parent store is another managed object context, fetch and save operations are mediated by the parent context instead of a coordinator... a parent does not pull changes from children before it saves. You must save a child context if you want ultimately to commit the changes."
+Agents needing a lightweight child context MUST set its `parent` to an existing context rather than expecting it to reach a persistent store coordinator on its own, and MUST remember that saving a child only commits changes "one store up" to its parent, not to the persistent store, until that parent is also saved. Per Apple's documentation for `save()`: "If a context's parent store is another managed object context, then `save()` only updates managed objects in that parent store. To commit changes to the external store, you must save changes in the chain of contexts up to and including the context whose parent is the persistent store coordinator."
 
 ## Compliant Example
 
@@ -145,4 +146,5 @@ Depends on `persistent-container-setup` for the `NSManagedObjectContext` this co
 - [Apple Developer — delete(_:)](https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/delete(_:))
 - [Apple Developer — save()](https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/save())
 - [Apple Developer — perform(_:)](https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/perform(_:))
+- [Apple Developer — performAndWait(_:)](https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/performandwait(_:)-ypye)
 - [Apple Developer — parent](https://developer.apple.com/documentation/coredata/nsmanagedobjectcontext/parent)

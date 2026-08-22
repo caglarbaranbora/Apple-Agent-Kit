@@ -1,6 +1,6 @@
 # Transaction Updates and Restoring Purchases
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.0.1
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Approved Version: 1.0.0
 id: knowledge.storekit.transaction-updates-and-restoring-purchases
 artifact_type: knowledge
 title: Transaction Updates and Restoring Purchases
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines the Transaction.updates AsyncSequence listener task started early to catch purchases/renewals/refunds/revocations outside the direct purchase flow, and AppStore.sync() as the explicit user-initiated Restore Purchases mechanism.
@@ -27,7 +27,7 @@ related:
   - knowledge.storekit.product-loading-and-purchase
   - knowledge.storekit.subscription-status-and-renewal-info
   - knowledge.app-store-review-guidelines.restore-purchases
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -86,10 +86,12 @@ originate from a direct `purchase()` call in this process.
 
 Agents MUST NOT rely on `Transaction.updates` alone as the user-facing
 restore mechanism — it is a passive background listener, not something a
-user can trigger on demand. Per Apple's documentation, "note that after
-a successful in-app purchase on the same device, StoreKit returns the
-transaction through" the updates sequence too, but the listener has no
-way to force a check against the App Store on demand.
+user can trigger on demand. Per Apple's documentation, "after a
+successful in-app purchase on the same device, StoreKit returns the
+transaction through `Product.PurchaseResult.success(_:)`" instead — the
+listener never emits that same-device transaction at all — and the
+listener has no way to force a check against the App Store on demand
+regardless.
 
 ### Rule 4
 

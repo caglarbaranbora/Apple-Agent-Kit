@@ -1,6 +1,6 @@
 # Background Task Registration and Scheduling
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.0.1
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Approved Version: 1.0.0
 id: knowledge.backgroundtasks.background-task-registration-and-scheduling
 artifact_type: knowledge
 title: Background Task Registration and Scheduling
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines registering a task identifier with BGTaskScheduler.shared.register(forTaskWithIdentifier:using:launchHandler:) before the app finishes launching, declaring every identifier in Info.plist under BGTaskSchedulerPermittedIdentifiers, submitting a BGAppRefreshTaskRequest/BGProcessingTaskRequest via submit(_:), and treating earliestBeginDate as a hint, not a guarantee.
@@ -28,7 +28,7 @@ references:
   - https://developer.apple.com/documentation/uikit/using-background-tasks-to-update-your-app
 depends_on: []
 related: []
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -71,7 +71,7 @@ Agents MUST choose `BGAppRefreshTaskRequest` for short-duration, opportunistic c
 
 ### Rule 4
 
-Agents MUST submit a previously registered task's request with `BGTaskScheduler.shared.submit(_:)`, and MUST account for the framework's queue limits rather than submitting unboundedly. Per Apple's documentation, `submit(_:)` will "Submit a previously registered background task for execution," "Submitting a task request for an unexecuted task that's already in the queue replaces the previous task request," and "There can be a total of 1 refresh task and 10 processing tasks scheduled at any time. Trying to schedule more tasks returns `BGTaskScheduler.Error.Code.tooManyPendingTaskRequests`."
+Agents MUST submit a previously registered task's request with `BGTaskScheduler.shared.submit(_:)`, and MUST account for the framework's queue limits rather than submitting unboundedly. Per Apple's documentation, `submit(_:)` will "Submit a previously registered background task for execution," "Submitting a task request for an unexecuted task that's already in the queue replaces the previous task request," and "There can be a total of 1 refresh task and 10 processing tasks scheduled at any time. Trying to schedule more tasks returns `BGTaskScheduler.Error.Code.tooManyPendingTaskRequests`." Apple's reference now marks `submit(_:)` deprecated as of iOS/iPadOS/tvOS 27.0 and visionOS 1.0 in favor of the `async`/completion-handler `submitTaskRequest(_:completionHandler:)`, which was still Beta at the time this Contract was written -- agents targeting a deployment target where the replacement has stabilized MUST verify its current signature against Apple's live documentation rather than assume this Contract's `submit(_:)` guidance still applies unchanged.
 
 ### Rule 5
 

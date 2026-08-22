@@ -1,6 +1,6 @@
 # Session Persistence and Sign-Out
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.0.1
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Approved Version: 1.0.0
 id: knowledge.authenticationservices.session-persistence-and-sign-out
 artifact_type: knowledge
 title: Session Persistence and Sign-Out
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines persisting the Apple-provided user identifier (not email) in Keychain as the durable account key, alongside the app's own derived session/auth token rather than Apple credentials themselves, and that app sign-out does not revoke Sign-in-with-Apple access at Apple's end.
@@ -26,7 +26,7 @@ depends_on:
 related:
   - knowledge.security.keychain-item-crud
   - knowledge.style-guide.sign-in-and-authentication-terminology
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -68,7 +68,7 @@ authorization, first sign-in or repeat.
 ### Rule 2
 
 Agents MUST NOT use `email` as the account key. Per
-`sign-in-with-apple-request-and-credential` Rule 5, `email` is `nil` on
+`sign-in-with-apple-request-and-credential` Rule 4, `email` is `nil` on
 every authorization after the first for a given Apple ID + app pair, and
 even when present it may be an Apple-generated private relay address
 rather than the user's real address — neither property makes it a
@@ -90,7 +90,7 @@ Agents MUST persist only the `user` identifier and the app's own
 derived session/auth token (whatever the backend issues after verifying
 the identity token) — never the `identityToken` or `authorizationCode`
 themselves. Both are transient proofs consumed by the backend at
-sign-in time (see `nonce-and-identity-token-verification` Rule 6 for
+sign-in time (see `nonce-and-identity-token-verification` Rule 5 for
 `authorizationCode`); persisting them client-side keeps sensitive,
 short-lived material around for no purpose after exchange.
 

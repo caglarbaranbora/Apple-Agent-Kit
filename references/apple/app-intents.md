@@ -27,6 +27,7 @@ https://developer.apple.com/documentation/appintents/intentparameter
 https://developer.apple.com/documentation/appintents/appenum
 https://developer.apple.com/documentation/appintents/parametersummary
 https://developer.apple.com/documentation/appintents/defining-app-entities-for-your-custom-data-types
+https://developer.apple.com/documentation/appintents/entity-queries
 https://developer.apple.com/documentation/appintents/appentity
 https://developer.apple.com/documentation/appintents/entityquery
 https://developer.apple.com/documentation/appintents/entitystringquery

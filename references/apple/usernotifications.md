@@ -31,10 +31,12 @@ https://developer.apple.com/documentation/usernotifications/unnotificationaction
 https://developer.apple.com/documentation/usernotifications/unnotificationcategory
 https://developer.apple.com/documentation/usernotifications/unnotificationpresentationoptions
 https://developer.apple.com/documentation/usernotifications/unnotificationrequest
+https://developer.apple.com/documentation/usernotifications/unnotificationresponse/actionidentifier
 https://developer.apple.com/documentation/usernotifications/unnotificationsettings
 https://developer.apple.com/documentation/usernotifications/untextinputnotificationaction
 https://developer.apple.com/documentation/usernotifications/untimeintervalnotificationtrigger
 https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/add(_:withcompletionhandler:)
+https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/delegate
 https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/getdeliverednotifications(completionhandler:)
 https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/getnotificationsettings(completionhandler:)
 https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/getpendingnotificationrequests(completionhandler:)
