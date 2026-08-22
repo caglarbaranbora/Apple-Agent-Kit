@@ -437,12 +437,53 @@ git commit -m "feat: print Codex install instructions when claude CLI is absent"
 
 ---
 
-### Task 5: `.codex-plugin/plugin.json` joins the release-version consistency check
+### Task 5: `.codex-plugin/plugin.json` joins the release-version consistency check, and CLAUDE.md's Codex section is corrected
+
+**Amended after Task 3's implementer flagged, via `grep -rn "agents/openai.yaml"`, that
+`CLAUDE.md:89-94` still carried the exact stale claim Task 3 had just fixed in
+`skill-spec.md` — CLAUDE.md's own "Codex support (future)" section. Since this task
+already touches CLAUDE.md, fixing that section here (Step 1, below) rather than as a
+separate task.**
 
 **Files:**
-- Modify: `CLAUDE.md:107-122`
+- Modify: `CLAUDE.md:89-94` (the "Codex support" section)
+- Modify: `CLAUDE.md:107-122` (release-version consistency section — line numbers shift
+  by however many lines Step 1 adds/removes; find the section by its heading text, not
+  by the original numbers, if they no longer match)
 
-- [ ] **Step 1: Replace the file list and count**
+- [ ] **Step 1: Rewrite the stale "Codex support (future)" section**
+
+Current text (lines 89-94):
+```
+## Codex support (future)
+
+Not built yet. When added, Codex-specific behavior for a domain skill goes
+at `skills/<domain>/agents/openai.yaml`, matching the per-domain skill
+layout already in place — no directory restructuring needed when that work
+starts.
+```
+
+Replace with:
+```
+## Codex support
+
+Codex CLI loads this repo's Skills directly via `.codex-plugin/plugin.json` (repo
+root), whose `skills` field points at the existing `skills/` directory as a whole — no
+per-domain translation file, no directory restructuring. See `.codex/INSTALL.md` for
+how a Codex user installs this repo (plugin marketplace or manual clone + symlink).
+```
+
+Verify:
+```bash
+grep -rn "agents/openai.yaml" --include="*.md" . | grep -v "docs/superpowers/\|rfcs/0002-codex-support.md\|\.claude/worktrees/"
+```
+Expected: no output. (The exclusions are: the plan/spec docs in `docs/superpowers/`,
+which are historical records and legitimately keep the old text; `rfcs/0002-codex-support.md`,
+which discusses the old convention as the thing being investigated and rejected; and
+`.claude/worktrees/`, an unrelated separate checkout outside this branch's tracked
+source tree.)
+
+- [ ] **Step 2: Replace the file list and count**
 
 Current text:
 ```
@@ -489,7 +530,7 @@ Note: the original text said "four-file release-version check" despite listing f
 files above it — a pre-existing inconsistency, corrected to "six-file" here rather than
 left wrong at a new number.
 
-- [ ] **Step 2: Verify all six files currently agree**
+- [ ] **Step 3: Verify all six files currently agree**
 
 ```bash
 echo "README.md:            $(grep '^Version:' README.md)"
@@ -502,11 +543,11 @@ echo "CHANGELOG.md:         $(grep -m1 '^## \[2' CHANGELOG.md)"
 Expected: all five version-bearing lines show `2.2.0`, and the CHANGELOG line reads
 `## [2.2.0] - 2026-08-23`.
 
-- [ ] **Step 3: Commit**
+- [ ] **Step 4: Commit**
 
 ```bash
 git add CLAUDE.md
-git commit -m "docs: add .codex-plugin/plugin.json to release-version consistency check"
+git commit -m "docs: add .codex-plugin/plugin.json to release-version check, correct stale Codex section"
 ```
 
 ---
