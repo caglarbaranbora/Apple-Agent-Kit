@@ -1,7 +1,7 @@
 # XCTest Case Structure and Assertions
 
 Status: Approved
-Version: 1.0.0
+Version: 1.0.1
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 1.0.0
 id: knowledge.testing.xctest-case-structure-and-assertions
 artifact_type: knowledge
 title: XCTest Case Structure and Assertions
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines XCTestCase subclassing with test-prefixed methods, the per-test setUp()/tearDown()/setUpWithError()/tearDownWithError() lifecycle and its documented order, the naming collision with the once-per-class setUp()/tearDown() class methods, the XCTAssert family plus XCTFail, and XCTSkip/XCTSkipIf/XCTSkipUnless for conditional skipping.
@@ -22,13 +22,14 @@ tags:
   - skip
 references:
   - https://developer.apple.com/documentation/xctest/xctestcase
+  - https://developer.apple.com/documentation/xctest/xctassertequal(_:_:_:file:line:)
   - https://developer.apple.com/documentation/xctest/defining-test-cases-and-test-methods
   - https://developer.apple.com/documentation/xctest/set-up-and-tear-down-state-in-your-tests
   - https://developer.apple.com/documentation/xctest/unconditional-test-failures
   - https://developer.apple.com/documentation/xctest/methods-for-skipping-tests
 depends_on: []
 related: []
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -69,7 +70,7 @@ Agents SHOULD prefer `setUpWithError()`/`tearDownWithError()` over the non-throw
 
 ### Rule 4
 
-Agents MUST use `XCTAssertEqual` only to compare two non-optional `Equatable` values, and MUST choose the assertion that names the actual condition being checked (`XCTAssertTrue`/`XCTAssertFalse` for booleans, `XCTAssertNil`/`XCTAssertNotNil` for optionality, `XCTAssertThrowsError`/`XCTAssertNoThrow` for throwing expressions) rather than reconstructing that check inside `XCTAssertTrue`. Per Apple's documentation, `XCTAssertEqual` is used "to compare two non-optional values of the same type," and `XCTFail(_:)` "generates a failure immediately and unconditionally" for cases with no matching assertion.
+Agents MUST use `XCTAssertEqual` — which "asserts that two values are equal" per Apple's documentation, generic over an `Equatable` type — only for a direct comparison of two non-optional values, and MUST choose the assertion that names the actual condition being checked (`XCTAssertTrue`/`XCTAssertFalse` for booleans, `XCTAssertNil`/`XCTAssertNotNil` for optionality, `XCTAssertThrowsError`/`XCTAssertNoThrow` for throwing expressions) rather than reconstructing that check inside `XCTAssertTrue`. Per Apple's documentation, `XCTFail(_:)` "generates a failure immediately and unconditionally" for cases with no matching assertion.
 
 ### Rule 5
 
@@ -132,6 +133,7 @@ None within this domain — this is the foundational contract every other XCTest
 ## References
 
 - [Apple Developer — XCTestCase](https://developer.apple.com/documentation/xctest/xctestcase)
+- [Apple Developer — XCTAssertEqual(_:_:_:file:line:)](https://developer.apple.com/documentation/xctest/xctassertequal(_:_:_:file:line:))
 - [Apple Developer — Defining Test Cases and Test Methods](https://developer.apple.com/documentation/xctest/defining-test-cases-and-test-methods)
 - [Apple Developer — Set Up and Tear Down State in Your Tests](https://developer.apple.com/documentation/xctest/set-up-and-tear-down-state-in-your-tests)
 - [Apple Developer — Unconditional Test Failures](https://developer.apple.com/documentation/xctest/unconditional-test-failures)

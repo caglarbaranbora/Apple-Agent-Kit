@@ -1,6 +1,6 @@
 # Adding Passes UI
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.0.1
 
 ## Metadata
 
@@ -8,15 +8,16 @@ Status: Approved Version: 1.0.0
 id: knowledge.passkit.adding-passes-ui
 artifact_type: knowledge
 title: Adding Passes UI
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
-summary: Defines presenting the system add-to-Wallet UI for a pass the app already has as PKPass/Data -- PKAddPassesViewController(pass:)/(passes:), PKAddPassButton, the canAddPasses() availability check, and the UIKit-only delegate/dismissal pattern (no SwiftUI representable ships in PassKit).
+summary: Defines presenting the system add-to-Wallet UI for a pass the app already has as PKPass/Data -- SwiftUI's AddPassToWalletButton (iOS 16+), and UIKit's PKAddPassesViewController(pass:)/(passes:) with PKAddPassButton, the canAddPasses() availability check, and the delegate/dismissal pattern.
 domain: PassKit
 tags:
   - passkit
   - pkaddpassesviewcontroller
   - pkaddpassbutton
+  - addpasstowalletbutton
   - wallet-ui
   - uikit
 references:
@@ -25,26 +26,27 @@ references:
   - https://developer.apple.com/documentation/passkit/pkaddpassesviewcontroller/init(pass:)
   - https://developer.apple.com/documentation/passkit/pkaddpassesviewcontrollerdelegate
   - https://developer.apple.com/documentation/passkit/pkaddpassbutton
+  - https://developer.apple.com/documentation/passkit/addpasstowalletbutton
 depends_on:
   - knowledge.passkit.pass-library-and-authorization
 related:
   - knowledge.uikit.swiftui-view-representable
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
 
-This contract defines the client-side UI flow for adding a pass the app already holds as `PKPass`/`Data` to the user's Wallet: checking `PKAddPassesViewController.canAddPasses()` before presenting anything, constructing and presenting `PKAddPassesViewController`, styling the entry point with `PKAddPassButton`, and handling completion through `PKAddPassesViewControllerDelegate`. It assumes the app already knows how to query/add through `PKPassLibrary` directly (`pass-library-and-authorization`) and is choosing the UI-presentation path instead.
+This contract defines the client-side UI flow for adding a pass the app already holds as `PKPass`/`Data` to the user's Wallet: in SwiftUI (iOS 16+), `AddPassToWalletButton`; in UIKit, checking `PKAddPassesViewController.canAddPasses()` before presenting anything, constructing and presenting `PKAddPassesViewController`, styling the entry point with `PKAddPassButton`, and handling completion through `PKAddPassesViewControllerDelegate`. It assumes the app already knows how to query/add through `PKPassLibrary` directly (`pass-library-and-authorization`) and is choosing the UI-presentation path instead.
 
 ## Scope
 
 ### Included
 
--   `PKAddPassesViewController.canAddPasses()` as the availability check specific to this UI flow
+-   `AddPassToWalletButton`, the SwiftUI-native control that presents the flow and reports completion directly, no representable wrapping needed
+-   `PKAddPassesViewController.canAddPasses()` as the availability check specific to the UIKit flow
 -   Constructing `PKAddPassesViewController(pass:)` / `init(passes:)` from a `PKPass` (both are failable initializers)
 -   Presenting the view controller and dismissing it via `PKAddPassesViewControllerDelegate.addPassesViewControllerDidFinish(_:)`
--   `PKAddPassButton` as the recommended entry-point control and its button styles
--   That this entire flow is UIKit-only, with no SwiftUI representable shipped by PassKit
+-   `PKAddPassButton` as the UIKit entry-point control and its button styles
 
 ### Excluded
 
@@ -68,15 +70,22 @@ Agents MUST implement `PKAddPassesViewControllerDelegate.addPassesViewController
 
 ### Rule 4
 
-Agents adding an entry point for this flow SHOULD use `PKAddPassButton` rather than a custom-styled button, so Wallet's system-provided appearance and localization stay correct. Per Apple's documentation, `PKAddPassButton` "Provides a button that enables users to add passes to Wallet," and "you choose the type and style of button, and the system provides a control with the correct content and appearance."
+Agents adding an entry point for this flow SHOULD use `PKAddPassButton` (UIKit) rather than a custom-styled button, so Wallet's system-provided appearance and localization stay correct. Per Apple's documentation, `PKAddPassButton` "Provides a button that enables users to add passes to Wallet," and "you choose the button's style, and the system provides a control with the correct appearance."
 
 ### Rule 5
 
-Agents building this flow in SwiftUI MUST wrap `PKAddPassesViewController` in a `UIViewControllerRepresentable` as defined by `knowledge.uikit.swiftui-view-representable` Rule 5 — which this contract does not restate — and MUST NOT expect a SwiftUI-native equivalent to `TipView`/`EventKitUI`'s pattern. This is reasoned framework behavior rather than a literal Apple quote: `PKAddPassesViewController` and `PKAddPassButton` are documented only for iOS, iPadOS, Mac Catalyst, and visionOS with no SwiftUI counterpart in PassKit's topic index — unlike Apple Pay's `PayWithApplePayButton` (see `apple-pay-payment-request`), which does ship a SwiftUI-native button.
+Agents building this flow in SwiftUI (iOS 16+) MUST use `AddPassToWalletButton`, not wrap `PKAddPassesViewController`/`PKAddPassButton` in a `UIViewControllerRepresentable`. Per Apple's documentation, `AddPassToWalletButton` "is the SwiftUI equivalent to `PKAddPassButton`" — its initializer takes the passes and a completion closure directly, so it also replaces the delegate-dismissal flow of Rule 3, not just the button's appearance. `knowledge.uikit.swiftui-view-representable` Rule 5's wrap-in-`UIViewControllerRepresentable` guidance applies only to a UIKit-hosted screen that needs this flow, never to SwiftUI.
 
 ## Compliant Example
 
 ```swift
+// SwiftUI (Rule 5) -- replaces the entire UIKit flow below, button through dismissal.
+AddPassToWalletButton([pass]) { added in addedToWallet = added }
+    .addPassToWalletButtonStyle(.blackOutline)
+```
+
+```swift
+// UIKit
 import UIKit
 import PassKit
 
@@ -124,3 +133,4 @@ Skips the flow-specific availability check (Rule 1), force-unwraps a failable in
 -   [Apple Developer — init(pass:)](https://developer.apple.com/documentation/passkit/pkaddpassesviewcontroller/init(pass:))
 -   [Apple Developer — PKAddPassesViewControllerDelegate](https://developer.apple.com/documentation/passkit/pkaddpassesviewcontrollerdelegate)
 -   [Apple Developer — PKAddPassButton](https://developer.apple.com/documentation/passkit/pkaddpassbutton)
+-   [Apple Developer — AddPassToWalletButton](https://developer.apple.com/documentation/passkit/addpasstowalletbutton)

@@ -1,6 +1,6 @@
 # Tip Options and App Configuration
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.0.1
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Approved Version: 1.0.0
 id: knowledge.tipkit.tip-options-and-app-configuration
 artifact_type: knowledge
 title: Tip Options and App Configuration
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines calling Tips.configure(_:) once at app launch before any tip is evaluated (datastore location, display frequency), and setting per-tip Tip.Option values (MaxDisplayCount, MaxDisplayDuration, IgnoresDisplayFrequency) through a tip's options property.
@@ -32,7 +32,7 @@ references:
 depends_on:
   - knowledge.tipkit.tip-declaration-and-content
 related: []
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -63,7 +63,7 @@ Agents MUST call `Tips.configure(_:)` once, during app initialization, before an
 
 ### Rule 2
 
-Agents needing a non-default on-disk location for the tip datastore MUST pass `Tips.ConfigurationOption.datastoreLocation(_:)` to `configure(_:)`, and MUST NOT assume the default location suits every case (e.g. a shared App Group container for a widget extension). Per Apple's documentation, "By default `.applicationDefault` is used on macOS, iOS, watchOS, and visionOS. On tvOS, `.applicationDefault` is used by default in conjunction with `NSUbiquitousKeyValueStore` to manage tip statuses."
+Agents needing a non-default on-disk location for the tip datastore MUST pass `Tips.ConfigurationOption.datastoreLocation(_:)` to `configure(_:)`, and MUST NOT assume the default location suits every case (e.g. a shared App Group container for a widget extension). Per Apple's documentation, "by default `URL.applicationSupportDirectory` is used on macOS, iOS, watchOS, and visionOS. On tvOS, `URL.cachesDirectory` is used by default in conjunction with `UserDefaults` to manage tip statuses."
 
 ### Rule 3
 

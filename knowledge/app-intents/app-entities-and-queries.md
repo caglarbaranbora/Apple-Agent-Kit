@@ -1,6 +1,6 @@
 # App Entities and Queries
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.0.1
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Approved Version: 1.0.0
 id: knowledge.app-intents.app-entities-and-queries
 artifact_type: knowledge
 title: App Entities and Queries
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines AppEntity protocol conformance, EntityQuery/EntityStringQuery for locating entities by identifier or string, DisplayRepresentation, defaultQuery wiring, and system-driven disambiguation when a query resolves to multiple matches.
@@ -21,6 +21,7 @@ tags:
   - displayrepresentation
 references:
   - https://developer.apple.com/documentation/appintents/defining-app-entities-for-your-custom-data-types
+  - https://developer.apple.com/documentation/appintents/entity-queries
   - https://developer.apple.com/documentation/appintents/appentity
   - https://developer.apple.com/documentation/appintents/entityquery
   - https://developer.apple.com/documentation/appintents/entitystringquery
@@ -28,7 +29,7 @@ references:
 depends_on:
   - knowledge.app-intents.app-intent-declaration-and-parameters
 related: []
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -55,7 +56,7 @@ This contract defines how an AI coding agent exposes app data to the system as a
 
 ### Rule 1
 
-Agents MUST conform a custom data type to `AppEntity` (`protocol AppEntity : AppValue, DisplayRepresentable, Identifiable where Self == Self.ValueType, Self.ID : EntityIdentifierConvertible, Self.ID : Sendable`) rather than exposing a plain struct as an intent parameter, and MUST give it a stable `id` property, typed as `String`, `Int`, or `UUID` whenever possible. Per Apple's documentation, "an app entity is a type that adopts the `AppEntity` protocol and reflects a portion of your app's data," and "a requirement for all app entities is that they provide a unique identifier to distinguish one instance from another... Set the type of this property to `String`, `Int`, or `UUID` type whenever possible. The App Intents framework contains built-in support for identifying entities using these types."
+Agents MUST conform a custom data type to `AppEntity` (`protocol AppEntity : AppValue, DisplayRepresentable, Identifiable where Self == Self.ValueType, Self.ID : EntityIdentifierConvertible, Self.ID : Sendable`) rather than exposing a plain struct as an intent parameter, and MUST give it a stable `id` property, typed as `String`, `Int`, or `UUID` whenever possible. Per Apple's documentation, "an app entity is a type that adopts the `AppEntity` protocol and reflects a portion of your app's data," and "a requirement for all app entities is that they provide a unique identifier to distinguish one instance from another... Set the type of this property to `UUID`, `String`, or `Int` type whenever possible. The App Intents framework contains built-in support for identifying entities using these types."
 
 ### Rule 2
 
@@ -67,7 +68,7 @@ Agents MUST implement `var displayRepresentation: DisplayRepresentation { get }`
 
 ### Rule 4
 
-Agents MUST implement `func suggestedEntities() async throws -> Self.Result` on the query when the parameter benefits from an initial, pre-filtered list rather than an empty picker, and agents MUST NOT assume they need to build their own disambiguation UI when a query legitimately returns more than one entity for a request — the system presents the returned set as a picker using each entity's `displayRepresentation` and lets the person choose. Per Apple's documentation, `suggestedEntities()` "returns the initial results to display when the system presents options backed by this query," and system features like Siri "use your queries to try and resolve conversational requests automatically" — disambiguation among multiple query results is the system's responsibility once the query and `displayRepresentation` are correctly implemented, not something the intent's `perform()` needs to handle itself.
+Agents MUST implement `func suggestedEntities() async throws -> Self.Result` on the query when the parameter benefits from an initial, pre-filtered list rather than an empty picker, and agents MUST NOT assume they need to build their own disambiguation UI when a query legitimately returns more than one entity for a request — the system presents the returned set as a picker using each entity's `displayRepresentation` and lets the person choose. Per Apple's documentation, `suggestedEntities()` "returns the initial results to display when the system presents options backed by this query," and the system uses an entity's queries to "resolve natural spoken language into one of your app's entities" -- disambiguation among multiple query results is the system's responsibility once the query and `displayRepresentation` are correctly implemented, not something the intent's `perform()` needs to handle itself.
 
 ## Compliant Example
 
@@ -137,6 +138,7 @@ Omits `defaultQuery` entirely instead of providing an `EntityQuery`/`EntityStrin
 ## References
 
 -   [Apple Developer — Defining app entities for your custom data types](https://developer.apple.com/documentation/appintents/defining-app-entities-for-your-custom-data-types)
+-   [Apple Developer — Entity queries](https://developer.apple.com/documentation/appintents/entity-queries)
 -   [Apple Developer — AppEntity](https://developer.apple.com/documentation/appintents/appentity)
 -   [Apple Developer — EntityQuery](https://developer.apple.com/documentation/appintents/entityquery)
 -   [Apple Developer — EntityStringQuery](https://developer.apple.com/documentation/appintents/entitystringquery)

@@ -38,6 +38,7 @@ https://developer.apple.com/documentation/passkit/pkaddpassesviewcontroller/cana
 https://developer.apple.com/documentation/passkit/pkaddpassesviewcontroller/init(pass:)
 https://developer.apple.com/documentation/passkit/pkaddpassesviewcontrollerdelegate
 https://developer.apple.com/documentation/passkit/pkaddpassbutton
+https://developer.apple.com/documentation/passkit/addpasstowalletbutton
 https://developer.apple.com/documentation/walletpasses/pass
 https://developer.apple.com/documentation/walletpasses/passfields
 https://developer.apple.com/documentation/walletpasses/pass/barcode-data.dictionary

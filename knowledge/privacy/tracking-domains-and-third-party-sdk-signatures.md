@@ -1,6 +1,6 @@
 # Tracking Domains and Third-Party SDK Signatures
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.0.1
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Approved Version: 1.0.0
 id: knowledge.privacy.tracking-domains-and-third-party-sdk-signatures
 artifact_type: knowledge
 title: Tracking Domains and Third-Party SDK Signatures
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines the NSPrivacyTracking/NSPrivacyTrackingDomains keys and Apple's third-party SDK privacy-manifest-and-signature requirement -- which SDKs must ship a manifest and cryptographic signature, and the consequence if one doesn't.
@@ -21,14 +21,14 @@ tags:
 references:
   - https://developer.apple.com/documentation/bundleresources/app-privacy-configuration/nsprivacytracking
   - https://developer.apple.com/documentation/bundleresources/app-privacy-configuration/nsprivacytrackingdomains
-  - https://developer.apple.com/support/third-party-sdk-requirements/
+  - https://developer.apple.com/support/third-party-SDK-requirements
 depends_on:
   - knowledge.privacy.manifest-file-structure-and-scope
 related:
   - knowledge.privacy.collected-data-types-declaration
   - knowledge.app-tracking-transparency.status-and-idfa-access
   - knowledge.app-store-review-guidelines.privacy-manifest
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -108,4 +108,4 @@ Declares `NSPrivacyTracking` as `true` but leaves `NSPrivacyTrackingDomains` emp
 
 -   [Apple Developer — NSPrivacyTracking](https://developer.apple.com/documentation/bundleresources/app-privacy-configuration/nsprivacytracking)
 -   [Apple Developer — NSPrivacyTrackingDomains](https://developer.apple.com/documentation/bundleresources/app-privacy-configuration/nsprivacytrackingdomains)
--   [Apple Developer — Third-Party SDK Requirements](https://developer.apple.com/support/third-party-sdk-requirements/)
+-   [Apple Developer — Third-Party SDK Requirements](https://developer.apple.com/support/third-party-SDK-requirements)

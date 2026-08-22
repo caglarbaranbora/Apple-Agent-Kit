@@ -1,6 +1,6 @@
 # Apple Pay Authorization and Result Handling
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.0.1
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Approved Version: 1.0.0
 id: knowledge.passkit.apple-pay-authorization-and-result-handling
 artifact_type: knowledge
 title: Apple Pay Authorization and Result Handling
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines presenting the Apple Pay sheet with PKPaymentAuthorizationController and its delegate, receiving PKPayment/PKPaymentToken in didAuthorizePayment(_:handler:), returning a PKPaymentAuthorizationResult, and dismissing via paymentAuthorizationControllerDidFinish(_:) -- with token decryption and processor validation kept strictly server-side.
@@ -28,7 +28,7 @@ references:
 depends_on:
   - knowledge.passkit.apple-pay-payment-request
 related: []
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -67,7 +67,7 @@ Agents MUST call the `handler`/return value of `didAuthorizePayment(_:handler:)`
 
 ### Rule 4
 
-Agents MUST implement `paymentAuthorizationControllerDidFinish(_:)` and dismiss the controller from that method, not from inside `didAuthorizePayment(_:handler:)` or on a timer. Per Apple's documentation, "Use this method to dismiss the payment authorization controller and update any other app state," and Apple is explicit about when it fires: "When the user authorizes a payment request, this method is called after the user is shown the status from the [`didAuthorizePayment(_:handler:)`] method's completion block. When the user cancels without authorizing the payment request, only [`paymentAuthorizationControllerDidFinish(_:)`] is called."
+Agents MUST implement `paymentAuthorizationControllerDidFinish(_:)` and dismiss the controller from that method, not from inside `didAuthorizePayment(_:handler:)` or on a timer. Per Apple's documentation, "Use this method to dismiss the payment authorization controller and update any other app state," and Apple is explicit about when it fires: "When the user authorizes a payment request, this method is called after the user is shown the status from the `paymentAuthorizationController(_:didAuthorizePayment:completion:)` method's completion block. When the user cancels without authorizing the payment request, only `paymentAuthorizationControllerDidFinish:` is called." Apple's own cross-reference still names the older `:completion:` overload rather than this contract's `:handler:` variant; the sequencing it describes applies identically to both.
 
 ### Rule 5
 

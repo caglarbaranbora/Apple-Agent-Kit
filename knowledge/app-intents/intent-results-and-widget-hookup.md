@@ -1,6 +1,6 @@
 # Intent Results and Widget Hookup
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.0.1
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Approved Version: 1.0.0
 id: knowledge.app-intents.intent-results-and-widget-hookup
 artifact_type: knowledge
 title: Intent Results and Widget Hookup
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines the IntentResult protocol and its ReturnsValue/ProvidesDialog/OpensIntent variants returned from perform(), and closes the seam with widgetkit -- this is where an AppIntent used in a widget's Button(intent:)/Toggle(_:isOn:intent:) actually gets authored.
@@ -29,7 +29,7 @@ depends_on:
   - knowledge.app-intents.app-intent-declaration-and-parameters
 related:
   - knowledge.widgetkit.widget-interactivity-and-deep-links
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -69,7 +69,7 @@ Agents MUST compose the `perform()` return type with `ProvidesDialog` (`protocol
 
 ### Rule 4
 
-Agents MUST compose the `perform()` return type with `OpensIntent` (`protocol OpensIntent : IntentResult`) and call `.result(opensIntent:)` when completing the current intent should hand off to a specific follow-up `AppIntent`, rather than having `perform()` try to invoke that follow-up intent's logic directly inline. Per Apple's documentation, `OpensIntent` is "The result of performing an action that delivers an app intent back to the initiator of the action."
+Agents MUST compose the `perform()` return type with `OpensIntent` (`protocol OpensIntent : IntentResult`) and call `.result(opensIntent:)` when completing the current intent should hand off to a specific follow-up `AppIntent`, rather than having `perform()` try to invoke that follow-up intent's logic directly inline. Per Apple's documentation, `OpensIntent` is "a result type that indicates your app intent returns another app intent," and "after you return an app intent as a result, the system runs it to perform its action."
 
 ### Rule 5
 

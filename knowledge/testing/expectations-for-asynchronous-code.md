@@ -1,7 +1,7 @@
 # Expectations for Asynchronous Code
 
 Status: Approved
-Version: 1.0.0
+Version: 1.0.1
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 1.0.0
 id: knowledge.testing.expectations-for-asynchronous-code
 artifact_type: knowledge
 title: Expectations for Asynchronous Code
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines XCTestExpectation for testing callback-based (non-async/await) asynchronous code -- expectation(description:), fulfilling it with .fulfill() inside the completion handler under test, and waiting via the concurrency-safe await fulfillment(of:timeout:) in preference to the older synchronous wait(for:timeout:) -- scoped to APIs with no async/await entry point.
@@ -28,7 +28,7 @@ depends_on:
   - knowledge.testing.xctest-case-structure-and-assertions
 related:
   - knowledge.testing.parameterized-and-async-tests
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -53,7 +53,7 @@ This contract governs testing asynchronous code that has **no `async`/`await` en
 
 ### Rule 1
 
-Agents MUST scope `XCTestExpectation` to code with no `async`/`await` entry point -- a delegate method, a completion-handler closure, or Objective-C code -- and MUST NOT wrap an `async` function's `await` call in an expectation. Per Apple's documentation, XCTest offers expectations for "asynchronous blocks in dispatch queues, delegate methods, asynchronous callbacks, closures, or completion blocks," distinct from the `async`/`await` case covered by native `async throws` test methods (see `parameterized-and-async-tests`).
+Agents MUST scope `XCTestExpectation` to code with no `async`/`await` entry point -- a delegate method, a completion-handler closure, or Objective-C code -- and MUST NOT wrap an `async` function's `await` call in an expectation. Per Apple's documentation, "asynchronous code doesn't execute directly within the current flow of code. This might be because the code runs on a different thread or dispatch queue, in a delegate method, or in a callback, or because it's a Swift function marked with `async`" -- expectations cover every case in that list except the last, which native `async throws` test methods handle instead (see `parameterized-and-async-tests`).
 
 ### Rule 2
 

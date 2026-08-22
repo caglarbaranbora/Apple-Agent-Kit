@@ -1,6 +1,6 @@
 # Notification Delegate Handling
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.0.1
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Approved Version: 1.0.0
 id: knowledge.usernotifications.notification-delegate-handling
 artifact_type: knowledge
 title: Notification Delegate Handling
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines correct UNUserNotificationCenterDelegate setup timing, foreground presentation via willPresent, and response handling via didReceive.
@@ -22,13 +22,15 @@ references:
   - https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/usernotificationcenter(_:willpresent:withcompletionhandler:)
   - https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/usernotificationcenter(_:didreceive:withcompletionhandler:)
   - https://developer.apple.com/documentation/usernotifications/unnotificationpresentationoptions
+  - https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/delegate
+  - https://developer.apple.com/documentation/usernotifications/unnotificationresponse/actionidentifier
 depends_on: []
 related:
   - knowledge.usernotifications.authorization-request
   - knowledge.usernotifications.remote-push-registration
   - knowledge.usernotifications.notification-actions-and-categories
   - knowledge.human-interface-guidelines.notifications
-last_updated: 2026-08-08
+last_updated: 2026-08-23
 ```
 
 ## Intent
@@ -60,13 +62,7 @@ handler. It does not define notification content or badge UX — see
 
 ### Rule 1
 
-Agents MUST assign the delegate synchronously within
-`application(_:didFinishLaunchingWithOptions:)`, before it returns — per
-Apple's `UNUserNotificationCenter` documentation: "Always assign an
-object to the delegate property before performing any tasks that might
-interact with that delegate." A cold launch triggered by tapping a
-notification can invoke delegate methods immediately, so a lazily
-assigned delegate can miss that launch's response.
+Agents MUST assign the delegate before the app finishes launching — per Apple's documentation for the `delegate` property: "To guarantee that your app responds to all actionable notifications, you must set the value of this property before your app finishes launching. For an iOS app, this means updating this property in the `application(_:willFinishLaunchingWithOptions:)` or `application(_:didFinishLaunchingWithOptions:)` method of the app delegate." A cold launch triggered by tapping a notification can invoke delegate methods immediately, so a lazily assigned delegate can miss that launch's response.
 
 ### Rule 2
 
@@ -88,12 +84,7 @@ leaves the system waiting and can delay subsequent handling.
 
 ### Rule 4
 
-Agents MUST branch on `response.actionIdentifier` inside `didReceive`
-(including the system-defined `UNNotificationDefaultActionIdentifier` for
-a tap and `UNNotificationDismissActionIdentifier` for a dismissal) rather
-than applying one behavior to every response — per Apple: "Match the
-value in the [actionIdentifier] property of the response object to one
-of your app's actions or a system-defined action."
+Agents MUST branch on `response.actionIdentifier` inside `didReceive` (including the system-defined `UNNotificationDefaultActionIdentifier` for a tap and `UNNotificationDismissActionIdentifier` for a dismissal) rather than applying one behavior to every response — per Apple's documentation for `actionIdentifier`: "This parameter may contain the identifier of one of your `UNNotificationAction` objects or it may contain a system-defined identifier. The system defined identifiers are `UNNotificationDefaultActionIdentifier` and `UNNotificationDismissActionIdentifier`."
 
 ### Rule 5
 
@@ -148,3 +139,5 @@ None.
 -   [Apple Developer — willPresent(_:withCompletionHandler:)](https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/usernotificationcenter(_:willpresent:withcompletionhandler:))
 -   [Apple Developer — didReceive(_:withCompletionHandler:)](https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/usernotificationcenter(_:didreceive:withcompletionhandler:))
 -   [Apple Developer — UNNotificationPresentationOptions](https://developer.apple.com/documentation/usernotifications/unnotificationpresentationoptions)
+-   [Apple Developer — UNUserNotificationCenter.delegate](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/delegate)
+-   [Apple Developer — UNNotificationResponse.actionIdentifier](https://developer.apple.com/documentation/usernotifications/unnotificationresponse/actionidentifier)

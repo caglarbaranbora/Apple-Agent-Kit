@@ -30,7 +30,7 @@ https://developer.apple.com/documentation/bundleresources/app-privacy-configurat
 https://developer.apple.com/documentation/bundleresources/describing-data-use-in-privacy-manifests
 https://developer.apple.com/documentation/bundleresources/describing-use-of-required-reason-api
 https://developer.apple.com/documentation/bundleresources/privacy-manifest-files
-https://developer.apple.com/support/third-party-sdk-requirements/
+https://developer.apple.com/support/third-party-SDK-requirements
 
 ## Purpose
 
