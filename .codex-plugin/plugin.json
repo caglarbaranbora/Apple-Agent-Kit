@@ -1,0 +1,19 @@
+{
+  "name": "apple-agent-kit",
+  "version": "2.2.0",
+  "description": "Spec-first knowledge system for AI coding agents developing Apple platform applications.",
+  "author": {
+    "name": "caglarbaranbora"
+  },
+  "homepage": "https://github.com/caglarbaranbora/Apple-Agent-Kit#readme",
+  "repository": "https://github.com/caglarbaranbora/Apple-Agent-Kit",
+  "license": "PolyForm-Strict-1.0.0",
+  "keywords": [
+    "apple",
+    "swift",
+    "swiftui",
+    "ios",
+    "ai-agent"
+  ],
+  "skills": "./skills/"
+}
