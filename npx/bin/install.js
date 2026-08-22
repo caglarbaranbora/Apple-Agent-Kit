@@ -14,18 +14,37 @@ const commands = [
   ['claude', ['plugin', 'install', `${PLUGIN_NAME}@${MARKETPLACE_NAME}`]],
 ];
 
-function checkClaudeInstalled() {
-  const result = spawnSync('claude', ['--version'], { stdio: 'ignore' });
-  if (result.error || result.status !== 0) {
-    console.error(
-      'Error: the `claude` CLI was not found on PATH. Install Claude Code first: https://code.claude.com/docs/en/quickstart'
-    );
-    process.exit(1);
-  }
+function commandExists(cmd) {
+  const result = spawnSync(cmd, ['--version'], { stdio: 'ignore' });
+  return !result.error && result.status === 0;
+}
+
+function printCodexInstructions() {
+  console.log('The `claude` CLI was not found on PATH, but `codex` was.');
+  console.log('Apple Agent Kit installs into Codex from inside a Codex session, not from this script.');
+  console.log('');
+  console.log('Run inside Codex:');
+  console.log(`  /plugin marketplace add ${REPO}`);
+  console.log('');
+  console.log('Then install the `apple-agent-kit` plugin from that marketplace and restart Codex.');
+  console.log(`For a manual install instead, see: https://github.com/${REPO}/blob/main/.codex/INSTALL.md`);
+}
+
+function printNeitherFoundError() {
+  console.error('Error: neither the `claude` nor the `codex` CLI was found on PATH.');
+  console.error('Install Claude Code: https://code.claude.com/docs/en/quickstart');
+  console.error('...or install Codex CLI, then re-run this command.');
 }
 
 function run() {
-  checkClaudeInstalled();
+  if (!commandExists('claude')) {
+    if (commandExists('codex')) {
+      printCodexInstructions();
+      process.exit(0);
+    }
+    printNeitherFoundError();
+    process.exit(1);
+  }
 
   for (const [cmd, args] of commands) {
     const printable = [cmd, ...args].join(' ');

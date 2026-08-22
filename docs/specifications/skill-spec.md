@@ -31,8 +31,10 @@ Metadata is real YAML frontmatter — `---` at byte offset 0, before any other c
 not a fenced code block under a heading. This is what the Claude Code skill loader
 parses for `name` and `description`.
 
-Future Codex-specific behavior, if added, lives at `skills/<domain>/agents/openai.yaml`.
-No such file exists yet; this is a reserved convention, not a requirement.
+Codex CLI loads these same `SKILL.md` files directly — `.codex-plugin/plugin.json`'s
+`skills` field points at this repo's `skills/` directory as a whole, not per domain.
+No per-Skill Codex file exists or is needed; see `.codex/INSTALL.md` for how a Codex
+user installs this repo.
 
 ## Identity
 

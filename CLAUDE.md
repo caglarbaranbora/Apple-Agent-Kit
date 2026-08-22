@@ -86,12 +86,12 @@ claude plugin validate .
 
 Run this after any change to `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, or `skills/apple-agent-kit/SKILL.md`.
 
-## Codex support (future)
+## Codex support
 
-Not built yet. When added, Codex-specific behavior for a domain skill goes
-at `skills/<domain>/agents/openai.yaml`, matching the per-domain skill
-layout already in place — no directory restructuring needed when that work
-starts.
+Codex CLI loads this repo's Skills directly via `.codex-plugin/plugin.json` (repo
+root), whose `skills` field points at the existing `skills/` directory as a whole — no
+per-domain translation file, no directory restructuring. See `.codex/INSTALL.md` for
+how a Codex user installs this repo (plugin marketplace or manual clone + symlink).
 
 ## Updating README.md for a new/changed domain or Skill
 
@@ -104,21 +104,22 @@ Do this in the same PR/commit that ships the domain or Skill — not as a follow
 
 ## Release version consistency
 
-The project has one release version number, shared by exactly these five files:
+The project has one release version number, shared by exactly these six files:
 
 - `README.md` (the `Version:` line near the top)
 - `npx/README.md` (the `Version:` line near the top)
 - `npx/package.json` (`version` field)
 - `.claude-plugin/plugin.json` (`version` field)
+- `.codex-plugin/plugin.json` (`version` field)
 - `CHANGELOG.md` (its newest non-`[Unreleased]` release header, e.g. `## [1.0.0] - YYYY-MM-DD`)
 
-These five MUST always match exactly. Before any commit that bumps the
-release version, or as part of any final/holistic review, check all five —
+These six MUST always match exactly. Before any commit that bumps the
+release version, or as part of any final/holistic review, check all six —
 a mismatch between them is a release-blocking defect, not a nitpick.
 Per-artifact `version:` fields inside individual Knowledge Contracts,
 Skills, and References are a separate, independent versioning scheme
 (component-level, starts at `0.1.0`, bumped per-artifact as that artifact
-changes) — they are NOT part of this four-file release-version check and
+changes) — they are NOT part of this six-file release-version check and
 do not need to match the release version.
 
 ## npm package publishing

@@ -35,6 +35,8 @@ npx apple-agent-kit
 
 This adds this repository as a Claude Code plugin marketplace and installs the `apple-agent-kit` plugin, so its Skills, Knowledge Contracts, and routing become available inside Claude Code sessions. Requires the `claude` CLI to already be installed.
 
+Codex CLI users: the same installer detects `codex` and prints install instructions instead of erroring. See [.codex/INSTALL.md](.codex/INSTALL.md) for the plugin-marketplace command and a manual clone-and-symlink fallback.
+
 ## Architecture
 
 Apple Documentation
