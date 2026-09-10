@@ -24,6 +24,7 @@ spec and the validator disagree, that's a release-blocking defect, not a prefere
 | Skill | `docs/specifications/skill-spec.md` |
 | Reference | `docs/specifications/reference-spec.md` |
 | Workflow | `docs/specifications/workflow-spec.md` |
+| Architecture Decision Record | `docs/specifications/adr-spec.md` |
 | Metadata fields (all types) | `schemas/metadata.schema.md` |
 
 Adding to, splitting, or retiring a Skill: `docs/specifications/skill-management.md`.
