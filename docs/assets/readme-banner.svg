@@ -1,0 +1,27 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="55%" stop-color="#fbfaff"/>
+      <stop offset="100%" stop-color="#e9e4ff"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9c1ff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#b9a9ff" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <g fill="none" stroke="#d9d2f5" stroke-width="1.5" opacity="0.8">
+    <path d="M -50 470 C 250 560, 550 380, 850 460 S 1300 380, 1350 300"/>
+    <path d="M 650 630 C 850 480, 1000 560, 1120 400 S 1300 200, 1260 60"/>
+  </g>
+  <g fill="none" stroke="#efeaff" stroke-width="1.5" opacity="0.9">
+    <path d="M -60 560 C 300 640, 600 480, 900 540 S 1320 470, 1380 380"/>
+  </g>
+
+  <text x="90" y="300" font-family="-apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" font-size="72" font-weight="700" fill="#171321">Apple Agent Kit</text>
+  <text x="92" y="352" font-family="-apple-system, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="400" fill="#6b6580">Turn Apple's official docs into Skills your coding agent actually routes to</text>
+</svg>
