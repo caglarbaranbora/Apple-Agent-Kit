@@ -103,6 +103,41 @@ Not OK.
 None.
 """.format(url=URL)
 
+ADR = """# ADR-0001: Example Domain Scope
+
+Status: Approved
+Version: 1.0.0
+
+## Metadata
+
+``` yaml
+id: adr.0001
+artifact_type: adr
+title: Example Domain Scope
+version: 1.0.0
+status: Approved
+domain: Example
+related: []
+last_updated: 2026-09-10
+```
+
+## Context
+
+Why.
+
+## Decision
+
+What.
+
+## Consequences
+
+Affects nothing in this fixture.
+
+## Verification Log
+
+- 2026-09-10: initial scope recorded.
+"""
+
 SKILL = """---
 name: example
 description: Example skill. Use when the task involves example things. Triggers on example.
@@ -189,6 +224,50 @@ class RepoTestCase(unittest.TestCase):
 class TestFixtureIsValid(RepoTestCase):
     def test_clean_repository_has_no_findings(self):
         self.assertEqual([str(f) for f in self.repo.findings()], [])
+
+
+class TestAdrLinks(RepoTestCase):
+    DOMAIN_MAP = (
+        "# Domain Map\n\n"
+        "| Domain | Slug | Initial Scope | Owns | ADR |\n"
+        "|---|---|---|---|---|\n"
+        "| Example | example | Example scope | Example owns | "
+        "[ADR-0001](../adr/0001-example-scope.md) |\n"
+    )
+
+    def test_resolving_link_with_matching_file_has_no_findings(self):
+        self.repo.write("docs/architecture/domain-map.md", self.DOMAIN_MAP)
+        self.repo.write("docs/adr/0001-example-scope.md", ADR)
+        self.assertNotIn("domain-map-adr-link", self.repo.rules())
+
+    def test_broken_link_is_reported(self):
+        self.repo.write(
+            "docs/architecture/domain-map.md",
+            self.DOMAIN_MAP.replace("0001-example-scope.md", "0001-missing.md"),
+        )
+        self.assertRule("domain-map-adr-link")
+
+    def test_orphan_adr_file_is_reported(self):
+        self.repo.write("docs/architecture/domain-map.md", self.DOMAIN_MAP)
+        self.repo.write("docs/adr/0001-example-scope.md", ADR)
+        self.repo.write(
+            "docs/adr/0002-orphan-scope.md",
+            ADR.replace("adr.0001", "adr.0002").replace("Example Domain Scope", "Orphan Scope"),
+        )
+        self.assertRule("domain-map-adr-link")
+
+    def test_no_domain_map_file_has_no_findings(self):
+        # RepoFixture's base fixture (see class RepoFixture above) has no
+        # docs/architecture/domain-map.md at all -- the check must no-op
+        # rather than error when the file the ADR column lives in is absent.
+        self.assertNotIn("domain-map-adr-link", self.repo.rules())
+
+    def test_domain_field_is_not_checked_against_directory(self):
+        # ADRs live flat in docs/adr/, never in a domain-named subdirectory,
+        # unlike knowledge/skill/reference -- the domain-directory check must
+        # skip this type the same way it already skips workflow/entry.
+        self.repo.write("docs/adr/0001-example-scope.md", ADR)
+        self.assertNotIn("domain-path", self.repo.rules())
 
 
 class TestLevel2(RepoTestCase):
