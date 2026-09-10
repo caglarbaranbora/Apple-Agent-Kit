@@ -40,6 +40,7 @@ Size limits:
 | Skill | 80 lines |
 | Workflow | 80 lines |
 | Reference | 98 lines |
+| ADR | 150 lines |
 
 Enforced by: `scripts/validate_artifact.py`
 
