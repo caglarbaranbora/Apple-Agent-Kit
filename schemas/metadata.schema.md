@@ -37,6 +37,7 @@ Required for every artifact type.
 | `reference` | `domain`, `owner`, `summary` |
 | `workflow` | `skills`, `related` |
 | `entry` | `name`, `description` |
+| `adr` | `domain`, `related` |
 
 `domain` is an extension field, not a base field, because two artifact types are not
 domain-scoped. A `workflow` spans domains by definition — that is what makes it a
@@ -50,7 +51,7 @@ frontmatter, which is why `skill` and `entry` carry them and the other types do 
 
 ### `artifact_type`
 
-`knowledge`, `skill`, `reference`, `workflow`, `entry`, `template`, `spec`
+`knowledge`, `skill`, `reference`, `workflow`, `entry`, `template`, `spec`, `adr`
 
 ### `status`
 
