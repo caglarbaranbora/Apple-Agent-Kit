@@ -5,7 +5,7 @@
 [![Changelog](https://img.shields.io/badge/changelog-CHANGELOG.md-blue)](CHANGELOG.md)
 
 Status: Stable
-Version: 2.3.0
+Version: 2.4.0
 
 ## Overview
 
@@ -100,9 +100,9 @@ Full routing tables: [skills/index.md](skills/index.md). Domain build order and 
 
 ## What's New
 
+- 2026-09-10 — **Architecture Decision Records landed.** A new, fully validated sixth artifact type, `adr` (`docs/adr/`), records *why* a domain's scope was set where it was — separately from `docs/architecture/domain-map.md`, which records only *what* the current scope is. `ADR-0001` (`style-guide`) is the first real instance; migrating the rest of `domain-map.md`'s scope history is a follow-up. Also in this release: `branding`/`layout` Knowledge Contract staleness fixes. See `CHANGELOG.md` for details.
 - 2026-09-10 — **Designing for iPhone Duo support landed.** Apple published a new HIG Foundations page for its iPhone Duo (foldable) launch on 2026-09-09; `human-interface-guidelines` now routes 3 new Knowledge Contracts for it — device anatomy/poses/reserved regions, dynamic layouts (split views, arrangement views), and vertical-axis toolbar/tab bar controls. See `CHANGELOG.md` for details.
 - 2026-08-23 — Codex CLI support landed. This repo's Skills are now loadable from OpenAI's Codex CLI, not just Claude Code, with zero changes to any Knowledge Contract, Skill, Reference, or Workflow — Codex reads the same `SKILL.md` files directly via a single repo-root manifest, `.codex-plugin/plugin.json`, that points at the existing `skills/` directory as a whole. No per-domain translation file exists or is needed. `.codex/INSTALL.md` documents both install paths (Codex's plugin marketplace, or a manual clone-and-symlink fallback), and `npx apple-agent-kit` now detects a Codex-only environment and prints the right instructions instead of erroring.
-- 2026-08-23 — Tier 2's 78 Knowledge Contracts and 17 Skills finished their first full pass through every Level 4 check, L4.1 through L4.5. The last of those, L4.5 — does the page a rule cites actually say what it's quoted as saying — had been explicitly left open by two earlier reviews because answering it means fetching live Apple documentation, not just reading the repository. Fetching it found what reading alone never could: fourteen fabricated-but-plausible quotes attached to otherwise-correct rules, a pair of stale rule-number citations, and one rule whose entire premise — that PassKit ships no SwiftUI equivalent for adding a pass to Wallet — had gone false the moment Apple shipped one, silently invalidating a coupling an earlier review had verified under the premise that held when it was written.
 Only the 3 most recent entries live here — see [CHANGELOG.md](CHANGELOG.md) for the full release history.
 
 ## Contributing
