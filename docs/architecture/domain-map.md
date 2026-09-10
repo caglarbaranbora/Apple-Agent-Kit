@@ -31,8 +31,8 @@ Completed: `style-guide` (Tier 1), `authentication` (Existing/Unscheduled — **
 
 ## Tier 1 — Must-Have
 
-| Domain | Slug | Initial Scope | Owns |
-|---|---|---|---|
+| Domain | Slug | Initial Scope | Owns | ADR |
+|---|---|---|---|---|
 | Apple Style Guide | style-guide | Terminology, capitalization, punctuation, writing style | UI copy wording, capitalization rules, punctuation, inclusive writing | [ADR-0001](../adr/0001-style-guide-scope.md) |
 | Human Interface Guidelines | human-interface-guidelines | Foundations (iOS/iPadOS): layout, color, typography, app icons, images, inclusion, accessibility-design, dark mode, materials, motion, icons, branding, privacy-design, SF Symbols usage, RTL. Plus curated Patterns/Components/Inputs v1: onboarding, searching, settings, notifications, feedback, undo/redo (Patterns); lists and tables, buttons, sheets, alerts, action sheets, navigation bars, tab bars, pickers, toggles, text fields, menus (Components); touchscreen gestures (Inputs). Remaining Patterns/Components/Inputs topics deferred — see Cross-Domain Notes. | Foundations-layer visual/UX design guidance for iOS/iPadOS (layout, color, typography, app icons, images, inclusive-design content, materials, motion, iconography, branding, accessibility-design, privacy-design, RTL), plus a curated Patterns/Components/Inputs v1 design-guidance subset |
 | App Store Review Guidelines | app-store-review-guidelines | 1.2 User-Generated Content, 1.5 Developer Information, 1.6 Data Security, 2.1 App Completeness, 2.3 Accurate Metadata, 3.1.1 In-App Purchase, 4.1 Copycats, 4.2 Minimum Functionality, 4.3 Spam/Duplicate, 4.8 Login Services, 5.1.1/5.1.2 Privacy, 5.2 Intellectual Property, 5.6.1/5.6.3 the ratings API and review manipulation. Design 4.0 owned by `human-interface-guidelines`; vertical Safety and Legal sections at Tier 3 — see Cross-Domain Notes. | App Store submission, metadata, and distribution compliance rules |

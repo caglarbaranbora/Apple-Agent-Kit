@@ -11,7 +11,7 @@ artifact_type: adr
 title: Apple Style Guide Domain Scope
 version: 1.0.0
 status: Approved
-domain: Apple Style Guide
+domain: Style Guide
 related: []
 last_updated: 2026-09-10
 ```

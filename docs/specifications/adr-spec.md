@@ -42,9 +42,11 @@ number in the filename — a validator checks the two agree, the same pattern
 Common base (see `../../schemas/metadata.schema.md` [[metadata.schema]]):
 `id`, `artifact_type`, `title`, `version`, `status`, `last_updated`
 
-ADR extension: `domain` (the domain name exactly as it appears in
-`domain-map.md`'s `Domain` column), `related` (non-binding; used to point at the
-ADR that supersedes this one, when `status` is `Deprecated`)
+ADR extension: `domain` (the domain's proper name, matching the `domain:` value
+every other artifact in that domain already declares — e.g. `Style Guide`, not
+`domain-map.md`'s `Domain` column text verbatim, which can carry a longer,
+decorative form like "Apple Style Guide"), `related` (non-binding; used to point
+at the ADR that supersedes this one, when `status` is `Deprecated`)
 
 `artifact_type` is `adr`.
 
