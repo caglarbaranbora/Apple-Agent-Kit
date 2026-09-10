@@ -1,6 +1,6 @@
 # Branding
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.1.0
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Approved Version: 1.0.0
 id: knowledge.human-interface-guidelines.branding
 artifact_type: knowledge
 title: Branding
-version: 1.0.0
+version: 1.1.0
 status: Approved
 owner: Apple Agent Kit
 summary: Defines how an app's brand identity (voice, accent color, custom fonts, logo) appears in iOS/iPadOS UI without overriding platform conventions.
@@ -23,8 +23,9 @@ depends_on: []
 related:
   - knowledge.human-interface-guidelines.color
   - knowledge.human-interface-guidelines.typography
+  - knowledge.human-interface-guidelines.materials
   - knowledge.style-guide.copyright-and-trademarks
-last_updated: 2026-08-08
+last_updated: 2026-09-10
 ```
 
 ## Intent
@@ -59,8 +60,20 @@ Agents SHOULD express brand voice/tone consistently in written copy
 
 ### Rule 2
 
-Agents MAY specify an app accent color applied to interface icons,
-buttons, and text.
+Agents MUST apply the app's accent color judiciously rather than
+broadly — spreading it across most controls overwhelms the interface
+and dilutes its impact. Agents SHOULD minimize accent-color use on
+controls, reserving it for primary actions or status indicators (e.g.,
+an unread-content badge, the selected tab bar icon), and SHOULD prefer
+expressing brand color in the content layer, where it scrolls beneath
+Liquid Glass controls and is picked up dynamically, over tinting
+controls directly. "Apply your app's accent color judiciously. Using
+your brand color too broadly can overwhelm your interface and dilute
+its impact. Minimize its use on controls and instead use it
+intentionally for primary actions or status indicators... To express
+your brand through color, consider moving it into the content layer,
+where it scrolls beneath Liquid Glass controls and gets picked up
+dynamically."
 
 ### Rule 3
 
@@ -85,11 +98,12 @@ Agents MUST NOT display Apple trademarks in the app name or images.
 
 ## Compliant Example
 
--   ✓ Custom accent color applied to buttons and icons throughout the app. (Rule 2)
+-   ✓ Accent color is reserved for the selected tab bar icon and unread-content badges, while most buttons and icons use the system tint. (Rule 2)
 -   ✓ Logo appears once, in an About/Settings screen. (Rule 4)
 
 ## Non-Compliant Example
 
+-   ✗ Accent color is applied broadly across every button, icon, and text element instead of reserved for primary actions/status indicators. (Rule 2)
 -   ✗ Logo repeated in every navigation bar as a persistent header element. (Rule 4)
 -   ✗ Launch screen decorated with marketing copy and animation. (Rule 5)
 -   ✗ Custom font ships with no Bold Text / Dynamic Type support. (Rule 3)
