@@ -662,6 +662,12 @@ def check_domain_map_adr_links(artifacts, root):
 
     adr_dir = root / "docs" / "adr"
     adr_files = list(adr_dir.glob("*.md")) if adr_dir.exists() else []
+    # Membership is checked against `.resolve()`'d paths (matching how `linked`
+    # was built above), but `orphan` itself stays unresolved for the report
+    # below. On macOS, tempfile.TemporaryDirectory() paths live under `/var`,
+    # which `.resolve()` follows to `/private/var` -- resolving `orphan` here
+    # too would make it fall outside `root` (unresolved) and crash
+    # `relative_to(root)`. Do not "simplify" this to resolve-then-relative_to.
     for orphan in sorted(adr_files):
         if orphan.resolve() in linked:
             continue
