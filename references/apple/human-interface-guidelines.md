@@ -1,7 +1,7 @@
 # Human Interface Guidelines
 
 Status: Approved
-Version: 1.0.0
+Version: 1.1.0
 
 ## Metadata
 
@@ -9,12 +9,12 @@ Version: 1.0.0
 id: reference.apple.human-interface-guidelines
 artifact_type: reference
 title: Human Interface Guidelines
-version: 1.0.0
+version: 1.1.0
 status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's Human Interface Guidelines — Foundations section, iOS/iPadOS scope.
 domain: Human Interface Guidelines
-last_updated: 2026-08-08
+last_updated: 2026-09-10
 ```
 
 ## Source
@@ -24,6 +24,7 @@ https://developer.apple.com/design/human-interface-guidelines/app-icons
 https://developer.apple.com/design/human-interface-guidelines/branding
 https://developer.apple.com/design/human-interface-guidelines/color
 https://developer.apple.com/design/human-interface-guidelines/dark-mode
+https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo
 https://developer.apple.com/design/human-interface-guidelines/foundations
 https://developer.apple.com/design/human-interface-guidelines/icons
 https://developer.apple.com/design/human-interface-guidelines/images
@@ -53,6 +54,7 @@ Patterns/Components/Inputs topics are **Excluded**, not deferred.
 - Branding
 - Color
 - Dark Mode
+- Designing for iPhone Duo (foldable device: anatomy/poses, dynamic layouts, vertical controls)
 - Icons
 - Images
 - Inclusion
@@ -71,6 +73,9 @@ Patterns/Components/Inputs topics are **Excluded**, not deferred.
 - knowledge/human-interface-guidelines/branding.md ([[knowledge/human-interface-guidelines/branding]])
 - knowledge/human-interface-guidelines/color.md ([[knowledge/human-interface-guidelines/color]])
 - knowledge/human-interface-guidelines/dark-mode.md ([[knowledge/human-interface-guidelines/dark-mode]])
+- knowledge/human-interface-guidelines/designing-for-iphone-duo-anatomy.md ([[knowledge/human-interface-guidelines/designing-for-iphone-duo-anatomy]])
+- knowledge/human-interface-guidelines/designing-for-iphone-duo-layout.md ([[knowledge/human-interface-guidelines/designing-for-iphone-duo-layout]])
+- knowledge/human-interface-guidelines/designing-for-iphone-duo-vertical-controls.md ([[knowledge/human-interface-guidelines/designing-for-iphone-duo-vertical-controls]])
 - knowledge/human-interface-guidelines/icons.md ([[knowledge/human-interface-guidelines/icons]])
 - knowledge/human-interface-guidelines/images.md ([[knowledge/human-interface-guidelines/images]])
 - knowledge/human-interface-guidelines/inclusion.md ([[knowledge/human-interface-guidelines/inclusion]])

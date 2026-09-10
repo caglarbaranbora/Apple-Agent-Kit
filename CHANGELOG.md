@@ -8,6 +8,18 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 ### Added
 - **New `adr` artifact type — Architecture Decision Records.** `docs/adr/`, validated like the other five artifact types (`docs/specifications/adr-spec.md`, `scripts/validate_artifact.py --type adr`, and a new `scripts/validate_repo.py` check that `domain-map.md`'s `ADR` column links agree with `docs/adr/`, both directions). Exists to stop `domain-map.md`'s "Completed:" paragraph from growing forever as one un-editable run-on sentence — see `docs/superpowers/specs/2026-09-10-adr-artifact-type-design.md` for the full design, informed by researching why the `mattpocock/skills` repo's own skill/agent system holds up (`docs/research/2026-09-mattpocock-skills-architecture.md`).
   - `ADR-0001` (`style-guide`) is the first real instance, proving the pipeline end-to-end. The other ~30 domains' scope history remains in `domain-map.md`'s paragraph for now — migrating them, and squaring up every Tier table's `ADR` column, is a follow-up plan. `## Cross-Domain Notes` is explicitly out of scope for this artifact type; see the design's Non-goals.
+- **Designing for iPhone Duo — 3 new Knowledge Contracts in `human-interface-guidelines`.** Apple published a brand-new HIG Foundations page, "Designing for iPhone Duo," on 2026-09-09 alongside the iPhone Duo (foldable) launch. Added to the existing `human-interface-guidelines` Skill — no new Skill, per `docs/specifications/skill-management.md`'s one-skill-per-domain default and Apple's own grouping of the page under Foundations.
+  - `designing-for-iphone-duo-anatomy` — dual displays, hinge/device poses, and the three reserved regions (outer camera, inner camera, folding region).
+  - `designing-for-iphone-duo-layout` — resizable-layout fundamentals, split-view fold adaptation, the new arrangement-view container (split/overlay), and full-screen game guidance.
+  - `designing-for-iphone-duo-vertical-controls` — toolbar/tab bar placement on the vertical axis, item ordering/grouping/visibility priority, and Split View multitasking control placement.
+  - `references/apple/human-interface-guidelines.md`, `skills/human-interface-guidelines/SKILL.md`, `skills/index.md`, and `docs/architecture/domain-map.md` updated accordingly.
+  - Scope note: `Snippets` (a separate, June-2026 HIG page, unrelated to this launch) was investigated in the same pass and deliberately left out — it falls under `app-intents`'s stated v1 exclusion of Interactive Snippets and is a distinct decision. See `docs/research/2026-09-hig-updates.md`.
+
+### Fixed
+- **`branding`/`layout` Knowledge Contracts updated for staleness against live Apple pages.** Both pages carry a 2026-09-09 HIG change-log entry; the repo's Contracts had fallen behind.
+  - `branding.md` Rule 2 rewritten: accent color must be applied judiciously and minimized on controls (reserved for primary actions/status indicators), with brand color preferably expressed in the content layer beneath Liquid Glass controls rather than tinting controls directly. Previously read as an unqualified "MAY apply accent color to icons, buttons, and text."
+  - `layout.md` gains Rule 7 (Liquid Glass control/content differentiation, scroll edge effect, background extension effect) and Rule 8 (size-class-based layout decisions, not device-type/orientation-based) — both live-page content with no prior Contract coverage. Existing Rules 1–6 are unchanged (Rule 2 is cited by `accessibility.md` and `typography.md`).
+  - Found via `docs/research/2026-09-hig-updates.md` (from the "Designing for iPhone Duo" PR's research pass); this fix is scoped to Branding/Layout only.
 
 ## [2.3.0] - 2026-08-23
 ### Added
