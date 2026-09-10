@@ -74,8 +74,8 @@ Reuses the four states `../artifact-lifecycle.md` [[artifact-lifecycle]] already
 defines — no ADR-specific vocabulary:
 
 - **Approved** — this decision currently governs the domain's scope.
-- **Deprecated** — a later ADR supersedes this one. Name the superseding ADR via
-  `related:`.
+- **Deprecated** — a later ADR supersedes this one. Point at the superseding ADR
+  via `related:`.
 - **Archived** — the domain itself is retired (e.g. `authentication`). Matches
   `domain-map.md`'s "Retired" status for that row.
 - **Draft** — being authored; not yet a settled record.
