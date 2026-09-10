@@ -18,7 +18,9 @@ last_updated: 2026-09-10
 
 ## Context
 
-`style-guide` was the repository's first domain (Tier 1) and predates the habit,
+Established by ../../rfcs/0001-style-guide-domain-and-domain-roadmap.md
+([[0001-style-guide-domain-and-domain-roadmap]]), Decision 1 ("Split `style-guide`
+from `design`"). `style-guide` was the repository's first domain (Tier 1) and predates the habit,
 visible in later `domain-map.md` entries, of narrating each domain's founding
 rationale inline: the "Completed:" paragraph's own mention of it is just
 `` `style-guide` (Tier 1) ``, with no elaborating clause. The domain's actual

@@ -13,6 +13,34 @@ changed — separately from `docs/architecture/domain-map.md`, which records onl
 *what* the current scope is. It is a governance document, not domain content: it
 carries no implementation rules and is never routed to by a Skill.
 
+## Relationship to `rfcs/`
+
+`rfcs/0001-style-guide-domain-and-domain-roadmap.md` Decision 8 rejected
+introducing `docs/adr/` as a *general* decision-record system, on the grounds
+that `rfcs/` already covers architecture proposals and reintroducing a second,
+parallel format would fragment where decisions live. That rejection stands for
+what it actually rejected — `docs/adr/` is not a place to propose or approve an
+architecture change, and `rfcs/` remains the only place that happens (per
+`docs/architecture.md`: "Architecture changes require an RFC").
+
+What this spec defines is narrower and shaped differently: a per-domain,
+append-only log of a scope *already in effect* — extracted out of
+`domain-map.md`'s own growing narrative paragraph, not a new proposal-and-approval
+flow. An ADR is never itself the vehicle for changing a domain's scope; that
+still happens through ordinary review of the Knowledge Contracts/Skills/
+`domain-map.md` row themselves, or through an RFC when the change is
+architectural. The ADR only records that the change happened, after the fact —
+the same relationship `domain-map.md`'s own history already had to this content,
+now given a per-domain home instead of one shared paragraph.
+
+An ADR SHOULD cite the RFC that established or changed its domain's scope, where
+one exists, as a prose citation in `## Context` (a relative path plus the
+`[[wiki link]]` mirror `linking-model.md` already specifies) — `related:` is not
+used for this, since an RFC is not a validated artifact with a resolvable id and
+`related:` targets are checked against the artifact graph. See
+`docs/adr/0001-style-guide-scope.md`, which cites
+`rfcs/0001-style-guide-domain-and-domain-roadmap.md` this way.
+
 ## When an ADR Is Warranted
 
 For a *new* decision (as opposed to the initial migration this spec accompanies),
