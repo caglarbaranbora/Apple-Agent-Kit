@@ -541,26 +541,32 @@ def check_prose_paths_resolve(artifacts, root):
     Two things make a naive implementation report ~50 false positives on this
     repository, and both are handled here rather than by lowering the bar:
 
-    * `npx/README.md` is a byte-for-byte mirror of the root README, published to
-      npm. Its links are written against the repository root, which is where
-      they resolve for a reader on GitHub. They are resolved that way here.
     * A Markdown link is `[text](target)`, but so is the localization syntax
       `^[…](inflect: true)`. A target containing whitespace is not a path.
-
-    Code spans and fenced blocks are stripped first: a link inside them is a
-    format example, not a link. CLAUDE.md documents the README's Skill-bullet
-    shape that way.
+    * Code spans and fenced blocks are stripped first: a link inside them is a
+      format example, not a link. CLAUDE.md documents the README's Skill-bullet
+      shape that way.
 
     `docs/superpowers/` is excluded: design records and plans are dated
     snapshots of past decisions, not maintained documents.
+
+    `npx/README.md` no longer needs the root-relative special case a prior
+    version of this function carried: research into why its links broke on
+    npmjs.com (docs/research/2026-09-how-to-write-a-good-readme.md) found that
+    npm resolves a published package's README links against the package
+    directory (`npx/`), not the monorepo root, which is where GitHub resolves
+    them -- the two renderers disagree, so no single base path is correct for
+    both. `npx/README.md` was rewritten to carry only absolute URLs for exactly
+    this reason (see its own history), so it now needs no special base path at
+    all; every `.md` file in the repository resolves relative links against its
+    own directory, uniformly.
     """
     findings = []
-    root_relative = {"npx/README.md"}
     for path in sorted(root.rglob("*.md")):
         rel = path.relative_to(root).as_posix()
         if rel.startswith((".git/", ".claude/", "node_modules/", "docs/superpowers/")):
             continue
-        base = root if rel in root_relative else path.parent
+        base = path.parent
         prose = re.sub(r"```.*?```", "", path.read_text(), flags=re.DOTALL)
         prose = re.sub(r"`[^`\n]*`", "", prose)
         for target in re.findall(r"\[[^\]]*\]\(([^)]+)\)", prose):

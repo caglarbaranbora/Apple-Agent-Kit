@@ -424,12 +424,26 @@ class TestLevel2(RepoTestCase):
         self.repo.write("docs/guide.md", "Use `^[one](inflect: true)` in translations.\n")
         self.assertNotIn("prose-path-resolves", self.repo.rules())
 
-    def test_npx_readme_links_resolve_against_the_repository_root(self):
-        # npx/README.md is a byte-for-byte mirror of the root README, published
-        # to npm; its links are written for a reader on GitHub.
-        self.repo.write("README.md", "See [the index](skills/index.md).\n")
-        self.repo.write("npx/README.md", "See [the index](skills/index.md).\n")
+    def test_npx_readme_links_resolve_against_its_own_directory(self):
+        # npx/README.md is a short, install-focused doc published to npm; npm
+        # resolves its relative links against the published package directory
+        # (npx/), not the monorepo root -- the opposite of what GitHub does
+        # for the same path. It is written with absolute URLs for anything
+        # outside npx/ for exactly this reason (see docs/research/
+        # 2026-09-how-to-write-a-good-readme.md), and any relative link it
+        # does carry must resolve the same uniform way every other file's
+        # does: against its own directory.
+        self.repo.write("npx/package.json", "{}\n")
+        self.repo.write("npx/README.md", "See [package.json](package.json).\n")
         self.assertNotIn("prose-path-resolves", self.repo.rules())
+
+    def test_npx_readme_link_written_against_the_root_is_now_broken(self):
+        # The inverse of the case above: a link npx/README.md writes as if it
+        # resolved against the repository root (the old, incorrect
+        # assumption) must now be reported, since it resolves against npx/
+        # instead.
+        self.repo.write("npx/README.md", "See [the index](skills/index.md).\n")
+        self.assertRule("prose-path-resolves")
 
     def test_unrouted_contract_is_an_orphan(self):
         self.repo.edit(
