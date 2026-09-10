@@ -13,6 +13,12 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
   - `references/apple/human-interface-guidelines.md`, `skills/human-interface-guidelines/SKILL.md`, `skills/index.md`, and `docs/architecture/domain-map.md` updated accordingly.
   - Scope note: `Snippets` (a separate, June-2026 HIG page, unrelated to this launch) was investigated in the same pass and deliberately left out — it falls under `app-intents`'s stated v1 exclusion of Interactive Snippets and is a distinct decision. See `docs/research/2026-09-hig-updates.md`.
 
+### Fixed
+- **`branding`/`layout` Knowledge Contracts updated for staleness against live Apple pages.** Both pages carry a 2026-09-09 HIG change-log entry; the repo's Contracts had fallen behind.
+  - `branding.md` Rule 2 rewritten: accent color must be applied judiciously and minimized on controls (reserved for primary actions/status indicators), with brand color preferably expressed in the content layer beneath Liquid Glass controls rather than tinting controls directly. Previously read as an unqualified "MAY apply accent color to icons, buttons, and text."
+  - `layout.md` gains Rule 7 (Liquid Glass control/content differentiation, scroll edge effect, background extension effect) and Rule 8 (size-class-based layout decisions, not device-type/orientation-based) — both live-page content with no prior Contract coverage. Existing Rules 1–6 are unchanged (Rule 2 is cited by `accessibility.md` and `typography.md`).
+  - Found via `docs/research/2026-09-hig-updates.md` (from the "Designing for iPhone Duo" PR's research pass); this fix is scoped to Branding/Layout only.
+
 ## [2.3.0] - 2026-08-23
 ### Added
 - **Codex CLI support.** This repo's Skills are now loadable from OpenAI's Codex CLI, not just Claude Code — with zero changes to any Knowledge Contract, Skill, Reference, or Workflow. Design in `rfcs/0002-codex-support.md`.
