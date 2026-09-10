@@ -32,11 +32,15 @@ layers — nothing depends on them at runtime.
 
 ## Artifact Types
 
-`knowledge`, `skill`, `reference`, `workflow`, `entry`, `template`, `spec`
+`knowledge`, `skill`, `reference`, `workflow`, `entry`, `template`, `spec`, `adr`
 
 `entry` is the plugin entry point (`skills/apple-agent-kit/SKILL.md`): the artifact
 Claude Code discovers first, which points an agent at the Routing Index. It is not a
 Skill and routes no Knowledge.
+
+`adr` (Architecture Decision Record, `docs/adr/`) is a governance record, not a
+content-pipeline layer: it is never routed to by a Skill and carries no
+implementation rules. See `docs/specifications/adr-spec.md`.
 
 ## Repository Structure
 

@@ -58,6 +58,39 @@ None.
 """
 
 
+VALID_ADR = """# ADR-0001: Example Domain Scope
+
+## Metadata
+
+```yaml
+id: adr.0001
+artifact_type: adr
+title: Example Domain Scope
+version: 1.0.0
+status: Approved
+domain: Example
+related: []
+last_updated: 2026-09-10
+```
+
+## Context
+
+Why the Example domain's scope was set where it was.
+
+## Decision
+
+Example domain covers X, Y, Z.
+
+## Consequences
+
+Affects `knowledge/example/`.
+
+## Verification Log
+
+- 2026-09-10: initial scope recorded.
+"""
+
+
 class TestValidateKnowledge(unittest.TestCase):
     def test_valid_contract_has_no_errors(self):
         errors = validate_artifact.validate_text(VALID_KNOWLEDGE, "knowledge")
@@ -120,6 +153,49 @@ class TestValidateKnowledge(unittest.TestCase):
         text = VALID_KNOWLEDGE.replace("## Dependencies", "## Deps")
         errors = validate_artifact.validate_text(text, "knowledge")
         self.assertIn("missing required section: ## Dependencies", errors)
+
+
+class TestValidateAdr(unittest.TestCase):
+    def test_valid_adr_has_no_errors(self):
+        errors = validate_artifact.validate_text(VALID_ADR, "adr")
+        self.assertEqual(errors, [])
+
+    def test_line_cap_is_150(self):
+        text = VALID_ADR + ("\nextra line\n" * 150)
+        errors = validate_artifact.validate_text(text, "adr")
+        self.assertTrue(any("line cap" in e for e in errors))
+        self.assertTrue(any("> 150" in e for e in errors))
+
+    def test_missing_context_section_is_rejected(self):
+        text = VALID_ADR.replace("## Context", "## Renamed")
+        errors = validate_artifact.validate_text(text, "adr")
+        self.assertIn("missing required section: ## Context", errors)
+
+    def test_missing_verification_log_section_is_rejected(self):
+        text = VALID_ADR.replace("## Verification Log", "## Renamed")
+        errors = validate_artifact.validate_text(text, "adr")
+        self.assertIn("missing required section: ## Verification Log", errors)
+
+    def test_missing_domain_field_is_rejected(self):
+        text = VALID_ADR.replace("domain: Example\n", "")
+        errors = validate_artifact.validate_text(text, "adr")
+        self.assertTrue(any("domain" in e for e in errors))
+
+    def test_adr_under_docs_adr_is_accepted(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "docs" / "adr" / "0001-example-scope.md"
+            path.parent.mkdir(parents=True)
+            path.write_text(VALID_ADR)
+            errors = validate_artifact.validate_file(path, "adr")
+        self.assertEqual(errors, [])
+
+    def test_adr_under_knowledge_is_rejected(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "knowledge" / "example" / "misfiled.md"
+            path.parent.mkdir(parents=True)
+            path.write_text(VALID_ADR)
+            errors = validate_artifact.validate_file(path, "adr")
+        self.assertTrue(any("belongs under `docs/adr/`" in e for e in errors), errors)
 
 
 VALID_SKILL = """---

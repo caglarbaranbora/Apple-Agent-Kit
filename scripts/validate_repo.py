@@ -45,6 +45,7 @@ ARTIFACT_GLOBS = {
     "skill": "skills/*/SKILL.md",
     "reference": "references/apple/*.md",
     "workflow": "workflows/*/WORKFLOW.md",
+    "adr": "docs/adr/*.md",
 }
 
 ROUTING_INDEX = "skills/index.md"
@@ -221,11 +222,16 @@ def expected_id(artifact):
     not: `skills/human-interface-guidelines-components/` holds
     `skill.human-interface-guidelines.components`, so the directory encodes
     `<domain>` or `<domain>-<facet>` and only the domain segment is checkable.
+    An ADR's filename leads with its zero-padded number
+    (`0001-style-guide-scope.md`), which is the whole of its id (`adr.0001`).
     """
     if artifact.artifact_type == "knowledge":
         return f"knowledge.{artifact.path.parent.name}.{artifact.path.stem}"
     if artifact.artifact_type == "reference":
         return f"reference.apple.{artifact.path.stem}"
+    if artifact.artifact_type == "adr":
+        match = re.match(r"(\d+)-", artifact.path.stem)
+        return f"adr.{match.group(1)}" if match else None
     return None
 
 
@@ -290,7 +296,7 @@ def check_domain_matches_directory(artifacts, root):
     """
     findings = []
     for artifact in artifacts:
-        if artifact.artifact_type in ("workflow", "entry") or artifact.domain is None:
+        if artifact.artifact_type in ("workflow", "entry", "adr") or artifact.domain is None:
             continue
         if artifact.artifact_type == "reference":
             actual = artifact.path.stem
@@ -613,6 +619,67 @@ def check_no_orphans(artifacts, root):
                         "cite it from a Contract, or retire the Reference",
                     )
                 )
+    return findings
+
+
+def check_domain_map_adr_links(artifacts, root):
+    """`domain-map.md`'s ADR column agrees with `docs/adr/`, both directions.
+
+    Mirrors `check_wiki_links_resolve`/`check_no_orphans`'s shape for the `adr`
+    type: a `domain-map.md` row's `[ADR-NNNN](...)` link must resolve to a real
+    file, and every `docs/adr/*.md` file must be the target of exactly one such
+    link. See `docs/specifications/adr-spec.md`.
+
+    No-ops when `domain-map.md` doesn't exist. During incremental migration (see
+    `docs/superpowers/plans/2026-09-10-adr-artifact-type.md`), only the ADRs
+    that already have a matching table link are checked for orphanhood -- a
+    `docs/adr/*.md` file created in the same commit as its table row stays
+    green throughout, the same discipline
+    `docs/specifications/skill-management.md` already requires when adding a
+    Knowledge Contract to an existing Skill.
+    """
+    findings = []
+    path = root / "docs" / "architecture" / "domain-map.md"
+    if not path.exists():
+        return findings
+    text = path.read_text()
+
+    linked = set()
+    for match in re.finditer(r"\[ADR-\d+\]\(([^)]+)\)", text):
+        target = (path.parent / match.group(1)).resolve()
+        if not target.exists():
+            findings.append(
+                Finding(
+                    2,
+                    "domain-map-adr-link",
+                    "docs/architecture/domain-map.md",
+                    f"links `{match.group(1)}`, which does not exist",
+                    "correct the path, or add the missing ADR",
+                )
+            )
+            continue
+        linked.add(target)
+
+    adr_dir = root / "docs" / "adr"
+    adr_files = list(adr_dir.glob("*.md")) if adr_dir.exists() else []
+    # Membership is checked against `.resolve()`'d paths (matching how `linked`
+    # was built above), but `orphan` itself stays unresolved for the report
+    # below. On macOS, tempfile.TemporaryDirectory() paths live under `/var`,
+    # which `.resolve()` follows to `/private/var` -- resolving `orphan` here
+    # too would make it fall outside `root` (unresolved) and crash
+    # `relative_to(root)`. Do not "simplify" this to resolve-then-relative_to.
+    for orphan in sorted(adr_files):
+        if orphan.resolve() in linked:
+            continue
+        findings.append(
+            Finding(
+                2,
+                "domain-map-adr-link",
+                orphan.relative_to(root).as_posix(),
+                "no domain-map.md row links to this ADR",
+                "add an `[ADR-NNNN](../adr/...)` link in the domain's table row",
+            )
+        )
     return findings
 
 
@@ -1115,6 +1182,7 @@ CHECKS = [
     check_routing_coverage,
     check_workflows_compose_skills,
     check_scope_vocabulary,
+    check_domain_map_adr_links,
 ]
 
 

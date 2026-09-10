@@ -14,14 +14,14 @@ import re
 import sys
 from pathlib import Path
 
-ARTIFACT_TYPES = ["knowledge", "skill", "reference", "workflow", "entry"]
+ARTIFACT_TYPES = ["knowledge", "skill", "reference", "workflow", "entry", "adr"]
 
 # docs/artifact-lifecycle.md, "States". `Review` is deliberately absent.
 STATUSES = ["Draft", "Approved", "Deprecated", "Archived"]
 
 SEMVER = re.compile(r"^\d+\.\d+\.\d+$")
 
-LINE_CAPS = {"knowledge": 150, "skill": 80, "reference": 98, "workflow": 80}
+LINE_CAPS = {"knowledge": 150, "skill": 80, "reference": 98, "workflow": 80, "adr": 150}
 
 # Where each type lives, for the "artifact_type agrees with its location" check.
 # A type absent here is not location-constrained.
@@ -31,6 +31,7 @@ TYPE_LOCATIONS = {
     "reference": "references",
     "workflow": "workflows",
     "entry": "skills",
+    "adr": "adr",
 }
 
 REQUIRED_SECTIONS = {
@@ -49,6 +50,12 @@ REQUIRED_SECTIONS = {
         "## Trigger Conditions",
         "## Skill Sequence",
         "## Exit Conditions",
+    ],
+    "adr": [
+        "## Context",
+        "## Decision",
+        "## Consequences",
+        "## Verification Log",
     ],
 }
 
@@ -78,6 +85,7 @@ METADATA_EXTENSIONS = {
     "reference": ["domain", "owner", "summary"],
     "workflow": ["skills", "related"],
     "entry": ["name", "description"],
+    "adr": ["domain", "related"],
 }
 
 
@@ -205,8 +213,12 @@ def validate_file(path, artifact_type):
     parts = set(path.resolve().parts)
     roots = parts & set(TYPE_LOCATIONS.values())
     if expected is not None and roots and expected not in roots:
+        # `adr`'s directory (`docs/adr/`) is nested, unlike the other types'
+        # top-level directories -- show the full path so the message points
+        # at a real location instead of a bare, ambiguous `adr/`.
+        expected_display = "docs/adr" if expected == "adr" else expected
         errors.append(
-            f"a `{artifact_type}` artifact belongs under `{expected}/`, "
+            f"a `{artifact_type}` artifact belongs under `{expected_display}/`, "
             f"but this file is under `{sorted(roots)[0]}/`"
         )
     return errors
@@ -234,6 +246,7 @@ def iter_artifacts(root):
         "skills/*/SKILL.md",
         "references/apple/*.md",
         "workflows/*/WORKFLOW.md",
+        "docs/adr/*.md",
     ]
     for glob in globs:
         for path in sorted(root.glob(glob)):
