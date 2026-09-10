@@ -5,6 +5,13 @@ All notable changes to this project are documented in this file. The format is b
 The project uses a single version number (`README.md` and `npx/package.json` share the same version).
 
 ## [Unreleased]
+### Added
+- **Designing for iPhone Duo — 3 new Knowledge Contracts in `human-interface-guidelines`.** Apple published a brand-new HIG Foundations page, "Designing for iPhone Duo," on 2026-09-09 alongside the iPhone Duo (foldable) launch. Added to the existing `human-interface-guidelines` Skill — no new Skill, per `docs/specifications/skill-management.md`'s one-skill-per-domain default and Apple's own grouping of the page under Foundations.
+  - `designing-for-iphone-duo-anatomy` — dual displays, hinge/device poses, and the three reserved regions (outer camera, inner camera, folding region).
+  - `designing-for-iphone-duo-layout` — resizable-layout fundamentals, split-view fold adaptation, the new arrangement-view container (split/overlay), and full-screen game guidance.
+  - `designing-for-iphone-duo-vertical-controls` — toolbar/tab bar placement on the vertical axis, item ordering/grouping/visibility priority, and Split View multitasking control placement.
+  - `references/apple/human-interface-guidelines.md`, `skills/human-interface-guidelines/SKILL.md`, `skills/index.md`, and `docs/architecture/domain-map.md` updated accordingly.
+  - Scope note: `Snippets` (a separate, June-2026 HIG page, unrelated to this launch) was investigated in the same pass and deliberately left out — it falls under `app-intents`'s stated v1 exclusion of Interactive Snippets and is a distinct decision. See `docs/research/2026-09-hig-updates.md`.
 
 ## [2.3.0] - 2026-08-23
 ### Added
