@@ -5,6 +5,8 @@ All notable changes to this project are documented in this file. The format is b
 The project uses a single version number (`README.md` and `npx/package.json` share the same version).
 
 ## [Unreleased]
+
+## [2.4.0] - 2026-09-10
 ### Added
 - **New `adr` artifact type — Architecture Decision Records.** `docs/adr/`, validated like the other five artifact types (`docs/specifications/adr-spec.md`, `scripts/validate_artifact.py --type adr`, and a new `scripts/validate_repo.py` check that `domain-map.md`'s `ADR` column links agree with `docs/adr/`, both directions). Exists to stop `domain-map.md`'s "Completed:" paragraph from growing forever as one un-editable run-on sentence — see `docs/superpowers/specs/2026-09-10-adr-artifact-type-design.md` for the full design, informed by researching why the `mattpocock/skills` repo's own skill/agent system holds up (`docs/research/2026-09-mattpocock-skills-architecture.md`).
   - `ADR-0001` (`style-guide`) is the first real instance, proving the pipeline end-to-end. The other ~30 domains' scope history remains in `domain-map.md`'s paragraph for now — migrating them, and squaring up every Tier table's `ADR` column, is a follow-up plan. `## Cross-Domain Notes` is explicitly out of scope for this artifact type; see the design's Non-goals.
