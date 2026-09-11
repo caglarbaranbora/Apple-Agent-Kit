@@ -6,6 +6,10 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [2.4.1] - 2026-09-11
+### Changed
+- **README.md and npx/README.md rewrite republished to npm.** Content landed on `main` in `8123378` (research-grounded rewrite: pitch-first opening, routing example, Skills list moved out of the flat README body) after the 2.4.0 npm publish had already gone out, so `npx/README.md` — npm's displayed package README — stayed stale on the registry. This release carries no functional or content changes beyond the version bump; it exists solely to refresh the npm-hosted README.
+
 ## [2.4.0] - 2026-09-10
 ### Added
 - **New `adr` artifact type — Architecture Decision Records.** `docs/adr/`, validated like the other five artifact types (`docs/specifications/adr-spec.md`, `scripts/validate_artifact.py --type adr`, and a new `scripts/validate_repo.py` check that `domain-map.md`'s `ADR` column links agree with `docs/adr/`, both directions). Exists to stop `domain-map.md`'s "Completed:" paragraph from growing forever as one un-editable run-on sentence — see `docs/superpowers/specs/2026-09-10-adr-artifact-type-design.md` for the full design, informed by researching why the `mattpocock/skills` repo's own skill/agent system holds up (`docs/research/2026-09-mattpocock-skills-architecture.md`).
