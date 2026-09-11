@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-PolyForm%20Strict-blue)](https://github.com/caglarbaranbora/Apple-Agent-Kit/blob/main/LICENSE)
 
 Status: Stable
-Version: 2.4.0
+Version: 2.4.1
 
 ## Install
 
