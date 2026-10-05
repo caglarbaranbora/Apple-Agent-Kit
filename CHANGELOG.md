@@ -6,6 +6,10 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 
+## [2.4.2] - 2026-10-05
+### Fixed
+- **Redirected Apple citation in the localization domain.** Apple moved "Creating custom symbol images for your app" from `documentation/uikit/creating-custom-symbol-images-for-your-app` to `documentation/technologyoverviews/custom-sf-symbols` ("Creating custom symbols"), which failed the weekly `Links` sweep (`check_links.py --strict` treats a redirect as a finding). `reference.apple.localization` (1.0.1) and `knowledge.localization.layout-direction-and-rtl-apis` (1.0.2) now cite the new URL.
+
 ## [2.4.1] - 2026-09-11
 ### Changed
 - **README.md and npx/README.md rewrite republished to npm.** Content landed on `main` in `8123378` (research-grounded rewrite: pitch-first opening, routing example, Skills list moved out of the flat README body) after the 2.4.0 npm publish had already gone out, so `npx/README.md` — npm's displayed package README — stayed stale on the registry. This release carries no functional or content changes beyond the version bump; it exists solely to refresh the npm-hosted README.
