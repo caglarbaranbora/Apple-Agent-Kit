@@ -1,7 +1,7 @@
 # Localization
 
 Status: Approved
-Version: 1.0.0
+Version: 1.0.1
 
 ## Metadata
 
@@ -9,12 +9,12 @@ Version: 1.0.0
 id: reference.apple.localization
 artifact_type: reference
 title: Localization
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's localization documentation, scoped to this domain's v1.
 domain: Localization
-last_updated: 2026-08-08
+last_updated: 2026-10-05
 ```
 
 ## Source
@@ -44,7 +44,7 @@ https://developer.apple.com/documentation/swiftui/localizedstringkey
 https://developer.apple.com/documentation/swiftui/text/init(_:tablename:bundle:comment:)
 https://developer.apple.com/documentation/swiftui/text/init(verbatim:)
 https://developer.apple.com/documentation/swiftui/view/flipsforrighttoleftlayoutdirection(_:)
-https://developer.apple.com/documentation/uikit/creating-custom-symbol-images-for-your-app
+https://developer.apple.com/documentation/technologyoverviews/custom-sf-symbols
 https://developer.apple.com/documentation/uikit/uiimage/imageflippedforrighttoleftlayoutdirection()
 https://developer.apple.com/documentation/uikit/uiview/effectiveuserinterfacelayoutdirection
 https://developer.apple.com/documentation/uikit/uiview/semanticcontentattribute
