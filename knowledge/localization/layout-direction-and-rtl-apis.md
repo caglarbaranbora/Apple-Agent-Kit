@@ -1,7 +1,7 @@
 # Layout Direction and RTL APIs
 
 Status: Approved
-Version: 1.0.1
+Version: 1.0.2
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 1.0.1
 id: knowledge.localization.layout-direction-and-rtl-apis
 artifact_type: knowledge
 title: Layout Direction and RTL APIs
-version: 1.0.1
+version: 1.0.2
 status: Approved
 owner: Apple Agent Kit
 summary: Defines the API layer of right-to-left support -- leading and trailing over left and right, SwiftUI's automatic mirroring and why reading layoutDirection usually means double-flipping, flipsForRightToLeftLayoutDirection as a contents-mirroring modifier rather than an RTL switch, UIKit semanticContentAttribute whose unspecified default means flip, effectiveUserInterfaceLayoutDirection which does not inherit, SF Symbols name-driven mirroring, and detecting direction through Locale.Language.characterDirection.
@@ -26,7 +26,7 @@ references:
   - https://developer.apple.com/documentation/uikit/uiview/semanticcontentattribute
   - https://developer.apple.com/documentation/uikit/uiview/effectiveuserinterfacelayoutdirection
   - https://developer.apple.com/documentation/uikit/uiimage/imageflippedforrighttoleftlayoutdirection()
-  - https://developer.apple.com/documentation/uikit/creating-custom-symbol-images-for-your-app
+  - https://developer.apple.com/documentation/technologyoverviews/custom-sf-symbols
   - https://developer.apple.com/documentation/foundation/locale/language-swift.struct/characterdirection
   - https://developer.apple.com/documentation/xcode/preparing-your-interface-for-localization
   - https://developer.apple.com/videos/play/wwdc2022/10107/
@@ -35,7 +35,7 @@ related:
   - knowledge.human-interface-guidelines.right-to-left
   - knowledge.localization.locale-and-language-resolution
   - knowledge.sf-symbols.symbol-basics
-last_updated: 2026-08-23
+last_updated: 2026-10-05
 ```
 
 ## Intent
@@ -143,7 +143,7 @@ None within this domain. Cross-references `knowledge.human-interface-guidelines.
 
 - [Apple Developer — LayoutDirection](https://developer.apple.com/documentation/swiftui/layoutdirection) · [flipsForRightToLeftLayoutDirection(_:)](https://developer.apple.com/documentation/swiftui/view/flipsforrighttoleftlayoutdirection(_:))
 - [Apple Developer — UIView.semanticContentAttribute](https://developer.apple.com/documentation/uikit/uiview/semanticcontentattribute) · [UISemanticContentAttribute](https://developer.apple.com/documentation/uikit/uisemanticcontentattribute) · [effectiveUserInterfaceLayoutDirection](https://developer.apple.com/documentation/uikit/uiview/effectiveuserinterfacelayoutdirection)
-- [Apple Developer — imageFlippedForRightToLeftLayoutDirection()](https://developer.apple.com/documentation/uikit/uiimage/imageflippedforrighttoleftlayoutdirection()) · [Creating custom symbol images](https://developer.apple.com/documentation/uikit/creating-custom-symbol-images-for-your-app)
+- [Apple Developer — imageFlippedForRightToLeftLayoutDirection()](https://developer.apple.com/documentation/uikit/uiimage/imageflippedforrighttoleftlayoutdirection()) · [Creating custom symbols](https://developer.apple.com/documentation/technologyoverviews/custom-sf-symbols)
 - [Apple Developer — Locale.Language.characterDirection](https://developer.apple.com/documentation/foundation/locale/language-swift.struct/characterdirection) · [NSLocale.LanguageDirection](https://developer.apple.com/documentation/foundation/nslocale/languagedirection)
 - [Apple Developer — Preparing your interface for localization](https://developer.apple.com/documentation/xcode/preparing-your-interface-for-localization)
 - [Apple Developer — Supporting Right-to-Left Languages (archived)](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html)
