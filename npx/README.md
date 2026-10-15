@@ -27,7 +27,7 @@ https://github.com/caglarbaranbora/Apple-Agent-Kit/blob/main/.codex/INSTALL.md
 
 ## What you get
 
-34 Skills across Apple's SDKs (SwiftUI, UIKit, StoreKit, WidgetKit, App
+35 Skills across Apple's SDKs (SwiftUI, UIKit, StoreKit, WidgetKit, App
 Intents, HIG, and more), each routing deterministically to small, traceable
 Knowledge Contracts sourced from Apple's own documentation — no repo-wide
 semantic search. Full pitch, an example of a Skill routing in action, and the

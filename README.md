@@ -85,18 +85,19 @@ framework areas:
 - **`uikit`** — screen scaffolding: view controllers, Auto Layout, navigation. → [SKILL.md](skills/uikit/SKILL.md)
 - **`accessibility`** — labels, traits, Dynamic Type, VoiceOver, audits. → [SKILL.md](skills/accessibility/SKILL.md)
 - **`app-store-review-guidelines`** — submission compliance: metadata, IAP, privacy, ratings. → [SKILL.md](skills/app-store-review-guidelines/SKILL.md)
+- **`app-store-product-page`** — screenshots, app previews, header and search creative assets. → [SKILL.md](skills/app-store-product-page/SKILL.md)
 - **`storekit`** — StoreKit 2: purchase, entitlements, subscriptions. → [SKILL.md](skills/storekit/SKILL.md)
 - **`widgetkit`** — declaration, timelines, interactivity, refresh. → [SKILL.md](skills/widgetkit/SKILL.md)
 - **`app-intents`** — intent authoring, entities, App Shortcuts, Siri. → [SKILL.md](skills/app-intents/SKILL.md)
 
-34 Skills total, covering everything from networking and testing to StoreKit and
+35 Skills total, covering everything from networking and testing to StoreKit and
 Core Location. Full catalogue and routing tables: [skills/index.md](skills/index.md).
 
 ## What's New
 
+- 2026-10-15 — **App Store product page assets landed.** A new `app-store-product-page` Skill routes 9 Knowledge Contracts built from Apple's App Store asset best practices and the App Store Connect specifications: screenshot and app preview specs (including iPhone Duo), the new product page header and search result creative assets, In-App Event media, content restrictions, and checkable design guidance. `app-store-review-guidelines` now encodes App Review's "more than half of screenshots show the app in use" rule and guidelines 2.3.8 and 2.3.10. See `CHANGELOG.md` for details.
 - 2026-09-10 — **Architecture Decision Records landed.** A new, fully validated sixth artifact type, `adr` (`docs/adr/`), records *why* a domain's scope was set where it was — separately from `docs/architecture/domain-map.md`, which records only *what* the current scope is. `ADR-0001` (`style-guide`) is the first real instance; migrating the rest of `domain-map.md`'s scope history is a follow-up. Also in this release: `branding`/`layout` Knowledge Contract staleness fixes. See `CHANGELOG.md` for details.
 - 2026-09-10 — **Designing for iPhone Duo support landed.** Apple published a new HIG Foundations page for its iPhone Duo (foldable) launch on 2026-09-09; `human-interface-guidelines` now routes 3 new Knowledge Contracts for it — device anatomy/poses/reserved regions, dynamic layouts (split views, arrangement views), and vertical-axis toolbar/tab bar controls. See `CHANGELOG.md` for details.
-- 2026-08-23 — Codex CLI support landed. This repo's Skills are now loadable from OpenAI's Codex CLI, not just Claude Code, with zero changes to any Knowledge Contract, Skill, Reference, or Workflow — Codex reads the same `SKILL.md` files directly via a single repo-root manifest, `.codex-plugin/plugin.json`, that points at the existing `skills/` directory as a whole. No per-domain translation file exists or is needed. `.codex/INSTALL.md` documents both install paths (Codex's plugin marketplace, or a manual clone-and-symlink fallback), and `npx apple-agent-kit` now detects a Codex-only environment and prints the right instructions instead of erroring.
 
 Only the 3 most recent entries live here — see [CHANGELOG.md](CHANGELOG.md) for the full release history.
 

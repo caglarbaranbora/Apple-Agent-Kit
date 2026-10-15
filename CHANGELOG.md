@@ -5,6 +5,8 @@ All notable changes to this project are documented in this file. The format is b
 The project uses a single version number (`README.md` and `npx/package.json` share the same version).
 
 ## [Unreleased]
+### Added
+- **New `app-store-product-page` domain.** `references/apple/app-store-product-page.md`, 9 Knowledge Contracts (`screenshot-specifications`, `app-preview-specifications`, `creative-assets`, `in-app-event-media`, `asset-content-restrictions`, `header-and-search-result-messaging`, `image-asset-design`, `video-asset-design`, `asset-sequencing-and-story`) and `skill.app-store-product-page.foundations`, built from Apple's App Store asset best practices page and the App Store Connect specification pages that went live with creative assets on 2026-10-05. Scope and the cross-domain indexing decision: `docs/adr/0002-app-store-product-page-scope.md`. Research: `docs/research/2026-10-app-store-asset-best-practices.md`.
 
 ## [2.4.2] - 2026-10-05
 ### Fixed
