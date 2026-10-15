@@ -62,3 +62,7 @@ other platforms' asset specifications are Excluded.
 
 - 2026-10-15: initial scope recorded; 9 Knowledge Contracts and
   `skill.app-store-product-page.foundations` shipped.
+- 2026-10-15: `app-store-review-guidelines` slice — `screenshots-accuracy`
+  1.1.0 (majority-in-use), new `metadata-age-rating` (2.3.8) and
+  `other-platform-references` (2.3.10); their App Review URLs indexed in
+  `references/apple/app-store-product-page.md` per Consequences.

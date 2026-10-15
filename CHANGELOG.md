@@ -6,7 +6,11 @@ The project uses a single version number (`README.md` and `npx/package.json` sha
 
 ## [Unreleased]
 ### Added
+- **`app-store-review-guidelines`: guidelines 2.3.8 and 2.3.10.** New `metadata-age-rating` and `other-platform-references` Knowledge Contracts, routed by `skill.app-store-review-guidelines.submission` (1.1.0).
 - **New `app-store-product-page` domain.** `references/apple/app-store-product-page.md`, 9 Knowledge Contracts (`screenshot-specifications`, `app-preview-specifications`, `creative-assets`, `in-app-event-media`, `asset-content-restrictions`, `header-and-search-result-messaging`, `image-asset-design`, `video-asset-design`, `asset-sequencing-and-story`) and `skill.app-store-product-page.foundations`, built from Apple's App Store asset best practices page and the App Store Connect specification pages that went live with creative assets on 2026-10-05. Scope and the cross-domain indexing decision: `docs/adr/0002-app-store-product-page-scope.md`. Research: `docs/research/2026-10-app-store-asset-best-practices.md`.
+
+### Changed
+- **`screenshots-accuracy` (1.1.0) follows App Review's new 2.3.3 guidance.** Rule 1 now requires *more than half* of each device's and each localization's screenshots to show the app in use (it read as "all"), and new rules forbid overlays that crowd out the app or hardware-only screenshots. Source: https://developer.apple.com/help/app-review/guideline-reference/2-3-3-screenshots, indexed in `references/apple/app-store-product-page.md` because the App Review Guidelines Reference is at its 98-line limit (ADR-0002).
 
 ## [2.4.2] - 2026-10-05
 ### Fixed

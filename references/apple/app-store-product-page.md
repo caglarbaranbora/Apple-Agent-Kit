@@ -1,7 +1,7 @@
 # App Store Product Page
 
 Status: Approved
-Version: 1.0.0
+Version: 1.1.0
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 1.0.0
 id: reference.apple.app-store-product-page
 artifact_type: reference
 title: App Store Product Page
-version: 1.0.0
+version: 1.1.0
 status: Approved
 owner: Apple Agent Kit
 summary: Reference index behind skill.app-store-product-page.foundations -- Apple's App Store asset best practices page, the App Store Connect Help specification pages for screenshots, app previews and creative assets (product page header, search results, In-App Event media), the Asset Library page, and the App Review anchors that govern what those assets may show.
@@ -25,7 +25,11 @@ https://developer.apple.com/help/app-store-connect/reference/app-information/scr
 https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications
 https://developer.apple.com/help/app-store-connect/reference/app-information/creative-assets-specifications
 https://developer.apple.com/help/app-store-connect/manage-app-information/manage-your-app-store-assets
+https://developer.apple.com/app-store/review/guidelines/#2.3.4
 https://developer.apple.com/app-store/review/guidelines/#2.3.7
+https://developer.apple.com/app-store/review/guidelines/#2.3.8
+https://developer.apple.com/app-store/review/guidelines/#2.3.10
+https://developer.apple.com/help/app-review/guideline-reference/2-3-3-screenshots
 
 ## Purpose
 
@@ -56,3 +60,6 @@ that domain's Reference is at its size limit.
 - knowledge/app-store-product-page/image-asset-design.md ([[knowledge/app-store-product-page/image-asset-design]])
 - knowledge/app-store-product-page/video-asset-design.md ([[knowledge/app-store-product-page/video-asset-design]])
 - knowledge/app-store-product-page/asset-sequencing-and-story.md ([[knowledge/app-store-product-page/asset-sequencing-and-story]])
+- knowledge/app-store-review-guidelines/screenshots-accuracy.md ([[knowledge/app-store-review-guidelines/screenshots-accuracy]])
+- knowledge/app-store-review-guidelines/metadata-age-rating.md ([[knowledge/app-store-review-guidelines/metadata-age-rating]])
+- knowledge/app-store-review-guidelines/other-platform-references.md ([[knowledge/app-store-review-guidelines/other-platform-references]])

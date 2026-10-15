@@ -1,6 +1,6 @@
 # Asset Content Restrictions
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.0.1
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Approved Version: 1.0.0
 id: knowledge.app-store-product-page.asset-content-restrictions
 artifact_type: knowledge
 title: Asset Content Restrictions
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines what Apple's asset guidance forbids in any App Store asset -- pricing and discounts, URLs and copyright symbols, unearned or Apple-designated recognitions, other platforms, content above 4+, graphic violence -- and the relation-to-functionality limit on content outside the app.
@@ -26,6 +26,8 @@ related:
   - knowledge.app-store-review-guidelines.description-accuracy
   - knowledge.app-store-review-guidelines.apple-trademarks-and-product-confusion
   - knowledge.app-store-product-page.creative-assets
+  - knowledge.app-store-review-guidelines.metadata-age-rating
+  - knowledge.app-store-review-guidelines.other-platform-references
 last_updated: 2026-10-15
 ```
 
@@ -49,7 +51,8 @@ present a breach as a stated rejection reason.
 ### Excluded
 
 -   Guideline 2.3.8 and 2.3.10 as review rules for screenshots and previews
-    — `app-store-review-guidelines` owns them
+    — owned by `app-store-review-guidelines` (`metadata-age-rating`,
+    `other-platform-references`)
 -   Misleading marketing claims in text metadata — see `description-accuracy`
 
 ## Rules
