@@ -5,6 +5,8 @@ All notable changes to this project are documented in this file. The format is b
 The project uses a single version number (`README.md` and `npx/package.json` share the same version).
 
 ## [Unreleased]
+### Changed
+- **README install line for Claude Code's marketplace flow.** `README.md` now shows `/plugin install apple-agent-kit --marketplace caglarbaranbora/Apple-Agent-Kit` alongside `npx apple-agent-kit`, clearing the `claude plugin validate .` warning that the README had no marketplace install line.
 
 ## [2.5.0] - 2026-10-15
 ### Added

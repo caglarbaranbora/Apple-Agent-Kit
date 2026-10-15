@@ -45,6 +45,12 @@ Adds this repo as a Claude Code plugin marketplace and installs the `apple-agent
 plugin — Skills, Knowledge Contracts, and routing become available inside Claude Code
 sessions. Requires the `claude` CLI.
 
+Or install from inside Claude Code (2.1.275 or later) in one step:
+
+```
+/plugin install apple-agent-kit --marketplace caglarbaranbora/Apple-Agent-Kit
+```
+
 <details>
 <summary>Codex CLI</summary>
 
