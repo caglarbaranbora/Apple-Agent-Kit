@@ -27,6 +27,8 @@ related:
   - knowledge.app-store-review-guidelines.description-accuracy
   - knowledge.app-store-product-page.screenshot-specifications
   - knowledge.app-store-product-page.creative-assets
+  - knowledge.app-store-review-guidelines.other-platform-references
+  - knowledge.app-store-review-guidelines.metadata-age-rating
 last_updated: 2026-10-15
 ```
 
@@ -54,6 +56,8 @@ localization, and what App Preview videos may contain (guideline 2.3.3,
 -   Creative assets (product page header, search results) — exempt from the
     in-use rule; see `creative-assets`
 -   Screenshot sizes and counts — see `screenshot-specifications`
+-   Third-party platforms in screenshots, status bar included (2.3.10) — see
+    `other-platform-references`
 
 ## Rules
 

@@ -43,6 +43,7 @@ alternative app marketplaces.
 ### Excluded
 
 -   Creative assets — see `asset-content-restrictions`
+-   Irrelevant information in metadata (second half of 2.3.10) — see `description-accuracy`
 
 ## Rules
 
