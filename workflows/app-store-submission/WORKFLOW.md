@@ -1,7 +1,7 @@
 # App Store Submission
 
 Status: Approved
-Version: 1.0.0
+Version: 1.0.1
 
 ## Metadata
 
@@ -9,7 +9,7 @@ Version: 1.0.0
 id: workflow.app-store-submission
 artifact_type: workflow
 title: App Store Submission
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Gates an app through review-guideline compliance and privacy declaration before it is signed, archived, and exported.
@@ -18,7 +18,7 @@ skills:
   - skill.privacy.foundations
   - skill.xcode.foundations
 related: []
-last_updated: 2026-08-08
+last_updated: 2026-10-15
 ```
 
 ## Purpose
@@ -37,7 +37,7 @@ rejection that was predictable before the build was made.
 ### Excluded
 
 - Building the features themselves — every other domain
-- App Store Connect metadata, pricing, and phased release — outside this repository
+- App Store Connect metadata, pricing, and phased release — outside this repository; screenshot, app preview and creative asset specifications and design are owned by `app-store-product-page`
 - TestFlight distribution mechanics beyond export
 
 ## Trigger Conditions
