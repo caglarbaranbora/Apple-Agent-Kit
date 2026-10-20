@@ -1,7 +1,7 @@
 # SF Symbols
 
 Status: Approved
-Version: 1.0.0
+Version: 1.0.1
 
 ## Metadata
 
@@ -9,12 +9,12 @@ Version: 1.0.0
 id: reference.apple.sf-symbols
 artifact_type: reference
 title: SF Symbols
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Reference index for Apple's SF Symbols API documentation, scoped to this domain's v1.
 domain: SF Symbols
-last_updated: 2026-08-08
+last_updated: 2026-10-20
 ```
 
 ## Source
@@ -30,7 +30,7 @@ https://developer.apple.com/documentation/uikit/configuring-and-displaying-symbo
 https://developer.apple.com/documentation/uikit/uiimage/init(named:)
 https://developer.apple.com/documentation/uikit/uiimage/init(systemname:)
 https://developer.apple.com/documentation/uikit/uiimage/init(systemname:variablevalue:configuration:)
-https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class
+https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class/
 https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class/init(pointsize:weight:scale:)
 https://developer.apple.com/documentation/uikit/uiimage/withconfiguration(_:)
 https://developer.apple.com/documentation/uikit/uiimageview/preferredsymbolconfiguration

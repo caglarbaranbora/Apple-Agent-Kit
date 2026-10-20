@@ -1,6 +1,6 @@
 # Rendering Modes
 
-Status: Approved Version: 1.0.0
+Status: Approved Version: 1.0.1
 
 ## Metadata
 
@@ -8,7 +8,7 @@ Status: Approved Version: 1.0.0
 id: knowledge.sf-symbols.rendering-modes
 artifact_type: knowledge
 title: Rendering Modes
-version: 1.0.0
+version: 1.0.1
 status: Approved
 owner: Apple Agent Kit
 summary: Defines correct use of SF Symbols rendering modes (monochrome, hierarchical, palette, multicolor) via symbolRenderingMode in SwiftUI and UIImage.SymbolConfiguration in UIKit.
@@ -19,13 +19,13 @@ tags:
   - symbolrenderingmode
 references:
   - https://developer.apple.com/documentation/swiftui/symbolrenderingmode
-  - https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class
+  - https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class/
 depends_on:
   - knowledge.sf-symbols.symbol-basics
 related:
   - knowledge.human-interface-guidelines.sf-symbols
   - knowledge.sf-symbols.symbol-color-and-tinting
-last_updated: 2026-08-08
+last_updated: 2026-10-20
 ```
 
 ## Intent
@@ -113,4 +113,4 @@ Image(systemName: "star.fill")
 ## References
 
 -   [Apple Developer — SymbolRenderingMode](https://developer.apple.com/documentation/swiftui/symbolrenderingmode)
--   [Apple Developer — UIImage.SymbolConfiguration](https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class)
+-   [Apple Developer — UIImage.SymbolConfiguration](https://developer.apple.com/documentation/uikit/uiimage/symbolconfiguration-swift.class/)
