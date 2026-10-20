@@ -5,6 +5,11 @@ All notable changes to this project are documented in this file. The format is b
 The project uses a single version number (`README.md` and `npx/package.json` share the same version).
 
 ## [Unreleased]
+
+## [2.5.1] - 2026-10-20
+### Fixed
+- **403 on the UIImage.SymbolConfiguration citation in the sf-symbols domain.** Apple's documentation CDN began answering every path ending in `.class` with 403 (GET and HEAD, any User-Agent), which failed the weekly `Links` sweep on `documentation/uikit/uiimage/symbolconfiguration-swift.class`. The page itself is live and serves 200 with a trailing slash, so the bare citations now end in `/`. `reference.apple.sf-symbols`, `knowledge.sf-symbols.rendering-modes`, and `knowledge.sf-symbols.uikit-symbol-configuration` are at 1.0.1.
+
 ### Changed
 - **README install line for Claude Code's marketplace flow.** `README.md` now shows `/plugin install apple-agent-kit --marketplace caglarbaranbora/Apple-Agent-Kit` alongside `npx apple-agent-kit`, clearing the `claude plugin validate .` warning that the README had no marketplace install line.
 
